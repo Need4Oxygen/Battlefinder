@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Grid : MonoBehaviour
+public class GridMaker : MonoBehaviour
 {
     [SerializeField] Transform verticalMain = null;
     [SerializeField] Transform verticalFill = null;
