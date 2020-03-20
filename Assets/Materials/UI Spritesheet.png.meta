@@ -71,6 +71,18 @@ TextureImporter:
   - first:
       213: 21300044
     second: UI_wishlisAdd_button
+  - first:
+      213: -4617061827569672818
+    second: UI_title_up_shadow
+  - first:
+      213: -2661616990625695057
+    second: UI_title_up_shadow
+  - first:
+      213: 547147916255608969
+    second: UI Spritesheet_1
+  - first:
+      213: 8624229356990253731
+    second: UI Spritesheet_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -138,7 +150,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -150,7 +162,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 3
     buildTarget: iPhone
     maxTextureSize: 2048
@@ -162,7 +174,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
@@ -174,7 +186,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -182,9 +194,9 @@ TextureImporter:
       name: UI_bullet_left
       rect:
         serializedVersion: 2
-        x: 11
+        x: 12
         y: 350
-        width: 88
+        width: 87
         height: 143
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -203,9 +215,9 @@ TextureImporter:
       name: UI_bullet_right
       rect:
         serializedVersion: 2
-        x: 117
+        x: 114
         y: 350
-        width: 86
+        width: 85
         height: 143
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -269,7 +281,7 @@ TextureImporter:
         x: 826
         y: 306
         width: 93
-        height: 90
+        height: 89
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -393,12 +405,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 250
-        y: 90
+        y: 91
         width: 124
-        height: 55
+        height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 52, y: 1, z: 52, w: 48}
+      border: {x: 52, y: 1, z: 52, w: 49}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -581,9 +593,9 @@ TextureImporter:
       name: UI_circleToggle_filled
       rect:
         serializedVersion: 2
-        x: 394
+        x: 393
         y: 71
-        width: 79
+        width: 81
         height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -626,10 +638,10 @@ TextureImporter:
         x: 250
         y: 22
         width: 124
-        height: 55
+        height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 52, y: 48, z: 52, w: 1}
+      border: {x: 52, y: 49, z: 52, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -644,10 +656,10 @@ TextureImporter:
       name: UI_wishlisAdd_button
       rect:
         serializedVersion: 2
-        x: 374
-        y: 350
-        width: 141
-        height: 141
+        x: 218
+        y: 349
+        width: 140
+        height: 140
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -657,6 +669,48 @@ TextureImporter:
       bones: []
       spriteID: fdbd2f47c856008498ef1c851cd8f9de
       internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_title_up_shadow
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 417
+        width: 146
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 60, y: 0, z: 61, w: 70}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8d91b5eab6ecefb0800000000000000
+      internalID: -4617061827569672818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_title_down_shadow
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 350
+        width: 146
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 60, y: 62, z: 61, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faa7c99e279001bd0800000000000000
+      internalID: -2661616990625695057
       vertices: []
       indices: 
       edges: []
