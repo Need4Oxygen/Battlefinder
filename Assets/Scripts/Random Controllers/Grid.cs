@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class GridController : MonoBehaviour
+public class Grid : MonoBehaviour
 {
-
-    public static float TileSize;
-
     [SerializeField] Transform verticalMain = null;
     [SerializeField] Transform verticalFill = null;
     [SerializeField] Transform horizontalMain = null;
     [SerializeField] Transform horizontalFill = null;
 
     [SerializeField] Vector2 boundaries = Vector2.zero;
-    [SerializeField] float tileSize = 1;
     [SerializeField] float mainLinesHeight = 0.1f;
     [SerializeField] float fillLinesHeight = 0.09f;
 
@@ -23,14 +17,13 @@ public class GridController : MonoBehaviour
 
     void Start()
     {
-        TileSize = tileSize;
         ReloadGrid();
     }
 
     void ReloadGrid()
     {
         // Vertical grid spawn
-        int totalVLines = Mathf.CeilToInt(boundaries.x / tileSize);
+        int totalVLines = Mathf.CeilToInt(boundaries.x);
 
         Vector3 spawnPointCenterMainVertical = new Vector3(0, mainLinesHeight, transform.position.y);
         Transform centerMainVertical = Instantiate(verticalMain, spawnPointCenterMainVertical, Quaternion.identity, transform).transform;
@@ -41,8 +34,8 @@ public class GridController : MonoBehaviour
         {
             if (i % 5 == 0)
             {
-                Vector3 spawnPointRight = new Vector3(transform.position.x + tileSize * i, mainLinesHeight, 0);
-                Vector3 spawnPointLeft = new Vector3(transform.position.x - tileSize * i, mainLinesHeight, 0);
+                Vector3 spawnPointRight = new Vector3(transform.position.x + i, mainLinesHeight, 0);
+                Vector3 spawnPointLeft = new Vector3(transform.position.x - i, mainLinesHeight, 0);
 
                 Transform right = Instantiate(verticalMain, spawnPointRight, Quaternion.identity, transform).transform;
                 right.SetAsLastSibling();
@@ -53,8 +46,8 @@ public class GridController : MonoBehaviour
             }
             else
             {
-                Vector3 spawnPointRight = new Vector3(transform.position.x + tileSize * i, fillLinesHeight, 0);
-                Vector3 spawnPointLeft = new Vector3(transform.position.x - tileSize * i, fillLinesHeight, 0);
+                Vector3 spawnPointRight = new Vector3(transform.position.x + i, fillLinesHeight, 0);
+                Vector3 spawnPointLeft = new Vector3(transform.position.x - i, fillLinesHeight, 0);
 
                 Transform right = Instantiate(verticalFill, spawnPointRight, Quaternion.identity, transform).transform;
                 right.SetAsFirstSibling();
@@ -66,7 +59,7 @@ public class GridController : MonoBehaviour
         }
 
         // Horizontal grid spawn
-        int totalHLines = Mathf.CeilToInt(boundaries.y / tileSize);
+        int totalHLines = Mathf.CeilToInt(boundaries.y);
 
         Vector3 spawnPointCenterMainHorizontal = new Vector3(0, mainLinesHeight, transform.position.y);
         Transform centerMainHorizontal = Instantiate(horizontalMain, spawnPointCenterMainHorizontal, Quaternion.identity, transform).transform;
@@ -78,8 +71,8 @@ public class GridController : MonoBehaviour
 
             if (i % 5 == 0)
             {
-                Vector3 spawnPointUp = new Vector3(0, mainLinesHeight, transform.position.y + tileSize * i);
-                Vector3 spawnPointDown = new Vector3(0, mainLinesHeight, transform.position.y - tileSize * i);
+                Vector3 spawnPointUp = new Vector3(0, mainLinesHeight, transform.position.y + i);
+                Vector3 spawnPointDown = new Vector3(0, mainLinesHeight, transform.position.y - i);
 
                 Transform up = Instantiate(horizontalMain, spawnPointUp, Quaternion.identity, transform).transform;
                 up.SetAsLastSibling();
@@ -90,8 +83,8 @@ public class GridController : MonoBehaviour
             }
             else
             {
-                Vector3 spawnPointUp = new Vector3(0, fillLinesHeight, transform.position.y + tileSize * i);
-                Vector3 spawnPointDown = new Vector3(0, fillLinesHeight, transform.position.y - tileSize * i);
+                Vector3 spawnPointUp = new Vector3(0, fillLinesHeight, transform.position.y + i);
+                Vector3 spawnPointDown = new Vector3(0, fillLinesHeight, transform.position.y - i);
 
                 Transform up = Instantiate(horizontalFill, spawnPointUp, Quaternion.identity, transform).transform;
                 up.SetAsFirstSibling();

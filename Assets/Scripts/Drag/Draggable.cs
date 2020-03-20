@@ -2,114 +2,111 @@
 
 public class Draggable : MonoBehaviour
 {
-    enum SnapTo { None, Slot, Line }
+    [HideInInspector] public bool isClicked = false;
 
-    [HideInInspector]
-    public bool isClicked;
-
-    [Header("Options")]
-    [SerializeField] SnapTo snapTo = 0;
-    [SerializeField] float hover = 0.2f;
-    [Space(15)]
+    [Header("Draggable Options")]
+    [SerializeField] ESnap snapTo = 0;
+    [SerializeField] ERotation canRotate = 0;
+    public bool canDuplicate = false;
     [SerializeField] bool centerOnClick = false;
-    [SerializeField] bool canDuplicate = false;
-    [SerializeField] bool canRotate = false;
+    [SerializeField] float hover = 0.2f;
 
-    Vector3 clickOffset = Vector3.zero;
-
-    void Start()
-    {
-        Invoke("Snap", 0.1f);
-    }
+    private Vector3 clickOffset = Vector3.zero;
 
     void Update()
     {
         if (isClicked)
         {
-            Vector3 tablePoint = TablePoint();
-
-            if (Input.GetKeyUp(KeyCode.R) && canRotate)
-                Rotate(tablePoint);
-
-            // Centra o no el objeto al clickar
-            transform.position = tablePoint + clickOffset;
-            transform.position = new Vector3(transform.position.x, hover, transform.position.z);
+            DragWithMouse();
         }
     }
 
-    public void OnPointerDown()
+    public void OnSelect()
     {
-        CheckInput(true);
+        isClicked = true;
+        if (!centerOnClick)
+            clickOffset = transform.position - TablePoint();
     }
 
-    public void OnPointerUp()
+    public void OnDeselect()
     {
         isClicked = false;
         Snap();
     }
 
-    public void CheckInput(bool checkDuplicate)
+    /// <summary> Returns a dupplicate of this object. </summary>
+    public Draggable Duplicate()
     {
-        if (Input.GetKey(KeyCode.LeftAlt) && checkDuplicate && canDuplicate)
+        if (canDuplicate)
         {
-            Duplicate();
+            GameObject duplicate = Instantiate(gameObject, transform.position, transform.rotation, null);
+            duplicate.name = name;
+
+            Draggable draggable = duplicate.GetComponent<Draggable>();
+            return draggable;
         }
         else
         {
-            // Start Dragging
-            isClicked = true;
-            if (!centerOnClick)
-                clickOffset = transform.position - TablePoint();
+            return null;
         }
     }
 
-    private void Duplicate()
+    /// <summary> Snap the object to grid. </summary>
+    public void Snap()
     {
-        // Duplicate object
-        GameObject duplicate = Instantiate(gameObject, transform.position, transform.rotation, null);
-        Draggable duplicateDraggable = duplicate.GetComponent<Draggable>();
-        duplicateDraggable.CheckInput(false);
-        DragController.ItemBeingDragged = duplicateDraggable;
-        duplicate.name = name;
+        if (snapTo == ESnap.None)
+            return;
+        else
+            Snap(snapTo);
+    }
+    public void Snap(ESnap snapTo)
+    {
+        float x = 0f, z = 0f;
+
+        if (snapTo == ESnap.Line)
+        {
+            x = Mathf.Round(transform.localPosition.x);
+            z = Mathf.Round(transform.localPosition.z);
+        }
+        else
+        {
+            x = Mathf.Round(transform.localPosition.x - (1f / 2f)) + 1f / 2f;
+            z = Mathf.Round(transform.localPosition.z - (1f / 2f)) + 1f / 2f;
+        }
+
+        transform.localPosition = new Vector3(x, transform.localPosition.y, z);
     }
 
     private void Rotate(Vector3 tablePoint)
     {
-        transform.RotateAround(tablePoint, Vector3.up, 90);
+        if (canRotate == ERotation.None)
+            return;
+        else if (canRotate == ERotation._90º)
+            transform.RotateAround(tablePoint, Vector3.up, 90);
+        else if (canRotate == ERotation._45º)
+            transform.RotateAround(tablePoint, Vector3.up, 45);
     }
 
-    private float RoundToNumber(float number, float factor)
-    { return Mathf.Round(number / factor) * factor; }
+    private void DragWithMouse()
+    {
+        Vector3 tablePoint = TablePoint();
 
-    // Returns point resulting from colliding ray from mouse to table
+        if (Input.GetKeyUp(KeyCode.R))
+            Rotate(tablePoint);
+
+        // Centra o no el objeto al clickar
+        transform.position = tablePoint + clickOffset;
+        transform.position = new Vector3(transform.position.x, hover, transform.position.z);
+    }
+
+    /// <summary> Returns point resulting from colliding ray from mouse to table. </summary>
     private Vector3 TablePoint()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 20f, LayerMask.GetMask("Table")))
+        if (Physics.Raycast(ray, out hit, 20f, DraggablesMaster.Board))
             return hit.point;
         else
             return Vector3.zero;
-    }
-
-    private void Snap()
-    {
-        if (snapTo == SnapTo.None) return;
-
-        float factor = GridController.TileSize;
-        float x = 0f, z = 0f;
-
-        if (snapTo == SnapTo.Line)
-        {
-            x = RoundToNumber(transform.localPosition.x, factor);
-            z = RoundToNumber(transform.localPosition.z, factor);
-        }
-        else
-        {
-            x = RoundToNumber(transform.localPosition.x - (factor / 2), factor) + factor / 2;
-            z = RoundToNumber(transform.localPosition.z - (factor / 2), factor) + factor / 2;
-        }
-
-        transform.localPosition = new Vector3(x, transform.localPosition.y, z);
     }
 }

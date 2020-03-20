@@ -58,8 +58,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064adb9962efe1d4193028f69f6daed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  centerOnClick: 0
+  isClicked: 0
   snapTo: 2
+  canRotate: 0
+  canDuplicate: 1
+  centerOnClick: 0
   hover: 0.001
 --- !u!1 &8596840402763318677
 GameObject:
