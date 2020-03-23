@@ -6,22 +6,47 @@ public class InputManager : MonoBehaviour
 {
     [SerializeField] DraggablesMaster draggablesMaster = null;
     [SerializeField] WallConstructor wallConstructor = null;
+    [SerializeField] FloorConstructor floorConstructor = null;
+
+    enum ETools { None, Walls, Floors };
+
+    private ETools currentTool = ETools.None;
 
     void Update()
     {
+        switch (currentTool)
+        {
+            case ETools.Walls: // If there is any tool selected, check if it have been released
+                if (Input.GetKeyUp(KeyCode.W))
+                { wallConstructor.StopWalling(); currentTool = ETools.None; }
+                break;
+            case ETools.Floors:
+                if (Input.GetKeyUp(KeyCode.F))
+                { floorConstructor.StopFlooring(); currentTool = ETools.None; }
+                break;
+            default: // If no tool is selected, check for tool triggers
+                if (Input.GetKeyDown(KeyCode.W))
+                { wallConstructor.StartWalling(); currentTool = ETools.Walls; }
+                if (Input.GetKeyDown(KeyCode.F))
+                { floorConstructor.StartFlooring(); currentTool = ETools.Floors; }
+                break;
+        }
 
-        if (Input.GetKeyDown(KeyCode.W))
-            wallConstructor.StartWalling();
-        if (Input.GetKeyUp(KeyCode.W))
-            wallConstructor.StopWalling();
-
-        if (wallConstructor.isWalling)
+        if (currentTool == ETools.Walls)
         {
             if (Input.GetMouseButtonDown(0))
                 wallConstructor.OnPointerDown();
             if (Input.GetMouseButtonUp(0))
                 wallConstructor.OnPointerUp();
+            return;
+        }
 
+        if (currentTool == ETools.Floors)
+        {
+            if (Input.GetMouseButtonDown(0))
+                floorConstructor.OnPointerDown();
+            if (Input.GetMouseButtonUp(0))
+                floorConstructor.OnPointerUp();
             return;
         }
 

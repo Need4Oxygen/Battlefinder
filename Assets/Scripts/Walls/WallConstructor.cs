@@ -81,6 +81,10 @@ public class WallConstructor : MonoBehaviour
                 newWall.RotateAround(newWall.position, Vector3.up, 90);
             }
         }
+
+        List<Vector2> vertices = new List<Vector2>();
+        for (int i = 0; i < landMarkList.Count; i++)
+            vertices.Add(new Vector2(landMarkList[i].position.x, landMarkList[i].position.z));
     }
 
     public void OnPointerDown()

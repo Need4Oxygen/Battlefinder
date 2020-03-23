@@ -22,12 +22,14 @@ public class CameraController : MonoBehaviour
 
     public void Update()
     {
-        if (Input.mouseScrollDelta.y > 0 && transform.position.y < camZoomMax)
+        if (Input.mouseScrollDelta.y < 0 && transform.position.y < camZoomMax)
         {
+            // Zoom out
             transform.position = new Vector3(transform.position.x, transform.position.y + camZoomStrength, transform.position.z);
         }
-        else if (Input.mouseScrollDelta.y < 0 && transform.position.y > camZoomMin)
+        else if (Input.mouseScrollDelta.y > 0 && transform.position.y > camZoomMin)
         {
+            // Zoom in
             transform.position = new Vector3(transform.position.x, transform.position.y - camZoomStrength, transform.position.z);
         }
 

@@ -6,6 +6,7 @@ public class DraggablesMaster : MonoBehaviour
 {
     public static Draggable ObjectBeingDragged;
     public static LayerMask Board;
+    public static LayerMask Draggables;
 
     [SerializeField] private Camera cam = null;
 
@@ -15,6 +16,7 @@ public class DraggablesMaster : MonoBehaviour
     void Awake()
     {
         Board = LayerMask.GetMask("Table");
+        Draggables = LayerMask.GetMask("Draggables");
     }
 
     public void OnPointerDown()
@@ -40,7 +42,7 @@ public class DraggablesMaster : MonoBehaviour
         cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(cam.ScreenPointToRay(Input.mousePosition), out hit))
+        if (Physics.Raycast(cam.ScreenPointToRay(Input.mousePosition), out hit, 100f, Draggables))
         {
             Draggable draggable = hit.collider.GetComponent<Draggable>();
             if (draggable != null)
