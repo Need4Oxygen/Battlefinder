@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 public class Json
 {
-    public void SaveInPlayerPrefs(string key, object obj)
+    public static void SaveInPlayerPrefs(string key, object obj)
     {
         try
         {
@@ -20,7 +20,7 @@ public class Json
         }
     }
 
-    public object LoadFromPlayerPrefs(string key)
+    public static object LoadFromPlayerPrefs(string key)
     {
         try
         {
