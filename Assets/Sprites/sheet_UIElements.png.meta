@@ -10,16 +10,16 @@ TextureImporter:
     second: spr_UISemi_Left
   - first:
       213: -5021875722870312445
-    second: spr_UIBullet_down
+    second: spr_bullet_down
   - first:
       213: 4775969418708319074
-    second: spr_UIBullet_right
+    second: spr_bullet_right
   - first:
       213: -8581637295544620006
-    second: spr_UIBullet_left
+    second: spr_bullet_left
   - first:
       213: 7830641444876751472
-    second: spr_UIBullet_center
+    second: spr_panel
   - first:
       213: 2634419132774421127
     second: spr_UI_arrowLeft_fill
@@ -34,7 +34,7 @@ TextureImporter:
     second: spr_UI_arrowUp_fill
   - first:
       213: 1494550374503394739
-    second: spr_UIFiller
+    second: spr_filler
   - first:
       213: -753651981828262252
     second: sheet_UIElements_11
@@ -136,58 +136,61 @@ TextureImporter:
     second: spr_UISemi_Up
   - first:
       213: 1071211467219980545
-    second: spr_UIBullet_left_sdw
+    second: spr_bullet_left_sdw
   - first:
       213: 467690137874832246
-    second: spr_UIBullet_up
+    second: spr_bullet_up
   - first:
       213: -6442177328417718503
-    second: spr_UIBullet_center
+    second: spr_panel
   - first:
       213: 6152737628920866983
-    second: spr_UIBullet_down_sdw
+    second: spr_bullet_down_sdw
   - first:
       213: -4059463317017694666
-    second: spr_UIBullet_right_sdw
+    second: spr_bullet_right_sdw
   - first:
       213: 7882445878060173962
-    second: spr_UIBullet_up_sdw
+    second: spr_bullet_up_sdw
   - first:
       213: -5787656765679014322
-    second: spr_UIBullet_center_sdw
+    second: spr_panel_sdw
   - first:
       213: -7862623274258411722
-    second: spr_UI_line
+    second: spr_line
   - first:
       213: -5854349818870597690
-    second: spr_UIBullet_up_emp
+    second: spr_bullet_up_emp
   - first:
       213: -2516833958597621045
-    second: spr_UIBullet_right_emp
+    second: spr_bullet_right_emp
   - first:
       213: 7131144240265997537
-    second: spr_UIBullet_left_emp
+    second: spr_bullet_left_emp
   - first:
       213: -8411162941700905675
-    second: spr_UIBullet_down_emp
+    second: spr_bullet_down_emp
   - first:
       213: -8202814039398277701
-    second: spr_UIBullet_center_emp
+    second: spr_panel_emp
   - first:
       213: -6442177328417718503
-    second: spr_UIBullet_down_emp_sdw
+    second: spr_bullet_down_emp_sdw
   - first:
       213: -1790620577821640990
-    second: spr_UIBullet_left_emp_sdw
+    second: spr_bullet_left_emp_sdw
   - first:
       213: 1168449868335934994
-    second: spr_UIBullet_right_emp_sdw
+    second: spr_bullet_right_emp_sdw
   - first:
       213: -7609940696752684168
-    second: spr_UIBullet_up_emp_sdw
+    second: spr_bullet_up_emp_sdw
   - first:
       213: 6235911374357104256
-    second: spr_UIBullet_center_emp_sdw
+    second: spr_panel_emp_sdw
+  - first:
+      213: 6988943273730952849
+    second: sheet_UIElements_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -309,7 +312,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spr_UIBullet_up
+      name: spr_bullet_up
       rect:
         serializedVersion: 2
         x: 30
@@ -330,7 +333,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_UIBullet_down
+      name: spr_bullet_down
       rect:
         serializedVersion: 2
         x: 30
@@ -351,7 +354,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_UIBullet_right
+      name: spr_bullet_right
       rect:
         serializedVersion: 2
         x: 30
@@ -372,7 +375,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_UIBullet_left
+      name: spr_bullet_left
       rect:
         serializedVersion: 2
         x: 150
@@ -393,7 +396,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_UIBullet_center
+      name: spr_panel
       rect:
         serializedVersion: 2
         x: 30
@@ -414,7 +417,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_UIFiller
+      name: spr_filler
       rect:
         serializedVersion: 2
         x: 192
@@ -435,7 +438,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_UIBullet_left_sdw
+      name: spr_bullet_left_sdw
       rect:
         serializedVersion: 2
         x: 450
@@ -456,7 +459,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_UIBullet_down_sdw
+      name: spr_bullet_down_sdw
       rect:
         serializedVersion: 2
         x: 318
@@ -477,7 +480,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_UIBullet_right_sdw
+      name: spr_bullet_right_sdw
       rect:
         serializedVersion: 2
         x: 318
@@ -498,7 +501,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_UIBullet_up_sdw
+      name: spr_bullet_up_sdw
       rect:
         serializedVersion: 2
         x: 318
@@ -519,7 +522,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_UIBullet_center_sdw
+      name: spr_panel_sdw
       rect:
         serializedVersion: 2
         x: 318
@@ -540,7 +543,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_UI_line
+      name: spr_line
       rect:
         serializedVersion: 2
         x: 609
@@ -561,7 +564,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_UIBullet_up_emp
+      name: spr_bullet_up_emp
       rect:
         serializedVersion: 2
         x: 30
@@ -582,7 +585,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_UIBullet_right_emp
+      name: spr_bullet_right_emp
       rect:
         serializedVersion: 2
         x: 30
@@ -603,7 +606,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_UIBullet_left_emp
+      name: spr_bullet_left_emp
       rect:
         serializedVersion: 2
         x: 150
@@ -624,7 +627,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_UIBullet_down_emp
+      name: spr_bullet_down_emp
       rect:
         serializedVersion: 2
         x: 30
@@ -645,7 +648,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_UIBullet_center_emp
+      name: spr_panel_emp
       rect:
         serializedVersion: 2
         x: 30
@@ -666,7 +669,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_UIBullet_down_emp_sdw
+      name: spr_bullet_down_emp_sdw
       rect:
         serializedVersion: 2
         x: 318
@@ -687,7 +690,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_UIBullet_left_emp_sdw
+      name: spr_bullet_left_emp_sdw
       rect:
         serializedVersion: 2
         x: 450
@@ -708,7 +711,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_UIBullet_right_emp_sdw
+      name: spr_bullet_right_emp_sdw
       rect:
         serializedVersion: 2
         x: 318
@@ -729,7 +732,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_UIBullet_up_emp_sdw
+      name: spr_bullet_up_emp_sdw
       rect:
         serializedVersion: 2
         x: 318
@@ -750,7 +753,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_UIBullet_center_emp_sdw
+      name: spr_panel_emp_sdw
       rect:
         serializedVersion: 2
         x: 318
