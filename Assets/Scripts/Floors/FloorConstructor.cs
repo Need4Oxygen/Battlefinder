@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FloorConstructor : MonoBehaviour
 {
-
     [HideInInspector] public bool isFlooring = false;
 
-    [SerializeField] private Camera cam = null;
+    [SerializeField] private InputManager inputManager = null;
+    [SerializeField] private Button toolButton = null;
     [SerializeField] private LineRenderer lineRenderer = null;
 
     [Space(15)]
@@ -22,6 +23,11 @@ public class FloorConstructor : MonoBehaviour
     private List<Transform> landMarkList = new List<Transform>();
     private Transform pointer = null;
 
+    void Awake()
+    {
+        CustomEvents.OnToolChange += OnToolChange;
+    }
+
     void Start()
     {
         pointer = Instantiate(pointerPrefab, Vector3.zero, Quaternion.identity);
@@ -31,27 +37,48 @@ public class FloorConstructor : MonoBehaviour
     void Update()
     {
         if (isFlooring)
-            Flooring();
+        {
+            if (Input.GetMouseButtonDown(0))
+                OnPointerDown();
+            if (Input.GetButtonDown("Submit") || Input.GetButtonDown("Floors"))
+                GenerateFloor();
+
+            UpdatePointerPos();
+        }
     }
 
-    public void StartFlooring()
+    private void OnToolChange(ETools tool)
+    {
+        if (tool == ETools.Floors && !isFlooring)
+        {
+            StartFlooring();
+        }
+        else if (tool != ETools.Floors && isFlooring)
+        {
+            StopFlooring();
+        }
+    }
+
+    private void UpdatePointerPos()
+    {
+        pointer.position = inputManager.MousePosInBoard(true);
+    }
+
+    private void StartFlooring()
     {
         isFlooring = true;
-
+        toolButton.image.color = Globals.iconsSelectedColorTemp;
+        UpdatePointerPos();
         pointer.gameObject.SetActive(true);
     }
 
-    public void StopFlooring()
+    private void StopFlooring()
     {
         isFlooring = false;
+        toolButton.image.color = Globals.iconsColorTemp;
         pointer.gameObject.SetActive(false);
 
-        List<Vector2> vertices = GenerateVerticesFromLandMarks();
-
-        if (landMarkList.Count >= 3)
-            GenerateFloor(vertices);
-
-        ClearLandMarksAndLine();
+        GenerateFloor();
     }
 
     private List<Vector2> GenerateVerticesFromLandMarks()
@@ -67,23 +94,12 @@ public class FloorConstructor : MonoBehaviour
         return vertices;
     }
 
-    private void Flooring()
+    public void GenerateFloor()
     {
-        cam.ScreenPointToRay(Input.mousePosition);
+        if (landMarkList.Count < 3) return;
 
-        RaycastHit hit;
-        if (Physics.Raycast(cam.ScreenPointToRay(Input.mousePosition), out hit))
-        {
-            Vector3 closestRoundedPos = new Vector3(
-                Mathf.Round(hit.point.x), 0f,
-                Mathf.Round(hit.point.z));
+        List<Vector2> vertices2D = GenerateVerticesFromLandMarks();
 
-            pointer.position = closestRoundedPos;
-        }
-    }
-
-    public void GenerateFloor(List<Vector2> vertices2D)
-    {
         Vector2[] v = vertices2D.ToArray();
         Mesh newFloorMesh = GenerateMesh(v);
 
@@ -99,6 +115,8 @@ public class FloorConstructor : MonoBehaviour
         {
             Debug.LogWarning("[FloorConstructor] Cloudn't generate floor, polygon facing down!");
         }
+
+        ClearLandMarksAndLine();
     }
 
     public Mesh GenerateMesh(Vector2[] vertices2D)
@@ -123,16 +141,11 @@ public class FloorConstructor : MonoBehaviour
         return mesh;
     }
 
-    public void OnPointerDown()
+    private void OnPointerDown()
     {
         PlaceLandMark();
         if (landMarkList.Count >= 3)
             RedrawLine();
-    }
-
-    public void OnPointerUp()
-    {
-        // throw new NotImplementedException();
     }
 
     private void PlaceLandMark()

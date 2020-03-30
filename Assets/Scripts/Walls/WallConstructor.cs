@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WallConstructor : MonoBehaviour
 {
     [HideInInspector] public bool isWalling = false;
 
-    [SerializeField] private Camera cam = null;
+    [SerializeField] private InputManager inputManager = null;
+    [SerializeField] private Button toolButton = null;
     [SerializeField] private LineRenderer lineRenderer = null;
 
     [Space(15)]
@@ -22,6 +23,11 @@ public class WallConstructor : MonoBehaviour
     private List<Transform> landMarkList = new List<Transform>();
     private Transform pointer = null;
 
+    void Awake()
+    {
+        CustomEvents.OnToolChange += OnToolChange;
+    }
+
     void Start()
     {
         pointer = Instantiate(pointerPrefab, Vector3.zero, Quaternion.identity);
@@ -31,42 +37,54 @@ public class WallConstructor : MonoBehaviour
     void Update()
     {
         if (isWalling)
-            Walling();
+        {
+            if (Input.GetMouseButtonDown(0))
+                OnPointerDown();
+            if (Input.GetButtonDown("Submit") || Input.GetButtonDown("Walls"))
+                GenerateWall();
+
+            UpdatePointerPos();
+        }
     }
 
-    public void StartWalling()
+    private void OnToolChange(ETools tool)
+    {
+        if (tool == ETools.Walls && !isWalling)
+        {
+            StartWalling();
+        }
+        else if (tool != ETools.Walls && isWalling)
+        {
+            StopWalling();
+        }
+    }
+
+    private void UpdatePointerPos()
+    {
+        pointer.position = inputManager.MousePosInBoard(true);
+    }
+
+    private void StartWalling()
     {
         isWalling = true;
-
+        toolButton.image.color = Globals.iconsSelectedColorTemp;
+        UpdatePointerPos();
         pointer.gameObject.SetActive(true);
     }
 
-    public void StopWalling()
+    private void StopWalling()
     {
         isWalling = false;
+        toolButton.image.color = Globals.iconsColorTemp;
         pointer.gameObject.SetActive(false);
 
         GenerateWall();
-        ClearLandMarksAndLine();
-    }
-
-    private void Walling()
-    {
-        cam.ScreenPointToRay(Input.mousePosition);
-
-        RaycastHit hit;
-        if (Physics.Raycast(cam.ScreenPointToRay(Input.mousePosition), out hit))
-        {
-            Vector3 closestRoundedPos = new Vector3(
-                Mathf.Round(hit.point.x), 0f,
-                Mathf.Round(hit.point.z));
-
-            pointer.position = closestRoundedPos;
-        }
     }
 
     private void GenerateWall()
     {
+        if (landMarkList.Count < 0) return;
+
         for (int i = 0; i < landMarkList.Count; i++)
         {
             Instantiate(knot, landMarkList[i].position, Quaternion.identity);
@@ -85,17 +103,14 @@ public class WallConstructor : MonoBehaviour
         List<Vector2> vertices = new List<Vector2>();
         for (int i = 0; i < landMarkList.Count; i++)
             vertices.Add(new Vector2(landMarkList[i].position.x, landMarkList[i].position.z));
+
+        ClearLandMarksAndLine();
     }
 
     public void OnPointerDown()
     {
         PlaceLandMark();
         RedrawLine();
-    }
-
-    public void OnPointerUp()
-    {
-        // throw new NotImplementedException();
     }
 
     private void PlaceLandMark()

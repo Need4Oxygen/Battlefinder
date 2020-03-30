@@ -5,18 +5,31 @@ using UnityEngine;
 public class DraggablesMaster : MonoBehaviour
 {
     public static Draggable ObjectBeingDragged;
-    public static LayerMask Board;
     public static LayerMask Draggables;
 
     [SerializeField] private Camera cam = null;
 
-    [HideInInspector] public bool isLeftAltPressed;
-    [HideInInspector] public bool isSuprPressed;
+    private ETools currentTool;
 
     void Awake()
     {
-        Board = LayerMask.GetMask("Table");
         Draggables = LayerMask.GetMask("Draggables");
+    }
+
+    void Update()
+    {
+        if (currentTool == ETools.None)
+        {
+            if (Input.GetMouseButtonDown(0))
+                OnPointerDown();
+            if (Input.GetMouseButtonUp(0))
+                OnPointerUp();
+        }
+    }
+
+    private void OnToolChange(ETools tool)
+    {
+        currentTool = tool;
     }
 
     public void OnPointerDown()
@@ -53,9 +66,9 @@ public class DraggablesMaster : MonoBehaviour
 
     private void SelectWithModifiers(Draggable draggable)
     {
-        if (isSuprPressed)
+        if (Input.GetKey(KeyCode.Delete))
             Destroy(draggable.gameObject);
-        else if (isLeftAltPressed && draggable.canDuplicate)
+        else if (Input.GetKey(KeyCode.LeftAlt) && draggable.canDuplicate)
             Select(draggable.Duplicate());
         else
             Select(draggable);

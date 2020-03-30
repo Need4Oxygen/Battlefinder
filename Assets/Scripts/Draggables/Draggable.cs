@@ -136,7 +136,7 @@ public class Draggable : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 20f, DraggablesMaster.Board))
+        if (Physics.Raycast(ray, out hit, 20f, InputManager.BoardLayer))
             return hit.point;
         else
             return Vector3.zero;

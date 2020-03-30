@@ -4,68 +4,60 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-    [SerializeField] DraggablesMaster draggablesMaster = null;
-    [SerializeField] WallConstructor wallConstructor = null;
-    [SerializeField] FloorConstructor floorConstructor = null;
+    public static LayerMask BoardLayer;
 
-    enum ETools { None, Walls, Floors };
+    [SerializeField] private DraggablesMaster draggablesMaster = null;
+    [SerializeField] private Camera cam = null;
 
-    private ETools currentTool = ETools.None;
+    public static ETools currentTool = ETools.None;
+
+    void Awake()
+    {
+        BoardLayer = LayerMask.GetMask("Table");
+    }
 
     void Update()
     {
-        switch (currentTool)
+        if (Input.GetButtonDown("Cancel"))
         {
-            case ETools.Walls: // If there is any tool selected, check if it have been released
-                if (Input.GetKeyUp(KeyCode.W))
-                { wallConstructor.StopWalling(); currentTool = ETools.None; }
-                break;
-            case ETools.Floors:
-                if (Input.GetKeyUp(KeyCode.F))
-                { floorConstructor.StopFlooring(); currentTool = ETools.None; }
-                break;
-            default: // If no tool is selected, check for tool triggers
-                if (Input.GetKeyDown(KeyCode.W))
-                { wallConstructor.StartWalling(); currentTool = ETools.Walls; }
-                if (Input.GetKeyDown(KeyCode.F))
-                { floorConstructor.StartFlooring(); currentTool = ETools.Floors; }
-                break;
-        }
-
-        if (currentTool == ETools.Walls)
-        {
-            if (Input.GetMouseButtonDown(0))
-                wallConstructor.OnPointerDown();
-            if (Input.GetMouseButtonUp(0))
-                wallConstructor.OnPointerUp();
+            SetCurrentTool(ETools.None);
             return;
         }
 
-        if (currentTool == ETools.Floors)
+        if (Input.GetButtonDown("Walls"))
         {
-            if (Input.GetMouseButtonDown(0))
-                floorConstructor.OnPointerDown();
-            if (Input.GetMouseButtonUp(0))
-                floorConstructor.OnPointerUp();
+            SetCurrentTool(ETools.Walls);
             return;
         }
 
-        // Left Click
-        if (Input.GetMouseButtonDown(0))
-            draggablesMaster.OnPointerDown();
-        if (Input.GetMouseButtonUp(0))
-            draggablesMaster.OnPointerUp();
+        if (Input.GetButtonDown("Floors"))
+        {
+            SetCurrentTool(ETools.Floors);
+            return;
+        }
 
-        // Left Alt
-        if (Input.GetKeyDown(KeyCode.LeftAlt))
-            draggablesMaster.isLeftAltPressed = true;
-        if (Input.GetKeyUp(KeyCode.LeftAlt))
-            draggablesMaster.isLeftAltPressed = false;
 
-        // Supr
-        if (Input.GetKeyDown(KeyCode.Delete))
-            draggablesMaster.isSuprPressed = true;
-        if (Input.GetKeyUp(KeyCode.Delete))
-            draggablesMaster.isSuprPressed = false;
+    }
+
+    private void SetCurrentTool(ETools tools)
+    {
+        currentTool = tools;
+        CustomEvents.OnToolChange(tools);
+    }
+
+    public Vector3 MousePosInBoard(bool rounded)
+    {
+        cam.ScreenPointToRay(Input.mousePosition);
+
+        RaycastHit hit;
+        if (Physics.Raycast(cam.ScreenPointToRay(Input.mousePosition), out hit, BoardLayer))
+        {
+            if (rounded)
+                return new Vector3(Mathf.Round(hit.point.x), 0f, Mathf.Round(hit.point.z));
+            else
+                return new Vector3(hit.point.x, 0f, hit.point.z);
+        }
+
+        return Vector3.zero;
     }
 }

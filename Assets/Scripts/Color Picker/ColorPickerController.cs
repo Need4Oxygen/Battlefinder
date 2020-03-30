@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ColorPickerController : MonoBehaviour
 {
-    public static ColorPickerController Instance;
+    public static ColorPickerController Instance = null;
 
-    public Transform colorPickerPanelPrefab;
+    public Transform colorPickerPanelPrefab = null;
 
-    private Transform colorPickerPanel;
-    private ColorPickerPanel colorPickerPanelScript;
-    private Coroutine askingCorou;
+    private Transform colorPickerPanel = null;
+    private ColorPickerPanel colorPickerPanelScript = null;
+    private Coroutine askingCorou = null;
 
     [HideInInspector] public bool isAskingForColor = false;
 
@@ -27,8 +27,9 @@ public class ColorPickerController : MonoBehaviour
     {
         if (colorPickerPanel == null)
         {
-            colorPickerPanel = Instantiate(colorPickerPanel, Vector3.zero, Quaternion.identity, null);
-            colorPickerPanelScript = colorPickerPanel.GetComponent<ColorPickerPanel>();
+            Transform newColorPickPanel = Instantiate(colorPickerPanelPrefab, Vector3.zero, Quaternion.identity, null);
+            colorPickerPanel = newColorPickPanel;
+            colorPickerPanelScript = newColorPickPanel.GetComponent<ColorPickerPanel>();
         }
         colorPickerPanel.gameObject.SetActive(false);
     }
@@ -47,6 +48,7 @@ public class ColorPickerController : MonoBehaviour
             isAskingForColor = true;
 
             colorPickerPanel.position = anchor.position;
+            colorPickerPanel.localScale = Vector3.one;
             colorPickerPanel.parent = anchor;
             colorPickerPanel.gameObject.SetActive(true);
             colorPickerPanelScript.AskForColors(initialColor, callback);
