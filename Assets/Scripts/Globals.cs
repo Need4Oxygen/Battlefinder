@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Globals : MonoBehaviour
 {
-    public static Board Board = null;
+    public static GameData CurrentGame = null;
     public static UserData UserData = null;
     public static SystemData SystemData = null;
 

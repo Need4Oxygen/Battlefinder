@@ -6,7 +6,6 @@ public class InputManager : MonoBehaviour
 {
     public static LayerMask BoardLayer;
 
-    [SerializeField] private DraggablesMaster draggablesMaster = null;
     [SerializeField] private Camera cam = null;
 
     public static ETools currentTool = ETools.None;

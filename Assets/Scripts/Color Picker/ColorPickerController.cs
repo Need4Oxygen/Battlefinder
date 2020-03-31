@@ -10,7 +10,6 @@ public class ColorPickerController : MonoBehaviour
 
     private Transform colorPickerPanel = null;
     private ColorPickerPanel colorPickerPanelScript = null;
-    private Coroutine askingCorou = null;
 
     [HideInInspector] public bool isAskingForColor = false;
 
