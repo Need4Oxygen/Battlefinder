@@ -47,13 +47,13 @@ public class FloorConstructor : MonoBehaviour
         }
     }
 
-    private void OnToolChange(ETools tool)
+    private void OnToolChange(E_Tools tool)
     {
-        if (tool == ETools.Floors && !isFlooring)
+        if (tool == E_Tools.Floors && !isFlooring)
         {
             StartFlooring();
         }
-        else if (tool != ETools.Floors && isFlooring)
+        else if (tool != E_Tools.Floors && isFlooring)
         {
             StopFlooring();
         }

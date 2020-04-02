@@ -9,7 +9,7 @@ public class DraggablesMaster : MonoBehaviour
 
     [SerializeField] private Camera cam = null;
 
-    private ETools currentTool;
+    private E_Tools currentTool;
 
     void Awake()
     {
@@ -18,7 +18,7 @@ public class DraggablesMaster : MonoBehaviour
 
     void Update()
     {
-        if (currentTool == ETools.None)
+        if (currentTool == E_Tools.None)
         {
             if (Input.GetMouseButtonDown(0))
                 OnPointerDown();
@@ -27,7 +27,7 @@ public class DraggablesMaster : MonoBehaviour
         }
     }
 
-    private void OnToolChange(ETools tool)
+    private void OnToolChange(E_Tools tool)
     {
         currentTool = tool;
     }

@@ -1,5 +1,5 @@
-﻿public enum ESnap { None, Slot, Line }
-public enum ERotation { None, _90º, _45º }
-public enum ELanguages { None, Default, English, Spanish }
-public enum ETools { None, Walls, Floors }
-public enum EGames { None, Default, PF2e }
+﻿public enum E_Snap { None, Slot, Line }
+public enum E_Rotation { None, _90º, _45º }
+public enum E_Languages { None, Default, English, Spanish }
+public enum E_Tools { None, Walls, Floors }
+public enum E_Games { None, Default, PF2E }

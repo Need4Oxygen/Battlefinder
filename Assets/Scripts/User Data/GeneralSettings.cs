@@ -3,6 +3,6 @@ using UnityEngine;
 public class GeneralSettings
 {
 
-    public static ELanguages Language = ELanguages.Default;
+    public static E_Languages Language = E_Languages.Default;
 
 }

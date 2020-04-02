@@ -5,8 +5,8 @@ public class Draggable : MonoBehaviour
     [HideInInspector] public bool isClicked = false;
 
     [Header("Draggable Options")]
-    [SerializeField] ESnap snapTo = 0;
-    [SerializeField] ERotation canRotate = 0;
+    [SerializeField] E_Snap snapTo = 0;
+    [SerializeField] E_Rotation canRotate = 0;
     [SerializeField] bool canScale = false;
     public bool canDuplicate = false;
     [SerializeField] bool centerOnClick = false;
@@ -53,16 +53,16 @@ public class Draggable : MonoBehaviour
     /// <summary> Snap the object to grid. </summary>
     public virtual void Snap()
     {
-        if (snapTo == ESnap.None)
+        if (snapTo == E_Snap.None)
             return;
         else
             Snap(snapTo);
     }
-    public virtual void Snap(ESnap snapTo)
+    public virtual void Snap(E_Snap snapTo)
     {
         float x = 0f, z = 0f;
 
-        if (snapTo == ESnap.Line)
+        if (snapTo == E_Snap.Line)
         {
             x = Mathf.Round(transform.localPosition.x);
             z = Mathf.Round(transform.localPosition.z);
@@ -79,11 +79,11 @@ public class Draggable : MonoBehaviour
     /// <summary> Rotate the object. </summary>
     protected virtual void Rotate(Vector3 tablePoint)
     {
-        if (canRotate == ERotation.None)
+        if (canRotate == E_Rotation.None)
             return;
-        else if (canRotate == ERotation._90º)
+        else if (canRotate == E_Rotation._90º)
             transform.RotateAround(tablePoint, Vector3.up, 90);
-        else if (canRotate == ERotation._45º)
+        else if (canRotate == E_Rotation._45º)
             transform.RotateAround(tablePoint, Vector3.up, 45);
     }
 
@@ -93,9 +93,9 @@ public class Draggable : MonoBehaviour
         transform.localScale = new Vector3(scale, transform.localScale.y, scale);
 
         if (scale % 2 == 0) // If even
-            snapTo = ESnap.Line;
+            snapTo = E_Snap.Line;
         else
-            snapTo = ESnap.Slot;
+            snapTo = E_Snap.Slot;
     }
 
     protected virtual void DragWithMouse()

@@ -8,7 +8,7 @@ public class InputManager : MonoBehaviour
 
     [SerializeField] private Camera cam = null;
 
-    public static ETools currentTool = ETools.None;
+    public static E_Tools currentTool = E_Tools.None;
 
     void Awake()
     {
@@ -19,26 +19,26 @@ public class InputManager : MonoBehaviour
     {
         if (Input.GetButtonDown("Cancel"))
         {
-            SetCurrentTool(ETools.None);
+            SetCurrentTool(E_Tools.None);
             return;
         }
 
         if (Input.GetButtonDown("Walls"))
         {
-            SetCurrentTool(ETools.Walls);
+            SetCurrentTool(E_Tools.Walls);
             return;
         }
 
         if (Input.GetButtonDown("Floors"))
         {
-            SetCurrentTool(ETools.Floors);
+            SetCurrentTool(E_Tools.Floors);
             return;
         }
 
 
     }
 
-    private void SetCurrentTool(ETools tools)
+    private void SetCurrentTool(E_Tools tools)
     {
         currentTool = tools;
         CustomEvents.OnToolChange(tools);

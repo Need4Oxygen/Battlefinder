@@ -47,13 +47,13 @@ public class WallConstructor : MonoBehaviour
         }
     }
 
-    private void OnToolChange(ETools tool)
+    private void OnToolChange(E_Tools tool)
     {
-        if (tool == ETools.Walls && !isWalling)
+        if (tool == E_Tools.Walls && !isWalling)
         {
             StartWalling();
         }
-        else if (tool != ETools.Walls && isWalling)
+        else if (tool != E_Tools.Walls && isWalling)
         {
             StopWalling();
         }

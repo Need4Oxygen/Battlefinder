@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PF2E_PlayerData : PlayerData
 {
+    public string guid;
     public int level = 0;
     public int experience = 0;
 
