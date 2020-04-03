@@ -9,6 +9,10 @@ public class PF2E_Controller : MonoBehaviour
 
     #region Campaign Logic
 
+    public static List<PF2E_CampaignID> PF2eCampaignIDs;
+
+    [SerializeField] private ConfirmationController confirmation = null;
+
     [SerializeField] private CanvasGroup campaignPanel = null;
     [SerializeField] private TMP_Text campaignName = null;
 
@@ -32,21 +36,36 @@ public class PF2E_Controller : MonoBehaviour
     private List<GameObject> enemiesButtonList = new List<GameObject>();
     private List<GameObject> npcsButtonList = new List<GameObject>();
 
-    // Guid.NewGuid().ToString();
-
     private PF2E_CampaignID currentCampaignID = null;
     private PF2E_CampaignData currentCampaign = null;
 
+    void Awake()
+    {
+        PF2eCampaignIDs = Json.LoadFromPlayerPrefs<List<PF2E_CampaignID>>("PF2e_campaignsIDList");
+        if (PF2eCampaignIDs == null)
+            PF2eCampaignIDs = new List<PF2E_CampaignID>();
+    }
+
     void Start()
     {
-        PanelFader.RescaleAndFade(campaignPanel.transform, campaignPanel, 0.8f, 0f, 0f);
+        StartCoroutine(PanelFader.RescaleAndFade(campaignPanel.transform, campaignPanel, 0.85f, 0f, 0f));
         campaignPanel.gameObject.SetActive(false);
+    }
+
+    private void OpenCampaingPanel()
+    {
+        StartCoroutine(PanelFader.RescaleAndFade(campaignPanel.transform, campaignPanel, 1f, 1f, 0.1f));
+    }
+
+    private void CloseCampaingPanel()
+    {
+        StartCoroutine(PanelFader.RescaleAndFade(campaignPanel.transform, campaignPanel, 0.85f, 0f, 0.1f));
     }
 
     /// <summary> Load given Campaign. Called by UI buttons that enumerate existing Campaigns. </summary>
     public void LoadCampaign(PF2E_CampaignID campaignID)
     {
-        PanelFader.RescaleAndFade(campaignPanel.transform, campaignPanel, 1f, 1f, 0.2f);
+        OpenCampaingPanel();
 
         // Open Campaign Panel
         campaignPanel.gameObject.SetActive(true);
@@ -54,37 +73,57 @@ public class PF2E_Controller : MonoBehaviour
 
         // Set current campaing and refresh boards, players, enemies and npcs
         currentCampaignID = campaignID;
-        currentCampaign = Json.LoadFromPlayerPrefs(campaignID.guid) as PF2E_CampaignData;
-        RefreshContainers();
+        currentCampaign = Json.LoadFromPlayerPrefs<PF2E_CampaignData>(campaignID.guid);
+        RefreshCampaignContainers();
     }
 
     public void CreateCampaign(string name)
     {
+        string newGuid = Guid.NewGuid().ToString();
+
         PF2E_CampaignID newCampaignID = new PF2E_CampaignID();
-        newCampaignID.guid = Guid.NewGuid().ToString();
+        newCampaignID.guid = newGuid;
         newCampaignID.name = name;
         newCampaignID.order = 0;
 
+        PF2E_CampaignData newCampaignData = new PF2E_CampaignData(newGuid, name, E_Games.PF2E);
 
+        PF2eCampaignIDs.Add(newCampaignID);
+        Json.SaveInPlayerPrefs("PF2e_campaignsIDList", PF2eCampaignIDs);
+        Json.SaveInPlayerPrefs(newGuid, newCampaignData);
+        PlayerPrefs.Save();
     }
 
+    // Called by Delete Button in PF2E Campaign Panel
     private void DeleteCampaign()
     {
-        // Open the confirmation panel
+        confirmation.AskForConfirmation("Do you want to delete current campaign?", DeleteCampaignCallback);
     }
 
-    private PF2E_CampaignData RetrieveCampaign(string guid)
+    private void DeleteCampaignCallback(bool value)
     {
-        return Json.LoadFromPlayerPrefs(guid) as PF2E_CampaignData;
+        if (value)
+        {
+            CloseCampaingPanel();
+            string guid = currentCampaignID.guid;
+            PF2eCampaignIDs.Remove(currentCampaignID);
+            Json.SaveInPlayerPrefs("PF2e_campaignsIDList", PF2eCampaignIDs);
+            PlayerPrefs.DeleteKey(guid);
+            PlayerPrefs.Save();
+        }
     }
 
-    private void SaveCampaign(string guid, PF2E_CampaignData campaign)
+    public void OnClickBackButton()
     {
-
-        Json.SaveInPlayerPrefs(currentCampaign.guid, campaign);
+        CloseCampaingPanel();
     }
 
-    private void RefreshContainers()
+    public void OnClickDeleteButton()
+    {
+        DeleteCampaign();
+    }
+
+    private void RefreshCampaignContainers()
     {
         // Delete all buttons
         foreach (var button in boardsButtonList)
@@ -105,13 +144,11 @@ public class PF2E_Controller : MonoBehaviour
         {
             Transform newBoardButton = Instantiate(boardsButtonPrefab, Vector3.zero, Quaternion.identity, boardsContainer).transform;
             PF2E_BoardButton newBoardButtonScript = newBoardButton.GetComponent<PF2E_BoardButton>();
-
         }
 
         // Spawn players buttons
         // Spawn enemies buttons
         // Spawn npcs buttons
-
     }
 
     #endregion

@@ -6,6 +6,7 @@ public class GameData
     public string title = "";
     public E_Games game = E_Games.None;
 
+    public GameData() { }
     public GameData(string title, E_Games game)
     {
         this.title = title;

@@ -19,19 +19,43 @@ public class GameSelectorController : MonoBehaviour
     [SerializeField] private Transform PF2E_container;
 
     private List<GameObject> PF2E_buttons = new List<GameObject>();
+    private E_Games currentGame = E_Games.None;
 
     /// <summary> Called by the diferent game buttons to select themselves </summary>
-    public void SelectGame(string game)
+    public void GameButtonPressed(string game)
     {
-        if (game == E_Games.PF2E.ToString())
-            PF2E_RefreshButtons();
+        switch (game)
+        {
+            case "PF2E":
+                if (currentGame != E_Games.PF2E)
+                {
+                    currentGame = E_Games.PF2E;
+                    PF2E_ExtendGameButtons();
+                }
+                else
+                {
+                    currentGame = E_Games.None;
+                    PF2E_RetractGameButtons();
+                }
+                break;
+            default: // Closes all Buttons
+                currentGame = E_Games.None;
+                PF2E_RetractGameButtons();
+                break;
+        }
+    }
+
+    void Start()
+    {
+        // Close Create Campaign panel instantly, in case it was open
+        StartCoroutine(PanelFader.RescaleAndFade(createCampaignPanel.transform, createCampaignPanel, 0.85f, 0f, 0f));
     }
 
     #region Create Campaing
 
     private void OpenCreateCampaignPanel()
     {
-        PanelFader.RescaleAndFade(createCampaignPanel.transform, createCampaignPanel, 1f, 1f, 0.2f);
+        StartCoroutine(PanelFader.RescaleAndFade(createCampaignPanel.transform, createCampaignPanel, 0.85f, 1f, 0f, 1f, 0.1f));
         createCampaignAcceptButton.onClick.RemoveAllListeners();
         createCampaignCancelButton.onClick.RemoveAllListeners();
         createCampaignAcceptButton.onClick.AddListener(() => OnClickCreateCampaingPanelAccept());
@@ -42,20 +66,16 @@ public class GameSelectorController : MonoBehaviour
 
     private void CloseCreateCampaignPanel()
     {
-        PanelFader.RescaleAndFade(createCampaignPanel.transform, createCampaignPanel, 0.8f, 0f, 0.2f);
+        StartCoroutine(PanelFader.RescaleAndFade(createCampaignPanel.transform, createCampaignPanel, 0.85f, 0f, 0.1f));
     }
 
     public void OnClickCreateCampaingPanelAccept()
     {
-        // Create Campaign with the name in input field
-        // Update buttons of selected game
-        // Close campaign Creation Panel
         CloseCreateCampaignPanel();
     }
 
     public void OnClickCreateCampaingPanelCancel()
     {
-        // Close campaign Creation Panel
         CloseCreateCampaignPanel();
     }
 
@@ -67,47 +87,56 @@ public class GameSelectorController : MonoBehaviour
 
     private void PF2E_RefreshButtons()
     {
-        List<PF2E_CampaignID> PF2eCampaignIDs = new List<PF2E_CampaignID>();
-        PF2eCampaignIDs = Json.LoadFromPlayerPrefs("PF2e_campaignsIDList") as List<PF2E_CampaignID>;
+        PF2E_RetractGameButtons();
+        PF2E_ExtendGameButtons();
+    }
+
+    private void PF2E_ExtendGameButtons()
+    {
+        // Campaign buttons
+        foreach (var item in PF2E_Controller.PF2eCampaignIDs)
+        {
+            Transform newButton = Instantiate(PF2E_campaingButtonPrefab, PF2E_container.position, Quaternion.identity, PF2E_container);
+            CampaignButton newButtonScript = newButton.GetComponent<CampaignButton>();
+            newButtonScript.campaignNameText.text = item.name;
+            newButtonScript.button.onClick.AddListener(() => PF2E_OnClickCampaignButton(item));
+            PF2eCampaignButtonList.Add(newButton.gameObject);
+        }
+
+        // Add Campaign button
+        Transform addButton = Instantiate(PF2E_campaingButtonPrefab, PF2E_container.position, Quaternion.identity, PF2E_container);
+        CampaignButton addButtonScript = addButton.GetComponent<CampaignButton>();
+        addButtonScript.campaignNameText.text = "+";
+        addButtonScript.button.onClick.AddListener(() => PF2E_OnClickAddCampaignButton());
+        PF2eCampaignButtonList.Add(addButton.gameObject);
+    }
+
+    private void PF2E_RetractGameButtons()
+    {
+        currentGame = E_Games.None;
         foreach (var item in PF2eCampaignButtonList)
             Destroy(item, 0.001f);
         PF2eCampaignButtonList.Clear();
-
-        // Campaign buttons
-        if (PF2eCampaignIDs != null)
-            foreach (var item in PF2eCampaignIDs)
-            {
-                Transform newButton = Instantiate(PF2E_campaingButtonPrefab, Vector3.zero, Quaternion.identity, PF2E_container);
-                CampaignButton newButtonScript = newButton.GetComponent<CampaignButton>();
-                newButtonScript.campaignNameText.text = item.name;
-                newButtonScript.button.onClick.AddListener(() => OnClickPF2eCampaignButton(item));
-            }
-
-        // Add Campaign button
-        Transform addButton = Instantiate(PF2E_campaingButtonPrefab, Vector3.zero, Quaternion.identity, PF2E_container);
-        CampaignButton addButtonScript = addButton.GetComponent<CampaignButton>();
-        addButtonScript.campaignNameText.text = "+";
-        addButtonScript.button.onClick.AddListener(() => OnClickPF2eAddCampaignButton());
     }
 
-    private void OnClickPF2eCampaignButton(PF2E_CampaignID campaignID)
+    // Click on existing campaign, open campaign panel
+    private void PF2E_OnClickCampaignButton(PF2E_CampaignID campaignID)
     {
         PF2E_controller.LoadCampaign(campaignID);
+        PF2E_RetractGameButtons();
     }
 
-    private void OnClickPF2eAddCampaignButton()
+    // Click on add campaign, open add campaign panel
+    private void PF2E_OnClickAddCampaignButton()
     {
-        // Abrir panel de creación de campaña
-        createCampaignAcceptButton.onClick.AddListener(() => CreateCampaign(createCampaignInputField.text));
-        OpenCreateCampaignPanel();
-        // pedir el nombre de la campaña
-        // mandar los datos al controller medainte PF2eController.CreateCampaign
-
+        OpenCreateCampaignPanel(); // This remove Listeners
+        createCampaignAcceptButton.onClick.AddListener(() => PF2E_CreateCampaign(createCampaignInputField.text));
     }
 
-    private void CreateCampaign(string name)
+    private void PF2E_CreateCampaign(string name)
     {
         PF2E_controller.CreateCampaign(name);
+        PF2E_RefreshButtons();
     }
 
     #endregion

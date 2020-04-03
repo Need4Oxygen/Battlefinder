@@ -7,7 +7,7 @@ public class Json
     {
         try
         {
-            string jsonString = JsonConvert.SerializeObject(obj);
+            string jsonString = JsonConvert.SerializeObject(obj, Formatting.Indented);
             PlayerPrefs.SetString(key, jsonString);
         }
         catch
@@ -20,17 +20,17 @@ public class Json
         }
     }
 
-    public static object LoadFromPlayerPrefs(string key)
+    public static T LoadFromPlayerPrefs<T>(string key)
     {
         try
         {
             string jsonString = PlayerPrefs.GetString(key);
-            return JsonConvert.DeserializeObject(jsonString);
+            return JsonConvert.DeserializeObject<T>(jsonString);
         }
         catch
         {
             Debug.LogError("[Json] ERROR: Couldn't load object with key " + key);
-            return null;
+            return default(T);
         }
         finally
         {
