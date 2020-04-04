@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: mat_woodFloor
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: _NORMALMAP
+  m_ShaderKeywords: _METALLICSPECGLOSSMAP _NORMALMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_1D392B06:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 675101b7a0754cc46a8b475448669c1a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_36CAAD6E:
@@ -81,7 +81,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 63042f95452d1c74b8439937bd351cd8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal0:
@@ -132,7 +132,7 @@ Material:
     - Vector1_2DC6882C: 2
     - Vector1_3F1ABEB8: 0.02
     - Vector1_42FAA766: 0
-    - Vector1_768D8AD7: 16.16
+    - Vector1_768D8AD7: 3
     - Vector1_A46CE93B: 7
     - Vector1_A7AFF20B: 6.23
     - Vector1_AB7EABA6: 0
@@ -175,9 +175,11 @@ Material:
     - Color_BDCD9411: {r: 0.0416518, g: 0.9811321, b: 0.9556276, a: 1}
     - Color_E1E5C0A1: {r: 1, g: 1, b: 1, a: 1}
     - Vector2_50525E3B: {r: 0.9, g: 0.9, b: 0, a: 0}
+    - Vector2_576D9F47: {r: 1, g: 1, b: 0, a: 0}
     - Vector2_B67B6307: {r: 3, g: 3, b: 0, a: 0}
     - Vector2_DC22EDC: {r: 0.8, g: 0.8, b: 0, a: 0}
     - Vector2_E4639C26: {r: 5, g: 5, b: 0, a: 0}
+    - Vector2_EFB2D82D: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

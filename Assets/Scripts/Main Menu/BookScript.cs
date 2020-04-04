@@ -5,138 +5,200 @@ using UnityEngine;
 public class BookScript : MonoBehaviour
 {
     [SerializeField]
-    List<Transform> pageList = new List<Transform>();
+    private List<Page> pageList = new List<Page>();
 
-    //[SerializeField]
-    //private int openEuler = 77;
+    [Header("Page Turn Settings")]
     [SerializeField]
-    private float turningRate = 100;
+    private float turningRate = 200;
+    [SerializeField]
+    private float gradFadeInTime = 0.3f;
+    [SerializeField]
+    private float gradFadeOutTime = 2.5f;
+    [Space(20)]
 
     [SerializeField]
     private Transform rightPosition = default;
     [SerializeField]
     private Transform leftPosition = default;
 
-    private Transform rightPage;
-    private Transform leftPage;
+    [SerializeField]
+    private TabGroup tabGroup = null;
+
+    private Page rightPage;
+    private Page leftPage;
     private int currentPage;
     private bool moving;
-
-    private enum ESides { Left, Right }
 
     private void Start()
     {
         rightPosition.GetChild(0).gameObject.SetActive(false);
         leftPosition.GetChild(0).gameObject.SetActive(false);
-        foreach (Transform t in pageList) { t.gameObject.SetActive(false); } //hide all pages
+
+        foreach (Page p in pageList)
+        {
+            p.gradFadeIn = gradFadeInTime;
+            p.gradFadeOut = gradFadeOutTime;
+            p.gameObject.SetActive(false);
+        }
 
         leftPage = pageList[0];
-        SetPage(ESides.Left);
-
         rightPage = pageList[1];
-        SetPage(ESides.Right);
+
+        SetPages();
+
 
         currentPage = 1; //right page is always the current.
     }
 
     public void FlipNext()
     {
-        //called by right arrow
+        //called by RIGHT arrow
         if (!moving && pageList.Count > currentPage + 1)
-            StartCoroutine(RotateRightPage());
+        {
+            if (pageList[currentPage + 1].hasTab) //if next page has tab, select it
+            {
+                tabGroup.selectedTab = tabGroup.GetPageTab(currentPage + 1);
+            }
+            else
+            {
+                tabGroup.selectedTab = null;
+            }
+            tabGroup.ResetTabs();
+
+            if (pageList[currentPage].hasTab) //if the current page has tab, set for animation
+            {
+                tabGroup.GetPageTab(currentPage).HideTab();
+                pageList[currentPage].ShowTab();
+                StartCoroutine(RotateRightPage(true));
+            }
+            else
+            {
+                StartCoroutine(RotateRightPage(false));
+            }
+        }
         else
             Debug.Log("END OF PAGE LIST");
     }
 
     public void FlipPrevious()
     {
+        //called by LEFT arrow
         if (!moving && currentPage - 1 > 0)
-            StartCoroutine(RotateLeftPage());
+        {
+
+
+            if (pageList[currentPage - 1].hasTab)
+            {
+                tabGroup.selectedTab = tabGroup.GetPageTab(currentPage - 1);
+                tabGroup.ResetTabs();
+                tabGroup.GetPageTab(currentPage - 1).HideTab();
+                pageList[currentPage - 1].ShowTab();
+                StartCoroutine(RotateLeftPage(true));
+            }
+            else
+            {
+                tabGroup.selectedTab = null;
+                tabGroup.ResetTabs();
+                StartCoroutine(RotateLeftPage(false));
+            }
+        }
         else
+        {
             Debug.Log("END OF PAGE LIST");
+        }
     }
 
     public void FlipTo(int pg)
     {
         //called by tab
-        //if > < > < > <
-    }
-
-    private Quaternion GetTargetRot(Transform t, ESides side) //if works delet dis
-    {
-        switch (side)
+        if (!moving && currentPage != pg)
         {
-            case ESides.Right:
-                return rightPosition.rotation;//Quaternion.Euler(openEuler, t.rotation.eulerAngles.y, t.rotation.eulerAngles.z);
-            case ESides.Left:
-                return leftPosition.rotation;//Quaternion.Euler(-openEuler, t.rotation.eulerAngles.y, t.rotation.eulerAngles.z);
-            default:
-                Debug.Log("No side param. failed target rotation");
-                return Quaternion.identity;
+            if (pg < currentPage)
+            {
+                Debug.Log("animate to the right");
+            }
+            else
+            {
+                Debug.Log("animate to the left");
+            }
+            tabGroup.SwitchPreviousTabs(pg, currentPage);
+            currentPage = pg;
+            rightPage.gameObject.SetActive(false);
+            leftPage.gameObject.SetActive(false);
+            rightPage = pageList[currentPage];
+            leftPage = pageList[currentPage - 1];
+            SetPages();
         }
     }
 
-    private void SetPage(ESides side)
+    private void SetPages()
     {
-        switch (side)
-        {
-            case ESides.Right:
-                rightPage.rotation = GetTargetRot(rightPage, ESides.Right);
-                rightPage.position = rightPosition.position;
-                rightPage.gameObject.SetActive(true);
-                break;
-            case ESides.Left:
-                leftPage.rotation = GetTargetRot(leftPage, ESides.Left);
-                leftPage.position = leftPosition.position;
-                leftPage.gameObject.SetActive(true);
-                break;
-        }
+        rightPage.transform.rotation = rightPosition.rotation;
+        rightPage.transform.position = rightPosition.position;
+        rightPage.gameObject.SetActive(true);
+
+        leftPage.transform.rotation = leftPosition.rotation;
+        leftPage.transform.position = leftPosition.position;
+        leftPage.gameObject.SetActive(true);
     }
 
-    private IEnumerator RotateRightPage()
+    private IEnumerator RotateRightPage(bool tabbed)
     {
         moving = true;
-        Transform rotatingPage = rightPage;
+        leftPage.FadeGrad(true);
+        Page rotatingPage = rightPage;
         currentPage += 1;
         rightPage = pageList[currentPage];
-        SetPage(ESides.Right);
-        Quaternion targetRotation = GetTargetRot(rotatingPage, ESides.Left);
-        while (rotatingPage.rotation.eulerAngles.x != targetRotation.eulerAngles.x)
+        SetPages();
+        bool once = false;
+        while (rotatingPage.transform.rotation.eulerAngles.x != leftPosition.rotation.eulerAngles.x)
         {
-            rotatingPage.rotation = Quaternion.RotateTowards(rotatingPage.rotation, targetRotation, turningRate * Time.deltaTime);
+            rotatingPage.transform.rotation = Quaternion.RotateTowards(rotatingPage.transform.rotation, leftPosition.rotation, turningRate * Time.deltaTime);
 
-            if (Quaternion.Angle(rotatingPage.rotation, targetRotation) < 10f)
+            if (Quaternion.Angle(rotatingPage.transform.rotation, leftPosition.rotation) < 10f && !once)
             {
                 leftPage.gameObject.SetActive(false);
+                leftPage = rotatingPage;
+                once = true;
             }
-
             yield return null;
         }
-
-        leftPage = rotatingPage;
+        if (tabbed)
+        {
+            tabGroup.GetPageTab(currentPage - 1).SwitchTab();
+            pageList[currentPage - 1].HideTab();
+        }
+        SetPages();
         moving = false;
     }
 
-    private IEnumerator RotateLeftPage()
+    private IEnumerator RotateLeftPage(bool tabbed)
     {
         moving = true;
-        Transform rotatingPage = leftPage;
+        rightPage.FadeGrad(true);
+        Page rotatingPage = leftPage;
         currentPage -= 1;
         leftPage = pageList[currentPage - 1]; //right is always the currentpage, so left is -1
-        SetPage(ESides.Left);
-        Quaternion targetRotation = GetTargetRot(rotatingPage, ESides.Right);
-        while (rotatingPage.rotation.eulerAngles.x != targetRotation.eulerAngles.x)
+        SetPages();
+        bool once = false;
+        while (rotatingPage.transform.rotation.eulerAngles.x != rightPosition.rotation.eulerAngles.x)
         {
-            rotatingPage.rotation = Quaternion.RotateTowards(rotatingPage.rotation, targetRotation, turningRate * Time.deltaTime);
+            rotatingPage.transform.rotation = Quaternion.RotateTowards(rotatingPage.transform.rotation, rightPosition.rotation, turningRate * Time.deltaTime);
 
-            if (Quaternion.Angle(rotatingPage.rotation, targetRotation) < 10f)
+            if (Quaternion.Angle(rotatingPage.transform.rotation, rightPosition.rotation) < 10f && !once)
             {
                 rightPage.gameObject.SetActive(false);
+                rightPage = rotatingPage;
+                once = true;
             }
-
             yield return null;
         }
-        rightPage = rotatingPage;
+        if (tabbed)
+        {
+            tabGroup.GetPageTab(currentPage).SwitchTab();
+            pageList[currentPage].HideTab();
+        }
+        SetPages();
         moving = false;
     }
 }

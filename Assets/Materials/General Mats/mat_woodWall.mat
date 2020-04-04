@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_1D392B06:
-        m_Texture: {fileID: 2800000, guid: 500c9c54dbde6594e81041e8b99220ea, type: 3}
+        m_Texture: {fileID: 2800000, guid: e3828e7eb51003744a933618136db125, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_36CAAD6E:
@@ -29,7 +29,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_57892803:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 1c361456ce0222343a39b670a3179767, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_68F0B156:
@@ -41,13 +41,13 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_94207BF0:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 0983ca7c6d82fde41b33741553fefca1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: c785006e3f156d644890c4fe5c21a0f0, type: 3}
         m_Scale: {x: 2, y: 2}
-        m_Offset: {x: 0, y: 0}
+        m_Offset: {x: 0, y: 0.027}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: 47374c9386e159643848e303f1982f48, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -59,13 +59,13 @@ Material:
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: c785006e3f156d644890c4fe5c21a0f0, type: 3}
         m_Scale: {x: 2, y: 2}
-        m_Offset: {x: 0, y: 0}
+        m_Offset: {x: 0, y: 0.027}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 500c9c54dbde6594e81041e8b99220ea, type: 3}
+        m_Texture: {fileID: 2800000, guid: 16b4d0ce8ea41954f94bd3e83fc23675, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: 754d16dfc19eea642a86b0c8044c9dce, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0983ca7c6d82fde41b33741553fefca1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -93,7 +93,7 @@ Material:
     - _OcclusionStrength: 1
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.5
+    - _Smoothness: 0.75
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -102,6 +102,8 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_E1E5C0A1: {r: 1, g: 1, b: 1, a: 1}
+    - Vector2_576D9F47: {r: 2, g: 2, b: 0, a: 0}
+    - Vector2_EFB2D82D: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
