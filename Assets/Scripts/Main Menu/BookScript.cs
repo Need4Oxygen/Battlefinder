@@ -48,6 +48,7 @@ public class BookScript : MonoBehaviour
 
 
         currentPage = 1; //right page is always the current.
+        
     }
 
     public void FlipNext()

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
@@ -7,8 +8,12 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
 {
     [SerializeField]
     private TabGroup tabGroup = null;
+    [SerializeField]
+    private GameObject paper = null;
+
     public Image background;
     public int targetPage;
+    public Transform fakeTab;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -32,28 +37,58 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
 
     public void HideTab()
     {
-        gameObject.SetActive(false);
+        paper.SetActive(false);
     }
 
     public void SwitchTab()
     {
+        Transform targetParent = fakeTab.parent;
+        Transform currentParent = transform.parent;
+        int realSibling = transform.GetSiblingIndex();
+        int fakeSibling = fakeTab.GetSiblingIndex();
+        /*int lastSibling = transform.parent.childCount - 1;
+        int targetSibling = lastSibling - siblingIndex;*/
+
+        fakeTab.SetParent(currentParent, false);
+        fakeTab.SetSiblingIndex(realSibling);
+
+        transform.SetParent(targetParent, false);
+        transform.SetSiblingIndex(fakeSibling);
+
+        paper.SetActive(true);
+
+
+        /*
         if (transform.parent == tabGroup.tabsRight)
         {
-            transform.SetParent(tabGroup.tabsLeft);
-            ResetTransform();
+            transform.SetParent(tabGroup.tabsLeft, false);
+            SortChildren(tabGroup.tabsLeft);
         }
         else
         {
-            transform.SetParent(tabGroup.tabsRight);
-            ResetTransform();
-        }
-        gameObject.SetActive(true);
+            transform.SetParent(tabGroup.tabsRight, false);
+            SortChildren(tabGroup.tabsRight);
+        }*/
+
+        //gameObject.SetActive(true);
     }
 
-    private void ResetTransform()
+    private void SortChildren(Transform parent)
     {
-        transform.localPosition = Vector3.zero;
-        transform.localRotation = Quaternion.identity;
-        transform.localScale = Vector3.one;
+        List<Transform> children = new List<Transform>();
+        for (int i = parent.childCount - 1; i >= 0; i--)
+        {
+            Transform child = parent.GetChild(i);
+            children.Add(child);
+            child.SetParent(null, false);
+        }
+
+        children.Sort((Transform t1, Transform t2) =>
+        { return t1.GetComponent<TabButton>().targetPage.CompareTo(t2.GetComponent<TabButton>().targetPage); });
+
+        foreach (Transform child in children)
+        {
+            child.SetParent(parent, false);
+        }
     }
 }

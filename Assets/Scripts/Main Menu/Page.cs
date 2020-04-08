@@ -4,11 +4,14 @@ using UnityEngine.UI;
 public class Page : MonoBehaviour
 {
     public bool hasTab;
+    
+    [HideInInspector]
     public float gradFadeOut;
+    [HideInInspector]
     public float gradFadeIn;
 
     [SerializeField]
-    private GameObject tab = null;
+    private GameObject pageRotatingTab = null;
     [SerializeField]
     private Image[] gradients = null;
 
@@ -35,16 +38,15 @@ public class Page : MonoBehaviour
                 grad.CrossFadeAlpha(1f, gradFadeIn, false);
             }
         }
-
     }
 
     public void ShowTab()
     {
-        tab.SetActive(true);
+        pageRotatingTab.SetActive(true);
     }
 
     public void HideTab()
     {
-        tab.SetActive(false);
+        pageRotatingTab.SetActive(false);
     }
 }
