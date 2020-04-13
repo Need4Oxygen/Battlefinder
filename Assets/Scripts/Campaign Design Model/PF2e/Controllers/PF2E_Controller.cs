@@ -14,8 +14,6 @@ public class PF2E_Controller : MonoBehaviour
     [SerializeField] private CanvasGroup campaignPanel = null;
     [SerializeField] private TMP_Text campaignName = null;
 
-
-
     [Space(15)]
     [SerializeField] private Transform boardsContainer = null;
     [SerializeField] private Transform playersContainer = null;
@@ -45,7 +43,7 @@ public class PF2E_Controller : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(PanelFader.RescaleAndFade(campaignPanel.transform, campaignPanel, 0.85f, 0f, 0f));
+        StartCoroutine(PanelFader.RescaleAndFade(campaignPanel.transform, campaignPanel, 0.85f, 0f, 1f));
     }
 
     #region Input
@@ -98,16 +96,15 @@ public class PF2E_Controller : MonoBehaviour
     /// <summary> Load given Campaign. Called by UI buttons that enumerate existing Campaigns. </summary>
     public void LoadCampaign(PF2E_CampaignID campaignID)
     {
-        OpenCampaingPanel();
-
         // Open Campaign Panel
-        campaignPanel.gameObject.SetActive(true);
         campaignName.text = campaignID.name;
 
         // Set current campaing and refresh boards, players, enemies and npcs
         currentCampaignID = campaignID;
         currentCampaign = Json.LoadFromPlayerPrefs<PF2E_CampaignData>(campaignID.guid);
         RefreshCampaignContainers();
+
+        OpenCampaingPanel();
     }
 
     /// <summary> Save current Campaign. </summary>
@@ -156,6 +153,8 @@ public class PF2E_Controller : MonoBehaviour
         {
             Transform newBoardButton = Instantiate(boardsButtonPrefab, Vector3.zero, Quaternion.identity, boardsContainer).transform;
             PF2E_BoardButton newBoardButtonScript = newBoardButton.GetComponent<PF2E_BoardButton>();
+
+            boardsButtonList.Add(newBoardButton.gameObject);
         }
         foreach (var player in currentCampaign.players)
         {
@@ -164,16 +163,49 @@ public class PF2E_Controller : MonoBehaviour
             newPlayerButtonScript.level.text = player.Value.level.ToString();
             newPlayerButtonScript.playerName.text = player.Value.playerName;
             // falta meterle el callback al botón para definir lo que pasa cuando lo pulsas el botón o los otros de editar y eliminar...
+            newPlayerButtonScript.editButton.onClick.AddListener(() => OnClickPayerButtonEdit(player.Key));
+            newPlayerButtonScript.deleteButton.onClick.AddListener(() => OnClickPayerButtonDelete(player.Key));
+
+            playersButtonList.Add(newPlayerButton.gameObject);
         }
         for (int i = 0; i < currentCampaign.enemies.Count; i++)
         {
             Transform newEnemyButton = Instantiate(enemiesButtonPrefab, Vector3.zero, Quaternion.identity, enemiesContainer).transform;
             PF2E_BoardButton newEnemyButtonScript = newEnemyButton.GetComponent<PF2E_BoardButton>();
+
+            enemiesButtonList.Add(newEnemyButton.gameObject);
         }
         for (int i = 0; i < currentCampaign.npcs.Count; i++)
         {
             Transform newNPCButton = Instantiate(npcsButtonPrefab, Vector3.zero, Quaternion.identity, npcsContainer).transform;
             PF2E_BoardButton newNPCButtonScript = newNPCButton.GetComponent<PF2E_BoardButton>();
+
+            npcsButtonList.Add(newNPCButton.gameObject);
         }
+    }
+
+    // Send player to PlayerCreation to edit
+    public void OnClickPayerButtonEdit(string player)
+    {
+        playerCreationController.LoadPlayer(currentCampaign.players[player]);
+    }
+
+    // Controlls player deletion
+    private string playerToDelete = "";
+    public void OnClickPayerButtonDelete(string player)
+    {
+        playerToDelete = player;
+        confirmation.AskForConfirmation("Are you sure you want to delete this character?", OnClickPayerButtonDeleteCallback);
+    }
+    public void OnClickPayerButtonDeleteCallback(bool value)
+    {
+        if (value)
+        {
+            currentCampaign.players.Remove(playerToDelete);
+            RefreshCampaignContainers();
+            SaveCampaign();
+        }
+        else
+            playerToDelete = "";
     }
 }

@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
 public class PF2E_CampaignID
 {
     public string guid;

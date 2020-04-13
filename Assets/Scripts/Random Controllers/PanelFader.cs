@@ -67,6 +67,9 @@ public class PanelFader : MonoBehaviour
     float alphaInit, float alphaFinal,
     float duration)
     {
+        yield return null;
+        yield return null;
+
         if (panelTransform.gameObject.activeSelf == false)
             panelTransform.gameObject.SetActive(true);
 
@@ -82,9 +85,9 @@ public class PanelFader : MonoBehaviour
                 counter += Time.unscaledDeltaTime;
                 completion = counter / duration;
 
-                cg.alpha = -Mathf.Clamp(completion, 0.1f, 1.0f) * alphaDiff + alphaInit;
-                panelTransform.localScale = new Vector2(-Mathf.Clamp(completion, 0.1f, 1.0f) * scaleDiff + scaleInit,
-                                                        -Mathf.Clamp(completion, 0.1f, 1.0f) * scaleDiff + scaleInit);
+                cg.alpha = -Mathf.Clamp(completion, 0f, 1.0f) * alphaDiff + alphaInit;
+                panelTransform.localScale = new Vector2(-Mathf.Clamp(completion, 0f, 1.0f) * scaleDiff + scaleInit,
+                                                        -Mathf.Clamp(completion, 0f, 1.0f) * scaleDiff + scaleInit);
                 yield return null;
             }
         }

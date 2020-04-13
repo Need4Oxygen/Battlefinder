@@ -42,8 +42,8 @@ public class PF2E_PlayerData : PlayerData
     public Dictionary<E_PF2E_Saves, PF2E_AblPrf> saves = new Dictionary<E_PF2E_Saves, PF2E_AblPrf>(3)
     {
         {E_PF2E_Saves.Fortitude,new PF2E_AblPrf("Fortitude",E_PF2E_Ability.Constitution,E_PF2E_Proficiency.Untrained)},
-        {E_PF2E_Saves.Fortitude,new PF2E_AblPrf("Reflex",E_PF2E_Ability.Dexterity,E_PF2E_Proficiency.Untrained)},
-        {E_PF2E_Saves.Fortitude,new PF2E_AblPrf("Will",E_PF2E_Ability.Wisdom,E_PF2E_Proficiency.Untrained)}
+        {E_PF2E_Saves.Reflex,new PF2E_AblPrf("Reflex",E_PF2E_Ability.Dexterity,E_PF2E_Proficiency.Untrained)},
+        {E_PF2E_Saves.Will,new PF2E_AblPrf("Will",E_PF2E_Ability.Wisdom,E_PF2E_Proficiency.Untrained)}
     };
     public Dictionary<string, E_PF2E_Proficiency> weaponProficiencies = new Dictionary<string, E_PF2E_Proficiency>(3)
         { { "Simple", E_PF2E_Proficiency.Untrained }, { "Martial", E_PF2E_Proficiency.Untrained }, { "Advanced", E_PF2E_Proficiency.Untrained } };
