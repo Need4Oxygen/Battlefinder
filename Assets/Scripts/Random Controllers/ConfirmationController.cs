@@ -1,15 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ConfirmationController : MonoBehaviour
 {
-    [SerializeField] CanvasGroup confirmationPanel;
-    [SerializeField] TMP_Text message;
-    [SerializeField] Button acceptButton;
-    [SerializeField] Button cancelButton;
+    [SerializeField] CanvasGroup confirmationPanel = null;
+    [SerializeField] TMP_Text message = null;
 
     DBool callback;
 

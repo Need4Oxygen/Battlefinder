@@ -5,18 +5,17 @@ using UnityEngine.UI;
 
 public class GameSelectorController : MonoBehaviour
 {
-
     [Header("Create Campaign")]
-    [SerializeField] private CanvasGroup createCampaignPanel;
-    [SerializeField] private TMP_InputField createCampaignInputField;
-    [SerializeField] private TMP_Text createCampaignErrorText;
-    [SerializeField] private Button createCampaignAcceptButton;
-    [SerializeField] private Button createCampaignCancelButton;
+    [SerializeField] private CanvasGroup createCampaignPanel = null;
+    [SerializeField] private TMP_InputField createCampaignInputField = null;
+    [SerializeField] private TMP_Text createCampaignErrorText = null;
+    [SerializeField] private Button createCampaignAcceptButton = null;
+    [SerializeField] private Button createCampaignCancelButton = null;
 
     [Header("Pathfinder 2e")]
-    [SerializeField] private PF2E_Controller PF2E_controller;
-    [SerializeField] private Transform PF2E_campaingButtonPrefab;
-    [SerializeField] private Transform PF2E_container;
+    [SerializeField] private PF2E_Controller PF2E_controller = null;
+    [SerializeField] private Transform PF2E_campaingButtonPrefab = null;
+    [SerializeField] private Transform PF2E_container = null;
 
     private List<GameObject> PF2E_buttons = new List<GameObject>();
     private E_Games currentGame = E_Games.None;
@@ -96,7 +95,7 @@ public class GameSelectorController : MonoBehaviour
         // Campaign buttons
         foreach (var item in PF2E_Controller.PF2eCampaignIDs)
         {
-            Transform newButton = Instantiate(PF2E_campaingButtonPrefab, PF2E_container.position, Quaternion.identity, PF2E_container);
+            Transform newButton = Instantiate(PF2E_campaingButtonPrefab, PF2E_container.position, PF2E_container.rotation, PF2E_container);
             CampaignButton newButtonScript = newButton.GetComponent<CampaignButton>();
             newButtonScript.campaignNameText.text = item.name;
             newButtonScript.button.onClick.AddListener(() => PF2E_OnClickCampaignButton(item));
@@ -104,7 +103,7 @@ public class GameSelectorController : MonoBehaviour
         }
 
         // Add Campaign button
-        Transform addButton = Instantiate(PF2E_campaingButtonPrefab, PF2E_container.position, Quaternion.identity, PF2E_container);
+        Transform addButton = Instantiate(PF2E_campaingButtonPrefab, PF2E_container.position, PF2E_container.rotation, PF2E_container);
         CampaignButton addButtonScript = addButton.GetComponent<CampaignButton>();
         addButtonScript.campaignNameText.text = "+";
         addButtonScript.button.onClick.AddListener(() => PF2E_OnClickAddCampaignButton());

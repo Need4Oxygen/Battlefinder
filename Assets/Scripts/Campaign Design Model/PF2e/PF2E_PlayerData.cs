@@ -12,9 +12,9 @@ public class PF2E_PlayerData : PlayerData
     public E_PF2E_Background background = E_PF2E_Background.Artisan;
     public E_PF2E_Class class_ = E_PF2E_Class.Fighter;
 
-    public Dictionary<string, int> abilities = new Dictionary<string, int>(6) {
-        { "STR", 0 }, { "DEX", 0 }, { "CON", 0 },
-        { "INT", 0 }, { "WIS", 0 }, { "CHA", 0 }};
+    public Dictionary<E_PF2E_Ability, int> abilities = new Dictionary<E_PF2E_Ability, int>(6) {
+        { E_PF2E_Ability.Strength, 0 }, { E_PF2E_Ability.Dexterity, 0 }, { E_PF2E_Ability.Constitution, 0 },
+        { E_PF2E_Ability.Intelligence, 0 }, { E_PF2E_Ability.Wisdom, 0 }, { E_PF2E_Ability.Charisma, 0 }};
     public Dictionary<E_PF2E_Skill, PF2E_AblPrf> skills = new Dictionary<E_PF2E_Skill, PF2E_AblPrf>()
     {
         {E_PF2E_Skill.Acrobatics,new PF2E_AblPrf("Acrobatics",E_PF2E_Ability.Dexterity,E_PF2E_Proficiency.Untrained)},
