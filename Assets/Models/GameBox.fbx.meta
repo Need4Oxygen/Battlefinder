@@ -2,7 +2,25 @@ fileFormatVersion: 2
 guid: a19e0d5a718a2e544b26185687379dfa
 ModelImporter:
   serializedVersion: 19300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -9140240617521793281
+    second: Lid_L|Lid_LAction
+  - first:
+      74: 1850447971942482589
+    second: Lid_L|Lid_RAction
+  - first:
+      74: 6175057151414192839
+    second: Lid_L|SideLids.001Action
+  - first:
+      74: -4471092183251176686
+    second: Lid_R|Lid_LAction
+  - first:
+      74: -1339652602007014217
+    second: Lid_R|Lid_RAction
+  - first:
+      74: -7490954658698706002
+    second: Lid_R|SideLids.001Action
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -78,7 +96,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -93,11 +111,11 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   avatarSetup: 0
   additionalBone: 0
