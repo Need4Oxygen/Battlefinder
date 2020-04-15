@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Hunter
   background: 23
+  description: 
   abilitiesBoost: 0300000006000000
   trainedSkills: 10000000
   trainedLores:
   - Tanning
-  skillFeats: 5d000000
+  skillFeats:
+  - {fileID: 11400000, guid: d66663768c4319a4bb2e128570bb67e8, type: 2}

@@ -43,7 +43,7 @@ public class PF2E_Controller : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(PanelFader.RescaleAndFade(campaignPanel.transform, campaignPanel, 0.85f, 0f, 1f));
+        StartCoroutine(PanelFader.RescaleAndFade(campaignPanel.transform, campaignPanel, 0.85f, 0f, 0f));
     }
 
     #region Input

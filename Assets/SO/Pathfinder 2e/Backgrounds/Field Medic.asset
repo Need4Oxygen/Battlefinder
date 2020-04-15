@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Field Medic
   background: 16
+  description: 
   abilitiesBoost: 0400000006000000
   trainedSkills: 09000000
   trainedLores:
   - Warfare
-  skillFeats: 3d000000
+  skillFeats:
+  - {fileID: 11400000, guid: 9904d05e1647d1044a3f1490bb9076a8, type: 2}

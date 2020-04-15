@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Martial Disciple
   background: 25
+  description: 
   abilitiesBoost: 0200000003000000
   trainedSkills: 0200000004000000
   trainedLores:
   - Warfare
-  skillFeats: 0b00000014000000
+  skillFeats:
+  - {fileID: 11400000, guid: 9f61d960a8e8d5d4e8b0045db3cc7f7c, type: 2}
+  - {fileID: 11400000, guid: 7b27108e6f658f74096d002edd9197ac, type: 2}

@@ -1,8 +1,22 @@
 ﻿public enum E_PF2E_Size { None, Default, Tiny, Small, Medium, Large, Huge, Gargantuan }
-public enum E_PF2E_EffectType { None, Default, Circumstance, Status, Item, Untyped }
 public enum E_PF2E_Saves { None, Default, Fortitude, Reflex, Will }
 
 public enum E_PF2E_Alignment { None, Default, LG, NG, CG, LN, NN, CN, LE, NE, CE }
+
+public enum E_PF2E_Ability
+{ None, Default, Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma, Free }
+
+public enum E_PF2E_Skill
+{
+    None, Default, Acrobatics, Arcana, Athletics, Crafting, Deception, Diplomacy,
+    Intimidation, Medicine, Nature, Occultism, Performance, Religion, Society, Stealth,
+    Survival, Thievery, Free_1, Free_2,
+}
+
+public enum E_PF2E_Proficiency
+{ None, Default, Untrained, Trained, Expert, Master, Lengend }
+
+// -----------------------------ABC-----------------------------
 public enum E_PF2E_Ancestry { None, Default, Dwarf, Elf, Gnome, Goblin, Halfling, Human }
 public enum E_PF2E_Background
 {
@@ -13,16 +27,28 @@ public enum E_PF2E_Background
 }
 public enum E_PF2E_Class
 { None, Default, Alchemist, Barbarian, Bard, Champion, Cleric, Druid, Fighter, Monk, Ranger, Rogue, Sorcerer, Wizard }
-public enum E_PF2E_Ability
-{ None, Default, Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma, Free }
-public enum E_PF2E_Proficiency
-{ None, Default, Untrained, Trained, Expert, Master, Lengend }
-public enum E_PF2E_Skill
+
+
+
+// -----------------------------EFFECTS-----------------------------
+public enum E_PF2E_FeatType
 {
-    None, Default, Acrobatics, Arcana, Athletics, Crafting, Deception, Diplomacy,
-    Intimidation, Medicine, Nature, Occultism, Performance, Religion, Society, Stealth,
-    Survival, Thievery, Free_1, Free_2,
+    None, Default, GeneralSkillFeat, SkillFeat, ClassFeat, ClassFeature, HeritageFeat, AncestryFeature,
 }
+public enum E_PF2E_EffectAplication
+{
+    None, Default, Add, HalfLvLRoundedUp, HalfLvLRoundedDown
+}
+public enum E_PF2E_EffectTarget
+{
+    None, Default, HP, AC, Perception, STR, DEX, CON, INT, WIS, CHA, Acrobatics, Arcana, Athletics, Crafting,
+    Deception, Diplomacy, Intimidation, Medicine, Nature, Occultism, Performance, Religion, Society, Stealth,
+    Survival, Thievery
+}
+public enum E_PF2E_EffectType { None, Default, Circumstance, Status, Item, Untyped }
+
+
+// -----------------------------SKILLS-----------------------------
 public enum E_PF2E_Skill_GFeat
 {
     None, Default,

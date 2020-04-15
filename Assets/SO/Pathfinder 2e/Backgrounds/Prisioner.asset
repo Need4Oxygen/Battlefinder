@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Prisioner
   background: 30
+  description: 
   abilitiesBoost: 0200000004000000
   trainedSkills: 0f000000
   trainedLores:
   - Underground
-  skillFeats: 55000000
+  skillFeats:
+  - {fileID: 11400000, guid: 6f1066fba2f2fc74986b2a98e26e7598, type: 2}

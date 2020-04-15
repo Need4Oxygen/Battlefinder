@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Detective
   background: 12
+  description: 
   abilitiesBoost: 0500000006000000
   trainedSkills: 0e000000
   trainedLores:
   - Underworld
-  skillFeats: 51000000
+  skillFeats:
+  - {fileID: 11400000, guid: af85536fd21c3314c96a31ceaae60cf0, type: 2}

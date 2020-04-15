@@ -49,5 +49,4 @@ public class PF2E_PlayerData : PlayerData
         { { "Simple", E_PF2E_Proficiency.Untrained }, { "Martial", E_PF2E_Proficiency.Untrained }, { "Advanced", E_PF2E_Proficiency.Untrained } };
     public Dictionary<string, E_PF2E_Proficiency> armorProficiencies = new Dictionary<string, E_PF2E_Proficiency>(4)
         { { "Unarmored", E_PF2E_Proficiency.Untrained }, { "Light", E_PF2E_Proficiency.Untrained }, { "Medium", E_PF2E_Proficiency.Untrained }, { "Heavy", E_PF2E_Proficiency.Untrained } };
-
 }

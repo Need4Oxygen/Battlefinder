@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Emissary
   background: 13
+  description: 
   abilitiesBoost: 0500000007000000
   trainedSkills: 0e000000
   trainedLores:
   - City
-  skillFeats: 4e000000
+  skillFeats:
+  - {fileID: 11400000, guid: f86179383e9455947b2585f99f475e33, type: 2}

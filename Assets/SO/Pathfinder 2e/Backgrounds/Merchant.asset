@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Merchant
   background: 26
+  description: 
   abilitiesBoost: 0500000007000000
   trainedSkills: 07000000
   trainedLores:
   - Mercantile
-  skillFeats: 2b000000
+  skillFeats:
+  - {fileID: 11400000, guid: 13906032f66381e43b3f727676f1ade1, type: 2}

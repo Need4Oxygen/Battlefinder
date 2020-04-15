@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Sailor
   background: 31
+  description: 
   abilitiesBoost: 0200000003000000
   trainedSkills: 04000000
   trainedLores:
   - Sailing
-  skillFeats: 16000000
+  skillFeats:
+  - {fileID: 11400000, guid: db29e41e4160ea7449e8b523f3a34977, type: 2}

@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Hermit
   background: 22
+  description: 
   abilitiesBoost: 0400000005000000
   trainedSkills: 0a0000000b000000
   trainedLores:
   - Terrain
-  skillFeats: 03000000
+  skillFeats:
+  - {fileID: 11400000, guid: 097ab5018d1bcbd4da79457e585308dc, type: 2}

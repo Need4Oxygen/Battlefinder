@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Scout
   background: 33
+  description: 
   abilitiesBoost: 0300000006000000
   trainedSkills: 10000000
   trainedLores:
   - Terrain
-  skillFeats: 5c000000
+  skillFeats:
+  - {fileID: 11400000, guid: f6eb80a49790c3b4c9181629b6d475d7, type: 2}

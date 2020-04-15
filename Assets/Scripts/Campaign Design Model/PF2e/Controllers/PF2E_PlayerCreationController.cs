@@ -11,11 +11,22 @@ public class PF2E_PlayerCreationController : MonoBehaviour
     [SerializeField] private CanvasGroup playerCreationPanel = null;
 
     [Space(15)]
-    [SerializeField] private TMP_InputField levelText = null;
-    [SerializeField] private TMP_InputField playerNameText = null;
+    [SerializeField] private TMP_InputField levelInput = null;
+    [SerializeField] private TMP_InputField playerNameInput = null;
+    [SerializeField] private TMP_Text HPText = null;
+    [SerializeField] private TMP_Text ACText = null;
+    [SerializeField] private TMP_Text perceptionText = null;
 
-    public PF2E_PlayerData initialPlayer = null;
-    public PF2E_PlayerData currentPlayer = null;
+    [Space(15)]
+    [SerializeField] private PF2E_PCAbility stregth = null;
+    [SerializeField] private PF2E_PCAbility dexterity = null;
+    [SerializeField] private PF2E_PCAbility constitution = null;
+    [SerializeField] private PF2E_PCAbility intelligence = null;
+    [SerializeField] private PF2E_PCAbility wisdom = null;
+    [SerializeField] private PF2E_PCAbility charisma = null;
+
+    private PF2E_PlayerData initialPlayer = null;
+    private PF2E_PlayerData currentPlayer = null;
 
     void Start()
     {
@@ -37,17 +48,8 @@ public class PF2E_PlayerCreationController : MonoBehaviour
 
     public void OnClickSaveButton()
     {
-        RefreshPanelIntoPlayer(); // esto se tendría que hacer dinámicamente al cambiar cosas o con un botón de refresh
-
-        // if (initialPlayer != currentPlayer)
-        {
-            SavePlayer();
-            ClosePlayerCreationPanel();
-        }
-        // else
-        {
-            // ClosePlayerCreationPanel();
-        }
+        SavePlayer();
+        ClosePlayerCreationPanel();
     }
 
     public void OnClickBackButton()
@@ -57,10 +59,22 @@ public class PF2E_PlayerCreationController : MonoBehaviour
         else
             ClosePlayerCreationPanel();
     }
-    public void OnClickBackButtonCallback(bool value)
+    private void OnClickBackButtonCallback(bool value)
     {
         if (value)
             ClosePlayerCreationPanel();
+    }
+
+    /// <summary> Executed whenever. </summary>
+    public void OnValueChanged()
+    {
+        RefreshPanelIntoPlayer();
+    }
+
+    public void OnValueAbilityChanged(E_PF2E_Ability ability, int score)
+    {
+        currentPlayer.abilities[ability] = score;
+        RefreshPanelIntoPlayer();
     }
 
     public void NewPlayer()
@@ -81,21 +95,28 @@ public class PF2E_PlayerCreationController : MonoBehaviour
     }
 
     /// <summary> Refresh everything UI wise with player data. </summary>
-    public void RefreshPlayerIntoPanel()
+    private void RefreshPlayerIntoPanel()
     {
-        levelText.text = currentPlayer.level.ToString();
-        playerNameText.text = currentPlayer.playerName;
+        levelInput.text = currentPlayer.level.ToString();
+        playerNameInput.text = currentPlayer.playerName;
+
+        stregth.score = currentPlayer.abilities[E_PF2E_Ability.Strength];
+        dexterity.score = currentPlayer.abilities[E_PF2E_Ability.Dexterity];
+        constitution.score = currentPlayer.abilities[E_PF2E_Ability.Constitution];
+        intelligence.score = currentPlayer.abilities[E_PF2E_Ability.Intelligence];
+        wisdom.score = currentPlayer.abilities[E_PF2E_Ability.Wisdom];
+        charisma.score = currentPlayer.abilities[E_PF2E_Ability.Charisma];
     }
 
     /// <summary> Refresh everything UI wise with player data. </summary>
-    public void RefreshPanelIntoPlayer()
+    private void RefreshPanelIntoPlayer()
     {
-        currentPlayer.level = int.Parse(levelText.text);
-        currentPlayer.playerName = playerNameText.text;
+        currentPlayer.level = int.Parse(levelInput.text);
+        currentPlayer.playerName = playerNameInput.text;
     }
 
     /// <summary> Save Player into campaing player list. </summary>
-    public void SavePlayer()
+    private void SavePlayer()
     {
         if (controller.currentCampaign.players.ContainsKey(currentPlayer.guid))
             controller.currentCampaign.players[currentPlayer.guid] = currentPlayer;

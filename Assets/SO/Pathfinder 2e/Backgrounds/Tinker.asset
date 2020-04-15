@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Tinker
   background: 35
+  description: 
   abilitiesBoost: 0300000005000000
   trainedSkills: 05000000
   trainedLores:
   - Engineering
-  skillFeats: 20000000
+  skillFeats:
+  - {fileID: 11400000, guid: de67ce6a4d8b6f44fa87a7a6dba7e9bb, type: 2}

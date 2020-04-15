@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Scholar
   background: 32
+  description: 
   abilitiesBoost: 0500000006000000
   trainedSkills: 030000000a0000000b0000000d000000
   trainedLores:
   - Academia
-  skillFeats: 02000000
+  skillFeats:
+  - {fileID: 11400000, guid: cfdb8b92bc1cdfe47b71a8866e3a8f4d, type: 2}

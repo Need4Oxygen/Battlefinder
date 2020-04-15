@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Fortune Teller
   background: 17
+  description: 
   abilitiesBoost: 0500000007000000
   trainedSkills: 0b000000
   trainedLores:
   - Fortune-Telling
-  skillFeats: 45000000
+  skillFeats:
+  - {fileID: 11400000, guid: 715e30c2d8c845c4e9c39e96fa232c6c, type: 2}

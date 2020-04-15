@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Herbalist
   background: 21
+  description: 
   abilitiesBoost: 0400000006000000
   trainedSkills: 0a000000
   trainedLores:
   - Herbalism
-  skillFeats: 42000000
+  skillFeats:
+  - {fileID: 11400000, guid: 49eff0e56b8cb0449ad0da2018049394, type: 2}

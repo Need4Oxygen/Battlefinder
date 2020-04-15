@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Charlatan
   background: 10
+  description: 
   abilitiesBoost: 0500000007000000
   trainedSkills: 06000000
   trainedLores:
   - Underworld
-  skillFeats: 25000000
+  skillFeats:
+  - {fileID: 11400000, guid: 0be3377a0b396ce4f9ed85d28883b966, type: 2}

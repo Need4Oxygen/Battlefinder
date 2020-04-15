@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Noble
   background: 28
+  description: 
   abilitiesBoost: 0500000007000000
   trainedSkills: 0e000000
   trainedLores:
   - Genealogy
   - Heraldy
-  skillFeats: 4d000000
+  skillFeats:
+  - {fileID: 11400000, guid: d4b54245329b9394198847d014547cfb, type: 2}

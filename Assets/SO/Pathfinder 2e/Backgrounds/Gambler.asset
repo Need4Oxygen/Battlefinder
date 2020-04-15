@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Gambler
   background: 18
+  description: 
   abilitiesBoost: 0300000007000000
   trainedSkills: 06000000
   trainedLores:
   - Games
-  skillFeats: 27000000
+  skillFeats:
+  - {fileID: 11400000, guid: ace4329a885d20e4e8c89478b523ac7b, type: 2}

@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Miner
   background: 27
+  description: 
   abilitiesBoost: 0200000006000000
   trainedSkills: 10000000
   trainedLores:
   - Mining
-  skillFeats: 5e000000
+  skillFeats:
+  - {fileID: 11400000, guid: d70dffdae7f2c6641a98b72b67e3962c, type: 2}

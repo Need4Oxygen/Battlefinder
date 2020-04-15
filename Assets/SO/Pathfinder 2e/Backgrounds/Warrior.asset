@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Warrior
   background: 36
+  description: 
   abilitiesBoost: 0200000004000000
   trainedSkills: 08000000
   trainedLores:
   - Warfare
-  skillFeats: 32000000
+  skillFeats:
+  - {fileID: 11400000, guid: bc1c8bc60a26b374ea03c927889d9dff, type: 2}

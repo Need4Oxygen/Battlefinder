@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Acolyte
   background: 2
+  description: 
   abilitiesBoost: 0500000006000000
   trainedSkills: 0d000000
   trainedLores:
-  - Circus
-  skillFeats: 4b000000
+  - Scribling
+  skillFeats:
+  - {fileID: 11400000, guid: 25d0417d7628f3341b989e9d662e9893, type: 2}
