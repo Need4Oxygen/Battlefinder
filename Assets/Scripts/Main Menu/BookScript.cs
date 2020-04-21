@@ -116,11 +116,11 @@ public class BookScript : MonoBehaviour
         {
             if (pg < currentPage)
             {
-                Debug.Log("animate to the right");
+                //Debug.Log("animate to the right");
             }
             else
             {
-                Debug.Log("animate to the left");
+                //Debug.Log("animate to the left");
             }
             tabGroup.SwitchPreviousTabs(pg, currentPage);
             currentPage = pg;
