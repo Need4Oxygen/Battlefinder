@@ -16,8 +16,31 @@ MonoBehaviour:
   background: 32
   description: 
   abilitiesBoost: 0500000006000000
-  trainedSkills: 030000000a0000000b0000000d000000
-  trainedLores:
-  - Academia
+  lectures:
+  - name: Arcana
+    description: 
+    traineable: 3
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Nature
+    description: 
+    traineable: 10
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Occultism
+    description: 
+    traineable: 11
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Religion
+    description: 
+    traineable: 13
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Academia Lore
+    description: 
+    traineable: 30
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
   skillFeats:
   - {fileID: 11400000, guid: cfdb8b92bc1cdfe47b71a8866e3a8f4d, type: 2}

@@ -16,8 +16,16 @@ MonoBehaviour:
   background: 12
   description: 
   abilitiesBoost: 0500000006000000
-  trainedSkills: 0e000000
-  trainedLores:
-  - Underworld
+  lectures:
+  - name: Society
+    description: 
+    traineable: 14
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Streetwise Lore
+    description: 
+    traineable: 30
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
   skillFeats:
   - {fileID: 11400000, guid: af85536fd21c3314c96a31ceaae60cf0, type: 2}

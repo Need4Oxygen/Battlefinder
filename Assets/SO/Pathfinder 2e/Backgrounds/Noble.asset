@@ -16,9 +16,21 @@ MonoBehaviour:
   background: 28
   description: 
   abilitiesBoost: 0500000007000000
-  trainedSkills: 0e000000
-  trainedLores:
-  - Genealogy
-  - Heraldy
+  lectures:
+  - name: Society
+    description: 
+    traineable: 14
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Genealogy Lore
+    description: 
+    traineable: 30
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Heraldy Lore
+    description: 
+    traineable: 30
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
   skillFeats:
   - {fileID: 11400000, guid: d4b54245329b9394198847d014547cfb, type: 2}

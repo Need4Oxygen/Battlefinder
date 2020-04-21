@@ -16,8 +16,16 @@ MonoBehaviour:
   background: 21
   description: 
   abilitiesBoost: 0400000006000000
-  trainedSkills: 0a000000
-  trainedLores:
-  - Herbalism
+  lectures:
+  - name: Nature
+    description: 
+    traineable: 10
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Herbalism Lore
+    description: 
+    traineable: 30
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
   skillFeats:
   - {fileID: 11400000, guid: 49eff0e56b8cb0449ad0da2018049394, type: 2}

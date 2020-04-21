@@ -16,8 +16,16 @@ MonoBehaviour:
   background: 19
   description: 
   abilitiesBoost: 0200000007000000
-  trainedSkills: 0c000000
-  trainedLores:
-  - Gladiatorial
+  lectures:
+  - name: Performance
+    description: 
+    traineable: 12
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Gladiatorial Lore
+    description: 
+    traineable: 30
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
   skillFeats:
   - {fileID: 11400000, guid: 74d9ff36488470040a58d58bea112717, type: 2}

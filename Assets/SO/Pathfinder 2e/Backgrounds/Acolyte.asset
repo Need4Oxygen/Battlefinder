@@ -16,8 +16,16 @@ MonoBehaviour:
   background: 2
   description: 
   abilitiesBoost: 0500000006000000
-  trainedSkills: 0d000000
-  trainedLores:
-  - Scribling
+  lectures:
+  - name: Religion
+    description: 
+    traineable: 13
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Scribling Lore
+    description: 
+    traineable: 30
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
   skillFeats:
   - {fileID: 11400000, guid: 25d0417d7628f3341b989e9d662e9893, type: 2}

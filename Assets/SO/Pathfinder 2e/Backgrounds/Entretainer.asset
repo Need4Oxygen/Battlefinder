@@ -16,8 +16,16 @@ MonoBehaviour:
   background: 14
   description: 
   abilitiesBoost: 0300000007000000
-  trainedSkills: 0c000000
-  trainedLores:
-  - Theater
+  lectures:
+  - name: Performance
+    description: 
+    traineable: 12
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Theater Lore
+    description: 
+    traineable: 30
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
   skillFeats:
   - {fileID: 11400000, guid: 22cc1cb0bcad5894a816f125ce0a8cb6, type: 2}

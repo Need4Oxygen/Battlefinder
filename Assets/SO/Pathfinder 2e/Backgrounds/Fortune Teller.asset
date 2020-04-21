@@ -16,8 +16,16 @@ MonoBehaviour:
   background: 17
   description: 
   abilitiesBoost: 0500000007000000
-  trainedSkills: 0b000000
-  trainedLores:
-  - Fortune-Telling
+  lectures:
+  - name: Occultism
+    description: 
+    traineable: 11
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Fortune-Telling
+    description: 
+    traineable: 30
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
   skillFeats:
   - {fileID: 11400000, guid: 715e30c2d8c845c4e9c39e96fa232c6c, type: 2}

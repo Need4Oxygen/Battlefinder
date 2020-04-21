@@ -16,8 +16,16 @@ MonoBehaviour:
   background: 10
   description: 
   abilitiesBoost: 0500000007000000
-  trainedSkills: 06000000
-  trainedLores:
-  - Underworld
+  lectures:
+  - name: Deception
+    description: 
+    traineable: 6
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Underworld Lore
+    description: 
+    traineable: 30
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
   skillFeats:
   - {fileID: 11400000, guid: 0be3377a0b396ce4f9ed85d28883b966, type: 2}

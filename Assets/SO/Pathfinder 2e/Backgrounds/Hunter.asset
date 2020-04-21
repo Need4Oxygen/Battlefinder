@@ -16,8 +16,16 @@ MonoBehaviour:
   background: 23
   description: 
   abilitiesBoost: 0300000006000000
-  trainedSkills: 10000000
-  trainedLores:
-  - Tanning
+  lectures:
+  - name: Survival
+    description: 
+    traineable: 16
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Tanning Lore
+    description: 
+    traineable: 30
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
   skillFeats:
   - {fileID: 11400000, guid: d66663768c4319a4bb2e128570bb67e8, type: 2}

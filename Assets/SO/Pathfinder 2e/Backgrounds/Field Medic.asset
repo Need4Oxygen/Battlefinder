@@ -16,8 +16,16 @@ MonoBehaviour:
   background: 16
   description: 
   abilitiesBoost: 0400000006000000
-  trainedSkills: 09000000
-  trainedLores:
-  - Warfare
+  lectures:
+  - name: Medicine
+    description: 
+    traineable: 9
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Warfare Lore
+    description: 
+    traineable: 30
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
   skillFeats:
   - {fileID: 11400000, guid: 9904d05e1647d1044a3f1490bb9076a8, type: 2}

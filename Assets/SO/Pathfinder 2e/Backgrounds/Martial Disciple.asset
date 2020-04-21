@@ -16,9 +16,22 @@ MonoBehaviour:
   background: 25
   description: 
   abilitiesBoost: 0200000003000000
-  trainedSkills: 0200000004000000
-  trainedLores:
-  - Warfare
+  lectures:
+  - name: Acrobatics
+    description: 
+    traineable: 2
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Athletics
+    description: 
+    traineable: 4
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Warfare Lore
+    description: 
+    traineable: 30
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
   skillFeats:
   - {fileID: 11400000, guid: 9f61d960a8e8d5d4e8b0045db3cc7f7c, type: 2}
   - {fileID: 11400000, guid: 7b27108e6f658f74096d002edd9197ac, type: 2}

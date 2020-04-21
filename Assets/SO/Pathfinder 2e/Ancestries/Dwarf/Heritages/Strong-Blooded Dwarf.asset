@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 746489475c82da0489f2347bf9bd3d6e, type: 3}
+  m_Name: Strong-Blooded Dwarf
+  m_EditorClassIdentifier: 
+  title: Strong-Blooded Dwarf
+  feat: 6
+  level: 0
+  description: "Your blood runs hearty and strong, and you can shake\r off toxins.
+    You gain poison resistance equal to half your\r level (minimum 1), and each of
+    your successful saving\r throws against a poison affliction reduces its stage
+    by 2,\r or by 1 for a virulent poison. Each critical success against\r an ongoing
+    poison reduces its stage by 3, or by 2 for a\r virulent poison."
+  actions: []
+  effects:
+  - name: Strong-Blooded Dwarf
+    description: 
+    application: 2
+    facts: []

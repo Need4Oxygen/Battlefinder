@@ -16,8 +16,16 @@ MonoBehaviour:
   background: 9
   description: 
   abilitiesBoost: 0200000006000000
-  trainedSkills: 10000000
-  trainedLores:
-  - Legal
+  lectures:
+  - name: Survival
+    description: 
+    traineable: 16
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Legal Lore
+    description: 
+    traineable: 30
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
   skillFeats:
   - {fileID: 11400000, guid: eb93177434df63b43b9e340f2faaf92d, type: 2}

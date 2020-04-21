@@ -16,8 +16,16 @@ MonoBehaviour:
   background: 18
   description: 
   abilitiesBoost: 0300000007000000
-  trainedSkills: 06000000
-  trainedLores:
-  - Games
+  lectures:
+  - name: Deception
+    description: 
+    traineable: 6
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Games Lore
+    description: 
+    traineable: 30
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
   skillFeats:
   - {fileID: 11400000, guid: ace4329a885d20e4e8c89478b523ac7b, type: 2}

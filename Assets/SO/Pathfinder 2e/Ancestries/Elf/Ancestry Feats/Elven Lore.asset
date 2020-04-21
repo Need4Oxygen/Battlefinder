@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 746489475c82da0489f2347bf9bd3d6e, type: 3}
+  m_Name: Elven Lore
+  m_EditorClassIdentifier: 
+  title: Elven Lore
+  feat: 7
+  level: 1
+  description: "You\u2019ve studied in traditional elven arts, learning about\r arcane
+    magic and the world around you. You gain the\r trained proficiency rank in Arcana
+    and Nature. If you would\r automatically become trained in one of those skills
+    (from\r your background or class, for example), you instead become\r trained
+    in a skill of your choice. You also become trained in\r Elven Lore."
+  prequisites: []
+  actions: []
+  effects: []
+  lectures:
+  - name: Arcana
+    description: 
+    traineable: 3
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 1
+  - name: Nature
+    description: 
+    traineable: 10
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 1
+  - name: Elven Lore
+    description: 
+    traineable: 30
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  feats: []

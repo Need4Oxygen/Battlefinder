@@ -16,8 +16,16 @@ MonoBehaviour:
   background: 34
   description: 
   abilitiesBoost: 0300000004000000
-  trainedSkills: 11000000
-  trainedLores:
-  - City
+  lectures:
+  - name: Thievery
+    description: 
+    traineable: 17
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: City Lore
+    description: 
+    traineable: 30
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
   skillFeats:
   - {fileID: 11400000, guid: 897d032e5d34c3b4391152a2e3670ac1, type: 2}
