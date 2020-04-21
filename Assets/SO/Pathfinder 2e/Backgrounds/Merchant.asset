@@ -16,8 +16,16 @@ MonoBehaviour:
   background: 26
   description: 
   abilitiesBoost: 0500000007000000
-  trainedSkills: 07000000
-  trainedLores:
-  - Mercantile
+  lectures:
+  - name: Diplomacy
+    description: 
+    traineable: 7
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Mercantile Lore
+    description: 
+    traineable: 30
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
   skillFeats:
   - {fileID: 11400000, guid: 13906032f66381e43b3f727676f1ade1, type: 2}

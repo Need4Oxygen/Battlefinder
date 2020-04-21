@@ -16,8 +16,16 @@ MonoBehaviour:
   background: 3
   description: 
   abilitiesBoost: 0200000003000000
-  trainedSkills: 02000000
-  trainedLores:
-  - Circus
+  lectures:
+  - name: Acrobatics
+    description: 
+    traineable: 2
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Circus Lore
+    description: 
+    traineable: 30
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
   skillFeats:
   - {fileID: 11400000, guid: 84416b0e71faaf5429d4eb995b95c958, type: 2}

@@ -16,8 +16,16 @@ MonoBehaviour:
   background: 33
   description: 
   abilitiesBoost: 0300000006000000
-  trainedSkills: 10000000
-  trainedLores:
-  - Terrain
+  lectures:
+  - name: Survival
+    description: 
+    traineable: 16
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Terrain Lore
+    description: 
+    traineable: 30
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
   skillFeats:
   - {fileID: 11400000, guid: f6eb80a49790c3b4c9181629b6d475d7, type: 2}

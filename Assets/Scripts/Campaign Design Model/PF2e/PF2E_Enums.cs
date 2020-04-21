@@ -1,23 +1,71 @@
-﻿public enum E_PF2E_Size { None, Default, Tiny, Small, Medium, Large, Huge, Gargantuan }
-public enum E_PF2E_Saves { None, Default, Fortitude, Reflex, Will }
+﻿public enum E_PF2E_Size
+{
+    None, Default, Tiny, Small, Medium, Large, Huge, Gargantuan
+}
+public enum E_PF2E_Saves
+{
+    None, Default, Fortitude, Reflex, Will
+}
 
-public enum E_PF2E_Alignment { None, Default, LG, NG, CG, LN, NN, CN, LE, NE, CE }
+public enum E_PF2E_Alignment
+{
+    None, Default, LG, NG, CG, LN, NN, CN, LE, NE, CE
+}
+
+public enum E_PF2E_Languages
+{
+    None, Default, Common, Draconic, Dwarven, Elven, Ganomish, Goblin, Halfling, Jotun, Orcish,
+    Sylvan, Undercommon, Abyssal, Aklo, Aquan, Auran, Celestial, Gnoll, Ignan, Infernal, Necril,
+    Shadowtongue, Terran
+}
+
+public enum E_PF2E_CharacterTraits
+{
+    None, Default, Humanoid, Dwarf, Elf
+}
 
 public enum E_PF2E_Ability
-{ None, Default, Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma, Free }
+{
+    None, Default, Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma, Free
+}
 
 public enum E_PF2E_Skill
 {
     None, Default, Acrobatics, Arcana, Athletics, Crafting, Deception, Diplomacy,
     Intimidation, Medicine, Nature, Occultism, Performance, Religion, Society, Stealth,
-    Survival, Thievery, Free_1, Free_2,
+    Survival, Thievery
 }
 
 public enum E_PF2E_Proficiency
-{ None, Default, Untrained, Trained, Expert, Master, Lengend }
+{
+    None, Default, Untrained, Trained, Expert, Master, Lengend
+}
+
+public enum E_PF2E_Traineable
+{
+    None, Default,
+
+    Acrobatics, Arcana, Athletics, Crafting, Deception, Diplomacy, Intimidation, Medicine,
+    Nature, Occultism, Performance, Religion, Society, Stealth, Survival, Thievery,
+
+    Fortitude, Reflex, Will,
+
+    Perception,
+
+    Unarmed, SimpleWeapons, MartialWeapons, AdvancedWeapons,
+    Unarmored, LightArmor, MediumArmor, HeavyArmor,
+
+    Lore,
+}
+
+
 
 // -----------------------------ABC-----------------------------
-public enum E_PF2E_Ancestry { None, Default, Dwarf, Elf, Gnome, Goblin, Halfling, Human }
+// Ancestries, Backgrounds and Classes
+public enum E_PF2E_Ancestry
+{
+    None, Default, Dwarf, Elf, Gnome, Goblin, Halfling, Human
+}
 public enum E_PF2E_Background
 {
     None, Default, Acolyte, Acrobat, AnimalWhisperer, Artisan, Artist, Barkeep, Barrister, BountyHunter, Charlatan,
@@ -26,26 +74,56 @@ public enum E_PF2E_Background
     Scout, StreetUrchin, Tinker, Warrior
 }
 public enum E_PF2E_Class
-{ None, Default, Alchemist, Barbarian, Bard, Champion, Cleric, Druid, Fighter, Monk, Ranger, Rogue, Sorcerer, Wizard }
-
+{
+    None, Default, Alchemist, Barbarian, Bard, Champion, Cleric, Druid, Fighter, Monk, Ranger, Rogue, Sorcerer, Wizard
+}
 
 
 // -----------------------------EFFECTS-----------------------------
+// Effects are buffs or detriments directed towards an specific stat.
 public enum E_PF2E_FeatType
 {
-    None, Default, GeneralSkillFeat, SkillFeat, ClassFeat, ClassFeature, HeritageFeat, AncestryFeature,
+    None, Default, GeneralSkillFeat, SkillFeat, ClassFeat, ClassFeature, Heritage, AncestryFeat, AncestryFeature,
 }
 public enum E_PF2E_EffectAplication
 {
-    None, Default, Add, HalfLvLRoundedUp, HalfLvLRoundedDown
+    None, Default, Complex, Both
 }
 public enum E_PF2E_EffectTarget
 {
-    None, Default, HP, AC, Perception, STR, DEX, CON, INT, WIS, CHA, Acrobatics, Arcana, Athletics, Crafting,
-    Deception, Diplomacy, Intimidation, Medicine, Nature, Occultism, Performance, Religion, Society, Stealth,
-    Survival, Thievery
+    None = 0, Default = 0,
+    HP = 1, AC = 2, Perception = 3,
+    STR = 10, DEX = 11, CON = 12, INT = 13, WIS = 14, CHA = 15,
+    SavesFortitude = 20, SavesReflex = 21, SavesWill = 22,
+    AttackMelee = 30, AttackRange = 31, AttackSpell = 32, AttackDCs = 33,
+    DamageMelee = 40, DamageRange = 41, DamageSpell = 42,
+    ResistanceFire = 50, ResistanceCold = 51, ResistanceSlash = 52, ResistanceBlunt = 53, ResistancePiercing = 54,
+    speedBase = 60, speedBasePenalty = 61, speedClimb = 62, speedClimbPenalty = 63, speedFly = 64, speedFlyPenalty = 65, speedSwim = 66, speedSwimPenalty = 67, speedBurrow = 68, speedBurrowPenalty = 69,
+    Acrobatics = 80, Arcana = 81, Athletics = 82, Crafting = 83, Deception = 84, Diplomacy = 85, Intimidation = 86, Medicine = 87, Nature = 88, Occultism = 89, Performance = 90, Religion = 91, Society = 92, Stealth = 93, Survival = 94, Thievery = 95,
+    ArmorSpeedPenalty = 100,
 }
-public enum E_PF2E_EffectType { None, Default, Circumstance, Status, Item, Untyped }
+public enum E_PF2E_EffectType
+{
+    None, Default, Circumstance, Status, Item, Untyped
+}
+
+
+// -----------------------------ACTIONS-----------------------------
+public enum E_PF2E_ActionType
+{
+    None, Default, Free, Reaction, AP1, AP2, AP3
+}
+// public enum E_PF2E_EffectAplication
+// {
+//     None, Default, Add, HalfLvLRoundedUp, HalfLvLRoundedDown
+// }
+// public enum E_PF2E_EffectTarget
+// {
+//     None, Default, HP, AC, Perception, STR, DEX, CON, INT, WIS, CHA, Acrobatics, Arcana, Athletics, Crafting,
+//     Deception, Diplomacy, Intimidation, Medicine, Nature, Occultism, Performance, Religion, Society, Stealth,
+//     Survival, Thievery
+// }
+// public enum E_PF2E_EffectType { None, Default, Circumstance, Status, Item, Untyped }
 
 
 // -----------------------------SKILLS-----------------------------

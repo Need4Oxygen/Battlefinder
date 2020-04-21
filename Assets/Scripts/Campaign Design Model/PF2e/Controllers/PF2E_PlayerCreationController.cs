@@ -73,7 +73,7 @@ public class PF2E_PlayerCreationController : MonoBehaviour
 
     public void OnValueAbilityChanged(E_PF2E_Ability ability, int score)
     {
-        currentPlayer.abilities[ability] = score;
+        // currentPlayer.abilities[ability] = score;
         RefreshPanelIntoPlayer();
     }
 
@@ -100,12 +100,12 @@ public class PF2E_PlayerCreationController : MonoBehaviour
         levelInput.text = currentPlayer.level.ToString();
         playerNameInput.text = currentPlayer.playerName;
 
-        stregth.score = currentPlayer.abilities[E_PF2E_Ability.Strength];
-        dexterity.score = currentPlayer.abilities[E_PF2E_Ability.Dexterity];
-        constitution.score = currentPlayer.abilities[E_PF2E_Ability.Constitution];
-        intelligence.score = currentPlayer.abilities[E_PF2E_Ability.Intelligence];
-        wisdom.score = currentPlayer.abilities[E_PF2E_Ability.Wisdom];
-        charisma.score = currentPlayer.abilities[E_PF2E_Ability.Charisma];
+        // stregth.score = currentPlayer.abilities[E_PF2E_Ability.Strength];
+        // dexterity.score = currentPlayer.abilities[E_PF2E_Ability.Dexterity];
+        // constitution.score = currentPlayer.abilities[E_PF2E_Ability.Constitution];
+        // intelligence.score = currentPlayer.abilities[E_PF2E_Ability.Intelligence];
+        // wisdom.score = currentPlayer.abilities[E_PF2E_Ability.Wisdom];
+        // charisma.score = currentPlayer.abilities[E_PF2E_Ability.Charisma];
     }
 
     /// <summary> Refresh everything UI wise with player data. </summary>

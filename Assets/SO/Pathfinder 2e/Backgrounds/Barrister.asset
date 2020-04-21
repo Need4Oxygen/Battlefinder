@@ -16,8 +16,16 @@ MonoBehaviour:
   background: 8
   description: 
   abilitiesBoost: 0500000007000000
-  trainedSkills: 07000000
-  trainedLores:
-  - Legal
+  lectures:
+  - name: Diplomacy
+    description: 
+    traineable: 7
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Legal Lore
+    description: 
+    traineable: 30
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
   skillFeats:
   - {fileID: 11400000, guid: 608e866bf7acadf41b8a1b34f4b41bb8, type: 2}

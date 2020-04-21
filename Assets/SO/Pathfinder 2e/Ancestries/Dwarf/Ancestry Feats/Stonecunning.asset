@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 746489475c82da0489f2347bf9bd3d6e, type: 3}
+  m_Name: Stonecunning
+  m_EditorClassIdentifier: 
+  title: Stonecunning
+  feat: 7
+  level: 1
+  description: "You have a knack for noticing even small inconsistencies and\r craftsmanship
+    techniques in the stonework around you. You\r gain a +2 circumstance bonus to
+    Perception checks to notice\r unusual stonework. This bonus applies to checks
+    to discover\r mechanical traps made of stone or hidden within stone.\r\nIf you
+    aren\u2019t using the Seek action or searching, the GM\r automatically rolls
+    a secret check for you to notice unusual\r stonework anyway. This check doesn\u2019t
+    gain the circumstance\r bonus, and it takes a \u20132 circumstance penalty."
+  actions: []
+  effects:
+  - name: Stonecunning
+    description: 
+    application: 1
+    facts:
+    - name: +2 Perception
+      description: +2 circumstance bonus to Perception checks to notice unusual stonework
+      value: 2
+      effectType: 2
+      target: 3
+      effectTriggers:
+      - Check unusual stonework
+  lectures: []

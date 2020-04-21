@@ -16,8 +16,16 @@ MonoBehaviour:
   background: 27
   description: 
   abilitiesBoost: 0200000006000000
-  trainedSkills: 10000000
-  trainedLores:
-  - Mining
+  lectures:
+  - name: Survival
+    description: 
+    traineable: 16
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Mining Lore
+    description: 
+    traineable: 30
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
   skillFeats:
   - {fileID: 11400000, guid: d70dffdae7f2c6641a98b72b67e3962c, type: 2}

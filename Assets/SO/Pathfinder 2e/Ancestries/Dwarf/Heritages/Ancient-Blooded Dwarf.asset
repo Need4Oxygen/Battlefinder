@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 746489475c82da0489f2347bf9bd3d6e, type: 3}
+  m_Name: Ancient-Blooded Dwarf
+  m_EditorClassIdentifier: 
+  title: Ancient-Blooded Dwarf
+  feat: 6
+  description: "Dwarven heroes of old could shrug off their enemies\u2019 magic,
+    and some of that\r resistance manifests in you. You gain the Call on Ancient
+    Blood reaction."
+  effects: []
+  actions:
+  - title: Call on Ancient Blood
+    type: 3
+    trigger: You attempt a saving throw against a magical effect, but you haven't
+      rolled yet.
+    description: "Your ancestors\u2019 innate resistance to magic surges, before
+      slowly ebbing down. You gain a +1\r circumstance bonus to the triggering saving
+      throw and until the end of this turn."

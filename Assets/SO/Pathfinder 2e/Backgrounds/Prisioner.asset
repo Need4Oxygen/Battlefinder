@@ -16,8 +16,16 @@ MonoBehaviour:
   background: 30
   description: 
   abilitiesBoost: 0200000004000000
-  trainedSkills: 0f000000
-  trainedLores:
-  - Underground
+  lectures:
+  - name: Stealth
+    description: 
+    traineable: 15
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Underworld Lore
+    description: 
+    traineable: 30
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
   skillFeats:
   - {fileID: 11400000, guid: 6f1066fba2f2fc74986b2a98e26e7598, type: 2}

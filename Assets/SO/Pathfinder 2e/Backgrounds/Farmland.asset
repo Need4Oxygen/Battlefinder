@@ -16,8 +16,16 @@ MonoBehaviour:
   background: 15
   description: 
   abilitiesBoost: 0400000006000000
-  trainedSkills: 04000000
-  trainedLores:
-  - Farming
+  lectures:
+  - name: Athletics
+    description: 
+    traineable: 4
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Farming Lore
+    description: 
+    traineable: 30
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
   skillFeats:
   - {fileID: 11400000, guid: cfdb8b92bc1cdfe47b71a8866e3a8f4d, type: 2}

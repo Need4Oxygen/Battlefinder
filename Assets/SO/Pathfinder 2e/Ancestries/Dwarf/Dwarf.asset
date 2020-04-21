@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7eaa631ca577f498d751d9aeb7b59b, type: 3}
+  m_Name: Dwarf
+  m_EditorClassIdentifier: 
+  title: Dwarf
+  ancestry: 2
+  description: "Dwarves have a well-earned reputation as a stoic and stern people,
+    ensconced within citadels\r and cities carved from solid rock. While some see
+    them as dour and humorless crafters of\r stone and metal, dwarves and those who
+    have spent time among them understand their\r unbridled zeal for their work,
+    caring far more about quality than quantity. To a stranger,\r they can seem untrusting
+    and clannish, but to their friends and family, they are warm and\r caring, their
+    halls filled with the sounds of laughter and hammers hitting anvils."
+  healthPoints: 10
+  size: 4
+  speed: 20
+  abilityBoosts: 040000000600000008000000
+  abilityFlaw: 07000000
+  languages: 0200000004000000
+  traits: 0200000003000000
+  heritages:
+  - {fileID: 11400000, guid: c49f7e74145cc3d4b82606b71c9a9f2e, type: 2}
+  - {fileID: 11400000, guid: de9d17c45d890c041986fe9cfccdb014, type: 2}
+  - {fileID: 11400000, guid: f045c475c6aac89408bf83f4b07618ba, type: 2}
+  - {fileID: 11400000, guid: 383a2b28b6edb5040b0da7245621007e, type: 2}
+  - {fileID: 11400000, guid: 01849cb2c9db8d44589bc6a681690f52, type: 2}
+  ancestryFeatures:
+  - {fileID: 11400000, guid: e200527eea0d4d243a8b61c0410c1984, type: 2}
+  ancestryFeats:
+  - {fileID: 11400000, guid: dd51e07f6468d9d4c8ac9f20319c1271, type: 2}
+  - {fileID: 11400000, guid: 60103b913ac5fbe428091b0f20563f99, type: 2}
+  - {fileID: 11400000, guid: 5289600d8834096448efbd30a1f956f5, type: 2}
+  - {fileID: 11400000, guid: 553478319b6e3f340854119870a00271, type: 2}
+  - {fileID: 11400000, guid: 9b94e9569f7ce9840ad6e2843d11a0c4, type: 2}
+  - {fileID: 11400000, guid: 55a19a3d258b1314699ff168de380a49, type: 2}

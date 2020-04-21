@@ -16,8 +16,16 @@ MonoBehaviour:
   background: 6
   description: 
   abilitiesBoost: 0300000007000000
-  trainedSkills: 05000000
-  trainedLores:
-  - Art
+  lectures:
+  - name: Crafting
+    description: 
+    traineable: 5
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
+  - name: Art Lore
+    description: 
+    traineable: 30
+    adquiredProficiency: 3
+    turnFreeIfAlreadyTrained: 0
   skillFeats:
   - {fileID: 11400000, guid: de67ce6a4d8b6f44fa87a7a6dba7e9bb, type: 2}
