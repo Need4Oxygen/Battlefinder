@@ -19,6 +19,10 @@ public class TabGroup : MonoBehaviour
     [SerializeField]
     private Color tabActive = default;
 
+    private void Start()
+    {
+        ResetTabs();
+    }
 
     public void Subscribe(TabButton button)
     {
