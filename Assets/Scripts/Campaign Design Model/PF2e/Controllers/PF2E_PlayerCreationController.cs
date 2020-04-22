@@ -8,7 +8,12 @@ public class PF2E_PlayerCreationController : MonoBehaviour
 {
     public PF2E_Controller controller = null;
     [SerializeField] private ConfirmationController confirmation = null;
-    [SerializeField] private CanvasGroup playerCreationPanel = null;
+    [SerializeField] private CanvasGroup playerPanel = null;
+
+    [Header("Build")]
+    [SerializeField] private Transform buildContainer = null;
+    [SerializeField] private Transform buildButton = null;
+    [SerializeField] private List<GameObject> buildButtonList = null;
 
     [Space(15)]
     [SerializeField] private TMP_InputField levelInput = null;
@@ -17,31 +22,23 @@ public class PF2E_PlayerCreationController : MonoBehaviour
     [SerializeField] private TMP_Text ACText = null;
     [SerializeField] private TMP_Text perceptionText = null;
 
-    [Space(15)]
-    [SerializeField] private PF2E_PCAbility stregth = null;
-    [SerializeField] private PF2E_PCAbility dexterity = null;
-    [SerializeField] private PF2E_PCAbility constitution = null;
-    [SerializeField] private PF2E_PCAbility intelligence = null;
-    [SerializeField] private PF2E_PCAbility wisdom = null;
-    [SerializeField] private PF2E_PCAbility charisma = null;
-
     private PF2E_PlayerData initialPlayer = null;
     private PF2E_PlayerData currentPlayer = null;
 
     void Start()
     {
-        StartCoroutine(PanelFader.RescaleAndFade(playerCreationPanel.transform, playerCreationPanel, 0.85f, 0f, 0f));
+        StartCoroutine(PanelFader.RescaleAndFade(playerPanel.transform, playerPanel, 0.85f, 0f, 0f));
     }
 
     private void OpenPlayerCreationPanel()
     {
-        StartCoroutine(PanelFader.RescaleAndFade(playerCreationPanel.transform, playerCreationPanel, 1f, 1f, 0.1f));
+        StartCoroutine(PanelFader.RescaleAndFade(playerPanel.transform, playerPanel, 1f, 1f, 0.1f));
     }
 
     private void ClosePlayerCreationPanel()
     {
-        StartCoroutine(PanelFader.RescaleAndFade(playerCreationPanel.transform, playerCreationPanel, 0.85f, 0f, 0.1f));
-
+        StartCoroutine(PanelFader.RescaleAndFade(playerPanel.transform, playerPanel, 0.85f, 0f, 0.1f));
+        controller.RefreshCampaignContainers();
         initialPlayer = null;
         currentPlayer = null;
     }
@@ -65,18 +62,10 @@ public class PF2E_PlayerCreationController : MonoBehaviour
             ClosePlayerCreationPanel();
     }
 
-    /// <summary> Executed whenever. </summary>
-    public void OnValueChanged()
-    {
-        RefreshPanelIntoPlayer();
-    }
 
-    public void OnValueAbilityChanged(E_PF2E_Ability ability, int score)
-    {
-        // currentPlayer.abilities[ability] = score;
-        RefreshPanelIntoPlayer();
-    }
+    #region --------PLAYERS--------
 
+    /// <summary> Generates new player and open the player panel. </summary>
     public void NewPlayer()
     {
         string newGuid = Guid.NewGuid().ToString();
@@ -87,28 +76,23 @@ public class PF2E_PlayerCreationController : MonoBehaviour
         OpenPlayerCreationPanel();
     }
 
+    /// <summary> Load new player and open the player panel. </summary>
     public void LoadPlayer(PF2E_PlayerData player)
     {
         initialPlayer = player;
         currentPlayer = player;
+        RefreshPlayerIntoPanel();
         OpenPlayerCreationPanel();
     }
 
-    /// <summary> Refresh everything UI wise with player data. </summary>
+    /// <summary> Refresh UI with player data. </summary>
     private void RefreshPlayerIntoPanel()
     {
         levelInput.text = currentPlayer.level.ToString();
         playerNameInput.text = currentPlayer.playerName;
-
-        // stregth.score = currentPlayer.abilities[E_PF2E_Ability.Strength];
-        // dexterity.score = currentPlayer.abilities[E_PF2E_Ability.Dexterity];
-        // constitution.score = currentPlayer.abilities[E_PF2E_Ability.Constitution];
-        // intelligence.score = currentPlayer.abilities[E_PF2E_Ability.Intelligence];
-        // wisdom.score = currentPlayer.abilities[E_PF2E_Ability.Wisdom];
-        // charisma.score = currentPlayer.abilities[E_PF2E_Ability.Charisma];
     }
 
-    /// <summary> Refresh everything UI wise with player data. </summary>
+    /// <summary> Refresh player data with stuf?. </summary>
     private void RefreshPanelIntoPlayer()
     {
         currentPlayer.level = int.Parse(levelInput.text);
@@ -123,8 +107,9 @@ public class PF2E_PlayerCreationController : MonoBehaviour
         else
             controller.currentCampaign.players.Add(currentPlayer.guid, currentPlayer);
 
-        controller.RefreshCampaignContainers();
         controller.SaveCampaign();
     }
+
+    #endregion
 
 }
