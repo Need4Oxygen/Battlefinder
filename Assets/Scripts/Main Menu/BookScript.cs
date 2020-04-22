@@ -4,41 +4,34 @@ using UnityEngine;
 
 public class BookScript : MonoBehaviour
 {
-    [SerializeField]
-    private List<Page> pageList = new List<Page>();
+    [SerializeField] private List<Page> pageList = new List<Page>();
 
     [Header("Page Turn Settings")]
-    [SerializeField]
-    private float turningRate = 200;
-    [SerializeField]
-    private float gradFadeInTime = 0.3f;
-    [SerializeField]
-    private float gradFadeOutTime = 2.5f;
-    [Space(20)]
+    [SerializeField] private float turningRate = 200;
+    public float gradFadeInTime = 0.3f;
+    public float gradFadeOutTime = 2.5f;
 
-    [SerializeField]
-    private Transform rightPosition = default;
-    [SerializeField]
-    private Transform leftPosition = default;
+    [Space(15)]
+    [SerializeField] private Transform rightPosition = null;
+    [SerializeField] private Transform leftPosition = null;
+    [SerializeField] private Transform[] previewPapers = null;
 
-    [SerializeField]
-    private TabGroup tabGroup = null;
+    [SerializeField] private TabGroup tabGroup = null;
 
     private Page rightPage;
     private Page leftPage;
     private int currentPage;
     private bool moving;
 
-    private void Start()
+    void Start()
     {
-        rightPosition.GetChild(0).gameObject.SetActive(false);
-        leftPosition.GetChild(0).gameObject.SetActive(false);
+        foreach (var item in previewPapers)
+            item.gameObject.SetActive(false);
 
-        foreach (Page p in pageList)
+        foreach (Page page in pageList)
         {
-            p.gradFadeIn = gradFadeInTime;
-            p.gradFadeOut = gradFadeOutTime;
-            p.gameObject.SetActive(false);
+            page.bookScript = this;
+            page.gameObject.SetActive(false);
         }
 
         leftPage = pageList[0];
@@ -46,27 +39,28 @@ public class BookScript : MonoBehaviour
 
         SetPages();
 
-
-        currentPage = 1; //right page is always the current.
-        
+        currentPage = 1; // Right page is always the current.
     }
 
+    /// <summary> Called by Right arrows in book to flip right page to the left. </summary>
     public void FlipNext()
     {
-        //called by RIGHT arrow
-        if (!moving && pageList.Count > currentPage + 1)
+        if (moving)
         {
-            if (pageList[currentPage + 1].hasTab) //if next page has tab, select it
-            {
-                tabGroup.selectedTab = tabGroup.GetPageTab(currentPage + 1);
-            }
-            else
-            {
-                tabGroup.selectedTab = null;
-            }
-            tabGroup.ResetTabs();
+            Debug.Log("[BookScript] Tried to flip page while moving");
+            return;
+        }
 
-            if (pageList[currentPage].hasTab) //if the current page has tab, set for animation
+        if (currentPage + 1 < pageList.Count)
+        {
+            if (pageList[currentPage + 1].hasTab) // If next page has tab, select it
+                tabGroup.selectedTab = tabGroup.GetPageTab(currentPage + 1);
+            else
+                tabGroup.selectedTab = null;
+
+            tabGroup.HighlightSelectedTab();
+
+            if (pageList[currentPage].hasTab) // If the current page has tab, set for animation
             {
                 tabGroup.GetPageTab(currentPage).HideTab();
                 pageList[currentPage].ShowTab();
@@ -78,20 +72,25 @@ public class BookScript : MonoBehaviour
             }
         }
         else
-            Debug.Log("END OF PAGE LIST");
+        {
+            Debug.Log("[BookScript] Reached right limit of pageList");
+        }
     }
 
+    /// <summary> Called by Left arrows in book to flip left page to the right. </summary>
     public void FlipPrevious()
     {
-        //called by LEFT arrow
-        if (!moving && currentPage - 1 > 0)
+        if (moving)
         {
+            Debug.Log("[BookScript] Tried to flip page while moving");
+            return;
+        }
 
-
+        if (currentPage - 1 > 0)
+        {
             if (pageList[currentPage - 1].hasTab)
             {
                 tabGroup.selectedTab = tabGroup.GetPageTab(currentPage - 1);
-                tabGroup.ResetTabs();
                 tabGroup.GetPageTab(currentPage - 1).HideTab();
                 pageList[currentPage - 1].ShowTab();
                 StartCoroutine(RotateLeftPage(true));
@@ -99,28 +98,29 @@ public class BookScript : MonoBehaviour
             else
             {
                 tabGroup.selectedTab = null;
-                tabGroup.ResetTabs();
                 StartCoroutine(RotateLeftPage(false));
             }
+
+            tabGroup.HighlightSelectedTab();
         }
         else
         {
-            Debug.Log("END OF PAGE LIST");
+            Debug.Log("[BookScript] Reached left limit of pageList");
         }
     }
 
     public void FlipTo(int pg)
     {
-        //called by tab
+        // Called by tab
         if (!moving && currentPage != pg)
         {
             if (pg < currentPage)
             {
-                //Debug.Log("animate to the right");
+                // Debug.Log("animate to the right");
             }
             else
             {
-                //Debug.Log("animate to the left");
+                // Debug.Log("animate to the left");
             }
             tabGroup.SwitchPreviousTabs(pg, currentPage);
             currentPage = pg;
@@ -146,7 +146,8 @@ public class BookScript : MonoBehaviour
     private IEnumerator RotateRightPage(bool tabbed)
     {
         moving = true;
-        leftPage.FadeGrad(true);
+
+        leftPage.HideGradient();
         Page rotatingPage = rightPage;
         currentPage += 1;
         rightPage = pageList[currentPage];
@@ -176,7 +177,8 @@ public class BookScript : MonoBehaviour
     private IEnumerator RotateLeftPage(bool tabbed)
     {
         moving = true;
-        rightPage.FadeGrad(true);
+
+        rightPage.HideGradient();
         Page rotatingPage = leftPage;
         currentPage -= 1;
         leftPage = pageList[currentPage - 1]; //right is always the currentpage, so left is -1

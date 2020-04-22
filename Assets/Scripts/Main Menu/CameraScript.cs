@@ -6,48 +6,30 @@ using Cinemachine;
 public class CameraScript : MonoBehaviour
 {
 
-    [SerializeField]
-    CinemachineVirtualCamera closeUpCam = null;
-    [SerializeField]
-    CinemachineBrain brainCam = null;
-    [SerializeField]
-    Animator boxAnimator = null;
-    [SerializeField]
-    Transform tableTarget = null;
-    [SerializeField]
-    float orbitSpeed = 1f;
+    [SerializeField] CinemachineBrain brainCam = null;
+    [SerializeField] CinemachineVirtualCamera closeUpCam = null;
+    [SerializeField] Animator boxAnimator = null;
 
-
-
-
-    // MAKE THE FCKING SPLASH PANEL
-
+    [Space(15)]
+    [SerializeField] Transform orbitCameraFollow = null;
+    [SerializeField] Transform orbitCameraTarget = null;
+    [SerializeField] float orbitSpeed = 1f;
 
     void Update()
     {
-        transform.RotateAround(tableTarget.position, Vector3.up, orbitSpeed * Time.deltaTime);
+        orbitCameraFollow.RotateAround(orbitCameraTarget.position, Vector3.up, orbitSpeed * Time.deltaTime);
 
-
-        if (Input.GetMouseButton(0)) //change for SplashClicked()
+        if (Input.GetMouseButton(0) || Input.anyKeyDown)
         {
-            //hide Splash Panel
             closeUpCam.Priority = 12;
             StartCoroutine(WaitForBlend(brainCam.m_DefaultBlend.m_Time));
         }
     }
-    
-    /*
-    public void SplashClicked()
-    {
-        //hide Splash Panel
-        closeUpCam.Priority = 12;
-        StartCoroutine(WaitForBlend(brainCam.m_DefaultBlend.m_Time));
-    }
-    */
 
     IEnumerator WaitForBlend(float t)
     {
         yield return new WaitForSeconds(t);
         boxAnimator.SetTrigger("Open");
     }
+
 }

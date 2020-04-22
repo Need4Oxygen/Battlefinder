@@ -6,10 +6,8 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(Image))]
 public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, IPointerExitHandler
 {
-    [SerializeField]
-    private TabGroup tabGroup = null;
-    [SerializeField]
-    private GameObject paper = null;
+    [SerializeField] private TabGroup tabGroup = null;
+    [SerializeField] private GameObject content = null;
 
     public Image background;
     public int targetPage;
@@ -37,7 +35,7 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
 
     public void HideTab()
     {
-        paper.SetActive(false);
+        content.SetActive(false);
     }
 
     public void SwitchTab()
@@ -46,8 +44,6 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
         Transform currentParent = transform.parent;
         int realSibling = transform.GetSiblingIndex();
         int fakeSibling = fakeTab.GetSiblingIndex();
-        /*int lastSibling = transform.parent.childCount - 1;
-        int targetSibling = lastSibling - siblingIndex;*/
 
         fakeTab.SetParent(currentParent, false);
         fakeTab.SetSiblingIndex(realSibling);
@@ -55,40 +51,6 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
         transform.SetParent(targetParent, false);
         transform.SetSiblingIndex(fakeSibling);
 
-        paper.SetActive(true);
-
-
-        /*
-        if (transform.parent == tabGroup.tabsRight)
-        {
-            transform.SetParent(tabGroup.tabsLeft, false);
-            SortChildren(tabGroup.tabsLeft);
-        }
-        else
-        {
-            transform.SetParent(tabGroup.tabsRight, false);
-            SortChildren(tabGroup.tabsRight);
-        }*/
-
-        //gameObject.SetActive(true);
-    }
-
-    private void SortChildren(Transform parent)
-    {
-        List<Transform> children = new List<Transform>();
-        for (int i = parent.childCount - 1; i >= 0; i--)
-        {
-            Transform child = parent.GetChild(i);
-            children.Add(child);
-            child.SetParent(null, false);
-        }
-
-        children.Sort((Transform t1, Transform t2) =>
-        { return t1.GetComponent<TabButton>().targetPage.CompareTo(t2.GetComponent<TabButton>().targetPage); });
-
-        foreach (Transform child in children)
-        {
-            child.SetParent(parent, false);
-        }
+        content.SetActive(true);
     }
 }

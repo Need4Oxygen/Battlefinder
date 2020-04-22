@@ -3,22 +3,14 @@ using UnityEngine;
 
 public class CandleFlicker : MonoBehaviour
 {
-    [SerializeField]
-    private Light lightSource = null;
-    [SerializeField]
-    public float minIntensity = 1f;
-    [SerializeField]
-    public float maxIntensity = 3f;
-    [SerializeField]
-    public float minRange = 1f;
-    [SerializeField]
-    public float maxRange = 3f;
-    [SerializeField]
-    public Vector2 randomTimeBetweenChanges = new Vector2(0.1f, 0.8f);
-    [SerializeField]
-    public float changeSpeed = 1f;
-    [SerializeField]
-    public bool stopFlickering = default;
+    [SerializeField] private Light lightSource = null;
+    [SerializeField] public float minIntensity = 1f;
+    [SerializeField] public float maxIntensity = 3f;
+    [SerializeField] public float minRange = 1f;
+    [SerializeField] public float maxRange = 3f;
+    [SerializeField] public Vector2 randomTimeBetweenChanges = new Vector2(0.1f, 0.8f);
+    [SerializeField] public float changeSpeed = 1f;
+    [SerializeField] public bool stopFlickering = default;
 
     private float startRange;
     private float startIntensity;

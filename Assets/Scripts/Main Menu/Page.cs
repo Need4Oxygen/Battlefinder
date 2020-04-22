@@ -4,39 +4,32 @@ using UnityEngine.UI;
 public class Page : MonoBehaviour
 {
     public bool hasTab;
-    
-    [HideInInspector]
-    public float gradFadeOut;
-    [HideInInspector]
-    public float gradFadeIn;
 
-    [SerializeField]
-    private GameObject pageRotatingTab = null;
-    [SerializeField]
-    private Image[] gradients = null;
+    [HideInInspector] public BookScript bookScript;
+
+    [SerializeField] private GameObject pageRotatingTab = null;
+    [SerializeField] private Image[] gradients = null;
 
     private void OnEnable()
     {
-        FadeGrad(false);
+        ShowGradient();
     }
 
-    public void FadeGrad(bool hide)
+    public void HideGradient()
     {
-        if (hide)
+        foreach (Image grad in gradients)
         {
-            foreach (Image grad in gradients)
-            {
-                grad.CrossFadeAlpha(1f, 0f, false);
-                grad.CrossFadeAlpha(0f, gradFadeOut, false);
-            }
+            grad.CrossFadeAlpha(1f, 0f, false);
+            grad.CrossFadeAlpha(0f, bookScript.gradFadeInTime, false);
         }
-        else
+    }
+
+    public void ShowGradient()
+    {
+        foreach (Image grad in gradients)
         {
-            foreach (Image grad in gradients)
-            {
-                grad.CrossFadeAlpha(0f, 0f, false);
-                grad.CrossFadeAlpha(1f, gradFadeIn, false);
-            }
+            grad.CrossFadeAlpha(0f, 0f, false);
+            grad.CrossFadeAlpha(1f, bookScript.gradFadeOutTime, false);
         }
     }
 

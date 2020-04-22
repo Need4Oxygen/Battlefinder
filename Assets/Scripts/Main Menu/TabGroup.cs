@@ -6,22 +6,27 @@ public class TabGroup : MonoBehaviour
     public Transform tabsRight = null;
     public Transform tabsLeft = null;
 
-    public TabButton selectedTab;
+    [SerializeField] private TabButton _selectedTab;
+    public TabButton selectedTab
+    {
+        get { return _selectedTab; }
+        set
+        {
+            _selectedTab = value;
+            HighlightSelectedTab();
+        }
+    }
 
-    [SerializeField]
-    private BookScript bookScript = null;
-    [SerializeField]
+    [SerializeField] private BookScript bookScript = null;
+    [SerializeField] private Color tabIdle = default;
+    [SerializeField] private Color tabHover = default;
+    [SerializeField] private Color tabActive = default;
+
     private List<TabButton> tabList = new List<TabButton>();
-    [SerializeField]
-    private Color tabIdle = default;
-    [SerializeField]
-    private Color tabHover = default;
-    [SerializeField]
-    private Color tabActive = default;
 
     private void Start()
     {
-        ResetTabs();
+        HighlightSelectedTab();
     }
 
     public void Subscribe(TabButton button)
@@ -31,70 +36,55 @@ public class TabGroup : MonoBehaviour
 
     public void OnTabEnter(TabButton button)
     {
-        ResetTabs();
         if (selectedTab == null || button != selectedTab)
-        {
             button.background.color = tabHover;
-        }
     }
+
     public void OnTabExit(TabButton button)
     {
-        ResetTabs();
+        if (selectedTab == null || button != selectedTab)
+            button.background.color = tabIdle;
     }
+
     public void OnTabSelected(TabButton button)
     {
         selectedTab = button;
-        ResetTabs();
         button.background.color = tabActive;
         bookScript.FlipTo(button.targetPage);
     }
 
-    public void ResetTabs()
+    public void HighlightSelectedTab()
     {
-        foreach (TabButton b in tabList)
-        {
-            if (selectedTab != null && b == selectedTab)
-            {
-                b.background.color = tabActive;
-                continue;
-            }
-            b.background.color = tabIdle;
-        }
+        foreach (TabButton tabButton in tabList)
+            tabButton.background.color = tabIdle;
+
+        if (selectedTab != null)
+            selectedTab.background.color = tabActive;
     }
 
-    public TabButton GetPageTab(int pg)
+    public TabButton GetPageTab(int page)
     {
-        foreach (TabButton b in tabList)
-        {
-            if (b.targetPage == pg)
-            {
-                return b;
-            }
-        }
+        foreach (TabButton tabButton in tabList)
+            if (tabButton.targetPage == page)
+                return tabButton;
+
         return null;
     }
 
     public void SwitchPreviousTabs(int destinationPage, int currentPage)
     {
-        if (destinationPage > currentPage) //if we are going forward in the book
+        if (destinationPage > currentPage) // If we are going forward in the book
         {
-            foreach (TabButton b in tabList)
-            {
-                if (b.targetPage < destinationPage && b.targetPage >= currentPage) //switch all tabs between current page and destination
-                {
-                    b.SwitchTab();
-                }
-            }
+            // Switch all tabs between current page and destination, including destination
+            foreach (TabButton tabButton in tabList)
+                if (tabButton.targetPage < destinationPage && tabButton.targetPage >= currentPage)
+                    tabButton.SwitchTab();
         }
-        else //if we are going backwards in the book
+        else // If we are going backwards in the book
         {
-            foreach (TabButton b in tabList)
-            {
-                if (b.targetPage >= destinationPage && b.targetPage < currentPage) //switch all tabs between current page and destination, including destination
-                {
-                    b.SwitchTab();
-                }
-            }
+            foreach (TabButton tabButton in tabList)
+                if (tabButton.targetPage >= destinationPage && tabButton.targetPage < currentPage)
+                    tabButton.SwitchTab();
         }
     }
 }
