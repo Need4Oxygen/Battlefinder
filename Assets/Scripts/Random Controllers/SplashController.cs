@@ -8,7 +8,6 @@ public class SplashController : MonoBehaviour
     [SerializeField] GameObject splashPanel;
     [SerializeField] CanvasGroup blackPanel;
     [SerializeField] CanvasGroup disclaimerPanel;
-    [SerializeField] CanvasGroup logoPanel;
     [SerializeField] CanvasGroup battleFinderPanel;
     [SerializeField] CanvasGroup clickToPanel;
 
@@ -22,7 +21,6 @@ public class SplashController : MonoBehaviour
         splashPanel.SetActive(true);
         blackPanel.alpha = 1f;
         battleFinderPanel.alpha = 0f;
-        logoPanel.alpha = 0f;
         disclaimerPanel.alpha = 0f;
         clickToPanel.alpha = 0f;
 
@@ -33,19 +31,18 @@ public class SplashController : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         StartCoroutine(PanelFader.Fade(disclaimerPanel, 1f, 1f));
-        yield return new WaitForSeconds(5f);
-        StartCoroutine(PanelFader.Fade(disclaimerPanel, 0f, 1f));
+        yield return new WaitForSeconds(4f);
+        StartCoroutine(PanelFader.Fade(disclaimerPanel, 0f, 0.5f));
         yield return new WaitForSeconds(2f);
-        StartCoroutine(PanelFader.Fade(logoPanel, 1f, 2f));
-        yield return new WaitForSeconds(3f);
-        StartCoroutine(PanelFader.Fade(logoPanel, 0f, 1f));
-        yield return new WaitForSeconds(2f);
-        StartCoroutine(PanelFader.Fade(battleFinderPanel, 1f, 3f));
+        
+        StartCoroutine(PanelFader.Fade(battleFinderPanel, 1f, 1f));
         musicPlayer.Play();
-        yield return new WaitForSeconds(6f);
-        StartCoroutine(PanelFader.Fade(battleFinderPanel, 0f, 1f));
-        StartCoroutine(PanelFader.Fade(blackPanel, 0f, 4f));
+        yield return new WaitForSeconds(3f);
+        StartCoroutine(PanelFader.Fade(battleFinderPanel, 0f, 2f));
+        yield return new WaitForSeconds(2f);
+        StartCoroutine(PanelFader.Fade(blackPanel, 0f, 6f));
 
+        yield return new WaitForSeconds(2f);
         StartCoroutine(PanelFader.Fade(clickToPanel, 0.3f, 3f));
         clickablePanel.interactable = true;
         StartCoroutine(FadeLoop());
@@ -67,7 +64,10 @@ public class SplashController : MonoBehaviour
     {
         splashing = false;
         StopAllCoroutines();
-        StartCoroutine(PanelFader.Fade(clickToPanel, 0f, 0.3f));
-        splashPanel.SetActive(false);
+        StartCoroutine(PanelFader.Fade(clickToPanel, 0f, 0.5f));
+        StartCoroutine(PanelFader.Fade(blackPanel, 0f, 0.5f));
+        Invoke("DeactivateSplash", 0.6f);
     }
+
+    private void DeactivateSplash() { splashPanel.SetActive(false); }
 }
