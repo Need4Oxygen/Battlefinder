@@ -41,6 +41,11 @@ public enum E_PF2E_Proficiency
     None, Default, Untrained, Trained, Expert, Master, Lengend
 }
 
+public enum E_PF2E_ABC
+{
+    None, Default, Ancestry, Background, Class
+}
+
 public enum E_PF2E_Traineable
 {
     None, Default,
@@ -58,6 +63,27 @@ public enum E_PF2E_Traineable
     Lore,
 }
 
+// -----------------------------BUILD-----------------------------
+public enum E_PF2E_BuildItem
+{
+    None, Default,
+    InitialAbilityBoost, AbilityBoost, Action,
+    Heritage, AncestryFeature, AncestryFeat,
+    GeneralSkillFeat, SkillFeat, SkillTraining, SkillIncrease,
+    ClassFeature, ClassFeat, ClassSkill,
+
+    ResearchField,
+    Instinct,
+    Muses,
+    DeitySkill, ChampionsCode, DeityAndCause, DivineAlly,
+    DivineFont, Doctrine,
+    DruidicOrder,
+    PathToPerfection, SecondPathToPerfection, ThirdPathToPerfection,
+    HuntersEdge,
+    RoguesRacket,
+    Bloodline,
+    ArcaneSchool, ArcaneThesis
+}
 
 
 // -----------------------------ABC-----------------------------
@@ -113,17 +139,6 @@ public enum E_PF2E_ActionType
 {
     None, Default, Free, Reaction, AP1, AP2, AP3
 }
-// public enum E_PF2E_EffectAplication
-// {
-//     None, Default, Add, HalfLvLRoundedUp, HalfLvLRoundedDown
-// }
-// public enum E_PF2E_EffectTarget
-// {
-//     None, Default, HP, AC, Perception, STR, DEX, CON, INT, WIS, CHA, Acrobatics, Arcana, Athletics, Crafting,
-//     Deception, Diplomacy, Intimidation, Medicine, Nature, Occultism, Performance, Religion, Society, Stealth,
-//     Survival, Thievery
-// }
-// public enum E_PF2E_EffectType { None, Default, Circumstance, Status, Item, Untyped }
 
 
 // -----------------------------SKILLS-----------------------------
