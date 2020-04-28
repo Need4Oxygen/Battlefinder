@@ -11,6 +11,19 @@ public class PF2E_PlayerData : PlayerData
     public string background = "";
     public string playerClass = "";
 
+    private int _strength;
+    public int strengthMod;
+    public int strength
+    {
+        get { return _strength; }
+        set
+        {
+            _strength = value;
+            strengthMod = Mathf.FloorToInt(value);
+        }
+    }
+
+
     // public E_PF2E_Alignment alignment = E_PF2E_Alignment.NN;
     // public E_PF2E_Ancestry ancestry = E_PF2E_Ancestry.Human;
     // public E_PF2E_Background background = E_PF2E_Background.Artisan;
@@ -51,4 +64,28 @@ public class PF2E_PlayerData : PlayerData
     //     { { "Simple", E_PF2E_Proficiency.Untrained }, { "Martial", E_PF2E_Proficiency.Untrained }, { "Advanced", E_PF2E_Proficiency.Untrained } };
     // public Dictionary<string, E_PF2E_Proficiency> armorProficiencies = new Dictionary<string, E_PF2E_Proficiency>(4)
     //     { { "Unarmored", E_PF2E_Proficiency.Untrained }, { "Light", E_PF2E_Proficiency.Untrained }, { "Medium", E_PF2E_Proficiency.Untrained }, { "Heavy", E_PF2E_Proficiency.Untrained } };
+
+    public void Reload()
+    {
+
+
+
+    }
+
+}
+
+public class AbilitiesProccessor
+{
+    //    | Ancestry | Background | Class | Lvl 1 Boost | Lvl 5 Boost | Lvl 10 Boost | Lvl 15 Boost | Lvl 20 Boost |
+    // STR|          |            |       |             |             |              |              |              |
+    // DEX|          |            |       |             |             |              |              |              |
+    // CON|          |            |       |             |             |              |              |              |
+    // INT|          |            |       |             |             |              |              |              |
+    // WIS|          |            |       |             |             |              |              |              |
+    // CHA|          |            |       |             |             |              |              |              |
+
+    private bool[,] megabool = new bool[8, 6];
+
+
+
 }

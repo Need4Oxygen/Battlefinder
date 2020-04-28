@@ -101,10 +101,13 @@ public class PF2E_PlayerCreationController : MonoBehaviour
             currentPlayer.playerClass = ABCSelector.selectedClass;
             ABCSelector.CloseSelectorPanel();
 
-            ABCSelector.acceptButton.onClick = null;
-            ABCSelector.backButton.onClick = null;
+            ABCSelector.acceptButton.onClick.RemoveAllListeners();
+            ABCSelector.backButton.onClick.RemoveAllListeners();
 
-            // hacer algo lol
+            // meter ABC en el player y hacer que lo procese o algo
+            // currentPlayer.
+            // openear el panel de personaje
+            // refrescar el panel de personaje con los datos nuevos o algo
 
         }
     }
@@ -113,8 +116,8 @@ public class PF2E_PlayerCreationController : MonoBehaviour
     {
         if (ABCSelector.currentlyDisplaying == E_PF2E_ABC.Ancestry)
         {
-            ABCSelector.acceptButton.onClick = null;
-            ABCSelector.backButton.onClick = null;
+            ABCSelector.acceptButton.onClick.RemoveAllListeners();
+            ABCSelector.backButton.onClick.RemoveAllListeners();
 
             // FALTA UN DELETE PLAYER
         }

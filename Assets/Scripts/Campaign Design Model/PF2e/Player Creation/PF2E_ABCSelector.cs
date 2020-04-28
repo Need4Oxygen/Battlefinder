@@ -30,6 +30,7 @@ public class PF2E_ABCSelector : MonoBehaviour
     [SerializeField] TMP_Text ancestryAbilityBoosts = null;
     [SerializeField] TMP_Text ancestryAbilityFlaws = null;
     [SerializeField] TMP_Text ancestryLanguages = null;
+    [SerializeField] TMP_Text ancestryTraits = null;
     [SerializeField] TMP_Text ancestryFeatures = null;
 
 
@@ -46,6 +47,7 @@ public class PF2E_ABCSelector : MonoBehaviour
     [SerializeField] Transform classPanel = null;
     [SerializeField] TMP_Text classTitle = null;
     [SerializeField] TMP_Text classDescription = null;
+    [SerializeField] TMP_Text classHitPoints = null;
 
     [SerializeField] TMP_Text classUnarmed = null;
     [SerializeField] TMP_Text classSimpleWeapons = null;
@@ -180,22 +182,22 @@ public class PF2E_ABCSelector : MonoBehaviour
         ancestryDescription.text = ancestry.description;
         ancestryHitPoints.text = ancestry.hitPoints.ToString();
         ancestrySpeed.text = ancestry.speed.ToString();
-        ancestrySize.text = ancestry.size;
+        ancestrySize.text = PF2E_DataBase.SizeFullName(ancestry.size);
 
         string abilityBoostString = "";
         for (int i = 0; i < ancestry.abilityBoosts.Length; i++)
             if (i < ancestry.abilityBoosts.Length - 1)
-                abilityBoostString += ancestry.abilityBoosts[i] + ", ";
+                abilityBoostString += PF2E_DataBase.AbilityFullName(ancestry.abilityBoosts[i]) + ", ";
             else
-                abilityBoostString += ancestry.abilityBoosts[i];
+                abilityBoostString += PF2E_DataBase.AbilityFullName(ancestry.abilityBoosts[i]);
         ancestryAbilityBoosts.text = abilityBoostString;
 
         string abilityFlawsString = "";
         for (int i = 0; i < ancestry.abilityFlaws.Length; i++)
             if (i < ancestry.abilityFlaws.Length - 1)
-                abilityFlawsString += ancestry.abilityFlaws[i] + ", ";
+                abilityFlawsString += PF2E_DataBase.AbilityFullName(ancestry.abilityFlaws[i]) + ", ";
             else
-                abilityFlawsString += ancestry.abilityFlaws[i];
+                abilityFlawsString += PF2E_DataBase.AbilityFullName(ancestry.abilityFlaws[i]);
         ancestryAbilityFlaws.text = abilityFlawsString;
 
         string languagesString = "";
@@ -205,6 +207,14 @@ public class PF2E_ABCSelector : MonoBehaviour
             else
                 languagesString += ancestry.languages[i];
         ancestryLanguages.text = languagesString;
+
+        string ancestryTraitsString = "";
+        for (int i = 0; i < ancestry.traits.Length; i++)
+            if (i < ancestry.traits.Length - 1)
+                ancestryTraitsString += ancestry.traits[i] + ", ";
+            else
+                ancestryTraitsString += ancestry.traits[i];
+        ancestryTraits.text = ancestryTraitsString;
 
         string ancestryFeaturesString = "";
         for (int i = 0; i < ancestry.ancestryFeatures.Length; i++)
@@ -247,10 +257,10 @@ public class PF2E_ABCSelector : MonoBehaviour
         backgroundTitle.text = background.name;
         backgroundDescription.text = background.description;
 
-        string abilityBoostString =
+        string backgroundAbilityBoostString =
             PF2E_DataBase.AbilityFullName(background.abilityBoostsChoice[0]) + " or " +
             PF2E_DataBase.AbilityFullName(background.abilityBoostsChoice[1]) + ", Free";
-        ancestryAbilityBoosts.text = abilityBoostString;
+        backgroundAbilityBoosts.text = backgroundAbilityBoostString;
 
         string backgroundSkillTrainString = "";
         List<string> sNames = new List<string>();
@@ -296,22 +306,13 @@ public class PF2E_ABCSelector : MonoBehaviour
 
         classTitle.text = classObj.name;
         classDescription.text = classObj.description;
+        classHitPoints.text = classObj.hitPoints.ToString();
+        classSkillTrain.text = classObj.freeSkillTrainsString;
 
         if (className == "Fighter")
             classKeyAbility.text = "Strength or Dexterity";
         else
             classKeyAbility.text = PF2E_DataBase.AbilityFullName(classObj.keyAbility);
-
-        string classSkillsTrainsString = "";
-        List<string> sNames = new List<string>();
-        foreach (var item in classObj.classSkillsTrains)
-            sNames.Add(item.Value.name);
-        for (int i = 0; i < sNames.Count; i++)
-            if (i < sNames.Count - 1)
-                classSkillsTrainsString += sNames[i] + ", ";
-            else
-                classSkillsTrainsString += sNames[i];
-        classSkillTrain.text = classSkillsTrainsString;
 
         classUnarmed.text = "U"; classUnarmored.text = "U"; classPerception.text = "U";
         classSimpleWeapons.text = "U"; classLightArmor.text = "U"; classFortitude.text = "U";

@@ -50,7 +50,7 @@ public class GameSelectorController : MonoBehaviour
         StartCoroutine(PanelFader.RescaleAndFade(createCampaignPanel.transform, createCampaignPanel, 0.85f, 0f, 0f));
     }
 
-    #region Create Campaing
+    #region --------CAMPAIGNS CREATION--------
 
     private void OpenCreateCampaignPanel()
     {
@@ -68,19 +68,19 @@ public class GameSelectorController : MonoBehaviour
         StartCoroutine(PanelFader.RescaleAndFade(createCampaignPanel.transform, createCampaignPanel, 0.85f, 0f, 0.1f));
     }
 
-    public void OnClickCreateCampaingPanelAccept()
+    private void OnClickCreateCampaingPanelAccept()
     {
         CloseCreateCampaignPanel();
     }
 
-    public void OnClickCreateCampaingPanelCancel()
+    private void OnClickCreateCampaingPanelCancel()
     {
         CloseCreateCampaignPanel();
     }
 
     #endregion
 
-    #region Pathfinder 2e
+    #region --------PF2E--------
 
     private List<GameObject> PF2eUI_ButtonTextList = new List<GameObject>();
 

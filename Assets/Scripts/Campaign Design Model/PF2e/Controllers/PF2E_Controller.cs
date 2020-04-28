@@ -132,26 +132,26 @@ public class PF2E_Controller : MonoBehaviour
 
     #region --------PLAYERS--------
 
-    // Creation
+    // Clicking the + button in the players section of the campaing panel
     public void OnClickNewPlayerButton()
     {
         playerCreationController.NewPlayer();
     }
 
     // Edition
-    public void OnClickPayerButtonEdit(string player)
+    private void OnClickPayerButtonEdit(string player)
     {
         playerCreationController.LoadPlayer(currentCampaign.players[player]);
     }
 
     // Deletion
     private string playerToDelete = "";
-    public void OnClickPayerButtonDelete(string player)
+    private void OnClickPayerButtonDelete(string player)
     {
         playerToDelete = player;
         confirmation.AskForConfirmation("Are you sure you want to delete this character?", OnClickPayerButtonDeleteCallback);
     }
-    public void OnClickPayerButtonDeleteCallback(bool value)
+    private void OnClickPayerButtonDeleteCallback(bool value)
     {
         if (value)
         {

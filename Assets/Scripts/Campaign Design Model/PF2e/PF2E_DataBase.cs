@@ -91,13 +91,39 @@ public class PF2E_DataBase : MonoBehaviour
                 return "Constitution";
             case "int":
                 return "Intelligence";
-            case "Wis":
+            case "wis":
                 return "Wisdom";
             case "cha":
                 return "Charisma";
+            case "free":
+                return "Free";
 
             default:
-                return "";
+                Debug.Log("[PF2E_DataBase] Error: ability abreviation (" + abilityAbreviated + ") not recognized!");
+                return "Null";
+        }
+    }
+
+    public static string SizeFullName(string sizeAbreviated)
+    {
+        switch (sizeAbreviated)
+        {
+            case "T":
+                return "Tiny";
+            case "S":
+                return "Small";
+            case "M":
+                return "Medium";
+            case "L":
+                return "Large";
+            case "H":
+                return "Huge";
+            case "G":
+                return "Gargantuan";
+
+            default:
+                Debug.Log("[PF2E_DataBase] Error: size abreviation (" + sizeAbreviated + ") not recognized!");
+                return "Null";
         }
     }
 
@@ -148,6 +174,7 @@ public class PF2E_Class
     public string keyAbilityAlt;
     public int hitPoints;
     public int freeSkillTrains;
+    public string freeSkillTrainsString;
     public string[] classFeats;
     public Dictionary<string, PF2E_Lecture> classSkillsTrains;
     public Dictionary<string, PF2E_Lecture> lectures;
