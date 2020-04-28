@@ -62,44 +62,48 @@ public class PanelFader : MonoBehaviour
         float alphaInit = cg.alpha;
         yield return RescaleAndFade(panelTransform, cg, scaleInit, scaleTarget, alphaInit, alphaTarget, duration);
     }
-    public static IEnumerator RescaleAndFade(Transform panelTransform, CanvasGroup cg,
+    public static IEnumerator RescaleAndFade(Transform panelTransform, CanvasGroup canvasGroup,
     float scaleInit, float scaleFinal,
     float alphaInit, float alphaFinal,
     float duration)
     {
-        yield return null;
-        yield return null;
-
-        if (panelTransform.gameObject.activeSelf == false)
-            panelTransform.gameObject.SetActive(true);
-
-        float counter = 0;
-        float completion = 0;
-        float scaleDiff = scaleInit - scaleFinal;
-        float alphaDiff = alphaInit - alphaFinal;
-
-        if (scaleDiff != 0 || alphaDiff != 0)
+        if (duration > 0f)
         {
-            while (counter < duration)
-            {
-                counter += Time.unscaledDeltaTime;
-                completion = counter / duration;
 
-                cg.alpha = -Mathf.Clamp(completion, 0f, 1.0f) * alphaDiff + alphaInit;
-                panelTransform.localScale = new Vector2(-Mathf.Clamp(completion, 0f, 1.0f) * scaleDiff + scaleInit,
-                                                        -Mathf.Clamp(completion, 0f, 1.0f) * scaleDiff + scaleInit);
-                yield return null;
+            yield return null;
+            yield return null;
+
+            if (panelTransform.gameObject.activeSelf == false)
+                panelTransform.gameObject.SetActive(true);
+
+            float counter = 0;
+            float completion = 0;
+            float scaleDiff = scaleInit - scaleFinal;
+            float alphaDiff = alphaInit - alphaFinal;
+
+            if (scaleDiff != 0 || alphaDiff != 0)
+            {
+                while (counter < duration)
+                {
+                    counter += Time.unscaledDeltaTime;
+                    completion = counter / duration;
+
+                    canvasGroup.alpha = -Mathf.Clamp(completion, 0f, 1.0f) * alphaDiff + alphaInit;
+                    panelTransform.localScale = new Vector2(-Mathf.Clamp(completion, 0f, 1.0f) * scaleDiff + scaleInit,
+                                                            -Mathf.Clamp(completion, 0f, 1.0f) * scaleDiff + scaleInit);
+                    yield return null;
+                }
+            }
+            else
+            {
+                Debug.Log("RescaleAndFade failed: initial scale or fade equal to target");
             }
         }
-        else
-        {
-            Debug.Log("RescaleAndFade failed: initial scale or fade equal to target");
-        }
 
-        cg.alpha = alphaFinal;
+        canvasGroup.alpha = alphaFinal;
         panelTransform.localScale = new Vector2(scaleFinal, scaleFinal);
 
-        if (cg.alpha == 0f)
+        if (canvasGroup.alpha == 0f)
             panelTransform.gameObject.SetActive(false);
     }
 }

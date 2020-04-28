@@ -7,9 +7,9 @@ public class PF2E_PlayerData : PlayerData
     public int level = 0;
     public int experience = 0;
 
-    public E_PF2E_Ancestry ancestry = 0;
-    public E_PF2E_Background background = 0;
-    public E_PF2E_Class playerClas = 0;
+    public string ancestry = "";
+    public string background = "";
+    public string playerClass = "";
 
     // public E_PF2E_Alignment alignment = E_PF2E_Alignment.NN;
     // public E_PF2E_Ancestry ancestry = E_PF2E_Ancestry.Human;

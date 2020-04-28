@@ -15,15 +15,14 @@ public class PF2E_Controller : MonoBehaviour
     [SerializeField] private PF2E_PlayerCreationController playerCreationController = null;
     [SerializeField] private ConfirmationController confirmation = null;
     [SerializeField] private GameObject cameraBlur = null;
+
+    [Header("Campaign Stuff")]
     [SerializeField] private CanvasGroup campaignPanel = null;
     [SerializeField] private TMP_Text campaignName = null;
-
-    [Space(15)]
     [SerializeField] private Transform boardsContainer = null;
     [SerializeField] private Transform playersContainer = null;
     [SerializeField] private Transform enemiesContainer = null;
     [SerializeField] private Transform npcsContainer = null;
-
     [Space(15)]
     [SerializeField] private GameObject boardsButtonPrefab = null;
     [SerializeField] private GameObject playersButtonPrefab = null;

@@ -82,7 +82,7 @@ public class GameSelectorController : MonoBehaviour
 
     #region Pathfinder 2e
 
-    private List<GameObject> PF2eCampaignButtonList = new List<GameObject>();
+    private List<GameObject> PF2eUI_ButtonTextList = new List<GameObject>();
 
     private void PF2E_RefreshButtons()
     {
@@ -96,37 +96,37 @@ public class GameSelectorController : MonoBehaviour
         foreach (var item in PF2E_Controller.PF2eCampaignIDs)
         {
             Transform newButton = Instantiate(PF2E_campaingButtonPrefab, PF2E_container.position, PF2E_container.rotation, PF2E_container);
-            CampaignButton newButtonScript = newButton.GetComponent<CampaignButton>();
-            newButtonScript.campaignNameText.text = item.name;
-            newButtonScript.button.onClick.AddListener(() => PF2E_OnClickCampaignButton(item));
-            PF2eCampaignButtonList.Add(newButton.gameObject);
+            UI_ButtonText newButtonScript = newButton.GetComponent<UI_ButtonText>();
+            newButtonScript.text.text = item.name;
+            newButtonScript.button.onClick.AddListener(() => PF2E_OnClickUI_ButtonText(item));
+            PF2eUI_ButtonTextList.Add(newButton.gameObject);
         }
 
         // Add Campaign button
         Transform addButton = Instantiate(PF2E_campaingButtonPrefab, PF2E_container.position, PF2E_container.rotation, PF2E_container);
-        CampaignButton addButtonScript = addButton.GetComponent<CampaignButton>();
-        addButtonScript.campaignNameText.text = "+";
-        addButtonScript.button.onClick.AddListener(() => PF2E_OnClickAddCampaignButton());
-        PF2eCampaignButtonList.Add(addButton.gameObject);
+        UI_ButtonText addButtonScript = addButton.GetComponent<UI_ButtonText>();
+        addButtonScript.text.text = "+";
+        addButtonScript.button.onClick.AddListener(() => PF2E_OnClickAddUI_ButtonText());
+        PF2eUI_ButtonTextList.Add(addButton.gameObject);
     }
 
     private void PF2E_RetractGameButtons()
     {
         currentGame = E_Games.None;
-        foreach (var item in PF2eCampaignButtonList)
+        foreach (var item in PF2eUI_ButtonTextList)
             Destroy(item, 0.001f);
-        PF2eCampaignButtonList.Clear();
+        PF2eUI_ButtonTextList.Clear();
     }
 
     // Click on existing campaign, open campaign panel
-    private void PF2E_OnClickCampaignButton(PF2E_CampaignID campaignID)
+    private void PF2E_OnClickUI_ButtonText(PF2E_CampaignID campaignID)
     {
         PF2E_controller.LoadCampaign(campaignID);
         PF2E_RetractGameButtons();
     }
 
     // Click on add campaign, open add campaign panel
-    private void PF2E_OnClickAddCampaignButton()
+    private void PF2E_OnClickAddUI_ButtonText()
     {
         OpenCreateCampaignPanel(); // This remove Listeners
         createCampaignAcceptButton.onClick.AddListener(() => PF2E_CreateCampaign(createCampaignInputField.text));
