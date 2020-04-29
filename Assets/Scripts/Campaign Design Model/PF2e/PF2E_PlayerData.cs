@@ -7,85 +7,246 @@ public class PF2E_PlayerData : PlayerData
     public int level = 0;
     public int experience = 0;
 
-    public string ancestry = "";
-    public string background = "";
     public string playerClass = "";
 
-    private int _strength;
-    public int strengthMod;
-    public int strength
+
+    //---------------------------------------------------HIT-POINTS--------------------------------------------------
+    // maxHitPoints = level*(classHP+constitution)+ancestryHP+temp
+
+    private int classHP = 0;
+    private int ancestryHP = 0;
+    private int tempHP = 0;
+
+    private int _damage = 0;
+    public int damage
     {
-        get { return _strength; }
+        get { return _damage; }
         set
         {
-            _strength = value;
-            strengthMod = Mathf.FloorToInt(value);
+            _damage += value;
+            if (_damage < 0) damage = 0;
+        }
+    }
+
+    public int hitPoints { get { return maxHitPoints - damage; } }
+    public int maxHitPoints { get { return level * (classHP + constitution) + ancestryHP + tempHP; } }
+
+
+    //---------------------------------------------------SPEED--------------------------------------------------
+    private int ancestrySpeed = 0;
+
+    public int baseSpeed { get { return ancestryHP; } }
+    public int burrowSpeed = 0;
+    public int climbSpeed = 0;
+    public int flySpeed = 0;
+    public int swimSpeed = 0;
+
+
+    //---------------------------------------------------SIZE--------------------------------------------------
+    private string ancestrySize = "Medium";
+
+    public string size { get { return ancestrySize; } }
+
+
+    //---------------------------------------------------CHARACTER TRAITS--------------------------------------------------
+    private List<Trait> traits = new List<Trait>();
+
+    private void ClearCharacterTraitFrom(string identifier)
+    {
+        List<Trait> toRemove = new List<Trait>();
+        foreach (var item in traits)
+            if (item.from == identifier)
+                toRemove.Add(item);
+        foreach (var item in toRemove)
+            traits.Remove(item);
+    }
+
+
+    //---------------------------------------------------LANGUAGES--------------------------------------------------
+    public List<string> languages = new List<string>();
+
+    public void AddLanguage(string newLang)
+    {
+        if (!languages.Contains(newLang))
+            languages.Add(newLang);
+    }
+
+    public void RemoveLanguage(string newLang)
+    {
+        if (languages.Contains(newLang))
+            languages.Remove(newLang);
+    }
+
+
+    //---------------------------------------------------ABILITIES--------------------------------------------------
+
+    //       | Ancestry | Background | Class | Lvl 1 Boost | Lvl 5 Boost | Lvl 10 Boost | Lvl 15 Boost | Lvl 20 Boost |
+    //    STR|          |            |       |             |             |              |              |              |
+    //    DEX|          |            |       |             |             |              |              |              |
+    //    CON|          |            |       |             |             |              |              |              |
+    //    INT|          |            |       |             |             |              |              |              |
+    //    WIS|          |            |       |             |             |              |              |              |
+    //    CHA|          |            |       |             |             |              |              |              |
+
+    private bool[,] ablMap = new bool[8, 6];
+
+    public int strength { get { return AblScoreCalc(E_PF2E_Ability.Strength); } }
+    public int dexterity { get { return AblScoreCalc(E_PF2E_Ability.Dexterity); } }
+    public int constitution { get { return AblScoreCalc(E_PF2E_Ability.Constitution); } }
+    public int intelligence { get { return AblScoreCalc(E_PF2E_Ability.Intelligence); } }
+    public int wisdom { get { return AblScoreCalc(E_PF2E_Ability.Wisdom); } }
+    public int charisma { get { return AblScoreCalc(E_PF2E_Ability.Charisma); } }
+
+    public int strengthMod { get { return AblModCalc(strength); } }
+    public int dexterityMod { get { return AblModCalc(dexterity); } }
+    public int constitutionMod { get { return AblModCalc(constitution); } }
+    public int intelligenceMod { get { return AblModCalc(intelligence); } }
+    public int wisdomMod { get { return AblModCalc(wisdom); } }
+    public int charismaMod { get { return AblModCalc(charisma); } }
+
+    private List<AblFlaw> abilityFlaws = new List<AblFlaw>();
+
+    private int AblScoreCalc(E_PF2E_Ability abl)
+    {
+        int count = 0;
+        int score = 10;
+
+        foreach (var item in abilityFlaws)    // FLAWS
+            if (item.target == abl)
+                count -= item.value;
+
+        for (int i = 0; i < 8; i++)           // BOOSTS
+            if (ablMap[i, (int)abl - 2])
+                count++;
+
+        if (count >= 0)
+            for (int i = 0; i < count; i++)
+                if (score < 18)
+                    score += 2;
+                else
+                    score++;
+        else
+            for (int i = 0; i > count; i--)
+                score -= 2;
+
+        return score;
+    }
+
+    private int AblModCalc(int ablScore)
+    {
+        return Mathf.FloorToInt((ablScore - 10) / 2);
+    }
+
+    public void AddAbility(E_PF2E_AbilityBoost boost, E_PF2E_Ability abl)
+    {
+        ablMap[(int)boost - 2, (int)abl - 2] = true;
+    }
+
+    public void SubtractAbility(E_PF2E_AbilityBoost boost, E_PF2E_Ability abl)
+    {
+        ablMap[(int)boost - 2, (int)abl - 2] = false;
+    }
+
+    public void ClearAbilityBoost(E_PF2E_AbilityBoost boost)
+    {
+        for (int i = 0; i < 6; i++)
+            ablMap[(int)boost - 2, i] = false;
+    }
+
+    private void ClearAblFlawsFrom(string identifier)
+    {
+        List<AblFlaw> toRemove = new List<AblFlaw>();
+        foreach (var item in abilityFlaws)
+            if (item.from == identifier)
+                toRemove.Add(item);
+        foreach (var item in toRemove)
+            abilityFlaws.Remove(item);
+    }
+
+    //---------------------------------------------------SKILLS--------------------------------------------------
+    //---------------------------------------------------SKILLS--------------------------------------------------
+    //---------------------------------------------------SKILLS--------------------------------------------------
+
+    //---------------------------------------------------ANCESTRY--------------------------------------------------
+    private string _ancestry = "";
+    public string ancestry { get { return _ancestry; } set { SetAncestry(value); } }
+
+    private void SetAncestry(string newAncestry)
+    {
+        if (PF2E_DataBase.Ancestries.ContainsKey(newAncestry))
+        {
+            PF2E_Ancestry ancestry = PF2E_DataBase.Ancestries[newAncestry];
+            _ancestry = newAncestry;
+
+            ancestryHP = ancestry.hitPoints;
+
+            ancestrySpeed = ancestry.speed;
+
+            ancestrySize = ancestry.size;
+
+            ClearAblFlawsFrom("Ancestry");
+            foreach (var item in ancestry.abilityFlaws)
+                abilityFlaws.Add(new AblFlaw("Ancestry", PF2E_DataBase.AbilityToEnum(item), 2));
+
+            ClearCharacterTraitFrom("Ancestry");
+            foreach (var item in ancestry.traits)
+                traits.Add(new Trait("Ancestry", item));
+        }
+        else
+        {
+            Debug.LogWarning("[PlayerData] (" + playerName + ") Can't find ancestry: " + newAncestry + "!");
         }
     }
 
 
-    // public E_PF2E_Alignment alignment = E_PF2E_Alignment.NN;
-    // public E_PF2E_Ancestry ancestry = E_PF2E_Ancestry.Human;
-    // public E_PF2E_Background background = E_PF2E_Background.Artisan;
-    // public E_PF2E_Class class_ = E_PF2E_Class.Fighter;
+    //---------------------------------------------------BACKGROUND--------------------------------------------------
+    private string _background = "";
+    public string background { get { return _background; } set { SetBackground(value); } }
 
-    // public Dictionary<E_PF2E_Ability, int> abilities = new Dictionary<E_PF2E_Ability, int>(6) {
-    //     { E_PF2E_Ability.Strength, 0 }, { E_PF2E_Ability.Dexterity, 0 }, { E_PF2E_Ability.Constitution, 0 },
-    //     { E_PF2E_Ability.Intelligence, 0 }, { E_PF2E_Ability.Wisdom, 0 }, { E_PF2E_Ability.Charisma, 0 }};
-    // public Dictionary<E_PF2E_Skill, PF2E_AblPrf> skills = new Dictionary<E_PF2E_Skill, PF2E_AblPrf>()
-    // {
-    //     {E_PF2E_Skill.Acrobatics,new PF2E_AblPrf("Acrobatics",E_PF2E_Ability.Dexterity,E_PF2E_Proficiency.Untrained)},
-    //     {E_PF2E_Skill.Arcana,new PF2E_AblPrf("Arcana",E_PF2E_Ability.Intelligence,E_PF2E_Proficiency.Untrained)},
-    //     {E_PF2E_Skill.Athletics,new PF2E_AblPrf("Athletics",E_PF2E_Ability.Strength,E_PF2E_Proficiency.Untrained)},
-    //     {E_PF2E_Skill.Crafting,new PF2E_AblPrf("Crafting",E_PF2E_Ability.Intelligence,E_PF2E_Proficiency.Untrained)},
-    //     {E_PF2E_Skill.Deception,new PF2E_AblPrf("Deception",E_PF2E_Ability.Charisma,E_PF2E_Proficiency.Untrained)},
-    //     {E_PF2E_Skill.Diplomacy,new PF2E_AblPrf("Diplomacy",E_PF2E_Ability.Charisma,E_PF2E_Proficiency.Untrained)},
-    //     {E_PF2E_Skill.Intimidation,new PF2E_AblPrf("Intimidation",E_PF2E_Ability.Charisma,E_PF2E_Proficiency.Untrained)},
-    //     {E_PF2E_Skill.Medicine,new PF2E_AblPrf("Medicine",E_PF2E_Ability.Wisdom,E_PF2E_Proficiency.Untrained)},
-    //     {E_PF2E_Skill.Nature,new PF2E_AblPrf("Nature",E_PF2E_Ability.Wisdom,E_PF2E_Proficiency.Untrained)},
-    //     {E_PF2E_Skill.Occultism,new PF2E_AblPrf("Occultism",E_PF2E_Ability.Intelligence,E_PF2E_Proficiency.Untrained)},
-    //     {E_PF2E_Skill.Performance,new PF2E_AblPrf("Performance",E_PF2E_Ability.Dexterity,E_PF2E_Proficiency.Untrained)},
-    //     {E_PF2E_Skill.Religion,new PF2E_AblPrf("Religion",E_PF2E_Ability.Wisdom,E_PF2E_Proficiency.Untrained)},
-    //     {E_PF2E_Skill.Society,new PF2E_AblPrf("Society",E_PF2E_Ability.Charisma,E_PF2E_Proficiency.Untrained)},
-    //     {E_PF2E_Skill.Stealth,new PF2E_AblPrf("Stealth",E_PF2E_Ability.Dexterity,E_PF2E_Proficiency.Untrained)},
-    //     {E_PF2E_Skill.Survival,new PF2E_AblPrf("Survival",E_PF2E_Ability.Wisdom,E_PF2E_Proficiency.Untrained)},
-    //     {E_PF2E_Skill.Thievery,new PF2E_AblPrf("Thievery",E_PF2E_Ability.Dexterity,E_PF2E_Proficiency.Untrained)}
-    // };
-
-    // public E_PF2E_Proficiency classDC = E_PF2E_Proficiency.Untrained;
-    // public PF2E_AblPrf perception = new PF2E_AblPrf("Perception", E_PF2E_Ability.Wisdom, E_PF2E_Proficiency.Untrained);
-    // public Dictionary<E_PF2E_Saves, PF2E_AblPrf> saves = new Dictionary<E_PF2E_Saves, PF2E_AblPrf>(3)
-    // {
-    //     {E_PF2E_Saves.Fortitude,new PF2E_AblPrf("Fortitude",E_PF2E_Ability.Constitution,E_PF2E_Proficiency.Untrained)},
-    //     {E_PF2E_Saves.Reflex,new PF2E_AblPrf("Reflex",E_PF2E_Ability.Dexterity,E_PF2E_Proficiency.Untrained)},
-    //     {E_PF2E_Saves.Will,new PF2E_AblPrf("Will",E_PF2E_Ability.Wisdom,E_PF2E_Proficiency.Untrained)}
-    // };
-    // public Dictionary<string, E_PF2E_Proficiency> weaponProficiencies = new Dictionary<string, E_PF2E_Proficiency>(3)
-    //     { { "Simple", E_PF2E_Proficiency.Untrained }, { "Martial", E_PF2E_Proficiency.Untrained }, { "Advanced", E_PF2E_Proficiency.Untrained } };
-    // public Dictionary<string, E_PF2E_Proficiency> armorProficiencies = new Dictionary<string, E_PF2E_Proficiency>(4)
-    //     { { "Unarmored", E_PF2E_Proficiency.Untrained }, { "Light", E_PF2E_Proficiency.Untrained }, { "Medium", E_PF2E_Proficiency.Untrained }, { "Heavy", E_PF2E_Proficiency.Untrained } };
-
-    public void Reload()
+    private void SetBackground(string newBackground)
     {
 
 
 
     }
 
+
+
+
+
+
+
 }
 
-public class AbilitiesProccessor
+public class skills
 {
-    //    | Ancestry | Background | Class | Lvl 1 Boost | Lvl 5 Boost | Lvl 10 Boost | Lvl 15 Boost | Lvl 20 Boost |
-    // STR|          |            |       |             |             |              |              |              |
-    // DEX|          |            |       |             |             |              |              |              |
-    // CON|          |            |       |             |             |              |              |              |
-    // INT|          |            |       |             |             |              |              |              |
-    // WIS|          |            |       |             |             |              |              |              |
-    // CHA|          |            |       |             |             |              |              |              |
+    public E_PF2E_Ability ability;
+    public List<PF2E_Lecture> prof;
+    public List<PF2E_Effect> effects;
+}
 
-    private bool[,] megabool = new bool[8, 6];
+public struct AblFlaw
+{
+    public string from;
+    public E_PF2E_Ability target;
+    public int value;
 
+    public AblFlaw(string from, E_PF2E_Ability target, int value)
+    {
+        this.from = from;
+        this.target = target;
+        this.value = value;
+    }
+}
 
+public struct Trait
+{
+    public string from;
+    public string trait;
 
+    public Trait(string from, string trait)
+    {
+        this.from = from;
+        this.trait = trait;
+    }
 }

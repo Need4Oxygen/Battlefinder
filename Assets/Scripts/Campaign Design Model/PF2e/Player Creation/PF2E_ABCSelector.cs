@@ -187,17 +187,17 @@ public class PF2E_ABCSelector : MonoBehaviour
         string abilityBoostString = "";
         for (int i = 0; i < ancestry.abilityBoosts.Length; i++)
             if (i < ancestry.abilityBoosts.Length - 1)
-                abilityBoostString += PF2E_DataBase.AbilityFullName(ancestry.abilityBoosts[i]) + ", ";
+                abilityBoostString += PF2E_DataBase.AbilityToFullName(ancestry.abilityBoosts[i]) + ", ";
             else
-                abilityBoostString += PF2E_DataBase.AbilityFullName(ancestry.abilityBoosts[i]);
+                abilityBoostString += PF2E_DataBase.AbilityToFullName(ancestry.abilityBoosts[i]);
         ancestryAbilityBoosts.text = abilityBoostString;
 
         string abilityFlawsString = "";
         for (int i = 0; i < ancestry.abilityFlaws.Length; i++)
             if (i < ancestry.abilityFlaws.Length - 1)
-                abilityFlawsString += PF2E_DataBase.AbilityFullName(ancestry.abilityFlaws[i]) + ", ";
+                abilityFlawsString += PF2E_DataBase.AbilityToFullName(ancestry.abilityFlaws[i]) + ", ";
             else
-                abilityFlawsString += PF2E_DataBase.AbilityFullName(ancestry.abilityFlaws[i]);
+                abilityFlawsString += PF2E_DataBase.AbilityToFullName(ancestry.abilityFlaws[i]);
         ancestryAbilityFlaws.text = abilityFlawsString;
 
         string languagesString = "";
@@ -258,8 +258,8 @@ public class PF2E_ABCSelector : MonoBehaviour
         backgroundDescription.text = background.description;
 
         string backgroundAbilityBoostString =
-            PF2E_DataBase.AbilityFullName(background.abilityBoostsChoice[0]) + " or " +
-            PF2E_DataBase.AbilityFullName(background.abilityBoostsChoice[1]) + ", Free";
+            PF2E_DataBase.AbilityToFullName(background.abilityBoostsChoice[0]) + " or " +
+            PF2E_DataBase.AbilityToFullName(background.abilityBoostsChoice[1]) + ", Free";
         backgroundAbilityBoosts.text = backgroundAbilityBoostString;
 
         string backgroundSkillTrainString = "";
@@ -312,7 +312,7 @@ public class PF2E_ABCSelector : MonoBehaviour
         if (className == "Fighter")
             classKeyAbility.text = "Strength or Dexterity";
         else
-            classKeyAbility.text = PF2E_DataBase.AbilityFullName(classObj.keyAbility);
+            classKeyAbility.text = PF2E_DataBase.AbilityToFullName(classObj.keyAbility);
 
         classUnarmed.text = "U"; classUnarmored.text = "U"; classPerception.text = "U";
         classSimpleWeapons.text = "U"; classLightArmor.text = "U"; classFortitude.text = "U";

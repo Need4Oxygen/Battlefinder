@@ -2,10 +2,6 @@
 {
     None, Default, Tiny, Small, Medium, Large, Huge, Gargantuan
 }
-public enum E_PF2E_Saves
-{
-    None, Default, Fortitude, Reflex, Will
-}
 
 public enum E_PF2E_Alignment
 {
@@ -19,14 +15,14 @@ public enum E_PF2E_Languages
     Shadowtongue, Terran
 }
 
-public enum E_PF2E_CharacterTraits
-{
-    None, Default, Humanoid, Dwarf, Elf
-}
-
 public enum E_PF2E_Ability
 {
     None, Default, Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma, Free
+}
+
+public enum E_PF2E_AbilityBoost
+{
+    None, Default, Ancestry, Background, Class, Lvl1Boost, Lvl5Boost, Lvl10Boost, Lvl15Boost, Lvl20Boost
 }
 
 public enum E_PF2E_Skill

@@ -79,7 +79,7 @@ public class PF2E_DataBase : MonoBehaviour
         Classes.Clear();
     }
 
-    public static string AbilityFullName(string abilityAbreviated)
+    public static string AbilityToFullName(string abilityAbreviated)
     {
         switch (abilityAbreviated)
         {
@@ -99,8 +99,33 @@ public class PF2E_DataBase : MonoBehaviour
                 return "Free";
 
             default:
-                Debug.Log("[PF2E_DataBase] Error: ability abreviation (" + abilityAbreviated + ") not recognized!");
+                Debug.LogWarning("[PF2E_DataBase] Error: ability abreviation (" + abilityAbreviated + ") not recognized!");
                 return "Null";
+        }
+    }
+
+    public static E_PF2E_Ability AbilityToEnum(string abilityAbreviated)
+    {
+        switch (abilityAbreviated)
+        {
+            case "str":
+                return E_PF2E_Ability.Strength;
+            case "dex":
+                return E_PF2E_Ability.Dexterity;
+            case "con":
+                return E_PF2E_Ability.Constitution;
+            case "int":
+                return E_PF2E_Ability.Intelligence;
+            case "wis":
+                return E_PF2E_Ability.Wisdom;
+            case "cha":
+                return E_PF2E_Ability.Charisma;
+            case "free":
+                return E_PF2E_Ability.Free;
+
+            default:
+                Debug.LogWarning("[PF2E_DataBase] Error: ability abreviation (" + abilityAbreviated + ") not recognized!");
+                return E_PF2E_Ability.Free;
         }
     }
 
@@ -122,7 +147,7 @@ public class PF2E_DataBase : MonoBehaviour
                 return "Gargantuan";
 
             default:
-                Debug.Log("[PF2E_DataBase] Error: size abreviation (" + sizeAbreviated + ") not recognized!");
+                Debug.LogWarning("[PF2E_DataBase] Error: size abreviation (" + sizeAbreviated + ") not recognized!");
                 return "Null";
         }
     }
