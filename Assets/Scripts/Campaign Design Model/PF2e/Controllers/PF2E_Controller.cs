@@ -6,20 +6,23 @@ using UnityEngine;
 
 public class PF2E_Controller : MonoBehaviour
 {
+
+    // Controls the PF2e campaing retrieval and send thems to load and display
+    // Controls the PF2e board, player, enemies and npcs buttons
+
     public static List<PF2E_CampaignID> PF2eCampaignIDs;
 
     [SerializeField] private PF2E_PlayerCreationController playerCreationController = null;
     [SerializeField] private ConfirmationController confirmation = null;
     [SerializeField] private GameObject cameraBlur = null;
+
+    [Header("Campaign Stuff")]
     [SerializeField] private CanvasGroup campaignPanel = null;
     [SerializeField] private TMP_Text campaignName = null;
-
-    [Space(15)]
     [SerializeField] private Transform boardsContainer = null;
     [SerializeField] private Transform playersContainer = null;
     [SerializeField] private Transform enemiesContainer = null;
     [SerializeField] private Transform npcsContainer = null;
-
     [Space(15)]
     [SerializeField] private GameObject boardsButtonPrefab = null;
     [SerializeField] private GameObject playersButtonPrefab = null;
@@ -46,7 +49,6 @@ public class PF2E_Controller : MonoBehaviour
         StartCoroutine(PanelFader.RescaleAndFade(campaignPanel.transform, campaignPanel, 0.85f, 0f, 0f));
     }
 
-    #region Input
     public void OnClickBackButton()
     {
         CloseCampaingPanel();
@@ -57,13 +59,8 @@ public class PF2E_Controller : MonoBehaviour
         DeleteCampaign();
     }
 
-    public void OnClickNewPlayerButton()
-    {
-        playerCreationController.NewPlayer();
-    }
-    #endregion
+    #region --------CAMPAIGNS--------
 
-    #region Campaigns
     private void OpenCampaingPanel()
     {
         StartCoroutine(PanelFader.RescaleAndFade(campaignPanel.transform, campaignPanel, 1f, 1f, 0.1f));
@@ -76,6 +73,7 @@ public class PF2E_Controller : MonoBehaviour
         cameraBlur.SetActive(false);
     }
 
+    /// <summary> Called after the name asking for a campaign name has been promped and accepted. </summary>
     public void CreateCampaign(string name)
     {
         string newGuid = Guid.NewGuid().ToString();
@@ -132,6 +130,39 @@ public class PF2E_Controller : MonoBehaviour
     }
     #endregion
 
+    #region --------PLAYERS--------
+
+    // Creation
+    public void OnClickNewPlayerButton()
+    {
+        playerCreationController.NewPlayer();
+    }
+
+    // Edition
+    public void OnClickPayerButtonEdit(string player)
+    {
+        playerCreationController.LoadPlayer(currentCampaign.players[player]);
+    }
+
+    // Deletion
+    private string playerToDelete = "";
+    public void OnClickPayerButtonDelete(string player)
+    {
+        playerToDelete = player;
+        confirmation.AskForConfirmation("Are you sure you want to delete this character?", OnClickPayerButtonDeleteCallback);
+    }
+    public void OnClickPayerButtonDeleteCallback(bool value)
+    {
+        if (value)
+        {
+            currentCampaign.players.Remove(playerToDelete);
+            RefreshCampaignContainers();
+            SaveCampaign();
+        }
+
+        playerToDelete = "";
+    }
+
     public void RefreshCampaignContainers()
     {
         // Delete all buttons
@@ -184,28 +215,6 @@ public class PF2E_Controller : MonoBehaviour
         }
     }
 
-    // Send player to PlayerCreation to edit
-    public void OnClickPayerButtonEdit(string player)
-    {
-        playerCreationController.LoadPlayer(currentCampaign.players[player]);
-    }
+    #endregion
 
-    // Controlls player deletion
-    private string playerToDelete = "";
-    public void OnClickPayerButtonDelete(string player)
-    {
-        playerToDelete = player;
-        confirmation.AskForConfirmation("Are you sure you want to delete this character?", OnClickPayerButtonDeleteCallback);
-    }
-    public void OnClickPayerButtonDeleteCallback(bool value)
-    {
-        if (value)
-        {
-            currentCampaign.players.Remove(playerToDelete);
-            RefreshCampaignContainers();
-            SaveCampaign();
-        }
-        else
-            playerToDelete = "";
-    }
 }

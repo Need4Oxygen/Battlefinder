@@ -1,0 +1,180 @@
+{
+    "Alchemical Familiar": {
+        "type": "Class Feat",
+        "name": "Alchemical Familiar",
+        "description": "You have used alchemy to create life, a simple creature formed from alchemical materials, reagents, and a bit of your own blood. This alchemical familiar appears to be a small creature of flesh and blood, though it might have some unusual or distinguishing aspects depending on your creative process. Like other familiars, your alchemical familiar assists you in your laboratory and on adventures. The familiar uses your Intelligence modifier to determine its Perception, Acrobatics, and Stealth modifiers (see Familiars on page 217 for more information).",
+        "level": 1,
+        "traits": [
+            "Alchemist"
+        ],
+        "prequisites": [],
+        "actions": [],
+        "feats": [],
+        "lectures": {},
+        "effects": {}
+    },
+    "Alchemical Savant": {
+        "type": "Class Feat",
+        "name": "Alchemical Savant",
+        "description": "You can identify alchemical items quickly. When using the Crafting skill to Identify Alchemy on an alchemical item you hold, you can do so as a single action, which has the concentrate and manipulate traits, instead of spending 10 minutes. If you have the formula for the item you are attempting to identify, you gain a +2 circumstance bonus to your check, and if you roll a critical failure, you get a failure instead.",
+        "level": 1,
+        "traits": [
+            "Alchemist"
+        ],
+        "prequisites": [
+            "trained in Crafting"
+        ],
+        "actions": [],
+        "feats": [],
+        "lectures": {},
+        "effects": {}
+    },
+    "Far Lobber": {
+        "type": "Class Feat",
+        "name": "Far Lobber",
+        "description": "You’ve learned how to throw a longer distance. When you throw an alchemical bomb, it has a range increment of 30 feet instead of the usual 20 feet.",
+        "level": 1,
+        "traits": [
+            "Alchemist"
+        ],
+        "prequisites": [],
+        "actions": [],
+        "feats": [],
+        "lectures": {},
+        "effects": {}
+    },
+    "Quick Bomber": {
+        "type": "Class Feat",
+        "name": "Quick Bomber",
+        "description": "You keep your bombs in easy-to-reach pouches from which you draw without thinking. You Interact to draw a bomb, then Strike with it.",
+        "level": 1,
+        "traits": [
+            "Alchemist"
+        ],
+        "prequisites": [],
+        "actions": [
+            "Quick Bomber"
+        ],
+        "feats": [],
+        "lectures": {},
+        "effects": {}
+    },
+    "Double Slice": {
+        "type": "Class Feat",
+        "name": "Double Slice",
+        "description": "You lash out at your foe with both weapons. Make two Strikes, one with each of your two melee weapons, each using your current multiple attack penalty. Both Strikes must have the same target. If the second Strike is made with a weapon that doesn’t have the agile trait, it takes a –2 penalty. If both attacks hit, combine their damage, and then add any other applicable effects from both weapons. You add any precision damage only once, to the attack of your choice. Combine the damage from both Strikes and apply resistances and weaknesses only once. This counts as two attacks when calculating your multiple attack penalty.",
+        "level": 1,
+        "traits": [
+            "Fighter"
+        ],
+        "prequisites": [],
+        "actions": [
+            "Double Slice"
+        ],
+        "feats": [],
+        "lectures": {},
+        "effects": {}
+    },
+    "Exacting Strike": {
+        "type": "Class Feat",
+        "name": "Exacting Strike",
+        "description": "You lash out at your foe with both weapons. Make two Strikes, one with each of your two melee weapons, each using your current multiple attack penalty. Both Strikes must have the same target. If the second Strike is made with a weapon that doesn’t have the agile trait, it takes a –2 penalty. If both attacks hit, combine their damage, and then add any other applicable effects from both weapons. You add any precision damage only once, to the attack of your choice. Combine the damage from both Strikes and apply resistances and weaknesses only once. This counts as two attacks when calculating your multiple attack penalty.",
+        "level": 1,
+        "traits": [
+            "Fighter",
+            "Press"
+        ],
+        "prequisites": [],
+        "actions": [
+            "Exacting Strike"
+        ],
+        "feats": [],
+        "lectures": {},
+        "effects": {}
+    },
+    "Point-Blank Shot": {
+        "type": "Class Feat",
+        "name": "Point-Blank Shot",
+        "description": "You take aim to pick off nearby enemies quickly. When using a ranged volley weapon while you are in this stance, you don’t take the penalty to your attack rolls from the volley trait. When using a ranged weapon that doesn’t have the volley trait, you gain a +2 circumstance bonus to damage rolls on attacks against targets within the weapon’s first range increment.",
+        "level": 1,
+        "traits": [
+            "Fighter",
+            "Open",
+            "Stance"
+        ],
+        "prequisites": [],
+        "actions": [
+            "Point-Blank Shot"
+        ],
+        "feats": [],
+        "lectures": {},
+        "effects": {}
+    },
+    "Power Attack": {
+        "type": "Class Feat",
+        "name": "Power Attack",
+        "description": "You unleash a particularly powerful attack that clobbers your foe but leaves you a bit unsteady. Make a melee Strike. This counts as two attacks when calculating your multiple attack penalty. If this Strike hits, you deal an extra die of weapon damage. If you’re at least 10th level, increase this to two extra dice, and if you’re at least 18th level, increase it to three extra dice.",
+        "level": 1,
+        "traits": [
+            "Fighter",
+            "Flourish"
+        ],
+        "prequisites": [],
+        "actions": [
+            "Power Attack"
+        ],
+        "feats": [],
+        "lectures": {},
+        "effects": {}
+    },
+    "Reactive Shield": {
+        "type": "Class Feat",
+        "name": "Reactive Shield",
+        "description": "You can snap your shield into place just as you would take a blow, avoiding the hit at the last second. You immediately use the Raise a Shield action and gain your shield’s bonus to AC. The circumstance bonus from the shield applies to your AC when you’re determining the outcome of the triggering attack.",
+        "level": 1,
+        "traits": [
+            "Fighter"
+        ],
+        "prequisites": [],
+        "actions": [
+            "Reactive Shield"
+        ],
+        "feats": [],
+        "lectures": {},
+        "effects": {}
+    },
+    "Snagging Strike": {
+        "type": "Class Feat",
+        "name": "Snagging Strike",
+        "description": "You combine an attack with quick grappling moves to throw an enemy off balance as long as it stays in your reach. Make a Strike while keeping one hand free. If this Strike hits, the target is flat-footed until the start of your next turn or until it’s no longer within the reach of your hand, whichever comes first.",
+        "level": 1,
+        "traits": [
+            "Fighter"
+        ],
+        "prequisites": [],
+        "actions": [
+            "Snagging Strike"
+        ],
+        "feats": [],
+        "lectures": {},
+        "effects": {}
+    },
+    "Sudden Charge": {
+        "type": "Class Feat",
+        "name": "Sudden Charge",
+        "description": "With a quick sprint, you dash up to your foe and swing. Stride twice. If you end your movement within melee reach of at least one enemy, you can make a melee Strike against that enemy. You can use Sudden Charge while Burrowing, Climbing, Flying, or Swimming instead of Striding if you have the corresponding movement type.",
+        "level": 1,
+        "traits": [
+            "Fighter",
+            "Flourish",
+            "Open"
+        ],
+        "prequisites": [],
+        "actions": [
+            "Sudden Charge"
+        ],
+        "feats": [],
+        "lectures": {},
+        "effects": {}
+    }
+}
