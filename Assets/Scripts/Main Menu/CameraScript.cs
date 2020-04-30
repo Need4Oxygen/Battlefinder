@@ -18,15 +18,15 @@ public class CameraScript : MonoBehaviour
     void Update()
     {
         orbitCameraFollow.RotateAround(orbitCameraTarget.position, Vector3.up, orbitSpeed * Time.deltaTime);
-
-        if (Input.GetMouseButton(0) || Input.anyKeyDown)
-        {
-            closeUpCam.Priority = 12;
-            StartCoroutine(WaitForBlend(brainCam.m_DefaultBlend.m_Time));
-        }
     }
 
-    IEnumerator WaitForBlend(float t)
+    public void ChangeToCloseCamera()
+    {
+        closeUpCam.Priority = 12;
+        StartCoroutine(WaitForBlend(brainCam.m_DefaultBlend.m_Time));
+    }
+
+    private IEnumerator WaitForBlend(float t)
     {
         yield return new WaitForSeconds(t);
         boxAnimator.SetTrigger("Open");

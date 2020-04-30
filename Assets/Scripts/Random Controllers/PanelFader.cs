@@ -18,7 +18,7 @@ public class PanelFader : MonoBehaviour
                 counter += Time.unscaledDeltaTime;
                 completion = counter / duration;
 
-                cg.alpha = -Mathf.Clamp(completion, 0.1f, 1.0f) * alphaDiff + alphaInit;
+                cg.alpha = -Mathf.Clamp(completion, 0f, 1.0f) * alphaDiff + alphaInit;
                 yield return null;
             }
         }
