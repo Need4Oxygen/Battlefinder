@@ -40,7 +40,7 @@ public class SplashController : MonoBehaviour
         yield return new WaitForSeconds(3f);
         StartCoroutine(PanelFader.Fade(battleFinderPanel, 0f, 2f));
         yield return new WaitForSeconds(2f);
-        StartCoroutine(PanelFader.Fade(blackPanel, 0f, 6f));
+        StartCoroutine(PanelFader.Fade(blackPanel, 0.3f, 6f));
 
         yield return new WaitForSeconds(2f);
         StartCoroutine(PanelFader.Fade(clickToPanel, 0.3f, 3f));
