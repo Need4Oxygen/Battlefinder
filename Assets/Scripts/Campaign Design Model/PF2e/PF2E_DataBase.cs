@@ -166,6 +166,19 @@ public class PF2E_Action
     public string failure;
 }
 
+public class PF2E_AblModifier
+{
+    public string from;
+    public string target;
+    public int value;
+}
+
+public class PF2E_Trait
+{
+    public string from;
+    public string name;
+}
+
 public class PF2E_Ancestry
 {
     public string name;
@@ -173,10 +186,10 @@ public class PF2E_Ancestry
     public int hitPoints;
     public int speed;
     public string size;
-    public string[] abilityBoosts;
-    public string[] abilityFlaws;
+    public Dictionary<string, PF2E_AblModifier> abilityBoosts;
+    public Dictionary<string, PF2E_AblModifier> abilityFlaws;
     public string[] languages;
-    public string[] traits;
+    public Dictionary<string, PF2E_Trait> traits;
     public string[] ancestryFeatures;
     public string[] heritages;
     public string[] ancestryFeats;
@@ -229,6 +242,7 @@ public class PF2E_Feat
 
 public class PF2E_Lecture
 {
+    public string from;
     public string name;
     public string description;
     public string target;

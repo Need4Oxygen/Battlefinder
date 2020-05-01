@@ -177,6 +177,7 @@ public class PF2E_ABCSelector : MonoBehaviour
     {
         PF2E_Ancestry ancestry = PF2E_DataBase.Ancestries[ancestryName];
         selectedAncestry = ancestryName;
+        int count, total = 0;
 
         ancestryTitle.text = ancestry.name;
         ancestryDescription.text = ancestry.description;
@@ -184,22 +185,36 @@ public class PF2E_ABCSelector : MonoBehaviour
         ancestrySpeed.text = ancestry.speed.ToString();
         ancestrySize.text = PF2E_DataBase.SizeFullName(ancestry.size);
 
+
+        // Ability Boosts
         string abilityBoostString = "";
-        for (int i = 0; i < ancestry.abilityBoosts.Length; i++)
-            if (i < ancestry.abilityBoosts.Length - 1)
-                abilityBoostString += PF2E_DataBase.AbilityToFullName(ancestry.abilityBoosts[i]) + ", ";
+        count = 0; total = ancestry.abilityBoosts.Count;
+        foreach (var item in ancestry.abilityBoosts)
+        {
+            if (count < total - 1)
+                abilityBoostString += PF2E_DataBase.AbilityToFullName(item.Value.target) + ", ";
             else
-                abilityBoostString += PF2E_DataBase.AbilityToFullName(ancestry.abilityBoosts[i]);
+                abilityBoostString += PF2E_DataBase.AbilityToFullName(item.Value.target);
+            count++;
+        }
         ancestryAbilityBoosts.text = abilityBoostString;
 
+
+        // Ability Flaws
         string abilityFlawsString = "";
-        for (int i = 0; i < ancestry.abilityFlaws.Length; i++)
-            if (i < ancestry.abilityFlaws.Length - 1)
-                abilityFlawsString += PF2E_DataBase.AbilityToFullName(ancestry.abilityFlaws[i]) + ", ";
+        count = 0; total = ancestry.abilityFlaws.Count;
+        foreach (var item in ancestry.abilityFlaws)
+        {
+            if (count < total - 1)
+                abilityFlawsString += PF2E_DataBase.AbilityToFullName(item.Value.target) + ", ";
             else
-                abilityFlawsString += PF2E_DataBase.AbilityToFullName(ancestry.abilityFlaws[i]);
+                abilityFlawsString += PF2E_DataBase.AbilityToFullName(item.Value.target);
+            count++;
+        }
         ancestryAbilityFlaws.text = abilityFlawsString;
 
+
+        // Languages
         string languagesString = "";
         for (int i = 0; i < ancestry.languages.Length; i++)
             if (i < ancestry.languages.Length - 1)
@@ -208,14 +223,22 @@ public class PF2E_ABCSelector : MonoBehaviour
                 languagesString += ancestry.languages[i];
         ancestryLanguages.text = languagesString;
 
+
+        // Traits
         string ancestryTraitsString = "";
-        for (int i = 0; i < ancestry.traits.Length; i++)
-            if (i < ancestry.traits.Length - 1)
-                ancestryTraitsString += ancestry.traits[i] + ", ";
+        count = 0; total = ancestry.traits.Count;
+        foreach (var item in ancestry.traits)
+        {
+            if (count < total - 1)
+                ancestryTraitsString += item.Value.name + ", ";
             else
-                ancestryTraitsString += ancestry.traits[i];
+                ancestryTraitsString += item.Value.name;
+            count++;
+        }
         ancestryTraits.text = ancestryTraitsString;
 
+
+        // Ancestry features
         string ancestryFeaturesString = "";
         for (int i = 0; i < ancestry.ancestryFeatures.Length; i++)
             if (i < ancestry.ancestryFeatures.Length - 1)

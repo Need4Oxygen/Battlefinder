@@ -11,6 +11,7 @@ public class PF2E_PlayerData : PlayerData
 
 
     //---------------------------------------------------HIT-POINTS--------------------------------------------------
+
     // maxHitPoints = level*(classHP+constitution)+ancestryHP+temp
 
     private int classHP = 0;
@@ -35,7 +36,7 @@ public class PF2E_PlayerData : PlayerData
     //---------------------------------------------------SPEED--------------------------------------------------
     private int ancestrySpeed = 0;
 
-    public int baseSpeed { get { return ancestryHP; } }
+    public int baseSpeed { get { return ancestrySpeed; } }
     public int burrowSpeed = 0;
     public int climbSpeed = 0;
     public int flySpeed = 0;
@@ -49,11 +50,11 @@ public class PF2E_PlayerData : PlayerData
 
 
     //---------------------------------------------------CHARACTER TRAITS--------------------------------------------------
-    private List<Trait> traits = new List<Trait>();
+    private List<PF2E_Trait> traits = new List<PF2E_Trait>();
 
     private void ClearCharacterTraitFrom(string identifier)
     {
-        List<Trait> toRemove = new List<Trait>();
+        List<PF2E_Trait> toRemove = new List<PF2E_Trait>();
         foreach (var item in traits)
             if (item.from == identifier)
                 toRemove.Add(item);
@@ -80,13 +81,13 @@ public class PF2E_PlayerData : PlayerData
 
     //---------------------------------------------------ABILITIES--------------------------------------------------
 
-    //       | Ancestry | Background | Class | Lvl 1 Boost | Lvl 5 Boost | Lvl 10 Boost | Lvl 15 Boost | Lvl 20 Boost |
-    //    STR|          |            |       |             |             |              |              |              |
-    //    DEX|          |            |       |             |             |              |              |              |
-    //    CON|          |            |       |             |             |              |              |              |
-    //    INT|          |            |       |             |             |              |              |              |
-    //    WIS|          |            |       |             |             |              |              |              |
-    //    CHA|          |            |       |             |             |              |              |              |
+    //       |Ancestry|Background|Class|Lvl1Boost|Lvl5Boost|Lvl10Boost|Lvl15Boost|Lvl20Boost|
+    //    STR|        |          |     |         |         |          |          |          |
+    //    DEX|        |          |     |         |         |          |          |          |
+    //    CON|        |          |     |         |         |          |          |          |
+    //    INT|        |          |     |         |         |          |          |          |
+    //    WIS|        |          |     |         |         |          |          |          |
+    //    CHA|        |          |     |         |         |          |          |          |
 
     private bool[,] ablMap = new bool[8, 6];
 
@@ -104,7 +105,7 @@ public class PF2E_PlayerData : PlayerData
     public int wisdomMod { get { return AblModCalc(wisdom); } }
     public int charismaMod { get { return AblModCalc(charisma); } }
 
-    private List<AblFlaw> abilityFlaws = new List<AblFlaw>();
+    private List<PF2E_AblModifier> abilityFlaws = new List<PF2E_AblModifier>();
 
     private int AblScoreCalc(E_PF2E_Ability abl)
     {
@@ -112,7 +113,7 @@ public class PF2E_PlayerData : PlayerData
         int score = 10;
 
         foreach (var item in abilityFlaws)    // FLAWS
-            if (item.target == abl)
+            if (PF2E_DataBase.AbilityToEnum(item.target) == abl)
                 count -= item.value;
 
         for (int i = 0; i < 8; i++)           // BOOSTS
@@ -142,7 +143,7 @@ public class PF2E_PlayerData : PlayerData
         ablMap[(int)boost - 2, (int)abl - 2] = true;
     }
 
-    public void SubtractAbility(E_PF2E_AbilityBoost boost, E_PF2E_Ability abl)
+    public void RemoveAbility(E_PF2E_AbilityBoost boost, E_PF2E_Ability abl)
     {
         ablMap[(int)boost - 2, (int)abl - 2] = false;
     }
@@ -153,9 +154,9 @@ public class PF2E_PlayerData : PlayerData
             ablMap[(int)boost - 2, i] = false;
     }
 
-    private void ClearAblFlawsFrom(string identifier)
+    public void ClearAblFlawsFrom(string identifier)
     {
-        List<AblFlaw> toRemove = new List<AblFlaw>();
+        List<PF2E_AblModifier> toRemove = new List<PF2E_AblModifier>();
         foreach (var item in abilityFlaws)
             if (item.from == identifier)
                 toRemove.Add(item);
@@ -163,9 +164,74 @@ public class PF2E_PlayerData : PlayerData
             abilityFlaws.Remove(item);
     }
 
+
     //---------------------------------------------------SKILLS--------------------------------------------------
+    private Dictionary<string, PF2E_APIC> skills = new Dictionary<string, PF2E_APIC>()
+    {
+        {"acrobatics",new PF2E_APIC("Acrobatics" ,E_PF2E_Ability.Dexterity)},
+        {"arcana",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Intelligence)},
+        {"athletics",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Strength)},
+        {"crafting",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Intelligence)},
+        {"deception",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Charisma)},
+        {"diplomacy",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Charisma)},
+        {"intimidation",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Charisma)},
+        {"medicine",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Wisdom)},
+        {"nature",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Wisdom)},
+        {"occultism",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Intelligence)},
+        {"performance",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Dexterity)},
+        {"religion",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Wisdom)},
+        {"society",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Charisma)},
+        {"stealth",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Dexterity)},
+        {"survival",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Wisdom)},
+        {"thievery",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Default)},
+        {"lore 1",new PF2E_APIC("" ,E_PF2E_Ability.Intelligence)},
+        {"lore 2",new PF2E_APIC("" ,E_PF2E_Ability.Intelligence)},
+    };
+
+    public Dictionary<string, PF2E_APIC> GetSkills()
+    {
+        return skills;
+    }
+
+    public PF2E_APIC GetSkill(string skillName)
+    {
+        if (skills.ContainsKey(skillName))
+        {
+            PF2E_APIC skill = skills[skillName];
+
+            if (skill.playerData == null)
+                skill.playerData = this;
+
+            return skill;
+        }
+        else
+        {
+            Debug.LogWarning("[PlayerData] Couldn't find skill: " + skillName + "!");
+            return null;
+        }
+    }
+
+    public void TrainSkill(PF2E_Lecture lecture)
+    {
+        if (skills.ContainsKey(lecture.target))
+        {
+            skills[lecture.target].profLectures.Add(lecture);
+        }
+        else
+        {
+            Debug.LogWarning("[PlayerData] Tried to train skill: " + lecture.target + " but couldn't find it!");
+        }
+    }
+
+
+
     //---------------------------------------------------SKILLS--------------------------------------------------
-    //---------------------------------------------------SKILLS--------------------------------------------------
+    //---------------------------------------------------LECTURES--------------------------------------------------
+    private List<PF2E_Lecture> unusedLectures = new List<PF2E_Lecture>();
+
+    // private
+
+
 
     //---------------------------------------------------ANCESTRY--------------------------------------------------
     private string _ancestry = "";
@@ -184,13 +250,13 @@ public class PF2E_PlayerData : PlayerData
 
             ancestrySize = ancestry.size;
 
-            ClearAblFlawsFrom("Ancestry");
+            ClearAblFlawsFrom("ancestry");
             foreach (var item in ancestry.abilityFlaws)
-                abilityFlaws.Add(new AblFlaw("Ancestry", PF2E_DataBase.AbilityToEnum(item), 2));
+                abilityFlaws.Add(item.Value);
 
-            ClearCharacterTraitFrom("Ancestry");
+            ClearCharacterTraitFrom("ancestry");
             foreach (var item in ancestry.traits)
-                traits.Add(new Trait("Ancestry", item));
+                traits.Add(item.Value);
         }
         else
         {
@@ -205,8 +271,18 @@ public class PF2E_PlayerData : PlayerData
 
     private void SetBackground(string newBackground)
     {
+        if (PF2E_DataBase.Backgrounds.ContainsKey(newBackground))
+        {
+            PF2E_Background background = PF2E_DataBase.Backgrounds[newBackground];
+            _background = newBackground;
+
+            // Lectures
 
 
+
+            // Skill Feats
+
+        }
 
     }
 
@@ -223,30 +299,4 @@ public class skills
     public E_PF2E_Ability ability;
     public List<PF2E_Lecture> prof;
     public List<PF2E_Effect> effects;
-}
-
-public struct AblFlaw
-{
-    public string from;
-    public E_PF2E_Ability target;
-    public int value;
-
-    public AblFlaw(string from, E_PF2E_Ability target, int value)
-    {
-        this.from = from;
-        this.target = target;
-        this.value = value;
-    }
-}
-
-public struct Trait
-{
-    public string from;
-    public string trait;
-
-    public Trait(string from, string trait)
-    {
-        this.from = from;
-        this.trait = trait;
-    }
 }
