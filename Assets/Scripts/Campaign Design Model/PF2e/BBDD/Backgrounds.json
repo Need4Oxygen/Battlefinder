@@ -1,227 +1,317 @@
 {
-    "Acolyte": {
-        "name": "Acolyte",
-        "description": "You spent your early days in a religious monastery or cloister. You may have traveled out into the world to spread the message of your religion or because you cast away the teachings of your faith, but deep down you’ll always carry within you the lessons you learned.",
-        "abilityBoostsChoice": [
-            "int",
-            "con"
-        ],
-        "lectures": {
-            "Religion T": {
-                "name": "Religion",
-                "description": "From Acolyte background: trained in Religion.",
-                "target": "religion",
-                "proficiency": "T",
-                "canTurnFree": false
-            },
-            "Scribling Lore T": {
-                "name": "Scribling Lore",
-                "description": "From Acolyte background: trained in Scribling Lore.",
-                "target": "lore",
-                "proficiency": "T",
-                "canTurnFree": false
-            }
-        },
-        "skillFeat": "Student of the Canon"
-    },
-    "Acrobat": {
-        "name": "Acrobat",
-        "description": "In a circus or on the streets, you earned your pay by performing as an acrobat. You might have turned to adventuring when the money dried up, or simply decided to put your skills to better use.",
-        "abilityBoostsChoice": [
-            "str",
-            "dex"
-        ],
-        "lectures": {
-            "Acrobatics T": {
-                "name": "Acrobatics",
-                "description": "From Acrobat background: trained in Acrobatics.",
-                "target": "acrobatics",
-                "proficiency": "T",
-                "canTurnFree": false
-            },
-            "Circus Lore T": {
-                "name": "Circus Lore",
-                "description": "From Acrobat background: trained in Circus Lore.",
-                "target": "lore",
-                "proficiency": "T",
-                "canTurnFree": false
-            }
-        },
-        "skillFeat": "Steady Balance"
-    },
-    "Animal Wishperer": {
-        "name": "Animal Wishperer",
-        "description": "You have always felt a connection to animals, and it was only a small leap to learn to train them. As you travel, you continuously encounter different creatures, befriending them along the way.",
-        "abilityBoostsChoice": [
-            "wis",
-            "cha"
-        ],
-        "lectures": {
-            "Nature T": {
-                "name": "Nature",
-                "description": "From Animal Wishperer background: trained in Nature.",
-                "target": "nature",
-                "proficiency": "T",
-                "canTurnFree": false
-            },
-            "Terrain Lore T": {
-                "name": "Terrain Lore",
-                "description": "From Animal Wishperer background: trained in Terrain Lore.",
-                "target": "lore",
-                "proficiency": "T",
-                "canTurnFree": false
-            }
-        },
-        "skillFeat": "Train Animal"
-    },
-    "Artisan": {
-        "name": "Artisan",
-        "description": "As an apprentice, you practiced a particular form of building or crafting, developing specialized skill. You might have been a blacksmith’s apprentice toiling over the forge for countless hours, a young tailor sewing garments of all kinds, or a shipwright shaping the hulls of ships.",
-        "abilityBoostsChoice": [
-            "str",
-            "int"
-        ],
-        "lectures": {
-            "Crafting T": {
-                "name": "Crafting",
-                "description": "From Artisan background: trained in Crafting.",
-                "target": "crafting",
-                "proficiency": "T",
-                "canTurnFree": false
-            },
-            "Guild Lore T": {
-                "name": "Guild Lore",
-                "description": "From Artisan background: trained in Guild Lore.",
-                "target": "lore",
-                "proficiency": "T",
-                "canTurnFree": false
-            }
-        },
-        "skillFeat": "Specialty Crafting"
-    },
-    "Artist": {
-        "name": "Artist",
-        "description": "Your art is your greatest passion, whatever form it takes. Adventuring might help you find inspiration, or simply be a way to survive until you become a world-famous artist.",
-        "abilityBoostsChoice": [
-            "dex",
-            "cha"
-        ],
-        "lectures": {
-            "Crafting T": {
-                "name": "Crafting",
-                "description": "From Artist background: trained in Crafting.",
-                "target": "crafting",
-                "proficiency": "T",
-                "canTurnFree": false
-            },
-            "Art Lore T": {
-                "name": "Art Lore",
-                "description": "From Artist background: trained in Art Lore.",
-                "target": "lore",
-                "proficiency": "T",
-                "canTurnFree": false
-            }
-        },
-        "skillFeat": "Specialty Crafting"
-    },
-    "Barkeep": {
-        "name": "Barkeep",
-        "description": "You have five specialties: hefting barrels, drinking, polishing steins, drinking, and drinking. You worked in a bar, where you learned how to hold your liquor and rowdily socialize.",
-        "abilityBoostsChoice": [
-            "con",
-            "cha"
-        ],
-        "lectures": {
-            "Diplomacy T": {
-                "name": "Diplomacy",
-                "description": "From Barkeep background: trained in Diplomacy.",
-                "target": "diplomacy",
-                "proficiency": "T",
-                "canTurnFree": false
-            },
-            "Alcohol Lore T": {
-                "name": "Alcohol Lore",
-                "description": "From Barkeep background: trained in Alcohol Lore.",
-                "target": "lore",
-                "proficiency": "T",
-                "canTurnFree": false
-            }
-        },
-        "skillFeat": "Hobnobber"
-    },
-    "Barrister": {
-        "name": "Barrister",
-        "description": "Piles of legal manuals, stern teachers, and experience in the courtroom have instructed you in legal matters. You’re capable of mounting a prosecution or defense in court, and you tend to keep abreast of local laws, as you never can tell when you might need to know them on short notice.",
-        "abilityBoostsChoice": [
-            "int",
-            "cha"
-        ],
-        "lectures": {
-            "Diplomacy T": {
-                "name": "Diplomacy",
-                "description": "From Barrister background: trained in Diplomacy.",
-                "target": "diplomacy",
-                "proficiency": "T",
-                "canTurnFree": false
-            },
-            "Legal Lore T": {
-                "name": "Legal Lore",
-                "description": "From Barrister background: trained in Legal Lore.",
-                "target": "lore",
-                "proficiency": "T",
-                "canTurnFree": false
-            }
-        },
-        "skillFeat": "Group Impresion"
-    },
-    "Bounty Hunter": {
-        "name": "Bounty Hunter",
-        "description": "Bringing in lawbreakers lined your pockets. Maybe you had an altruistic motive and sought to bring in criminals to make the streets safer, or maybe the coin was motivation enough. Your techniques for hunting down criminals transfer easily to the life of an adventurer.",
-        "abilityBoostsChoice": [
-            "str",
-            "wis"
-        ],
-        "lectures": {
-            "Survival T": {
-                "name": "Survival",
-                "description": "From Bounty Hunter background: trained in Survival.",
-                "target": "survival",
-                "proficiency": "T",
-                "canTurnFree": false
-            },
-            "Legal Lore T": {
-                "name": "Legal Lore",
-                "description": "From Bounty Hunter background: trained in Legal Lore.",
-                "target": "lore",
-                "proficiency": "T",
-                "canTurnFree": false
-            }
-        },
-        "skillFeat": "Experienced Tracker"
-    },
-    "Charlatan": {
-        "name": "Charlatan",
-        "description": "You traveled from place to place, peddling false fortunes and snake oil in one town, pretending to be royalty in exile to seduce a wealthy heir in the next. Becoming an adventurer might be your next big scam or an attempt to put your talents to use for a greater cause. Perhaps it’s a bit of both, as you realize that after pretending to be a hero, you’ve become the mask.",
-        "abilityBoostsChoice": [
-            "int",
-            "cha"
-        ],
-        "lectures": {
-            "Deception T": {
-                "name": "Deception",
-                "description": "From Charlatan background: trained in Deception.",
-                "target": "deception",
-                "proficiency": "T",
-                "canTurnFree": false
-            },
-            "Underworld Lore T": {
-                "name": "Underworld Lore",
-                "description": "From Charlatan background: trained in Underworld Lore.",
-                "target": "lore",
-                "proficiency": "T",
-                "canTurnFree": false
-            }
-        },
-        "skillFeat": "Charming Liar"
-    }
+	"Acolyte": {
+		"name": "Acolyte",
+		"description": "You spent your early days in a religious monastery or cloister. You may have traveled out into the world to spread the message of your religion or because you cast away the teachings of your faith, but deep down you’ll always carry within you the lessons you learned.",
+		"abilityBoostsChoice": {
+			"intelligence": {
+				"from": "background",
+				"target": "int",
+				"value": "2"
+			},
+			"constitution": {
+				"from": "background",
+				"target": "con",
+				"value": "2"
+			}
+		},
+		"lectures": {
+			"Religion T": {
+				"from": "background",
+				"name": "Religion",
+				"description": "From Acolyte background: trained in Religion.",
+				"target": "religion",
+				"proficiency": "T",
+				"canTurnFree": true
+			},
+			"Scribling Lore T": {
+				"from": "background",
+				"name": "Scribling Lore",
+				"description": "From Acolyte background: trained in Scribling Lore.",
+				"target": "lore",
+				"proficiency": "T",
+				"canTurnFree": false
+			}
+		},
+		"skillFeat": "Student of the Canon"
+	},
+	"Acrobat": {
+		"name": "Acrobat",
+		"description": "In a circus or on the streets, you earned your pay by performing as an acrobat. You might have turned to adventuring when the money dried up, or simply decided to put your skills to better use.",
+		"abilityBoostsChoice": {
+			"strenth": {
+				"from": "background",
+				"target": "str",
+				"value": "2"
+			},
+			"dexterity": {
+				"from": "background",
+				"target": "dex",
+				"value": "2"
+			}
+		},
+		"lectures": {
+			"Acrobatics T": {
+				"from": "background",
+				"name": "Acrobatics",
+				"description": "From Acrobat background: trained in Acrobatics.",
+				"target": "acrobatics",
+				"proficiency": "T",
+				"canTurnFree": true
+			},
+			"Circus Lore T": {
+				"from": "background",
+				"name": "Circus Lore",
+				"description": "From Acrobat background: trained in Circus Lore.",
+				"target": "lore",
+				"proficiency": "T",
+				"canTurnFree": false
+			}
+		},
+		"skillFeat": "Steady Balance"
+	},
+	"Animal Wishperer": {
+		"name": "Animal Wishperer",
+		"description": "You have always felt a connection to animals, and it was only a small leap to learn to train them. As you travel, you continuously encounter different creatures, befriending them along the way.",
+		"abilityBoostsChoice": {
+			"wisdom": {
+				"from": "background",
+				"target": "wis",
+				"value": "2"
+			},
+			"charisma": {
+				"from": "background",
+				"target": "cha",
+				"value": "2"
+			}
+		},
+		"lectures": {
+			"Nature T": {
+				"from": "background",
+				"name": "Nature",
+				"description": "From Animal Wishperer background: trained in Nature.",
+				"target": "nature",
+				"proficiency": "T",
+				"canTurnFree": true
+			},
+			"Terrain Lore T": {
+				"from": "background",
+				"name": "Terrain Lore",
+				"description": "From Animal Wishperer background: trained in Terrain Lore.",
+				"target": "lore",
+				"proficiency": "T",
+				"canTurnFree": false
+			}
+		},
+		"skillFeat": "Train Animal"
+	},
+	"Artisan": {
+		"name": "Artisan",
+		"description": "As an apprentice, you practiced a particular form of building or crafting, developing specialized skill. You might have been a blacksmith’s apprentice toiling over the forge for countless hours, a young tailor sewing garments of all kinds, or a shipwright shaping the hulls of ships.",
+		"abilityBoostsChoice": {
+			"strenth": {
+				"from": "background",
+				"target": "str",
+				"value": "2"
+			},
+			"intelligence": {
+				"from": "background",
+				"target": "int",
+				"value": "2"
+			}
+		},
+		"lectures": {
+			"Crafting T": {
+				"from": "background",
+				"name": "Crafting",
+				"description": "From Artisan background: trained in Crafting.",
+				"target": "crafting",
+				"proficiency": "T",
+				"canTurnFree": true
+			},
+			"Guild Lore T": {
+				"from": "background",
+				"name": "Guild Lore",
+				"description": "From Artisan background: trained in Guild Lore.",
+				"target": "lore",
+				"proficiency": "T",
+				"canTurnFree": false
+			}
+		},
+		"skillFeat": "Specialty Crafting"
+	},
+	"Artist": {
+		"name": "Artist",
+		"description": "Your art is your greatest passion, whatever form it takes. Adventuring might help you find inspiration, or simply be a way to survive until you become a world-famous artist.",
+		"abilityBoostsChoice": {
+			"dexterity": {
+				"from": "background",
+				"target": "dex",
+				"value": "2"
+			},
+			"charisma": {
+				"from": "background",
+				"target": "cha",
+				"value": "2"
+			}
+		},
+		"lectures": {
+			"Crafting T": {
+				"from": "background",
+				"name": "Crafting",
+				"description": "From Artist background: trained in Crafting.",
+				"target": "crafting",
+				"proficiency": "T",
+				"canTurnFree": true
+			},
+			"Art Lore T": {
+				"from": "background",
+				"name": "Art Lore",
+				"description": "From Artist background: trained in Art Lore.",
+				"target": "lore",
+				"proficiency": "T",
+				"canTurnFree": false
+			}
+		},
+		"skillFeat": "Specialty Crafting"
+	},
+	"Barkeep": {
+		"name": "Barkeep",
+		"description": "You have five specialties: hefting barrels, drinking, polishing steins, drinking, and drinking. You worked in a bar, where you learned how to hold your liquor and rowdily socialize.",
+		"abilityBoostsChoice": {
+			"constitution": {
+				"from": "background",
+				"target": "con",
+				"value": "2"
+			},
+			"charisma": {
+				"from": "background",
+				"target": "cha",
+				"value": "2"
+			}
+		},
+		"lectures": {
+			"Diplomacy T": {
+				"from": "background",
+				"name": "Diplomacy",
+				"description": "From Barkeep background: trained in Diplomacy.",
+				"target": "diplomacy",
+				"proficiency": "T",
+				"canTurnFree": true
+			},
+			"Alcohol Lore T": {
+				"from": "background",
+				"name": "Alcohol Lore",
+				"description": "From Barkeep background: trained in Alcohol Lore.",
+				"target": "lore",
+				"proficiency": "T",
+				"canTurnFree": false
+			}
+		},
+		"skillFeat": "Hobnobber"
+	},
+	"Barrister": {
+		"name": "Barrister",
+		"description": "Piles of legal manuals, stern teachers, and experience in the courtroom have instructed you in legal matters. You’re capable of mounting a prosecution or defense in court, and you tend to keep abreast of local laws, as you never can tell when you might need to know them on short notice.",
+		"abilityBoostsChoice": {
+			"intelligence": {
+				"from": "background",
+				"target": "int",
+				"value": "2"
+			},
+			"charisma": {
+				"from": "background",
+				"target": "cha",
+				"value": "2"
+			}
+		},
+		"lectures": {
+			"Diplomacy T": {
+				"from": "background",
+				"name": "Diplomacy",
+				"description": "From Barrister background: trained in Diplomacy.",
+				"target": "diplomacy",
+				"proficiency": "T",
+				"canTurnFree": true
+			},
+			"Legal Lore T": {
+				"from": "background",
+				"name": "Legal Lore",
+				"description": "From Barrister background: trained in Legal Lore.",
+				"target": "lore",
+				"proficiency": "T",
+				"canTurnFree": false
+			}
+		},
+		"skillFeat": "Group Impresion"
+	},
+	"Bounty Hunter": {
+		"name": "Bounty Hunter",
+		"description": "Bringing in lawbreakers lined your pockets. Maybe you had an altruistic motive and sought to bring in criminals to make the streets safer, or maybe the coin was motivation enough. Your techniques for hunting down criminals transfer easily to the life of an adventurer.",
+		"abilityBoostsChoice": {
+			"strength": {
+				"from": "background",
+				"target": "str",
+				"value": "2"
+			},
+			"wisdom": {
+				"from": "background",
+				"target": "wis",
+				"value": "2"
+			}
+		},
+		"lectures": {
+			"Survival T": {
+				"from": "background",
+				"name": "Survival",
+				"description": "From Bounty Hunter background: trained in Survival.",
+				"target": "survival",
+				"proficiency": "T",
+				"canTurnFree": true
+			},
+			"Legal Lore T": {
+				"from": "background",
+				"name": "Legal Lore",
+				"description": "From Bounty Hunter background: trained in Legal Lore.",
+				"target": "lore",
+				"proficiency": "T",
+				"canTurnFree": false
+			}
+		},
+		"skillFeat": "Experienced Tracker"
+	},
+	"Charlatan": {
+		"name": "Charlatan",
+		"description": "You traveled from place to place, peddling false fortunes and snake oil in one town, pretending to be royalty in exile to seduce a wealthy heir in the next. Becoming an adventurer might be your next big scam or an attempt to put your talents to use for a greater cause. Perhaps it’s a bit of both, as you realize that after pretending to be a hero, you’ve become the mask.",
+		"abilityBoostsChoice": {
+			"intelligence": {
+				"from": "background",
+				"target": "int",
+				"value": "2"
+			},
+			"charisma": {
+				"from": "background",
+				"target": "cha",
+				"value": "2"
+			}
+		},
+		"lectures": {
+			"Deception T": {
+				"from": "background",
+				"name": "Deception",
+				"description": "From Charlatan background: trained in Deception.",
+				"target": "deception",
+				"proficiency": "T",
+				"canTurnFree": true
+			},
+			"Underworld Lore T": {
+				"from": "background",
+				"name": "Underworld Lore",
+				"description": "From Charlatan background: trained in Underworld Lore.",
+				"target": "lore",
+				"proficiency": "T",
+				"canTurnFree": false
+			}
+		},
+		"skillFeat": "Charming Liar"
+	}
 }
