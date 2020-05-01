@@ -8,7 +8,11 @@ public class CameraScript : MonoBehaviour
 
     [SerializeField] CinemachineBrain brainCam = null;
     [SerializeField] CinemachineVirtualCamera closeUpCam = null;
+    
+    [Space(15)]
     [SerializeField] Animator boxAnimator = null;
+    [SerializeField] AudioClip boxOpenClip = null;
+    [SerializeField] AudioSource musicPlayer = null;
 
     [Space(15)]
     [SerializeField] Transform orbitCameraFollow = null;
@@ -30,6 +34,7 @@ public class CameraScript : MonoBehaviour
     {
         yield return new WaitForSeconds(t);
         boxAnimator.SetTrigger("Open");
+        musicPlayer.PlayOneShot(boxOpenClip, 1f);
     }
 
 }
