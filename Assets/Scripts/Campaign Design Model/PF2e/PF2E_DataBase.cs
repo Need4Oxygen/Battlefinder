@@ -23,9 +23,9 @@ public class PF2E_DataBase : MonoBehaviour
     [Header("Classes Stuff")]
     [SerializeField] private TextAsset classes = null;
 
-    [Header("Feats")]
-    [SerializeField] private TextAsset generalFeats = null;
-    [SerializeField] private TextAsset skillFeats = null;
+    // [Header("Feats")]
+    // [SerializeField] private TextAsset generalFeats = null;
+    // [SerializeField] private TextAsset skillFeats = null;
 
 
     public static Dictionary<string, PF2E_Action> Actions = new Dictionary<string, PF2E_Action>();
@@ -129,6 +129,27 @@ public class PF2E_DataBase : MonoBehaviour
         }
     }
 
+    public static E_PF2E_Proficiency ProficiencyToEnum(string proficiencyAbreviated)
+    {
+        switch (proficiencyAbreviated)
+        {
+            case "U":
+                return E_PF2E_Proficiency.Untrained;
+            case "T":
+                return E_PF2E_Proficiency.Trained;
+            case "E":
+                return E_PF2E_Proficiency.Expert;
+            case "M":
+                return E_PF2E_Proficiency.Master;
+            case "L":
+                return E_PF2E_Proficiency.Lengend;
+
+            default:
+                Debug.LogWarning("[PF2E_DataBase] Error: poroficiency abreviation (" + proficiencyAbreviated + ") not recognized!");
+                return E_PF2E_Proficiency.Untrained;
+        }
+    }
+
     public static string SizeFullName(string sizeAbreviated)
     {
         switch (sizeAbreviated)
@@ -150,6 +171,26 @@ public class PF2E_DataBase : MonoBehaviour
                 Debug.LogWarning("[PF2E_DataBase] Error: size abreviation (" + sizeAbreviated + ") not recognized!");
                 return "Null";
         }
+    }
+
+    public static E_PF2E_Proficiency GetMaxProfEnum(List<PF2E_Lecture> lectures)
+    {
+        E_PF2E_Proficiency maxProf = E_PF2E_Proficiency.Untrained;
+
+        if (lectures != null)
+        {
+            foreach (var item in lectures)
+                if (item.proficiency == "T")
+                    maxProf = E_PF2E_Proficiency.Trained;
+                else if (item.proficiency == "E")
+                    maxProf = E_PF2E_Proficiency.Expert;
+                else if (item.proficiency == "M")
+                    maxProf = E_PF2E_Proficiency.Master;
+                else if (item.proficiency == "L")
+                    maxProf = E_PF2E_Proficiency.Lengend;
+        }
+
+        return maxProf;
     }
 
 }
@@ -199,7 +240,7 @@ public class PF2E_Background
 {
     public string name;
     public string description;
-    public string[] abilityBoostsChoice;
+    public Dictionary<string, PF2E_AblModifier> abilityBoostsChoice;
     public Dictionary<string, PF2E_Lecture> lectures;
     public string skillFeat;
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using Newtonsoft.Json;
+using System;
 
 public class Json
 {
@@ -9,14 +10,11 @@ public class Json
         {
             string jsonString = JsonConvert.SerializeObject(obj, Formatting.Indented);
             PlayerPrefs.SetString(key, jsonString);
-        }
-        catch
-        {
-            Debug.LogError("[Json] ERROR: Couldn't save object in key " + key);
-        }
-        finally
-        {
             Debug.Log("[Json] Saved object to key: " + key);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("[Json] ERROR: Couldn't save object in key " + key + "\n" + e.Message);
         }
     }
 
@@ -27,14 +25,10 @@ public class Json
             string jsonString = PlayerPrefs.GetString(key);
             return JsonConvert.DeserializeObject<T>(jsonString);
         }
-        catch
+        catch (Exception e)
         {
-            Debug.LogError("[Json] ERROR: Couldn't load object with key " + key);
+            Debug.LogError("[Json] ERROR: Couldn't load object with key " + key + "\n" + e.Message);
             return default(T);
-        }
-        finally
-        {
-            Debug.Log("[Json] Loaded object from key: " + key);
         }
     }
 }

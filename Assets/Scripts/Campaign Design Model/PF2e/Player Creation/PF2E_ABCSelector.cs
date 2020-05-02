@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class PF2E_ABCSelector : MonoBehaviour
 {
-    [SerializeField] PF2E_PlayerCreationController controller = null;
-
     [HideInInspector] public E_PF2E_ABC currentlyDisplaying;
 
     [Header("ABC")]
@@ -280,9 +278,16 @@ public class PF2E_ABCSelector : MonoBehaviour
         backgroundTitle.text = background.name;
         backgroundDescription.text = background.description;
 
-        string backgroundAbilityBoostString =
-            PF2E_DataBase.AbilityToFullName(background.abilityBoostsChoice[0]) + " or " +
-            PF2E_DataBase.AbilityToFullName(background.abilityBoostsChoice[1]) + ", Free";
+        string backgroundAbilityBoostString = "";
+        int count = 0; int total = background.abilityBoostsChoice.Count;
+        foreach (var item in background.abilityBoostsChoice)
+        {
+            if (count < total - 1)
+                backgroundAbilityBoostString += PF2E_DataBase.AbilityToFullName(item.Value.target) + ", ";
+            else
+                backgroundAbilityBoostString += PF2E_DataBase.AbilityToFullName(item.Value.target);
+            count++;
+        }
         backgroundAbilityBoosts.text = backgroundAbilityBoostString;
 
         string backgroundSkillTrainString = "";

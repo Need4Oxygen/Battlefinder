@@ -128,7 +128,9 @@ public class PF2E_Controller : MonoBehaviour
             PlayerPrefs.Save();
         }
     }
+
     #endregion
+
 
     #region --------PLAYERS--------
 
@@ -193,7 +195,7 @@ public class PF2E_Controller : MonoBehaviour
             PF2E_PlayerButton newPlayerButtonScript = newPlayerButton.GetComponent<PF2E_PlayerButton>();
             newPlayerButtonScript.level.text = player.Value.level.ToString();
             newPlayerButtonScript.playerName.text = player.Value.playerName;
-            // falta meterle el callback al botón para definir lo que pasa cuando lo pulsas el botón o los otros de editar y eliminar...
+
             newPlayerButtonScript.editButton.onClick.AddListener(() => OnClickPayerButtonEdit(player.Key));
             newPlayerButtonScript.deleteButton.onClick.AddListener(() => OnClickPayerButtonDelete(player.Key));
 

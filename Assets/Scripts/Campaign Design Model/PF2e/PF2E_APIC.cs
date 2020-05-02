@@ -2,14 +2,14 @@ using System.Collections.Generic;
 
 public class PF2E_APIC
 {
-    public string name;
+    public string name = "";
 
-    public PF2E_PlayerData playerData;
+    public PF2E_PlayerData playerData = null;
 
-    private E_PF2E_Ability abilityEnum;
-    public List<PF2E_Lecture> profLectures;
-    private List<PF2E_Fact> itemModifiers;
-    private List<PF2E_Fact> circModifiers;
+    private E_PF2E_Ability abilityEnum = E_PF2E_Ability.None;
+    public List<PF2E_Lecture> lectures = new List<PF2E_Lecture>();
+    private List<PF2E_Fact> itemModifiers = new List<PF2E_Fact>();
+    private List<PF2E_Fact> circModifiers = new List<PF2E_Fact>();
 
     public PF2E_APIC(string name, E_PF2E_Ability abilityEnum)
     {
@@ -21,11 +21,11 @@ public class PF2E_APIC
     {
         get
         {
-            return ability + proficiency;
+            return ablScore + profScore;
         }
     }
 
-    public int ability
+    public int ablScore
     {
         get
         {
@@ -34,17 +34,17 @@ public class PF2E_APIC
                 switch (abilityEnum)
                 {
                     case E_PF2E_Ability.Strength:
-                        return playerData.strengthMod;
+                        return playerData.abl_strengthMod;
                     case E_PF2E_Ability.Dexterity:
-                        return playerData.dexterityMod;
+                        return playerData.abl_dexterityMod;
                     case E_PF2E_Ability.Constitution:
-                        return playerData.constitutionMod;
+                        return playerData.abl_constitutionMod;
                     case E_PF2E_Ability.Intelligence:
-                        return playerData.intelligenceMod;
+                        return playerData.abl_intelligenceMod;
                     case E_PF2E_Ability.Wisdom:
-                        return playerData.wisdomMod;
+                        return playerData.abl_wisdomMod;
                     case E_PF2E_Ability.Charisma:
-                        return playerData.charismaMod;
+                        return playerData.abl_charismaMod;
 
                     default:
                         return 0;
@@ -55,17 +55,17 @@ public class PF2E_APIC
         }
     }
 
-    public int proficiency
+    public int profScore
     {
         get
         {
             if (playerData != null)
             {
-                if (profLectures.Count < 0)
+                if (lectures.Count < 0)
                     return 0;
 
                 bool T = false; bool E = false; bool M = false; bool L = false;
-                foreach (var item in profLectures)
+                foreach (var item in lectures)
                     if (item.proficiency == "T")
                         T = true;
                     else if (item.proficiency == "E")
@@ -91,7 +91,9 @@ public class PF2E_APIC
         }
     }
 
-    public int item = 0;
+    public E_PF2E_Proficiency profEnum { get { return PF2E_DataBase.GetMaxProfEnum(lectures); } }
 
-    public int circumstantial = 0;
+    public int itemScore = 0;
+
+    public int circScore = 0;
 }

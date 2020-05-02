@@ -50,7 +50,7 @@ public class PanelFader : MonoBehaviour
         }
         else
         {
-            Debug.Log("Rescale failed: initial scale equal to target");
+            Debug.Log("[PanelFader] RescaleAndFade failed: initial scale equal to target");
         }
 
         panelTransform.localScale = new Vector2(scaleTarget, scaleTarget);
@@ -96,7 +96,7 @@ public class PanelFader : MonoBehaviour
             }
             else
             {
-                Debug.Log("RescaleAndFade failed: initial scale or fade equal to target");
+                Debug.Log("[PanelFader] RescaleAndFade failed: initial scale or fade equal to target");
             }
         }
 

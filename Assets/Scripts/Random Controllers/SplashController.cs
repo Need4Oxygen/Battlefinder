@@ -4,14 +4,14 @@ using UnityEngine.UI;
 
 public class SplashController : MonoBehaviour
 {
-    [SerializeField] Button clickablePanel;
-    [SerializeField] GameObject splashPanel;
-    [SerializeField] CanvasGroup blackPanel;
-    [SerializeField] CanvasGroup disclaimerPanel;
-    [SerializeField] CanvasGroup battleFinderPanel;
-    [SerializeField] CanvasGroup clickToPanel;
+    [SerializeField] Button clickablePanel = null;
+    [SerializeField] GameObject splashPanel = null;
+    [SerializeField] CanvasGroup blackPanel = null;
+    [SerializeField] CanvasGroup disclaimerPanel = null;
+    [SerializeField] CanvasGroup battleFinderPanel = null;
+    [SerializeField] CanvasGroup clickToPanel = null;
 
-    [SerializeField] AudioSource musicPlayer;
+    [SerializeField] AudioSource musicPlayer = null;
 
     private bool splashing;
 
@@ -34,7 +34,7 @@ public class SplashController : MonoBehaviour
         yield return new WaitForSeconds(4f);
         StartCoroutine(PanelFader.Fade(disclaimerPanel, 0f, 0.5f));
         yield return new WaitForSeconds(2f);
-        
+
         StartCoroutine(PanelFader.Fade(battleFinderPanel, 1f, 1f));
         musicPlayer.Play();
         yield return new WaitForSeconds(3f);
