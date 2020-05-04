@@ -1,0 +1,287 @@
+{
+    "Alchemist": {
+        "name": "Alchemist",
+        "description": "There’s no sight more beautiful to you than a strange brew bubbling in a beaker, and you consume your ingenious elixirs with abandon. You’re fascinated by uncovering the secrets of science and the natural world, and you’re constantly experimenting in your lab or on the go with inventive concoctions for every eventuality. You are fearless in the face of risk, hurling explosive or toxic creations at your foes. Your unique path toward greatness is lined with alchemical brews that push your mind and body to their limits.",
+        "keyAbility": "int",
+        "hitPoints": 8,
+        "freeSkillTrains": 3,
+        "freeSkillTrainsString": "Trained in Crafting. Trained in a number of additional skills equal to 3 plus your Intelligence modifier.",
+        "classSkillsTrains": {
+            "Crafting T": {
+                "name": "Crafting",
+                "description": "From Alchemist class: trained in Crafting.",
+                "target": "crafting",
+                "proficiency": "T",
+                "canTurnFree": false
+            }
+        },
+        "lectures": {
+            "Perception T": {
+                "from": "class",
+                "name": "Perception",
+                "description": "From Alchemist class: trained in Perception.",
+                "target": "perception",
+                "proficiency": "T",
+                "canTurnFree": false
+            },
+            "Fortitude E": {
+                "from": "class",
+                "name": "Fortitude",
+                "description": "From Alchemist class: expert in Fortitude.",
+                "target": "fortitude",
+                "proficiency": "E",
+                "canTurnFree": false
+            },
+            "Reflex E": {
+                "from": "class",
+                "name": "Reflex",
+                "description": "From Alchemist class: expert in Reflex.",
+                "target": "reflex",
+                "proficiency": "E",
+                "canTurnFree": false
+            },
+            "Will T": {
+                "from": "class",
+                "name": "Will",
+                "description": "From Alchemist class: trained in Will.",
+                "target": "will",
+                "proficiency": "T",
+                "canTurnFree": false
+            },
+            "Unarmed T": {
+                "from": "class",
+                "name": "Unarmed",
+                "description": "From Alchemist class: trained in Unarmed attacks.",
+                "target": "unarmed",
+                "proficiency": "T",
+                "canTurnFree": false
+            },
+            "Simple Weapons T": {
+                "from": "class",
+                "name": "Simple Weapons",
+                "description": "From Alchemist class: trained in Simple Weapon attacks.",
+                "target": "simpleWeapons",
+                "proficiency": "T",
+                "canTurnFree": false
+            },
+            "Unarmored T": {
+                "from": "class",
+                "name": "Unarmored",
+                "description": "From Alchemist class: trained in Unarmored defense.",
+                "target": "unarmored",
+                "proficiency": "T",
+                "canTurnFree": false
+            },
+            "Light Armor T": {
+                "from": "class",
+                "name": "Light Armor",
+                "description": "From Alchemist class: trained in Light Armor.",
+                "target": "lightArmor",
+                "proficiency": "T",
+                "canTurnFree": false
+            },
+            "classDC T": {
+                "from": "class",
+                "name": "Class DC",
+                "description": "From Alchemist class: trained in Class DC.",
+                "target": "classDC",
+                "proficiency": "T",
+                "canTurnFree": false
+            }
+        },
+        "classFeats": [
+            "Alchemical Familiar",
+            "Alchemical Savant",
+            "Far Lobber",
+            "Quick Bomber"
+        ],
+        "build": {
+            "Level 1": {
+                "choices": [
+                    "Initial Ability Boost",
+                    "Skill Training",
+                    "Heritage",
+                    "Ancestry Feat",
+                    "Class Feat",
+                    "Research Field"
+                ],
+                "classFeatures": [
+                    "Alchemy",
+                    "Advanced Alchemy",
+                    "Formula Book",
+                    "Infused Reagents",
+                    "Alchemical Crafting",
+                    "Quick Alchemy"
+                ]
+            },
+            "Level 2": {
+                "choices": [
+                    "Skill Feat",
+                    "Class Feat"
+                ]
+            }
+        }
+    },
+    "Fighter": {
+        "name": "Fighter",
+        "description": "Fighting for honor, greed, loyalty, or simply the thrill of battle, you are an undisputed master of weaponry and combat techniques. You combine your actions through clever combinations of opening moves, finishing strikes, and counterattacks whenever your foes are unwise enough to drop their guard. Whether you are a knight, mercenary, sharpshooter, or blade master, you have honed your martial skills into an art form and perform devastating critical attacks on your enemies.",
+        "keyAbility": "str",
+        "keyAbilityAlt": "dex",
+        "hitPoints": 10,
+        "freeSkillTrains": 3,
+        "freeSkillTrainsString": "Trained in your choice of Acrobatics or Athletics. Trained in a number of additional skills equal to 3 plus your Intelligence modifier.",
+        "classSkillsTrains": {
+            "Acrobatics T": {
+                "name": "Acrobatics",
+                "description": "From Fighter class: trained in Acrobatics.",
+                "target": "acrobatics",
+                "proficiency": "T",
+                "canTurnFree": false
+            },
+            "Athletics T": {
+                "name": "Athletics",
+                "description": "From Fighter class: trained in Athletics.",
+                "target": "athletics",
+                "proficiency": "T",
+                "canTurnFree": false
+            }
+        },
+        "lectures": {
+            "Perception E": {
+                "from": "class",
+                "name": "Perception",
+                "description": "From Fighter class: expert in Perception.",
+                "target": "perception",
+                "proficiency": "E",
+                "canTurnFree": false
+            },
+            "Fortitude E": {
+                "from": "class",
+                "name": "Fortitude",
+                "description": "From Fighter class: expert in Fortitude.",
+                "target": "fortitude",
+                "proficiency": "E",
+                "canTurnFree": false
+            },
+            "Reflex E": {
+                "from": "class",
+                "name": "Reflex",
+                "description": "From Fighter class: expert in Reflex.",
+                "target": "reflex",
+                "proficiency": "E",
+                "canTurnFree": false
+            },
+            "Will T": {
+                "from": "class",
+                "name": "Will",
+                "description": "From Fighter class: trained in Will.",
+                "target": "will",
+                "proficiency": "T",
+                "canTurnFree": false
+            },
+            "Unarmed E": {
+                "from": "class",
+                "name": "Unarmed",
+                "description": "From Fighter class: expert in Unarmed attacks.",
+                "target": "unarmed",
+                "proficiency": "E",
+                "canTurnFree": false
+            },
+            "Simple Weapons E": {
+                "from": "class",
+                "name": "Simple Weapons",
+                "description": "From Fighter class: expert in Simple Weapon attacks.",
+                "target": "simpleWeapons",
+                "proficiency": "E",
+                "canTurnFree": false
+            },
+            "Martial Weapons E": {
+                "from": "class",
+                "name": "Martial Weapons",
+                "description": "From Fighter class: expert in Martial Weapon attacks.",
+                "target": "martialWeapons",
+                "proficiency": "E",
+                "canTurnFree": false
+            },
+            "Advanced Weapons T": {
+                "from": "class",
+                "name": "Advanced Weapons",
+                "description": "From Fighter class: trained in Advanced Weapon attacks.",
+                "target": "advancedWeapons",
+                "proficiency": "T",
+                "canTurnFree": false
+            },
+            "Unarmored T": {
+                "from": "class",
+                "name": "Unarmored",
+                "description": "From Fighter class: trained in Unarmored defense.",
+                "target": "unarmored",
+                "proficiency": "T",
+                "canTurnFree": false
+            },
+            "Light Armor T": {
+                "from": "class",
+                "name": "Light Armor",
+                "description": "From Fighter class: trained in Light Armor.",
+                "target": "lightArmor",
+                "proficiency": "T",
+                "canTurnFree": false
+            },
+            "Medium Armor T": {
+                "from": "class",
+                "name": "Medium Armor",
+                "description": "From Fighter class: trained in Medium Armor.",
+                "target": "mediumArmor",
+                "proficiency": "T",
+                "canTurnFree": false
+            },
+            "Heavy Armor T": {
+                "from": "class",
+                "name": "Heavy Armor",
+                "description": "From Fighter class: trained in Heavy Armor.",
+                "target": "heavyArmor",
+                "proficiency": "T",
+                "canTurnFree": false
+            },
+            "Class DC T": {
+                "from": "class",
+                "name": "Class DC",
+                "description": "From Fighter class: trained in Class DC.",
+                "target": "classDC",
+                "proficiency": "T",
+                "canTurnFree": false
+            }
+        },
+        "classFeats": [
+            "Double Slice",
+            "Exacting Strike",
+            "Point-Blanck Shot",
+            "Power Attack",
+            "Reactive Shield",
+            "Snagging Strike",
+            "Sudden Charge"
+        ],
+        "build": {
+            "Level 1": {
+                "choices": [
+                    "Initial Ability Boost",
+                    "Class Skill",
+                    "Skill Training",
+                    "Heritage",
+                    "Ancestry Feat",
+                    "Class Feat"
+                ],
+                "classFeatures": [
+                    "ShieldBlock",
+                    "Attack of Opportunity"
+                ]
+            },
+            "Level 2": {
+                "choices": [
+                    "Skill Feat",
+                    "Class Feat"
+                ]
+            }
+        }
+    }
+}

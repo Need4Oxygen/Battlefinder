@@ -1,0 +1,129 @@
+{
+	"Dwarf": {
+		"name": "Dwarf",
+		"description": "Dwarves have a well-earned reputation as a stoic and stern people, ensconced within citadels and cities carved from solid rock. While some see them as dour and humorless crafters of stone and metal, dwarves and those who have spent time among them understand their unbridled zeal for their work, caring far more about quality than quantity. To a stranger, they can seem untrusting and clannish, but to their friends and family, they are warm and caring, their halls filled with the sounds of laughter and hammers hitting anvils.",
+		"hitPoints": 10,
+		"speed": 20,
+		"size": "M",
+		"abilityBoosts": {
+			"constitution": {
+				"from": "ancestry",
+				"target": "con",
+				"value": "2"
+			},
+			"wisdom": {
+				"from": "ancestry",
+				"target": "wis",
+				"value": "2"
+			},
+			"free": {
+				"from": "ancestry",
+				"target": "free",
+				"value": "2"
+			}
+		},
+		"abilityFlaws": {
+			"charisma": {
+				"from": "ancestry",
+				"target": "cha",
+				"value": "2"
+			}
+		},
+		"languages": [
+			"Common",
+			"Dwarven"
+		],
+		"traits": {
+			"humanoid": {
+				"from": "ancestry",
+				"name": "Humanoid"
+			},
+			"dwarf": {
+				"from": "ancestry",
+				"name": "Dwarf"
+			}
+		},
+		"ancestryFeatures": [
+			"Darkvision"
+		],
+		"heritages": [
+			"Ancient-Blooded Dwarf",
+			"Death Warden Dwarf",
+			"Forge Dwarf",
+			"Rock Dwarf",
+			"Strong-Blooded Dwarf"
+		],
+		"ancestryFeats": [
+			"Dwarven Lore",
+			"Dwarven Weapon Familiarity",
+			"Rock Runner",
+			"Stonecunning",
+			"Unburdened Iron",
+			"Vengeful Hatred"
+		]
+	},
+	"Elf": {
+		"name": "Elf",
+		"description": "As an ancient people, elves have seen great change and have the perspective that can come only from watching the arc of history. After leaving the world in ancient times, they returned to a changed land, and they still struggle to reclaim their ancestral homes, most notably from terrible demons that have invaded parts of their lands. To some, the elves are objects of awe—graceful and beautiful, with immense talent and knowledge. Among themselves, however, the elves place far more importance on personal freedom than on living up to these ideals.",
+		"hitPoints": 6,
+		"speed": 30,
+		"size": "M",
+		"abilityBoosts": {
+			"dexterity": {
+				"from": "ancestry",
+				"target": "dex",
+				"value": "2"
+			},
+			"intelligence": {
+				"from": "ancestry",
+				"target": "int",
+				"value": "2"
+			},
+			"free": {
+				"from": "ancestry",
+				"target": "free",
+				"value": "2"
+			}
+		},
+		"abilityFlaws": {
+			"constitution": {
+				"from": "ancestry",
+				"target": "con",
+				"value": "2"
+			}
+		},
+		"languages": [
+			"Common",
+			"Elven"
+		],
+		"traits": {
+			"humanoid": {
+				"from": "ancestry",
+				"name": "Humanoid"
+			},
+			"elf": {
+				"from": "ancestry",
+				"name": "Elf"
+			}
+		},
+		"ancestryFeatures": [
+			"Low-Light Vision"
+		],
+		"heritages": [
+			"Arctic Elf",
+			"Cavern Elf",
+			"Seer Elf",
+			"Whisper Elf",
+			"Woodland Elf"
+		],
+		"ancestryFeats": [
+			"Ancestral Longevity",
+			"Elven Lore",
+			"Elven Weapon Familiarity",
+			"Forlorn",
+			"Nimble Elf",
+			"Otherworldly Magic",
+			"Unwavering Mien"
+		]
+	}
+}

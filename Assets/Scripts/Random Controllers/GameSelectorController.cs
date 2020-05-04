@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameSelectorController : MonoBehaviour
 {
-    [Header("Create Campaign")]
+    [Header("Campaign")]
     [SerializeField] private CanvasGroup createCampaignPanel = null;
     [SerializeField] private TMP_InputField createCampaignInputField = null;
     [SerializeField] private TMP_Text createCampaignErrorText = null;
@@ -13,12 +13,12 @@ public class GameSelectorController : MonoBehaviour
     [SerializeField] private Button createCampaignCancelButton = null;
 
     [Header("Pathfinder 2e")]
-    [SerializeField] private PF2E_Controller PF2E_controller = null;
+    [SerializeField] private PF2E_CampaingHandler PF2E_controller = null;
     [SerializeField] private Transform PF2E_campaingButtonPrefab = null;
     [SerializeField] private Transform PF2E_container = null;
 
     private List<GameObject> PF2E_buttons = new List<GameObject>();
-    private E_Games currentGame = E_Games.None;
+    private E_Game currentGame = E_Game.None;
 
     /// <summary> Called by the diferent game buttons to select themselves </summary>
     public void GameButtonPressed(string game)
@@ -26,19 +26,19 @@ public class GameSelectorController : MonoBehaviour
         switch (game)
         {
             case "PF2E":
-                if (currentGame != E_Games.PF2E)
+                if (currentGame != E_Game.PF2E)
                 {
-                    currentGame = E_Games.PF2E;
+                    currentGame = E_Game.PF2E;
                     PF2E_ExtendGameButtons();
                 }
                 else
                 {
-                    currentGame = E_Games.None;
+                    currentGame = E_Game.None;
                     PF2E_RetractGameButtons();
                 }
                 break;
             default: // Closes all Buttons
-                currentGame = E_Games.None;
+                currentGame = E_Game.None;
                 PF2E_RetractGameButtons();
                 break;
         }
@@ -93,7 +93,7 @@ public class GameSelectorController : MonoBehaviour
     private void PF2E_ExtendGameButtons()
     {
         // Campaign buttons
-        foreach (var item in PF2E_Controller.PF2eCampaignIDs)
+        foreach (var item in PF2E_CampaingHandler.PF2eCampaignIDs)
         {
             Transform newButton = Instantiate(PF2E_campaingButtonPrefab, PF2E_container.position, PF2E_container.rotation, PF2E_container);
             UI_ButtonText newButtonScript = newButton.GetComponent<UI_ButtonText>();
@@ -112,20 +112,20 @@ public class GameSelectorController : MonoBehaviour
 
     private void PF2E_RetractGameButtons()
     {
-        currentGame = E_Games.None;
+        currentGame = E_Game.None;
         foreach (var item in PF2eUI_ButtonTextList)
             Destroy(item, 0.001f);
         PF2eUI_ButtonTextList.Clear();
     }
 
-    // Click on existing campaign, open campaign panel
+    // Click on existing campaign button, open campaign panel
     private void PF2E_OnClickUI_ButtonText(PF2E_CampaignID campaignID)
     {
         PF2E_controller.LoadCampaign(campaignID);
         PF2E_RetractGameButtons();
     }
 
-    // Click on add campaign, open add campaign panel
+    // Click on add campaign button (the one with the +), open add campaign panel
     private void PF2E_OnClickAddUI_ButtonText()
     {
         OpenCreateCampaignPanel(); // This remove Listeners
