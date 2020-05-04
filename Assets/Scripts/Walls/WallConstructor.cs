@@ -67,7 +67,7 @@ public class WallConstructor : MonoBehaviour
     private void StartWalling()
     {
         isWalling = true;
-        toolButton.image.color = Globals.iconsSelectedColorTemp;
+        toolButton.image.color = Color.red;
         UpdatePointerPos();
         pointer.gameObject.SetActive(true);
     }
@@ -75,7 +75,7 @@ public class WallConstructor : MonoBehaviour
     private void StopWalling()
     {
         isWalling = false;
-        toolButton.image.color = Globals.iconsColorTemp;
+        toolButton.image.color = Color.magenta;
         pointer.gameObject.SetActive(false);
 
         GenerateWall();
