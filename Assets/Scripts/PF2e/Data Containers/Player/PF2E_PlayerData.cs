@@ -35,7 +35,7 @@ public class PF2E_PlayerData
     }
 
 
-    //---------------------------------------------------HIT-POINTS--------------------------------------------------
+    //---------------------------------------------------HIT POINTS--------------------------------------------------
     // maxHitPoints = level*(classHP+constitution)+ancestryHP+temp
 
     private int hp_class = 0;

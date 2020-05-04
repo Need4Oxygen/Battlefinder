@@ -10,7 +10,7 @@ public class PF2E_CampaingHandler : MonoBehaviour
 
     public static List<PF2E_CampaignID> PF2eCampaignIDs;
 
-    [SerializeField] private PF2E_PlayerCreationController playerCreationController = null;
+    [SerializeField] private PF2E_CharacterCreation playerCreationController = null;
     [SerializeField] private ConfirmationController confirmation = null;
     [SerializeField] private GameObject cameraBlur = null;
 

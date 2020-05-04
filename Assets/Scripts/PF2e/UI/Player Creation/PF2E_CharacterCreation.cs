@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class PF2E_PlayerCreationController : MonoBehaviour
+public class PF2E_CharacterCreation : MonoBehaviour
 {
     public PF2E_CampaingHandler handler = null;
     [SerializeField] private PF2E_ABCSelector ABCSelector = null;
@@ -57,25 +57,11 @@ public class PF2E_PlayerCreationController : MonoBehaviour
         currentPlayer = null;
     }
 
-    public void OnClickSaveButton()
+    public void OnClickAcceptButton()
     {
         SavePlayer();
         ClosePlayerCreationPanel();
     }
-
-    public void OnClickBackButton()
-    {
-        if (initialPlayer != currentPlayer)
-            confirmation.AskForConfirmation("You have unsaved changes, do you really want to go back?", OnClickBackButtonCallback);
-        else
-            ClosePlayerCreationPanel();
-    }
-    private void OnClickBackButtonCallback(bool value)
-    {
-        if (value)
-            ClosePlayerCreationPanel();
-    }
-
 
     #region --------PLAYERS--------
 
@@ -109,7 +95,7 @@ public class PF2E_PlayerCreationController : MonoBehaviour
         else if (ABCSelector.currentlyDisplaying == E_PF2E_ABC.Class)
         {
             currentPlayer.playerClass = ABCSelector.selectedClass;
-            GenericClose(true);
+            CloseABCPanel(true);
             OpenPlayerCreationPanel();
         }
     }
@@ -119,7 +105,7 @@ public class PF2E_PlayerCreationController : MonoBehaviour
         if (ABCSelector.currentlyDisplaying == E_PF2E_ABC.Ancestry)
         {
             currentPlayer = null;
-            GenericClose(false);
+            CloseABCPanel(false);
         }
         else if (ABCSelector.currentlyDisplaying == E_PF2E_ABC.Background)
         {
@@ -223,11 +209,11 @@ public class PF2E_PlayerCreationController : MonoBehaviour
     private void SelectAncestryAccept()
     {
         currentPlayer.ancestry = ABCSelector.selectedAncestry;
-        GenericClose(true);
+        CloseABCPanel(true);
     }
     private void SelectAncestryCancel()
     {
-        GenericClose(false);
+        CloseABCPanel(false);
     }
 
     /// <summary> Called by the backgrond selection button. </summary>
@@ -241,11 +227,11 @@ public class PF2E_PlayerCreationController : MonoBehaviour
     private void SelectBackgroundAccept()
     {
         currentPlayer.background = ABCSelector.selectedBackground;
-        GenericClose(true);
+        CloseABCPanel(true);
     }
     private void SelectBackgroundCancel()
     {
-        GenericClose(false);
+        CloseABCPanel(false);
     }
 
     /// <summary> Called by the class selection button. </summary>
@@ -259,14 +245,14 @@ public class PF2E_PlayerCreationController : MonoBehaviour
     private void SelectClassAccept()
     {
         currentPlayer.playerClass = ABCSelector.selectedClass;
-        GenericClose(true);
+        CloseABCPanel(true);
     }
     private void SelectClassCancel()
     {
-        GenericClose(false);
+        CloseABCPanel(false);
     }
 
-    private void GenericClose(bool refreshPanels)
+    private void CloseABCPanel(bool refreshPanels)
     {
         ABCSelector.CloseSelectorPanel();
 
