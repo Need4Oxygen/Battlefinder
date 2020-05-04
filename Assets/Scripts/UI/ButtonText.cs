@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UI_ButtonText : MonoBehaviour
+public class ButtonText : MonoBehaviour
 {
     public Button button;
     public TMP_Text text;

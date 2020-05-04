@@ -96,7 +96,7 @@ public class GameSelectorController : MonoBehaviour
         foreach (var item in PF2E_CampaingHandler.PF2eCampaignIDs)
         {
             Transform newButton = Instantiate(PF2E_campaingButtonPrefab, PF2E_container.position, PF2E_container.rotation, PF2E_container);
-            UI_ButtonText newButtonScript = newButton.GetComponent<UI_ButtonText>();
+            ButtonText newButtonScript = newButton.GetComponent<ButtonText>();
             newButtonScript.text.text = item.name;
             newButtonScript.button.onClick.AddListener(() => PF2E_OnClickUI_ButtonText(item));
             PF2eUI_ButtonTextList.Add(newButton.gameObject);
@@ -104,7 +104,7 @@ public class GameSelectorController : MonoBehaviour
 
         // Add Campaign button
         Transform addButton = Instantiate(PF2E_campaingButtonPrefab, PF2E_container.position, PF2E_container.rotation, PF2E_container);
-        UI_ButtonText addButtonScript = addButton.GetComponent<UI_ButtonText>();
+        ButtonText addButtonScript = addButton.GetComponent<ButtonText>();
         addButtonScript.text.text = "+";
         addButtonScript.button.onClick.AddListener(() => PF2E_OnClickAddUI_ButtonText());
         PF2eUI_ButtonTextList.Add(addButton.gameObject);

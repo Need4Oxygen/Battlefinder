@@ -71,8 +71,8 @@ public class PF2E_ABCSelector : MonoBehaviour
     [HideInInspector] public string selectedClass = "";
 
 
-    private List<UI_ButtonText> tabList = new List<UI_ButtonText>();
-    private List<UI_ButtonText> buttonList = new List<UI_ButtonText>();
+    private List<ButtonText> tabList = new List<ButtonText>();
+    private List<ButtonText> buttonList = new List<ButtonText>();
 
 
     void Awake()
@@ -103,8 +103,6 @@ public class PF2E_ABCSelector : MonoBehaviour
         classPanel.gameObject.SetActive(false);
     }
 
-    #region --------Tabs & Buttons--------
-
     private void ClearTabs()
     {
         foreach (var item in tabList)
@@ -118,8 +116,6 @@ public class PF2E_ABCSelector : MonoBehaviour
             Destroy(item.gameObject, 0.001f);
         buttonList.Clear();
     }
-
-    #endregion
 
     public void Display(E_PF2E_ABC display)
     {
@@ -154,7 +150,7 @@ public class PF2E_ABCSelector : MonoBehaviour
         currentlyDisplaying = E_PF2E_ABC.Ancestry;
 
         Transform newTab = Instantiate(tab, Vector3.zero, Quaternion.identity, tabContainer);
-        UI_ButtonText newTabScript = newTab.GetComponent<UI_ButtonText>();
+        ButtonText newTabScript = newTab.GetComponent<ButtonText>();
         newTabScript.text.text = "Core Rulebook";
         newTab.SetParent(tabContainer);
         tabList.Add(newTabScript);
@@ -162,7 +158,7 @@ public class PF2E_ABCSelector : MonoBehaviour
         foreach (var item in PF2E_DataBase.Ancestries)
         {
             Transform newButton = Instantiate(button, Vector3.zero, Quaternion.identity, buttonContainer);
-            UI_ButtonText newButtonScript = newButton.GetComponent<UI_ButtonText>();
+            ButtonText newButtonScript = newButton.GetComponent<ButtonText>();
             newButtonScript.text.text = item.Value.name;
             newButtonScript.button.onClick.AddListener(() => SelectAncestry(item.Value.name));
             buttonList.Add(newButtonScript);
@@ -253,7 +249,7 @@ public class PF2E_ABCSelector : MonoBehaviour
         currentlyDisplaying = E_PF2E_ABC.Background;
 
         Transform newTab = Instantiate(tab, Vector3.zero, Quaternion.identity, tabContainer);
-        UI_ButtonText newTabScript = newTab.GetComponent<UI_ButtonText>();
+        ButtonText newTabScript = newTab.GetComponent<ButtonText>();
         newTabScript.text.text = "Core Rulebook";
         newTab.SetParent(tabContainer);
         tabList.Add(newTabScript);
@@ -261,7 +257,7 @@ public class PF2E_ABCSelector : MonoBehaviour
         foreach (var item in PF2E_DataBase.Backgrounds)
         {
             Transform newButton = Instantiate(button, Vector3.zero, Quaternion.identity, buttonContainer);
-            UI_ButtonText newButtonScript = newButton.GetComponent<UI_ButtonText>();
+            ButtonText newButtonScript = newButton.GetComponent<ButtonText>();
             newButtonScript.text.text = item.Value.name;
             newButtonScript.button.onClick.AddListener(() => SelectBackground(item.Value.name));
             buttonList.Add(newButtonScript);
@@ -310,7 +306,7 @@ public class PF2E_ABCSelector : MonoBehaviour
         currentlyDisplaying = E_PF2E_ABC.Class;
 
         Transform newTab = Instantiate(tab, Vector3.zero, Quaternion.identity, tabContainer);
-        UI_ButtonText newTabScript = newTab.GetComponent<UI_ButtonText>();
+        ButtonText newTabScript = newTab.GetComponent<ButtonText>();
         newTabScript.text.text = "Core Rulebook";
         newTab.SetParent(tabContainer);
         tabList.Add(newTabScript);
@@ -318,7 +314,7 @@ public class PF2E_ABCSelector : MonoBehaviour
         foreach (var item in PF2E_DataBase.Classes)
         {
             Transform newButton = Instantiate(button, Vector3.zero, Quaternion.identity, buttonContainer);
-            UI_ButtonText newButtonScript = newButton.GetComponent<UI_ButtonText>();
+            ButtonText newButtonScript = newButton.GetComponent<ButtonText>();
             newButtonScript.text.text = item.Value.name;
             newButtonScript.button.onClick.AddListener(() => SelectClass(item.Value.name));
             buttonList.Add(newButtonScript);

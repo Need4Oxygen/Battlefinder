@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class CameraScript : MonoBehaviour
+public class MainMenuCamera : MonoBehaviour
 {
 
     [SerializeField] CinemachineBrain brainCam = null;
     [SerializeField] CinemachineVirtualCamera closeUpCam = null;
-    
+
     [Space(15)]
     [SerializeField] Animator boxAnimator = null;
     [SerializeField] AudioClip boxOpenClip = null;

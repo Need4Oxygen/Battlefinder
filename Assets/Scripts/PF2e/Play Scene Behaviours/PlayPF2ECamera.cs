@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class PlayPF2ECamera : MonoBehaviour
 {
     [SerializeField] float camZoomStrength = 0.5f;
     [SerializeField] float camZoomMax = 12f;
