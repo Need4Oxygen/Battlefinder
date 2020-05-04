@@ -12,19 +12,30 @@ public class SplashController : MonoBehaviour
     [SerializeField] CanvasGroup clickToPanel = null;
 
     [SerializeField] AudioSource musicPlayer = null;
+    [SerializeField] MainMenuCamera cameraController = null;
 
+    [SerializeField] bool skipIntro;
     private bool splashing;
 
     void Start()
     {
-        clickablePanel.interactable = false;
-        splashPanel.SetActive(true);
-        blackPanel.alpha = 1f;
-        battleFinderPanel.alpha = 0f;
-        disclaimerPanel.alpha = 0f;
-        clickToPanel.alpha = 0f;
+        if (!skipIntro)
+        {
+            clickablePanel.interactable = false;
+            splashPanel.SetActive(true);
+            blackPanel.alpha = 1f;
+            battleFinderPanel.alpha = 0f;
+            disclaimerPanel.alpha = 0f;
+            clickToPanel.alpha = 0f;
 
-        StartCoroutine(ShowDisclaimer());
+            StartCoroutine(ShowDisclaimer());
+        }
+        else
+        {
+            splashPanel.SetActive(false);
+            musicPlayer.Play();
+            cameraController.ChangeToCloseCamera();
+        }
     }
 
     private IEnumerator ShowDisclaimer()
@@ -62,6 +73,7 @@ public class SplashController : MonoBehaviour
 
     public void StopSplashing()
     {
+        cameraController.ChangeToCloseCamera();
         splashing = false;
         StopAllCoroutines();
         StartCoroutine(PanelFader.Fade(clickToPanel, 0f, 0.5f));
