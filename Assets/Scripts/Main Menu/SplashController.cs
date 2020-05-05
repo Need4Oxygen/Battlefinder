@@ -4,17 +4,20 @@ using UnityEngine.UI;
 
 public class SplashController : MonoBehaviour
 {
-    [SerializeField] Button clickablePanel = null;
-    [SerializeField] GameObject splashPanel = null;
-    [SerializeField] CanvasGroup blackPanel = null;
-    [SerializeField] CanvasGroup disclaimerPanel = null;
-    [SerializeField] CanvasGroup battleFinderPanel = null;
-    [SerializeField] CanvasGroup clickToPanel = null;
+    [SerializeField] private bool skipIntro = false;
 
-    [SerializeField] AudioSource musicPlayer = null;
-    [SerializeField] MainMenuCamera cameraController = null;
+    [Space(15)]
+    [SerializeField] private MainMenuCamera cameraController = null;
+    [SerializeField] private AudioSource musicPlayer = null;
 
-    [SerializeField] bool skipIntro;
+    [Space(15)]
+    [SerializeField] private Button clickablePanel = null;
+    [SerializeField] private GameObject splashPanel = null;
+    [SerializeField] private CanvasGroup blackPanel = null;
+    [SerializeField] private CanvasGroup disclaimerPanel = null;
+    [SerializeField] private CanvasGroup battleFinderPanel = null;
+    [SerializeField] private CanvasGroup clickToPanel = null;
+
     private bool splashing;
 
     void Start()

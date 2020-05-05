@@ -7,6 +7,8 @@ public class PF2E_ABCSelector : MonoBehaviour
 {
     [HideInInspector] public E_PF2E_ABC currentlyDisplaying;
 
+    [SerializeField] PF2E_CharacterCreation creation = null;
+
     [Header("ABC")]
     [SerializeField] CanvasGroup ABCSelectionPanel = null;
     [SerializeField] Transform buttonContainer = null;
@@ -36,13 +38,14 @@ public class PF2E_ABCSelector : MonoBehaviour
     [SerializeField] Transform backgroundPanel = null;
     [SerializeField] TMP_Text backgroundTitle = null;
     [SerializeField] TMP_Text backgroundDescription = null;
-    [SerializeField] TMP_Text backgroundAbilityBoosts = null;        // Strenght or Dexterity, Free
+    [SerializeField] TMP_Text backgroundAbilityBoosts = null;
     [SerializeField] TMP_Text backgroundSkillTrain = null;
     [SerializeField] TMP_Text backgroundSkillFeat = null;
 
 
     [Header("Classes Panel")]
     [SerializeField] Transform classPanel = null;
+    [SerializeField] Transform weaponArmorLeyendPanel = null;
     [SerializeField] TMP_Text classTitle = null;
     [SerializeField] TMP_Text classDescription = null;
     [SerializeField] TMP_Text classHitPoints = null;
@@ -71,9 +74,13 @@ public class PF2E_ABCSelector : MonoBehaviour
     [HideInInspector] public string selectedClass = "";
 
 
+    private Color selected = new Color(0.6f, 0.6f, 0.6f, 1f);
+    private Color unselected = new Color(1f, 1f, 1f, 1f);
+
     private List<ButtonText> tabList = new List<ButtonText>();
     private List<ButtonText> buttonList = new List<ButtonText>();
 
+    private ButtonText currentlySelected = null;
 
     void Awake()
     {
@@ -91,6 +98,9 @@ public class PF2E_ABCSelector : MonoBehaviour
         StartCoroutine(PanelFader.RescaleAndFade(ABCSelectionPanel.transform, ABCSelectionPanel, 0.85f, 0f, 0.1f));
         ClearTabs();
         ClearButtons();
+
+        currentlyDisplaying = E_PF2E_ABC.None;
+
         selectedAncestry = "";
         selectedBackground = "";
         selectedClass = "";
@@ -101,6 +111,7 @@ public class PF2E_ABCSelector : MonoBehaviour
         ancestryPanel.gameObject.SetActive(false);
         backgroundPanel.gameObject.SetActive(false);
         classPanel.gameObject.SetActive(false);
+        weaponArmorLeyendPanel.gameObject.SetActive(false);
     }
 
     private void ClearTabs()
@@ -115,6 +126,14 @@ public class PF2E_ABCSelector : MonoBehaviour
         foreach (var item in buttonList)
             Destroy(item.gameObject, 0.001f);
         buttonList.Clear();
+    }
+
+    private void Select(ButtonText newSelection)
+    {
+        if (currentlySelected != null)
+            currentlySelected.GetComponent<Image>().color = unselected;
+        newSelection.GetComponent<Image>().color = selected;
+        currentlySelected = newSelection;
     }
 
     public void Display(E_PF2E_ABC display)
@@ -136,6 +155,7 @@ public class PF2E_ABCSelector : MonoBehaviour
                 break;
             case E_PF2E_ABC.Class:
                 classPanel.gameObject.SetActive(true);
+                weaponArmorLeyendPanel.gameObject.SetActive(true);
                 DisplayClasses();
                 break;
 
@@ -148,27 +168,36 @@ public class PF2E_ABCSelector : MonoBehaviour
     private void DisplayAncestries()
     {
         currentlyDisplaying = E_PF2E_ABC.Ancestry;
+        string currentAncestry = creation.currentPlayer.ancestry;
 
         Transform newTab = Instantiate(tab, Vector3.zero, Quaternion.identity, tabContainer);
         ButtonText newTabScript = newTab.GetComponent<ButtonText>();
-        newTabScript.text.text = "Core Rulebook";
+        newTabScript.text.text = "CRB";
         newTab.SetParent(tabContainer);
         tabList.Add(newTabScript);
 
+        ButtonText currentAncestryButton = null;
         foreach (var item in PF2E_DataBase.Ancestries)
         {
             Transform newButton = Instantiate(button, Vector3.zero, Quaternion.identity, buttonContainer);
             ButtonText newButtonScript = newButton.GetComponent<ButtonText>();
             newButtonScript.text.text = item.Value.name;
-            newButtonScript.button.onClick.AddListener(() => SelectAncestry(item.Value.name));
+            newButtonScript.button.onClick.AddListener(() => SelectAncestry(item.Value.name, newButtonScript));
             buttonList.Add(newButtonScript);
+
+            if (item.Value.name == currentAncestry)
+                currentAncestryButton = newButtonScript;
         }
 
-        buttonList[0].button.onClick.Invoke();
+        if (currentAncestryButton != null)
+            currentAncestryButton.button.onClick.Invoke();
+        else
+            buttonList[0].button.onClick.Invoke();
     }
 
-    private void SelectAncestry(string ancestryName)
+    private void SelectAncestry(string ancestryName, ButtonText button)
     {
+        Select(button);
         PF2E_Ancestry ancestry = PF2E_DataBase.Ancestries[ancestryName];
         selectedAncestry = ancestryName;
         int count, total = 0;
@@ -247,27 +276,36 @@ public class PF2E_ABCSelector : MonoBehaviour
     private void DisplayBackgrounds()
     {
         currentlyDisplaying = E_PF2E_ABC.Background;
+        string currentBackground = creation.currentPlayer.background;
 
         Transform newTab = Instantiate(tab, Vector3.zero, Quaternion.identity, tabContainer);
         ButtonText newTabScript = newTab.GetComponent<ButtonText>();
-        newTabScript.text.text = "Core Rulebook";
+        newTabScript.text.text = "CRB";
         newTab.SetParent(tabContainer);
         tabList.Add(newTabScript);
 
+        ButtonText currentBackgroundButton = null;
         foreach (var item in PF2E_DataBase.Backgrounds)
         {
             Transform newButton = Instantiate(button, Vector3.zero, Quaternion.identity, buttonContainer);
             ButtonText newButtonScript = newButton.GetComponent<ButtonText>();
             newButtonScript.text.text = item.Value.name;
-            newButtonScript.button.onClick.AddListener(() => SelectBackground(item.Value.name));
+            newButtonScript.button.onClick.AddListener(() => SelectBackground(item.Value.name, newButtonScript));
             buttonList.Add(newButtonScript);
+
+            if (item.Value.name == currentBackground)
+                currentBackgroundButton = newButtonScript;
         }
 
-        buttonList[0].button.onClick.Invoke();
+        if (currentBackgroundButton != null)
+            currentBackgroundButton.button.onClick.Invoke();
+        else
+            buttonList[0].button.onClick.Invoke();
     }
 
-    private void SelectBackground(string backgroundName)
+    private void SelectBackground(string backgroundName, ButtonText button)
     {
+        Select(button);
         PF2E_Background background = PF2E_DataBase.Backgrounds[backgroundName];
         selectedBackground = backgroundName;
 
@@ -304,27 +342,36 @@ public class PF2E_ABCSelector : MonoBehaviour
     private void DisplayClasses()
     {
         currentlyDisplaying = E_PF2E_ABC.Class;
+        string currentClass = creation.currentPlayer.playerClass;
 
         Transform newTab = Instantiate(tab, Vector3.zero, Quaternion.identity, tabContainer);
         ButtonText newTabScript = newTab.GetComponent<ButtonText>();
-        newTabScript.text.text = "Core Rulebook";
+        newTabScript.text.text = "CRB";
         newTab.SetParent(tabContainer);
         tabList.Add(newTabScript);
 
+        ButtonText currentClassButton = null;
         foreach (var item in PF2E_DataBase.Classes)
         {
             Transform newButton = Instantiate(button, Vector3.zero, Quaternion.identity, buttonContainer);
             ButtonText newButtonScript = newButton.GetComponent<ButtonText>();
             newButtonScript.text.text = item.Value.name;
-            newButtonScript.button.onClick.AddListener(() => SelectClass(item.Value.name));
+            newButtonScript.button.onClick.AddListener(() => SelectClass(item.Value.name, newButtonScript));
             buttonList.Add(newButtonScript);
+
+            if (item.Value.name == currentClass)
+                currentClassButton = newButtonScript;
         }
 
-        buttonList[0].button.onClick.Invoke();
+        if (currentClassButton != null)
+            currentClassButton.button.onClick.Invoke();
+        else
+            buttonList[0].button.onClick.Invoke();
     }
 
-    private void SelectClass(string className)
+    private void SelectClass(string className, ButtonText button)
     {
+        Select(button);
         PF2E_Class classObj = PF2E_DataBase.Classes[className];
         selectedClass = className;
 

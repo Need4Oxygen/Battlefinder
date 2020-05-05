@@ -8,7 +8,6 @@ public class PF2E_CharacterCreation : MonoBehaviour
 {
     public PF2E_CampaingHandler handler = null;
     [SerializeField] private PF2E_ABCSelector ABCSelector = null;
-    [SerializeField] private ConfirmationController confirmation = null;
     [SerializeField] private CanvasGroup playerPanel = null;
 
     [Space(15)]
