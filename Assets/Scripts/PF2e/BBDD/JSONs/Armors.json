@@ -1,0 +1,287 @@
+{
+    "No armor": {
+        "ac_bonus": 0,
+        "bulk": 0,
+        "category": "unarmored",
+        "check_penalty": 0,
+        "description": "Not weaing protective garments.",
+        "dex_cap": 0,
+        "group": "",
+        "level": 0,
+        "name": "No armor",
+        "price_gp": 0,
+        "price_text": "-",
+        "source": {
+            "abbr": "CRB",
+            "startPage": 275,
+            "stopPage": 275
+        },
+        "speed_penalty": 0,
+        "strength": 0,
+        "traits": []
+    },
+    "Explorer's Clothing": {
+        "ac_bonus": 0,
+        "bulk": 0.1,
+        "category": "unarmored",
+        "check_penalty": 0,
+        "description": "Adventurers who don’t wear armor travel in durable clothing. Though it’s not armor and uses your unarmored defense proficiency, it still has a Dex Cap and can grant an item bonus to AC if etched with potency runes.",
+        "dex_cap": 5,
+        "group": "",
+        "level": 0,
+        "name": "Explorer's clothing",
+        "price_gp": 0.1,
+        "price_text": "1 sp",
+        "source": {
+            "abbr": "CRB",
+            "startPage": 275,
+            "stopPage": 275
+        },
+        "speed_penalty": 0,
+        "strength": 0,
+        "traits": [
+            "Comfort"
+        ]
+    },
+    "Padded armor": {
+        "ac_bonus": 1,
+        "bulk": 0.1,
+        "category": "lightArmor",
+        "check_penalty": 0,
+        "description": "This armor is simply a layer of heavy, quilted cloth, but it is sometimes used because it’s so inexpensive. Padded armor is easier to damage and destroy than other types of armor. Heavy armor comes with a padded armor undercoat included in its Price, though it loses the comfort trait when worn under heavy armor. You can wear just that padded armor undercoat to sleep in, if your heavy armor is destroyed, or when otherwise not wearing the full heavy armor. This allows you to keep the armor invested and benefit from the power of any runes on the associated heavy armor, but no one else can wear your heavy armor without the padded undercoat.",
+        "dex_cap": 3,
+        "group": "",
+        "level": 0,
+        "name": "Padded armor",
+        "price_gp": 0.2,
+        "price_text": "2 sp",
+        "source": {
+            "abbr": "CRB",
+            "startPage": 275,
+            "stopPage": 275
+        },
+        "speed_penalty": 0,
+        "strength": 10,
+        "traits": [
+            "Comfort"
+        ]
+    },
+    "Leather": {
+        "ac_bonus": 1,
+        "bulk": 1,
+        "category": "lightArmor",
+        "check_penalty": -1,
+        "description": "A mix of flexible and molded boiled leather, a suit of this type of armor provides some protection with maximum flexibility.",
+        "dex_cap": 4,
+        "group": "",
+        "level": 0,
+        "name": "leather",
+        "price_gp": 2,
+        "price_text": "2 gp",
+        "source": {
+            "abbr": "CRB",
+            "startPage": 275,
+            "stopPage": 275
+        },
+        "speed_penalty": 0,
+        "strength": 10,
+        "traits": []
+    },
+    "Studded leather": {
+        "ac_bonus": 2,
+        "bulk": 1,
+        "category": "lightArmor",
+        "check_penalty": -1,
+        "description": "This leather armor is reinforced with metal studs and sometimes small metal plates, providing most of the flexibility of leather armor with more robust protection.",
+        "dex_cap": 3,
+        "group": "",
+        "level": 0,
+        "name": "Studded leather",
+        "price_gp": 3,
+        "price_text": "3 gp",
+        "source": {
+            "abbr": "CRB",
+            "startPage": 275,
+            "stopPage": 275
+        },
+        "speed_penalty": 0,
+        "strength": 12,
+        "traits": []
+    },
+    "Chain shirt": {
+        "ac_bonus": 2,
+        "bulk": 1,
+        "category": "lightArmor",
+        "check_penalty": -1,
+        "description": "Sometimes called a hauberk, this is a long shirt constructed of the same metal rings as chainmail. However, it is much lighter than chainmail and protects only the torso, upper arms, and upper legs of its wearer.",
+        "dex_cap": 3,
+        "group": "",
+        "level": 0,
+        "name": "Chain shirt",
+        "price_gp": 5,
+        "price_text": "5 gp",
+        "source": {
+            "abbr": "CRB",
+            "startPage": 275,
+            "stopPage": 275
+        },
+        "speed_penalty": 0,
+        "strength": 12,
+        "traits": [
+            "Flexible",
+            "Noisy"
+        ]
+    },
+    "Hide": {
+        "ac_bonus": 3,
+        "bulk": 2,
+        "category": "mediumArmor",
+        "check_penalty": -2,
+        "description": "A mix of furs, sturdy hide, and sometimes molded boiled leather, this armor provides protection due to its layers of leather, though its bulkiness slows the wearer down and decreases mobility.",
+        "dex_cap": 2,
+        "group": "leather",
+        "level": 0,
+        "name": "Hide",
+        "price_gp": 2,
+        "price_text": "2 gp",
+        "source": {
+            "abbr": "CRB",
+            "startPage": 275,
+            "stopPage": 275
+        },
+        "speed_penalty": -5,
+        "strength": 14,
+        "traits": []
+    },
+    "Scale mail": {
+        "ac_bonus": 3,
+        "bulk": 2,
+        "category": "mediumArmor",
+        "check_penalty": -2,
+        "description": "Scale mail consists of many metal scales sewn onto a reinforced leather backing, often in the form of a long shirt that protects the torso, arms, and legs.",
+        "dex_cap": 2,
+        "group": "composite",
+        "level": 0,
+        "name": "Scale mail",
+        "price_gp": 4,
+        "price_text": "4 gp",
+        "source": {
+            "abbr": "CRB",
+            "startPage": 275,
+            "stopPage": 275
+        },
+        "speed_penalty": -5,
+        "strength": 14,
+        "traits": []
+    },
+    "Chain mail": {
+        "ac_bonus": 4,
+        "bulk": 2,
+        "category": "mediumArmor",
+        "check_penalty": -2,
+        "description": "A suit of chain mail consists of several pieces of armor composed of small metal rings linked together in a protective mesh. It typically includes a chain shirt, leggings, a pair of arms, and a coif, collectively protecting most of the body.",
+        "dex_cap": 1,
+        "group": "chain",
+        "level": 0,
+        "name": "Chain mail",
+        "price_gp": 6,
+        "price_text": "6 gp",
+        "source": {
+            "abbr": "CRB",
+            "startPage": 275,
+            "stopPage": 275
+        },
+        "speed_penalty": -5,
+        "strength": 16,
+        "traits": [
+            "Flexible",
+            "Noisy"
+        ]
+    },
+    "Breastplate": {
+        "ac_bonus": 4,
+        "bulk": 2,
+        "category": "mediumArmor",
+        "check_penalty": -2,
+        "description": "Though referred to as a breastplate, this type of armor consists of several pieces of plate or half-plate armor that protect the torso, chest, neck, and sometimes the hips and lower legs. It strategically grants some of the protection of plate while allowing greater flexibility and speed.",
+        "dex_cap": 1,
+        "group": "plate",
+        "level": 0,
+        "name": "Breastplate",
+        "price_gp": 8,
+        "price_text": "8 gp",
+        "source": {
+            "abbr": "CRB",
+            "startPage": 275,
+            "stopPage": 275
+        },
+        "speed_penalty": -5,
+        "strength": 16,
+        "traits": []
+    },
+    "Splint mail": {
+        "ac_bonus": 5,
+        "bulk": 3,
+        "category": "heavyArmor",
+        "check_penalty": -3,
+        "description": "This type of armor is chain mail reinforced with flexible, interlocking metal plates, typically located on the wearer’s torso, upper arms, and legs. A suit of this armor comes with an undercoat of padded armor and a pair of gauntlets.",
+        "dex_cap": 1,
+        "group": "composite",
+        "level": 1,
+        "name": "Splint mail",
+        "price_gp": 13,
+        "price_text": "13 gp",
+        "source": {
+            "abbr": "CRB",
+            "startPage": 275,
+            "stopPage": 275
+        },
+        "speed_penalty": -10,
+        "strength": 16,
+        "traits": []
+    },
+    "Half plate": {
+        "ac_bonus": 5,
+        "bulk": 3,
+        "category": "heavyArmor",
+        "check_penalty": -3,
+        "description": "Half plate consists of most of the upper body plates used in full plate, with lighter or sparser steel plate protection for the arms and legs. This provides some of the protection of full plate with greater flexibility and speed. A suit of this armor comes with an undercoat of padded armor and a pair of gauntlets.",
+        "dex_cap": 1,
+        "group": "plate",
+        "level": 1,
+        "name": "Half plate",
+        "price_gp": 18,
+        "price_text": "18 gp",
+        "source": {
+            "abbr": "CRB",
+            "startPage": 275,
+            "stopPage": 275
+        },
+        "speed_penalty": -10,
+        "strength": 16,
+        "traits": []
+    },
+    "Full plate": {
+        "ac_bonus": 6,
+        "bulk": 4,
+        "category": "heavyArmor",
+        "check_penalty": -3,
+        "description": "Plate mail consists of interlocking plates that encase nearly the entire body in a carapace of steel. It is costly and heavy, and the wearer often requires help to don it correctly, but it provides some of the best defense armor can supply. A suit of this armor comes with an undercoat of padded armor and a pair of gauntlets.",
+        "dex_cap": 0,
+        "group": "plate",
+        "level": 2,
+        "name": "Full plate",
+        "price_gp": 30,
+        "price_text": "30 gp",
+        "source": {
+            "abbr": "CRB",
+            "startPage": 275,
+            "stopPage": 275
+        },
+        "speed_penalty": -10,
+        "strength": 18,
+        "traits": [
+            "Bulwark"
+        ]
+    }
+}

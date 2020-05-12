@@ -8,6 +8,7 @@ public class PF2E_Ancestry
     public int speed;
     public string size;
     public Dictionary<string, PF2E_AblModifier> abilityBoosts;
+    public Dictionary<string, PF2E_AblModifier> freeAbilityBoosts;
     public Dictionary<string, PF2E_AblModifier> abilityFlaws;
     public string[] languages;
     public Dictionary<string, PF2E_Trait> traits;

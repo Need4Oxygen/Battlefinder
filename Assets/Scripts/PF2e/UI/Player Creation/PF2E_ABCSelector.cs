@@ -7,7 +7,7 @@ public class PF2E_ABCSelector : MonoBehaviour
 {
     [HideInInspector] public E_PF2E_ABC currentlyDisplaying;
 
-    [SerializeField] PF2E_CharacterCreation creation = null;
+    [SerializeField] PF2E_CharacterCreation characterCreation = null;
 
     [Header("ABC")]
     [SerializeField] CanvasGroup ABCSelectionPanel = null;
@@ -168,7 +168,7 @@ public class PF2E_ABCSelector : MonoBehaviour
     private void DisplayAncestries()
     {
         currentlyDisplaying = E_PF2E_ABC.Ancestry;
-        string currentAncestry = creation.currentPlayer.ancestry;
+        string currentAncestry = characterCreation.currentPlayer.ancestry;
 
         Transform newTab = Instantiate(tab, Vector3.zero, Quaternion.identity, tabContainer);
         ButtonText newTabScript = newTab.GetComponent<ButtonText>();
@@ -276,7 +276,7 @@ public class PF2E_ABCSelector : MonoBehaviour
     private void DisplayBackgrounds()
     {
         currentlyDisplaying = E_PF2E_ABC.Background;
-        string currentBackground = creation.currentPlayer.background;
+        string currentBackground = characterCreation.currentPlayer.background;
 
         Transform newTab = Instantiate(tab, Vector3.zero, Quaternion.identity, tabContainer);
         ButtonText newTabScript = newTab.GetComponent<ButtonText>();
@@ -342,7 +342,7 @@ public class PF2E_ABCSelector : MonoBehaviour
     private void DisplayClasses()
     {
         currentlyDisplaying = E_PF2E_ABC.Class;
-        string currentClass = creation.currentPlayer.playerClass;
+        string currentClass = characterCreation.currentPlayer.playerClass;
 
         Transform newTab = Instantiate(tab, Vector3.zero, Quaternion.identity, tabContainer);
         ButtonText newTabScript = newTab.GetComponent<ButtonText>();

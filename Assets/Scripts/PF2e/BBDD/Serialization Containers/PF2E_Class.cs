@@ -12,5 +12,5 @@ public class PF2E_Class
     public string[] classFeats;
     public Dictionary<string, PF2E_Lecture> classSkillsTrains;
     public Dictionary<string, PF2E_Lecture> lectures;
-    public Dictionary<string, PF2E_BuildItem> build;
+    public Dictionary<string, Dictionary<string, PF2E_BuildItem>> build;
 }
