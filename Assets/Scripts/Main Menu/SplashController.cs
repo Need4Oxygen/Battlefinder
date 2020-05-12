@@ -37,7 +37,7 @@ public class SplashController : MonoBehaviour
         {
             splashPanel.SetActive(false);
             musicPlayer.Play();
-            cameraController.ChangeToCloseCamera();
+            cameraController.SkipOpening();
         }
     }
 

@@ -30,6 +30,12 @@ public class MainMenuCamera : MonoBehaviour
         StartCoroutine(WaitForBlend(brainCam.m_DefaultBlend.m_Time));
     }
 
+    public void SkipOpening()
+    {
+        closeUpCam.Priority = 12;
+        StartCoroutine(WaitForBlend(0f));
+    }
+
     private IEnumerator WaitForBlend(float t)
     {
         yield return new WaitForSeconds(t);
