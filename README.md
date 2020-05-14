@@ -1,4 +1,4 @@
-# Project Title
+# Battlefinder
 Official repository for Battlefinder. This product is a TTSRPG game oriented to make posible to play Pathfinder 2e digitally.
 
 ## Getting Started
