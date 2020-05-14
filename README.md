@@ -23,10 +23,15 @@ Main branch is "develop" while "master" is only updated for releases. Theoretica
 
 Branch rules are applied checking for specific strings contained in their name.
 
+* Branches containing "master" will be heavily protected as they will adquire the protections corresponding to the releases branch.
 * Branches containing "develop" will be heavily protected as they will adquire the protections corresponding to the main branch.
-* Branches containing "BF-" will be protected as they correspond to main developer tasks.
+* Branches containing "BF-\*" will be protected as they correspond to main developer tasks.
 
 Please try to avoid naming your branches in a way that contains any of the aforementioned strings.
+Contributor branches should be something like "C-[Affected_System]-[Purpose]:
+
+* C-DataBase-Update
+* C-Grid_Shader-Refactor
 
 ## Coding Style
 
@@ -98,5 +103,5 @@ We try in good faith to honor the requirements of each license, but if you find 
 
 ## Contact
 
-[contact@need4oxygen.com](contact@need4oxygen.com)
-[Battlefinder Discord Server](https://discord.gg/9F6dmbV)
+* [contact@need4oxygen.com](contact@need4oxygen.com)
+* [Battlefinder Discord Server](https://discord.gg/9F6dmbV)
