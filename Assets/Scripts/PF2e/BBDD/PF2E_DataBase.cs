@@ -105,7 +105,7 @@ public class PF2E_DataBase : MonoBehaviour
 
             default:
                 Debug.LogWarning("[PF2E_DataBase] Error: ability abreviation \"" + abilityAbreviated + "\" not recognized!");
-                return "Null";
+                return "";
         }
     }
 
@@ -130,7 +130,7 @@ public class PF2E_DataBase : MonoBehaviour
 
             default:
                 Debug.LogWarning("[PF2E_DataBase] Error: ability abreviation (" + abilityFullName + ") not recognized!");
-                return "Null";
+                return "";
         }
     }
 
@@ -199,7 +199,7 @@ public class PF2E_DataBase : MonoBehaviour
 
             default:
                 Debug.LogWarning("[PF2E_DataBase] Error: size abreviation (" + sizeAbreviated + ") not recognized!");
-                return "Null";
+                return "";
         }
     }
 

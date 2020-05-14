@@ -118,7 +118,7 @@ public class PF2E_CharacterCreation : MonoBehaviour
         }
         else if (ABCSelector.currentlyDisplaying == E_PF2E_ABC.Class)
         {
-            currentPlayer.playerClass = ABCSelector.selectedClass;
+            currentPlayer.class_name = ABCSelector.selectedClass;
             CloseABCPanel(true);
             OpenPlayerCreationPanel();
         }
@@ -139,7 +139,7 @@ public class PF2E_CharacterCreation : MonoBehaviour
         }
         else if (ABCSelector.currentlyDisplaying == E_PF2E_ABC.Class)
         {
-            currentPlayer.playerClass = "";
+            currentPlayer.class_name = "";
             ABCSelector.Display(E_PF2E_ABC.Background);
         }
     }
@@ -172,7 +172,7 @@ public class PF2E_CharacterCreation : MonoBehaviour
 
         ancestryButton.subtitle.text = currentPlayer.ancestry;
         backgroundButton.subtitle.text = currentPlayer.background;
-        classButton.subtitle.text = currentPlayer.playerClass;
+        classButton.subtitle.text = currentPlayer.class_name;
 
         levelInput.text = currentPlayer.level.ToString();
         playerNameInput.text = currentPlayer.playerName;
@@ -229,6 +229,7 @@ public class PF2E_CharacterCreation : MonoBehaviour
         foreach (var level in currentPlayer.build)
         {
             Transform separator = Instantiate(buildLevelSeparator, Vector3.zero, Quaternion.identity, buildContainer);
+            buildButtonList.Add(separator.gameObject);
             ButtonText separatorScript = separator.GetComponent<ButtonText>();
             separatorScript.text.text = level.Key;
 
@@ -254,6 +255,7 @@ public class PF2E_CharacterCreation : MonoBehaviour
     private PF2E_BuildButton GenerateBuildButton()
     {
         Transform button = Instantiate(buildButton, Vector3.zero, Quaternion.identity, buildContainer);
+        buildButtonList.Add(button.gameObject);
         return button.GetComponent<PF2E_BuildButton>();
     }
 
@@ -261,11 +263,16 @@ public class PF2E_CharacterCreation : MonoBehaviour
     {
         if (buildItem.type == "Initial Ability Boosts")
         {
+            PF2E_InitAblBoostData initAblData = currentPlayer.Build_Get<PF2E_InitAblBoostData>("Level 1", "Initial Ability Boosts");
+
             button.title.text = buildItem.type;
             button.button.onClick.AddListener(() => OnClickInitialAbilityBoosts());
 
-            // Put stuff in the subtitle if the Level 1 ability boosts are bad or something
-
+            int x = initAblData.lvl1boosts.Count - 4;
+            if (x < 0)
+                button.subtitle.text = "Boosts not assigned: " + (x * -1);
+            else
+                button.subtitle.text = "Everything is correct.";
         }
         else
         {
@@ -377,7 +384,7 @@ public class PF2E_CharacterCreation : MonoBehaviour
     }
     private void SelectClassAccept()
     {
-        currentPlayer.playerClass = ABCSelector.selectedClass;
+        currentPlayer.class_name = ABCSelector.selectedClass;
         CloseABCPanel(true);
     }
     private void SelectClassCancel()

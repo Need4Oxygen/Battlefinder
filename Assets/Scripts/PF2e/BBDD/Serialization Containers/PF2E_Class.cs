@@ -4,8 +4,7 @@ public class PF2E_Class
 {
     public string name;
     public string description;
-    public string keyAbility;
-    public string keyAbilityAlt;
+    public Dictionary<string, PF2E_AblModifier> keyAbility;
     public int hitPoints;
     public int freeSkillTrains;
     public string freeSkillTrainsString;

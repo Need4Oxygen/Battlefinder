@@ -342,7 +342,7 @@ public class PF2E_ABCSelector : MonoBehaviour
     private void DisplayClasses()
     {
         currentlyDisplaying = E_PF2E_ABC.Class;
-        string currentClass = characterCreation.currentPlayer.playerClass;
+        string currentClass = characterCreation.currentPlayer.class_name;
 
         Transform newTab = Instantiate(tab, Vector3.zero, Quaternion.identity, tabContainer);
         ButtonText newTabScript = newTab.GetComponent<ButtonText>();
@@ -383,7 +383,12 @@ public class PF2E_ABCSelector : MonoBehaviour
         if (className == "Fighter")
             classKeyAbility.text = "Strength or Dexterity";
         else
-            classKeyAbility.text = PF2E_DataBase.AbilityToFullName(classObj.keyAbility);
+        {
+            List<string> keyAbilities = new List<string>();
+            foreach (var item in classObj.keyAbility)
+                keyAbilities.Add(item.Value.target);
+            classKeyAbility.text = PF2E_DataBase.AbilityToFullName(keyAbilities[0]);
+        }
 
         classUnarmed.text = "U"; classUnarmored.text = "U"; classPerception.text = "U";
         classSimpleWeapons.text = "U"; classLightArmor.text = "U"; classFortitude.text = "U";

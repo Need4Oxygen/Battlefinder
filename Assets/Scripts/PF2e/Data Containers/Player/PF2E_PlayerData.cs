@@ -217,6 +217,9 @@ public class PF2E_PlayerData
             count += initAblBoosts.ancestryBoosts.FindAll(boost => boost == abl).Count;
             count -= initAblBoosts.ancestryFlaws.FindAll(flaw => flaw == abl).Count;
             count += initAblBoosts.ancestryFree.FindAll(boost => boost == abl).Count;
+            count += initAblBoosts.backgroundBoosts.FindAll(boost => boost == abl).Count;
+            count += initAblBoosts.classBoosts.FindAll(boost => boost == abl).Count;
+            count += initAblBoosts.lvl1boosts.FindAll(boost => boost == abl).Count;
         }
 
         if (lvl5AblBoosts != null)
@@ -255,7 +258,9 @@ public class PF2E_PlayerData
             MapAdder(0, 1, initAblBoosts.ancestryBoosts, ref map);
             MapAdder(0, 1, initAblBoosts.ancestryFree, ref map);
             MapAdder(0, -1, initAblBoosts.ancestryFlaws, ref map);
-            MapAdder(0, 1, initAblBoosts.lvl1boosts, ref map);
+            MapAdder(1, 1, initAblBoosts.backgroundBoosts, ref map);
+            MapAdder(2, 1, initAblBoosts.classBoosts, ref map);
+            MapAdder(3, 1, initAblBoosts.lvl1boosts, ref map);
         }
 
         return map;
@@ -613,8 +618,8 @@ public class PF2E_PlayerData
 
 
     //---------------------------------------------------CLASS--------------------------------------------------
-    private string _playerClass = "";
-    public string playerClass { get { return _playerClass; } set { SetClass(value); } }
+    private string _class = "";
+    public string class_name { get { return _class; } set { SetClass(value); } }
 
     public int class_freeSkillTrains = 0;
 
@@ -623,7 +628,7 @@ public class PF2E_PlayerData
         if (PF2E_DataBase.Classes.ContainsKey(newClass))
         {
             PF2E_Class classObj = PF2E_DataBase.Classes[newClass];
-            _playerClass = newClass;
+            _class = newClass;
 
             hp_class = classObj.hitPoints;
 
@@ -686,6 +691,8 @@ public class PF2E_PlayerData
     {
         string jsonString = JsonConvert.SerializeObject(obj, Formatting.Indented);
         Build_Set(stage, itemkey, jsonString);
+
+        Build_Refresh();
     }
     public void Build_Set(string stage, string itemkey, string obj)
     {
