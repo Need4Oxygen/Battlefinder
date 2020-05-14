@@ -12,12 +12,10 @@ public class CandleFlicker : MonoBehaviour
     [SerializeField] public float changeSpeed = 1f;
     [SerializeField] public bool stopFlickering = default;
 
-    private float startRange;
-    private float startIntensity;
     private float targetRange;
     private float targetIntensity;
 
-    public void Start()
+    void Start()
     {
         StartCoroutine(DoFlicker());
     }

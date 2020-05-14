@@ -23,13 +23,17 @@ Material:
   m_Name: mat_candleFlame
   m_Shader: {fileID: -6465566751694194690, guid: 8c2809224ac04f942bbce83906b5ba85,
     type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _BLENDMODE_ADD _ENABLE_FOG_ON_TRANSPARENT _SURFACE_TYPE_TRANSPARENT
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    MotionVector: User
+    RenderType: Transparent
+  disabledShaderPasses:
+  - TransparentBackface
+  - MOTIONVECTORS
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -88,14 +92,23 @@ Material:
     m_Floats:
     - Vector1_3A7A942D: 0.25
     - Vector1_4A380C24: 1
-    - Vector1_C00F1FAE: 2
+    - Vector1_C00F1FAE: 15
     - Vector1_C7A1D7E3: 0.2
     - _AlphaClip: 0
+    - _AlphaCutoffEnable: 0
+    - _AlphaDstBlend: 1
+    - _AlphaSrcBlend: 1
     - _Blend: 0
+    - _BlendMode: 1
     - _BumpScale: 1
     - _Cull: 2
+    - _CullMode: 2
+    - _CullModeForward: 2
     - _Cutoff: 0.5
-    - _DstBlend: 0
+    - _DoubleSidedEnable: 0
+    - _DoubleSidedNormalMode: 2
+    - _DstBlend: 1
+    - _EnableFogOnTransparent: 1
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
@@ -104,21 +117,45 @@ Material:
     - _OcclusionStrength: 1
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _ReceivesSSR: 0
+    - _RenderQueueType: 5
+    - _RequireSplitLighting: 0
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _StencilRef: 0
+    - _StencilRefDepth: 0
+    - _StencilRefDistortionVec: 4
+    - _StencilRefGBuffer: 2
+    - _StencilRefMV: 32
+    - _StencilWriteMask: 6
+    - _StencilWriteMaskDepth: 8
+    - _StencilWriteMaskDistortionVec: 4
+    - _StencilWriteMaskGBuffer: 14
+    - _StencilWriteMaskMV: 40
     - _Surface: 0
+    - _SurfaceType: 1
+    - _TransparentBackfaceEnable: 0
+    - _TransparentCullMode: 2
+    - _TransparentSortPriority: 0
+    - _TransparentZWrite: 1
+    - _UseShadowThreshold: 0
     - _WorkflowMode: 1
+    - _ZTestDepthEqualForOpaque: 4
+    - _ZTestGBuffer: 4
+    - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - Color_2E2857CB: {r: 0.8679245, g: 0.59133905, b: 0.23335704, a: 0}
+    - Color_2E2857CB: {r: 0.8666667, g: 0.6733987, b: 0.2352941, a: 1}
     - Color_4002A80: {r: 0.108134575, g: 0.5970211, b: 0.8490566, a: 0}
     - Color_8306EA59: {r: 0.7075471, g: 0.6824966, b: 0.4572357, a: 0}
-    - Color_A6386DCE: {r: 0.8584906, g: 0.5031687, b: 0.125534, a: 0}
+    - Color_A6386DCE: {r: 0.8584906, g: 0.50316864, b: 0.12553397, a: 1}
     - Color_B605FEC0: {r: 0.8584906, g: 0.45616376, b: 0.16602877, a: 0}
-    - Color_B778EA19: {r: 0.22988605, g: 0.5997916, b: 0.7735849, a: 0}
+    - Color_B778EA19: {r: 0.22988603, g: 0.5997916, b: 0.7735849, a: 1}
+    - Color_BD874AA2: {r: 0.509434, g: 0.45897117, b: 0.45897117, a: 0}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
