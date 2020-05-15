@@ -4211,8 +4211,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -0, y: 1.5944}
-  m_SizeDelta: {x: 0, y: 0.92965}
+  m_AnchoredPosition: {x: 0, y: 1.5248}
+  m_SizeDelta: {x: 0, y: 1.0688}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &547880148
 MonoBehaviour:
@@ -4232,9 +4232,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Here
+  m_text: 'Current Patrons
 
-    be credits'
+    <size=0.13>6</size>
+
+
+    Thanks to all of you for
+    making this possible!
+
+
+    Special thanks to:
+
+    Dan Coleman'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2806b55c03a1d784481bf46e470f9125, type: 2}
   m_sharedMaterial: {fileID: 5799891123246699305, guid: 2806b55c03a1d784481bf46e470f9125,
@@ -4301,15 +4310,15 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0.02, y: 0, z: 0.02, w: 0}
   m_textInfo:
     textComponent: {fileID: 547880148}
-    characterCount: 15
+    characterCount: 97
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 18
+    wordCount: 17
     linkCount: 0
-    lineCount: 2
+    lineCount: 9
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
