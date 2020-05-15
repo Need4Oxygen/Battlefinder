@@ -10,7 +10,6 @@ public class PF2E_CampaingHandler : MonoBehaviour
 
     [SerializeField] private PF2E_CharacterCreation characterCreation = null;
     [SerializeField] private ConfirmationController confirmation = null;
-    [SerializeField] private GameObject cameraBlur = null;
 
     [Header("Campaign Stuff")]
     [SerializeField] private CanvasGroup campaignPanel = null;
@@ -59,13 +58,11 @@ public class PF2E_CampaingHandler : MonoBehaviour
     private void OpenCampaingPanel()
     {
         StartCoroutine(PanelFader.RescaleAndFade(campaignPanel.transform, campaignPanel, 1f, 1f, 0.1f));
-        cameraBlur.SetActive(true);
     }
 
     private void CloseCampaingPanel()
     {
         StartCoroutine(PanelFader.RescaleAndFade(campaignPanel.transform, campaignPanel, 0.85f, 0f, 0.1f));
-        cameraBlur.SetActive(false);
     }
 
     /// <summary> Called after asking the name for a new campaign has been promped and accepted. </summary>

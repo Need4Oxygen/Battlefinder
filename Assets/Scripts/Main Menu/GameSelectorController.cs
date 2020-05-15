@@ -13,7 +13,7 @@ public class GameSelectorController : MonoBehaviour
     [SerializeField] private Button createCampaignCancelButton = null;
 
     [Header("Pathfinder 2e")]
-    [SerializeField] private PF2E_CampaingHandler PF2E_controller = null;
+    [SerializeField] private PF2E_CampaingHandler PF2E_campaingHandler = null;
     [SerializeField] private Transform PF2E_campaingButtonPrefab = null;
     [SerializeField] private Transform PF2E_container = null;
 
@@ -121,7 +121,7 @@ public class GameSelectorController : MonoBehaviour
     // Click on existing campaign button, open campaign panel
     private void PF2E_OnClickUI_ButtonText(PF2E_CampaignID campaignID)
     {
-        PF2E_controller.LoadCampaign(campaignID);
+        PF2E_campaingHandler.LoadCampaign(campaignID);
         PF2E_RetractGameButtons();
     }
 
@@ -134,7 +134,7 @@ public class GameSelectorController : MonoBehaviour
 
     private void PF2E_CreateCampaign(string name)
     {
-        PF2E_controller.CreateCampaign(name);
+        PF2E_campaingHandler.CreateCampaign(name);
         PF2E_RefreshButtons();
     }
 

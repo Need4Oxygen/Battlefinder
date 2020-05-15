@@ -366,6 +366,11 @@ public class PF2E_AblBoostsSelector : MonoBehaviour
     //--------------------------------------------INPUT--------------------------------------------
     public void OnClickAcceptButton()
     {
+        SaveAncestryOptions();
+        SaveBackgroundOptions();
+        SaveClassOptions();
+        SaveLvl1Boosts();
+
         creation.currentPlayer.Build_Set("Level 1", "Initial Ability Boosts", currentData);
         creation.RefreshPlayerIntoPanel();
         creation.SavePlayer();
