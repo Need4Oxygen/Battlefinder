@@ -27,7 +27,7 @@ public class Json
         }
         catch (Exception e)
         {
-            Debug.LogError("[Json] ERROR: Couldn't load object with key " + key + "\n" + e.Message);
+            Debug.LogError("[Json] ERROR: Couldn't load object with key " + key + "\n" + e.Message + "\n" + e.StackTrace);
             return default(T);
         }
     }

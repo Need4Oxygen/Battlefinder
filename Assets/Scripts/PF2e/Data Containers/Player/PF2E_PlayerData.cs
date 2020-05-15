@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using Newtonsoft.Json;
 using UnityEngine;
 
 public class PF2E_PlayerData
@@ -36,11 +38,11 @@ public class PF2E_PlayerData
 
 
     //---------------------------------------------------HIT POINTS--------------------------------------------------
-    // maxHitPoints = level*(classHP+constitution)+ancestryHP+temp
-
     private int hp_class = 0;
     private int hp_ancestry = 0;
-    private int hp_temp = 0;
+
+    public int hp_current { get { return hp_max - hp_damage; } }
+    public int hp_max { get { return level * (hp_class + abl_constitutionMod) + hp_ancestry + hp_temp; } }
 
     private int _damage = 0;
     public int hp_damage
@@ -48,13 +50,51 @@ public class PF2E_PlayerData
         get { return _damage; }
         set
         {
-            _damage += value;
-            if (_damage < 0) hp_damage = 0;
+            if (value >= 0) _damage = value;
         }
     }
 
-    public int hp_current { get { return hp_max - hp_damage; } }
-    public int hp_max { get { return level * (hp_class + abl_constitutionMod) + hp_ancestry + hp_temp; } }
+    private int _temp = 0;
+    public int hp_temp
+    {
+        get { return _temp; }
+        set { _temp = value; }
+    }
+
+    private int _dyingCurrent = 0;
+    public int hp_dyingCurrent
+    {
+        get { return _dyingCurrent; }
+        set { if (value >= 0) _dyingCurrent = value; }
+    }
+    public int hp_dyingMax { get { return 4 - _doom; } }
+
+    private int _wounds = 0;
+    public int hp_wounds
+    {
+        get { return _wounds; }
+        set { if (value >= 0) _wounds = value; }
+    }
+
+    private int _doom = 0;
+    public int hp_doom
+    {
+        get { return _doom; }
+        set { if (value >= 0) _doom = value; }
+    }
+
+
+    //---------------------------------------------------AC--------------------------------------------------
+    private PF2E_APIC _ac_apic = new PF2E_APIC("Armor Class", E_PF2E_Ability.Dexterity, 10);
+    public int ac_score
+    {
+        get
+        {
+            if (_ac_apic.playerData == null)
+                _ac_apic.playerData = this;
+            return _ac_apic.score;
+        }
+    }
 
 
     //---------------------------------------------------CLASS DC--------------------------------------------------
@@ -80,6 +120,7 @@ public class PF2E_PlayerData
             return false;
         }
     }
+
 
     //---------------------------------------------------SPEED--------------------------------------------------
     private int speed_ancestry = 0;
@@ -141,19 +182,17 @@ public class PF2E_PlayerData
     //       |Ancestry|Background|Class|Lvl1Boost|Lvl5Boost|Lvl10Boost|Lvl15Boost|Lvl20Boost|
     //    STR|        |          |     |         |         |          |          |          |
     //    DEX|        |          |     |         |         |          |          |          |
-    //    CON|        |          |     |         |         |          |          |          |
-    //    INT|        |          |     |         |         |          |          |          |
+    //    CON|        |          |     |         |         |          |          |          |  x = boosts
+    //    INT|        |          |     |         |         |          |          |          |  y = abilities
     //    WIS|        |          |     |         |         |          |          |          |
     //    CHA|        |          |     |         |         |          |          |          |
 
-    private bool[,] abl_map = new bool[8, 6];
-
-    public int abl_strength { get { return Abl_ScoreCalc(E_PF2E_Ability.Strength); } }
-    public int abl_dexterity { get { return Abl_ScoreCalc(E_PF2E_Ability.Dexterity); } }
-    public int abl_constitution { get { return Abl_ScoreCalc(E_PF2E_Ability.Constitution); } }
-    public int abl_intelligence { get { return Abl_ScoreCalc(E_PF2E_Ability.Intelligence); } }
-    public int abl_wisdom { get { return Abl_ScoreCalc(E_PF2E_Ability.Wisdom); } }
-    public int abl_charisma { get { return Abl_ScoreCalc(E_PF2E_Ability.Charisma); } }
+    public int abl_strength { get { return Abl_ScoreCalc("str"); } }
+    public int abl_dexterity { get { return Abl_ScoreCalc("dex"); } }
+    public int abl_constitution { get { return Abl_ScoreCalc("con"); } }
+    public int abl_intelligence { get { return Abl_ScoreCalc("int"); } }
+    public int abl_wisdom { get { return Abl_ScoreCalc("wis"); } }
+    public int abl_charisma { get { return Abl_ScoreCalc("con"); } }
 
     public int abl_strengthMod { get { return Abl_ModCalc(abl_strength); } }
     public int abl_dexterityMod { get { return Abl_ModCalc(abl_dexterity); } }
@@ -162,20 +201,35 @@ public class PF2E_PlayerData
     public int abl_wisdomMod { get { return Abl_ModCalc(abl_wisdom); } }
     public int abl_charismaMod { get { return Abl_ModCalc(abl_charisma); } }
 
-    private List<PF2E_AblModifier> abl_flawsList = new List<PF2E_AblModifier>();
+    private PF2E_InitAblBoostData initAblBoosts = new PF2E_InitAblBoostData();
+    private PF2E_AblBoostData lvl5AblBoosts = new PF2E_AblBoostData();
+    private PF2E_AblBoostData lvl10AblBoosts = new PF2E_AblBoostData();
+    private PF2E_AblBoostData lvl15AblBoosts = new PF2E_AblBoostData();
+    private PF2E_AblBoostData lvl20AblBoosts = new PF2E_AblBoostData();
 
-    private int Abl_ScoreCalc(E_PF2E_Ability abl)
+    private int Abl_ScoreCalc(string abl)
     {
         int count = 0;
         int score = 10;
 
-        foreach (var item in abl_flawsList)    // FLAWS
-            if (PF2E_DataBase.AbilityToEnum(item.target) == abl)
-                count -= item.value;
+        if (initAblBoosts != null)
+        {
+            count += initAblBoosts.ancestryBoosts.FindAll(boost => boost == abl).Count;
+            count -= initAblBoosts.ancestryFlaws.FindAll(flaw => flaw == abl).Count;
+            count += initAblBoosts.ancestryFree.FindAll(boost => boost == abl).Count;
+            count += initAblBoosts.backgroundBoosts.FindAll(boost => boost == abl).Count;
+            count += initAblBoosts.classBoosts.FindAll(boost => boost == abl).Count;
+            count += initAblBoosts.lvl1boosts.FindAll(boost => boost == abl).Count;
+        }
 
-        for (int i = 0; i < 8; i++)           // BOOSTS
-            if (abl_map[i, (int)abl - 2])
-                count++;
+        if (lvl5AblBoosts != null)
+            count += lvl5AblBoosts.boosts.FindAll(boost => boost == abl).Count;
+        if (lvl10AblBoosts != null)
+            count += lvl5AblBoosts.boosts.FindAll(boost => boost == abl).Count;
+        if (lvl15AblBoosts != null)
+            count += lvl5AblBoosts.boosts.FindAll(boost => boost == abl).Count;
+        if (lvl20AblBoosts != null)
+            count += lvl5AblBoosts.boosts.FindAll(boost => boost == abl).Count;
 
         if (count >= 0)
             for (int i = 0; i < count; i++)
@@ -195,74 +249,65 @@ public class PF2E_PlayerData
         return Mathf.FloorToInt((ablScore - 10) / 2);
     }
 
-    public void Abl_Add(E_PF2E_AbilityBoost boost, E_PF2E_Ability abl)
+    public int[,] Abl_GetMap()
     {
-        abl_map[(int)boost - 2, (int)abl - 2] = true;
+        int[,] map = new int[8, 6];
+
+        if (initAblBoosts != null)
+        {
+            MapAdder(0, 1, initAblBoosts.ancestryBoosts, ref map);
+            MapAdder(0, 1, initAblBoosts.ancestryFree, ref map);
+            MapAdder(0, -1, initAblBoosts.ancestryFlaws, ref map);
+            MapAdder(1, 1, initAblBoosts.backgroundBoosts, ref map);
+            MapAdder(2, 1, initAblBoosts.classBoosts, ref map);
+            MapAdder(3, 1, initAblBoosts.lvl1boosts, ref map);
+        }
+
+        return map;
     }
 
-    public void Abl_Remove(E_PF2E_AbilityBoost boost, E_PF2E_Ability abl)
+    private void MapAdder(int boostIndex, int value, List<string> strings, ref int[,] map)
     {
-        abl_map[(int)boost - 2, (int)abl - 2] = false;
-    }
-
-    public void Abl_ClearBoost(E_PF2E_AbilityBoost boost)
-    {
-        for (int i = 0; i < 6; i++)
-            abl_map[(int)boost - 2, i] = false;
-    }
-
-    public void Abl_ClearFlawsFrom(string from)
-    {
-        abl_flawsList.RemoveAll(item => item.from == from);
+        foreach (var item in strings)
+        {
+            if (item == "str")
+                map[boostIndex, 0] = value;
+            else if (item == "dex")
+                map[boostIndex, 1] = value;
+            else if (item == "con")
+                map[boostIndex, 2] = value;
+            else if (item == "int")
+                map[boostIndex, 3] = value;
+            else if (item == "wis")
+                map[boostIndex, 4] = value;
+            else if (item == "cha")
+                map[boostIndex, 5] = value;
+        }
     }
 
 
     //---------------------------------------------------SKILLS--------------------------------------------------
     private Dictionary<string, PF2E_APIC> skills_dic = new Dictionary<string, PF2E_APIC>()
     {
-        {"acrobatics",new PF2E_APIC("Acrobatics" ,E_PF2E_Ability.Dexterity)},
-        {"arcana",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Intelligence)},
-        {"athletics",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Strength)},
-        {"crafting",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Intelligence)},
-        {"deception",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Charisma)},
-        {"diplomacy",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Charisma)},
-        {"intimidation",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Charisma)},
-        {"medicine",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Wisdom)},
-        {"nature",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Wisdom)},
-        {"occultism",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Intelligence)},
-        {"performance",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Dexterity)},
-        {"religion",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Wisdom)},
-        {"society",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Charisma)},
-        {"stealth",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Dexterity)},
-        {"survival",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Wisdom)},
-        {"thievery",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Default)},
-        {"lore 1",new PF2E_APIC("" ,E_PF2E_Ability.Intelligence)},
-        {"lore 2",new PF2E_APIC("" ,E_PF2E_Ability.Intelligence)},
+        {"acrobatics",new PF2E_APIC("Acrobatics" ,E_PF2E_Ability.Dexterity, 0)},
+        {"arcana",new PF2E_APIC("Arcana" ,E_PF2E_Ability.Intelligence, 0)},
+        {"athletics",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Strength, 0)},
+        {"crafting",new PF2E_APIC("Crafting" ,E_PF2E_Ability.Intelligence, 0)},
+        {"deception",new PF2E_APIC("Deception" ,E_PF2E_Ability.Charisma, 0)},
+        {"diplomacy",new PF2E_APIC("Diplomacy" ,E_PF2E_Ability.Charisma, 0)},
+        {"intimidation",new PF2E_APIC("Intimidation" ,E_PF2E_Ability.Charisma, 0)},
+        {"medicine",new PF2E_APIC("Medicine" ,E_PF2E_Ability.Wisdom, 0)},
+        {"nature",new PF2E_APIC("Nature" ,E_PF2E_Ability.Wisdom, 0)},
+        {"occultism",new PF2E_APIC("Occultism" ,E_PF2E_Ability.Intelligence, 0)},
+        {"performance",new PF2E_APIC("Performance" ,E_PF2E_Ability.Dexterity, 0)},
+        {"religion",new PF2E_APIC("Religion" ,E_PF2E_Ability.Wisdom, 0)},
+        {"society",new PF2E_APIC("Society" ,E_PF2E_Ability.Charisma, 0)},
+        {"stealth",new PF2E_APIC("Stealth" ,E_PF2E_Ability.Dexterity, 0)},
+        {"survival",new PF2E_APIC("Survival" ,E_PF2E_Ability.Wisdom, 0)},
+        {"thievery",new PF2E_APIC("Thievery" ,E_PF2E_Ability.Default, 0)},
+        {"lore 1",new PF2E_APIC("" ,E_PF2E_Ability.Intelligence, 0)},
+        {"lore 2",new PF2E_APIC("" ,E_PF2E_Ability.Intelligence, 0)}
     };
-
-    public Dictionary<string, PF2E_APIC> Skills_GetAll()
-    {
-        foreach (var item in skills_dic)
-        {
-            if (item.Value.playerData == null)
-                item.Value.playerData = this;
-        }
-        return skills_dic;
-    }
-
-    ///<summary> Retrieve all Untrained skills. </summary>
-    public Dictionary<string, PF2E_APIC> Skills_GetUntrained()
-    {
-        Debug.LogWarning("[PlayerData] Not implemented!");
-        return skills_dic;
-    }
-
-    ///<summary> Retrieve all skills with proficiency under Legendary. </summary>
-    public Dictionary<string, PF2E_APIC> Skills_GetTraineable()
-    {
-        Debug.LogWarning("[PlayerData] Not implemented!");
-        return skills_dic;
-    }
 
     public PF2E_APIC Skills_Get(string skillName)
     {
@@ -282,10 +327,46 @@ public class PF2E_PlayerData
         }
     }
 
+    public Dictionary<string, PF2E_APIC> Skills_GetAll()
+    {
+        foreach (var item in skills_dic)
+            if (item.Value.playerData == null)
+                item.Value.playerData = this;
+
+        return skills_dic;
+    }
+
+    public List<PF2E_APIC> Skills_GetAllAsList()
+    {
+        List<PF2E_APIC> list = new List<PF2E_APIC>();
+        foreach (var item in skills_dic)
+        {
+            if (item.Value.playerData == null)
+                item.Value.playerData = this;
+
+            list.Add(item.Value);
+        }
+        return list;
+    }
+
+    ///<summary> Retrieve all Untrained skills. </summary>
+    public Dictionary<string, PF2E_APIC> Skills_GetUntrained()
+    {
+        Debug.LogWarning("[PlayerData] Not implemented!");
+        return skills_dic;
+    }
+
+    ///<summary> Retrieve all skills with proficiency under Legendary. </summary>
+    public Dictionary<string, PF2E_APIC> Skills_GetTraineable()
+    {
+        Debug.LogWarning("[PlayerData] Not implemented!");
+        return skills_dic;
+    }
+
     public void Skills_ClearFrom(string from)
     {
         foreach (var item in skills_dic)
-            ClearLecturesFrom(item.Value.lectures, "background");
+            ClearLecturesFrom(item.Value.lectures, from);
     }
 
     ///<summary> Train skill via lecture, saving a copy in an APIC object. </summary>
@@ -316,7 +397,7 @@ public class PF2E_PlayerData
 
 
     //---------------------------------------------------PERCEPTION--------------------------------------------------
-    private PF2E_APIC perception = new PF2E_APIC("perception", E_PF2E_Ability.Wisdom);
+    private PF2E_APIC perception = new PF2E_APIC("perception", E_PF2E_Ability.Wisdom, 0);
 
     public E_PF2E_Proficiency perception_prof
     {
@@ -327,14 +408,22 @@ public class PF2E_PlayerData
             return PF2E_DataBase.GetMaxProfEnum(perception.lectures);
         }
     }
+
     public int perception_score
     {
         get
         {
             if (perception.playerData == null)
                 perception.playerData = this;
-            return perception.total;
+            return perception.score;
         }
+    }
+
+    public PF2E_APIC Perception_Get()
+    {
+        if (perception.playerData == null)
+            perception.playerData = this;
+        return perception;
     }
 
     public void Perception_ClearFrom(string from)
@@ -358,36 +447,83 @@ public class PF2E_PlayerData
 
 
     //---------------------------------------------------SAVES--------------------------------------------------
-    private Dictionary<string, List<PF2E_Lecture>> saves_lectures = new Dictionary<string, List<PF2E_Lecture>>
+    private Dictionary<string, PF2E_APIC> saves_dic = new Dictionary<string, PF2E_APIC>
     {
-        {"fortitude", new List<PF2E_Lecture>() },
-        {"reflex", new List<PF2E_Lecture>() },
-        {"will", new List<PF2E_Lecture>() },
+        {"fortitude",new PF2E_APIC("Fortitude" ,E_PF2E_Ability.Constitution, 0)},
+        {"reflex",new PF2E_APIC("Reflex" ,E_PF2E_Ability.Dexterity, 0)},
+        {"will",new PF2E_APIC("Will" ,E_PF2E_Ability.Wisdom, 0)},
     };
 
-    public E_PF2E_Proficiency saves_fortitude { get { return PF2E_DataBase.GetMaxProfEnum(saves_lectures["fortitude"]); } }
-    public E_PF2E_Proficiency saves_reflex { get { return PF2E_DataBase.GetMaxProfEnum(saves_lectures["reflex"]); } }
-    public E_PF2E_Proficiency saves_will { get { return PF2E_DataBase.GetMaxProfEnum(saves_lectures["will"]); } }
-
-    public void Saves_ClearFrom(string from)
+    public PF2E_APIC Saves_Get(string savesName)
     {
-        foreach (var item in saves_lectures)
-            ClearLecturesFrom(item.Value, from);
-    }
-
-    public bool Saves_Train(PF2E_Lecture lecture)
-    {
-        if (saves_lectures.ContainsKey(lecture.target))
+        if (saves_dic.ContainsKey(savesName))
         {
-            saves_lectures[lecture.target].Add(lecture);
-            return true;
+            PF2E_APIC save = saves_dic[savesName];
+
+            if (save.playerData == null)
+                save.playerData = this;
+
+            return save;
         }
         else
         {
-            Debug.LogWarning("[PlayerData] Tried to train save throw: " + lecture.target + " but couldn't find it!");
+            Debug.LogWarning("[PlayerData] Couldn't find save: " + savesName + "!");
+            return null;
+        }
+    }
+
+    public Dictionary<string, PF2E_APIC> Saves_GetAll()
+    {
+        foreach (var item in saves_dic)
+            if (item.Value.playerData == null)
+                item.Value.playerData = this;
+
+        return saves_dic;
+    }
+
+    public List<PF2E_APIC> Saves_GetAllAsList()
+    {
+        List<PF2E_APIC> list = new List<PF2E_APIC>();
+        foreach (var item in saves_dic)
+        {
+            if (item.Value.playerData == null)
+                item.Value.playerData = this;
+
+            list.Add(item.Value);
+        }
+        return list;
+    }
+
+    public void Saves_ClearFrom(string from)
+    {
+        foreach (var item in saves_dic)
+            ClearLecturesFrom(item.Value.lectures, from);
+    }
+
+    ///<summary> Train save via lecture, saving a copy in an APIC object. </summary>
+    ///<returns> True if it could be trained. False if it was already trained. </returns>
+    public bool Saves_Train(PF2E_Lecture lecture)
+    {
+        if (saves_dic.ContainsKey(lecture.target))
+        {
+            if (saves_dic[lecture.target].profEnum < PF2E_DataBase.ProficiencyToEnum(lecture.proficiency))
+            {
+                saves_dic[lecture.target].lectures.Add(lecture);
+                return true;
+            }
+            else
+            {
+                lectures_unused.Add(lecture);
+                return false;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("[PlayerData] Tried to train save: " + lecture.target + " but couldn't find it!");
             return false;
         }
     }
+
 
     //---------------------------------------------------WEAPONS/ARMOR PROFICIENCIES--------------------------------------------------
     private Dictionary<string, List<PF2E_Lecture>> weaponArmor_lectures = new Dictionary<string, List<PF2E_Lecture>>
@@ -434,45 +570,6 @@ public class PF2E_PlayerData
     }
 
 
-    //---------------------------------------------------LECTURES MANAGEMENT--------------------------------------------------
-    private List<PF2E_Lecture> lectures_unused = new List<PF2E_Lecture>();
-
-    public bool Lectures_Allocate(PF2E_Lecture lecture)
-    {
-        bool trainSuccessful = false;
-
-        List<PF2E_Lecture> lmao = new List<PF2E_Lecture>();
-
-        List<PF2E_Lecture> lmao2 = lmao.FindAll(item => item.from == "lmao");
-
-
-        if (lecture.target == "unarmed" || lecture.target == "simpleWeapons" || lecture.target == "martialWeapons" ||
-        lecture.target == "advancedWeapons" || lecture.target == "unarmored" || lecture.target == "lightArmor" ||
-        lecture.target == "mediumArmor" || lecture.target == "heavyArmor")
-        {
-            trainSuccessful = WeaponArmor_Train(lecture);
-        }
-        else if (lecture.target == "fortitude" || lecture.target == "reflex" || lecture.target == "will")
-        {
-            trainSuccessful = Saves_Train(lecture);
-        }
-        else if (lecture.target == "perception")
-        {
-            trainSuccessful = Perception_Train(lecture);
-        }
-        else if (lecture.target == "acrobatics" || lecture.target == "arcana" || lecture.target == "athletics" || lecture.target == "crafting" ||
-        lecture.target == "deception" || lecture.target == "diplomacy" || lecture.target == "intimidation" || lecture.target == "medicine" ||
-        lecture.target == "nature" || lecture.target == "occultism" || lecture.target == "performance" || lecture.target == "religion" ||
-        lecture.target == "society" || lecture.target == "stealth" || lecture.target == "survival" || lecture.target == "thievery" ||
-        lecture.target == "lore 1" || lecture.target == "lore 2")
-        {
-            trainSuccessful = Skills_Train(lecture);
-        }
-
-        return trainSuccessful;
-    }
-
-
     //---------------------------------------------------ANCESTRY--------------------------------------------------
     private string _ancestry = "";
     public string ancestry { get { return _ancestry; } set { SetAncestry(value); } }
@@ -489,10 +586,6 @@ public class PF2E_PlayerData
             speed_ancestry = ancestry.speed;
 
             _size_ancestry = ancestry.size;
-
-            Abl_ClearFlawsFrom("ancestry");
-            foreach (var item in ancestry.abilityFlaws)
-                abl_flawsList.Add(item.Value);
 
             Traits_ClearFrom("ancestry");
             foreach (var item in ancestry.traits)
@@ -525,8 +618,8 @@ public class PF2E_PlayerData
 
 
     //---------------------------------------------------CLASS--------------------------------------------------
-    private string _playerClass = "";
-    public string playerClass { get { return _playerClass; } set { SetClass(value); } }
+    private string _class = "";
+    public string class_name { get { return _class; } set { SetClass(value); } }
 
     public int class_freeSkillTrains = 0;
 
@@ -535,7 +628,7 @@ public class PF2E_PlayerData
         if (PF2E_DataBase.Classes.ContainsKey(newClass))
         {
             PF2E_Class classObj = PF2E_DataBase.Classes[newClass];
-            _playerClass = newClass;
+            _class = newClass;
 
             hp_class = classObj.hitPoints;
 
@@ -550,8 +643,13 @@ public class PF2E_PlayerData
             WeaponArmor_ClearFrom("class");
             ClassDC_ClearFrom("class");
             foreach (var item in classObj.classSkillsTrains)
+                Skills_Train(item.Value);
+            foreach (var item in classObj.lectures)
                 Lectures_Allocate(item.Value);
 
+            // Try to rescue data from the old build
+            Dictionary<string, Dictionary<string, PF2E_BuildItem>> newBuild = classObj.build;
+            Build_SetNewBuild(newBuild);
         }
     }
 
@@ -559,7 +657,114 @@ public class PF2E_PlayerData
     //---------------------------------------------------TOOLS--------------------------------------------------
     public void ClearLecturesFrom(List<PF2E_Lecture> lectures, string from)
     {
-        lectures.RemoveAll(item => item.from == from);
+        lectures.RemoveAll(item => item.from == from || item.from == "");
+    }
+
+
+    //---------------------------------------------------BUILD--------------------------------------------------
+    public Dictionary<string, Dictionary<string, PF2E_BuildItem>> build = new Dictionary<string, Dictionary<string, PF2E_BuildItem>>();
+
+    public T Build_Get<T>(string stage, string itemKey)
+    {
+        try
+        {
+            if (build.ContainsKey(stage))
+                if (build[stage].ContainsKey(itemKey))
+                    if (build[stage][itemKey].obj != null)
+                        return JsonConvert.DeserializeObject<T>(build[stage][itemKey].obj);
+                    else
+                        return default(T);
+                else
+                    return default(T);
+            else
+                return default(T); // Can't do all of this in one line because null exception
+
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("[PlayerData] ERROR: Couldn't retrieve object " + itemKey + " from build\n" + e.Message + "\n" + e.StackTrace);
+            return default(T);
+        }
+    }
+
+    public void Build_Set(string stage, string itemkey, object obj)
+    {
+        string jsonString = JsonConvert.SerializeObject(obj, Formatting.Indented);
+        Build_Set(stage, itemkey, jsonString);
+
+        Build_Refresh();
+    }
+    public void Build_Set(string stage, string itemkey, string obj)
+    {
+        if (build.ContainsKey(stage))
+            if (build[stage].ContainsKey(itemkey))
+                build[stage][itemkey].obj = obj;
+    }
+
+    public void Build_Refresh()
+    {
+        Debug.Log("[PlayerData] [" + playerName + "] Build Refresh...");
+
+        initAblBoosts = Build_Get<PF2E_InitAblBoostData>("Level 1", "Initial Ability Boosts");
+    }
+
+    private void Build_SetNewBuild(Dictionary<string, Dictionary<string, PF2E_BuildItem>> classBuild)
+    {
+        Debug.Log("[PlayerData] [" + playerName + "] Setting Build...");
+
+        var newBuild = new Dictionary<string, Dictionary<string, PF2E_BuildItem>>(classBuild);
+
+        foreach (var stage in classBuild) // Try to rescue stuff from the last build into the new one
+        {
+            string stageString = stage.Key;
+            if (build.ContainsKey(stageString))
+                foreach (var item in stage.Value)
+                {
+                    string itemName = item.Key;
+                    if (build[stageString].ContainsKey(itemName))
+                    {
+                        newBuild[stageString][itemName].value = build[stageString][itemName].value;
+                        newBuild[stageString][itemName].obj = build[stageString][itemName].obj;
+                    }
+                }
+        }
+
+        build = newBuild;
+        Build_Refresh();
+    }
+
+
+    //---------------------------------------------------LECTURES MANAGEMENT--------------------------------------------------
+    private List<PF2E_Lecture> lectures_unused = new List<PF2E_Lecture>();
+
+    public bool Lectures_Allocate(PF2E_Lecture lecture)
+    {
+        bool trainSuccessful = false;
+
+        if (lecture.target == "unarmed" || lecture.target == "simpleWeapons" || lecture.target == "martialWeapons" ||
+        lecture.target == "advancedWeapons" || lecture.target == "unarmored" || lecture.target == "lightArmor" ||
+        lecture.target == "mediumArmor" || lecture.target == "heavyArmor")
+        {
+            trainSuccessful = WeaponArmor_Train(lecture);
+        }
+        else if (lecture.target == "fortitude" || lecture.target == "reflex" || lecture.target == "will")
+        {
+            trainSuccessful = Saves_Train(lecture);
+        }
+        else if (lecture.target == "perception")
+        {
+            trainSuccessful = Perception_Train(lecture);
+        }
+        else if (lecture.target == "acrobatics" || lecture.target == "arcana" || lecture.target == "athletics" || lecture.target == "crafting" ||
+        lecture.target == "deception" || lecture.target == "diplomacy" || lecture.target == "intimidation" || lecture.target == "medicine" ||
+        lecture.target == "nature" || lecture.target == "occultism" || lecture.target == "performance" || lecture.target == "religion" ||
+        lecture.target == "society" || lecture.target == "stealth" || lecture.target == "survival" || lecture.target == "thievery" ||
+        lecture.target == "lore 1" || lecture.target == "lore 2")
+        {
+            trainSuccessful = Skills_Train(lecture);
+        }
+
+        return trainSuccessful;
     }
 
 }

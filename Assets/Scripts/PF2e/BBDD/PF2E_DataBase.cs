@@ -41,6 +41,9 @@ public class PF2E_DataBase : MonoBehaviour
 
     public static Dictionary<string, PF2E_Class> Classes = new Dictionary<string, PF2E_Class>();
 
+    public static Dictionary<string, PF2E_Armor> Armors = new Dictionary<string, PF2E_Armor>();
+    public static Dictionary<string, PF2E_ArmorGroup> ArmorGroups = new Dictionary<string, PF2E_ArmorGroup>();
+
     void Awake()
     {
         if (Instance != null)
@@ -101,8 +104,33 @@ public class PF2E_DataBase : MonoBehaviour
                 return "Free";
 
             default:
-                Debug.LogWarning("[PF2E_DataBase] Error: ability abreviation (" + abilityAbreviated + ") not recognized!");
-                return "Null";
+                Debug.LogWarning("[PF2E_DataBase] Error: ability abreviation \"" + abilityAbreviated + "\" not recognized!");
+                return "";
+        }
+    }
+
+    public static string AbilityToAbbr(string abilityFullName)
+    {
+        switch (abilityFullName)
+        {
+            case "Strength":
+                return "str";
+            case "Dexterity":
+                return "dex";
+            case "Constitution":
+                return "con";
+            case "Intelligence":
+                return "int";
+            case "Wisdom":
+                return "wis";
+            case "Charisma":
+                return "cha";
+            case "Free":
+                return "free";
+
+            default:
+                Debug.LogWarning("[PF2E_DataBase] Error: ability abreviation (" + abilityFullName + ") not recognized!");
+                return "";
         }
     }
 
@@ -171,7 +199,7 @@ public class PF2E_DataBase : MonoBehaviour
 
             default:
                 Debug.LogWarning("[PF2E_DataBase] Error: size abreviation (" + sizeAbreviated + ") not recognized!");
-                return "Null";
+                return "";
         }
     }
 
@@ -190,6 +218,26 @@ public class PF2E_DataBase : MonoBehaviour
                     maxProf = E_PF2E_Proficiency.Master;
                 else if (item.proficiency == "L")
                     maxProf = E_PF2E_Proficiency.Lengend;
+        }
+
+        return maxProf;
+    }
+
+    public static string GetMaxProfLetter(List<PF2E_Lecture> lectures)
+    {
+        string maxProf = "<color=#" + ColorUtility.ToHtmlStringRGBA(Globals.Theme["untrained"]) + ">U</color>";
+
+        if (lectures != null)
+        {
+            foreach (var item in lectures)
+                if (item.proficiency == "T")
+                    maxProf = "<color=#" + ColorUtility.ToHtmlStringRGBA(Globals.Theme["trained"]) + ">T</color>";
+                else if (item.proficiency == "E")
+                    maxProf = "<color=#" + ColorUtility.ToHtmlStringRGBA(Globals.Theme["expert"]) + ">E</color>";
+                else if (item.proficiency == "M")
+                    maxProf = "<color=#" + ColorUtility.ToHtmlStringRGBA(Globals.Theme["master"]) + ">M</color>";
+                else if (item.proficiency == "L")
+                    maxProf = "<color=#" + ColorUtility.ToHtmlStringRGBA(Globals.Theme["leyend"]) + ">L</color>";
         }
 
         return maxProf;

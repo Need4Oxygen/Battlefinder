@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 public class PF2E_APIC
 {
@@ -11,19 +12,16 @@ public class PF2E_APIC
     private List<PF2E_Fact> itemModifiers = new List<PF2E_Fact>();
     private List<PF2E_Fact> circModifiers = new List<PF2E_Fact>();
 
-    public PF2E_APIC(string name, E_PF2E_Ability abilityEnum)
+    public int initialScore = 0;
+
+    public PF2E_APIC(string name, E_PF2E_Ability abilityEnum, int initialScore)
     {
         this.name = name;
         this.abilityEnum = abilityEnum;
+        this.initialScore = initialScore;
     }
 
-    public int total
-    {
-        get
-        {
-            return ablScore + profScore;
-        }
-    }
+    public int score { get { return initialScore + ablScore + profScore; } }
 
     public int ablScore
     {
@@ -51,7 +49,10 @@ public class PF2E_APIC
                 }
             }
             else
+            {
+                Debug.Log("[APIC] " + name + " is missing PlayerData!");
                 return 0;
+            }
         }
     }
 
@@ -75,25 +76,35 @@ public class PF2E_APIC
                     else if (item.proficiency == "L")
                         L = true;
 
-                if (!T)
-                    return 0;
-                else if (!E)
-                    return playerData.level + 2;
-                else if (!M)
-                    return playerData.level + 4;
-                else if (!L)
-                    return playerData.level + 6;
-                else
+                if (L)
                     return playerData.level + 8;
+                else if (M)
+                    return playerData.level + 6;
+                else if (E)
+                    return playerData.level + 4;
+                else if (T)
+                    return playerData.level + 2;
+                else
+                    return 0;
             }
             else
+            {
+                Debug.Log("[APIC] " + name + " is missing PlayerData!");
                 return 0;
+            }
         }
+    }
+
+    public int dcScore
+    {
+        get { return 10 + profScore; }
     }
 
     public E_PF2E_Proficiency profEnum { get { return PF2E_DataBase.GetMaxProfEnum(lectures); } }
 
+    public string profLetter { get { return PF2E_DataBase.GetMaxProfLetter(lectures); } }
+
     public int itemScore = 0;
 
-    public int circScore = 0;
+    public int tempScore = 0;
 }

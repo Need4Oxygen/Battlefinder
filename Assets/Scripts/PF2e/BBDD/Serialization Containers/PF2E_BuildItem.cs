@@ -1,6 +1,8 @@
 public class PF2E_BuildItem
 {
-    public string[] choices;
-    public string[] classFeatures;
-    public string[] actions;
+    public bool choice;
+    public string type;
+    public string from;
+    public string value;
+    public string obj;
 }
