@@ -14,9 +14,10 @@ public class PF2E_APIC
 
     public int initialScore = 0;
 
-    public PF2E_APIC(string name, E_PF2E_Ability abilityEnum, int initialScore)
+    public PF2E_APIC(string name, PF2E_PlayerData playerData, E_PF2E_Ability abilityEnum, int initialScore)
     {
         this.name = name;
+        this.playerData = playerData;
         this.abilityEnum = abilityEnum;
         this.initialScore = initialScore;
     }

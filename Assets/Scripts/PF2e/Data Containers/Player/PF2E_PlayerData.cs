@@ -85,14 +85,15 @@ public class PF2E_PlayerData
 
 
     //---------------------------------------------------AC--------------------------------------------------
-    private PF2E_APIC _ac_apic = new PF2E_APIC("Armor Class", E_PF2E_Ability.Dexterity, 10);
+    private PF2E_APIC ac;
+
     public int ac_score
     {
         get
         {
-            if (_ac_apic.playerData == null)
-                _ac_apic.playerData = this;
-            return _ac_apic.score;
+            if (ac.playerData == null)
+                ac.playerData = this;
+            return ac.score;
         }
     }
 
@@ -287,36 +288,13 @@ public class PF2E_PlayerData
 
 
     //---------------------------------------------------SKILLS--------------------------------------------------
-    private Dictionary<string, PF2E_APIC> skills_dic = new Dictionary<string, PF2E_APIC>()
-    {
-        {"acrobatics",new PF2E_APIC("Acrobatics" ,E_PF2E_Ability.Dexterity, 0)},
-        {"arcana",new PF2E_APIC("Arcana" ,E_PF2E_Ability.Intelligence, 0)},
-        {"athletics",new PF2E_APIC("Athletics" ,E_PF2E_Ability.Strength, 0)},
-        {"crafting",new PF2E_APIC("Crafting" ,E_PF2E_Ability.Intelligence, 0)},
-        {"deception",new PF2E_APIC("Deception" ,E_PF2E_Ability.Charisma, 0)},
-        {"diplomacy",new PF2E_APIC("Diplomacy" ,E_PF2E_Ability.Charisma, 0)},
-        {"intimidation",new PF2E_APIC("Intimidation" ,E_PF2E_Ability.Charisma, 0)},
-        {"medicine",new PF2E_APIC("Medicine" ,E_PF2E_Ability.Wisdom, 0)},
-        {"nature",new PF2E_APIC("Nature" ,E_PF2E_Ability.Wisdom, 0)},
-        {"occultism",new PF2E_APIC("Occultism" ,E_PF2E_Ability.Intelligence, 0)},
-        {"performance",new PF2E_APIC("Performance" ,E_PF2E_Ability.Dexterity, 0)},
-        {"religion",new PF2E_APIC("Religion" ,E_PF2E_Ability.Wisdom, 0)},
-        {"society",new PF2E_APIC("Society" ,E_PF2E_Ability.Charisma, 0)},
-        {"stealth",new PF2E_APIC("Stealth" ,E_PF2E_Ability.Dexterity, 0)},
-        {"survival",new PF2E_APIC("Survival" ,E_PF2E_Ability.Wisdom, 0)},
-        {"thievery",new PF2E_APIC("Thievery" ,E_PF2E_Ability.Default, 0)},
-        {"lore 1",new PF2E_APIC("" ,E_PF2E_Ability.Intelligence, 0)},
-        {"lore 2",new PF2E_APIC("" ,E_PF2E_Ability.Intelligence, 0)}
-    };
+    private Dictionary<string, PF2E_APIC> skills_dic;
 
     public PF2E_APIC Skills_Get(string skillName)
     {
         if (skills_dic.ContainsKey(skillName))
         {
             PF2E_APIC skill = skills_dic[skillName];
-
-            if (skill.playerData == null)
-                skill.playerData = this;
 
             return skill;
         }
@@ -329,10 +307,6 @@ public class PF2E_PlayerData
 
     public Dictionary<string, PF2E_APIC> Skills_GetAll()
     {
-        foreach (var item in skills_dic)
-            if (item.Value.playerData == null)
-                item.Value.playerData = this;
-
         return skills_dic;
     }
 
@@ -340,12 +314,8 @@ public class PF2E_PlayerData
     {
         List<PF2E_APIC> list = new List<PF2E_APIC>();
         foreach (var item in skills_dic)
-        {
-            if (item.Value.playerData == null)
-                item.Value.playerData = this;
-
             list.Add(item.Value);
-        }
+
         return list;
     }
 
@@ -397,32 +367,14 @@ public class PF2E_PlayerData
 
 
     //---------------------------------------------------PERCEPTION--------------------------------------------------
-    private PF2E_APIC perception = new PF2E_APIC("perception", E_PF2E_Ability.Wisdom, 0);
+    private PF2E_APIC perception;
 
-    public E_PF2E_Proficiency perception_prof
-    {
-        get
-        {
-            if (perception.playerData == null)
-                perception.playerData = this;
-            return PF2E_DataBase.GetMaxProfEnum(perception.lectures);
-        }
-    }
+    public E_PF2E_Proficiency perception_prof { get { return PF2E_DataBase.GetMaxProfEnum(perception.lectures); } }
 
-    public int perception_score
-    {
-        get
-        {
-            if (perception.playerData == null)
-                perception.playerData = this;
-            return perception.score;
-        }
-    }
+    public int perception_score { get { return perception.score; } }
 
     public PF2E_APIC Perception_Get()
     {
-        if (perception.playerData == null)
-            perception.playerData = this;
         return perception;
     }
 
@@ -447,22 +399,13 @@ public class PF2E_PlayerData
 
 
     //---------------------------------------------------SAVES--------------------------------------------------
-    private Dictionary<string, PF2E_APIC> saves_dic = new Dictionary<string, PF2E_APIC>
-    {
-        {"fortitude",new PF2E_APIC("Fortitude" ,E_PF2E_Ability.Constitution, 0)},
-        {"reflex",new PF2E_APIC("Reflex" ,E_PF2E_Ability.Dexterity, 0)},
-        {"will",new PF2E_APIC("Will" ,E_PF2E_Ability.Wisdom, 0)},
-    };
+    private Dictionary<string, PF2E_APIC> saves_dic;
 
     public PF2E_APIC Saves_Get(string savesName)
     {
         if (saves_dic.ContainsKey(savesName))
         {
             PF2E_APIC save = saves_dic[savesName];
-
-            if (save.playerData == null)
-                save.playerData = this;
-
             return save;
         }
         else
@@ -474,10 +417,6 @@ public class PF2E_PlayerData
 
     public Dictionary<string, PF2E_APIC> Saves_GetAll()
     {
-        foreach (var item in saves_dic)
-            if (item.Value.playerData == null)
-                item.Value.playerData = this;
-
         return saves_dic;
     }
 
@@ -485,12 +424,8 @@ public class PF2E_PlayerData
     {
         List<PF2E_APIC> list = new List<PF2E_APIC>();
         foreach (var item in saves_dic)
-        {
-            if (item.Value.playerData == null)
-                item.Value.playerData = this;
-
             list.Add(item.Value);
-        }
+
         return list;
     }
 
@@ -765,6 +700,44 @@ public class PF2E_PlayerData
         }
 
         return trainSuccessful;
+    }
+
+
+    //---------------------------------------------------CONSTRUCTOR--------------------------------------------------
+    public PF2E_PlayerData()
+    {
+        ac = new PF2E_APIC("Armor Class", this, E_PF2E_Ability.Dexterity, 10);
+
+        skills_dic = new Dictionary<string, PF2E_APIC>()
+        {
+            {"acrobatics",new PF2E_APIC("Acrobatics" , this , E_PF2E_Ability.Dexterity, 0)},
+            {"arcana",new PF2E_APIC("Arcana" , this , E_PF2E_Ability.Intelligence, 0)},
+            {"athletics",new PF2E_APIC("Athletics" , this , E_PF2E_Ability.Strength, 0)},
+            {"crafting",new PF2E_APIC("Crafting" , this , E_PF2E_Ability.Intelligence, 0)},
+            {"deception",new PF2E_APIC("Deception" , this , E_PF2E_Ability.Charisma, 0)},
+            {"diplomacy",new PF2E_APIC("Diplomacy" , this , E_PF2E_Ability.Charisma, 0)},
+            {"intimidation",new PF2E_APIC("Intimidation" , this , E_PF2E_Ability.Charisma, 0)},
+            {"medicine",new PF2E_APIC("Medicine" , this , E_PF2E_Ability.Wisdom, 0)},
+            {"nature",new PF2E_APIC("Nature" , this , E_PF2E_Ability.Wisdom, 0)},
+            {"occultism",new PF2E_APIC("Occultism" , this , E_PF2E_Ability.Intelligence, 0)},
+            {"performance",new PF2E_APIC("Performance" , this , E_PF2E_Ability.Dexterity, 0)},
+            {"religion",new PF2E_APIC("Religion" , this , E_PF2E_Ability.Wisdom, 0)},
+            {"society",new PF2E_APIC("Society" , this , E_PF2E_Ability.Charisma, 0)},
+            {"stealth",new PF2E_APIC("Stealth" , this , E_PF2E_Ability.Dexterity, 0)},
+            {"survival",new PF2E_APIC("Survival" , this , E_PF2E_Ability.Wisdom, 0)},
+            {"thievery",new PF2E_APIC("Thievery" , this , E_PF2E_Ability.Default, 0)},
+            {"lore 1",new PF2E_APIC("" , this , E_PF2E_Ability.Intelligence, 0)},
+            {"lore 2",new PF2E_APIC("" , this , E_PF2E_Ability.Intelligence, 0)}
+        };
+
+        saves_dic = new Dictionary<string, PF2E_APIC>
+        {
+            {"fortitude",new PF2E_APIC("Fortitude" , this , E_PF2E_Ability.Constitution, 0)},
+            {"reflex",new PF2E_APIC("Reflex" , this , E_PF2E_Ability.Dexterity, 0)},
+            {"will",new PF2E_APIC("Will" , this , E_PF2E_Ability.Wisdom, 0)},
+        };
+
+        perception = new PF2E_APIC("perception", this, E_PF2E_Ability.Wisdom, 0);
     }
 
 }
