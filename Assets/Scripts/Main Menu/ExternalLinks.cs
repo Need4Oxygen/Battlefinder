@@ -1,10 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 public class ExternalLinks : MonoBehaviour
 {
+    public TMP_Text patreonTanks = null;
+
     public void OpenLink(string url)
     {
         if (url != "")
@@ -13,25 +18,30 @@ public class ExternalLinks : MonoBehaviour
             Debug.LogWarning("[ExternalLinks] Trying to open empty URL!");
     }
 
+    public void Start()
+    {
+        if (patreonTanks != null)
+            StartCoroutine(GetDataAsync());
+    }
 
-    // public string accessToken;
+    private IEnumerator GetDataAsync()
+    {
+        DownloadHandlerBuffer down = new DownloadHandlerBuffer();
+        UnityWebRequest patreonRequest = new UnityWebRequest("https://www.patreon.com/api/campaigns/4321511", "GET", down, null);
 
-    // public void Start()
-    // {
-    //     StartCoroutine(GetDataAsync());
-    // }
+        yield return patreonRequest.SendWebRequest();
 
-    // private IEnumerator GetDataAsync()
-    // {
-    //     Dictionary<string, string> headers = new Dictionary<string, string>();
-    //     headers.Add("authorization", "Bearer " + accessToken);
-    //     DownloadHandlerBuffer down = new DownloadHandlerBuffer();
-    //     UnityWebRequest patreonRequest = new UnityWebRequest("https://www.patreon.com/api/oauth2/api/current_user", "HTTP GET", down, null);
+        if (patreonRequest.isNetworkError)
+        {
+            Debug.Log("[ExternalLinks] Error: " + patreonRequest.error);
+        }
+        else
+        {
+            Debug.Log("[ExternalLinks] Received!");
 
-    //     yield return patreonRequest.SendWebRequest();
-
-    //     Debug.Log(patreonRequest.responseCode);
-    //     Debug.Log(down.text);
-    // }
-
+            JObject rss = JObject.Parse(down.text);
+            int patreonCount = (int)rss["data"]["attributes"]["patron_count"];
+            patreonTanks.text = "Current Patrons\n<size= 0.13>" + patreonCount + "</size>\n\n" + patreonTanks.text;
+        }
+    }
 }
