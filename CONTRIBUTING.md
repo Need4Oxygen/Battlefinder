@@ -80,7 +80,7 @@ Always group functionality regardless of accessibility:
     public void SaveBackgroundOptions() {}
 ```
 
-Always try to comment public functions, specially if they are called via UI because those references wont't appear when you look for them in your code editor.
+Always try to comment public functions, especially if they are called via UI because those references wont't appear when you look for them in your code editor.
 
 ```c#
     <summary> Called by X button instantiated on Y system to make Z </summary>
