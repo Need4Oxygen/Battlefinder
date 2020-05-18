@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System;
 
 public class ExternalLinks : MonoBehaviour
 {
-    public TMP_Text patreonTanks = null;
+    public TMP_Text patreonThanks = null;
 
     public void OpenLink(string url)
     {
@@ -20,7 +20,7 @@ public class ExternalLinks : MonoBehaviour
 
     public void Start()
     {
-        if (patreonTanks != null)
+        if (patreonThanks != null)
             StartCoroutine(GetDataAsync());
     }
 
@@ -33,15 +33,20 @@ public class ExternalLinks : MonoBehaviour
 
         if (patreonRequest.isNetworkError)
         {
-            Debug.Log("[ExternalLinks] Error: " + patreonRequest.error);
+            Debug.LogWarning("[ExternalLinks] Error: " + patreonRequest.error);
         }
         else
         {
-            Debug.Log("[ExternalLinks] Received!");
-
-            JObject rss = JObject.Parse(down.text);
-            int patreonCount = (int)rss["data"]["attributes"]["patron_count"];
-            patreonTanks.text = "Current Patrons\n<size= 0.13>" + patreonCount + "</size>\n\n" + patreonTanks.text;
+            try
+            {
+                JObject rss = JObject.Parse(down.text);
+                int patreonCount = (int)rss["data"]["attributes"]["patron_count"];
+                patreonThanks.text = "Current Patrons\n<size= 0.13>" + patreonCount + "</size>\n\n" + patreonThanks.text;
+            }
+            catch (Exception e)
+            {
+                Debug.LogError("[ExternalLinks] Error retrieving patreon count: \n" + e.Message + "\n" + e.StackTrace);
+            }
         }
     }
 }
