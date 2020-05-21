@@ -93,7 +93,7 @@ public class GameSelectorController : MonoBehaviour
     private void PF2E_ExtendGameButtons()
     {
         // Campaign buttons
-        foreach (var item in Globals.PF2eCampaignIDs)
+        foreach (var item in PF2E_Globals.PF2eCampaignIDs)
         {
             Transform newButton = Instantiate(PF2E_campaingButtonPrefab, PF2E_container.position, PF2E_container.rotation, PF2E_container);
             ButtonText newButtonScript = newButton.GetComponent<ButtonText>();

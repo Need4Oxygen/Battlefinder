@@ -14,11 +14,10 @@ public class PF2E_CampaignData
     public string guid = "";
     public string name = "";
     public E_Game game = E_Game.None;
-    public List<PF2E_BoardData> boards = new List<PF2E_BoardData>();
+    public Dictionary<string, PF2E_BoardData> boards = new Dictionary<string, PF2E_BoardData>();
     public Dictionary<string, PF2E_PlayerData> players = new Dictionary<string, PF2E_PlayerData>();
-    public List<PF2E_EnemyData> enemies = new List<PF2E_EnemyData>();
-    public List<PF2E_NPCData> npcs = new List<PF2E_NPCData>();
-    public List<PF2E_PropData> props = new List<PF2E_PropData>();
+    public Dictionary<string, PF2E_EnemyData> enemies = new Dictionary<string, PF2E_EnemyData>();
+    public Dictionary<string, PF2E_NPCData> npcs = new Dictionary<string, PF2E_NPCData>();
 
     public PF2E_CampaignData() { }
 
@@ -29,7 +28,7 @@ public class PF2E_CampaignData
         this.game = game;
     }
 
-    public PF2E_CampaignData(string guid, string name, E_Game game, List<PF2E_BoardData> boards, Dictionary<string, PF2E_PlayerData> players, List<PF2E_EnemyData> enemies, List<PF2E_NPCData> npcs, List<PF2E_PropData> props)
+    public PF2E_CampaignData(string guid, string name, E_Game game, Dictionary<string, PF2E_BoardData> boards, Dictionary<string, PF2E_PlayerData> players, Dictionary<string, PF2E_EnemyData> enemies, Dictionary<string, PF2E_NPCData> npcs)
     {
         this.guid = guid;
         this.name = name;
@@ -38,6 +37,5 @@ public class PF2E_CampaignData
         this.players = players;
         this.enemies = enemies;
         this.npcs = npcs;
-        this.props = props;
     }
 }
