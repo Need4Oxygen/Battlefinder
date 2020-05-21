@@ -100,11 +100,11 @@ public class PF2E_CharacterCreation : MonoBehaviour
 
         ABCSelector.OpenSelectorPanel();
         ABCSelector.Display(E_PF2E_ABC.Ancestry);
-        ABCSelector.acceptButton.onClick.AddListener(() => NewPlayerProccessAccept());
-        ABCSelector.backButton.onClick.AddListener(() => NewPlayerProccessBack());
+        ABCSelector.acceptButton.onClick.AddListener(() => NewPlayerProcessAccept());
+        ABCSelector.backButton.onClick.AddListener(() => NewPlayerProcessBack());
     }
 
-    private void NewPlayerProccessAccept()
+    private void NewPlayerProcessAccept()
     {
         if (ABCSelector.currentlyDisplaying == E_PF2E_ABC.Ancestry)
         {
@@ -124,7 +124,7 @@ public class PF2E_CharacterCreation : MonoBehaviour
         }
     }
 
-    private void NewPlayerProccessBack()
+    private void NewPlayerProcessBack()
     {
         if (ABCSelector.currentlyDisplaying == E_PF2E_ABC.Ancestry)
         {
@@ -156,12 +156,12 @@ public class PF2E_CharacterCreation : MonoBehaviour
     /// <summary> Save Player into campaing player list. </summary>
     public void SavePlayer()
     {
-        if (Globals.PF2eCurrentCampaign.players.ContainsKey(currentPlayer.guid))
-            Globals.PF2eCurrentCampaign.players[currentPlayer.guid] = currentPlayer;
+        if (PF2E_Globals.PF2eCurrentCampaign.players.ContainsKey(currentPlayer.guid))
+            PF2E_Globals.PF2eCurrentCampaign.players[currentPlayer.guid] = currentPlayer;
         else
-            Globals.PF2eCurrentCampaign.players.Add(currentPlayer.guid, currentPlayer);
+            PF2E_Globals.PF2eCurrentCampaign.players.Add(currentPlayer.guid, currentPlayer);
 
-        Globals.SaveCampaign();
+        PF2E_Globals.PF2E_SaveCampaign();
     }
 
     /// <summary> Refresh UI with player data. </summary>
@@ -173,9 +173,6 @@ public class PF2E_CharacterCreation : MonoBehaviour
         ancestryButton.subtitle.text = currentPlayer.ancestry;
         backgroundButton.subtitle.text = currentPlayer.background;
         classButton.subtitle.text = currentPlayer.class_name;
-
-        levelInput.text = currentPlayer.level.ToString();
-        playerNameInput.text = currentPlayer.playerName;
 
         HPCurrentText.text = currentPlayer.hp_current.ToString();
         HPMaxtText.text = currentPlayer.hp_max.ToString();

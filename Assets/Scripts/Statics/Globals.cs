@@ -25,48 +25,4 @@ public abstract class Globals : MonoBehaviour
     public static SystemData SystemData = null;
 
 
-    #region PF2E
-    public static List<PF2E_CampaignID> PF2eCampaignIDs;
-    public static PF2E_CampaignID PF2eCurrentCampaignID = null;
-    public static PF2E_CampaignData PF2eCurrentCampaign = null;
-
-    public static void CreateCampaign(string name)
-    {
-        string newGuid = Guid.NewGuid().ToString();
-
-        PF2E_CampaignID newCampaignID = new PF2E_CampaignID();
-        newCampaignID.guid = newGuid;
-        newCampaignID.name = name;
-        newCampaignID.order = 0;
-
-        PF2E_CampaignData newCampaignData = new PF2E_CampaignData(newGuid, name, E_Game.PF2E);
-
-        Globals.PF2eCampaignIDs.Add(newCampaignID);
-        Json.SaveInPlayerPrefs("PF2e_campaignsIDList", Globals.PF2eCampaignIDs);
-        Json.SaveInPlayerPrefs(newGuid, newCampaignData);
-        PlayerPrefs.Save();
-    }
-
-    public static void DeleteCampaign()
-    {
-        string guid = Globals.PF2eCurrentCampaign.guid;
-        Globals.PF2eCampaignIDs.Remove(Globals.PF2eCurrentCampaignID);
-        Json.SaveInPlayerPrefs("PF2e_campaignsIDList", Globals.PF2eCampaignIDs);
-        PlayerPrefs.DeleteKey(guid);
-        PlayerPrefs.Save();
-    }
-
-    public static void LoadCampaign(PF2E_CampaignID campaignID)
-    {
-        Globals.PF2eCurrentCampaignID = campaignID;
-        Globals.PF2eCurrentCampaign = Json.LoadFromPlayerPrefs<PF2E_CampaignData>(campaignID.guid);
-    }
-
-    public static void SaveCampaign()
-    {
-        Json.SaveInPlayerPrefs(PF2eCurrentCampaignID.guid, PF2eCurrentCampaign);
-        PlayerPrefs.Save();
-    }
-    #endregion
-
 }
