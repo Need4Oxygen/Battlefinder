@@ -6,26 +6,32 @@ using UnityEngine.UI;
 public class FloorTool : MonoBehaviour
 {
     [HideInInspector] public bool isSelected = false;
+    [HideInInspector] public int currentFloorLayer = 0;
 
     [SerializeField] private InputManager inputManager = null;
-    [SerializeField] private FloorBrush brush;
-    [SerializeField] public Terrain board;
+    [SerializeField] private FloorBrush brush = null;
+    [SerializeField] public Terrain board = null;
     [SerializeField] private Button toolButton = null;
 
     [Space(15)]
     [SerializeField] private GameObject floorTypesPanel = null;
     [SerializeField] private Transform floorTypesContainer = null;
     [SerializeField] private Transform floorTypesButton = null;
-
+    [SerializeField] private List<SO_Floor> floorTypes = null;
 
     void Awake()
     {
         CustomEvents.OnToolChange += OnToolChange;
+
+        if (PF2E_Globals.PF2eCurrentBoard != null)
+            board.terrainData = PF2E_Globals.PF2eCurrentBoard.terrainData;
     }
 
     void Start()
     {
         brush.gameObject.SetActive(false);
+        ToolUnselected();
+        GenerateWallTypeButtons();
     }
 
     void Update()
@@ -38,9 +44,9 @@ public class FloorTool : MonoBehaviour
                 OnPointerUp();
 
             if (Input.GetKeyDown(KeyCode.KeypadPlus))
-                brush.size += brush.brushIncrement;
+                brush.size += 2;
             if (Input.GetKeyDown(KeyCode.KeypadMinus))
-                brush.size -= brush.brushIncrement;
+                brush.size -= 2;
 
             UpdateBrushPos();
         }
@@ -65,6 +71,7 @@ public class FloorTool : MonoBehaviour
         toolButton.image.color = Color.red;
 
         brush.gameObject.SetActive(true);
+        floorTypesPanel.SetActive(true);
 
         UpdateBrushPos();
     }
@@ -72,8 +79,11 @@ public class FloorTool : MonoBehaviour
     private void ToolUnselected()
     {
         isSelected = false;
-        toolButton.image.color = Color.magenta;
+
+        toolButton.image.color = Color.white;
+
         brush.gameObject.SetActive(false);
+        floorTypesPanel.SetActive(false);
     }
 
     private void UpdateBrushPos()
@@ -89,6 +99,28 @@ public class FloorTool : MonoBehaviour
     private void OnPointerUp()
     {
         brush.isPainting = false;
+    }
+
+    private void GenerateWallTypeButtons()
+    {
+        if (floorTypes != null)
+            foreach (var item in floorTypes)
+            {
+                Transform newButton = Instantiate(floorTypesButton, Vector3.zero, Quaternion.identity, floorTypesContainer);
+                Button newButtonScript = newButton.GetComponent<Button>();
+
+                newButtonScript.image.sprite = item.buttonSprite;
+
+                newButtonScript.onClick.AddListener(() => SelectFloorType(item));
+            }
+    }
+
+    private void SelectFloorType(SO_Floor floor)
+    {
+        if (floor.terrainLayer <= board.terrainData.alphamapLayers - 1)
+            currentFloorLayer = floor.terrainLayer;
+        else
+            currentFloorLayer = 0;
     }
 
     //     private List<Vector2> GenerateVerticesFromLandMarks()
