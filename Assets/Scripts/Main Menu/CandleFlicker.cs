@@ -12,16 +12,41 @@ public class CandleFlicker : MonoBehaviour
     [SerializeField] public float changeSpeed = 1f;
     [SerializeField] public bool stopFlickering = default;
 
+    public AnimationCurve curve;
+    public Vector3 distance;
+    public Vector2 randomSpeedRange;
+    
+    private float speed;
+
+    private Vector3 startPos, targetPos;
+    private float timeStart;
+
     private float targetRange;
     private float targetIntensity;
 
     void Start()
     {
+        startPos = transform.position;
+        GetRandomPos();
         StartCoroutine(DoFlicker());
     }
 
     void Update()
     {
+        float d = (Time.time - timeStart) / speed, m = curve.Evaluate(d);
+        if (d > 1)
+        {
+            GetRandomPos();
+        }
+        else if (d < 0.5)
+        {
+            transform.position = Vector3.Lerp(startPos, targetPos, m * 2.0f);
+        }
+        else
+        {
+            transform.position = Vector3.Lerp(targetPos, startPos, (m - 0.5f) * 2.0f);
+        }
+
         if (!stopFlickering)
         {
             lightSource.range = Mathf.Lerp(lightSource.range, targetRange, Time.deltaTime * changeSpeed);
@@ -37,5 +62,15 @@ public class CandleFlicker : MonoBehaviour
             targetRange = Random.Range(minRange, maxRange);
             yield return new WaitForSeconds(Random.Range(randomTimeBetweenChanges.x, randomTimeBetweenChanges.y));
         }
+    }
+
+    private void GetRandomPos()
+    {
+        speed = Random.Range(randomSpeedRange.x, randomSpeedRange.y);
+        targetPos = startPos;
+        targetPos.x += Random.Range(-1.0f, +1.0f) * distance.x;
+        targetPos.y += Random.Range(-1.0f, +1.0f) * distance.y;
+        targetPos.z += Random.Range(-1.0f, +1.0f) * distance.z;
+        timeStart = Time.time;
     }
 }
