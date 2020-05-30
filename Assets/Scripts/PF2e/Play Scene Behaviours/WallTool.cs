@@ -22,6 +22,7 @@ public class WallTool : MonoBehaviour
     private SO_Wall currentWallType = null;
     private List<Transform> phantomKnots = new List<Transform>();
     private List<Transform> phantomWalls = new List<Transform>();
+    private List<Vector3> path = new List<Vector3>();
     private Transform pointer = null;
 
     void Awake()
@@ -31,7 +32,7 @@ public class WallTool : MonoBehaviour
 
     void Start()
     {
-        pointer = Instantiate(phantomWallType.knot, Vector3.zero, Quaternion.identity);
+        SetPointer();
         ToolUnselected();
         GenerateWallTypeButtons();
     }
@@ -60,6 +61,14 @@ public class WallTool : MonoBehaviour
                     OnPointerDown();
             }
         }
+    }
+
+    private void SetPointer()
+    {
+        pointer = Instantiate(phantomWallType.knot, Vector3.zero, Quaternion.identity);
+        pointer.GetComponent<BoxCollider>().enabled = false;
+        pointer.transform.parent = transform;
+        pointer.name = "Wall Pointer";
     }
 
     private void OnToolChange(E_Tools tool)
@@ -130,28 +139,45 @@ public class WallTool : MonoBehaviour
     // A "phantom" is a transparent wall or knot
     private void PlacePhantom()
     {
-        Transform phantomKnot = Instantiate(phantomWallType.knot, pointer.position, Quaternion.identity);
-        phantomKnots.Add(phantomKnot);
+        if (path.Count > 0)
+            if (path[path.Count - 1] == pointer.position) // Avoid placing knots in the same position several times
+                return;
 
-        for (int i = phantomKnots.Count - 1; i < phantomKnots.Count; i++)
+        if (!path.Contains(pointer.position)) // Avoid spawn 2 knots in the same location
         {
+            Collider[] overlapingKnots = Physics.OverlapBox(
+                new Vector3(pointer.position.x, pointer.position.y + 2, pointer.position.z),
+                new Vector3(0.01f, 0.01f, 0.01f));
+
+            if (overlapingKnots.Length > 0) // Overlaping knots can only happen in diferent wall path placements
+                foreach (var item in overlapingKnots)
+                    Destroy(item.gameObject);
+
+            Transform phantomKnot = Instantiate(phantomWallType.knot, pointer.position, Quaternion.identity);
+            phantomKnots.Add(phantomKnot);
+        }
+
+        path.Add(pointer.position);
+
+        for (int i = path.Count - 1; i < path.Count; i++) // Spawn wall except in the first knot placement
             if (i > 0)
             {
-                Vector3 direction = phantomKnots[i].position - phantomKnots[i - 1].position;
-                Vector3 position = direction / 2 + phantomKnots[i - 1].position;
+                Vector3 direction = path[i] - path[i - 1];
+                Vector3 position = direction / 2 + path[i - 1];
 
                 Transform phantomWall = Instantiate(phantomWallType.wall, position, Quaternion.identity);
-                phantomWall.localScale = new Vector3(phantomWall.localScale.x * direction.magnitude, phantomWall.localScale.y, phantomWall.localScale.z);
-                phantomWall.LookAt(phantomKnots[i].position, Vector3.up);
+                phantomWall.localScale = new Vector3(phantomWall.localScale.x * direction.magnitude - 0.25f, phantomWall.localScale.y, phantomWall.localScale.z);
+                phantomWall.LookAt(path[i], Vector3.up);
                 phantomWall.RotateAround(phantomWall.position, Vector3.up, 90);
 
                 phantomWalls.Add(phantomWall);
             }
-        }
     }
 
     private void ClearPhantoms()
     {
+        path.Clear();
+
         foreach (var item in phantomKnots)
             Destroy(item.gameObject);
         phantomKnots.Clear();
