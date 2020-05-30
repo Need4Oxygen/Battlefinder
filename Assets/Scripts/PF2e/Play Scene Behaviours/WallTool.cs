@@ -121,33 +121,13 @@ public class WallTool : MonoBehaviour
         wallTypesPanel.SetActive(false);
     }
 
-    private void GenerateWall()
-    {
-        if (phantomKnots.Count < 0) return;
-
-        SO_Wall wallType;
-        if (currentWallType != null)
-            wallType = currentWallType;
-        else
-            wallType = defaultWallType;
-
-        for (int i = 0; i < phantomKnots.Count; i++)
-            Instantiate(wallType.knot, phantomKnots[i].position, phantomKnots[i].rotation);
-        for (int i = 0; i < phantomWalls.Count; i++)
-        {
-            Transform newWall = Instantiate(wallType.wall, phantomWalls[i].position, phantomWalls[i].rotation) as Transform;
-            newWall.localScale = phantomWalls[i].localScale;
-        }
-
-        ClearPhantoms();
-    }
-
     public void OnPointerDown()
     {
         if (isWalling)
             PlacePhantom();
     }
 
+    // A "phantom" is a transparent wall or knot
     private void PlacePhantom()
     {
         Transform phantomKnot = Instantiate(phantomWallType.knot, pointer.position, Quaternion.identity);
@@ -179,5 +159,28 @@ public class WallTool : MonoBehaviour
         foreach (var item in phantomWalls)
             Destroy(item.gameObject);
         phantomWalls.Clear();
+    }
+
+    private void GenerateWall()
+    {
+        if (phantomKnots.Count < 0) return;
+
+        SO_Wall wallType;
+        if (currentWallType != null)
+            wallType = currentWallType;
+        else
+            wallType = defaultWallType;
+
+        for (int i = 0; i < phantomKnots.Count; i++)
+        {
+            Instantiate(wallType.knot, phantomKnots[i].position, phantomKnots[i].rotation);
+        }
+        for (int i = 0; i < phantomWalls.Count; i++)
+        {
+            Transform newWall = Instantiate(wallType.wall, phantomWalls[i].position, phantomWalls[i].rotation) as Transform;
+            newWall.localScale = phantomWalls[i].localScale;
+        }
+
+        ClearPhantoms();
     }
 }

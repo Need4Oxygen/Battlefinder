@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class FloorTool : MonoBehaviour
@@ -38,10 +39,13 @@ public class FloorTool : MonoBehaviour
     {
         if (isSelected)
         {
-            if (Input.GetMouseButtonDown(0))
-                OnPointerDown();
-            if (Input.GetMouseButtonUp(0))
-                OnPointerUp();
+            if (!MouseInputUIBlocker.BlockedByUI)
+            {
+                if (Input.GetMouseButtonDown(0))
+                    OnPointerDown();
+                if (Input.GetMouseButtonUp(0))
+                    OnPointerUp();
+            }
 
             if (Input.GetKeyDown(KeyCode.KeypadPlus))
                 brush.size += 2;
