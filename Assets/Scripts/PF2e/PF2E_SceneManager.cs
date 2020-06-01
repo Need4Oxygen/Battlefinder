@@ -40,6 +40,11 @@ public class PF2E_SceneManager : MonoBehaviour
             if (PF2E_Globals.CurrentBoard.wallElements != null)
                 wallTool.GenerateWallElements(PF2E_Globals.CurrentBoard.wallElements);
         }
+        else
+        {
+            floorTool.SetAlphaMaps(true);
+            floorTool.SetHeightMaps(true);
+        }
     }
 
     void Start()

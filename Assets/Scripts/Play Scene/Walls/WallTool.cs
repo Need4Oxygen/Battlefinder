@@ -289,13 +289,17 @@ public class WallTool : MonoBehaviour
     {
         if (element.type == E_WallElement.Knot)
         {
-            if (everyKnot.Contains(element))
-                everyKnot.Remove(element);
+            WallElement obj = everyKnot.Find(ctx => ctx.gameObject == element.gameObject);
+            if (obj != null)
+                everyKnot.Remove(obj);
+            Destroy(obj.gameObject);
         }
         else if (element.type == E_WallElement.Wall)
         {
-            if (everyWall.Contains(element))
-                everyWall.Remove(element);
+            WallElement obj = everyWall.Find(ctx => ctx.gameObject == element.gameObject);
+            if (obj != null)
+                everyWall.Remove(obj);
+            Destroy(obj.gameObject);
         }
     }
 }

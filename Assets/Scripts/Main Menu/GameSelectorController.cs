@@ -21,7 +21,7 @@ public class GameSelectorController : MonoBehaviour
     private E_Game currentGame = E_Game.None;
 
     /// <summary> Called by the diferent game buttons to select themselves </summary>
-    public void GameButtonPressed(string game)
+    public void OnClickGameButton(string game)
     {
         switch (game)
         {
@@ -42,6 +42,12 @@ public class GameSelectorController : MonoBehaviour
                 PF2E_RetractGameButtons();
                 break;
         }
+    }
+
+    /// <summary> Called by the exit game button </summary>
+    public void OnClickExitGame()
+    {
+        Application.Quit();
     }
 
     void Start()
