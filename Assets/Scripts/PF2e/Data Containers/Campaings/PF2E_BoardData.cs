@@ -6,9 +6,11 @@ public class PF2E_BoardData
     public string guid = "";
     public string boardName = "";
 
-    public TerrainData terrainData;
+    public float[,,] terrainAlphamaps = null;
+    public float[,] terrainHeights = null;
+    public Dictionary<string, List<PWallElement>> wallElements = new Dictionary<string, List<PWallElement>>();
 
-    public List<PositionableActor> players = new List<PositionableActor>();
-    public List<PositionableActor> enemies = new List<PositionableActor>();
-    public List<PositionableActor> npcs = new List<PositionableActor>();
+    public List<PActor> players = new List<PActor>();
+    public List<PActor> enemies = new List<PActor>();
+    public List<PActor> npcs = new List<PActor>();
 }

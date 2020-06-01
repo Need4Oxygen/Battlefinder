@@ -8,7 +8,11 @@ public class Json
     {
         try
         {
-            string jsonString = JsonConvert.SerializeObject(obj, Formatting.Indented);
+            string jsonString = JsonConvert.SerializeObject(
+                obj,
+                Formatting.Indented,
+                new JsonSerializerSettings() { ReferenceLoopHandling = ReferenceLoopHandling.Ignore });
+
             PlayerPrefs.SetString(key, jsonString);
             Debug.Log("[Json] Saved object to key: " + key);
         }

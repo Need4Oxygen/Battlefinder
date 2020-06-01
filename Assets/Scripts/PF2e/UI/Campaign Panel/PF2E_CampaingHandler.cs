@@ -39,9 +39,9 @@ public class PF2E_CampaingHandler : MonoBehaviour
 
     void Awake()
     {
-        PF2E_Globals.PF2eCampaignIDs = Json.LoadFromPlayerPrefs<List<PF2E_CampaignID>>("PF2e_campaignsIDList");
-        if (PF2E_Globals.PF2eCampaignIDs == null)
-            PF2E_Globals.PF2eCampaignIDs = new List<PF2E_CampaignID>();
+        PF2E_Globals.CampaignIDS = Json.LoadFromPlayerPrefs<List<PF2E_CampaignID>>("PF2e_campaignsIDList");
+        if (PF2E_Globals.CampaignIDS == null)
+            PF2E_Globals.CampaignIDS = new List<PF2E_CampaignID>();
     }
 
     void Start()
@@ -76,7 +76,7 @@ public class PF2E_CampaingHandler : MonoBehaviour
     /// <summary> Called after asking the name for a new campaign has been promped and accepted. </summary>
     public void CreateCampaign(string name)
     {
-        PF2E_Globals.PF2E_CreateCampaign(name);
+        PF2E_Globals.CreateCampaign(name);
     }
 
     /// <summary> Load given Campaign. Called by campaign buttons that enumerate existing Campaigns. </summary>
@@ -86,7 +86,7 @@ public class PF2E_CampaingHandler : MonoBehaviour
         campaignName.text = campaignID.name;
 
         // Set current campaing and refresh boards, players, enemies and npcs
-        PF2E_Globals.PF2E_LoadCampaign(campaignID);
+        PF2E_Globals.LoadCampaign(campaignID);
         RefreshCampaignContainers();
 
         OpenCampaingPanel();
@@ -102,7 +102,7 @@ public class PF2E_CampaingHandler : MonoBehaviour
         if (value)
         {
             CloseCampaingPanel();
-            PF2E_Globals.PF2E_DeleteCampaign();
+            PF2E_Globals.DeleteCampaign();
         }
     }
 
@@ -119,7 +119,7 @@ public class PF2E_CampaingHandler : MonoBehaviour
     // Edition
     private void OnClickBoardButtonPlay(string board)
     {
-        boardHandler.LoadBoard(PF2E_Globals.PF2eCurrentCampaign.boards[board]);
+        boardHandler.LoadBoard(PF2E_Globals.CurrentCampaign.boards[board]);
     }
 
     // Deletion
@@ -133,9 +133,9 @@ public class PF2E_CampaingHandler : MonoBehaviour
     {
         if (value)
         {
-            PF2E_Globals.PF2eCurrentCampaign.boards.Remove(boardToDelete);
+            PF2E_Globals.CurrentCampaign.boards.Remove(boardToDelete);
             RefreshCampaignContainers();
-            PF2E_Globals.PF2E_SaveCampaign();
+            PF2E_Globals.SaveCampaign();
         }
 
         boardToDelete = "";
@@ -154,7 +154,7 @@ public class PF2E_CampaingHandler : MonoBehaviour
     // Edition
     private void OnClickPayerButtonEdit(string player)
     {
-        characterCreation.LoadPlayer(PF2E_Globals.PF2eCurrentCampaign.players[player]);
+        characterCreation.LoadPlayer(PF2E_Globals.CurrentCampaign.players[player]);
     }
 
     // Deletion
@@ -168,9 +168,9 @@ public class PF2E_CampaingHandler : MonoBehaviour
     {
         if (value)
         {
-            PF2E_Globals.PF2eCurrentCampaign.players.Remove(playerToDelete);
+            PF2E_Globals.CurrentCampaign.players.Remove(playerToDelete);
             RefreshCampaignContainers();
-            PF2E_Globals.PF2E_SaveCampaign();
+            PF2E_Globals.SaveCampaign();
         }
 
         playerToDelete = "";
@@ -197,8 +197,8 @@ public class PF2E_CampaingHandler : MonoBehaviour
         enemiesButtonList.Clear();
         npcsButtonList.Clear();
 
-        if (PF2E_Globals.PF2eCurrentCampaign.boards != null)
-            foreach (var board in PF2E_Globals.PF2eCurrentCampaign.boards)
+        if (PF2E_Globals.CurrentCampaign.boards != null)
+            foreach (var board in PF2E_Globals.CurrentCampaign.boards)
             {
                 Transform newBoardButton = Instantiate(boardsButtonPrefab, Vector3.zero, Quaternion.identity, boardsContainer).transform;
                 PF2E_BoardButton newBoardButtonScript = newBoardButton.GetComponent<PF2E_BoardButton>();
@@ -209,8 +209,8 @@ public class PF2E_CampaingHandler : MonoBehaviour
 
                 boardsButtonList.Add(newBoardButton.gameObject);
             }
-        if (PF2E_Globals.PF2eCurrentCampaign.players != null)
-            foreach (var player in PF2E_Globals.PF2eCurrentCampaign.players)
+        if (PF2E_Globals.CurrentCampaign.players != null)
+            foreach (var player in PF2E_Globals.CurrentCampaign.players)
             {
                 Transform newPlayerButton = Instantiate(playersButtonPrefab, Vector3.zero, Quaternion.identity, playersContainer).transform;
                 PF2E_PlayerButton newPlayerButtonScript = newPlayerButton.GetComponent<PF2E_PlayerButton>();
@@ -222,14 +222,14 @@ public class PF2E_CampaingHandler : MonoBehaviour
 
                 playersButtonList.Add(newPlayerButton.gameObject);
             }
-        for (int i = 0; i < PF2E_Globals.PF2eCurrentCampaign.enemies.Count; i++)
+        for (int i = 0; i < PF2E_Globals.CurrentCampaign.enemies.Count; i++)
         {
             Transform newEnemyButton = Instantiate(enemiesButtonPrefab, Vector3.zero, Quaternion.identity, enemiesContainer).transform;
             PF2E_BoardButton newEnemyButtonScript = newEnemyButton.GetComponent<PF2E_BoardButton>();
 
             enemiesButtonList.Add(newEnemyButton.gameObject);
         }
-        for (int i = 0; i < PF2E_Globals.PF2eCurrentCampaign.npcs.Count; i++)
+        for (int i = 0; i < PF2E_Globals.CurrentCampaign.npcs.Count; i++)
         {
             Transform newNPCButton = Instantiate(npcsButtonPrefab, Vector3.zero, Quaternion.identity, npcsContainer).transform;
             PF2E_BoardButton newNPCButtonScript = newNPCButton.GetComponent<PF2E_BoardButton>();

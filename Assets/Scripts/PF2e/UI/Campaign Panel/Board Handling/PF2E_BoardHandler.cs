@@ -47,7 +47,7 @@ public class PF2E_BoardHandler : MonoBehaviour
 
         RefreshBoardPanel();
         OpenBoardPanel();
-        SaveBoard();
+        PF2E_Globals.SaveBoard(currentBoard);
     }
 
     /// <summary> Called by CampaignHandler when the play button on a board button is pressed </summary>
@@ -59,16 +59,6 @@ public class PF2E_BoardHandler : MonoBehaviour
         OpenBoardPanel();
     }
 
-    private void SaveBoard()
-    {
-        if (PF2E_Globals.PF2eCurrentCampaign.boards.ContainsKey(currentBoard.guid))
-            PF2E_Globals.PF2eCurrentCampaign.boards[currentBoard.guid] = currentBoard;
-        else
-            PF2E_Globals.PF2eCurrentCampaign.boards.Add(currentBoard.guid, currentBoard);
-
-        PF2E_Globals.PF2E_SaveCampaign();
-    }
-
     private void RefreshBoardPanel()
     {
         boardNameInput.SetTextWithoutNotify(currentBoard.boardName);
@@ -78,7 +68,7 @@ public class PF2E_BoardHandler : MonoBehaviour
             Destroy(actorButtonList[i].gameObject);
         actorButtonList.Clear();
 
-        List<PositionableActor> actorList = new List<PositionableActor>();
+        List<PActor> actorList = new List<PActor>();
         actorList.AddRange(currentBoard.players);
         actorList.AddRange(currentBoard.npcs);
         actorList.AddRange(currentBoard.enemies);
@@ -97,13 +87,14 @@ public class PF2E_BoardHandler : MonoBehaviour
     public void OnEndEditName()
     {
         currentBoard.boardName = boardNameInput.text;
+        PF2E_Globals.SaveBoard(currentBoard);
         RefreshBoardPanel();
     }
 
     /// <summary> Called by the play button in board panel </summary>
     public void OnClickPlayButton()
     {
-        PF2E_Globals.PF2E_SetCurrentBoard(currentBoard);
+        PF2E_Globals.CurrentBoard = currentBoard;
         SceneManager.LoadScene(pathfinder2ePlayScene, LoadSceneMode.Single);
 
         CloseBoardPanel();

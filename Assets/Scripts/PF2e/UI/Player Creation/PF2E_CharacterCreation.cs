@@ -156,12 +156,12 @@ public class PF2E_CharacterCreation : MonoBehaviour
     /// <summary> Save Player into campaing player list. </summary>
     public void SavePlayer()
     {
-        if (PF2E_Globals.PF2eCurrentCampaign.players.ContainsKey(currentPlayer.guid))
-            PF2E_Globals.PF2eCurrentCampaign.players[currentPlayer.guid] = currentPlayer;
+        if (PF2E_Globals.CurrentCampaign.players.ContainsKey(currentPlayer.guid))
+            PF2E_Globals.CurrentCampaign.players[currentPlayer.guid] = currentPlayer;
         else
-            PF2E_Globals.PF2eCurrentCampaign.players.Add(currentPlayer.guid, currentPlayer);
+            PF2E_Globals.CurrentCampaign.players.Add(currentPlayer.guid, currentPlayer);
 
-        PF2E_Globals.PF2E_SaveCampaign();
+        PF2E_Globals.SaveCampaign();
     }
 
     /// <summary> Refresh UI with player data. </summary>
