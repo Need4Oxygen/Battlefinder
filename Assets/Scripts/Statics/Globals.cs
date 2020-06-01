@@ -5,7 +5,6 @@ using UnityEngine;
 
 public abstract class Globals : MonoBehaviour
 {
-
     // From brighter to dimmer, 1 is brighter than 2
     public static Dictionary<string, Color> Theme = new Dictionary<string, Color>()
     {

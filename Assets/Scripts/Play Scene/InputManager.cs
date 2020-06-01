@@ -34,14 +34,24 @@ public class InputManager : MonoBehaviour
             SetCurrentTool(E_Tools.Floors);
             return;
         }
-
-
     }
 
     private void SetCurrentTool(E_Tools tools)
     {
         currentTool = tools;
         CustomEvents.OnToolChange(tools);
+    }
+
+    // <summary> Called by clicking the wall tool button </summary>
+    public void SetWallTool()
+    {
+        SetCurrentTool(E_Tools.Walls);
+    }
+
+    // <summary> Called by clicking the floor tool button </summary>
+    public void SetFloorTool()
+    {
+        SetCurrentTool(E_Tools.Floors);
     }
 
     public Vector3 MousePosInBoard(bool rounded)

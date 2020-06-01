@@ -122,7 +122,7 @@ public class WallTool : MonoBehaviour
         isSelected = true;
         isWalling = true;
 
-        toolButton.image.color = Color.red;
+        toolButton.image.color = Globals.Theme["untrained"];
 
         wallStylesPanel.SetActive(true);
 
@@ -134,7 +134,7 @@ public class WallTool : MonoBehaviour
         isSelected = false;
         isWalling = false;
 
-        toolButton.image.color = Color.white;
+        toolButton.image.color = Globals.Theme["text_1"];
 
         pointer.gameObject.SetActive(false);
         wallStylesPanel.SetActive(false);

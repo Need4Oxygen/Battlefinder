@@ -82,7 +82,7 @@ public class FloorTool : MonoBehaviour
     {
         isSelected = true;
 
-        toolButton.image.color = Color.red;
+        toolButton.image.color = Globals.Theme["untrained"];
 
         brush.gameObject.SetActive(true);
         floorTypesPanel.SetActive(true);
@@ -94,7 +94,7 @@ public class FloorTool : MonoBehaviour
     {
         isSelected = false;
 
-        toolButton.image.color = Color.white;
+        toolButton.image.color = Globals.Theme["text_1"];
 
         brush.gameObject.SetActive(false);
         floorTypesPanel.SetActive(false);

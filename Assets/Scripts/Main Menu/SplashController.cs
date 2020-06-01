@@ -22,7 +22,7 @@ public class SplashController : MonoBehaviour
 
     void Start()
     {
-        if (!skipIntro)
+        if (!skipIntro && Time.time < 10f)
         {
             clickablePanel.interactable = false;
             splashPanel.SetActive(true);
