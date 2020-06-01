@@ -153,7 +153,7 @@ public class BookScript : MonoBehaviour
         rightPage = pageList[currentPage];
         SetPages();
         bool once = false;
-        while (rotatingPage.transform.rotation.eulerAngles.x != leftPosition.rotation.eulerAngles.x)
+        while (Quaternion.Angle(rotatingPage.transform.rotation, leftPosition.rotation) > 0.01f)
         {
             rotatingPage.transform.rotation = Quaternion.RotateTowards(rotatingPage.transform.rotation, leftPosition.rotation, turningRate * Time.deltaTime);
 
@@ -163,6 +163,7 @@ public class BookScript : MonoBehaviour
                 leftPage = rotatingPage;
                 once = true;
             }
+            Debug.Log(rotatingPage.transform.rotation.eulerAngles.x + " needs to be equal to " + rightPosition.rotation.eulerAngles.x);
             yield return null;
         }
         if (tabbed)
@@ -184,7 +185,7 @@ public class BookScript : MonoBehaviour
         leftPage = pageList[currentPage - 1]; //right is always the currentpage, so left is -1
         SetPages();
         bool once = false;
-        while (rotatingPage.transform.rotation.eulerAngles.x != rightPosition.rotation.eulerAngles.x)
+        while (Quaternion.Angle(rotatingPage.transform.rotation, rightPosition.rotation) > 0.01f)
         {
             rotatingPage.transform.rotation = Quaternion.RotateTowards(rotatingPage.transform.rotation, rightPosition.rotation, turningRate * Time.deltaTime);
 
@@ -194,6 +195,7 @@ public class BookScript : MonoBehaviour
                 rightPage = rotatingPage;
                 once = true;
             }
+            Debug.Log(rotatingPage.transform.rotation.eulerAngles.x + " needs to be equal to " + rightPosition.rotation.eulerAngles.x);
             yield return null;
         }
         if (tabbed)
