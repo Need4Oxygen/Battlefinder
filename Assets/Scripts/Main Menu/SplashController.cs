@@ -22,6 +22,9 @@ public class SplashController : MonoBehaviour
 
     void Start()
     {
+        if (!Application.isEditor)
+            skipIntro = false;
+
         if (!skipIntro && Time.time < 10f)
         {
             clickablePanel.interactable = false;

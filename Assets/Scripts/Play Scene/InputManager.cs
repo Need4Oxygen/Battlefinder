@@ -12,7 +12,7 @@ public class InputManager : MonoBehaviour
 
     void Awake()
     {
-        BoardLayer = LayerMask.GetMask("Table");
+        BoardLayer = LayerMask.GetMask("Board");
     }
 
     void Update()
