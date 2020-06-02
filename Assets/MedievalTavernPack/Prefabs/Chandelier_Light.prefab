@@ -146,7 +146,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1969661738778345068}
-  m_LocalRotation: {x: 0.000000015465888, y: -0.70657706, z: 0.000000015442732, w: 0.7076362}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.811057, y: 14.34, z: 0.7862396}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -165,7 +165,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 3.9788735
+  m_Intensity: 2
   m_Range: 25
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -234,13 +234,13 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
-  m_Intensity: 50
+  m_Intensity: 2
   m_EnableSpotReflector: 0
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
-  m_LightUnit: 0
+  m_LightUnit: 1
   m_FadeDistance: 10000
   m_AffectDiffuse: 1
   m_AffectSpecular: 1
@@ -337,39 +337,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightSource: {fileID: 1969661738778345071}
-  minIntensity: 2
-  maxIntensity: 5
-  minRange: 19
-  maxRange: 25
-  randomTimeBetweenChanges: {x: 0.1, y: 0.8}
-  changeSpeed: 1
-  stopFlickering: 0
-  curve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  distance: {x: 0.5, y: 0, z: 0.5}
-  randomSpeedRange: {x: 1.5, y: 2}
+  isFlickering: 1
+  flickerSpeed: 1
+  intensityMultiplier: 0.5
+  rangeMultiplier: 3
+  isShaking: 1
+  shakeSpeed: 0.3
+  shakeMultiplier: {x: 1, y: 0, z: 1}
 --- !u!1 &3795415290579838462
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,8 +528,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6011729387447473684}
-  m_LocalRotation: {x: 0.000000015465888, y: -0.70657706, z: 0.000000015442732, w: 0.7076362}
-  m_LocalPosition: {x: 8.811057, y: 13.39, z: 0.7862396}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.811057, y: 14.34, z: 0.7862396}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1969661738773653509}
@@ -744,40 +718,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8b004cdbbf1f184880a924fe8bab6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightSource: {fileID: 6156766165960942457}
-  minIntensity: 0.3
-  maxIntensity: 0.5
-  minRange: 3
-  maxRange: 6
-  randomTimeBetweenChanges: {x: 0.1, y: 0.8}
-  changeSpeed: 1
-  stopFlickering: 0
-  curve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  distance: {x: 1, y: 0.5, z: 1}
-  randomSpeedRange: {x: 1, y: 1.5}
+  lightSource: {fileID: 1969661738778345071}
+  isFlickering: 1
+  flickerSpeed: 1
+  intensityMultiplier: 0.5
+  rangeMultiplier: 3
+  isShaking: 1
+  shakeSpeed: 0.3
+  shakeMultiplier: {x: 1, y: 1, z: 1}
 --- !u!1 &6035120560870054572
 GameObject:
   m_ObjectHideFlags: 0

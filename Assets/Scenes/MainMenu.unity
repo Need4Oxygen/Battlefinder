@@ -10359,26 +10359,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1969661738778345070, guid: fc14b8093b1d0f74c839d2ee275fab8d,
-        type: 3}
-      propertyPath: m_Intensity
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1969661738778345071, guid: fc14b8093b1d0f74c839d2ee275fab8d,
-        type: 3}
-      propertyPath: m_Intensity
-      value: 1.9894367
-      objectReference: {fileID: 0}
-    - target: {fileID: 6156766165960942457, guid: fc14b8093b1d0f74c839d2ee275fab8d,
-        type: 3}
-      propertyPath: m_Intensity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6156766165960942457, guid: fc14b8093b1d0f74c839d2ee275fab8d,
-        type: 3}
-      propertyPath: m_ShadowRadius
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc14b8093b1d0f74c839d2ee275fab8d, type: 3}
 --- !u!4 &1083187159 stripped
@@ -13427,21 +13407,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1969661738778345070, guid: fc14b8093b1d0f74c839d2ee275fab8d,
-        type: 3}
-      propertyPath: m_Intensity
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1969661738778345071, guid: fc14b8093b1d0f74c839d2ee275fab8d,
-        type: 3}
-      propertyPath: m_Intensity
-      value: 1.9894367
-      objectReference: {fileID: 0}
-    - target: {fileID: 6156766165960942457, guid: fc14b8093b1d0f74c839d2ee275fab8d,
-        type: 3}
-      propertyPath: m_Intensity
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc14b8093b1d0f74c839d2ee275fab8d, type: 3}
 --- !u!4 &1340882804 stripped
@@ -13963,39 +13928,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightSource: {fileID: 1355455322}
-  minIntensity: 0.2
-  maxIntensity: 0.4
-  minRange: 5
-  maxRange: 8
-  randomTimeBetweenChanges: {x: 0.1, y: 0.8}
-  changeSpeed: 3
-  stopFlickering: 0
-  curve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  distance: {x: 0.01, y: 0.007, z: 0.01}
-  randomSpeedRange: {x: 0.3, y: 0.9}
+  isFlickering: 1
+  flickerSpeed: 1
+  intensityMultiplier: 0.1
+  rangeMultiplier: 4
+  isShaking: 1
+  shakeSpeed: 1
+  shakeMultiplier: {x: 0.1, y: 0.1, z: 0.1}
 --- !u!114 &1355455325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44631,26 +44570,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1969661738778345070, guid: fc14b8093b1d0f74c839d2ee275fab8d,
-        type: 3}
-      propertyPath: m_Intensity
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1969661738778345071, guid: fc14b8093b1d0f74c839d2ee275fab8d,
-        type: 3}
-      propertyPath: m_Intensity
-      value: 1.9894367
-      objectReference: {fileID: 0}
-    - target: {fileID: 6156766165960942457, guid: fc14b8093b1d0f74c839d2ee275fab8d,
-        type: 3}
-      propertyPath: m_ShadowRadius
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6156766165960942457, guid: fc14b8093b1d0f74c839d2ee275fab8d,
-        type: 3}
-      propertyPath: m_Intensity
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc14b8093b1d0f74c839d2ee275fab8d, type: 3}

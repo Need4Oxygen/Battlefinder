@@ -4,73 +4,82 @@ using UnityEngine;
 public class CandleFlicker : MonoBehaviour
 {
     [SerializeField] private Light lightSource = null;
-    [SerializeField] public float minIntensity = 1f;
-    [SerializeField] public float maxIntensity = 3f;
-    [SerializeField] public float minRange = 1f;
-    [SerializeField] public float maxRange = 3f;
-    [SerializeField] public Vector2 randomTimeBetweenChanges = new Vector2(0.1f, 0.8f);
-    [SerializeField] public float changeSpeed = 1f;
-    [SerializeField] public bool stopFlickering = default;
 
-    public AnimationCurve curve;
-    public Vector3 distance;
-    public Vector2 randomSpeedRange;
-    
-    private float speed;
+    [Header("Light Flicker Variation")]
+    [SerializeField] private bool isFlickering = true;
+    [SerializeField] private float flickerSpeed = 1f;
+    [Space(5)]
+    [SerializeField] private float intensityMultiplier = 3f;
+    [SerializeField] private float rangeMultiplier = 3f;
 
-    private Vector3 startPos, targetPos;
-    private float timeStart;
+    [Header("Light Shake Variation")]
+    [SerializeField] private bool isShaking = true;
+    [SerializeField] private float shakeSpeed = 1f;
+    [Space(5)]
+    [SerializeField] private Vector3 shakeMultiplier = Vector3.one;
 
-    private float targetRange;
-    private float targetIntensity;
+    private float shakeTimeCount;
+    private float flickerTimeCount;
 
-    void Start()
+    private Vector3 startPos;
+    private float startIntensity;
+    private float startRange;
+
+    void Awake()
     {
-        startPos = transform.position;
-        GetRandomPos();
-        StartCoroutine(DoFlicker());
+        startPos = transform.localPosition;
+        startIntensity = lightSource.intensity;
+        startRange = lightSource.range;
     }
 
     void Update()
     {
-        float d = (Time.time - timeStart) / speed, m = curve.Evaluate(d);
-        if (d > 1)
+        if (isFlickering)
         {
-            GetRandomPos();
-        }
-        else if (d < 0.5)
-        {
-            transform.position = Vector3.Lerp(startPos, targetPos, m * 2.0f);
+            flickerTimeCount += Time.deltaTime * flickerSpeed;
+
+            float newIntensity = startIntensity + (GetPerlin(50, flickerTimeCount) * intensityMultiplier);
+            float newRange = startRange + (GetPerlin(5, flickerTimeCount) * rangeMultiplier);
+            lightSource.intensity = newIntensity;
+            lightSource.range = newRange;
+
         }
         else
         {
-            transform.position = Vector3.Lerp(targetPos, startPos, (m - 0.5f) * 2.0f);
+            lightSource.intensity = startIntensity;
+            lightSource.range = startRange;
         }
 
-        if (!stopFlickering)
+        if (isShaking)
         {
-            lightSource.range = Mathf.Lerp(lightSource.range, targetRange, Time.deltaTime * changeSpeed);
-            lightSource.intensity = Mathf.Lerp(lightSource.intensity, targetIntensity, Time.deltaTime * changeSpeed);
+            shakeTimeCount += Time.deltaTime * shakeSpeed;
+
+            Vector3 newPos = startPos + GetShakeVector();
+            transform.localPosition = newPos;
+        }
+        else if (transform.localPosition != startPos)
+        {
+            //lerp back towards default position.
+            Vector3 newPos = Vector3.Lerp(transform.localPosition, startPos, Time.deltaTime * 5f);
+            transform.localPosition = newPos;
+            if (Vector3.Distance(transform.localPosition, startPos) < 0.01f)
+                transform.localPosition = startPos;
         }
     }
 
-    private IEnumerator DoFlicker()
+    //Perlin float between -1 and 1.
+    private float GetPerlin(float seed, float counter)
     {
-        while (!stopFlickering)
-        {
-            targetIntensity = Random.Range(minIntensity, maxIntensity);
-            targetRange = Random.Range(minRange, maxRange);
-            yield return new WaitForSeconds(Random.Range(randomTimeBetweenChanges.x, randomTimeBetweenChanges.y));
-        }
+        return (Mathf.PerlinNoise(seed, counter) - 0.5f) * 2f;
     }
 
-    private void GetRandomPos()
+    //Generate a Vector3, using different seeds to ensure different numbers
+    private Vector3 GetShakeVector()
     {
-        speed = Random.Range(randomSpeedRange.x, randomSpeedRange.y);
-        targetPos = startPos;
-        targetPos.x += Random.Range(-1.0f, +1.0f) * distance.x;
-        targetPos.y += Random.Range(-1.0f, +1.0f) * distance.y;
-        targetPos.z += Random.Range(-1.0f, +1.0f) * distance.z;
-        timeStart = Time.time;
+        return new Vector3(
+            GetPerlin(1, shakeTimeCount) * shakeMultiplier.x,
+            GetPerlin(10, shakeTimeCount) * shakeMultiplier.y,
+            GetPerlin(100, shakeTimeCount) * shakeMultiplier.z
+            );
     }
 }
