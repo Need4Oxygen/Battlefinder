@@ -260,12 +260,13 @@ public class PF2E_CharacterCreation : MonoBehaviour
     {
         if (buildItem.type == "Initial Ability Boosts")
         {
-            PF2E_InitAblBoostData initAblData = currentPlayer.Build_Get<PF2E_InitAblBoostData>("Level 1", "Initial Ability Boosts");
-
             button.title.text = buildItem.type;
             button.button.onClick.AddListener(() => OnClickInitialAbilityBoosts());
 
-            int x = initAblData.lvl1boosts.Count - 4;
+            PF2E_InitAblBoostData initAblData = currentPlayer.Build_Get<PF2E_InitAblBoostData>("Level 1", "Initial Ability Boosts");
+            int x = 0;
+            if (initAblData != null)
+                x = initAblData.lvl1boosts.Count - 4;
             if (x < 0)
                 button.subtitle.text = "Boosts not assigned: " + (x * -1);
             else
