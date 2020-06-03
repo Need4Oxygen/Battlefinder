@@ -14,6 +14,7 @@ public class CandleFlicker : MonoBehaviour
 
     [Header("Light Shake Variation")]
     [SerializeField] private bool isShaking = true;
+    [SerializeField] private bool freezeOnSplashEnd = false;
     [SerializeField] private float shakeSpeed = 1f;
     [Space(5)]
     [SerializeField] private Vector3 shakeMultiplier = Vector3.one;
@@ -27,6 +28,9 @@ public class CandleFlicker : MonoBehaviour
 
     void Awake()
     {
+        if (freezeOnSplashEnd)
+            SplashController.OnSplashEnd += StopShaking;
+
         startPos = transform.localPosition;
         startIntensity = lightSource.intensity;
         startRange = lightSource.range;
@@ -81,5 +85,11 @@ public class CandleFlicker : MonoBehaviour
             GetPerlin(10, shakeTimeCount) * shakeMultiplier.y,
             GetPerlin(100, shakeTimeCount) * shakeMultiplier.z
             );
+    }
+
+    private void StopShaking()
+    {
+        isShaking = false;
+        SplashController.OnSplashEnd -= StopShaking;
     }
 }

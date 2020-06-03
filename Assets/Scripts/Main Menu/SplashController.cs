@@ -20,6 +20,8 @@ public class SplashController : MonoBehaviour
 
     private bool splashing;
 
+    public static DVoid OnSplashEnd;
+
     void Start()
     {
         if (!Application.isEditor)
@@ -41,6 +43,7 @@ public class SplashController : MonoBehaviour
             splashPanel.SetActive(false);
             musicPlayer.Play();
             cameraController.SkipOpening();
+            DeactivateSplash();
         }
     }
 
@@ -77,6 +80,7 @@ public class SplashController : MonoBehaviour
         }
     }
 
+    //called by clickable panel
     public void StopSplashing()
     {
         cameraController.ChangeToCloseCamera();
@@ -87,5 +91,10 @@ public class SplashController : MonoBehaviour
         Invoke("DeactivateSplash", 0.6f);
     }
 
-    private void DeactivateSplash() { splashPanel.SetActive(false); }
+    private void DeactivateSplash()
+    {
+        splashPanel.SetActive(false);
+        if (OnSplashEnd != null)
+            OnSplashEnd();
+    }
 }
