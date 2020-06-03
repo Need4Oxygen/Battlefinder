@@ -47,8 +47,8 @@ public class FloorBrush : MonoBehaviour
             for (int j = -sz; j < sz + 1; j++)
                 for (int k = 0; k < layers; k++)
                 {
-                    int x = Mathf.Clamp(boardPosX + i, 0, 1024);
-                    int y = Mathf.Clamp(boardPosY + j, 0, 1024);
+                    int x = Mathf.Clamp(boardPosX + i, 0, tool.alphamapWidth - 1);
+                    int y = Mathf.Clamp(boardPosY + j, 0, tool.alphamapHeight - 1);
 
                     if (k == tool.currentFloorLayer)
                         tool.alphamap[x, y, k] = 1;

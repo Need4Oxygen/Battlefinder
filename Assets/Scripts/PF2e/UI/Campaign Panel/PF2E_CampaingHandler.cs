@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -39,9 +40,22 @@ public class PF2E_CampaingHandler : MonoBehaviour
 
     void Awake()
     {
-        PF2E_Globals.CampaignIDS = Json.LoadFromPlayerPrefs<List<PF2E_CampaignID>>("PF2e_campaignsIDList");
-        if (PF2E_Globals.CampaignIDS == null)
-            PF2E_Globals.CampaignIDS = new List<PF2E_CampaignID>();
+        if (Time.time < 10)
+        {
+            char sep = Path.DirectorySeparatorChar;
+
+            if (!Directory.Exists(Globals.SystemData.PF2EFolderPath))
+                Directory.CreateDirectory(Globals.SystemData.PF2EFolderPath);
+            if (!Directory.Exists(Globals.SystemData.PF2ECampaignsPath))
+                Directory.CreateDirectory(Globals.SystemData.PF2ECampaignsPath);
+            if (!Directory.Exists(Globals.SystemData.PF2EAdditionalContentPath))
+                Directory.CreateDirectory(Globals.SystemData.PF2EAdditionalContentPath);
+
+            var campaigns = Directory.GetFiles(Globals.SystemData.PF2ECampaignsPath);
+            if (campaigns != null && PF2E_Globals.CampaignIDs.Count == 0)
+                foreach (var item in campaigns)
+                    PF2E_Globals.CampaignIDs.Add(Path.GetFileName(item), Globals.SystemData.PF2ECampaignsPath + sep + item);
+        }
     }
 
     void Start()
@@ -80,10 +94,10 @@ public class PF2E_CampaingHandler : MonoBehaviour
     }
 
     /// <summary> Load given Campaign. Called by campaign buttons that enumerate existing Campaigns. </summary>
-    public void LoadCampaign(PF2E_CampaignID campaignID)
+    public void LoadCampaign(string campaignID)
     {
         // Open Campaign Panel
-        campaignName.text = campaignID.name;
+        campaignName.text = campaignID;
 
         // Set current campaing and refresh boards, players, enemies and npcs
         PF2E_Globals.LoadCampaign(campaignID);
