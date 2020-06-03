@@ -20,6 +20,11 @@ public class GameSelectorController : MonoBehaviour
     private List<GameObject> PF2E_buttons = new List<GameObject>();
     private E_Game currentGame = E_Game.None;
 
+    void Start()
+    {
+        StartCoroutine(PanelFader.RescaleAndFade(createCampaignPanel.transform, createCampaignPanel, 0.85f, 0f, 0f));
+    }
+
     /// <summary> Called by the diferent game buttons to select themselves </summary>
     public void OnClickGameButton(string game)
     {
@@ -48,12 +53,6 @@ public class GameSelectorController : MonoBehaviour
     public void OnClickExitGame()
     {
         Application.Quit();
-    }
-
-    void Start()
-    {
-        // Close Create Campaign panel instantly, in case it was open
-        StartCoroutine(PanelFader.RescaleAndFade(createCampaignPanel.transform, createCampaignPanel, 0.85f, 0f, 0f));
     }
 
     #region --------CAMPAIGNS CREATION--------
@@ -99,12 +98,12 @@ public class GameSelectorController : MonoBehaviour
     private void PF2E_ExtendGameButtons()
     {
         // Campaign buttons
-        foreach (var item in PF2E_Globals.CampaignIDS)
+        foreach (var item in PF2E_Globals.CampaignIDs)
         {
             Transform newButton = Instantiate(PF2E_campaingButtonPrefab, PF2E_container.position, PF2E_container.rotation, PF2E_container);
             ButtonText newButtonScript = newButton.GetComponent<ButtonText>();
-            newButtonScript.text.text = item.name;
-            newButtonScript.button.onClick.AddListener(() => PF2E_OnClickUI_ButtonText(item));
+            newButtonScript.text.text = item.Key.Replace(".json", "");
+            newButtonScript.button.onClick.AddListener(() => PF2E_OnClickUI_ButtonText(item.Key));
             PF2eUI_ButtonTextList.Add(newButton.gameObject);
         }
 
@@ -125,7 +124,7 @@ public class GameSelectorController : MonoBehaviour
     }
 
     // Click on existing campaign button, open campaign panel
-    private void PF2E_OnClickUI_ButtonText(PF2E_CampaignID campaignID)
+    private void PF2E_OnClickUI_ButtonText(string campaignID)
     {
         PF2E_campaingHandler.LoadCampaign(campaignID);
         PF2E_RetractGameButtons();

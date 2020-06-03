@@ -21,7 +21,5 @@ public abstract class Globals : MonoBehaviour
     };
 
     public static UserData UserData = null;
-    public static SystemData SystemData = null;
-
-
+    public static SystemData SystemData = new SystemData();
 }

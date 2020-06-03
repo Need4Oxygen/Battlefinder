@@ -10,40 +10,33 @@ public class PF2E_SceneManager : MonoBehaviour
 
     [SerializeField] private WallTool wallTool = null;
     [SerializeField] private FloorTool floorTool = null;
-    [SerializeField] private Terrain board = null;
+
+    public PF2E_BoardMaps currentBoardMaps = null;
 
     void Awake()
     {
+        floorTool.ResetAlphaMaps();
+        floorTool.ResetHeightMaps();
+
         if (PF2E_Globals.CurrentBoard != null)
         {
-            if (PF2E_Globals.CurrentBoard.terrainAlphamaps != null)
-            {
-                board.terrainData.SetAlphamaps(0, 0, PF2E_Globals.CurrentBoard.terrainAlphamaps);
-                floorTool.SetAlphaMaps(false);
-            }
-            else
-            {
-                floorTool.SetAlphaMaps(true);
-            }
-            if (PF2E_Globals.CurrentBoard.terrainHeights != null)
-            {
-                board.terrainData.SetHeights(0, 0, PF2E_Globals.CurrentBoard.terrainHeights);
-                floorTool.SetHeightMaps(false);
-            }
-            else
-            {
-                floorTool.SetHeightMaps(true);
-            }
+            currentBoardMaps = Json.Deserialize<PF2E_BoardMaps>(PF2E_Globals.CurrentBoard.boardMaps);
 
+            if (currentBoardMaps == null)
+                currentBoardMaps = new PF2E_BoardMaps();
 
+            // Apply found maps
+            if (currentBoardMaps.terrainAlphamaps != null)
+                foreach (var item in currentBoardMaps.terrainAlphamaps)
+                    floorTool.alphamap[(int)item.Key.x, (int)item.Key.y, (int)item.Key.z] = item.Value;
 
-            if (PF2E_Globals.CurrentBoard.wallElements != null)
-                wallTool.GenerateWallElements(PF2E_Globals.CurrentBoard.wallElements);
-        }
-        else
-        {
-            floorTool.SetAlphaMaps(true);
-            floorTool.SetHeightMaps(true);
+            if (currentBoardMaps.terrainHeightmaps != null)
+                foreach (var item in currentBoardMaps.terrainHeightmaps)
+                    floorTool.heightmap[(int)item.Key.x, (int)item.Key.y] = item.Value;
+
+            // Appply foudn wall elements
+            if (currentBoardMaps.wallElements != null)
+                wallTool.GenerateWallElements(currentBoardMaps.wallElements);
         }
     }
 
@@ -61,14 +54,40 @@ public class PF2E_SceneManager : MonoBehaviour
             // Save floors
             int ah = floorTool.board.terrainData.alphamapHeight;
             int aw = floorTool.board.terrainData.alphamapWidth;
+            int l = floorTool.board.terrainData.alphamapLayers;
             int r = floorTool.board.terrainData.heightmapResolution;
-            Debug.Log(ah + "   " + aw + "   " + r);
-            PF2E_Globals.CurrentBoard.terrainAlphamaps = floorTool.board.terrainData.GetAlphamaps(0, 0, ah, aw);
-            PF2E_Globals.CurrentBoard.terrainHeights = floorTool.board.terrainData.GetHeights(0, 0, r, r);
 
-            // Save walls
-            PF2E_Globals.CurrentBoard.wallElements = wallTool.RetrieveWallElements();
+            float[,,] alphaMaps = floorTool.board.terrainData.GetAlphamaps(0, 0, ah, aw);
+            float[,] heightsMaps = floorTool.board.terrainData.GetHeights(0, 0, r, r);
 
+            Dictionary<Vector3, float> alphaDic = new Dictionary<Vector3, float>();
+            Dictionary<Vector2, float> heightDic = new Dictionary<Vector2, float>();
+
+            // This proccess should be paralelized into multiple coroutines, doing so should make this near instant
+            for (int i = 0; i < aw; i++)
+                for (int j = 0; j < ah; j++)
+                    for (int k = 0; k < l; k++)
+                        if (k == 0) // Main layer should be all 1
+                        {
+                            if (alphaMaps[i, j, k] != 1f)
+                                alphaDic.Add(new Vector3(i, j, k), alphaMaps[i, j, k]);
+                        }
+                        else
+                        {
+                            if (alphaMaps[i, j, k] != 0f)
+                                alphaDic.Add(new Vector3(i, j, k), alphaMaps[i, j, k]);
+                        }
+
+            for (int i = 0; i < r; i++)
+                for (int j = 0; j < r; j++)
+                    if (heightsMaps[i, j] != 0.5f)
+                        heightDic.Add(new Vector3(i, j), heightsMaps[i, j]);
+
+            currentBoardMaps.terrainAlphamaps = alphaDic;
+            currentBoardMaps.terrainHeightmaps = heightDic;
+            currentBoardMaps.wallElements = wallTool.RetrieveWallElements();
+
+            PF2E_Globals.CurrentBoard.boardMaps = Json.Serialize(currentBoardMaps);
             PF2E_Globals.SaveBoard(PF2E_Globals.CurrentBoard);
         }
 

@@ -22,7 +22,9 @@ public class FloorTool : MonoBehaviour
 
     [HideInInspector] public int alphamapWidth;
     [HideInInspector] public int alphamapHeight;
-    [HideInInspector] public int mapRes;
+    [HideInInspector] public int alphamapLayers;
+    [HideInInspector] public int heightmapRes;
+
     [HideInInspector] public float[,,] alphamap;
     [HideInInspector] public float[,] heightmap;
 
@@ -137,52 +139,47 @@ public class FloorTool : MonoBehaviour
             currentFloorLayer = 0;
     }
 
-    public void SetAlphaMaps(bool reset)
+    public void SetAlphaMaps()
     {
-        alphamapWidth = board.terrainData.alphamapWidth;
+        board.terrainData.SetAlphamaps(0, 0, alphamap);
+    }
+
+    public void ResetAlphaMaps()
+    {
         alphamapHeight = board.terrainData.alphamapHeight;
+        alphamapWidth = board.terrainData.alphamapWidth;
+        alphamapLayers = board.terrainData.alphamapLayers;
 
-        if (!reset)
-        {
-            alphamap = board.terrainData.GetAlphamaps(0, 0, alphamapWidth, alphamapHeight);
-        }
-        else
-        {
-            int layers = board.terrainData.alphamapLayers;
-            alphamap = new float[alphamapWidth, alphamapHeight, layers];
+        alphamap = new float[alphamapWidth, alphamapHeight, alphamapLayers];
 
-            for (int i = 0; i < alphamapWidth; i++)
-                for (int j = 0; j < alphamapHeight; j++)
-                    for (int k = 0; k < layers; k++)
-                        if (k == 0)
-                            alphamap[i, j, k] = 1;
-                        else
-                            alphamap[i, j, k] = 0;
+        for (int i = 0; i < alphamapWidth; i++)
+            for (int j = 0; j < alphamapHeight; j++)
+                for (int k = 0; k < alphamapLayers; k++)
+                    if (k == 0)
+                        alphamap[i, j, k] = 1;
+                    else
+                        alphamap[i, j, k] = 0;
 
-            board.terrainData.SetAlphamaps(0, 0, alphamap);
-        }
+        board.terrainData.SetAlphamaps(0, 0, alphamap);
     }
 
-    public void SetHeightMaps(bool reset)
+    public void SetHeightMaps()
     {
-        mapRes = board.terrainData.heightmapResolution;
-
-        if (!reset)
-        {
-            heightmap = board.terrainData.GetHeights(0, 0, mapRes, mapRes);
-        }
-        else
-        {
-            heightmap = new float[mapRes, mapRes];
-
-            for (int i = 0; i < mapRes; i++)
-                for (int j = 0; j < mapRes; j++)
-                    heightmap[i, j] = 0.5f;
-
-            board.terrainData.SetHeights(0, 0, heightmap);
-        }
+        board.terrainData.SetHeights(0, 0, heightmap);
     }
 
+    public void ResetHeightMaps()
+    {
+        heightmapRes = board.terrainData.heightmapResolution;
+
+        heightmap = new float[heightmapRes, heightmapRes];
+
+        for (int i = 0; i < heightmapRes; i++)
+            for (int j = 0; j < heightmapRes; j++)
+                heightmap[i, j] = 0.5f;
+
+        board.terrainData.SetHeights(0, 0, heightmap);
+    }
 
     // This code may be used when heights are implemented
 
