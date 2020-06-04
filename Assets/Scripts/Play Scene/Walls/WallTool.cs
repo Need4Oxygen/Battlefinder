@@ -181,7 +181,7 @@ public class WallTool : MonoBehaviour
                 Vector3 position = direction / 2 + path[i - 1];
 
                 Transform phantomWall = Instantiate(phantomWallStyle.wall, position, Quaternion.identity);
-                phantomWall.localScale = new Vector3(phantomWall.localScale.x * direction.magnitude - 0.25f, phantomWall.localScale.y, phantomWall.localScale.z);
+                phantomWall.localScale = new Vector3(phantomWall.localScale.x * direction.magnitude, phantomWall.localScale.y, phantomWall.localScale.z);
                 phantomWall.LookAt(path[i], Vector3.up);
                 phantomWall.RotateAround(phantomWall.position, Vector3.up, 90);
 
@@ -281,6 +281,30 @@ public class WallTool : MonoBehaviour
 
         WallElement newWallWE = newWall.GetComponent<WallElement>();
         newWallWE.wallTool = this;
+
+        Draggable draggable = newWall.GetComponent<Draggable>();
+        if (draggable != null)
+            if (rotation.eulerAngles.y % 90 == 0)                           // If orthogonally aligned
+            {
+                if (newWall.localScale.x % 2 == 0)                          // If wall length is even
+                {
+                    draggable.snapTo = E_Snap.Line;
+                }
+                else                                                        // If wall length is odd
+                {
+                    if ((rotation.eulerAngles.y / 90) % 2 == 0)             // If horizontally aligned
+                        draggable.snapTo = E_Snap.LineH;
+                    else                                                    // If vertically aligned
+                        draggable.snapTo = E_Snap.LineV;
+                }
+            }
+            else if (rotation.eulerAngles.y % 45 == 0)                      // If diagonally aligned
+            {
+                if (newWall.localScale.x % Mathf.Sqrt(8) == 0)              // If wall length is "even"
+                    draggable.snapTo = E_Snap.Line;
+                else                                                        // If wall length is "odd"
+                    draggable.snapTo = E_Snap.Centre;
+            }
 
         everyWall.Add(newWallWE);
     }

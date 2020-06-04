@@ -1,6 +1,4 @@
-﻿public enum E_Snap { None, Slot, Line }
-
-public enum E_Rotation { None, _90º, _45º }
+﻿public enum E_Snap { None, Centre, Line, LineH, LineV }
 
 public enum E_Languages { None, Default, English, Spanish }
 

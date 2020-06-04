@@ -5,12 +5,12 @@ public class Draggable : MonoBehaviour
     [HideInInspector] public bool isClicked = false;
 
     [Header("Draggable Options")]
-    [SerializeField] E_Snap snapTo = 0;
-    [SerializeField] E_Rotation canRotate = 0;
-    [SerializeField] bool canScale = false;
+    public E_Snap snapTo = 0;
+    public int rotation = 90;
+    public bool canScale = false;
     public bool canDuplicate = false;
-    [SerializeField] bool centerOnClick = false;
-    [SerializeField] float hover = 0.2f;
+    public bool centerOnClick = false;
+    public float hover = 0.2f;
 
     private Vector3 clickOffset = Vector3.zero;
 
@@ -67,9 +67,19 @@ public class Draggable : MonoBehaviour
             x = Mathf.Round(transform.localPosition.x);
             z = Mathf.Round(transform.localPosition.z);
         }
-        else
+        else if (snapTo == E_Snap.Centre)
         {
             x = Mathf.Round(transform.localPosition.x - (1f / 2f)) + 1f / 2f;
+            z = Mathf.Round(transform.localPosition.z - (1f / 2f)) + 1f / 2f;
+        }
+        else if (snapTo == E_Snap.LineH)
+        {
+            x = Mathf.Round(transform.localPosition.x - (1f / 2f)) + 1f / 2f;
+            z = Mathf.Round(transform.localPosition.z);
+        }
+        else if (snapTo == E_Snap.LineV)
+        {
+            x = Mathf.Round(transform.localPosition.x);
             z = Mathf.Round(transform.localPosition.z - (1f / 2f)) + 1f / 2f;
         }
 
@@ -79,12 +89,7 @@ public class Draggable : MonoBehaviour
     /// <summary> Rotate the object. </summary>
     protected virtual void Rotate(Vector3 tablePoint)
     {
-        if (canRotate == E_Rotation.None)
-            return;
-        else if (canRotate == E_Rotation._90º)
-            transform.RotateAround(tablePoint, Vector3.up, 90);
-        else if (canRotate == E_Rotation._45º)
-            transform.RotateAround(tablePoint, Vector3.up, 45);
+        transform.RotateAround(tablePoint, Vector3.up, rotation);
     }
 
     /// <summary> Scale the object to given scale. </summary>
@@ -95,7 +100,7 @@ public class Draggable : MonoBehaviour
         if (scale % 2 == 0) // If even
             snapTo = E_Snap.Line;
         else
-            snapTo = E_Snap.Slot;
+            snapTo = E_Snap.Centre;
     }
 
     protected virtual void DragWithMouse()
