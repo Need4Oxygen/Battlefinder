@@ -163,7 +163,6 @@ public class BookScript : MonoBehaviour
                 leftPage = rotatingPage;
                 once = true;
             }
-            Debug.Log(rotatingPage.transform.rotation.eulerAngles.x + " needs to be equal to " + rightPosition.rotation.eulerAngles.x);
             yield return null;
         }
         if (tabbed)

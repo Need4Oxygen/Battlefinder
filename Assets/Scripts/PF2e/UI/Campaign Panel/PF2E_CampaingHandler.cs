@@ -97,7 +97,7 @@ public class PF2E_CampaingHandler : MonoBehaviour
     public void LoadCampaign(string campaignID)
     {
         // Open Campaign Panel
-        campaignName.text = campaignID;
+        campaignName.text = campaignID.Replace(".json", "");
 
         // Set current campaing and refresh boards, players, enemies and npcs
         PF2E_Globals.LoadCampaign(campaignID);
@@ -192,8 +192,6 @@ public class PF2E_CampaingHandler : MonoBehaviour
 
     #endregion
 
-
-
     public void RefreshCampaignContainers()
     {
         // Delete all buttons
@@ -251,6 +249,5 @@ public class PF2E_CampaingHandler : MonoBehaviour
             npcsButtonList.Add(newNPCButton.gameObject);
         }
     }
-
 
 }

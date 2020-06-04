@@ -35,7 +35,7 @@ public class Json
         try
         {
             string jsonString = File.ReadAllText(path);
-            return JsonConvert.DeserializeObject<T>(jsonString);
+            return JsonConvert.DeserializeObject<T>(jsonString, new JsonSerializerSettings { Error = (se, ev) => { ev.ErrorContext.Handled = true; } });
         }
         catch (Exception e)
         {
