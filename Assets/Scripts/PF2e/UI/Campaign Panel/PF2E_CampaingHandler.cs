@@ -16,6 +16,7 @@ public class PF2E_CampaingHandler : MonoBehaviour
 
     [Header("Campaign Stuff")]
     [SerializeField] private CanvasGroup campaignPanel = null;
+    [SerializeField] private GameObject campaignContainersPanel = null;
     [SerializeField] private TMP_Text campaignName = null;
 
     [Header("Boards")]
@@ -80,6 +81,7 @@ public class PF2E_CampaingHandler : MonoBehaviour
     private void OpenCampaingPanel()
     {
         StartCoroutine(PanelFader.RescaleAndFade(campaignPanel.transform, campaignPanel, 1f, 1f, 0.1f));
+        campaignContainersPanel.SetActive(true);
     }
 
     private void CloseCampaingPanel()

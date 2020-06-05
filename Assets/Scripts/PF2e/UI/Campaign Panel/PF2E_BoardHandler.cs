@@ -7,9 +7,6 @@ using UnityEngine.UI;
 
 public class PF2E_BoardHandler : MonoBehaviour
 {
-    [SerializeField] private string pathfinder2ePlayScene = null;
-
-    [Space(15)]
     [SerializeField] private PF2E_CampaingHandler campaignHandler = null;
     [SerializeField] private CanvasGroup boardPanel = null;
     [SerializeField] private TMP_InputField boardNameInput = null;
@@ -95,7 +92,7 @@ public class PF2E_BoardHandler : MonoBehaviour
     public void OnClickPlayButton()
     {
         PF2E_Globals.CurrentBoard = currentBoard;
-        SceneManager.LoadScene(pathfinder2ePlayScene, LoadSceneMode.Single);
+        SceneManager.LoadScene("PlayPF2e", LoadSceneMode.Single);
 
         CloseBoardPanel();
     }
