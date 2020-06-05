@@ -42,7 +42,7 @@ public class SplashController : MonoBehaviour
         {
             splashPanel.SetActive(false);
             musicPlayer.Play();
-            cameraController.SkipOpening();
+            cameraController.ChangeToCloseCamera(true);
             DeactivateSplash();
         }
     }
@@ -83,7 +83,7 @@ public class SplashController : MonoBehaviour
     //called by clickable panel
     public void StopSplashing()
     {
-        cameraController.ChangeToCloseCamera();
+        cameraController.ChangeToCloseCamera(false);
         splashing = false;
         StopAllCoroutines();
         StartCoroutine(PanelFader.Fade(clickToPanel, 0f, 0.5f));
