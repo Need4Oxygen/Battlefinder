@@ -13,9 +13,9 @@ public class PF2E_BoardData
     public List<PActor> npcs = new List<PActor>();
 }
 
-public class PF2E_BoardMaps
+public class PF2E_BoardDetails
 {
-    public Dictionary<Vector3, float> terrainAlphamaps = new Dictionary<Vector3, float>();
-    public Dictionary<Vector2, float> terrainHeightmaps = new Dictionary<Vector2, float>();
+    public Dictionary<string, float> terrainAlphamaps = new Dictionary<string, float>();
+    public Dictionary<string, float> terrainHeightmaps = new Dictionary<string, float>();
     public Dictionary<string, List<PWallElement>> wallElements = new Dictionary<string, List<PWallElement>>();
 }

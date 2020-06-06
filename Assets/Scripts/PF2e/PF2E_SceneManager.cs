@@ -11,7 +11,7 @@ public class PF2E_SceneManager : MonoBehaviour
     [SerializeField] private WallTool wallTool = null;
     [SerializeField] private FloorTool floorTool = null;
 
-    public PF2E_BoardMaps currentBoardMaps = null;
+    public PF2E_BoardDetails currentBoardMaps = null;
 
     void Awake()
     {
@@ -20,19 +20,29 @@ public class PF2E_SceneManager : MonoBehaviour
 
         if (PF2E_Globals.CurrentBoard != null)
         {
-            currentBoardMaps = Json.Deserialize<PF2E_BoardMaps>(PF2E_Globals.CurrentBoard.boardMaps);
+            currentBoardMaps = Json.Deserialize<PF2E_BoardDetails>(PF2E_Globals.CurrentBoard.boardMaps);
 
             if (currentBoardMaps == null)
-                currentBoardMaps = new PF2E_BoardMaps();
+                currentBoardMaps = new PF2E_BoardDetails();
 
             // Apply found maps
+            string[] strArray = null;
             if (currentBoardMaps.terrainAlphamaps != null)
                 foreach (var item in currentBoardMaps.terrainAlphamaps)
-                    floorTool.alphamap[(int)item.Key.x, (int)item.Key.y, (int)item.Key.z] = item.Value;
+                {
+                    strArray = item.Key.Split(',');
+                    floorTool.alphamap[int.Parse(strArray[0]), int.Parse(strArray[1]), int.Parse(strArray[2])] = item.Value;
+                }
 
             if (currentBoardMaps.terrainHeightmaps != null)
                 foreach (var item in currentBoardMaps.terrainHeightmaps)
-                    floorTool.heightmap[(int)item.Key.x, (int)item.Key.y] = item.Value;
+                {
+                    strArray = item.Key.Split(',');
+                    floorTool.heightmap[int.Parse(strArray[0]), int.Parse(strArray[1])] = item.Value;
+                }
+
+            floorTool.SetAlphaMaps();
+            floorTool.SetHeightMaps();
 
             // Appply foudn wall elements
             if (currentBoardMaps.wallElements != null)
@@ -60,28 +70,28 @@ public class PF2E_SceneManager : MonoBehaviour
             float[,,] alphaMaps = floorTool.board.terrainData.GetAlphamaps(0, 0, ah, aw);
             float[,] heightsMaps = floorTool.board.terrainData.GetHeights(0, 0, r, r);
 
-            Dictionary<Vector3, float> alphaDic = new Dictionary<Vector3, float>();
-            Dictionary<Vector2, float> heightDic = new Dictionary<Vector2, float>();
+            Dictionary<string, float> alphaDic = new Dictionary<string, float>();
+            Dictionary<string, float> heightDic = new Dictionary<string, float>();
+
+            string str = "";
 
             // This proccess should be paralelized into multiple coroutines, doing so should make this near instant
             for (int i = 0; i < aw; i++)
                 for (int j = 0; j < ah; j++)
                     for (int k = 0; k < l; k++)
-                        if (k == 0) // Main layer should be all 1
+                        if ((k == 0 && alphaMaps[i, j, k] != 1f) || (k != 0 && alphaMaps[i, j, k] != 0f))
                         {
-                            if (alphaMaps[i, j, k] != 1f)
-                                alphaDic.Add(new Vector3(i, j, k), alphaMaps[i, j, k]);
-                        }
-                        else
-                        {
-                            if (alphaMaps[i, j, k] != 0f)
-                                alphaDic.Add(new Vector3(i, j, k), alphaMaps[i, j, k]);
+                            str = i + "," + j + "," + k;
+                            alphaDic.Add(str, alphaMaps[i, j, k]);
                         }
 
             for (int i = 0; i < r; i++)
                 for (int j = 0; j < r; j++)
                     if (heightsMaps[i, j] != 0.5f)
-                        heightDic.Add(new Vector3(i, j), heightsMaps[i, j]);
+                    {
+                        str = i + "," + j;
+                        heightDic.Add(str, heightsMaps[i, j]);
+                    }
 
             currentBoardMaps.terrainAlphamaps = alphaDic;
             currentBoardMaps.terrainHeightmaps = heightDic;
