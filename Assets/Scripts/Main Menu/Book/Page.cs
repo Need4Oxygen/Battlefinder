@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Page : MonoBehaviour
 {
@@ -7,12 +8,23 @@ public class Page : MonoBehaviour
 
     [HideInInspector] public BookScript bookScript;
 
+    [SerializeField] private int pageNum = 0;
+    [SerializeField] private TMP_Text[] pageNumTexts = null;
     [SerializeField] private GameObject pageRotatingTab = null;
     [SerializeField] private Image[] gradients = null;
 
     private void OnEnable()
     {
         ShowGradient();
+        SetPageNums();
+    }
+
+    private void SetPageNums()
+    {
+        foreach (var tmpText in pageNumTexts)
+        {
+            tmpText.text = pageNum.ToString();
+        }
     }
 
     public void HideGradient()
