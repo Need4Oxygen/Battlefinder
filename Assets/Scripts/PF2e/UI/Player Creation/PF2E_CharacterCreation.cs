@@ -45,7 +45,7 @@ public class PF2E_CharacterCreation : MonoBehaviour
     [SerializeField] private PF2E_APICButton willAPIC = null;
 
     [Header("Random")]
-    [SerializeField] private TMP_Text traitsText = null;
+    // [SerializeField] private TMP_Text traitsText = null;
     [SerializeField] private List<SkillsWrapper> ablMapImages = null;
     [SerializeField] private List<PF2E_APICButton> skills = null;
 
@@ -214,7 +214,7 @@ public class PF2E_CharacterCreation : MonoBehaviour
                 traits += item.name;
             count++;
         }
-        traitsText.text = traits;
+        // traitsText.text = traits;
 
         // Build
         foreach (var item in buildButtonList)
