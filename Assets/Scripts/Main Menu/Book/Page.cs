@@ -9,7 +9,8 @@ public class Page : MonoBehaviour
     [HideInInspector] public BookScript bookScript;
 
     [SerializeField] private int pageNum = 0;
-    [SerializeField] private TMP_Text[] pageNumTexts = null;
+    [SerializeField] private TMP_Text frontPageNum = null;
+    [SerializeField] private TMP_Text backPageNum = null;
     [SerializeField] private GameObject pageRotatingTab = null;
     [SerializeField] private Image[] gradients = null;
 
@@ -21,10 +22,8 @@ public class Page : MonoBehaviour
 
     private void SetPageNums()
     {
-        foreach (var tmpText in pageNumTexts)
-        {
-            tmpText.text = pageNum.ToString();
-        }
+        frontPageNum.text = pageNum.ToString();
+        backPageNum.text = (pageNum + 1).ToString();
     }
 
     public void HideGradient()
