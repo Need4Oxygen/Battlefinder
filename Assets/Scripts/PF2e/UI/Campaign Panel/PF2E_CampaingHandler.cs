@@ -89,10 +89,12 @@ public class PF2E_CampaingHandler : MonoBehaviour
         StartCoroutine(PanelFader.RescaleAndFade(campaignPanel.transform, campaignPanel, 0.85f, 0f, 0.1f));
     }
 
-    /// <summary> Called after asking the name for a new campaign has been promped and accepted. </summary>
+    /// <summary> Called by GameSelectorController after asking the name for a new campaign has been prompted and accepted. </summary>
     public void CreateCampaign(string name)
     {
-        PF2E_Globals.CreateCampaign(name);
+        string newCampaignID = PF2E_Globals.CreateCampaign(name);
+        if (newCampaignID != "")
+            LoadCampaign(newCampaignID);
     }
 
     /// <summary> Load given Campaign. Called by campaign buttons that enumerate existing Campaigns. </summary>

@@ -139,6 +139,7 @@ public class GameSelectorController : MonoBehaviour
 
     private void PF2E_CreateCampaign(string name)
     {
+        PF2E_RetractGameButtons();
         PF2E_campaingHandler.CreateCampaign(name);
         PF2E_RefreshButtons();
     }
