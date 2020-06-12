@@ -9,6 +9,7 @@ public class SplashController : MonoBehaviour
     [Space(15)]
     [SerializeField] private MainMenuCamera cameraController = null;
     [SerializeField] private AudioSource musicPlayer = null;
+    [SerializeField] private AudioSource ambiencePlayer = null;
 
     [Space(15)]
     [SerializeField] private Button clickablePanel = null;
@@ -42,6 +43,7 @@ public class SplashController : MonoBehaviour
         {
             splashPanel.SetActive(false);
             musicPlayer.Play();
+            ambiencePlayer.Play();
             cameraController.ChangeToCloseCamera(true);
             DeactivateSplash();
         }
@@ -57,6 +59,7 @@ public class SplashController : MonoBehaviour
 
         StartCoroutine(PanelFader.Fade(battleFinderPanel, 1f, 1f));
         musicPlayer.Play();
+        ambiencePlayer.Play();
         yield return new WaitForSeconds(3f);
         StartCoroutine(PanelFader.Fade(battleFinderPanel, 0f, 2f));
         yield return new WaitForSeconds(2f);
