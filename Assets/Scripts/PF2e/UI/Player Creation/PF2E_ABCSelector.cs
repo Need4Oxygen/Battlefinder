@@ -206,7 +206,7 @@ public class PF2E_ABCSelector : MonoBehaviour
         ancestryDescription.text = ancestry.description;
         ancestryHitPoints.text = ancestry.hitPoints.ToString();
         ancestrySpeed.text = ancestry.speed.ToString();
-        ancestrySize.text = PF2E_DataBase.SizeFullName(ancestry.size);
+        ancestrySize.text = PF2E_DataBase.Size_Abbr2Full(ancestry.size);
 
 
         // Ability Boosts
@@ -215,9 +215,9 @@ public class PF2E_ABCSelector : MonoBehaviour
         foreach (var item in ancestry.abilityBoosts)
         {
             if (count < total - 1)
-                abilityBoostString += PF2E_DataBase.AbilityToFullName(item.Value.target) + ", ";
+                abilityBoostString += PF2E_DataBase.Abl_Abbr2Full(item.Value.target) + ", ";
             else
-                abilityBoostString += PF2E_DataBase.AbilityToFullName(item.Value.target);
+                abilityBoostString += PF2E_DataBase.Abl_Abbr2Full(item.Value.target);
             count++;
         }
         ancestryAbilityBoosts.text = abilityBoostString;
@@ -229,9 +229,9 @@ public class PF2E_ABCSelector : MonoBehaviour
         foreach (var item in ancestry.abilityFlaws)
         {
             if (count < total - 1)
-                abilityFlawsString += PF2E_DataBase.AbilityToFullName(item.Value.target) + ", ";
+                abilityFlawsString += PF2E_DataBase.Abl_Abbr2Full(item.Value.target) + ", ";
             else
-                abilityFlawsString += PF2E_DataBase.AbilityToFullName(item.Value.target);
+                abilityFlawsString += PF2E_DataBase.Abl_Abbr2Full(item.Value.target);
             count++;
         }
         ancestryAbilityFlaws.text = abilityFlawsString;
@@ -317,9 +317,9 @@ public class PF2E_ABCSelector : MonoBehaviour
         foreach (var item in background.abilityBoostsChoice)
         {
             if (count < total - 1)
-                backgroundAbilityBoostString += PF2E_DataBase.AbilityToFullName(item.Value.target) + ", ";
+                backgroundAbilityBoostString += PF2E_DataBase.Abl_Abbr2Full(item.Value.target) + ", ";
             else
-                backgroundAbilityBoostString += PF2E_DataBase.AbilityToFullName(item.Value.target);
+                backgroundAbilityBoostString += PF2E_DataBase.Abl_Abbr2Full(item.Value.target);
             count++;
         }
         backgroundAbilityBoosts.text = backgroundAbilityBoostString;
@@ -387,7 +387,7 @@ public class PF2E_ABCSelector : MonoBehaviour
             List<string> keyAbilities = new List<string>();
             foreach (var item in classObj.keyAbility)
                 keyAbilities.Add(item.Value.target);
-            classKeyAbility.text = PF2E_DataBase.AbilityToFullName(keyAbilities[0]);
+            classKeyAbility.text = PF2E_DataBase.Abl_Abbr2Full(keyAbilities[0]);
         }
 
         classUnarmed.text = "U"; classUnarmored.text = "U"; classPerception.text = "U";

@@ -84,7 +84,7 @@ public class PF2E_DataBase : MonoBehaviour
         Classes.Clear();
     }
 
-    public static string AbilityToFullName(string abilityAbreviated)
+    public static string Abl_Abbr2Full(string abilityAbreviated)
     {
         switch (abilityAbreviated)
         {
@@ -109,7 +109,7 @@ public class PF2E_DataBase : MonoBehaviour
         }
     }
 
-    public static string AbilityToAbbr(string abilityFullName)
+    public static string Abl_Full2Abbr(string abilityFullName)
     {
         switch (abilityFullName)
         {
@@ -134,7 +134,7 @@ public class PF2E_DataBase : MonoBehaviour
         }
     }
 
-    public static E_PF2E_Ability AbilityToEnum(string abilityAbreviated)
+    public static E_PF2E_Ability Abl_Abbr2Enum(string abilityAbreviated)
     {
         switch (abilityAbreviated)
         {
@@ -159,9 +159,10 @@ public class PF2E_DataBase : MonoBehaviour
         }
     }
 
-    public static E_PF2E_Proficiency ProficiencyToEnum(string proficiencyAbreviated)
+    /// <summary>Recieves a string "U", "T", "E", "M", "L" and returns corresponding enumerator. </summary>
+    public static E_PF2E_Proficiency Prof_Abbr2Enum(string profAbbr)
     {
-        switch (proficiencyAbreviated)
+        switch (profAbbr)
         {
             case "U":
                 return E_PF2E_Proficiency.Untrained;
@@ -175,35 +176,34 @@ public class PF2E_DataBase : MonoBehaviour
                 return E_PF2E_Proficiency.Lengend;
 
             default:
-                Debug.LogWarning("[PF2E_DataBase] Error: poroficiency abreviation (" + proficiencyAbreviated + ") not recognized!");
+                Debug.LogWarning("[PF2E_DataBase] Error: poroficiency abreviation (" + profAbbr + ") not recognized!");
                 return E_PF2E_Proficiency.Untrained;
         }
     }
 
-    public static string SizeFullName(string sizeAbreviated)
+    /// <summary>Recieves a proficiency enumerator and returns corresponding colored string. </summary>
+    public static string Prof_Enum2ColoredAbbr(E_PF2E_Proficiency proficiency)
     {
-        switch (sizeAbreviated)
+        switch (proficiency)
         {
-            case "T":
-                return "Tiny";
-            case "S":
-                return "Small";
-            case "M":
-                return "Medium";
-            case "L":
-                return "Large";
-            case "H":
-                return "Huge";
-            case "G":
-                return "Gargantuan";
+            case E_PF2E_Proficiency.Untrained:
+                return ("<color=#" + ColorUtility.ToHtmlStringRGBA(Globals.Theme["untrained"]) + ">U</color>");
+            case E_PF2E_Proficiency.Trained:
+                return ("<color=#" + ColorUtility.ToHtmlStringRGBA(Globals.Theme["trained"]) + ">T</color>");
+            case E_PF2E_Proficiency.Expert:
+                return ("<color=#" + ColorUtility.ToHtmlStringRGBA(Globals.Theme["expert"]) + ">E</color>");
+            case E_PF2E_Proficiency.Master:
+                return ("<color=#" + ColorUtility.ToHtmlStringRGBA(Globals.Theme["master"]) + ">M</color>");
+            case E_PF2E_Proficiency.Lengend:
+                return ("<color=#" + ColorUtility.ToHtmlStringRGBA(Globals.Theme["leyend"]) + ">L</color>");
 
             default:
-                Debug.LogWarning("[PF2E_DataBase] Error: size abreviation (" + sizeAbreviated + ") not recognized!");
-                return "";
+                Debug.LogWarning("[PF2E_DataBase] Error: poroficiency enum (" + proficiency + ") not recognized!");
+                return ("<color=#" + ColorUtility.ToHtmlStringRGBA(Globals.Theme["untrained"]) + ">T</color>");
         }
     }
 
-    public static E_PF2E_Proficiency GetMaxProfEnum(List<PF2E_Lecture> lectures)
+    public static E_PF2E_Proficiency Prof_FindMax(List<PF2E_Lecture> lectures)
     {
         E_PF2E_Proficiency maxProf = E_PF2E_Proficiency.Untrained;
 
@@ -223,7 +223,7 @@ public class PF2E_DataBase : MonoBehaviour
         return maxProf;
     }
 
-    public static string GetMaxProfLetter(List<PF2E_Lecture> lectures)
+    public static string Prof_FindMaxColoredAbbr(List<PF2E_Lecture> lectures)
     {
         string maxProf = "<color=#" + ColorUtility.ToHtmlStringRGBA(Globals.Theme["untrained"]) + ">U</color>";
 
@@ -241,6 +241,52 @@ public class PF2E_DataBase : MonoBehaviour
         }
 
         return maxProf;
+    }
+
+    public static string Size_Abbr2Full(string abbr)
+    {
+        switch (abbr)
+        {
+            case "T":
+                return "Tiny";
+            case "S":
+                return "Small";
+            case "M":
+                return "Medium";
+            case "L":
+                return "Large";
+            case "H":
+                return "Huge";
+            case "G":
+                return "Gargantuan";
+
+            default:
+                Debug.LogWarning("[PF2E_DataBase] Error: size abreviation (" + abbr + ") not recognized!");
+                return "";
+        }
+    }
+
+    public static string Size_Full2Abbr(string full)
+    {
+        switch (full)
+        {
+            case "Tiny":
+                return "T";
+            case "Small":
+                return "S";
+            case "Medium":
+                return "M";
+            case "Large":
+                return "L";
+            case "Huge":
+                return "H";
+            case "Gargantuan":
+                return "G";
+
+            default:
+                Debug.LogWarning("[PF2E_DataBase] Error: size abreviation (" + full + ") not recognized!");
+                return "";
+        }
     }
 
 }

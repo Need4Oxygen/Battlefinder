@@ -10,7 +10,7 @@ public class PF2E_PlayerData
     public string playerName = "";
 
 
-    //---------------------------------------------------LEVEL--------------------------------------------------
+    // ---------------------------------------------------LEVEL--------------------------------------------------
     private int _experience = 0;
     public int experience
     {
@@ -37,7 +37,7 @@ public class PF2E_PlayerData
     }
 
 
-    //---------------------------------------------------HIT POINTS--------------------------------------------------
+    // ---------------------------------------------------HIT POINTS--------------------------------------------------
     private int hp_class = 0;
     private int hp_ancestry = 0;
 
@@ -84,7 +84,7 @@ public class PF2E_PlayerData
     }
 
 
-    //---------------------------------------------------AC--------------------------------------------------
+    // ---------------------------------------------------AC--------------------------------------------------
     private PF2E_APIC ac;
 
     public int ac_score
@@ -97,11 +97,47 @@ public class PF2E_PlayerData
         }
     }
 
+    public PF2E_APIC AC_Get()
+    {
+        return ac;
+    }
+
+
+    // ---------------------------------------------------HERO POINTS--------------------------------------------------
+    private float _wealth = 15;
+    public float wealth
+    {
+        get { return _wealth; }
+        set { _wealth = value; }
+    }
+
+    public string Wealth_Formated()
+    {
+        return _wealth.ToString("F2");
+    }
+
+
+    // ---------------------------------------------------HERO POINTS--------------------------------------------------
+    private int _heroPoints = 0;
+    public int heroPoints
+    {
+        get { return _heroPoints; }
+        set
+        {
+            if (value > 9)
+                _heroPoints = 9;
+            else if (value < 0)
+                _heroPoints = 0;
+            else
+                _heroPoints = value;
+        }
+    }
+
 
     //---------------------------------------------------CLASS DC--------------------------------------------------
     private List<PF2E_Lecture> classDC_lectures = new List<PF2E_Lecture>();
 
-    public E_PF2E_Proficiency classDC { get { return PF2E_DataBase.GetMaxProfEnum(classDC_lectures); } }
+    public E_PF2E_Proficiency classDC { get { return PF2E_DataBase.Prof_FindMax(classDC_lectures); } }
 
     public void ClassDC_ClearFrom(string from)
     {
@@ -134,7 +170,7 @@ public class PF2E_PlayerData
 
 
     //---------------------------------------------------SIZE--------------------------------------------------
-    private string _size_ancestry = "Medium";
+    private string _size_ancestry = "M";
     private string _size_temp = "";
 
     public string size
@@ -152,8 +188,42 @@ public class PF2E_PlayerData
         }
     }
 
+    public float Size_BulkMod()
+    {
+        string sizeStr = size;
+        if (sizeStr != "")
+            switch (sizeStr)
+            {
+                case "T":
+                    return 0.5f;
+                case "S":
+                    return 1f;
+                case "M":
+                    return 1f;
+                case "L":
+                    return 2f;
+                case "H":
+                    return 4f;
+                case "G":
+                    return 8f;
 
-    //---------------------------------------------------CHARACTER TRAITS--------------------------------------------------
+                default:
+                    Debug.LogWarning("[PF2E_DataBase] Error: size (" + sizeStr + ") not recognized!");
+                    return 1f;
+            }
+        else
+            return 1f;
+    }
+
+
+    // ---------------------------------------------------BULK--------------------------------------------------
+    public float bulk_bonus = 0f; // This has to be turn into effect list
+    public float bulk_encThreshold { get { return Size_BulkMod() * (5 + abl_strengthMod) + bulk_bonus; } }
+    public float bulk_maxThreshold { get { return Size_BulkMod() * (10 + abl_strengthMod) + bulk_bonus; } }
+    public float bulk_current = 5f; // This has to be turn into full Inventory solution that calcs objects weight
+
+
+    // ---------------------------------------------------CHARACTER TRAITS--------------------------------------------------
     public List<PF2E_Trait> traits_list = new List<PF2E_Trait>();
 
     private void Traits_ClearFrom(string from)
@@ -162,23 +232,10 @@ public class PF2E_PlayerData
     }
 
 
-    //---------------------------------------------------LANGUAGES--------------------------------------------------
-    public List<string> languages_list = new List<string>();
+    // ---------------------------------------------------LANGUAGES--------------------------------------------------
+    public string languages = "";
 
-    public void Languages_Add(string newLang)
-    {
-        if (!languages_list.Contains(newLang))
-            languages_list.Add(newLang);
-    }
-
-    public void Languages_Remove(string newLang)
-    {
-        if (languages_list.Contains(newLang))
-            languages_list.Remove(newLang);
-    }
-
-
-    //---------------------------------------------------ABILITIES--------------------------------------------------
+    // ---------------------------------------------------ABILITIES--------------------------------------------------
 
     //       |Ancestry|Background|Class|Lvl1Boost|Lvl5Boost|Lvl10Boost|Lvl15Boost|Lvl20Boost|
     //    STR|        |          |     |         |         |          |          |          |
@@ -250,24 +307,25 @@ public class PF2E_PlayerData
         return Mathf.FloorToInt((ablScore - 10) / 2);
     }
 
+    /// <summary>Return ability int[8,6] map where first dimensions is the boost and the second is the affected ability. </summary>
     public int[,] Abl_GetMap()
     {
         int[,] map = new int[8, 6];
 
         if (initAblBoosts != null)
         {
-            MapAdder(0, 1, initAblBoosts.ancestryBoosts, ref map);
-            MapAdder(0, 1, initAblBoosts.ancestryFree, ref map);
-            MapAdder(0, -1, initAblBoosts.ancestryFlaws, ref map);
-            MapAdder(1, 1, initAblBoosts.backgroundBoosts, ref map);
-            MapAdder(2, 1, initAblBoosts.classBoosts, ref map);
-            MapAdder(3, 1, initAblBoosts.lvl1boosts, ref map);
+            MapConstructor(0, 1, initAblBoosts.ancestryBoosts, ref map);
+            MapConstructor(0, 1, initAblBoosts.ancestryFree, ref map);
+            MapConstructor(0, -1, initAblBoosts.ancestryFlaws, ref map);
+            MapConstructor(1, 1, initAblBoosts.backgroundBoosts, ref map);
+            MapConstructor(2, 1, initAblBoosts.classBoosts, ref map);
+            MapConstructor(3, 1, initAblBoosts.lvl1boosts, ref map);
         }
 
         return map;
     }
 
-    private void MapAdder(int boostIndex, int value, List<string> strings, ref int[,] map)
+    private void MapConstructor(int boostIndex, int value, List<string> strings, ref int[,] map)
     {
         foreach (var item in strings)
         {
@@ -287,7 +345,7 @@ public class PF2E_PlayerData
     }
 
 
-    //---------------------------------------------------SKILLS--------------------------------------------------
+    // ---------------------------------------------------SKILLS--------------------------------------------------
     private Dictionary<string, PF2E_APIC> skills_dic;
 
     public PF2E_APIC Skills_Get(string skillName)
@@ -345,7 +403,7 @@ public class PF2E_PlayerData
     {
         if (skills_dic.ContainsKey(lecture.target))
         {
-            if (skills_dic[lecture.target].profEnum < PF2E_DataBase.ProficiencyToEnum(lecture.proficiency))
+            if (skills_dic[lecture.target].profEnum < PF2E_DataBase.Prof_Abbr2Enum(lecture.proficiency))
             {
                 skills_dic[lecture.target].lectures.Add(lecture);
                 if (lecture.target == "lore 1")
@@ -366,10 +424,10 @@ public class PF2E_PlayerData
     }
 
 
-    //---------------------------------------------------PERCEPTION--------------------------------------------------
+    // ---------------------------------------------------PERCEPTION--------------------------------------------------
     private PF2E_APIC perception;
 
-    public E_PF2E_Proficiency perception_prof { get { return PF2E_DataBase.GetMaxProfEnum(perception.lectures); } }
+    public E_PF2E_Proficiency perception_prof { get { return PF2E_DataBase.Prof_FindMax(perception.lectures); } }
 
     public int perception_score { get { return perception.score; } }
 
@@ -398,7 +456,7 @@ public class PF2E_PlayerData
     }
 
 
-    //---------------------------------------------------SAVES--------------------------------------------------
+    // ---------------------------------------------------SAVES--------------------------------------------------
     private Dictionary<string, PF2E_APIC> saves_dic;
 
     public PF2E_APIC Saves_Get(string savesName)
@@ -441,7 +499,7 @@ public class PF2E_PlayerData
     {
         if (saves_dic.ContainsKey(lecture.target))
         {
-            if (saves_dic[lecture.target].profEnum < PF2E_DataBase.ProficiencyToEnum(lecture.proficiency))
+            if (saves_dic[lecture.target].profEnum < PF2E_DataBase.Prof_Abbr2Enum(lecture.proficiency))
             {
                 saves_dic[lecture.target].lectures.Add(lecture);
                 return true;
@@ -460,7 +518,7 @@ public class PF2E_PlayerData
     }
 
 
-    //---------------------------------------------------WEAPONS/ARMOR PROFICIENCIES--------------------------------------------------
+    // ---------------------------------------------------WEAPONS/ARMOR PROFICIENCIES--------------------------------------------------
     private Dictionary<string, List<PF2E_Lecture>> weaponArmor_lectures = new Dictionary<string, List<PF2E_Lecture>>
     {
         {"unarmed", new List<PF2E_Lecture>() },
@@ -474,15 +532,15 @@ public class PF2E_PlayerData
         {"heavyArmor", new List<PF2E_Lecture>() },
     };
 
-    public E_PF2E_Proficiency unarmed { get { return PF2E_DataBase.GetMaxProfEnum(weaponArmor_lectures["unarmed"]); } }
-    public E_PF2E_Proficiency simpleWeapons { get { return PF2E_DataBase.GetMaxProfEnum(weaponArmor_lectures["simpleWeapons"]); } }
-    public E_PF2E_Proficiency martialWeapons { get { return PF2E_DataBase.GetMaxProfEnum(weaponArmor_lectures["martialWeapons"]); } }
-    public E_PF2E_Proficiency advancedWeapons { get { return PF2E_DataBase.GetMaxProfEnum(weaponArmor_lectures["advancedWeapons"]); } }
+    public E_PF2E_Proficiency unarmed { get { return PF2E_DataBase.Prof_FindMax(weaponArmor_lectures["unarmed"]); } }
+    public E_PF2E_Proficiency simpleWeapons { get { return PF2E_DataBase.Prof_FindMax(weaponArmor_lectures["simpleWeapons"]); } }
+    public E_PF2E_Proficiency martialWeapons { get { return PF2E_DataBase.Prof_FindMax(weaponArmor_lectures["martialWeapons"]); } }
+    public E_PF2E_Proficiency advancedWeapons { get { return PF2E_DataBase.Prof_FindMax(weaponArmor_lectures["advancedWeapons"]); } }
 
-    public E_PF2E_Proficiency unarmored { get { return PF2E_DataBase.GetMaxProfEnum(weaponArmor_lectures["unarmored"]); } }
-    public E_PF2E_Proficiency lightArmor { get { return PF2E_DataBase.GetMaxProfEnum(weaponArmor_lectures["lightArmor"]); } }
-    public E_PF2E_Proficiency mediumArmor { get { return PF2E_DataBase.GetMaxProfEnum(weaponArmor_lectures["mediumArmor"]); } }
-    public E_PF2E_Proficiency heavyArmor { get { return PF2E_DataBase.GetMaxProfEnum(weaponArmor_lectures["heavyArmor"]); } }
+    public E_PF2E_Proficiency unarmored { get { return PF2E_DataBase.Prof_FindMax(weaponArmor_lectures["unarmored"]); } }
+    public E_PF2E_Proficiency lightArmor { get { return PF2E_DataBase.Prof_FindMax(weaponArmor_lectures["lightArmor"]); } }
+    public E_PF2E_Proficiency mediumArmor { get { return PF2E_DataBase.Prof_FindMax(weaponArmor_lectures["mediumArmor"]); } }
+    public E_PF2E_Proficiency heavyArmor { get { return PF2E_DataBase.Prof_FindMax(weaponArmor_lectures["heavyArmor"]); } }
 
     public void WeaponArmor_ClearFrom(string from)
     {
@@ -505,7 +563,7 @@ public class PF2E_PlayerData
     }
 
 
-    //---------------------------------------------------ANCESTRY--------------------------------------------------
+    // ---------------------------------------------------ANCESTRY--------------------------------------------------
     private string _ancestry = "";
     public string ancestry { get { return _ancestry; } set { SetAncestry(value); } }
 
@@ -533,7 +591,7 @@ public class PF2E_PlayerData
     }
 
 
-    //---------------------------------------------------BACKGROUND--------------------------------------------------
+    // ---------------------------------------------------BACKGROUND--------------------------------------------------
     private string _background = "";
     public string background { get { return _background; } set { SetBackground(value); } }
 
@@ -552,7 +610,7 @@ public class PF2E_PlayerData
     }
 
 
-    //---------------------------------------------------CLASS--------------------------------------------------
+    // ---------------------------------------------------CLASS--------------------------------------------------
     private string _class = "";
     public string class_name { get { return _class; } set { SetClass(value); } }
 
@@ -589,14 +647,14 @@ public class PF2E_PlayerData
     }
 
 
-    //---------------------------------------------------TOOLS--------------------------------------------------
+    // ---------------------------------------------------TOOLS--------------------------------------------------
     public void ClearLecturesFrom(List<PF2E_Lecture> lectures, string from)
     {
         lectures.RemoveAll(item => item.from == from || item.from == "");
     }
 
 
-    //---------------------------------------------------BUILD--------------------------------------------------
+    // ---------------------------------------------------BUILD--------------------------------------------------
     public Dictionary<string, Dictionary<string, PF2E_BuildItem>> build = new Dictionary<string, Dictionary<string, PF2E_BuildItem>>();
 
     public T Build_Get<T>(string stage, string itemKey)
@@ -669,7 +727,7 @@ public class PF2E_PlayerData
     }
 
 
-    //---------------------------------------------------LECTURES MANAGEMENT--------------------------------------------------
+    // ---------------------------------------------------LECTURES MANAGEMENT--------------------------------------------------
     private List<PF2E_Lecture> lectures_unused = new List<PF2E_Lecture>();
 
     public bool Lectures_Allocate(PF2E_Lecture lecture)
@@ -703,7 +761,7 @@ public class PF2E_PlayerData
     }
 
 
-    //---------------------------------------------------CONSTRUCTOR--------------------------------------------------
+    // ---------------------------------------------------CONSTRUCTOR--------------------------------------------------
     public PF2E_PlayerData()
     {
         ac = new PF2E_APIC("Armor Class", this, E_PF2E_Ability.Dexterity, 10);

@@ -7,75 +7,58 @@ using UnityEngine.UI;
 
 public class PF2E_CharacterCreation : MonoBehaviour
 {
-    [Serializable] class SkillsWrapper { public List<Image> list = null; } // For Abilities serialization
-
     public DVoid OnCharacterCreationClose = null;
 
     [SerializeField] private PF2E_ABCSelector ABCSelector = null;
     [SerializeField] private PF2E_AblBoostsSelector ablBoostsSelector = null;
     [SerializeField] private CanvasGroup playerPanel = null;
 
-    [Header("ABC Buttons")]
-    [SerializeField] private PF2E_BuildButton ancestryButton = null;
-    [SerializeField] private PF2E_BuildButton backgroundButton = null;
-    [SerializeField] private PF2E_BuildButton classButton = null;
-
     [Header("Name & Level")]
     [SerializeField] private TMP_InputField levelInput = null;
     [SerializeField] private TMP_InputField playerNameInput = null;
 
-    [Header("Health")]
-    [SerializeField] private TMP_Text HPCurrentText = null;
-    [SerializeField] private TMP_Text HPMaxtText = null;
-    [SerializeField] private TMP_Text HPTempText = null;
-    [SerializeField] private TMP_Text DyingMaxtText = null;
-    [SerializeField] private TMP_InputField damageInput = null;
-    [SerializeField] private TMP_InputField dyingInput = null;
-    [SerializeField] private TMP_InputField woundsInput = null;
-    [SerializeField] private TMP_InputField doomInput = null;
+    [Header("Tabs")]
+    [SerializeField] private PF2E_CCStats stats = null;
+    [SerializeField] private Image[] statsTabImages = null;
+    [SerializeField] private Image[] inventoryTabImages = null;
+    [SerializeField] private Image[] companionsTabImages = null;
+    [SerializeField] private Image[] spellsTabImages = null;
 
-    [Header("AC")]
-    [SerializeField] private TMP_Text ACText = null;
-    // Armor and Shield stuff goes here
-
-    [Header("Perception & Saves")]
-    [SerializeField] private PF2E_APICButton perceptionAPIC = null;
-    [SerializeField] private PF2E_APICButton fortitudeAPIC = null;
-    [SerializeField] private PF2E_APICButton reflexAPIC = null;
-    [SerializeField] private PF2E_APICButton willAPIC = null;
-
-    [Header("Random")]
-    // [SerializeField] private TMP_Text traitsText = null;
-    [SerializeField] private List<SkillsWrapper> ablMapImages = null;
-    [SerializeField] private List<PF2E_APICButton> skills = null;
+    [Header("ABC Buttons")]
+    [SerializeField] private PF2E_BuildButton ancestryButton = null;
+    [SerializeField] private PF2E_BuildButton backgroundButton = null;
+    [SerializeField] private PF2E_BuildButton classButton = null;
 
     [Header("Build")]
     [SerializeField] private Transform buildContainer = null;
     [SerializeField] private Transform buildLevelSeparator = null;
     [SerializeField] private Transform buildButton = null;
 
-
     private List<GameObject> buildButtonList = new List<GameObject>();
-    private PF2E_PlayerData initialPlayer = null;
     public PF2E_PlayerData currentPlayer = null;
-
-    // private bool blockInputRefresh;
 
     void Start()
     {
         StartCoroutine(PanelFader.RescaleAndFade(playerPanel.transform, playerPanel, 0.85f, 0f, 0f));
+
+        tabOn = Globals.Theme["background_1"];
+        tabOff = Globals.Theme["background_2"];
     }
+
+    #region --------------------------------------------GENERAL--------------------------------------------
 
     private void OpenPlayerCreationPanel()
     {
         StartCoroutine(PanelFader.RescaleAndFade(playerPanel.transform, playerPanel, 1f, 1f, 0.1f));
+        OnClickTabStats();
     }
 
     private void ClosePlayerCreationPanel()
     {
         StartCoroutine(PanelFader.RescaleAndFade(playerPanel.transform, playerPanel, 0.85f, 0f, 0.1f));
-        initialPlayer = null;
         currentPlayer = null;
+
+        CloseAllTabs();
 
         if (OnCharacterCreationClose != null)
             OnCharacterCreationClose();
@@ -84,10 +67,16 @@ public class PF2E_CharacterCreation : MonoBehaviour
     public void OnClickAcceptButton()
     {
         SavePlayer();
+
+        if (ablBoostsSelector.isOpen)
+            ablBoostsSelector.ClosePlayerInitialAblBoostsPanel();
+
         ClosePlayerCreationPanel();
     }
 
-    #region --------------------------------PLAYERS--------------------------------
+    #endregion
+
+    #region --------------------------------------------PLAYERS--------------------------------------------
 
     /// <summary> Generates new player and open the player panel. </summary>
     public void NewPlayer()
@@ -96,7 +85,6 @@ public class PF2E_CharacterCreation : MonoBehaviour
         currentPlayer = new PF2E_PlayerData();
         currentPlayer.guid = newGuid;
 
-        initialPlayer = currentPlayer;
 
         ABCSelector.OpenSelectorPanel();
         ABCSelector.Display(E_PF2E_ABC.Ancestry);
@@ -147,7 +135,6 @@ public class PF2E_CharacterCreation : MonoBehaviour
     /// <summary> Load new player and open the player panel. </summary>
     public void LoadPlayer(PF2E_PlayerData player)
     {
-        initialPlayer = player;
         currentPlayer = player;
         RefreshPlayerIntoPanel();
         OpenPlayerCreationPanel();
@@ -167,54 +154,15 @@ public class PF2E_CharacterCreation : MonoBehaviour
     /// <summary> Refresh UI with player data. </summary>
     public void RefreshPlayerIntoPanel()
     {
+        if (stats.isOpen)
+            stats.RefreshPlayerIntoPanel();
+
         levelInput.SetTextWithoutNotify(currentPlayer.level.ToString());
         playerNameInput.SetTextWithoutNotify(currentPlayer.playerName);
 
         ancestryButton.subtitle.text = currentPlayer.ancestry;
         backgroundButton.subtitle.text = currentPlayer.background;
         classButton.subtitle.text = currentPlayer.class_name;
-
-        HPCurrentText.text = currentPlayer.hp_current.ToString();
-        HPMaxtText.text = currentPlayer.hp_max.ToString();
-        HPTempText.text = currentPlayer.hp_temp.ToString();
-        DyingMaxtText.text = currentPlayer.hp_dyingMax.ToString();
-
-        ACText.text = currentPlayer.ac_score.ToString();
-
-        perceptionAPIC.Refresh(currentPlayer.Perception_Get());
-        fortitudeAPIC.Refresh(currentPlayer.Saves_Get("fortitude"));
-        reflexAPIC.Refresh(currentPlayer.Saves_Get("reflex"));
-        willAPIC.Refresh(currentPlayer.Saves_Get("will"));
-
-        // Abilities
-        Color active = Globals.Theme["text_2"]; Color unactive = Globals.Theme["background_1"];
-        int[,] abl_map = currentPlayer.Abl_GetMap();
-        for (int i = 0; i < abl_map.GetLength(0); i++)
-            for (int j = 0; j < abl_map.GetLength(1); j++)
-                if (abl_map[i, j] > 0)
-                    ablMapImages[j].list[i].color = active;
-                else if (abl_map[i, j] < 0)
-                    ablMapImages[j].list[i].color = Color.red;
-                else
-                    ablMapImages[j].list[i].color = unactive;
-
-        // Skills
-        var list = currentPlayer.Skills_GetAllAsList();
-        for (int i = 0; i < skills.Count; i++)
-            skills[i].Refresh(list[i]);
-
-        // Traits
-        string traits = "";
-        int count = 0; int total = traits.Length;
-        foreach (var item in currentPlayer.traits_list)
-        {
-            if (count < total - 1)
-                traits += item.name + ", ";
-            else
-                traits += item.name;
-            count++;
-        }
-        // traitsText.text = traits;
 
         // Build
         foreach (var item in buildButtonList)
@@ -249,6 +197,10 @@ public class PF2E_CharacterCreation : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region --------------------------------------------BUILD--------------------------------------------
+
     private PF2E_BuildButton GenerateBuildButton()
     {
         Transform button = Instantiate(buildButton, Vector3.zero, Quaternion.identity, buildContainer);
@@ -274,7 +226,7 @@ public class PF2E_CharacterCreation : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("[Creation] Choice button: " + buildItem.type + " miss functionality!");
+            // Debug.LogWarning("[Creation] Choice button: " + buildItem.type + " miss functionality!");
 
             button.title.text = buildItem.type;
             button.subtitle.text = buildItem.value;
@@ -294,8 +246,67 @@ public class PF2E_CharacterCreation : MonoBehaviour
 
     #endregion
 
+    #region --------------------------------------------TABS--------------------------------------------
 
-    #region --------------------------------BUTTONS & INPUT--------------------------------
+    private Color tabOn;
+    private Color tabOff;
+
+    public void OnClickTabStats()
+    {
+        if (!stats.isOpen)
+        {
+            CloseAllTabs();
+
+            SetTabColors(statsTabImages, true);
+            stats.OpenStatsPanel();
+        }
+    }
+
+    public void OnClickTabInventory()
+    {
+        CloseAllTabs();
+        SetTabColors(inventoryTabImages, true);
+    }
+
+    public void OnClickTabCompanions()
+    {
+        CloseAllTabs();
+        SetTabColors(companionsTabImages, true);
+    }
+
+    public void OnClickTabSpells()
+    {
+        CloseAllTabs();
+        SetTabColors(spellsTabImages, true);
+    }
+
+    private void CloseAllTabs()
+    {
+        if (stats.isOpen)
+            stats.CloseStatsPanel();
+
+        SetTabColors(statsTabImages, false);
+        SetTabColors(inventoryTabImages, false);
+        SetTabColors(companionsTabImages, false);
+        SetTabColors(spellsTabImages, false);
+    }
+
+    private void SetTabColors(Image[] array, bool active)
+    {
+        if (array != null)
+        {
+            if (active)
+                foreach (var item in array)
+                    item.color = tabOn;
+            else
+                foreach (var item in array)
+                    item.color = tabOff;
+        }
+    }
+
+    #endregion
+
+    #region --------------------------------------------BUTTONS & INPUT--------------------------------------------
 
     /// <summary> Called by the level inputfiedld. </summary>
     public void OnEndEditLevel()
@@ -308,31 +319,6 @@ public class PF2E_CharacterCreation : MonoBehaviour
     public void OnEndEditName()
     {
         currentPlayer.playerName = playerNameInput.text;
-        RefreshPlayerIntoPanel();
-    }
-
-    public void OnEndEditDamage()
-    {
-        int value = 0; int.TryParse(damageInput.text, out value);
-        currentPlayer.hp_damage = value;
-        RefreshPlayerIntoPanel();
-    }
-    public void OnEndEditDying()
-    {
-        int value = 0; int.TryParse(dyingInput.text, out value);
-        currentPlayer.hp_dyingCurrent = value;
-        RefreshPlayerIntoPanel();
-    }
-    public void OnEndEditWounds()
-    {
-        int value = 0; int.TryParse(woundsInput.text, out value);
-        currentPlayer.hp_wounds = value;
-        RefreshPlayerIntoPanel();
-    }
-    public void OnEndEditDoom()
-    {
-        int value = 0; int.TryParse(doomInput.text, out value);
-        currentPlayer.hp_doom = value;
         RefreshPlayerIntoPanel();
     }
 

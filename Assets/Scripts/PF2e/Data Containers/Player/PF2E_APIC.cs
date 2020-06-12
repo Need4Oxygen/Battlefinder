@@ -101,9 +101,9 @@ public class PF2E_APIC
         get { return 10 + profScore; }
     }
 
-    public E_PF2E_Proficiency profEnum { get { return PF2E_DataBase.GetMaxProfEnum(lectures); } }
+    public E_PF2E_Proficiency profEnum { get { return PF2E_DataBase.Prof_FindMax(lectures); } }
 
-    public string profLetter { get { return PF2E_DataBase.GetMaxProfLetter(lectures); } }
+    public string profLetter { get { return PF2E_DataBase.Prof_FindMaxColoredAbbr(lectures); } }
 
     public int itemScore = 0;
 

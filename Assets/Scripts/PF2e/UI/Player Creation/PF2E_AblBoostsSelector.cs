@@ -30,6 +30,7 @@ public class PF2E_AblBoostsSelector : MonoBehaviour
 
     private PF2E_InitAblBoostData currentData = null;
 
+    [HideInInspector] public bool isOpen;
 
     void Start()
     {
@@ -43,6 +44,7 @@ public class PF2E_AblBoostsSelector : MonoBehaviour
 
     public void OpenPlayerInitialAblBoostsPanel()
     {
+        isOpen = true;
         StartCoroutine(PanelFader.RescaleAndFade(iAblBoostsPanel.transform, iAblBoostsPanel, 1f, 1f, 0.1f));
 
         currentData = creation.currentPlayer.Build_Get<PF2E_InitAblBoostData>("Level 1", "Initial Ability Boosts");
@@ -54,6 +56,7 @@ public class PF2E_AblBoostsSelector : MonoBehaviour
 
     public void ClosePlayerInitialAblBoostsPanel()
     {
+        isOpen = false;
         StartCoroutine(PanelFader.RescaleAndFade(iAblBoostsPanel.transform, iAblBoostsPanel, 0.85f, 0f, 0.1f));
 
         currentData = null;
@@ -120,7 +123,10 @@ public class PF2E_AblBoostsSelector : MonoBehaviour
 
             // Ready a dropdown
             List<TMP_Dropdown.OptionData> optionList = CreateOptionList();
-            optionList.RemoveAll(v => alreadyBoosted.Contains(v.text) && v.text != AbilityToFullName(currentData.ancestryFree[counter]));
+            if (currentData.ancestryFree.Count > 0)
+                optionList.RemoveAll(v => alreadyBoosted.Contains(v.text) && v.text != AbilityToFullName(currentData.ancestryFree[counter]));
+            else
+                optionList.RemoveAll(v => alreadyBoosted.Contains(v.text));
             drop.AddOptions(optionList);
             drop.interactable = true;
             drop.onValueChanged.AddListener((v) => OnValueChangedAncestryDropdown(v));
@@ -423,7 +429,7 @@ public class PF2E_AblBoostsSelector : MonoBehaviour
     private string AbilityToAbbr(string ablFullName)
     {
         if (ablFullName != "" && ablFullName != "None")
-            return PF2E_DataBase.AbilityToAbbr(ablFullName);
+            return PF2E_DataBase.Abl_Full2Abbr(ablFullName);
         else
             return "";
     }
@@ -431,7 +437,7 @@ public class PF2E_AblBoostsSelector : MonoBehaviour
     private string AbilityToFullName(string ablAbbr)
     {
         if (ablAbbr != "" && ablAbbr != "None")
-            return PF2E_DataBase.AbilityToFullName(ablAbbr);
+            return PF2E_DataBase.Abl_Abbr2Full(ablAbbr);
         else
             return "";
     }
