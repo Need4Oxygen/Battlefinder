@@ -152,9 +152,11 @@ public class PF2E_CCStats : MonoBehaviour
         traitsText.text = traits;
 
         // Languages
+        string languages = "";
         if (creation.currentPlayer.languages != null)
             if (creation.currentPlayer.languages != "")
-                languagesInput.SetTextWithoutNotify(creation.currentPlayer.languages);
+                languages = creation.currentPlayer.languages;
+        languagesInput.SetTextWithoutNotify(languages);
 
         // Speeds
         speedBaseText.text = creation.currentPlayer.speed_base.ToString();
