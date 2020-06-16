@@ -9,7 +9,6 @@ public class FloorTool : MonoBehaviour
     [HideInInspector] public bool isSelected = false;
     [HideInInspector] public int currentFloorLayer = 0;
 
-    [SerializeField] private InputManager inputManager = null;
     [SerializeField] private FloorBrush brush = null;
     [SerializeField] public Terrain board = null;
     [SerializeField] private Button toolButton = null;
@@ -104,7 +103,7 @@ public class FloorTool : MonoBehaviour
 
     private void UpdateBrushPos()
     {
-        brush.transform.position = inputManager.MousePosInBoard(false);
+        brush.transform.position = InputManager.TablePoint(false);
     }
 
     private void OnPointerDown()

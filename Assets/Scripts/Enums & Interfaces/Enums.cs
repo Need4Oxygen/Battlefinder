@@ -1,8 +1,8 @@
-﻿public enum E_Snap { None, Centre, Line, LineH, LineV }
+﻿public enum E_Snap { None, Tile, Line, LineH, LineV }
 
 public enum E_Languages { None, Default, English, Spanish }
 
-public enum E_Tools { None, Default, Selection, Walls, Floors }
+public enum E_Tools { None, Default, Move, Selection, Walls, Floors }
 
 public enum E_Game { None, Default, PF2E }
 

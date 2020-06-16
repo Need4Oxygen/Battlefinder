@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 1317596277697171626}
   - component: {fileID: 4046907724978989722}
   - component: {fileID: 3489615334693379343}
-  m_Layer: 15
+  - component: {fileID: 1501214688645777860}
+  m_Layer: 12
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,6 +80,24 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1501214688645777860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3637888258377908178}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 6e4f26dca34a46d4792b902fc997e631, type: 2}
+  color: {r: 1, g: 0, b: 0, a: 1}
+  mask: {fileID: 0}
+  fresnelScale: 2
+  fresnelPower: 2
+  alphaThreshold: 0.5
 --- !u!1 &7171994704374377622
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,9 +108,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7171994704374377621}
   - component: {fileID: 7171994704374377620}
-  - component: {fileID: 7171994704374377623}
   - component: {fileID: -3599271116543383223}
-  m_Layer: 15
+  m_Layer: 12
   m_Name: DarkStone Knot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,25 +144,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.4, y: 2, z: 0.4}
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &7171994704374377623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7171994704374377622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 064adb9962efe1d4193028f69f6daed5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isClicked: 0
-  snapTo: 2
-  canRotate: 0
-  canScale: 0
-  canDuplicate: 1
-  centerOnClick: 0
-  hover: 0
 --- !u!114 &-3599271116543383223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,5 +157,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallTool: {fileID: 0}
+  outline: {fileID: 1501214688645777860}
   type: 2
   style: {fileID: 11400000, guid: 5c22f64bf83a38a44a7fc33ed3322d5a, type: 2}
+  rotation: 90
+  snapTo: 2

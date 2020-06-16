@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using BoardItems;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -45,12 +46,12 @@ public class WallTool : MonoBehaviour
     {
         if (isSelected)
         {
-            if (Input.GetButtonDown("Walls"))
+            if (Input.GetButtonDown("Walls Tool"))
             {
                 isWalling = true;
                 pointer.gameObject.SetActive(true);
             }
-            if (Input.GetButtonUp("Walls"))
+            if (Input.GetButtonUp("Walls Tool"))
             {
                 isWalling = false;
                 pointer.gameObject.SetActive(false);
@@ -114,7 +115,7 @@ public class WallTool : MonoBehaviour
 
     private void UpdatePointerPos()
     {
-        pointer.position = inputManager.MousePosInBoard(true);
+        pointer.position = InputManager.TablePoint(true);
     }
 
     private void ToolSelected()
@@ -281,30 +282,7 @@ public class WallTool : MonoBehaviour
 
         WallElement newWallWE = newWall.GetComponent<WallElement>();
         newWallWE.wallTool = this;
-
-        Draggable draggable = newWall.GetComponent<Draggable>();
-        if (draggable != null)
-            if (rotation.eulerAngles.y % 90 == 0)                           // If orthogonally aligned
-            {
-                if (newWall.localScale.x % 2 == 0)                          // If wall length is even
-                {
-                    draggable.snapTo = E_Snap.Line;
-                }
-                else                                                        // If wall length is odd
-                {
-                    if ((rotation.eulerAngles.y / 90) % 2 == 0)             // If horizontally aligned
-                        draggable.snapTo = E_Snap.LineH;
-                    else                                                    // If vertically aligned
-                        draggable.snapTo = E_Snap.LineV;
-                }
-            }
-            else if (rotation.eulerAngles.y % 45 == 0)                      // If diagonally aligned
-            {
-                if (newWall.localScale.x % Mathf.Sqrt(8) == 0)              // If wall length is "even"
-                    draggable.snapTo = E_Snap.Line;
-                else                                                        // If wall length is "odd"
-                    draggable.snapTo = E_Snap.Centre;
-            }
+        newWallWE.snapTo = DetermineWallElementSnap(newWallWE);
 
         everyWall.Add(newWallWE);
     }
@@ -324,6 +302,37 @@ public class WallTool : MonoBehaviour
             if (obj != null)
                 everyWall.Remove(obj);
             Destroy(obj.gameObject);
+        }
+    }
+
+    public static E_Snap DetermineWallElementSnap(WallElement element)
+    {
+        Transform trans = element.transform;
+
+        if (trans.rotation.eulerAngles.y % 90 == 0)                           // If orthogonally aligned
+        {
+            if (trans.localScale.x % 2 == 0)                                    // If wall length is even
+            {
+                return E_Snap.Line;
+            }
+            else                                                                // If wall length is odd
+            {
+                if ((trans.rotation.eulerAngles.y / 90) % 2 == 0)                   // If horizontally aligned
+                    return E_Snap.LineH;
+                else                                                                // If vertically aligned
+                    return E_Snap.LineV;
+            }
+        }
+        else if (trans.rotation.eulerAngles.y % 45 == 0)                      // If diagonally aligned
+        {
+            if (trans.localScale.x % Mathf.Sqrt(8) == 0)                        // If wall length is "even"
+                return E_Snap.Line;
+            else                                                                // If wall length is "odd"
+                return E_Snap.Tile;
+        }
+        else
+        {
+            return E_Snap.None;
         }
     }
 }
