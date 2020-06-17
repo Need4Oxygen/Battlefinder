@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class MoveTool : MonoBehaviour
 {
+    public static List<IMovable> MovingItems = new List<IMovable>();
+
     [HideInInspector] public bool isSelected = false;
 
     [SerializeField] private Button toolButton = null;
@@ -59,63 +61,86 @@ public class MoveTool : MonoBehaviour
 
     #region --------------------------------------MOUSE INPUT--------------------------------------
 
-    IMovable item = null;
+    bool tempSelection = false;
 
     public void OnPointerDown()
     {
-        // If selection tool have stuff, move, rotate, scale... that stuff
-        // If not, select this then move, rotate, scale...
+        // Search for moveables
+        List<IMovable> foundMoveables = new List<IMovable>();
+        IMovable movable = SearchMovableUnderMouse();
+        ISelectable selectable = movable as ISelectable;
 
-        if (SelectionTool.SelectedItems.Count > 0)
+        void TempSelection()
         {
-            foreach (var item in SelectionTool.SelectedItems)
-            {
-                IMovable moveable = item as IMovable;
-                if (moveable != null)
-                    moveable.Move(true);
-            }
+            SelectionTool.DeselectAll();
+            tempSelection = true;
+            SelectionTool.Select(selectable);
         }
-        else
-        {
-            item = SearchMovableUnderMouse();
-            if (item != null)
-            {
-                item.Move(true);
-            }
-        }
+
+        if (selectable != null)
+            if (SelectionTool.SelectedItems.Count > 0)
+                if (SelectionTool.SelectedItems.Contains(selectable))
+                    foreach (var item in SelectionTool.SelectedItems)
+                    {
+                        IMovable m2 = item as IMovable;
+                        if (m2 != null)
+                            foundMoveables.Add(m2);
+                    }
+                else
+                    TempSelection();
+            else
+                TempSelection();
+
+        if (movable != null && !foundMoveables.Contains(movable))
+            foundMoveables.Add(movable);
+
+        // Start movement
+        if (foundMoveables.Count > 0)
+            foreach (var item in foundMoveables)
+                MovementStart(item);
     }
 
     public void OnPointerUp()
     {
-        if (SelectionTool.SelectedItems.Count > 0)
+        if (tempSelection)
         {
-            foreach (var item in SelectionTool.SelectedItems)
-            {
-                IMovable moveable = item as IMovable;
-                if (moveable != null)
-                    moveable.Move(false);
-            }
+            SelectionTool.DeselectAll();
+            tempSelection = false;
         }
-        else
-        {
-            if (item != null)
-            {
-                item.Move(false);
-                item = null;
-            }
-        }
+
+        if (MovingItems.Count > 0)
+            MovementStopAll(true);
     }
 
-    private IMovable SearchMovableUnderMouse()
+    public static void MovementStart(IMovable movable)
+    {
+        movable.MoveStart();
+        MovingItems.Add(movable);
+    }
+
+    public static void MovementStop(IMovable movable, bool snap)
+    {
+        movable.MoveStop(snap);
+        MovingItems.Remove(movable);
+    }
+
+    public static void MovementStopAll(bool snap)
+    {
+        foreach (var item in MovingItems)
+            item.MoveStop(snap);
+        MovingItems.Clear();
+    }
+
+    public static IMovable SearchMovableUnderMouse()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, 100f, InputManager.SelectablesLayer))
         {
-            IMovable draggable = hit.collider.GetComponent<IMovable>();
-            if (draggable != null)
-                return draggable;
+            IMovable movable = hit.collider.GetComponent<IMovable>();
+            if (movable != null)
+                return movable;
         }
         return null;
     }

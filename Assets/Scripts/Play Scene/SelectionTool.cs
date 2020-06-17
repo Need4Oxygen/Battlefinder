@@ -7,13 +7,13 @@ using UnityEngine.UI;
 [RequireComponent(typeof(LineRenderer))]
 public class SelectionTool : MonoBehaviour
 {
+    public static List<ISelectable> SelectedItems = new List<ISelectable>();
+
     [HideInInspector] public bool isSelected = false;
 
     [SerializeField] private Button toolButton = null;
     [SerializeField] private LineRenderer line = null;
     [SerializeField] private float lineHover = 0.02f;
-
-    public static List<ISelectable> SelectedItems = new List<ISelectable>();
 
     private Vector3 firstPoint = Vector3.zero;
     private Vector3 lastPoint = Vector3.zero;
@@ -39,6 +39,9 @@ public class SelectionTool : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
             if (Input.GetKey(KeyCode.LeftControl))
                 DeselectAll();
+
+        // if (Input.GetKeyDown(KeyCode.R))
+        // if ()
     }
 
     private void Unsubscribe()
@@ -71,17 +74,8 @@ public class SelectionTool : MonoBehaviour
         toolButton.image.color = Globals.Theme["text_1"];
     }
 
-    public void DeselectAll()
-    {
-        foreach (var item in SelectedItems)
-            item.Select(false);
-        SelectedItems.Clear();
-    }
-
     public void OnPointerDown()
     {
-        DeselectAll();
-
         Vector3 point = InputManager.TablePoint(false, lineHover);
         firstPoint = point;
         lastPoint = point;
@@ -95,26 +89,48 @@ public class SelectionTool : MonoBehaviour
     {
         line.enabled = false;
 
+        // Get modifiers
+        bool altMod = Input.GetKey(KeyCode.LeftAlt);
+        bool ctrMod = Input.GetKey(KeyCode.LeftControl);
+
+        if (!ctrMod && !altMod)
+            DeselectAll();
+
+        // Stop defining search area
         StopCoroutine(selectCoroutine);
         selectCoroutine = null;
 
-        Vector3 center = (lastPoint - firstPoint) / 2 + firstPoint;
-        center = new Vector3(center.x, 1f, center.z);
+        // Define collision box
+        Vector3 center = (lastPoint - firstPoint) / 2 + firstPoint; center = new Vector3(center.x, 1f, center.z);
         Vector3 halfExt = new Vector3(Mathf.Abs(firstPoint.x - lastPoint.x) / 2, 1f, Mathf.Abs(firstPoint.z - lastPoint.z) / 2);
 
+        // Search for selectables
         Collider[] cols = Physics.OverlapBox(center, halfExt, Quaternion.identity, InputManager.SelectablesLayer);
+        List<ISelectable> selection = new List<ISelectable>();
 
-        if (cols != null)
-            if (cols.Length > 0)
-                foreach (var item in cols)
-                {
-                    ISelectable selectable = item.GetComponent<ISelectable>();
-                    if (selectable != null)
-                    {
-                        selectable.Select(true);
-                        SelectedItems.Add(selectable);
-                    }
-                }
+        if (cols.Length > 0)
+        {
+            foreach (var item in cols)
+            {
+                ISelectable selectable = item.GetComponent<ISelectable>();
+                if (selectable != null)
+                    selection.Add(selectable);
+            }
+        }
+        else
+        {
+            ISelectable selectable = SearchSelectableUnderMouse();
+            if (selectable != null)
+                selection.Add(selectable);
+        }
+
+        // Do things with selected things
+        if (selection.Count > 0)
+            foreach (var item in selection)
+                if (!altMod)
+                    Select(item);
+                else
+                    Deselect(item);
     }
 
     private IEnumerator SelectCorou()
@@ -134,6 +150,39 @@ public class SelectionTool : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    public static void Select(ISelectable selectable)
+    {
+        selectable.Select(true);
+        SelectedItems.Add(selectable);
+    }
+
+    public static void Deselect(ISelectable selectable)
+    {
+        selectable.Select(false);
+        SelectedItems.Remove(selectable);
+    }
+
+    public static void DeselectAll()
+    {
+        foreach (var item in SelectedItems)
+            item.Select(false);
+        SelectedItems.Clear();
+    }
+
+    public static ISelectable SearchSelectableUnderMouse()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, 100f, InputManager.SelectablesLayer))
+        {
+            ISelectable selectable = hit.collider.GetComponent<ISelectable>();
+            if (selectable != null)
+                return selectable;
+        }
+        return null;
     }
 
 }

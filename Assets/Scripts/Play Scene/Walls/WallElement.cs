@@ -43,18 +43,23 @@ public class WallElement : BoardItem, ISelectable, ISnapable, IMovable, IRotable
     private Coroutine moveCorou = null;
     private Vector3 clickOffset = Vector3.zero;
 
-    public void Move(bool value)
+    public void MoveStart()
     {
-        if (value == true && moveCorou == null)
+        if (moveCorou == null)
         {
             clickOffset = transform.position - InputManager.TablePoint(false);
             moveCorou = StartCoroutine(Move());
         }
-        else if (value == false && moveCorou != null)
+    }
+
+    public void MoveStop(bool snap)
+    {
+        if (moveCorou != null)
         {
             StopCoroutine(moveCorou);
             moveCorou = null;
-            Snap();
+            if (snap)
+                Snap();
         }
     }
 

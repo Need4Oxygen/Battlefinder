@@ -14,7 +14,8 @@ namespace BoardItems
 
     public interface IMovable
     {
-        void Move(bool value);
+        void MoveStart();
+        void MoveStop(bool snap);
     }
 
     public interface ISnapable
