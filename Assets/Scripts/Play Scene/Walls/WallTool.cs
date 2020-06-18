@@ -9,7 +9,6 @@ public class WallTool : MonoBehaviour
     [HideInInspector] public bool isSelected = false;
     [HideInInspector] public bool isWalling = false;
 
-    [SerializeField] private InputManager inputManager = null;
     [SerializeField] private Button toolButton = null;
 
     [Space(15)]

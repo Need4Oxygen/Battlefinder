@@ -17,7 +17,6 @@ public class SelectionTool : MonoBehaviour
 
     private Vector3 firstPoint = Vector3.zero;
     private Vector3 lastPoint = Vector3.zero;
-    private bool isSelecting = false;
     private Coroutine selectCoroutine = null;
 
     void Awake()
@@ -40,8 +39,14 @@ public class SelectionTool : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftControl))
                 DeselectAll();
 
-        // if (Input.GetKeyDown(KeyCode.R))
-        // if ()
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            int count = SelectedItems.Count;
+            if (count > 1)
+                Rotation();
+            else if (count > 0)
+                BulkRotation();
+        }
     }
 
     private void Unsubscribe()
@@ -74,7 +79,7 @@ public class SelectionTool : MonoBehaviour
         toolButton.image.color = Globals.Theme["text_1"];
     }
 
-    public void OnPointerDown()
+    private void OnPointerDown()
     {
         Vector3 point = InputManager.TablePoint(false, lineHover);
         firstPoint = point;
@@ -85,7 +90,7 @@ public class SelectionTool : MonoBehaviour
         line.enabled = true;
     }
 
-    public void OnPointerUp()
+    private void OnPointerUp()
     {
         line.enabled = false;
 
@@ -151,6 +156,23 @@ public class SelectionTool : MonoBehaviour
             yield return null;
         }
     }
+
+    private void Rotation()
+    {
+
+
+
+    }
+
+    private void BulkRotation()
+    {
+
+
+
+    }
+
+
+    // Select logic global
 
     public static void Select(ISelectable selectable)
     {

@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class WallElement : BoardItem, ISelectable, ISnapable, IMovable, IRotable, IBulkRotable, IScalable, IDuplicable, IDestroyable
 {
-    [HideInInspector] public WallTool wallTool;
+    [HideInInspector] public WallTool wallTool = null;
 
-    [SerializeField] private OutlineObject outline;
+    [SerializeField] private OutlineObject outline = null;
 
-    public E_WallElement type;
-    public SO_WallStyle style;
+    public E_WallElement type = 0;
+    public SO_WallStyle style = null;
 
     // private bool isSelected = false;
 
