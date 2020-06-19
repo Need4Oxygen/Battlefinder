@@ -12,8 +12,6 @@ public class WallElement : BoardItem, ISelectable, ISnapable, IMovable, IRotable
     public E_WallElement type = 0;
     public SO_WallStyle style = null;
 
-    // private bool isSelected = false;
-
     void Awake()
     {
         if (outline != null)
@@ -26,15 +24,9 @@ public class WallElement : BoardItem, ISelectable, ISnapable, IMovable, IRotable
     {
         if (outline != null)
             if (value)
-            {
-                // isSelected = true;
                 outline.enabled = true;
-            }
             else
-            {
-                // isSelected = false;
                 outline.enabled = false;
-            }
     }
 
 
@@ -47,7 +39,7 @@ public class WallElement : BoardItem, ISelectable, ISnapable, IMovable, IRotable
     {
         if (moveCorou == null)
         {
-            clickOffset = transform.position - InputManager.TablePoint(false);
+            clickOffset = MoveSetOffset();
             moveCorou = StartCoroutine(Move());
         }
     }
@@ -61,6 +53,11 @@ public class WallElement : BoardItem, ISelectable, ISnapable, IMovable, IRotable
             if (snap)
                 Snap();
         }
+    }
+
+    private Vector3 MoveSetOffset()
+    {
+        return transform.position - InputManager.TablePoint(false);
     }
 
     private IEnumerator Move()
@@ -80,21 +77,23 @@ public class WallElement : BoardItem, ISelectable, ISnapable, IMovable, IRotable
     public int rotation = 90;
 
     /// <summary>Rotate the object. </summary>
-    public void Rotate()
+    public void Rotate(Vector3 centre, int angle)
     {
-        Vector3 tablePoint = InputManager.TablePoint(false);
-        transform.RotateAround(tablePoint, Vector3.up, rotation);
-        snapTo = WallTool.DetermineWallElementSnap(this);
+        transform.RotateAround(centre, Vector3.up, angle);
+        if (type == E_WallElement.Wall)
+            snapTo = WallTool.DetermineWallElementSnap(this);
     }
 
 
-    // --------------------------------------ROTATION--------------------------------------
+    // --------------------------------------BULK ROTATION--------------------------------------
 
     /// <summary>Rotate the object. </summary>
     public void BulkRotate(Vector3 centre, int angle)
     {
         transform.RotateAround(centre, Vector3.up, angle);
-        snapTo = WallTool.DetermineWallElementSnap(this);
+        clickOffset = MoveSetOffset();
+        if (type == E_WallElement.Wall)
+            snapTo = WallTool.DetermineWallElementSnap(this);
     }
 
 

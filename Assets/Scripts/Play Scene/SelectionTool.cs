@@ -42,10 +42,13 @@ public class SelectionTool : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             int count = SelectedItems.Count;
-            if (count > 1)
-                Rotation();
-            else if (count > 0)
-                BulkRotation();
+            if (count > 0)
+            {
+                if (count == 1)
+                    Rotation();
+                else
+                    BulkRotation();
+            }
         }
     }
 
@@ -159,18 +162,25 @@ public class SelectionTool : MonoBehaviour
 
     private void Rotation()
     {
-
-
-
+        foreach (var item in SelectedItems)
+        {
+            IRotable rotable = item as IRotable;
+            if (rotable != null)
+                rotable.Rotate(InputManager.TablePoint(true), 90);
+        }
     }
 
     private void BulkRotation()
     {
-
-
-
+        // If they are moving, they should rotate around mouse
+        // If they are not, they should rotate around mass centre
+        foreach (var item in SelectedItems)
+        {
+            IBulkRotable rotable = item as IBulkRotable;
+            if (rotable != null)
+                rotable.BulkRotate(InputManager.TablePoint(true), 90);
+        }
     }
-
 
     // Select logic global
 

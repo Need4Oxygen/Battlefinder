@@ -25,7 +25,7 @@ namespace BoardItems
 
     public interface IRotable
     {
-        void Rotate();
+        void Rotate(Vector3 centre, int angle);
     }
 
     public interface IBulkRotable
