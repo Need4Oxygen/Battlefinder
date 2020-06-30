@@ -95,23 +95,23 @@ Always try to comment public functions, especially if they are called via UI bec
 ```
 ## Third Party Assets
 
-https://www.youtube.com/watch?v=LBpKUIyOHdo&t=
-https://www.textures.com/download/3dscans0055/127567
-https://www.textures.com/download/pbr0194/133232
-https://www.textures.com/download/pbr0579/138828
-https://www.textures.com/download/pbr0007/133043
-https://www.textures.com/download/pbr0183/133222
-https://www.textures.com/download/pbr0433/138073
-https://www.textures.com/download/substance0111/131745
-https://www.textures.com/download/pbr0139/133174
-https://paizo.com/community/communityuse/package
-https://freesound.org/people/KToppMod/sounds/512282/
-https://assetstore.unity.com/packages/3d/props/furniture/medieval-tavern-pack-112546
-https://assetstore.unity.com/packages/3d/environments/fantasy/blacksmith-s-forge-17785
-https://assetstore.unity.com/packages/3d/environments/wooden-bridge-64399
-https://assetstore.unity.com/packages/3d/environments/fantasy/medieval-tent-small-18736
-https://assetstore.unity.com/packages/3d/environments/historic/medieval-barrows-and-wagons-33411
-https://assetstore.unity.com/packages/3d/environments/historic/modular-medieval-lanterns-85527
-https://assetstore.unity.com/packages/3d/props/free-medieval-props-asset-pack-131420
-https://assetstore.unity.com/packages/3d/environments/free-medieval-room-131004#reviews
-https://assetstore.unity.com/packages/3d/environments/fantasy/mega-fantasy-props-pack-87811
+* https://www.youtube.com/watch?v=LBpKUIyOHdo&t=
+* https://www.textures.com/download/3dscans0055/127567
+* https://www.textures.com/download/pbr0194/133232
+* https://www.textures.com/download/pbr0579/138828
+* https://www.textures.com/download/pbr0007/133043
+* https://www.textures.com/download/pbr0183/133222
+* https://www.textures.com/download/pbr0433/138073
+* https://www.textures.com/download/substance0111/131745
+* https://www.textures.com/download/pbr0139/133174
+* https://paizo.com/community/communityuse/package
+* https://freesound.org/people/KToppMod/sounds/512282/
+* https://assetstore.unity.com/packages/3d/props/furniture/medieval-tavern-pack-112546
+* https://assetstore.unity.com/packages/3d/environments/fantasy/blacksmith-s-forge-17785
+* https://assetstore.unity.com/packages/3d/environments/wooden-bridge-64399
+* https://assetstore.unity.com/packages/3d/environments/fantasy/medieval-tent-small-18736
+* https://assetstore.unity.com/packages/3d/environments/historic/medieval-barrows-and-wagons-33411
+* https://assetstore.unity.com/packages/3d/environments/historic/modular-medieval-lanterns-85527
+* https://assetstore.unity.com/packages/3d/props/free-medieval-props-asset-pack-131420
+* https://assetstore.unity.com/packages/3d/environments/free-medieval-room-131004#reviews
+* https://assetstore.unity.com/packages/3d/environments/fantasy/mega-fantasy-props-pack-87811
