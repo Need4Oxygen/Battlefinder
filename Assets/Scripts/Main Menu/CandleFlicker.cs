@@ -25,6 +25,7 @@ public class CandleFlicker : MonoBehaviour
     private Vector3 startPos;
     private float startIntensity;
     private float startRange;
+    private float positionSeed;
 
     void Awake()
     {
@@ -34,6 +35,7 @@ public class CandleFlicker : MonoBehaviour
         startPos = transform.localPosition;
         startIntensity = lightSource.intensity;
         startRange = lightSource.range;
+        positionSeed = (transform.position.x / transform.position.y) + transform.position.z;
     }
 
     void Update()
@@ -74,7 +76,7 @@ public class CandleFlicker : MonoBehaviour
     //Perlin float between -1 and 1.
     private float GetPerlin(float seed, float counter)
     {
-        return (Mathf.PerlinNoise(seed, counter) - 0.5f) * 2f;
+        return (Mathf.PerlinNoise(seed + positionSeed, counter) - 0.5f) * 2f;
     }
 
     //Generate a Vector3, using different seeds to ensure different numbers
