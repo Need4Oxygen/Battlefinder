@@ -3,12 +3,14 @@ Official repository for Battlefinder. This product is a TTSRPG game oriented to 
 
 ## Distribution
 
-The distribution of the builds corresponding to this project are done via Patreon. We don't recommend installing or executing any build of this project that doesn't come from the provided source.
+The distribution of the builds corresponding to this project are done via GitHub Releases and posted in our Patreon.
+We don't recommend installing or executing any build of this project that doesn't come from the provided source.
 
 * [Patreon](https://www.patreon.com/need4oxygen)
 
 ## Contribution
 
+We welcome you to contribute, but in order for the project to work you will have to download some assets we can't distribute ourselves.
 Please read the [CONTRIBUTING.md](https://github.com/Need4Oxygen/Battlefinder/blob/develop/CONTRIBUTING.md) to know more.
 
 ## License

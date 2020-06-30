@@ -2,7 +2,6 @@
 
 Contribution applications are open via our [Discord Server](https://discord.gg/9F6dmbV). It is necessary to be on the server to contribute to this project, since it's going to be the main channel of communication between Contributors and Main Devs.
 
-Once your application is approved, you will be added as an external collaborator of the project, which will give you the necessary permissions to create and push new branches. Please read the Branch Rules section.
 
 ## Getting Started
 
@@ -11,10 +10,18 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 * [Unity 2019.3.9f1](https://unity3d.com/get-unity/download/archive) - Unity version
+* Download all the assets in the list at the bottom of this document.
+* Once you have all needed assets, contact us at [contact@need4oxygen.com](contact@need4oxygen.com), we will give you access to a submodule with all the configuration files.
 
-### Installing
-
-Just install the correct Unity version, tell it where the project folder is and run it.
+### How To Collaborate
+* Fork the project from the link above & clone locally.
+* Update the Third Party Assets submodule.
+* Sync your local copy before you branch.
+* Branch for each separate piece of work.
+* Do the work, write good commit messages.
+* Push to your origin repository.
+* Create a new Pull Request towards our repository.
+* Respond to any code review feedback.
 
 ## Branch Rules
 
@@ -86,3 +93,25 @@ Always try to comment public functions, especially if they are called via UI bec
     <summary> Called by X button instantiated on Y system to make Z </summary>
     public void OnValueChangedBackgroundDropdown(int value) {}
 ```
+## Third Party Assets
+
+https://www.youtube.com/watch?v=LBpKUIyOHdo&t=
+https://www.textures.com/download/3dscans0055/127567
+https://www.textures.com/download/pbr0194/133232
+https://www.textures.com/download/pbr0579/138828
+https://www.textures.com/download/pbr0007/133043
+https://www.textures.com/download/pbr0183/133222
+https://www.textures.com/download/pbr0433/138073
+https://www.textures.com/download/substance0111/131745
+https://www.textures.com/download/pbr0139/133174
+https://paizo.com/community/communityuse/package
+https://freesound.org/people/KToppMod/sounds/512282/
+https://assetstore.unity.com/packages/3d/props/furniture/medieval-tavern-pack-112546
+https://assetstore.unity.com/packages/3d/environments/fantasy/blacksmith-s-forge-17785
+https://assetstore.unity.com/packages/3d/environments/wooden-bridge-64399
+https://assetstore.unity.com/packages/3d/environments/fantasy/medieval-tent-small-18736
+https://assetstore.unity.com/packages/3d/environments/historic/medieval-barrows-and-wagons-33411
+https://assetstore.unity.com/packages/3d/environments/historic/modular-medieval-lanterns-85527
+https://assetstore.unity.com/packages/3d/props/free-medieval-props-asset-pack-131420
+https://assetstore.unity.com/packages/3d/environments/free-medieval-room-131004#reviews
+https://assetstore.unity.com/packages/3d/environments/fantasy/mega-fantasy-props-pack-87811
