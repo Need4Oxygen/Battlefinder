@@ -55,6 +55,10 @@ public class PF2E_SceneManager : MonoBehaviour
         if (OnPlaySceneLoad != null)
             OnPlaySceneLoad();
         OnPlaySceneLoad = null;
+
+        Audio.Instance.Stop_Music(0f, 0f);
+        Audio.Instance.Stop_Ambient(0f, 0f);
+        Audio.Instance.Play_Ambient("Old City Ambience", 0f, 0f);
     }
 
     public void OnClickExitButton()

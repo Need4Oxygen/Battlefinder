@@ -10,5 +10,4 @@ public class SystemData
     public string PF2EAdditionalContentPathSpe = Application.persistentDataPath + Path.DirectorySeparatorChar + "PF2E" + Path.DirectorySeparatorChar + "Additional Content" + Path.DirectorySeparatorChar;
 
     public VideoSettings VideoSettings = null;
-    public SoundSettings SoundSettings = null;
 }

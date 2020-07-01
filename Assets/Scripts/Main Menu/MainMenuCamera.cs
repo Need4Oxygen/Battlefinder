@@ -8,8 +8,6 @@ public class MainMenuCamera : MonoBehaviour
     [SerializeField] CinemachineBrain brainCam = null;
     [SerializeField] CinemachineVirtualCamera closeUpCam = null;
     [SerializeField] Animator boxAnimator = null;
-    [SerializeField] AudioClip boxOpenClip = null;
-    [SerializeField] AudioSource musicPlayer = null;
 
     [Header("Orbit Stuff")]
     [SerializeField] Transform orbitCameraFollow = null;
@@ -47,7 +45,7 @@ public class MainMenuCamera : MonoBehaviour
         StopCoroutine(rorateCorou);
         StartCoroutine(PanWithMouse());
         boxAnimator.SetTrigger("Open");
-        musicPlayer.PlayOneShot(boxOpenClip, 1f);
+        Audio.Instance.Play_Effect("Open Box", 0f);
     }
 
     private IEnumerator Rotate()
