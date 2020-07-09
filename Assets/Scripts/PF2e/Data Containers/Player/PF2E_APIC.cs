@@ -9,8 +9,8 @@ public class PF2E_APIC
 
     private E_PF2E_Ability abilityEnum = E_PF2E_Ability.None;
     public List<PF2E_Lecture> lectures = new List<PF2E_Lecture>();
-    private List<PF2E_Fact> itemModifiers = new List<PF2E_Fact>();
-    private List<PF2E_Fact> circModifiers = new List<PF2E_Fact>();
+    private List<PF2E_Effect> itemModifiers = new List<PF2E_Effect>();
+    private List<PF2E_Effect> circModifiers = new List<PF2E_Effect>();
 
     public int initialScore = 0;
 

@@ -2,7 +2,7 @@
     "No armor": {
         "ac_bonus": 0,
         "bulk": 0,
-        "category": "unarmored",
+        "category": "Unarmored",
         "check_penalty": 0,
         "description": "Not weaing protective garments.",
         "dex_cap": 0,
@@ -23,7 +23,7 @@
     "Explorer's Clothing": {
         "ac_bonus": 0,
         "bulk": 0.1,
-        "category": "unarmored",
+        "category": "Unarmored",
         "check_penalty": 0,
         "description": "Adventurers who don’t wear armor travel in durable clothing. Though it’s not armor and uses your unarmored defense proficiency, it still has a Dex Cap and can grant an item bonus to AC if etched with potency runes.",
         "dex_cap": 5,
@@ -46,7 +46,7 @@
     "Padded armor": {
         "ac_bonus": 1,
         "bulk": 0.1,
-        "category": "lightArmor",
+        "category": "Light armor",
         "check_penalty": 0,
         "description": "This armor is simply a layer of heavy, quilted cloth, but it is sometimes used because it’s so inexpensive. Padded armor is easier to damage and destroy than other types of armor. Heavy armor comes with a padded armor undercoat included in its Price, though it loses the comfort trait when worn under heavy armor. You can wear just that padded armor undercoat to sleep in, if your heavy armor is destroyed, or when otherwise not wearing the full heavy armor. This allows you to keep the armor invested and benefit from the power of any runes on the associated heavy armor, but no one else can wear your heavy armor without the padded undercoat.",
         "dex_cap": 3,
@@ -69,7 +69,7 @@
     "Leather": {
         "ac_bonus": 1,
         "bulk": 1,
-        "category": "lightArmor",
+        "category": "Light armor",
         "check_penalty": -1,
         "description": "A mix of flexible and molded boiled leather, a suit of this type of armor provides some protection with maximum flexibility.",
         "dex_cap": 4,
@@ -90,7 +90,7 @@
     "Studded leather": {
         "ac_bonus": 2,
         "bulk": 1,
-        "category": "lightArmor",
+        "category": "Light armor",
         "check_penalty": -1,
         "description": "This leather armor is reinforced with metal studs and sometimes small metal plates, providing most of the flexibility of leather armor with more robust protection.",
         "dex_cap": 3,
@@ -111,7 +111,7 @@
     "Chain shirt": {
         "ac_bonus": 2,
         "bulk": 1,
-        "category": "lightArmor",
+        "category": "Light armor",
         "check_penalty": -1,
         "description": "Sometimes called a hauberk, this is a long shirt constructed of the same metal rings as chainmail. However, it is much lighter than chainmail and protects only the torso, upper arms, and upper legs of its wearer.",
         "dex_cap": 3,
@@ -135,7 +135,7 @@
     "Hide": {
         "ac_bonus": 3,
         "bulk": 2,
-        "category": "mediumArmor",
+        "category": "Medium armor",
         "check_penalty": -2,
         "description": "A mix of furs, sturdy hide, and sometimes molded boiled leather, this armor provides protection due to its layers of leather, though its bulkiness slows the wearer down and decreases mobility.",
         "dex_cap": 2,
@@ -156,7 +156,7 @@
     "Scale mail": {
         "ac_bonus": 3,
         "bulk": 2,
-        "category": "mediumArmor",
+        "category": "Medium armor",
         "check_penalty": -2,
         "description": "Scale mail consists of many metal scales sewn onto a reinforced leather backing, often in the form of a long shirt that protects the torso, arms, and legs.",
         "dex_cap": 2,
@@ -177,7 +177,7 @@
     "Chain mail": {
         "ac_bonus": 4,
         "bulk": 2,
-        "category": "mediumArmor",
+        "category": "Medium armor",
         "check_penalty": -2,
         "description": "A suit of chain mail consists of several pieces of armor composed of small metal rings linked together in a protective mesh. It typically includes a chain shirt, leggings, a pair of arms, and a coif, collectively protecting most of the body.",
         "dex_cap": 1,
@@ -201,7 +201,7 @@
     "Breastplate": {
         "ac_bonus": 4,
         "bulk": 2,
-        "category": "mediumArmor",
+        "category": "Medium armor",
         "check_penalty": -2,
         "description": "Though referred to as a breastplate, this type of armor consists of several pieces of plate or half-plate armor that protect the torso, chest, neck, and sometimes the hips and lower legs. It strategically grants some of the protection of plate while allowing greater flexibility and speed.",
         "dex_cap": 1,
@@ -222,7 +222,7 @@
     "Splint mail": {
         "ac_bonus": 5,
         "bulk": 3,
-        "category": "heavyArmor",
+        "category": "Heavy armor",
         "check_penalty": -3,
         "description": "This type of armor is chain mail reinforced with flexible, interlocking metal plates, typically located on the wearer’s torso, upper arms, and legs. A suit of this armor comes with an undercoat of padded armor and a pair of gauntlets.",
         "dex_cap": 1,
@@ -243,7 +243,7 @@
     "Half plate": {
         "ac_bonus": 5,
         "bulk": 3,
-        "category": "heavyArmor",
+        "category": "Heavy armor",
         "check_penalty": -3,
         "description": "Half plate consists of most of the upper body plates used in full plate, with lighter or sparser steel plate protection for the arms and legs. This provides some of the protection of full plate with greater flexibility and speed. A suit of this armor comes with an undercoat of padded armor and a pair of gauntlets.",
         "dex_cap": 1,
@@ -264,7 +264,7 @@
     "Full plate": {
         "ac_bonus": 6,
         "bulk": 4,
-        "category": "heavyArmor",
+        "category": "Heavy armor",
         "check_penalty": -3,
         "description": "Plate mail consists of interlocking plates that encase nearly the entire body in a carapace of steel. It is costly and heavy, and the wearer often requires help to don it correctly, but it provides some of the best defense armor can supply. A suit of this armor comes with an undercoat of padded armor and a pair of gauntlets.",
         "dex_cap": 0,

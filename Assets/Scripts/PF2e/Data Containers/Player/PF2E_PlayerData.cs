@@ -141,7 +141,7 @@ public class PF2E_PlayerData
 
     public void ClassDC_ClearFrom(string from)
     {
-        ClearLecturesFrom(classDC_lectures, from);
+        Lectures_ClearFrom(classDC_lectures, from);
     }
 
     public bool ClassDC_Train(PF2E_Lecture lecture)
@@ -394,7 +394,7 @@ public class PF2E_PlayerData
     public void Skills_ClearFrom(string from)
     {
         foreach (var item in skills_dic)
-            ClearLecturesFrom(item.Value.lectures, from);
+            Lectures_ClearFrom(item.Value.lectures, from);
     }
 
     ///<summary> Train skill via lecture, saving a copy in an APIC object. </summary>
@@ -438,7 +438,7 @@ public class PF2E_PlayerData
 
     public void Perception_ClearFrom(string from)
     {
-        ClearLecturesFrom(perception.lectures, from);
+        Lectures_ClearFrom(perception.lectures, from);
     }
 
     public bool Perception_Train(PF2E_Lecture lecture)
@@ -490,7 +490,7 @@ public class PF2E_PlayerData
     public void Saves_ClearFrom(string from)
     {
         foreach (var item in saves_dic)
-            ClearLecturesFrom(item.Value.lectures, from);
+            Lectures_ClearFrom(item.Value.lectures, from);
     }
 
     ///<summary> Train save via lecture, saving a copy in an APIC object. </summary>
@@ -545,7 +545,7 @@ public class PF2E_PlayerData
     public void WeaponArmor_ClearFrom(string from)
     {
         foreach (var item in weaponArmor_lectures)
-            ClearLecturesFrom(item.Value, from);
+            Lectures_ClearFrom(item.Value, from);
     }
 
     public bool WeaponArmor_Train(PF2E_Lecture lecture)
@@ -647,24 +647,18 @@ public class PF2E_PlayerData
     }
 
 
-    // ---------------------------------------------------TOOLS--------------------------------------------------
-    public void ClearLecturesFrom(List<PF2E_Lecture> lectures, string from)
-    {
-        lectures.RemoveAll(item => item.from == from || item.from == "");
-    }
-
-
     // ---------------------------------------------------BUILD--------------------------------------------------
+    // build[level][feat]
     public Dictionary<string, Dictionary<string, PF2E_BuildItem>> build = new Dictionary<string, Dictionary<string, PF2E_BuildItem>>();
 
-    public T Build_Get<T>(string stage, string itemKey)
+    public T Build_Get<T>(string level, string itemKey)
     {
         try
         {
-            if (build.ContainsKey(stage))
-                if (build[stage].ContainsKey(itemKey))
-                    if (build[stage][itemKey].obj != null)
-                        return JsonConvert.DeserializeObject<T>(build[stage][itemKey].obj);
+            if (build.ContainsKey(level))
+                if (build[level].ContainsKey(itemKey))
+                    if (build[level][itemKey].obj != null)
+                        return JsonConvert.DeserializeObject<T>(build[level][itemKey].obj);
                     else
                         return default(T);
                 else
@@ -680,18 +674,18 @@ public class PF2E_PlayerData
         }
     }
 
-    public void Build_Set(string stage, string itemkey, object obj)
+    public void Build_Set(string level, string itemkey, object obj)
     {
         string jsonString = JsonConvert.SerializeObject(obj, Formatting.Indented);
-        Build_Set(stage, itemkey, jsonString);
+        Build_Set(level, itemkey, jsonString);
 
         Build_Refresh();
     }
-    public void Build_Set(string stage, string itemkey, string obj)
+    public void Build_Set(string level, string itemkey, string obj)
     {
-        if (build.ContainsKey(stage))
-            if (build[stage].ContainsKey(itemkey))
-                build[stage][itemkey].obj = obj;
+        if (build.ContainsKey(level))
+            if (build[level].ContainsKey(itemkey))
+                build[level][itemkey].obj = obj;
     }
 
     public void Build_Refresh()
@@ -707,17 +701,17 @@ public class PF2E_PlayerData
 
         var newBuild = new Dictionary<string, Dictionary<string, PF2E_BuildItem>>(classBuild);
 
-        foreach (var stage in classBuild) // Try to rescue stuff from the last build into the new one
+        foreach (var level in classBuild) // Try to rescue stuff from the last build into the new one
         {
-            string stageString = stage.Key;
-            if (build.ContainsKey(stageString))
-                foreach (var item in stage.Value)
+            string levelString = level.Key;
+            if (build.ContainsKey(levelString))
+                foreach (var item in level.Value)
                 {
                     string itemName = item.Key;
-                    if (build[stageString].ContainsKey(itemName))
+                    if (build[levelString].ContainsKey(itemName))
                     {
-                        newBuild[stageString][itemName].value = build[stageString][itemName].value;
-                        newBuild[stageString][itemName].obj = build[stageString][itemName].obj;
+                        newBuild[levelString][itemName].value = build[levelString][itemName].value;
+                        newBuild[levelString][itemName].obj = build[levelString][itemName].obj;
                     }
                 }
         }
@@ -759,6 +753,15 @@ public class PF2E_PlayerData
 
         return trainSuccessful;
     }
+
+    public void Lectures_ClearFrom(List<PF2E_Lecture> lectures, string from)
+    {
+        lectures.RemoveAll(item => item.from == from || item.from == "");
+    }
+
+
+    // ---------------------------------------------------EFFECTS--------------------------------------------------
+    public Dictionary<string, List<PF2E_Effect>> effects_library = new Dictionary<string, List<PF2E_Effect>>();
 
 
     // ---------------------------------------------------CONSTRUCTOR--------------------------------------------------

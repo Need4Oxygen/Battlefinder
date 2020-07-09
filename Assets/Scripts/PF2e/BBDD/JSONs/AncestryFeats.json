@@ -7,11 +7,32 @@
         "traits": [
             "Dwarf"
         ],
-        "prequisites": [],
-        "actions": [],
-        "feats": [],
-        "lectures": {},
-        "effects": {}
+        "lectures": {
+            "Religion T": {
+                "from": "Dwarven Lore",
+                "name": "Religion",
+                "description": "From Dwarven Lore ancestry feat: trained in Religion.",
+                "target": "religion",
+                "proficiency": "T",
+                "canTurnFree": true
+            },
+            "Crafting T": {
+                "from": "Dwarven Lore",
+                "name": "Crafting",
+                "description": "From Dwarven Lore ancestry feat: trained in Crafting.",
+                "target": "crafting",
+                "proficiency": "T",
+                "canTurnFree": true
+            },
+            "Dwarven Lore T": {
+                "from": "Dwarven Lore",
+                "name": "Dwarven Lore",
+                "description": "From Dwarven Lore ancestry feat: trained in Dwarven Lore.",
+                "target": "lore 2",
+                "proficiency": "T",
+                "canTurnFree": false
+            }
+        }
     },
     "Dwarven Weapon Familiarity": {
         "type": "Ancestry Feat",

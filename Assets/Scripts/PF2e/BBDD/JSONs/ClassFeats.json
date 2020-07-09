@@ -11,7 +11,15 @@
         "actions": [],
         "feats": [],
         "lectures": {},
-        "effects": {}
+        "effects": {
+            "Alchemical Familiar - Familiar": {
+                "id": "Alchemical Familiar - Familiar",
+                "value": 1,
+                "type": "Permanent",
+                "target": "Familiar",
+                "triggers": []
+            }
+        }
     },
     "Alchemical Savant": {
         "type": "Class Feat",
@@ -27,7 +35,24 @@
         "actions": [],
         "feats": [],
         "lectures": {},
-        "effects": {}
+        "effects": {
+            "Alchemical Savant - Identify Alchemy Time Bonus": {
+                "id": "Alchemical Savant - Identify Alchemy Time Bonus",
+                "value": 1,
+                "type": "Permanent",
+                "target": "Identify Alchemy Check",
+                "triggers": []
+            },
+            "Alchemical Savant - Identify Alchemy Check Bonus": {
+                "id": "Alchemical Savant - Identify Alchemy Check Bonus",
+                "value": 1,
+                "type": "Permanent",
+                "target": "Triggering Check",
+                "triggers": [
+                    "Identify Alchemy Check"
+                ]
+            }
+        }
     },
     "Far Lobber": {
         "type": "Class Feat",

@@ -60,6 +60,10 @@ public enum E_PF2E_Traineable
 }
 
 // -----------------------------BUILD-----------------------------
+public enum E_PF2E_FeatType
+{
+    None, Default, GeneralSkillFeat, SkillFeat, ClassFeat, ClassFeature, Heritage, AncestryFeat, AncestryFeature,
+}
 public enum E_PF2E_BuildItem
 {
     None, Default,
@@ -98,35 +102,6 @@ public enum E_PF2E_Background
 public enum E_PF2E_Class
 {
     None, Default, Alchemist, Barbarian, Bard, Champion, Cleric, Druid, Fighter, Monk, Ranger, Rogue, Sorcerer, Wizard
-}
-
-
-// -----------------------------EFFECTS-----------------------------
-// Effects are buffs or detriments directed towards an specific stat.
-public enum E_PF2E_FeatType
-{
-    None, Default, GeneralSkillFeat, SkillFeat, ClassFeat, ClassFeature, Heritage, AncestryFeat, AncestryFeature,
-}
-public enum E_PF2E_EffectAplication
-{
-    None, Default, Complex, Both
-}
-public enum E_PF2E_EffectTarget
-{
-    None = 0, Default = 0,
-    HP = 1, AC = 2, Perception = 3,
-    STR = 10, DEX = 11, CON = 12, INT = 13, WIS = 14, CHA = 15,
-    SavesFortitude = 20, SavesReflex = 21, SavesWill = 22,
-    AttackMelee = 30, AttackRange = 31, AttackSpell = 32, AttackDCs = 33,
-    DamageMelee = 40, DamageRange = 41, DamageSpell = 42,
-    ResistanceFire = 50, ResistanceCold = 51, ResistanceSlash = 52, ResistanceBlunt = 53, ResistancePiercing = 54,
-    speedBase = 60, speedBasePenalty = 61, speedClimb = 62, speedClimbPenalty = 63, speedFly = 64, speedFlyPenalty = 65, speedSwim = 66, speedSwimPenalty = 67, speedBurrow = 68, speedBurrowPenalty = 69,
-    Acrobatics = 80, Arcana = 81, Athletics = 82, Crafting = 83, Deception = 84, Diplomacy = 85, Intimidation = 86, Medicine = 87, Nature = 88, Occultism = 89, Performance = 90, Religion = 91, Society = 92, Stealth = 93, Survival = 94, Thievery = 95,
-    ArmorSpeedPenalty = 100,
-}
-public enum E_PF2E_EffectType
-{
-    None, Default, Circumstance, Status, Item, Untyped
 }
 
 

@@ -4,38 +4,44 @@
         "name": "Ancient-Blooded Dwarf",
         "description": "Dwarven heroes of old could shrug off their enemies’ magic, and some of that resistance manifests in you. You gain the Call on Ancient Blood reaction.",
         "level": 1,
-        "traits": [],
-        "prequisites": [],
         "actions": [
             "Call on Ancient Blood"
-        ],
-        "lectures": {},
-        "effects": {}
+        ]
     },
     "Death Warden Dwarf": {
         "type": "Heritage",
         "name": "Death Warden Dwarf",
         "description": "Your ancestors have been tomb guardians for generations, and the power they cultivated to ward off necromancy has passed on to you. If you roll a success on a saving throw against a necromancy effect, you get a critical success instead.",
         "level": 1,
-        "traits": [],
-        "prequisites": [],
-        "actions": [],
-        "lectures": {},
-        "effects": {}
+        "effects": {
+            "Death Warden Dwarf - Saving Throw Bonus": {
+                "id": "Death Warden Dwarf - Saving Throw Bonus",
+                "value": 1,
+                "type": "Check",
+                "target": "Saving Throw",
+                "triggers": [
+                    "Necromancy"
+                ]
+            }
+        }
     },
     "Forge Dwarf": {
         "type": "Heritage",
         "name": "Forge Dwarf",
         "description": "You have a remarkable adaptation to hot environments from ancestors who inhabited blazing deserts or volcanic chambers beneath the earth. This grants you fire resistance equal to half your level (minimum 1), and you treat environmental heat effects as if they were one step less extreme (incredible heat becomes extreme, extreme heat becomes severe, and so on).",
         "level": 1,
-        "traits": [],
-        "prequisites": [],
-        "actions": [],
-        "lectures": {},
         "effects": {
-            "Fire Resistance": {
-                "name": "Forged Dwarf: Fire Resistance",
-                "description": "Fire resistance equal to half your level (minimum 1)."
+            "Forged Dwarf - Fire Resistance": {
+                "id": "Forged Dwarf - Fire Resistance",
+                "value": 1,
+                "type": "Modifier",
+                "target": "Fire Resistance"
+            },
+            "Forged Dwarf - Enviromental Effect": {
+                "id": "Forged Dwarf - Enviromental Effect",
+                "value": 1,
+                "type": "Enviromental",
+                "target": "Heat"
             }
         }
     },
@@ -44,92 +50,143 @@
         "name": "Rock Dwarf",
         "description": "Your ancestors lived and worked among the great ancient stones of the mountains or the depths of the earth. Thismakes you solid as a rock when you plant your feet. You gain a +2 circumstance bonus to your Fortitude or ReflexDC against attempts to Shove or Trip you. This bonus also applies to saving throws against spells or effects that attempt to knock you prone. In addition, if any effect would force you to move 10feet or more, you are moved only half the distance.",
         "level": 1,
-        "traits": [],
-        "prequisites": [],
-        "actions": [],
-        "lectures": {},
-        "effects": {}
+        "effects": {
+            "Rock Dwarf - Shove Trip Resistance": {
+                "id": "Rock Dwarf - Shove Trip Resistance",
+                "value": 1,
+                "type": "Check",
+                "target": "Saving Throw",
+                "triggers": [
+                    "Shoved",
+                    "Triped",
+                    "Magically  Proned"
+                ]
+            },
+            "Rock Dwarf - Moved Resistance": {
+                "id": "Rock Dwarf - Moved Resistance",
+                "value": 1,
+                "type": "Modifier",
+                "target": "Move Resistance",
+                "triggers": [
+                    "Moved"
+                ]
+            }
+        }
     },
     "Strong-Blooded Dwarf": {
         "type": "Heritage",
         "name": "Strong-Blooded Dwarf",
         "description": "Your blood runs hearty and strong, and you can shake off toxins. You gain poison resistance equal to half your level (minimum 1), and each of your  successful saving throws against a poison affliction reduces its stage by 2, or by 1 for a virulent poison. Each critical success against an ongoing poison reduces its stage by 3, or by 2 for a virulent poison.",
         "level": 1,
-        "traits": [],
-        "prequisites": [],
-        "actions": [],
-        "lectures": {},
         "effects": {
-            "Poison Resistance": {
-                "name": "Strong-Blooded Dwarf: Poison Resistance",
-                "description": "Poison resistance equal to half your level (minimum 1)."
+            "Strong-Blooded Dwarf - Poison Resistance": {
+                "id": "Strong-Blooded Dwarf - Poison Resistance",
+                "value": 1,
+                "type": "Modifier",
+                "target": "Poison Resistance"
+            },
+            "Strong-Blooded Dwarf - Saving Throw Bonus": {
+                "id": "Strong-Blooded Dwarf - Saving Throw Bonus",
+                "value": 1,
+                "type": "Check",
+                "target": "Saving Throw",
+                "triggers": [
+                    "Poison"
+                ]
             }
-        },
-        "Arctic Elf": {
-            "type": "Heritage",
-            "name": "Arctic Elf",
-            "description": "You dwell deep in the frozen north and have gained incredible resilience against cold environments, granting you cold resistance equal to half your level (minimum 1). You treat environmental cold effects as if they were one step less extreme (incredible cold becomes extreme, extreme cold becomes severe, and so on).",
-            "level": 1,
-            "traits": [],
-            "prequisites": [],
-            "actions": [],
-            "lectures": {},
-            "effects": {
-                "Cold Resistance": {
-                    "name": "Arctic Elf: Cold Resistance",
-                    "description": "Cold resistance equal to half your level (minimum 1)."
-                }
+        }
+    },
+    "Arctic Elf": {
+        "type": "Heritage",
+        "name": "Arctic Elf",
+        "description": "You dwell deep in the frozen north and have gained incredible resilience against cold environments, granting you cold resistance equal to half your level (minimum 1). You treat environmental cold effects as if they were one step less extreme (incredible cold becomes extreme, extreme cold becomes severe, and so on).",
+        "level": 1,
+        "effects": {
+            "Arctic Elf - Cold Resistance": {
+                "id": "Arctic Elf - Cold Resistance",
+                "value": 1,
+                "type": "Modifier",
+                "target": "Cold Resistance"
+            },
+            "Arctic Elf - Enviromental Effect": {
+                "id": "Arctic Elf - Enviromental Effect",
+                "value": 1,
+                "type": "Enviromental",
+                "target": "Cold"
             }
-        },
-        "Cavern Elf": {
-            "type": "Heritage",
-            "name": "Cavern Elf",
-            "description": "You were born or spent many years in underground tunnels or caverns where lightis scarce. You gain darkvision.",
-            "level": 1,
-            "traits": [],
-            "prequisites": [],
-            "actions": [],
-            "feats": [
-                "Darkvision"
-            ],
-            "lectures": {},
-            "effects": {}
-        },
-        "Seer Elf": {
-            "type": "Heritage",
-            "name": "Seer Elf",
-            "description": "You have an inborn ability to detect and understand magical phenomena. You can cast the detect magic cantrip as an arcane innate spell at will. A cantrip is heightened to a spell level equal to half your level rounded up. In addition, you gain a +1 circumstance bonus to checks to Identify Magic and to Decipher Writing of a magical nature. These skill actions typically use the Arcana, Nature, Occultism, or Religion skill.",
-            "level": 1,
-            "traits": [],
-            "prequisites": [],
-            "actions": [],
-            "feats": [],
-            "lectures": {},
-            "effects": {}
-        },
-        "Whisper Elf": {
-            "type": "Heritage",
-            "name": "Whisper Elf",
-            "description": "Your ears are finely tuned, able to detect even the slightest whispers of sound. As long as you can hear normally, you can use the Seek action to sense undetected creatures in a 60-foot cone instead of a 30-foot cone. You also gain a +2 circumstance bonus to locate undetected creatures that you could hear within 30 feet with a Seek action.",
-            "level": 1,
-            "traits": [],
-            "prequisites": [],
-            "actions": [],
-            "feats": [],
-            "lectures": {},
-            "effects": {}
-        },
-        "Woodland Elf": {
-            "type": "Heritage",
-            "name": "Woodland Elf",
-            "description": "You’re adapted to life in the forest or the deep jungle, and you know how to climb trees and use foliage to your advantage. When Climbing trees, vines, and other foliage, you move at half your Speed on a success and at full Speed on a critical success (and you move at full Speed on a success if you have Quick Climb). This doesn’t affect you if you’re using a climb Speed. You can always use the Take Cover action when you are within forest terrain to gain cover, even if you’re not next to an obstacle you can Take Cover behind.",
-            "level": 1,
-            "traits": [],
-            "prequisites": [],
-            "actions": [],
-            "feats": [],
-            "lectures": {},
-            "effects": {}
+        }
+    },
+    "Cavern Elf": {
+        "type": "Heritage",
+        "name": "Cavern Elf",
+        "description": "You were born or spent many years in underground tunnels or caverns where lightis scarce. You gain darkvision.",
+        "level": 1,
+        "feats": [
+            "Darkvision"
+        ]
+    },
+    "Seer Elf": {
+        "type": "Heritage",
+        "name": "Seer Elf",
+        "description": "You have an inborn ability to detect and understand magical phenomena. You can cast the detect magic cantrip as an arcane innate spell at will. A cantrip is heightened to a spell level equal to half your level rounded up. In addition, you gain a +1 circumstance bonus to checks to Identify Magic and to Decipher Writing of a magical nature. These skill actions typically use the Arcana, Nature, Occultism, or Religion skill.",
+        "level": 1,
+        "spells": [
+            "Detect Magic"
+        ],
+        "effects": {
+            "Seer Elf - Check Bonus": {
+                "id": "Seer Elf - Check Bonus",
+                "value": 1,
+                "type": "Check",
+                "target": "Player Action",
+                "triggers": [
+                    "Identify Magic",
+                    "Decipher Writing"
+                ]
+            }
+        }
+    },
+    "Whisper Elf": {
+        "type": "Heritage",
+        "name": "Whisper Elf",
+        "description": "Your ears are finely tuned, able to detect even the slightest whispers of sound. As long as you can hear normally, you can use the Seek action to sense undetected creatures in a 60-foot cone instead of a 30-foot cone. You also gain a +2 circumstance bonus to locate undetected creatures that you could hear within 30 feet with a Seek action.",
+        "level": 1,
+        "effects": {
+            "Whisper Elf - Seek Extended Range": {
+                "id": "Whisper Elf - Seek Extended Range",
+                "value": 1,
+                "type": "Action",
+                "target": "Seek"
+            },
+            "Whisper Elf - Seek Bonus": {
+                "id": "Whisper Elf - Seek Bonus",
+                "value": 1,
+                "type": "Check",
+                "target": "Player Action",
+                "triggers": [
+                    "Seek"
+                ]
+            }
+        }
+    },
+    "Woodland Elf": {
+        "type": "Heritage",
+        "name": "Woodland Elf",
+        "description": "You’re adapted to life in the forest or the deep jungle, and you know how to climb trees and use foliage to your advantage. When Climbing trees, vines, and other foliage, you move at half your Speed on a success and at full Speed on a critical success (and you move at full Speed on a success if you have Quick Climb). This doesn’t affect you if you’re using a climb Speed. You can always use the Take Cover action when you are within forest terrain to gain cover, even if you’re not next to an obstacle you can Take Cover behind.",
+        "level": 1,
+        "effects": {
+            "Woodland Elf - Climb Plantlife Check Bonus": {
+                "id": "Woodland Elf - Climb Plantlife Check Bonus",
+                "value": 1,
+                "type": "Action",
+                "target": "Climb"
+            },
+            "Woodland Elf - Take Cover Bonus": {
+                "id": "Woodland Elf - Take Cover Bonus",
+                "value": 1,
+                "type": "Action",
+                "target": "Take Cover"
+            }
         }
     }
 }
