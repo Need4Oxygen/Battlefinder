@@ -1,0 +1,298 @@
+ability_mods:
+  cha_mod: 7
+  con_mod: 4
+  dex_mod: 6
+  int_mod: 3
+  str_mod: 6
+  wis_mod: 5
+ac: 34
+ac_special: null
+alignment: NE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 30 feet. When a creature ends its turn in the aura, it must attempt
+    a DC 30 Will save. If the creature fails, it becomes __frightened 2__. The creature
+    is then temporarily immune to terrifying gaze (but not Focus Gaze) for 24 hours.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Terrifying Gaze
+  range: null
+  raw_description: '**Terrifying Gaze** (__aura__, __divine__, __emotion__, __enchantment__,
+    __fear__, __mental__, __visual__) 30 feet. When a creature ends its turn in the
+    aura, it must attempt a DC 30 Will save. If the creature fails, it becomes __frightened
+    2__. The creature is then temporarily immune to terrifying gaze (but not Focus
+    Gaze) for 24 hours.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - divine
+  - emotion
+  - enchantment
+  - fear
+  - mental
+  - visual
+  trigger: null
+description: 'Also known as the deacons of death, thanadaemons represent death via
+  old age. They are among the most patient daemons, and prefer to bide their time
+  to enact far-reaching, decades-long plans rather than fight (though they are still
+  deadly foes). Like the Horseman of Death, they ply the waters of the River Styx
+  in search of wayward souls. Rarely are thanadaemons seen without a trademark oar
+  (which they wield as a __bo staff__), a tool they use to navigate the river''s muck-ridden
+  channels and turbulent rapids.
+
+
+
+
+  **__Recall Knowledge - Fiend__ (__Religion__)**: DC 31'
+hp: 270
+hp_misc: null
+immunities:
+- death effects
+items:
+- +1 striking bo staff
+- soul gem
+languages:
+- Common
+- Daemonic
+- telepathy 100 feet
+level: 13
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d8+14
+    type: bludgeoning
+  name: bo staff
+  plus_damage:
+  - formula: 1d6
+    type: negative
+  - formula: 1d6
+    type: evil
+  - formula: null
+    type: draining strike
+  to_hit: 28
+  traits:
+  - evil
+  - magical
+  - parry
+  - reach 10 feet
+  - trip
+- action_cost: One Action
+  damage:
+    formula: 3d6+14
+    type: slashing
+  name: claw
+  plus_damage:
+  - formula: 1d6
+    type: evil and draining strike
+  to_hit: 27
+  traits:
+  - agile
+  - evil
+  - finesse
+  - magical
+name: Thanadaemon
+perception: 26
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When a thanadaemon damages a living creature with a melee Strike, the
+    creature must succeed at a DC 33 Fortitude save or become __drained 1__. Further
+    damage dealt by the thanadaemon increases the drained condition value by 1 on
+    a failed save, to a maximum of drained 4.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Draining Strike
+  range: null
+  raw_description: '**Draining Strike** (__divine__, __necromancy__) When a thanadaemon
+    damages a living creature with a melee Strike, the creature must succeed at a
+    DC 33 Fortitude save or become __drained 1__. Further damage dealt by the thanadaemon
+    increases the drained condition value by 1 on a failed save, to a maximum of drained
+    4.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - necromancy
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The thanadaemon glares at a single creature they can see within 30
+    feet. The target must immediately attempt a DC 33 Will save against the thanadaemon's
+    terrifying gaze. If the target was already __frightened__, a failed save causes
+    it to become __fleeing__ for 1d4 rounds. After attempting its save, the creature
+    is temporarily immune to this ability until the start of the thanadaemon's next
+    turn.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Focus Gaze
+  range: null
+  raw_description: '**Focus Gaze**   (__concentrate__, __divine__, __fear__, __visual__)
+    The thanadaemon glares at a single creature they can see within 30 feet. The target
+    must immediately attempt a DC 33 Will save against the thanadaemon''s terrifying
+    gaze. If the target was already __frightened__, a failed save causes it to become
+    __fleeing__ for 1d4 rounds. After attempting its save, the creature is temporarily
+    immune to this ability until the start of the thanadaemon''s next turn.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - divine
+  - fear
+  - visual
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The thanadaemon has a soul gem
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Soul Crush
+  range: null
+  raw_description: '**Soul Crush** [Two Actions]  (__manipulate__) **Requirements
+    **The thanadaemon has a soul gem; **Effect **The thanadaemon crushes the soul
+    gem in one hand and gains __fast healing 15__ for 1 minute.'
+  requirements: null
+  success: null
+  traits:
+  - manipulate
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 10
+  type: good
+ritual_lists:
+- dc: 34
+  misc: null
+  name: Rituals
+  spell_groups:
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: null
+      name: create undead
+      requirement: null
+  to_hit: null
+saves:
+  fort: 21
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 23
+  ref_misc: null
+  will: 26
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +26
+- darkvision
+- true seeing
+size: Medium
+skills:
+- bonus: 22
+  misc: null
+  name: 'Arcana '
+- bonus: 26
+  misc: null
+  name: 'Deception '
+- bonus: 26
+  misc: null
+  name: 'Intimidation '
+- bonus: 22
+  misc: null
+  name: 'Religion '
+- bonus: 24
+  misc: null
+  name: 'Styx Lore '
+source:
+- abbr: Bestiary 2
+  page_start: 60
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 6
+  type: <a style="text-decoration:underline" href="Spells.aspx?ID="><i>air walk</i></a>
+spell_lists:
+- dc: 34
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 7
+    spells:
+    - frequency: null
+      name: finger of death
+      requirement: null
+    - frequency: at will, self plus skiff and passengers only, <a style="text-decoration:underline"
+        href="Planes.aspx?ID=8">Astral</a>, <a style="text-decoration:underline" href="Planes.aspx?ID=9">Ethereal</a>,
+        and evil planes only
+      name: plane shift
+      requirement: null
+    - frequency: null
+      name: teleport
+      requirement: null
+  - heightened_level: null
+    level: 6
+    spells:
+    - frequency: null
+      name: slow
+      requirement: null
+    - frequency: ×2
+      name: vampiric exsanguination
+      requirement: null
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: null
+      name: dimension door
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: at will
+      name: dimension door
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: good only, at will
+      name: detect alignment
+      requirement: null
+  - heightened_level: 7
+    level: -1
+    spells:
+    - frequency: null
+      name: air walk
+      requirement: null
+    - frequency: null
+      name: true seeing
+      requirement: null
+  to_hit: null
+traits:
+- NE
+- Medium
+- Daemon
+- Fiend
+type: Creature
+weaknesses: null

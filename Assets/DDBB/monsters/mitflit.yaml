@@ -1,0 +1,209 @@
+ability_mods:
+  cha_mod: -1
+  con_mod: 0
+  dex_mod: 3
+  int_mod: -1
+  str_mod: -1
+  wis_mod: 1
+ac: 15
+ac_special: null
+alignment: LE
+automatic_abilities: null
+description: 'Mitflits, also known as mites, are self-loathing and pitiful cowards,
+  easily bullied into servitude by other creatures or even slightly more powerful
+  mitflit leaders. They tame insects, spiders, and other such creatures to serve as
+  faithful allies. Mitflits have lost most of their ancestral gremlin magic, leaving
+  these incomplete beings full of doubt and insecurity. Mitflits find companionship
+  in the other base creatures of the world, and forge bonds of friendship with vermin,
+  the only other beings that seem willing to accept them. A social structure, even
+  one in which they are bullied, partially fills the hole within mitflits'' personalities,
+  and they rarely rebel or rail out unless their rage hits a breaking point.
+
+
+
+
+  **__Recall Knowledge - Fey__ (__Nature__)**: DC 13'
+hp: 10
+hp_misc: null
+immunities: null
+items:
+- dart (10)
+- shortsword
+languages:
+- Undercommon
+level: -1
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6-1
+    type: piercing
+  name: shortsword
+  plus_damage: null
+  to_hit: 8
+  traits:
+  - agile
+  - finesse
+  - versatile S
+name: Mitflit
+perception: 4
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: As long as it isn't __frightened__, a mitflit gains a +2 status bonus
+    to damage rolls against a creature that has previously damaged or tormented it.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Vengeful Anger
+  range: null
+  raw_description: '**Vengeful Anger** (__emotion__, __mental__) As long as it isn''t
+    __frightened__, a mitflit gains a +2 status bonus to damage rolls against a creature
+    that has previously damaged or tormented it.'
+  requirements: null
+  success: null
+  traits:
+  - emotion
+  - mental
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d4-1
+    type: piercing
+  name: dart
+  plus_damage: null
+  to_hit: 8
+  traits:
+  - agile
+  - range increment 20 feet
+  - thrown
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 2
+  fort_misc: null
+  misc: null
+  ref: 7
+  ref_misc: null
+  will: 4
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A mitflit's self-loathing makes it easy to influence. It takes a -4
+    penalty to its Will DC against checks to Coerce, Demoralize, Make an Impression,
+    and Request.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Self-Loathing
+  range: null
+  raw_description: '**Self-Loathing** (__emotion__, __mental__) A mitflit''s self-loathing
+    makes it easy to influence. It takes a -4 penalty to its Will DC against checks
+    to Coerce, Demoralize, Make an Impression, and Request.'
+  requirements: null
+  success: null
+  traits:
+  - emotion
+  - mental
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 'Mitflits can use Diplomacy to Make an Impression on and Request things
+    of arthropods (insects, spiders, scorpions, crabs, and similar invertebrate animals).
+    Most arthropods have a starting attitude of indifferent to mitflits.
+
+
+    '
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Vermin Empathy
+  range: null
+  raw_description: '**Vermin Empathy** Mitflits can use Diplomacy to Make an Impression
+    on and Request things of arthropods (insects, spiders, scorpions, crabs, and similar
+    invertebrate animals). Most arthropods have a starting attitude of indifferent
+    to mitflits.
+
+
+    '
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +4
+- darkvision
+- scent (imprecise) 30 feet
+size: Small
+skills:
+- bonus: 5
+  misc: null
+  name: 'Acrobatics '
+- bonus: 1
+  misc: +7 vs. arthropods
+  name: 'Diplomacy '
+- bonus: 3
+  misc: null
+  name: 'Nature '
+- bonus: 5
+  misc: null
+  name: 'Stealth '
+- bonus: 5
+  misc: null
+  name: 'Thievery '
+source:
+- abbr: Bestiary
+  page_start: 192
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 20
+  type: climb
+spell_lists:
+- dc: 16
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: at will, arthropods only
+      name: speak with animals
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: bane
+      requirement: null
+  - heightened_level: 1
+    level: 0
+    spells:
+    - frequency: null
+      name: prestidigitation
+      requirement: null
+  to_hit: null
+traits:
+- LE
+- Small
+- Fey
+- Gremlin
+type: Creature
+weaknesses:
+- amount: 2
+  type: cold iron

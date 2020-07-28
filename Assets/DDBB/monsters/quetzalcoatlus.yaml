@@ -1,0 +1,138 @@
+ability_mods:
+  cha_mod: -1
+  con_mod: 3
+  dex_mod: 4
+  int_mod: -4
+  str_mod: 6
+  wis_mod: 2
+ac: 25
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Quetzalcoatlus are the largest flying members of the pterosaur family
+  and are often mistaken for dragons due to their immense size and 40-foot wingspans.
+
+
+  Quetzalcoatlus are carnivorous, feeding on a variety of reptiles, mammals, large
+  fish, amphibians, and other invertebrates. They are not inherently aggressive creatures
+  and are happy to scavenge for food, but when presented with live prey they readily
+  attack almost any creature smaller than themselves.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 23'
+hp: 110
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 7
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d10+10
+    type: piercing
+  name: beak
+  plus_damage:
+  - formula: 1d8
+    type: persistent bleed
+  to_hit: 17
+  traits:
+  - deadly 1d10
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 2d8+10
+    type: piercing
+  name: talon
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 17
+  traits: null
+name: Quetzalcoatlus
+perception: 15
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A quetzalcoatlus can move at half Speed while it has a single creature
+    grabbed or restrained. Both its talons are occupied while it does this.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Snatch
+  range: null
+  raw_description: '**Snatch** A quetzalcoatlus can move at half Speed while it has
+    a single creature grabbed or restrained. Both its talons are occupied while it
+    does this.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The quetzacoaltus Flies up to its Speed and makes one beak or talon
+    Strike at any point during that movement.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Swoop
+  range: null
+  raw_description: '**Swoop** [Two Actions]  The quetzacoaltus Flies up to its Speed
+    and makes one beak or talon Strike at any point during that movement.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 16
+  fort_misc: null
+  misc: null
+  ref: 17
+  ref_misc: null
+  will: 12
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +15
+- low-light vision
+- scent (imprecise) 30 feet
+size: Huge
+skills:
+- bonus: 14
+  misc: null
+  name: 'Acrobatics '
+- bonus: 17
+  misc: null
+  name: 'Athletics '
+source:
+- abbr: Bestiary
+  page_start: 272
+  page_stop: null
+speed:
+- amount: 15
+  type: Land
+- amount: 50
+  type: fly
+spell_lists: null
+traits:
+- N
+- Huge
+- Animal
+type: Creature
+weaknesses: null

@@ -1,0 +1,148 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 2
+  dex_mod: 3
+  int_mod: -1
+  str_mod: 4
+  wis_mod: 1
+ac: 18
+ac_special: null
+alignment: CE
+automatic_abilities: null
+description: 'Gnoll hunters serve their clans by hunting for food in the wilds, marauding
+  along well-traveled roads, and tracking down escaped slaves.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 16'
+hp: 29
+hp_misc: null
+immunities: null
+items:
+- battle axe
+- leather armor
+- shortbow (20 arrows)
+languages:
+- Gnoll
+level: 2
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d8+4
+    type: slashing
+  name: battle axe
+  plus_damage: null
+  to_hit: 10
+  traits:
+  - sweep
+- action_cost: One Action
+  damage:
+    formula: 1d8+2
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 10
+  traits:
+  - agile
+name: Gnoll Hunter
+perception: 7
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A gnoll hunter deals 1d4 extra damage to any creature that's within
+    reach of at least two of the gnoll hunter's allies.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Pack Attack
+  range: null
+  raw_description: '**Pack Attack** A gnoll hunter deals 1d4 extra damage to any creature
+    that''s within reach of at least two of the gnoll hunter''s allies.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A gnoll ignores the first square of difficult terrain it moves into
+    each time it Steps or Strides.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Rugged Travel
+  range: null
+  raw_description: '**Rugged Travel** A gnoll ignores the first square of difficult
+    terrain it moves into each time it Steps or Strides.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d6
+    type: piercing
+  name: shortbow
+  plus_damage: null
+  to_hit: 10
+  traits:
+  - deadly 1d10
+  - range increment 60 feet
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 8
+  fort_misc: null
+  misc: null
+  ref: 7
+  ref_misc: null
+  will: 7
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +7
+- darkvision
+size: Medium
+skills:
+- bonus: 7
+  misc: null
+  name: 'Acrobatics '
+- bonus: 8
+  misc: null
+  name: 'Athletics '
+- bonus: 4
+  misc: null
+  name: 'Intimidation '
+- bonus: 7
+  misc: null
+  name: 'Stealth '
+- bonus: 5
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 178
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists: null
+traits:
+- CE
+- Medium
+- Gnoll
+- Humanoid
+type: Creature
+weaknesses: null

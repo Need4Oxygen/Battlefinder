@@ -1,0 +1,226 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 6
+  dex_mod: 3
+  int_mod: -4
+  str_mod: 6
+  wis_mod: 2
+ac: 26
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: Tail only.
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Whenever the krooth is damaged by a critical hit, it gains a +2 status
+    bonus to attack and damage rolls until the end of its next turn. It can't use
+    reactions while this frenzy lasts.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Pain Frenzy
+  range: null
+  raw_description: '**Pain Frenzy** Whenever the krooth is damaged by a critical hit,
+    it gains a +2 status bonus to attack and damage rolls until the end of its next
+    turn. It can''t use reactions while this frenzy lasts.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Krooths, sometimes called crocodile eaters, are fast and vicious hunters
+  of bogs and wetlands. While they are known to hunt and eat crocodiles, alligators,
+  and virtually any creature with flesh, their favorite prey are lizardfolk, boggards,
+  and dinosaurs.
+
+
+
+
+  Krooths are found alone or in packs. Male krooths are solitary and territorial creatures—fierce,
+  bold, and bloodthirsty. Female krooths, on the other hand, are likely to shy away
+  from potential predators but swiftly turn violent when their brood is threatened.
+  Because their offspring are so vulnerable, female krooths gather in packs to raise
+  their young, sending smaller groups to hunt for food while the rest of the pack
+  watches the brood. Krooths mate only once every 4 or 5 years, and the mating process
+  is a curiously gruesome spectacle. An entire pack of females will hunt as a group
+  for a lone male krooth, claiming their prize in an orgiastic frenzy that can last
+  for an entire day and night. After the mating has finished, the females slay their
+  mate and devour his nutrient-rich flesh, and his organs in particular. These organs
+  contain a unique chemical compound vital to gestation. Many naturalists will pay
+  handsomely for the fresh remains of a male krooth so they can study the strange
+  properties of the creature''s blood and organs. In addition, krooths have poisonous,
+  hollow teeth. When these creatures bite their prey, a tooth breaks off and causes
+  the victim to bleed profusely as their blood pours through the hollow tooth.
+
+
+
+
+  Whether male or female, krooths seem to be repelled by goblinoid flesh, especially
+  that of bugbears. This doesn''t mean krooths won''t kill goblinoids, especially
+  those threatening their young, but they typically do so using only their claws and
+  tails, and they take great care to clean themselves thoroughly after such a killing.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 24'
+hp: 150
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 8
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d12+9
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: null
+    type: Poison Tooth
+  to_hit: 20
+  traits:
+  - deadly 1d10
+  - poison
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 2d8+9
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 20
+  traits:
+  - agile
+- action_cost: One Action
+  damage:
+    formula: 2d8+9
+    type: piercing
+  name: tail
+  plus_damage: null
+  to_hit: 20
+  traits:
+  - reach 15 feet
+name: Krooth
+perception: 16
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: ''
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Aquatic Ambush
+  range: null
+  raw_description: '**Aquatic Ambush**  '
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The krooth damaged a creature with its jaws on its most recent action this
+    turn.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Poison Tooth
+  range: null
+  raw_description: '**Poison Tooth**   (__poison__) **Requirements** The krooth damaged
+    a creature with its jaws on its most recent action this turn. **Effect** The krooth
+    snaps off one of its teeth in the creature it hit. The creature takes 1d6 persistent
+    bleed damage and is __drained 1__. Neither can be healed while the tooth remains.
+    Removing the tooth safely requires a successful DC 26 check to Administer First
+    Aid. Instead of ending bleeding or stabilizing, this removes the drained condition,
+    but it doesn''t automatically end the bleed damage.'
+  requirements: null
+  success: null
+  traits:
+  - poison
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 20
+  fort_misc: null
+  misc: +4 status to all saves vs. fear
+  ref: 17
+  ref_misc: null
+  will: 14
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +16
+- low-light vision
+- scent (imprecise) 60 feet
+size: Large
+skills:
+- bonus: 18
+  misc: null
+  name: 'Athletics '
+- bonus: 18
+  misc: +20 in water
+  name: 'Stealth '
+- bonus: 17
+  misc: +20 to Track a bleeding creature
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 215
+  page_stop: null
+speed:
+- amount: 40
+  type: Land
+- amount: 30
+  type: swim
+spell_lists: null
+traits:
+- N
+- Large
+- Amphibious
+- Animal
+type: Creature
+weaknesses: null

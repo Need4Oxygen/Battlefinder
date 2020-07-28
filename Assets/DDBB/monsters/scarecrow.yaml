@@ -1,0 +1,284 @@
+ability_mods:
+  cha_mod: -2
+  con_mod: 3
+  dex_mod: 2
+  int_mod: -4
+  str_mod: 5
+  wis_mod: 3
+ac: 19
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: "40 feet. The scarecrow's eyes flicker with an unnerving glow. A creature\
+    \ can't reduce its __frightened__ condition below 1 as long as it is in the aura's\
+    \ emanation. \n\nWhen a creature enters or starts its turn in the aura, it must\
+    \ attempt a DC 18 Will save. Birds and other avian creatures take a -2 circumstance\
+    \ penalty to this save."
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Scarecrow's Leer
+  range: null
+  raw_description: "**Scarecrow's Leer** (__aura__, __emotion__, __fear__, __mental__,\
+    \ __occult__, __visual__) 40 feet. The scarecrow's eyes flicker with an unnerving\
+    \ glow. A creature can't reduce its __frightened__ condition below 1 as long as\
+    \ it is in the aura's emanation. \n\nWhen a creature enters or starts its turn\
+    \ in the aura, it must attempt a DC 18 Will save. Birds and other avian creatures\
+    \ take a -2 circumstance penalty to this save."
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - emotion
+  - fear
+  - mental
+  - occult
+  - visual
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The creature is unaffected and is then temporarily immune for 24 hours.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Critical Success
+  range: null
+  raw_description: '**Critical Success** The creature is unaffected and is then temporarily
+    immune for 24 hours.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The creature is frightened 1.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Success
+  range: null
+  raw_description: '**Success** The creature is frightened 1.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The creature is frightened 2 and is __fascinated__ by the scarecrow
+    until the end of its next turn.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Failure
+  range: null
+  raw_description: '**Failure** The creature is frightened 2 and is __fascinated__
+    by the scarecrow until the end of its next turn.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: As failure, but frightened 3.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Critical Failure
+  range: null
+  raw_description: '**Critical Failure** As failure, but frightened 3.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'A ramshackle collection of materials in a human shape, the scarecrow
+  construct is indistinguishable from a normal scarecrow until it slowly creaks to
+  life. As it animates, its carved pumpkin or sackcloth face bursts into eldritch
+  flame, sending fear creeping into the air around it. Each scarecrow is handcrafted
+  and unique in its appearance, though most are 5 to 6 feet tall and constructed of
+  a combination of wood, cloth, rope, straw, sawdust, discarded husks and cobs, and
+  similar materials, all dressed in ragged pastoral garments. This rudimentary construction
+  makes a scarecrow somewhat fragile, prone to snapping limbs in the crush of battle.
+  Yet its structure is adaptable, allowing it to reshape another piece of itself into
+  a clawed limb or grip a severed portion of itself to swat at its foes.
+
+
+
+
+  When a scarecrow is created, it must be anointed with a drop of its creator''s blood
+  into each of its eyes. This blood soaks into the material and siphons a tiny sliver
+  of the creator''s soul away—not enough to harm the creator, but more than enough
+  to imbue the scarecrow with an instinctive intellect that allows it to follow commands
+  as eagerly as a well-trained (if ill-tempered) guard dog. When a scarecrow is destroyed,
+  the blood leaks back out from its eyes, but the portion of the creator''s soul never
+  returns.
+
+
+
+
+  **__Recall Knowledge - Construct__ (__Arcana__, __Crafting__)**: DC 19'
+hp: 60
+hp_misc: null
+immunities:
+- bleed
+- death effects
+- disease
+- doomed
+- drained
+- fatigued
+- healing
+- mental
+- necromancy
+- nonlethal attacks
+- paralyzed
+- poison
+- sickened
+- unconscious
+items: null
+languages: null
+level: 4
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+7
+    type: bludgeoning
+  name: claw
+  plus_damage:
+  - formula: null
+    type: clawing fear
+  to_hit: 13
+  traits:
+  - versatile S
+name: Scarecrow
+perception: 11
+proactive_abilities:
+- action_cost: Free Action
+  critical_failure: null
+  critical_success: null
+  description: The scarecrow's head bursts into ghostly, heatless flame that sheds
+    bright light in a 20-foot emanation (and dim light to the next 20 feet). If the
+    scarecrow uses this ability on the first round of combat, any creature that has
+    not acted yet is startled and becomes __flat-footed__ against the scarecrow for
+    1 round. It can suppress the light by using this action again.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Baleful Glow
+  range: null
+  raw_description: '**Baleful Glow** [Free Action]  (__concentrate__, __mental__,
+    __occult__) The scarecrow''s head bursts into ghostly, heatless flame that sheds
+    bright light in a 20-foot emanation (and dim light to the next 20 feet). If the
+    scarecrow uses this ability on the first round of combat, any creature that has
+    not acted yet is startled and becomes __flat-footed__ against the scarecrow for
+    1 round. It can suppress the light by using this action again.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - mental
+  - occult
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The scarecrow's strikes deal an additional 1d6 mental damage to __frightened__
+    creatures.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Clawing Fear
+  range: null
+  raw_description: '**Clawing Fear** The scarecrow''s strikes deal an additional 1d6
+    mental damage to __frightened__ creatures.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: Until it acts, the scarecrow resembles an ordinary scarecrow. It has
+    an automatic result of 32 on __Deception__ checks and DCs to pass as an ordinary
+    scarecrow.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Mundane Appearance
+  range: null
+  raw_description: '**Mundane Appearance**   (__concentrate__) Until it acts, the
+    scarecrow resembles an ordinary scarecrow. It has an automatic result of 32 on
+    __Deception__ checks and DCs to pass as an ordinary scarecrow.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 5
+  type: physical (except slashing)
+ritual_lists: null
+saves:
+  fort: 13
+  fort_misc: null
+  misc: null
+  ref: 8
+  ref_misc: null
+  will: 11
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +11
+- darkvision
+size: Medium
+skills:
+- bonus: 12
+  misc: null
+  name: 'Athletics '
+source:
+- abbr: Bestiary 2
+  page_start: 232
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+spell_lists: null
+traits:
+- N
+- Medium
+- Construct
+type: Creature
+weaknesses:
+- amount: 5
+  type: fire

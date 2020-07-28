@@ -1,0 +1,198 @@
+ability_mods:
+  cha_mod: 6
+  con_mod: 2
+  dex_mod: 6
+  int_mod: 2
+  str_mod: 4
+  wis_mod: 5
+ac: 30
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The melody on the wind recreates the auditory effect, gaining the bonuses
+    for itself and its allies as long as the original effect persists.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Hostile Duet
+  range: null
+  raw_description: '**Hostile Duet [Reaction]** **Trigger **A hostile creature within
+    30 feet creates an effect with the __auditory__ trait that provides bonuses to
+    itself or its allies; **Effect **The melody on the wind recreates the auditory
+    effect, gaining the bonuses for itself and its allies as long as the original
+    effect persists.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A hostile creature within 30 feet creates an effect with the __auditory__
+    trait that provides bonuses to itself or its allies
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The melody on the wind attempts to counteract the spell. If it succeeds,
+    the spell effect is caught in a blast of wind that sweeps it back to its origin,
+    affecting the caster. Targets of the triggering effect other than the melody on
+    the wind are still affected normally.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Retune
+  range: null
+  raw_description: '**Retune [Reaction]** **Trigger **The melody on the wind is targeted
+    by a spell with the __auditory__ trait; **Effect **The melody on the wind attempts
+    to counteract the spell. If it succeeds, the spell effect is caught in a blast
+    of wind that sweeps it back to its origin, affecting the caster. Targets of the
+    triggering effect other than the melody on the wind are still affected normally.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: The melody on the wind is targeted by a spell with the __auditory__ trait
+description: 'This cloud of song and sound has been caught by the wind and carried
+  across the air. While the melody on the wind (known by some as a song elemental,
+  despite the fact that no such place as a plane of song exists in the known multiverse)
+  might enjoy the beauty of music, it is by nature a destructive elemental force.
+
+
+
+
+  **__Recall Knowledge - Elemental__ (__Arcana__, __Nature__)**: DC 27'
+hp: 170
+hp_misc: null
+immunities:
+- bleed
+- paralyzed
+- poison
+- sleep
+items: null
+languages:
+- Auran
+level: 10
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d10+10
+    type: bludgeoning
+  name: wind gust
+  plus_damage:
+  - formula: null
+    type: Push
+  to_hit: 23
+  traits:
+  - agile
+  - finesse
+name: Melody On The Wind
+perception: 21
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: "The melody on the wind sings in a sonorous chorus. Any creature in\
+    \ a 30-foot emanation must attempt a DC 30 Will save to resist becoming fascinated\
+    \ by the melody on the wind. A creature that succeeds at its save is temporarily\
+    \ immune for 24 hours. \n\n**Critical Success **The creature is unaffected. \n\
+    \n**Success **The creature is __fascinated__ for 1 round. \n\n**Failure **The\
+    \ creature is fascinated for 1d4 rounds."
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Mesmerizing Melody
+  range: null
+  raw_description: "**Mesmerizing Melody**   (__auditory__, __concentrate__, __enchantment__,\
+    \ __mental__, __primal__) The melody on the wind sings in a sonorous chorus. Any\
+    \ creature in a 30-foot emanation must attempt a DC 30 Will save to resist becoming\
+    \ fascinated by the melody on the wind. A creature that succeeds at its save is\
+    \ temporarily immune for 24 hours. \n\n**Critical Success **The creature is unaffected.\
+    \ \n\n**Success **The creature is __fascinated__ for 1 round. \n\n**Failure **The\
+    \ creature is fascinated for 1d4 rounds."
+  requirements: null
+  success: null
+  traits:
+  - auditory
+  - concentrate
+  - enchantment
+  - mental
+  - primal
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The melody on the wind's movement doesn't trigger reactions.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Swiftness
+  range: null
+  raw_description: '**Swiftness** The melody on the wind''s movement doesn''t trigger
+    reactions.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 2d8+10
+    type: sonic
+  name: solid refrain
+  plus_damage: null
+  to_hit: 23
+  traits:
+  - range increment 70 feet
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 16
+  fort_misc: null
+  misc: null
+  ref: 22
+  ref_misc: null
+  will: 19
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +21
+- darkvision
+size: Huge
+skills:
+- bonus: 22
+  misc: null
+  name: 'Acrobatics '
+- bonus: 22
+  misc: null
+  name: 'Performance '
+- bonus: 22
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 107
+  page_stop: null
+speed:
+- amount: 100
+  type: fly
+- amount: null
+  type: swiftness
+spell_lists: null
+traits:
+- N
+- Huge
+- Air
+- Elemental
+type: Creature
+weaknesses: null

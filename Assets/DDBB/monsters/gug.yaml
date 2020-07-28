@@ -1,0 +1,231 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 6
+  dex_mod: 3
+  int_mod: 0
+  str_mod: 7
+  wis_mod: 3
+ac: 30
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+description: 'A gug''s most horrid feature is its barrel-shaped head, which splits
+  vertically to reveal numerous rows of sharp, yellow teeth and an open throat. Its
+  eyes on either side of its head-jaw are small but keen. Bony ridges protect its
+  eyes from the frantic flailing of its prey, as it prefers meals of raw and writhing
+  meat over fungi and molds. It grips said prey with powerful arms that split at the
+  elbow into a pair of forearms, giving it four clawed paws. These monstrous brutes
+  are covered with shaggy black fur, often crusted with blood and gore.
+
+
+
+
+  Although gugs may seem bestial, they have keen and wicked intellects. Gugs lair
+  far underground, but they sometimes come to the surface to hunt during dark nights,
+  either alone or in small groups. As they possess voracious appetites, most gugs
+  consume the creatures they catch, but some instead kidnap their victims and retreat
+  below the surface, leaving only a lingering stench and odd, clawed paw-prints. Victims
+  are taken to rancid lairs marked with strange runes and sacrificed to the gugs''
+  wicked gods of blood, darkness, and nightmares. Dire rumors tell of lightless gug
+  cities made of titanic blocks of stone far underground, where powerful gug leaders
+  preach their vile doctrines to mobs of howling gugs.
+
+
+
+
+  Gugs have a strange relationship with ghouls, which seems to date from their shared
+  origin in a distant subterranean world. Gugs live in fear of ghouls, despite towering
+  over them; however, this strange fear doesn''t apply to ghasts, whom gugs consume
+  as voraciously as they do other creatures.
+
+
+
+
+  Gugs stand 16 feet tall and weigh 2,000 pounds, although they have an eerie, graceful
+  gait that belies their immense size. Their light step and ability to squeeze through
+  very small crannies makes gugs common bogeymen in tales of strange disappearances
+  or bloody massacres.
+
+
+
+
+  Some particularly bloodthirsty gugs gain awful powers as gifts from their eldritch
+  patrons. These monsters are known as savants, are never less than 12th level in
+  power, and gain several occult innate spells. Though each savant''s precise mix
+  of spells varies, normally, these spells grant invisibility, offer power to manipulate
+  and change rock, or invoke awful and destructive energies upon living flesh.
+
+
+
+
+  **__Recall Knowledge - Aberration__ (__Occultism__)**: DC 27'
+hp: 175
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Undercommon
+level: 10
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d12+13
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 23
+  traits:
+  - reach 15 feet
+- action_cost: One Action
+  damage:
+    formula: 2d8+13
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 23
+  traits:
+  - agile
+  - reach 15 feet
+name: Gug
+perception: 19
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Despite its size, the gug's multiple joints allow it to fit through
+    tight spaces as if it were a Medium creature. While Squeezing, it can move at
+    its full Speed.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Eerie Flexibility
+  range: null
+  raw_description: '**Eerie Flexibility** Despite its size, the gug''s multiple joints
+    allow it to fit through tight spaces as if it were a Medium creature. While Squeezing,
+    it can move at its full Speed.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The gug makes up to four claw Strikes, each against a different target.
+    These attacks all count toward the gug's multiple attack penalty, but the penalty
+    doesn't increase until after the gug makes all its attacks.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Furious Claws
+  range: null
+  raw_description: '**Furious Claws** [Two Actions]  The gug makes up to four claw
+    Strikes, each against a different target. These attacks all count toward the gug''s
+    multiple attack penalty, but the penalty doesn''t increase until after the gug
+    makes all its attacks.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: claw
+  effect: The monster automatically deals that Strike's damage again to the enemy.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Rend
+  range: null
+  raw_description: A Rend entry lists a Strike the monster has. **Requirements** The
+    monster hit the same enemy with two consecutive Strikes of the listed type in
+    the same round. **Effect** The monster automatically deals that Strike's damage
+    again to the enemy.
+  requirements: The monster hit the same enemy with two consecutive Strikes of the
+    listed type in the same round.
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 22
+  fort_misc: null
+  misc: null
+  ref: 17
+  ref_misc: null
+  will: 19
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +19
+- darkvision
+size: Large
+skills:
+- bonus: 19
+  misc: +23 to Squeeze
+  name: 'Acrobatics '
+- bonus: 23
+  misc: null
+  name: 'Athletics '
+- bonus: 19
+  misc: null
+  name: 'Stealth '
+- bonus: 17
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 198
+  page_stop: null
+speed:
+- amount: 40
+  type: Land
+- amount: 20
+  type: climb
+spell_lists: null
+traits:
+- CE
+- Large
+- Aberration
+type: Creature
+weaknesses: null

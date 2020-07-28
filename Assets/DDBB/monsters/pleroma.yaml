@@ -1,0 +1,377 @@
+ability_mods:
+  cha_mod: 6
+  con_mod: 6
+  dex_mod: 7
+  int_mod: 8
+  str_mod: 6
+  wis_mod: 9
+ac: 45
+ac_special: null
+alignment: LN
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The critical failure becomes a normal failure.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Reality Twist
+  range: null
+  raw_description: '**Reality Twist** [Reaction] **Trigger** The pleroma critically
+    fails the saving throw. **Effect** The critical failure becomes a normal failure.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: The pleroma critically fails the saving throw.
+description: 'Among the most powerful of all the true aeons, pleromas are a manifestation
+  of the duality of creation and destruction. Their physical manifestation is a constant
+  state of flux between these two poles, their forms a shifting cloak of black where
+  galaxies and other celestial objects flit in and out of existence, as if depicting
+  the constant life, death, and rebirth of a miniature, self-contained universe.
+
+
+
+
+  Pleromas see the multiverse as both eternal and cyclical, doomed and malleable,
+  ending only if these cycles ever become unbalanced. They believe the current Convergence
+  is necessary to obtain this essential balance, and act to ensure that the grand
+  design of the Monad is carried out to the smallest detail.
+
+
+
+
+  **__Recall Knowledge - Monitor__ (__Religion__)**: DC 40'
+hp: 335
+hp_misc: regeneration 20 (deactivated by chaotic
+immunities:
+- negative
+- positive
+items: null
+languages:
+- envisioning
+level: 20
+melee:
+- action_cost: One Action
+  damage:
+    formula: 5d8+18
+    type: positive or negative damage
+  name: energy touch
+  plus_damage:
+  - formula: 1d6
+    type: lawful
+  to_hit: 36
+  traits:
+  - agile
+  - lawful
+  - magical
+name: Pleroma
+perception: 37
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A pleroma's touch deals its choice of positive or negative damage,
+    but neither energy can be used to heal a creature.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Energy Touch
+  range: null
+  raw_description: '**Energy Touch** A pleroma''s touch deals its choice of positive
+    or negative damage, but neither energy can be used to heal a creature.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: Three times per day, a pleroma can manifest a 2-foot-diameter sphere
+    of white energy that hovers above its left hand. By using a single action, which
+    has the __concentrate__ trait, the pleroma can cause the sphere to fly 10 feet.
+    The sphere can move in any direction, ignoring difficult terrain, but it can't
+    move farther than 300 feet away from the pleroma. Wherever the sphere travels,
+    it leaves behind a 5-foot-wide path of new matter, creating either new terrain
+    (the pleroma's choice of normal, difficult, or greater difficult terrain) or a
+    5-foot-square solid barrier of a single natural substance (such as clay, wood,
+    or stone). The sphere can enter the space of a creature; when it does, the creature
+    must succeed at a DC 43 Fortitude save or be absorbed into the sphere. On a successful
+    save, the creature is pushed to a space of the GM's choice away from the sphere.
+    Those who fail take 20d6 positive damage (even if they are living) and are pushed
+    away as a success. Those who critically fail, or are reduced to 0 HP by the damage
+    from a failure, become one with the new material and can be restored only via
+    a 10th-level spell. A pleroma can have only one Sphere of Creation in existence
+    at a time, and the sphere automatically vanishes in a flash of blinding light
+    after 1d4 minutes. All creatures within 30 feet of the sphere of creation when
+    it vanishes must succeed at a DC 43 Fortitude save or be permanently __blinded__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sphere of Creation
+  range: null
+  raw_description: '**Sphere of Creation** [Two Actions]  (__incapacitation__, __magical__)
+    Three times per day, a pleroma can manifest a 2-foot-diameter sphere of white
+    energy that hovers above its left hand. By using a single action, which has the
+    __concentrate__ trait, the pleroma can cause the sphere to fly 10 feet. The sphere
+    can move in any direction, ignoring difficult terrain, but it can''t move farther
+    than 300 feet away from the pleroma. Wherever the sphere travels, it leaves behind
+    a 5-foot-wide path of new matter, creating either new terrain (the pleroma''s
+    choice of normal, difficult, or greater difficult terrain) or a 5-foot-square
+    solid barrier of a single natural substance (such as clay, wood, or stone). The
+    sphere can enter the space of a creature; when it does, the creature must succeed
+    at a DC 43 Fortitude save or be absorbed into the sphere. On a successful save,
+    the creature is pushed to a space of the GM''s choice away from the sphere. Those
+    who fail take 20d6 positive damage (even if they are living) and are pushed away
+    as a success. Those who critically fail, or are reduced to 0 HP by the damage
+    from a failure, become one with the new material and can be restored only via
+    a 10th-level spell. A pleroma can have only one Sphere of Creation in existence
+    at a time, and the sphere automatically vanishes in a flash of blinding light
+    after 1d4 minutes. All creatures within 30 feet of the sphere of creation when
+    it vanishes must succeed at a DC 43 Fortitude save or be permanently __blinded__.'
+  requirements: null
+  success: null
+  traits:
+  - incapacitation
+  - magical
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: Three times per day, a pleroma can manifest a 2-foot-diameter sphere
+    of complete and utter darkness that hovers above its right hand. It can move and
+    control the sphere in the same manner as its Sphere of Creation. The sphere is
+    an empty void that lasts for 1 minute before collapsing in on itself and winking
+    out of existence. Once manifested, the sphere can be used as a ranged attack,
+    but it blinks out of existence immediately after that attack is resolved. Any
+    unattended object that touches the void is sucked in and completely destroyed.
+    Larger objects (such as ships or buildings) are destroyed at a rate of one 10-foot
+    cube per round of contact. The sphere can enter the space of a creature, with
+    effects similar to the Sphere of Creation except that it deals negative damage
+    (even to undead) on a failure and annihilates rather than incorporating the creature
+    into material. Such a destroyed creature can be restored only by a 10th-level
+    spell.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sphere of Oblivion
+  range: null
+  raw_description: '**Sphere of Oblivion** [Two Actions]  (__incapacitation__, __magical__)
+    Three times per day, a pleroma can manifest a 2-foot-diameter sphere of complete
+    and utter darkness that hovers above its right hand. It can move and control the
+    sphere in the same manner as its Sphere of Creation. The sphere is an empty void
+    that lasts for 1 minute before collapsing in on itself and winking out of existence.
+    Once manifested, the sphere can be used as a ranged attack, but it blinks out
+    of existence immediately after that attack is resolved. Any unattended object
+    that touches the void is sucked in and completely destroyed. Larger objects (such
+    as ships or buildings) are destroyed at a rate of one 10-foot cube per round of
+    contact. The sphere can enter the space of a creature, with effects similar to
+    the Sphere of Creation except that it deals negative damage (even to undead) on
+    a failure and annihilates rather than incorporating the creature into material.
+    Such a destroyed creature can be restored only by a 10th-level spell.'
+  requirements: null
+  success: null
+  traits:
+  - incapacitation
+  - magical
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage: null
+  name: Sphere of Oblivion
+  plus_damage: null
+  to_hit: 37
+  traits:
+  - magical
+rarity: Common
+resistances:
+- amount: 20
+  type: chaotic
+ritual_lists: null
+saves:
+  fort: 32
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 31
+  ref_misc: null
+  will: 37
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Pleromas care little for communication with other creatures, but when
+    they do convey information, they do so wordlessly through a series of psychic
+    projections. This acts as telepathy with a range of 100 feet but is understandable
+    to all creatures regardless of whether they have a language, though the aeon's
+    meaning to non-aeons can be vague and is often mysterious. An aeon can use this
+    ability to communicate flawlessly with any other aeon on the same plane as itself.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Envisioning
+  range: null
+  raw_description: '**Envisioning** Pleromas care little for communication with other
+    creatures, but when they do convey information, they do so wordlessly through
+    a series of psychic projections. This acts as telepathy with a range of 100 feet
+    but is understandable to all creatures regardless of whether they have a language,
+    though the aeon''s meaning to non-aeons can be vague and is often mysterious.
+    An aeon can use this ability to communicate flawlessly with any other aeon on
+    the same plane as itself.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +37
+- darkvision
+- lifesense 120 feet
+- true seeing
+size: Large
+skills:
+- bonus: 33
+  misc: null
+  name: 'Acrobatics '
+- bonus: 38
+  misc: null
+  name: 'Arcana '
+- bonus: 34
+  misc: null
+  name: 'Deception '
+- bonus: 34
+  misc: null
+  name: 'Diplomacy '
+- bonus: 38
+  misc: null
+  name: 'Occultism '
+- bonus: 39
+  misc: null
+  name: 'Religion '
+- bonus: 35
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 10
+  page_stop: null
+speed:
+- amount: 40
+  type: fly
+- amount: 128
+  type: <a style="text-decoration:underline" href="Spells.aspx?ID="><i>freedom of
+    movement</i></a>
+spell_lists:
+- dc: 47
+  misc: ''
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 10
+    spells:
+    - frequency: null
+      name: alter reality
+      requirement: null
+  - heightened_level: null
+    level: 9
+    spells:
+    - frequency: null
+      name: banishment
+      requirement: null
+    - frequency: null
+      name: blade barrier
+      requirement: null
+    - frequency: null
+      name: disjunction
+      requirement: null
+    - frequency: null
+      name: overwhelming presence
+      requirement: null
+  - heightened_level: null
+    level: 8
+    spells:
+    - frequency: x2
+      name: disintegrate
+      requirement: null
+    - frequency: null
+      name: unrelenting observation
+      requirement: null
+  - heightened_level: null
+    level: 7
+    spells:
+    - frequency: null
+      name: plane shift
+      requirement: null
+    - frequency: null
+      name: retrocognition
+      requirement: null
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: at will
+      name: creation
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: at will
+      name: create food
+      requirement: null
+    - frequency: at will
+      name: shape stone
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: at will
+      name: hypercognition
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: at will
+      name: detect alignment
+      requirement: null
+    - frequency: at will
+      name: shape wood
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: at will
+      name: create water
+      requirement: null
+  - heightened_level: 8
+    level: -1
+    spells:
+    - frequency: null
+      name: true seeing
+      requirement: null
+  - heightened_level: 4
+    level: -1
+    spells:
+    - frequency: null
+      name: freedom of movement
+      requirement: null
+  to_hit: 37
+traits:
+- LN
+- Large
+- Aeon
+- Monitor
+type: Creature
+weaknesses: null

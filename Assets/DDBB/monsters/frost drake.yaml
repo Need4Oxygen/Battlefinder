@@ -1,0 +1,258 @@
+ability_mods:
+  cha_mod: 1
+  con_mod: 4
+  dex_mod: 2
+  int_mod: -1
+  str_mod: 6
+  wis_mod: 3
+ac: 25
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The frost drake attempts to Strike with its tail. If the Strike hits, it
+    deals an additional 1d6 damage.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Retaliatory Strike
+  range: null
+  raw_description: '**Retaliatory Strike** [Reaction] **Trigger** A creature within
+    reach of the frost drake''s tail successfully damages the frost drake with a Strike.
+    **Effect** The frost drake attempts to Strike with its tail. If the Strike hits,
+    it deals an additional 1d6 damage.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within reach of the frost drake's tail successfully damages
+    the frost drake with a Strike.
+description: 'Frost drakes pose an immense danger in the frozen reaches they call
+  home, where they roam far and wide to hunt for prey such as caribou, wolves, small
+  bears, and tundra-dwelling people. Related as they are to white dragons, these drakes
+  share many habits and facets of their disposition with their draconic cousins. Indeed,
+  just as white dragons are among the most bestial and craven of dragonkind, frost
+  drakes are among the most depraved and openly malicious of the drakes. They are
+  also especially insolent, and are less likely to back down from a flight compared
+  to other drakes. Many frost drakes have met their ends trying to enact cruelties
+  beyond their means, such as singly taking on an entire castle or well-fortified
+  township. Although a frost drake can wreak much destruction on its own, tales of
+  village-dwelling northerners banding together to defend their homes from these rogue
+  menaces are fairly common.
+
+
+
+
+  A frost drake''s hunting grounds are quite large. Those frost drakes that live upon
+  the permanently frozen peaks of high mountains have been known to swoop down to
+  snatch up prey from the lowlands, leaving frozen swaths of earth from their breath
+  as the only sign of their passing. Their frost-covered scales range from deep royal
+  blue to crisp cyan and sometimes feature sporadic patches of violet. Their hides
+  are thinner than most drakes''; when a frost drake is inhaling in preparation to
+  launch its signature frozen breath, the monster''s ice-blue blood can be seen beneath
+  its scales.
+
+
+
+
+  **__Recall Knowledge - Dragon__ (__Arcana__)**: DC 23'
+hp: 115
+hp_misc: null
+immunities:
+- cold
+- paralyzed
+- unconscious
+items: null
+languages:
+- Draconic
+level: 7
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d12+8
+    type: piercing
+  name: Fangs
+  plus_damage:
+  - formula: 1d6
+    type: cold
+  to_hit: 17
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 2d10+8
+    type: bludgeoning
+  name: Tail
+  plus_damage: null
+  to_hit: 17
+  traits:
+  - reach 10 feet
+name: Frost Drake
+perception: 14
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The frost drake makes two Fangs Strikes and one Tail Strike in any
+    order.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Draconic Frenzy
+  range: null
+  raw_description: '**Draconic Frenzy** [Two Actions]  The frost drake makes two Fangs
+    Strikes and one Tail Strike in any order.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The frost drake spits a ball of liquid up to 60 feet that explodes
+    into a 20-foot __burst__ cloud of freezing mist. Those in the burst take 8d6 cold
+    damage (DC 25 basic Reflex save). The mist cakes all surfaces in the area with
+    a sheet of slippery ice that turns the area into __difficult terrain__ for 2d4
+    rounds. It can't use Freezing Mist Breath again for 1d6 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Freezing Mist Breath
+  range: null
+  raw_description: '**Freezing Mist Breath** [Two Actions]  (__arcane__, __cold__,
+    __evocation__) The frost drake spits a ball of liquid up to 60 feet that explodes
+    into a 20-foot __burst__ cloud of freezing mist. Those in the burst take 8d6 cold
+    damage (DC 25 basic Reflex save). The mist cakes all surfaces in the area with
+    a sheet of slippery ice that turns the area into __difficult terrain__ for 2d4
+    rounds. It can''t use Freezing Mist Breath again for 1d6 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - cold
+  - evocation
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A frost drake can climb on ice as though it had the listed climb Speed.
+    It ignores __difficult terrain__ and __greater difficult terrain__ from ice and
+    snow and doesn't risk falling when crossing ice.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Ice Climb
+  range: null
+  raw_description: '**Ice Climb** A frost drake can climb on ice as though it had
+    the listed climb Speed. It ignores __difficult terrain__ and __greater difficult
+    terrain__ from ice and snow and doesn''t risk falling when crossing ice.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The frost drake moves up to twice its Speed. It can do this three times
+    per day.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Speed Surge
+  range: null
+  raw_description: '**Speed Surge**   (__move__) The frost drake moves up to twice
+    its Speed. It can do this three times per day.'
+  requirements: null
+  success: null
+  traits:
+  - move
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 10
+  type: fire
+ritual_lists: null
+saves:
+  fort: 17
+  fort_misc: null
+  misc: null
+  ref: 15
+  ref_misc: null
+  will: 14
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Snow doesn't impair a frost drake's vision; it ignores concealment
+    from snowfall.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Snow Vision
+  range: null
+  raw_description: '**Snow Vision** Snow doesn''t impair a frost drake''s vision;
+    it ignores concealment from snowfall.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +14
+- darkvision
+- scent (imprecise) 30 feet
+- snow vision
+size: Large
+skills:
+- bonus: 15
+  misc: null
+  name: 'Acrobatics '
+- bonus: 17
+  misc: null
+  name: 'Athletics '
+- bonus: 14
+  misc: null
+  name: 'Intimidation '
+- bonus: 15
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 134
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 20
+  type: burrow  (snow only)
+- amount: 50
+  type: fly
+- amount: 20
+  type: ice climb
+spell_lists: null
+traits:
+- CE
+- Large
+- Cold
+- Dragon
+type: Creature
+weaknesses: null

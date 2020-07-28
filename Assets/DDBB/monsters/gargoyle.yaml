@@ -1,0 +1,156 @@
+ability_mods:
+  cha_mod: -2
+  con_mod: 3
+  dex_mod: 2
+  int_mod: -2
+  str_mod: 3
+  wis_mod: 2
+ac: 21
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The gargoyle makes a claw Strike against the triggering creature.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Clawed Feet
+  range: null
+  raw_description: '**Clawed Feet** [Reaction] (__attack__) ; **Trigger** The gargoyle
+    is Flying, and a creature moves into an adjacent square below it. **Effect** The
+    gargoyle makes a claw Strike against the triggering creature.'
+  requirements: null
+  success: null
+  traits:
+  - attack
+  trigger: The gargoyle is Flying, and a creature moves into an adjacent square below
+    it.
+description: "Gargoyles are monstrous hunters made of elemental stone. They use their\
+  \ resemblance to decorative statues to hide in plain sight in cities during the\
+  \ day and descend upon unlucky pedestrians at night. Their most common form is that\
+  \ of a horned humanoid with bat-like wings, but individual gargoyles show a great\
+  \ deal of variation, with some appearing more or less humanoid and others resembling\
+  \ no known creature. A gargoyle's features are not flxed; city-dwelling gargoyles\
+  \ who remain in the same locale long enough slowly morph, day by day, to match the\
+  \ style of the local architecture. These patient monsters can stay disguised for\
+  \ long stretches of time as they patiently await an opportunity to strike.\n\n\n\
+  \nGargoyles tend to be lone hunters, though sometimes they band into fearsome tribes\
+  \ called \"wings\" for protection or sport. On rare occasions, wings become relatively\
+  \ stable communities, and gargoyles in wings may even ally with other creatures\
+  \ such as demons and intelligent aberrations, though these alliances exist on a\
+  \ razor's edge. The majority of gargoyles are treacherous, vindictive, and petty—traits\
+  \ that preclude lasting partnerships. Many tend to be obsessive and compulsive.\
+  \ Some are collectors, focusing on anything from books to grim trophies, while others\
+  \ are ritualistic or overly passionate about niche intellectual subjects or certain\
+  \ artistic motifs. These tendencies often contribute to the dissolution of wings\
+  \ as individuals' obsessions and compulsions clash. \n\n## Kapoacinth\n\n Kapoacinths\
+  \ dwell not amid cliffs or rooftops, but beneath the sea, using their wings to swim.\
+  \ These water-dwelling gargoyles often dwell in shallow coastal regions and shamble\
+  \ forth from the sea to attack prey. Kapoacinths are less individualistic and tend\
+  \ to create more stable wings for longer periods of time. Kapoacinths have the same\
+  \ abilities as the gargoyle presented below, but with the following adjustments:\
+  \ they have the aquatic trait, they have a swim Speed of 40 feet instead of a fly\
+  \ Speed, and their Clawed Feat reaction triggers when they are Swimming instead\
+  \ of Flying.\n\n\n\n**__Recall Knowledge - Beast__ (__Arcana__, __Nature__)**: DC\
+  \ 19"
+hp: 40
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Common
+- Terran
+level: 4
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+3
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 13
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 2d6+3
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 13
+  traits:
+  - agile
+name: Gargoyle
+perception: 10
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: Until the next time it acts, the gargoyle appears to be a statue. It
+    has an automatic result of 32 on __Deception__ checks and DCs to pass as a statue.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Statue
+  range: null
+  raw_description: '**Statue**   (__concentrate__) Until the next time it acts, the
+    gargoyle appears to be a statue. It has an automatic result of 32 on __Deception__
+    checks and DCs to pass as a statue.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 5
+  type: physical (except adamantine)
+ritual_lists: null
+saves:
+  fort: 13
+  fort_misc: null
+  misc: null
+  ref: 10
+  ref_misc: null
+  will: 10
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +10
+- darkvision
+size: Medium
+skills:
+- bonus: 10
+  misc: null
+  name: 'Acrobatics '
+- bonus: 9
+  misc: null
+  name: 'Athletics '
+- bonus: 12
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 161
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 40
+  type: fly
+spell_lists: null
+traits:
+- CE
+- Medium
+- Beast
+- Earth
+type: Creature
+weaknesses: null

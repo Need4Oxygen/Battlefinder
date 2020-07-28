@@ -1,0 +1,164 @@
+ability_mods:
+  cha_mod: -2
+  con_mod: 4
+  dex_mod: -1
+  int_mod: -2
+  str_mod: 6
+  wis_mod: 0
+ac: 18
+ac_special: null
+alignment: CE
+automatic_abilities: null
+description: 'Ogre gluttons take the act of feeding to a horrific extreme, capable
+  of extending their already cavernous mouths wide enough to gulp down a halfling.
+  Stories of ogre gluttons being tricked into eating razor-edged shields or barrels
+  filled with poisoned meat are common, but such tales are of little consolation to
+  those who have been gobbled down whole by these ravenous giants. In addition to
+  their sadistic table manners, ogre gluttons have a disturbing knack for coming up
+  with violent "games" that are little more than drawn-out torments, yet those who
+  somehow manage to beat a glutton at the rules of its own game can often enrage and
+  frustrate the ogre enough that the resulting tantrum is more than enough distraction
+  to afford a last-ditch escape from doom.
+
+
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 19'
+hp: 70
+hp_misc: null
+immunities: null
+items:
+- greataxe
+- leather armor
+languages:
+- Jotun
+level: 4
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d12+8
+    type: slashing
+  name: greataxe
+  plus_damage: null
+  to_hit: 14
+  traits:
+  - reach 10 feet
+  - sweep
+- action_cost: One Action
+  damage:
+    formula: 1d8+8
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: null
+    type: Grab and Glutton's Feast
+  to_hit: 14
+  traits: null
+name: Ogre Glutton
+perception: 6
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: If the ogre glutton damages a living creature with their jaws Strike,
+    they gain 1d4 temporary Hit Points for 1 minute.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Glutton's Feast
+  range: null
+  raw_description: '**Glutton''s Feast** If the ogre glutton damages a living creature
+    with their jaws Strike, they gain 1d4 temporary Hit Points for 1 minute.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The ogre glutton Strides twice and makes a jaws Strike. If they damage
+    a living creature with this Strike, the temporary Hit Points they receive from
+    Glutton's Feast is increased to 2d4.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Glutton's Rush
+  range: null
+  raw_description: '**Glutton''s Rush** [Two Actions]  The ogre glutton Strides twice
+    and makes a jaws Strike. If they damage a living creature with this Strike, the
+    temporary Hit Points they receive from Glutton''s Feast is increased to 2d4.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: Small, 2d4+4 bludgeoning, Rupture 14
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Swallow Whole
+  range: null
+  raw_description: '**Swallow Whole**   (__attack__) Small, 2d4+4 bludgeoning, Rupture
+    14'
+  requirements: null
+  success: null
+  traits:
+  - attack
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 14
+  fort_misc: null
+  misc: null
+  ref: 7
+  ref_misc: null
+  will: 6
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +6
+- darkvision
+size: Large
+skills:
+- bonus: 12
+  misc: null
+  name: 'Athletics '
+- bonus: 10
+  misc: null
+  name: 'Intimidation '
+- bonus: 6
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 253
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+spell_lists: null
+traits:
+- CE
+- Large
+- Giant
+- Humanoid
+type: Creature
+weaknesses: null

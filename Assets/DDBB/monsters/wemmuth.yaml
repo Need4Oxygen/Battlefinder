@@ -1,0 +1,212 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 6
+  dex_mod: 6
+  int_mod: -2
+  str_mod: 8
+  wis_mod: 4
+ac: 37
+ac_special: null
+alignment: NE
+automatic_abilities: null
+description: 'Fertilized by large quantities of spilled blood, such as that found
+  on bloodstained battlefields or in the war-torn regions surrounding besieged cities,
+  wemmuths are vile swaths of vines that draw sustenance from mortal suffering, lapping
+  up blood like water. Possessing a rudimentary intelligence and an unquenchable thirst
+  for blood, wemmuths lie in wait for most of their lives, growing to incredible size
+  in the bloody soil of their grisly homes. Though the vines that comprise a wemmuth''s
+  body are scarcely thicker than rope, a single adult wemmuth system consists of 6
+  tons of vines, enough to stretch for 6,000 feet if stretched from end to end in
+  a single straight line. Wemmuths never orient themselves this way, however, instead
+  preferring to wrap themselves into massive mounds approximately 15 feet across and
+  equally thick. Although wemmuths are often spotted lazing about, the scent of blood
+  is enough to whip one into a violent frenzy. The creature condenses its entire mass
+  into a sphere of sharp thorns and lashing vines, resembling a hateful tumbleweed
+  the size of an elephant. Wemmuths commonly dig up massive boulders or entire trees
+  from the ground and incorporate them into their rolling mass, using these objects
+  to bolster their defense against many forms of attack or hurling them at faraway
+  foes with terrifying precision.
+
+
+
+
+  Some speculate that wemmuths are a form of diabolical corruption let loose upon
+  Golarion by House Thrune of Cheliax, perhaps as a scorched earth tactic against
+  their rivals. Influential nobles from Nirmathas and Molthune both point fingers
+  at one another for the wemmuth''s creation, Nirmathas citing Molthune''s close ties
+  to Infernal Cheliax and Molthune blaming the primal magic commonly employed by Nirmathas''s
+  many druids and rangers. Several Varisian tales describe creatures closely matching
+  the wemmuth''s description attempting to apprehend a famous folk trickster, while
+  crusaders from Mendev adhere to the belief that the wemmuths were a blight unleashed
+  upon Golarion by Deskari, former demon lord of locusts, before his defeat at the
+  hands of mortal heroes.
+
+
+
+
+  **__Recall Knowledge - Plant__ (__Nature__)**: DC 34'
+hp: 335
+hp_misc: blood leech
+immunities: null
+items: null
+languages:
+- Aklo
+- Sylvan
+- (can't speak any language)
+level: 15
+melee:
+- action_cost: One Action
+  damage:
+    formula: 4d12+10
+    type: bludgeoning
+  name: pummel
+  plus_damage:
+  - formula: null
+    type: Improved Grab
+  to_hit: 29
+  traits:
+  - fatal d12
+  - reach 15 feet
+  - sweep
+name: Wemmuth
+perception: 25
+proactive_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The wemmuth heals a number of Hit Points equal to half the total damage
+    dealt by Constrict.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Blood Leech
+  range: null
+  raw_description: '**Blood Leech** [Reaction]  **Trigger** The wemmuth deals damage
+    to a creature with Constrict. **Effect** The wemmuth heals a number of Hit Points
+    equal to half the total damage dealt by Constrict.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: The wemmuth deals damage to a creature with Constrict.
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: 2d12+10, DC 37
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Constrict
+  range: null
+  raw_description: '**Constrict**   2d12+10, DC 37'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: DC 37, 4d8 bludgeoning, Escape DC 35, Rupture 36
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Engulf
+  range: null
+  raw_description: '**Engulf** [Two Actions]  DC 37, 4d8 bludgeoning, Escape DC 35,
+    Rupture 36'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Whenever a creature within 10 feet attempts a melee attack against
+    a wemmuth or uses Acrobatics to Tumble Through its space, that creature takes
+    1d12+10 piercing damage.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Thorny Mass
+  range: null
+  raw_description: '**Thorny Mass** Whenever a creature within 10 feet attempts a
+    melee attack against a wemmuth or uses Acrobatics to Tumble Through its space,
+    that creature takes 1d12+10 piercing damage.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 4d10+10
+    type: bludgeoning
+  name: boulder
+  plus_damage: null
+  to_hit: 27
+  traits:
+  - fatal d12
+  - range increment 60 feet
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 27
+  fort_misc: null
+  misc: null
+  ref: 27
+  ref_misc: null
+  will: 24
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +25
+- darkvision
+- tremorsense (imprecise) 60 feet
+size: Huge
+skills:
+- bonus: 30
+  misc: null
+  name: 'Athletics '
+- bonus: 28
+  misc: null
+  name: 'Deception '
+- bonus: 30
+  misc: null
+  name: 'Stealth '
+- bonus: 27
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 326
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 25
+  type: burrow
+- amount: 25
+  type: climb
+spell_lists: null
+traits:
+- NE
+- Huge
+- Plant
+type: Creature
+weaknesses:
+- amount: 20
+  type: cold
+- amount: 15
+  type: slashing

@@ -1,0 +1,407 @@
+ability_mods:
+  cha_mod: 8
+  con_mod: 9
+  dex_mod: 7
+  int_mod: 6
+  str_mod: 9
+  wis_mod: 6
+ac: 45
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 20 feet. A foe that starts its turn in the aura takes 3d6+10 fire damage,
+    or 6d6+20 fire damage if the balor has grabbed or restrained it. A creature that
+    hits a balor with an unarmed Strike takes 3d6+10 fire damage, and weapons that
+    hit a balor take 3d6+10 fire damage.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Aura of Flame
+  range: null
+  raw_description: '**Aura of Flame** (__aura__, __divine__, __evocation__, __fire__)
+    20 feet. A foe that starts its turn in the aura takes 3d6+10 fire damage, or 6d6+20
+    fire damage if the balor has grabbed or restrained it. A creature that hits a
+    balor with an unarmed Strike takes 3d6+10 fire damage, and weapons that hit a
+    balor take 3d6+10 fire damage.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - divine
+  - evocation
+  - fire
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: The balor can use Attack of Opportunity when a creature within their
+    reach uses a concentrate action, in addition to its normal trigger. They can disrupt
+    triggering concentrate actions, and they disrupt actions on any hit, not just
+    a critical hit.
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When a balor dies, their body explodes in a 100-foot aura of intense
+    demonic flame. All creatures and objects in range take 16d10 fire damage (DC 45
+    basic Reflex save). Because the flame is infused with Abyssal energy, creatures
+    in the area apply only half their usual fire resistance. Creatures with immunity
+    to fire use an outcome one degree of success better than what they rolled, instead
+    of gaining the usual benefit of immunity. The bodies of creatures reduced to 0
+    Hit Points by a balor's death throes are completely incinerated into fine ash.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Death Throes
+  range: null
+  raw_description: '**Death Throes** (__death__, __divine__, __evocation__, __fire__)
+    When a balor dies, their body explodes in a 100-foot aura of intense demonic flame.
+    All creatures and objects in range take 16d10 fire damage (DC 45 basic Reflex
+    save). Because the flame is infused with Abyssal energy, creatures in the area
+    apply only half their usual fire resistance. Creatures with immunity to fire use
+    an outcome one degree of success better than what they rolled, instead of gaining
+    the usual benefit of immunity. The bodies of creatures reduced to 0 Hit Points
+    by a balor''s death throes are completely incinerated into fine ash.'
+  requirements: null
+  success: null
+  traits:
+  - death
+  - divine
+  - evocation
+  - fire
+  trigger: null
+description: "When folk whisper frightened tales of the demonic, what most envision\
+  \ is the balor—a towering figure of fire and flesh, a horned nightmare armed with\
+  \ a flaming whip and a sword flying through the night in search of its latest victim.\
+  \ On the Abyss, balors serve demon lords as generals or captains, and they typically\
+  \ command vast legions of demons. Standing at 14 feet in height, only the cruelest\
+  \ mortal souls—those who devoted entire lives to sins too numerous to count—can\
+  \ fuel the formation of a balor. More often, a balor forms from a mass of dozens\
+  \ of mortal souls who shared debased ideologies in life. \n\n## Balor Lords\n\n\
+  \ Those rare few balors who form from single souls are the ones most likely to eventually\
+  \ transcend the notable power they already wield, becoming a nascent demon lord.\
+  \ These balor lords are each unique creatures of 21st to 25th level in power who\
+  \ rule their own realm in the Abyss. In time, a balor lord can further develop into\
+  \ a unique creature with wildly different powers, even ascending to the role of\
+  \ a true demon lord.\n\n\n\n**__Recall Knowledge - Fiend__ (__Religion__)**: DC\
+  \ 40"
+hp: 480
+hp_misc: null
+immunities:
+- fire
+items:
+- longsword
+languages:
+- Abyssal
+- Celestial
+- Draconic
+- telepathy 100 feet
+level: 20
+melee:
+- action_cost: One Action
+  damage:
+    formula: 4d8+17
+    type: slashing
+  name: vorpal cold iron silver longsword
+  plus_damage:
+  - formula: 1d6
+    type: evil
+  to_hit: 40
+  traits:
+  - evil
+  - magical
+  - reach 10 feet
+  - versatile P
+- action_cost: One Action
+  damage:
+    formula: 4d6+17
+    type: fire
+  name: cold iron silver flame whip
+  plus_damage:
+  - formula: 1d6
+    type: evil
+  - formula: null
+    type: Improved Grab
+  - formula: null
+    type: whip reposition
+  to_hit: 40
+  traits:
+  - disarm
+  - evil
+  - fire
+  - magical
+  - reach 20 feet
+  - trip
+name: Balor
+perception: 36
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A balor can cast their 5th-level innate __dimension door__ with only
+    a single action.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Dimensional Dervish
+  range: null
+  raw_description: '**Dimensional Dervish** A balor can cast their 5th-level innate
+    __dimension door__ with only a single action.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Free Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The balor casts an innate __dispel magic__ on the target of the triggering
+    Strike.
+  effects: null
+  failure: null
+  frequency: once per round.
+  full_description: null
+  generic_description: null
+  name: Dispelling Strike
+  range: null
+  raw_description: '**Dispelling Strike** [Free Action]  **Frequency** once per round.
+    **Trigger** The balor hits a creature, object, or spell effect with a weapon Strike.
+    **Effect** The balor casts an innate __dispel magic__ on the target of the triggering
+    Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: The balor hits a creature, object, or spell effect with a weapon Strike.
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Any weapon a balor wields becomes a +3 __major striking__ __vorpal__
+    weapon made of cold iron and silver while the demon holds it. A weapon that isn't
+    eligible for the vorpal rune doesn't gain its effects. The balor can change its
+    evil damage to chaotic whenever it attacks. The demon can conjure a whip made
+    of flames with an Interact action. This whip gains the same benefits as other
+    weapons the balor wields.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Infuse Weapons
+  range: null
+  raw_description: '**Infuse Weapons** (__divine__, __evocation__) Any weapon a balor
+    wields becomes a +3 __major striking__ __vorpal__ weapon made of cold iron and
+    silver while the demon holds it. A weapon that isn''t eligible for the vorpal
+    rune doesn''t gain its effects. The balor can change its evil damage to chaotic
+    whenever it attacks. The demon can conjure a whip made of flames with an Interact
+    action. This whip gains the same benefits as other weapons the balor wields.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - evocation
+  trigger: null
+- action_cost: Free Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The balor drinks the triggering creature's life force and regains 10d8+80
+    Hit Points.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Lifedrinker
+  range: null
+  raw_description: '**Lifedrinker** [Free Action]  (__divine__, __healing__, __necromancy__)
+    **Trigger** The balor kills a living creature that is at least 15th level. **Effect**
+    The balor drinks the triggering creature''s life force and regains 10d8+80 Hit
+    Points.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - healing
+  - necromancy
+  trigger: The balor kills a living creature that is at least 15th level.
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When a balor grabs a creature with a whip Strike, they can move the
+    creature to any space in the whip's reach. The balor can move without ending the
+    grab as long as the creature remains within the whip's reach, and the balor can
+    move the creature to any other space in the whip's reach with an Interact action.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Whip Reposition
+  range: null
+  raw_description: '**Whip Reposition** When a balor grabs a creature with a whip
+    Strike, they can move the creature to any space in the whip''s reach. The balor
+    can move without ending the grab as long as the creature remains within the whip''s
+    reach, and the balor can move the creature to any other space in the whip''s reach
+    with an Interact action.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 20
+  type: cold
+- amount: 20
+  type: cold iron
+- amount: 20
+  type: good
+ritual_lists:
+- dc: 44
+  misc: null
+  name: Divine Rituals
+  spell_groups:
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: abyssal pact
+      requirement: null
+  to_hit: null
+saves:
+  fort: 39
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 35
+  ref_misc: null
+  will: 34
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +36
+- darkvision
+- true seeing
+size: Large
+skills:
+- bonus: 35
+  misc: null
+  name: 'Acrobatics '
+- bonus: 37
+  misc: null
+  name: 'Athletics '
+- bonus: 36
+  misc: null
+  name: 'Deception '
+- bonus: 32
+  misc: null
+  name: 'Diplomacy '
+- bonus: 38
+  misc: null
+  name: 'Intimidation '
+- bonus: 32
+  misc: null
+  name: 'Religion '
+- bonus: 32
+  misc: null
+  name: 'Society '
+- bonus: 33
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 83
+  page_stop: null
+speed:
+- amount: 35
+  type: Land
+- amount: 70
+  type: fly
+spell_lists:
+- dc: 44
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 10
+    spells:
+    - frequency: null
+      name: dimension door
+      requirement: null
+    - frequency: x2
+      name: divine decree
+      requirement: null
+  - heightened_level: null
+    level: 8
+    spells:
+    - frequency: at will
+      name: dispel magic
+      requirement: null
+  - heightened_level: null
+    level: 6
+    spells:
+    - frequency: at will
+      name: dominate
+      requirement: null
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: at will
+      name: dimension door
+      requirement: null
+  - heightened_level: 10
+    level: 0
+    spells:
+    - frequency: null
+      name: telekinetic projectile
+      requirement: null
+  - heightened_level: 6
+    level: -1
+    spells:
+    - frequency: null
+      name: true seeing
+      requirement: null
+  to_hit: null
+traits:
+- CE
+- Large
+- Demon
+- Fiend
+type: Creature
+weaknesses: null

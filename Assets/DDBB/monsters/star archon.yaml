@@ -1,0 +1,332 @@
+ability_mods:
+  cha_mod: 6
+  con_mod: 6
+  dex_mod: 9
+  int_mod: 9
+  str_mod: 8
+  wis_mod: 9
+ac: 43
+ac_special: null
+alignment: LG
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Whenever the star archon takes slashing damage, bright light pours
+    from their wounds. Non-archons within 10 feet must attempt a DC 38 Fortitude save.
+    On a failure, a creature is __dazzled__ for 1 round. On a critical failure, the
+    creature is __blinded__ for 1d4 rounds instead. The creature is then temporarily
+    immune for 1 round.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Blinding Soul
+  range: null
+  raw_description: '**Blinding Soul** (__divine__, __evocation__, __light__, __visual__)
+    Whenever the star archon takes slashing damage, bright light pours from their
+    wounds. Non-archons within 10 feet must attempt a DC 38 Fortitude save. On a failure,
+    a creature is __dazzled__ for 1 round. On a critical failure, the creature is
+    __blinded__ for 1d4 rounds instead. The creature is then temporarily immune for
+    1 round.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - evocation
+  - light
+  - visual
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When killed, the star archon explodes in a blinding flash of holy energy
+    that deals 12d6 fire damage and 12d6 good damage to anything in a 100-foot emanation,
+    with a DC 40 basic Reflex save. A non-archon creature that sees the explosion
+    and critically fails its save is permanently __blinded__ as well. The slain star
+    archon reincarnates 1d4 rounds later as a __shield archon__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Explosive Rebirth
+  range: null
+  raw_description: '**Explosive Rebirth** (__death__, __divine__, __evocation__, __fire__,
+    __good__) When killed, the star archon explodes in a blinding flash of holy energy
+    that deals 12d6 fire damage and 12d6 good damage to anything in a 100-foot emanation,
+    with a DC 40 basic Reflex save. A non-archon creature that sees the explosion
+    and critically fails its save is permanently __blinded__ as well. The slain star
+    archon reincarnates 1d4 rounds later as a __shield archon__.'
+  requirements: null
+  success: null
+  traits:
+  - death
+  - divine
+  - evocation
+  - fire
+  - good
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: A star archon can also make a Retributive Strike by throwing its starknife,
+    and the enemy and ally can be within 60 feet instead of 15 feet.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Retributive Strike
+  range: null
+  raw_description: '**__Retributive Strike__ [Reaction]** A star archon can also make
+    a Retributive Strike by throwing its starknife, and the enemy and ally can be
+    within 60 feet instead of 15 feet.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Embodiments of the virtue of prudence, star archons serve as philosophers
+  and administrators, and in times of war as the tacticians, strategists, and generals
+  of archon armies. Star archons burn with the glory and intensity of a sun, and their
+  sense of duty and desire to defeat evil are as indefatigable as the light of the
+  stars. While their dazzling intellects and unmatched strategic cunning make them
+  most useful in war rooms rather than on battlefields, star archons are fierce opponents
+  when motivated to enter the fray. Those who witness the self-sacrifice of a star
+  archon and live to tell the tale describe the experience in terms that might befit
+  the sight of a supernova at the instant the star collapses in on itself.
+
+
+
+
+  **__Recall Knowledge - Celestial__ (__Religion__)**: DC 39'
+hp: 400
+hp_misc: null
+immunities: null
+items:
+- +2 greater striking returning starknife
+- +2 greater resilient full plate
+languages:
+- Celestial
+- Draconic
+- Infernal
+- tongues
+level: 19
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d4+16
+    type: piercing
+  name: returning starknife
+  plus_damage:
+  - formula: 2d6
+    type: good and 3d6 fire
+  to_hit: 38
+  traits:
+  - agile
+  - deadly 1d8
+  - finesse
+  - good
+  - magical
+  - reach 10 feet
+  - versatile S
+name: Star Archon
+perception: 35
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Once per day, if an archon sees another creature cast dimension door,
+    the archon can use __dimension door__ (heightened to 5th level) within 1 round
+    to attempt to follow that creature to the maximum distance of the archon's dimension
+    door. If the archon's dimension door has enough distance, the archon appears the
+    same distance and direction from the creature as before either creature used dimension
+    door.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Archon's Door
+  range: null
+  raw_description: '**Archon''s Door** Once per day, if an archon sees another creature
+    cast dimension door, the archon can use __dimension door__ (heightened to 5th
+    level) within 1 round to attempt to follow that creature to the maximum distance
+    of the archon''s dimension door. If the archon''s dimension door has enough distance,
+    the archon appears the same distance and direction from the creature as before
+    either creature used dimension door.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The star archon calculates a celestial constellation and sends their
+    starknife flying along that path from one foe to the next. It makes a starknife
+    Strike against a target within 60 feet. If the Strike hits, it can make another
+    Strike at a different target within 60 feet of the first target, and so on, until
+    it misses with a Strike or runs out of targets it hasn't attacked within range
+    of the most recent target. The star archon can attack a given target only once
+    per use of this ability. These attacks don't apply any range increment penalty,
+    and the star archon resolves all the attacks before increasing the multiple attack
+    penalty.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Prudent Asterism
+  range: null
+  raw_description: '**Prudent Asterism** [Two Actions]  The star archon calculates
+    a celestial constellation and sends their starknife flying along that path from
+    one foe to the next. It makes a starknife Strike against a target within 60 feet.
+    If the Strike hits, it can make another Strike at a different target within 60
+    feet of the first target, and so on, until it misses with a Strike or runs out
+    of targets it hasn''t attacked within range of the most recent target. The star
+    archon can attack a given target only once per use of this ability. These attacks
+    don''t apply any range increment penalty, and the star archon resolves all the
+    attacks before increasing the multiple attack penalty.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 3d4+16
+    type: piercing
+  name: starknife
+  plus_damage:
+  - formula: 2d6
+    type: good and 3d6 fire
+  to_hit: 38
+  traits:
+  - agile
+  - deadly 1d8
+  - good
+  - magical
+  - thrown 60 feet
+  - versatile S
+rarity: Common
+resistances:
+- amount: 15
+  type: fire
+ritual_lists: null
+saves:
+  fort: 31
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 34
+  ref_misc: null
+  will: 34
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +35
+- darkvision
+- true seeing
+size: Medium
+skills:
+- bonus: 31
+  misc: null
+  name: 'Acrobatics '
+- bonus: 33
+  misc: null
+  name: 'Arcana '
+- bonus: 37
+  misc: null
+  name: 'Athletics '
+- bonus: 33
+  misc: null
+  name: 'Diplomacy '
+- bonus: 33
+  misc: null
+  name: 'Intimidation '
+- bonus: 33
+  misc: null
+  name: 'Occultism '
+- bonus: 37
+  misc: null
+  name: 'Religion '
+- bonus: 33
+  misc: null
+  name: 'Society '
+- bonus: 39
+  misc: null
+  name: 'Warfare Lore '
+source:
+- abbr: Bestiary 2
+  page_start: 23
+  page_stop: null
+speed:
+- amount: 35
+  type: Land
+- amount: 75
+  type: fly
+spell_lists:
+- dc: 43
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 9
+    spells:
+    - frequency: null
+      name: blindness
+      requirement: null
+    - frequency: null
+      name: implosion
+      requirement: null
+    - frequency: null
+      name: sunburst
+      requirement: null
+  - heightened_level: null
+    level: 7
+    spells:
+    - frequency: null
+      name: heal
+      requirement: null
+    - frequency: null
+      name: prismatic spray
+      requirement: null
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: null
+      name: sending
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: at will
+      name: dimension door
+      requirement: null
+  - heightened_level: 6
+    level: -1
+    spells:
+    - frequency: null
+      name: true seeing
+      requirement: null
+  - heightened_level: 5
+    level: -1
+    spells:
+    - frequency: null
+      name: tongues
+      requirement: null
+  to_hit: null
+traits:
+- LG
+- Medium
+- Archon
+- Celestial
+type: Creature
+weaknesses:
+- amount: 15
+  type: evil

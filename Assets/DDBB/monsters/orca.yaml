@@ -1,0 +1,162 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 5
+  dex_mod: 2
+  int_mod: -4
+  str_mod: 7
+  wis_mod: 3
+ac: 21
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'While many know orcas as "killer whales," they are actually the largest
+  species of dolphin. These powerful animals hunt together in pods to take down seals,
+  sharks, and even true whales. Adult orcas are typically 15-25 feet long and weigh
+  8,000-12,000 pounds.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 20'
+hp: 75
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 5
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+9
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 13
+  traits: null
+name: Orca
+perception: 12
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: 30 feet. An orca can travel no further than 5 feet onto land as part
+    of an Aquatic Ambush. After it does so, it is __prone__ until it __Crawls__ to
+    return to the water.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Aquatic Ambush
+  range: null
+  raw_description: '**__Aquatic Ambush__**   30 feet. An orca can travel no further
+    than 5 feet onto land as part of an Aquatic Ambush. After it does so, it is __prone__
+    until it __Crawls__ to return to the water.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The orca __Swims__ up to its swim Speed, then __Leaps__ vertically
+    out of the water up to 25 feet in the air, making a Strike against a creature
+    at any point during the jump (this lets it attack a creature within 30 feet of
+    the water's surface). After the Strike, the orca splashes back down into the water.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Breach
+  range: null
+  raw_description: '**Breach** [Two Actions]  The orca __Swims__ up to its swim Speed,
+    then __Leaps__ vertically out of the water up to 25 feet in the air, making a
+    Strike against a creature at any point during the jump (this lets it attack a
+    creature within 30 feet of the water''s surface). After the Strike, the orca splashes
+    back down into the water.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 14
+  fort_misc: null
+  misc: null
+  ref: 11
+  ref_misc: null
+  will: 12
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: An orca can use its hearing as a __precise sense__ at the listed range,
+    but only underwater.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Aquatic Echolocation
+  range: null
+  raw_description: '**Aquatic Echolocation** An orca can use its hearing as a __precise
+    sense__ at the listed range, but only underwater.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: An orca can hold its breath for 2 hours.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Deep Breath
+  range: null
+  raw_description: '**Deep Breath** An orca can hold its breath for 2 hours.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +12
+- aquatic echolocation 120 feet
+- low-light vision
+size: Huge
+skills:
+- bonus: 14
+  misc: null
+  name: 'Athletics '
+- bonus: 13
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 84
+  page_stop: null
+speed:
+- amount: 60
+  type: swim
+spell_lists: null
+traits:
+- N
+- Huge
+- Animal
+type: Creature
+weaknesses: null

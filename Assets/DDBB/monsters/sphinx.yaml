@@ -1,0 +1,268 @@
+ability_mods:
+  cha_mod: 4
+  con_mod: 3
+  dex_mod: 1
+  int_mod: 5
+  str_mod: 6
+  wis_mod: 4
+ac: 27
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Sphinxes are mystical beings with the body of a lion, the wings of a
+  great bird, and the upper torso and head of a human. They are often maligned in
+  legends as nothing more than monsters, and though they are quick to anger and are
+  capable of exacting deadly retribution for perceived slights, they are also very
+  intelligent.
+
+
+
+
+  Sphinxes are often associated with desert regions, but they can dwell in more moderate
+  climates as well. They form small groups consisting of a single, extended family
+  that hunts and works together to protect and teach their young. As they mature,
+  sphinxes develop a wanderlust, a drive to gather hidden lore and solve the world''s
+  greatest riddles—the trait that is perhaps most often identified with their kind.
+
+
+
+
+  While sometimes bound into service as guardians for powerful spellcasters, lone
+  sphinxes may also be encountered on journeys of discovery and as purveyors of esoteric
+  lore. If treated with the proper respect—and fed well—a sphinx can demonstrate a
+  willingness to exchange information. Their favorite currency is, of course, riddles
+  and secrets. One who can trade knowledge for knowledge has a much better chance
+  of succeeding while bargaining with a sphinx. However, a sphinx''s insatiable thirst
+  for new riddles as well their extensive collection of secrets accumulated over hundreds
+  of years of life—makes it difficult to offer them something they don''t already
+  know. Those who attempt to trade petty insight and stale riddles may invoke a sphinx''s
+  ire and will not live long enough to regret it.
+
+
+
+
+  **__Recall Knowledge - Beast__ (__Arcana__, __Nature__)**: DC 24'
+hp: 135
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Common
+- Draconic
+- Sphinx
+- comprehend language
+level: 8
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+9
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 20
+  traits:
+  - agile
+name: Sphinx
+perception: 18
+proactive_abilities:
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: The sphinx rears back on their hind legs and makes two claw Strikes
+    at the same target, using the same attack bonus as their highest melee attack.
+    If both attacks deal damage, the target takes extra damage equal to one claw Strike.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Claw Rake
+  range: null
+  raw_description: '**Claw Rake** [Three Actions]  The sphinx rears back on their
+    hind legs and makes two claw Strikes at the same target, using the same attack
+    bonus as their highest melee attack. If both attacks deal damage, the target takes
+    extra damage equal to one claw Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The sphinx Strides and makes a Strike at the end of that movement.
+    If the sphinx began this action hidden, they remain hidden until after the attack.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Pounce
+  range: null
+  raw_description: '**Pounce**   The sphinx Strides and makes a Strike at the end
+    of that movement. If the sphinx began this action hidden, they remain hidden until
+    after the attack.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 'Once per week, a Sphinx can create a magical symbol as though casting
+    a heightened glyph of warding spell. The sphinx usually shapes the glyph to take
+    the form of a written riddle, and sets the password to the answer. A creature
+    that gives the wrong answer or tries to pass without answering must succeed at
+    a DC 26 Will save or suffer one of the following spell effects, chosen by the
+    sphinx when creating the symbol: synaptic pulse (5th), charm (4th), fear (3rd),
+    phantom pain (3rd), sleep (3rd). The sphinx learns the identity of any creature
+    that answers the riddle and tends to be friendly to them.'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Warding Glyph
+  range: null
+  raw_description: '**Warding Glyph** Once per week, a Sphinx can create a magical
+    symbol as though casting a heightened glyph of warding spell. The sphinx usually
+    shapes the glyph to take the form of a written riddle, and sets the password to
+    the answer. A creature that gives the wrong answer or tries to pass without answering
+    must succeed at a DC 26 Will save or suffer one of the following spell effects,
+    chosen by the sphinx when creating the symbol: synaptic pulse (5th), charm (4th),
+    fear (3rd), phantom pain (3rd), sleep (3rd). The sphinx learns the identity of
+    any creature that answers the riddle and tends to be friendly to them.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 16
+  fort_misc: null
+  misc: null
+  ref: 14
+  ref_misc: null
+  will: 19
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Sphinxes are naturally curious, and their love of puzzles and mysteries
+    leads them to gather information on a broad range of topics. Sphinxes have the
+    Bardic Lore bard feat, allowing them to Recall Knowledge on any topic.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Bardic Lore
+  range: null
+  raw_description: '**Bardic Lore** Sphinxes are naturally curious, and their love
+    of puzzles and mysteries leads them to gather information on a broad range of
+    topics. Sphinxes have the Bardic Lore bard feat, allowing them to Recall Knowledge
+    on any topic.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +18
+- darkvision
+- detect magic
+- see invisibility
+size: Large
+skills:
+- bonus: 17
+  misc: null
+  name: 'Arcana '
+- bonus: 18
+  misc: null
+  name: 'Athletics '
+- bonus: 19
+  misc: null
+  name: 'Bardic Lore '
+- bonus: 16
+  misc: null
+  name: 'Deception '
+- bonus: 16
+  misc: null
+  name: 'Diplomacy '
+- bonus: 18
+  misc: null
+  name: 'Intimidation '
+- bonus: 17
+  misc: null
+  name: 'Occultism '
+source:
+- abbr: Bestiary
+  page_start: 305
+  page_stop: null
+speed:
+- amount: 35
+  type: Land
+- amount: 40
+  type: fly
+spell_lists:
+- dc: 27
+  misc: null
+  name: Occult Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: at will
+      name: clairaudience
+      requirement: null
+    - frequency: at will
+      name: clairvoyance
+      requirement: null
+    - frequency: null
+      name: read omens
+      requirement: null
+    - frequency: null
+      name: remove curse
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: null
+      name: dispel magic
+      requirement: null
+    - frequency: null
+      name: locate
+      requirement: null
+  - heightened_level: 4
+    level: 0
+    spells:
+    - frequency: null
+      name: detect magic
+      requirement: null
+  - heightened_level: 5
+    level: -1
+    spells:
+    - frequency: null
+      name: tongues
+      requirement: null
+  - heightened_level: 2
+    level: -1
+    spells:
+    - frequency: null
+      name: see invisibility
+      requirement: null
+  to_hit: null
+traits:
+- N
+- Large
+- Beast
+type: Creature
+weaknesses: null

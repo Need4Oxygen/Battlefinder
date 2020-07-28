@@ -1,0 +1,263 @@
+ability_mods:
+  cha_mod: 5
+  con_mod: 4
+  dex_mod: 2
+  int_mod: 1
+  str_mod: 5
+  wis_mod: 2
+ac: 27
+ac_special: null
+alignment: LG
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 30 feet. Enemies that start their turn in the area or enter it must
+    attempt a DC 23 Will save. On a failure, they take a -1 status penalty to attack
+    rolls, spell rolls, and damage rolls against any other target while in the aura
+    for 24 hours or until they damage the archon, whichever comes first. On a critical
+    failure, they can't use hostile actions against any other target while in the
+    area for 24 hours or until they damage the archon, whichever comes first. Regardless
+    of the result, a creature is then temporarily immune to further menacing guardian
+    auras for 24 hours.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Menacing Guardian
+  range: null
+  raw_description: '**Menacing Guardian** (__aura__, __divine__, __enchantment__)
+    30 feet. Enemies that start their turn in the area or enter it must attempt a
+    DC 23 Will save. On a failure, they take a -1 status penalty to attack rolls,
+    spell rolls, and damage rolls against any other target while in the aura for 24
+    hours or until they damage the archon, whichever comes first. On a critical failure,
+    they can''t use hostile actions against any other target while in the area for
+    24 hours or until they damage the archon, whichever comes first. Regardless of
+    the result, a creature is then temporarily immune to further menacing guardian
+    auras for 24 hours.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - divine
+  - enchantment
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: A legion archon can also make a Retributive Strike by throwing its
+    flame of justice.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Retributive Strike
+  range: null
+  raw_description: '**Retributive Strike** [Reaction] A legion archon can also make
+    a Retributive Strike by throwing its flame of justice.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Despite their flaming blades and heavy armor, legion archons are the
+  diplomats of peace among the archons, preferring justice via compromise and mutual
+  benefit rather than justice by the sword. Nonetheless, when forced to fight against
+  fiendish powers—especially fiends that embody the sin of wrath—legion archons don''t
+  hesitate in battle, mounting offensives under divine commanders like Iomedae.
+
+
+
+
+  **__Recall Knowledge - Celestial__ (__Religion__)**: DC 23'
+hp: 100
+hp_misc: null
+immunities: null
+items:
+- full plate
+languages:
+- Celestial
+- Draconic
+- Infernal
+- tongues
+level: 7
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d10+5
+    type: slashing
+  name: flame of justice
+  plus_damage:
+  - formula: 1d6
+    type: fire and 1d6 good
+  to_hit: 18
+  traits:
+  - magical
+  - versatile P
+name: Legion Archon
+perception: 15
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Once per day, if an archon sees another creature cast __dimension door__,
+    it can cast an innate __dimension door__ (heightened to 5th level) within 1 round
+    to attempt to follow that creature to the maximum distance of the archon's __dimension
+    door__. If the archon's __dimension door__ has enough distance, the archon appears
+    the same distance and direction from the creature as before either used __dimension
+    door__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Archon's Door
+  range: null
+  raw_description: '**Archon''s Door** Once per day, if an archon sees another creature
+    cast __dimension door__, it can cast an innate __dimension door__ (heightened
+    to 5th level) within 1 round to attempt to follow that creature to the maximum
+    distance of the archon''s __dimension door__. If the archon''s __dimension door__
+    has enough distance, the archon appears the same distance and direction from the
+    creature as before either used __dimension door__.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A legion archon's spirit of righteousness manifests in its hands as
+    a mighty two-handed sword called the flame of justice. A legion archon can throw
+    its flame of justice as a ranged weapon. If disarmed or thrown, the flame of justice
+    vanishes after landing or dealing damage and reappears in the legion archon's
+    hands again instantly. On a critical hit, the fire damage from the flame of justice
+    deals maximum damage (6 on the d6) before being doubled for the critical hit,
+    and the target takes 1d10 persistent fire damage.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Flame of Justice
+  range: null
+  raw_description: '**Flame of Justice** (__divine__, __evocation__) A legion archon''s
+    spirit of righteousness manifests in its hands as a mighty two-handed sword called
+    the flame of justice. A legion archon can throw its flame of justice as a ranged
+    weapon. If disarmed or thrown, the flame of justice vanishes after landing or
+    dealing damage and reappears in the legion archon''s hands again instantly. On
+    a critical hit, the fire damage from the flame of justice deals maximum damage
+    (6 on the d6) before being doubled for the critical hit, and the target takes
+    1d10 persistent fire damage.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - evocation
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 2d10+5
+    type: slashing
+  name: flame of justice
+  plus_damage:
+  - formula: 1d6
+    type: fire and 1d6 good
+  to_hit: 15
+  traits:
+  - magical
+  - range increment 30 feet
+  - versatile P
+rarity: Common
+resistances:
+- amount: 15
+  type: fire
+ritual_lists: null
+saves:
+  fort: 17
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 11
+  ref_misc: null
+  will: 15
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +15
+- darkvision
+size: Medium
+skills:
+- bonus: 13
+  misc: null
+  name: 'Acrobatics '
+- bonus: 14
+  misc: null
+  name: 'Athletics '
+- bonus: 16
+  misc: null
+  name: 'Diplomacy '
+- bonus: 16
+  misc: null
+  name: 'Intimidation '
+- bonus: 13
+  misc: null
+  name: 'Religion '
+- bonus: 14
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 28
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+- amount: 60
+  type: fly
+spell_lists:
+- dc: 24
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: at will
+      name: dimension door
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: x3
+      name: true strike
+      requirement: null
+  - heightened_level: 4
+    level: 0
+    spells:
+    - frequency: null
+      name: light
+      requirement: null
+    - frequency: null
+      name: message
+      requirement: null
+  - heightened_level: 5
+    level: -1
+    spells:
+    - frequency: null
+      name: tongues
+      requirement: null
+  to_hit: null
+traits:
+- LG
+- Medium
+- Archon
+- Celestial
+type: Creature
+weaknesses:
+- amount: 10
+  type: evil

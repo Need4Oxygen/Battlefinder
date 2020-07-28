@@ -1,0 +1,135 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 0
+  dex_mod: 3
+  int_mod: -4
+  str_mod: 0
+  wis_mod: 4
+ac: 19
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'A flock of ravens is known as an unkindness. Certainly the name lives
+  up to its meaning when a swarm of ravens decides to work together. In most cases,
+  a raven swarm like the one presented here won''t attack larger foes, but when manipulated
+  by supernatural forces or simple desperation born from hunger, an unkindness of
+  ravens can be a surprisingly dangerous foe.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 18'
+hp: 30
+hp_misc: null
+immunities:
+- precision
+- swarm mind
+items: null
+languages: null
+level: 3
+melee: null
+name: Raven Swarm
+perception: 9
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: There are few things as dangerously persistent in the natural world
+    as an angry unkindness of ravens. A raven swarm can hound its prey through most
+    barriers. Simple latches, unsecured chimney flues, loosely shuttered windows,
+    and similar obstacles rarely keep an unkindness away. A raven swarm attempts a
+    __Thievery__ check to bypass many of these simple obstructions, typically against
+    DC 20.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Enraged Cunning
+  range: null
+  raw_description: '**Enraged Cunning** There are few things as dangerously persistent
+    in the natural world as an angry unkindness of ravens. A raven swarm can hound
+    its prey through most barriers. Simple latches, unsecured chimney flues, loosely
+    shuttered windows, and similar obstacles rarely keep an unkindness away. A raven
+    swarm attempts a __Thievery__ check to bypass many of these simple obstructions,
+    typically against DC 20.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The ravens' angry pecking deals 1d8 piercing damage to each enemy in
+    the swarm's space (DC 20 basic Reflex save). A creature that critically fails
+    its save is __blinded__ for 1d4 rounds as the ravens focus their attacks on the
+    target's vulnerable face.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Swarming Beaks
+  range: null
+  raw_description: '**Swarming Beaks**   The ravens'' angry pecking deals 1d8 piercing
+    damage to each enemy in the swarm''s space (DC 20 basic Reflex save). A creature
+    that critically fails its save is __blinded__ for 1d4 rounds as the ravens focus
+    their attacks on the target''s vulnerable face.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 2
+  type: bludgeoning
+- amount: 5
+  type: piercing
+- amount: 5
+  type: slashing
+ritual_lists: null
+saves:
+  fort: 7
+  fort_misc: null
+  misc: null
+  ref: 12
+  ref_misc: null
+  will: 9
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +9
+- low-light vision
+size: Large
+skills:
+- bonus: 10
+  misc: null
+  name: 'Acrobatics '
+- bonus: 10
+  misc: null
+  name: 'Thievery '
+source:
+- abbr: Bestiary 2
+  page_start: 221
+  page_stop: null
+speed:
+- amount: 10
+  type: Land
+- amount: 40
+  type: fly
+spell_lists: null
+traits:
+- N
+- Large
+- Animal
+- Swarm
+type: Creature
+weaknesses:
+- amount: 5
+  type: area damage
+- amount: 5
+  type: <a style="text-decoration:underline" href="Traits.aspx?ID=150">splash</a>
+    damage

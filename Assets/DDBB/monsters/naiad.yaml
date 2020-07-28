@@ -1,0 +1,203 @@
+ability_mods:
+  cha_mod: 4
+  con_mod: 0
+  dex_mod: 3
+  int_mod: 1
+  str_mod: 0
+  wis_mod: 1
+ac: 16
+ac_special: null
+alignment: CG
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A naiad bonds to a spring, pool, pond, or similar-sized water feature.
+    While within 300 feet of her bonded body of water, she can use her innate tidal
+    surge at will. She doesn't recover Hit Points or reduce the drained condition
+    when resting beyond that range. Unlike most other nymphs, she doesn't suffer penalties
+    from being apart from her bonded body of water. A naiad can perform a 24-hour
+    ritual to bond herself to a new body of water.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Water Dependent
+  range: null
+  raw_description: '**Water Dependent** A naiad bonds to a spring, pool, pond, or
+    similar-sized water feature. While within 300 feet of her bonded body of water,
+    she can use her innate tidal surge at will. She doesn''t recover Hit Points or
+    reduce the drained condition when resting beyond that range. Unlike most other
+    nymphs, she doesn''t suffer penalties from being apart from her bonded body of
+    water. A naiad can perform a 24-hour ritual to bond herself to a new body of water.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Naiads protect streams, ponds, springs, and other natural bodies of
+  fresh water. While most naiads lead solitary lives close to their chosen ward, sometimes
+  these nymphs congregate in coven-like groups where river tributaries meet, performing
+  great magic and blessing the waters of the land. Because naiads'' bonds to their
+  bodies of water permit more flexibility, they are the nymphs most likely to interact
+  with humanoids and even visit their settlements on occasion. Unlike other nymphs,
+  naiads occasionally become adventurers, especially when dark forces seek to despoil
+  nature or otherwise threaten the land, joining forces with others to prevent the
+  corruption of nature.
+
+
+
+
+  **__Recall Knowledge - Fey__ (__Nature__)**: DC 15'
+hp: 20
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Common
+- Elven
+- Sylvan
+- speak with animals
+level: 1
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6
+    type: bludgeoning
+  name: aqueous fist
+  plus_damage: null
+  to_hit: 8
+  traits:
+  - agile
+  - finesse
+  - magical
+  - water
+name: Naiad
+perception: 6
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: While within her bonded body of water (see water dependent above),
+    the naiad heals 1 Hit Point every 10 minutes.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Water Healing
+  range: null
+  raw_description: '**Water Healing** [Two Actions]  (__concentrate__, __healing__,
+    __necromancy__, __primal__) While within her bonded body of water (see water dependent
+    above), the naiad heals 1 Hit Point every 10 minutes.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - healing
+  - necromancy
+  - primal
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 3
+  type: fire
+ritual_lists: null
+saves:
+  fort: 3
+  fort_misc: null
+  misc: null
+  ref: 6
+  ref_misc: null
+  will: 8
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The naiad can use Diplomacy to Make an Impression on and make very
+    simple Requests of animals.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Wild Empathy
+  range: null
+  raw_description: '**Wild Empathy** The naiad can use Diplomacy to Make an Impression
+    on and make very simple Requests of animals.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +6
+- low-light vision
+size: Medium
+skills:
+- bonus: 6
+  misc: null
+  name: 'Acrobatics '
+- bonus: 3
+  misc: null
+  name: 'Athletics '
+- bonus: 7
+  misc: null
+  name: 'Diplomacy '
+- bonus: 6
+  misc: null
+  name: 'Nature '
+- bonus: 6
+  misc: null
+  name: 'Stealth '
+- bonus: 4
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 246
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 25
+  type: swim
+spell_lists:
+- dc: 17
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: charm
+      requirement: null
+    - frequency: null
+      name: create water
+      requirement: null
+    - frequency: null
+      name: tidal surge
+      requirement: null
+  - heightened_level: 2
+    level: -1
+    spells:
+    - frequency: null
+      name: speak with animals
+      requirement: null
+  to_hit: null
+traits:
+- CG
+- Medium
+- Amphibious
+- Fey
+- Nymph
+- Water
+type: Creature
+weaknesses:
+- amount: 3
+  type: cold iron

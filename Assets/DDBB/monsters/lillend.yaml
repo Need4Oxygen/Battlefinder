@@ -1,0 +1,251 @@
+ability_mods:
+  cha_mod: 5
+  con_mod: 5
+  dex_mod: 3
+  int_mod: 2
+  str_mod: 4
+  wis_mod: 3
+ac: 25
+ac_special: null
+alignment: CG
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A lillend's auditory and sonic effects attempt to counteract any effect
+    that would directly control, manipulate, or prevent them from expressing themself
+    freely, such as silence. She can also spend an action, which has concentrate trait,
+    to speak forcefully and counteract such effects.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Free Expression
+  range: null
+  raw_description: '**Free Expression** A lillend''s auditory and sonic effects attempt
+    to counteract any effect that would directly control, manipulate, or prevent them
+    from expressing themself freely, such as silence. She can also spend an action,
+    which has concentrate trait, to speak forcefully and counteract such effects.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Lillends are tale-tellers, chroniclers, and champions of freedom of
+  expression. They are generally peaceful, but are quick to act if a masterful piece
+  of art is threatened or free speech is suppressed. They pride themselves on inspiring
+  mortals to greater heights of expression and creativity, and more than one bard
+  looks to a lillend as their personal inspiration. Lillends sometimes secretly follow
+  the adventures of mortal heroes to record their stories as epic poems and songs,
+  which they then perform in the packed mead halls of Elysium. When pursuing such
+  goals, lillends take pains to use their innate spells to remain in hiding, as they
+  would rather observe and record events without "polluting" them with their own intervention.
+  Nevertheless, a lillend who sees their charge faced with certain death often cannot
+  resist the urge to intervene and save the day. Inevitably, this brings a close to
+  the lillend''s chronicles, as their relationship with their subject invariably shifts
+  from one of detached observation to friendship or more. Yet lillends remain hesitant
+  to involve themselves for overlong in a mortal''s life, in part because they fear
+  what sort of fiendish attention their presence might attract, but mostly out of
+  respect for the mortal''s own destiny. A lillend would, all things being equal,
+  prefer to let mortals choose their own fate rather than run the risk of sending
+  someone down a path to which their heart is not set.
+
+
+
+
+  **__Recall Knowledge - Celestial__ (__Religion__)**: DC 23'
+hp: 145
+hp_misc: null
+immunities: null
+items:
+- +1 longsword
+- virtuoso harp
+languages:
+- Celestial
+- Draconic
+- Infernal
+- speak with animals
+- speak with plants
+- tongues
+level: 7
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d8+10
+    type: slashing
+  name: longsword
+  plus_damage:
+  - formula: 1d6
+    type: chaotic and 1d6 good
+  to_hit: 18
+  traits:
+  - chaotic
+  - magical
+  - versatile P
+- action_cost: One Action
+  damage:
+    formula: 2d6+10
+    type: bludgeoning
+  name: tail
+  plus_damage:
+  - formula: 1d6
+    type: chaotic
+  - formula: 1d6
+    type: good
+  - formula: null
+    type: Grab
+  to_hit: 18
+  traits:
+  - agile
+  - magical
+  - reach 10 feet
+name: Lillend
+perception: 16
+proactive_abilities: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 14
+  fort_misc: null
+  misc: null
+  ref: 16
+  ref_misc: null
+  will: 16
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +16
+- darkvision
+size: Large
+skills:
+- bonus: 14
+  misc: null
+  name: 'Acrobatics '
+- bonus: 16
+  misc: null
+  name: 'Deception '
+- bonus: 18
+  misc: null
+  name: 'Diplomacy '
+- bonus: 14
+  misc: null
+  name: 'Nature '
+- bonus: 20
+  misc: null
+  name: 'Performance '
+- bonus: 14
+  misc: null
+  name: 'Religion '
+- bonus: 12
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 32
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 45
+  type: fly
+spell_lists:
+- dc: 26
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: counter performance
+      requirement: null
+    - frequency: null
+      name: hallucinatory terrain
+      requirement: null
+    - frequency: null
+      name: heal
+      requirement: null
+    - frequency: null
+      name: inspire heroics
+      requirement: null
+    - frequency: null
+      name: sound burst
+      requirement: null
+    - frequency: null
+      name: suggestion
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: null
+      name: sleep
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: null
+      name: darkness
+      requirement: null
+    - frequency: null
+      name: invisibility
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: charm
+      requirement: null
+  - heightened_level: 4
+    level: 0
+    spells:
+    - frequency: null
+      name: daze
+      requirement: null
+    - frequency: null
+      name: detect magic
+      requirement: null
+    - frequency: null
+      name: ghost sound
+      requirement: null
+    - frequency: null
+      name: inspire competence
+      requirement: null
+    - frequency: null
+      name: inspire courage
+      requirement: null
+    - frequency: null
+      name: light
+      requirement: null
+  - heightened_level: 5
+    level: -1
+    spells:
+    - frequency: null
+      name: tongues
+      requirement: null
+  - heightened_level: 4
+    level: -1
+    spells:
+    - frequency: null
+      name: speak with plants
+      requirement: null
+  - heightened_level: 2
+    level: -1
+    spells:
+    - frequency: null
+      name: speak with animals
+      requirement: null
+  to_hit: null
+traits:
+- CG
+- Large
+- Azata
+- Celestial
+type: Creature
+weaknesses:
+- amount: 10
+  type: cold iron
+- amount: 10
+  type: evil

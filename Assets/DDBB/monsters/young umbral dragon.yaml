@@ -1,0 +1,317 @@
+ability_mods:
+  cha_mod: 3
+  con_mod: 5
+  dex_mod: 3
+  int_mod: 3
+  str_mod: 7
+  wis_mod: 5
+ac: 31
+ac_special: null
+alignment: NE
+automatic_abilities:
+- action_cost: None
+  critical_failure: The creature is frightened 4.
+  critical_success: The creature is unaffected by the presence.
+  description: 90 feet, DC 26
+  effect: null
+  effects: null
+  failure: The creature is frightened 2.
+  frequency: null
+  full_description: null
+  generic_description: A creature that first enters the area must attempt a Will save.
+    Regardless of the result of the saving throw, the creature is temporarily immune
+    to this monster's Frightful Presence for 1 minute.
+  name: Frightful Presence
+  range: null
+  raw_description: '**Frightful Presence** 90 feet, DC 26 A creature that first enters
+    the area must attempt a Will save. Regardless of the result of the saving throw,
+    the creature is temporarily immune to this monster''s Frightful Presence for 1
+    minute.
+
+    Critical Success The creature is unaffected by the presence.
+
+    Success The creature is frightened 1.
+
+    Failure The creature is frightened 2.
+
+    Critical Success The creature is frightened 4.'
+  requirements: null
+  success: The creature is frightened 1.
+  traits:
+  - aura
+  - emotion
+  - fear
+  - mental
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: Jaws only.
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+description: 'While the other primal dragons hail from the Elemental Planes, the cruel
+  and unceasingly malicious umbral dragons originate in the depths of the Shadow Plane.
+  Their sleek black scales and serpentine grace allow them to strike from hiding,
+  and they are known for playing with their prey before finally finishing it. These
+  creatures of shadowy energy and unwholesome appetites prefer the necrotic flesh
+  of undead creatures to any other meal. This strange hunger can be of accidental
+  benefit to nearby humanoid societies, but ultimately they hunt and kill undead creatures
+  for the taste, rather than out of any desire to protect others from the undead.
+  The benefit is always short-lived, however. When umbral dragons exhaust their preferred
+  prey, they turn on whatever living creatures happen to be nearby. Umbral dragons
+  sometimes go to great lengths to obtain their favorite meals, even creating undead
+  creatures that they then feast upon.
+
+
+
+
+  For all their power, umbral dragons are uninterested in fair battles. When faced
+  with foes that pose any kind of actual danger to them, umbral dragons flee into
+  the shadows and seek to strike back through pawns or minions rather than risk their
+  own lives. Their treasure hoards are varied and diverse, often augmented by loot
+  stolen from crypts the dragons have turned into feeding grounds. They have a strong
+  respect for and interest in traditions and heirlooms, and they often seek to augment
+  their hoards with items of great value that have been handed down through the generations
+  of those whose corpses and ghosts they''ve fed upon.
+
+
+
+
+  **__Recall Knowledge - Dragon__ (__Arcana__)**: DC 30'
+hp: 195
+hp_misc: null
+immunities:
+- negative
+- paralyzed
+- sleep
+items: null
+languages:
+- Common
+- Draconic
+- Shadowtongue
+level: 11
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d10+13
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 2d6
+    type: negative
+  to_hit: 24
+  traits:
+  - negative
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 2d10+13
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 24
+  traits:
+  - agile
+- action_cost: One Action
+  damage:
+    formula: 2d12+13
+    type: slashing
+  name: tail
+  plus_damage: null
+  to_hit: 22
+  traits:
+  - reach 15 feet
+- action_cost: One Action
+  damage:
+    formula: 1d10+13
+    type: slashing
+  name: wing
+  plus_damage: null
+  to_hit: 22
+  traits:
+  - reach 10 feet
+name: Young Umbral Dragon
+perception: 22
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The dragon breathes a blast of darkness that deals 12d6 negative energy
+    damage in a 30-foot cone (DC 30 basic Reflex save). They can't use Breath Weapon
+    again for 1d4 rounds. Undead creatures take 14d6 force damage instead of the negative
+    damage.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Breath Weapon
+  range: null
+  raw_description: '**Breath Weapon** [Two Actions]  (__necromancy__, __negative__,
+    __primal__) The dragon breathes a blast of darkness that deals 12d6 negative energy
+    damage in a 30-foot cone (DC 30 basic Reflex save). They can''t use Breath Weapon
+    again for 1d4 rounds. Undead creatures take 14d6 force damage instead of the negative
+    damage.'
+  requirements: null
+  success: null
+  traits:
+  - necromancy
+  - negative
+  - primal
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The dragon makes two claw Strikes and one wing Strike in any order.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Draconic Frenzy
+  range: null
+  raw_description: '**Draconic Frenzy** [Two Actions]  The dragon makes two claw Strikes
+    and one wing Strike in any order.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The dragon recharges their Breath Weapon whenever they score a critical
+    hit with a Strike.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Draconic Momentum
+  range: null
+  raw_description: '**Draconic Momentum** The dragon recharges their Breath Weapon
+    whenever they score a critical hit with a Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: An umbral dragon's Strikes affect __incorporeal__ creatures with the
+    effects of a __ghost touch__ property rune, and an umbral dragon's jaws deal an
+    additional 4d6 force damage to __undead__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Ghost Bane
+  range: null
+  raw_description: '**Ghost Bane** An umbral dragon''s Strikes affect __incorporeal__
+    creatures with the effects of a __ghost touch__ property rune, and an umbral dragon''s
+    jaws deal an additional 4d6 force damage to __undead__.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances: null
+ritual_lists: null
+saves:
+  fort: 22
+  fort_misc: null
+  misc: null
+  ref: 20
+  ref_misc: null
+  will: 22
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +22
+- greater darkvision
+- scent (imprecise) 60 feet
+size: Large
+skills:
+- bonus: 18
+  misc: null
+  name: 'Acrobatics '
+- bonus: 22
+  misc: null
+  name: 'Athletics '
+- bonus: 22
+  misc: null
+  name: 'Deception '
+- bonus: 22
+  misc: null
+  name: 'Intimidation '
+- bonus: 20
+  misc: null
+  name: 'Nature '
+- bonus: 20
+  misc: null
+  name: 'Stealth '
+- bonus: 22
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 96
+  page_stop: null
+speed:
+- amount: 40
+  type: Land
+- amount: 140
+  type: fly
+spell_lists:
+- dc: 30
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: ×3
+      name: darkness
+      requirement: null
+  - heightened_level: 4
+    level: 0
+    spells:
+    - frequency: null
+      name: detect magic
+      requirement: null
+  to_hit: null
+traits:
+- Uncommon
+- NE
+- Large
+- Dragon
+- Shadow
+type: Creature
+weaknesses: null

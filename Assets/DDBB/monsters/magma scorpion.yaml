@@ -1,0 +1,153 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 5
+  dex_mod: 3
+  int_mod: -4
+  str_mod: 6
+  wis_mod: 4
+ac: 28
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Whether skittering through Abyssal wastelands or basking in the searing
+  sand of the deepest deserts, magma scorpions have charred carapaces constantly emitting
+  vision-warping waves of heat.
+
+
+
+
+  **__Recall Knowledge - Elemental__ (__Arcana__, __Nature__)**: DC 24'
+hp: 155
+hp_misc: null
+immunities:
+- bleed
+- fire
+- paralyzed
+- poison
+- sleep
+items: null
+languages: null
+level: 8
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+9
+    type: bludgeoning
+  name: pincer
+  plus_damage:
+  - formula: 1d6
+    type: persistent fire and Grab
+  to_hit: 20
+  traits:
+  - agile
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 1d10+9
+    type: piercing
+  name: tail sting
+  plus_damage:
+  - formula: 1d6
+    type: persistent fire and magma scorpion venom
+  to_hit: 20
+  traits:
+  - reach 10 feet
+name: Magma Scorpion
+perception: 18
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw** DC 26 Fortitude; **Maximum Duration** 6 rounds; **Stage
+    1** 2d6 fire damage (1 round) and __enfeebled 1__; **Stage 2** 3d6 fire damage
+    and enfeebled 2 (1 round)'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Magma Scorpion Venom
+  range: null
+  raw_description: '**Magma Scorpion Venom** (__fire__, __injury__, __poison__) **Saving
+    Throw** DC 26 Fortitude; **Maximum Duration** 6 rounds; **Stage 1** 2d6 fire damage
+    (1 round) and __enfeebled 1__; **Stage 2** 3d6 fire damage and enfeebled 2 (1
+    round)'
+  requirements: null
+  success: null
+  traits:
+  - fire
+  - injury
+  - poison
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d6+9
+    type: fire
+  name: magma spit
+  plus_damage:
+  - formula: 1d6
+    type: persistent fire
+  to_hit: 17
+  traits:
+  - fire
+  - range increment 40 feet
+rarity: Common
+resistances:
+- amount: 10
+  type: cold
+ritual_lists: null
+saves:
+  fort: 19
+  fort_misc: null
+  misc: null
+  ref: 14
+  ref_misc: null
+  will: 16
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The magma scorpion ignores the __concealed__ condition from smoke.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Smoke Vision
+  range: null
+  raw_description: '**Smoke Vision** The magma scorpion ignores the __concealed__
+    condition from smoke.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +18
+- darkvision
+- smoke vision
+size: Large
+skills:
+- bonus: 18
+  misc: null
+  name: 'Athletics '
+source:
+- abbr: Bestiary 2
+  page_start: 111
+  page_stop: null
+speed:
+- amount: 40
+  type: Land
+- amount: 30
+  type: climb
+spell_lists: null
+traits:
+- N
+- Large
+- Elemental
+- Fire
+type: Creature
+weaknesses: null

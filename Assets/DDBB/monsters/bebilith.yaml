@@ -1,0 +1,257 @@
+ability_mods:
+  cha_mod: 5
+  con_mod: 6
+  dex_mod: 3
+  int_mod: 3
+  str_mod: 7
+  wis_mod: 5
+ac: 30
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+description: 'While __demons__ control much of the __Abyss__, even they are hunted
+  in the wilder regions of this horrific plane. The most notorious of these predators—though
+  not the deadliest—is the bebilith. These fiends resemble elephant-sized spiders
+  with glowing eyes, barbed chitin, and a fanged maw dripping caustic fluid.
+
+
+
+
+  Many demons and planar travelers have underestimated bebiliths'' devious intellects,
+  believing them to be little more than oversized vermin. Bebiliths take advantage
+  of this, ambushing foes with unexpected tactics. While they lash out at any creatures
+  they encounter, they take great pleasure in chewing on demonic flesh. __Qlippoth__
+  are the only creatures bebiliths never consume.
+
+
+
+
+  **__Recall Knowledge - Beast__ (__Arcana__, __Nature__)**: DC 27
+
+
+  **__Recall Knowledge - Fiend__ (__Religion__)**: DC 27'
+hp: 200
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Abyssal
+- (can't speak any languages
+- telepathy 100 feet
+level: 10
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d10+13
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: null
+    type: Abyssal rot
+  to_hit: 23
+  traits:
+  - magical
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 2d8+13
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 23
+  traits:
+  - agile
+  - magical
+  - reach 15 feet
+name: Bebilith
+perception: 21
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The __drained__ condition from Abyssal rot is cumulative, to a maximum
+    of drained 4; **Saving Throw **DC 29 Fortitude; **Maximum Duration **6 rounds;
+    **Stage 1 **3d6 negative damage (1 round); **Stage 2 **3d6 negative damage and
+    drained 1 (1 round); **Stage 3 **3d6 negative damage and drained 2 (1 round)
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Abyssal Rot
+  range: null
+  raw_description: '**Abyssal Rot** (__disease__, __necromancy__) The __drained__
+    condition from Abyssal rot is cumulative, to a maximum of drained 4; **Saving
+    Throw **DC 29 Fortitude; **Maximum Duration **6 rounds; **Stage 1 **3d6 negative
+    damage (1 round); **Stage 2 **3d6 negative damage and drained 1 (1 round); **Stage
+    3 **3d6 negative damage and drained 2 (1 round)'
+  requirements: null
+  success: null
+  traits:
+  - disease
+  - necromancy
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A creature hit by the bebilith's web Strike is __restrained__ and tethered
+    to the bebilith, preventing it from moving further away from the bebilith. The
+    restrained creature is also under the effects of a __dimensional anchor__ spell
+    (DC 29) with a duration that lasts as long as the creature remains tethered. The
+    bebilith can have only one creature tethered at a time. The DC to __Escape__ or
+    __Force Open__ the tether is 29. The tether can be severed with a Strike (AC 20,
+    Hardness 2, HP 20); this ends the dimensional anchor effect but does not free
+    the restrained creature.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Dimensional Tether
+  range: null
+  raw_description: '**Dimensional Tether** A creature hit by the bebilith''s web Strike
+    is __restrained__ and tethered to the bebilith, preventing it from moving further
+    away from the bebilith. The restrained creature is also under the effects of a
+    __dimensional anchor__ spell (DC 29) with a duration that lasts as long as the
+    creature remains tethered. The bebilith can have only one creature tethered at
+    a time. The DC to __Escape__ or __Force Open__ the tether is 29. The tether can
+    be severed with a Strike (AC 20, Hardness 2, HP 20); this ends the dimensional
+    anchor effect but does not free the restrained creature.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Against demons, a bebilith's Strikes count as __cold iron__ and good.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Penetrating Strike
+  range: null
+  raw_description: '**Penetrating Strike** Against demons, a bebilith''s Strikes count
+    as __cold iron__ and good.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage: null
+  name: web
+  plus_damage: null
+  to_hit: 23
+  traits:
+  - range increment 60 feet
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 22
+  fort_misc: null
+  misc: null
+  ref: 19
+  ref_misc: null
+  will: 19
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A bebilith can smell demons as a __precise sense__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Scent Demons
+  range: null
+  raw_description: '**Scent Demons** A bebilith can smell demons as a __precise sense__.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +21
+- darkvision
+- scent demons 60 feet
+- scent (imprecise) 30 feet
+size: Huge
+skills:
+- bonus: 19
+  misc: null
+  name: 'Acrobatics '
+- bonus: 23
+  misc: null
+  name: 'Athletics '
+- bonus: 21
+  misc: null
+  name: 'Intimidation '
+- bonus: 19
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 37
+  page_stop: null
+speed:
+- amount: 35
+  type: Land
+- amount: 15
+  type: climb
+spell_lists:
+- dc: 29
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 7
+    spells:
+    - frequency: self only
+      name: plane shift
+      requirement: null
+  to_hit: null
+traits:
+- CE
+- Huge
+- Beast
+- Fiend
+type: Creature
+weaknesses:
+- amount: 10
+  type: good

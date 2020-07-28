@@ -1,0 +1,212 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 6
+  dex_mod: 4
+  int_mod: -4
+  str_mod: 7
+  wis_mod: 4
+ac: 33
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When a frost worm dies, it explodes in a 100-foot burst of searing
+    cold blood. All creatures and objects in range take 10d8 cold damage (DC 29 basic
+    Reflex save).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Death Throes
+  range: null
+  raw_description: '**Death Throes** (__cold__, __evocation__, __primal__) When a
+    frost worm dies, it explodes in a 100-foot burst of searing cold blood. All creatures
+    and objects in range take 10d8 cold damage (DC 29 basic Reflex save).'
+  requirements: null
+  success: null
+  traits:
+  - cold
+  - evocation
+  - primal
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 5 feet. A creature that enters or begins its turn in the emanation
+    takes 3d6 cold damage (DC 29 basic Reflex save).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Worm Chill
+  range: null
+  raw_description: '**Worm Chill** (__aura__, __cold__, __evocation__, __primal__)
+    5 feet. A creature that enters or begins its turn in the emanation takes 3d6 cold
+    damage (DC 29 basic Reflex save).'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - cold
+  - evocation
+  - primal
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The frost worm's freezing blood sprays out on a random creature within 10
+    feet of the frost worm. That creature takes 7d6 cold damage (DC 29 basic Reflex
+    save).
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Freezing Blood
+  range: null
+  raw_description: '**Freezing Blood [Reaction]** (__cold__) **Trigger **The frost
+    worm takes piercing or slashing damage; **Effect **The frost worm''s freezing
+    blood sprays out on a random creature within 10 feet of the frost worm. That creature
+    takes 7d6 cold damage (DC 29 basic Reflex save).'
+  requirements: null
+  success: null
+  traits:
+  - cold
+  trigger: The frost worm takes piercing or slashing damage
+description: 'The frost worm''s single round, red eye gleams prominently at the head
+  of its monstrous mass, white as a winter snowfall. What appears to be a bifurcated
+  lower jaw is actually two spiky parapodia that the worm uses to shovel food into
+  its lamprey-like mouth. An adult frost worm measures 35 feet long and weighs 8,000
+  pounds.
+
+
+
+
+  A frost worm is an apex predator that uses camouflage, burrowing, and deceit to
+  ambush its prey. When it attacks, a frost worm produces a distinctive, high-pitched
+  trill. Though some survivors of frost worm attacks have compared it to a wailing
+  lament, the trill has a captivating effect on nearby creatures, causing them to
+  stop and listen even as the monstrous creature approaches.
+
+
+
+
+  The cold shed by a frost worm is as dangerous as its trill or its jaws, and while
+  it is not fond of warmer climates, neither is it particularly hampered in such regions.
+  A frost worm that somehow finds itself in temperate or even tropical environs causes
+  the immediate area to chill and ice over with frost over time, creating seemingly
+  impossible pockets of frozen terrain.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 30'
+hp: 225
+hp_misc: null
+immunities:
+- cold
+items: null
+languages: null
+level: 12
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d8+10
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 2d6
+    type: persistent cold
+  to_hit: 25
+  traits: null
+name: Frost Worm
+perception: 22
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: "The frost worm exhales a blast of frost, dealing 13d6 cold damage\
+    \ to creatures in a 50-foot cone (DC 32 basic Reflex save). It can't use Breath\
+    \ Weapon again for 1d4 rounds. Worm Trill  (auditory, concentrate, enchantment,\
+    \ mental, primal); The frost worm emits a hypnotic trill. Each non-frost worm\
+    \ creature within 100 feet must attempt a DC 32 Will save. The effects of Worm\
+    \ Trill last for 1 round, but if the frost worm uses this ability again on subsequent\
+    \ rounds, it extends this duration by 1 round for any creature already affected.\
+    \ \n\n"
+  effect: null
+  effects: null
+  failure: The creature is fascinated by the frost worm.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Breath Weapon
+  range: null
+  raw_description: "**Breath Weapon**   (__cold__, __evocation__, __primal__) The\
+    \ frost worm exhales a blast of frost, dealing 13d6 cold damage to creatures in\
+    \ a 50-foot cone (DC 32 basic Reflex save). It can't use Breath Weapon again for\
+    \ 1d4 rounds. Worm Trill  (auditory, concentrate, enchantment, mental, primal);\
+    \ The frost worm emits a hypnotic trill. Each non-frost worm creature within 100\
+    \ feet must attempt a DC 32 Will save. The effects of Worm Trill last for 1 round,\
+    \ but if the frost worm uses this ability again on subsequent rounds, it extends\
+    \ this duration by 1 round for any creature already affected. \n\n**Success**\
+    \ The creature is unaffected and is immune to Worm Trill for 24 hours. \n\n**Failure**\
+    \ The creature is __fascinated__ by the frost worm. \n\n**Critical Failure **As\
+    \ failure, but the fascinated condition doesn't end if the frost worm uses hostile\
+    \ actions against the creature."
+  requirements: null
+  success: The creature is unaffected and is immune to Worm Trill for 24 hours.
+  traits:
+  - cold
+  - evocation
+  - primal
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 15
+  type: fire
+ritual_lists: null
+saves:
+  fort: 24
+  fort_misc: null
+  misc: null
+  ref: 22
+  ref_misc: null
+  will: 20
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +22
+- darkvision
+size: Huge
+skills:
+- bonus: 25
+  misc: null
+  name: 'Athletics '
+- bonus: 20
+  misc: +24 in ice and snow
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 123
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 10
+  type: burrow
+spell_lists: null
+traits:
+- N
+- Huge
+- Animal
+- Cold
+type: Creature
+weaknesses: null

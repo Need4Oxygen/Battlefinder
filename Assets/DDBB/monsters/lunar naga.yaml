@@ -1,0 +1,223 @@
+ability_mods:
+  cha_mod: 3
+  con_mod: 4
+  dex_mod: 4
+  int_mod: 1
+  str_mod: 2
+  wis_mod: 4
+ac: 24
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Lunar nagas are skilled diviners and astrologers whose dark scales and
+  white hair sparkle with motes of light that mimic the night skies to which they
+  are forever drawn. While they are less physically imposing than other nagas, they
+  possess a graceful beauty that many find entrancing, even without the help of the
+  naga''s inherent magical abilities. Earning a lunar naga''s trust is difficult,
+  but not impossible, especially for someone who shares the creature''s interest in
+  the celestial sphere.
+
+
+
+
+  As they have no hands, lunar nagas use __mage hand__ to manipulate delicate instruments
+  and fine telescopes to observe the night sky. They track the positions of celestial
+  bodies, recording their discoveries in esoteric journals. At their best, lunar nagas
+  are wise and mysterious beings who seek to expand their knowledge of the cosmos.
+  At their worst, after too much exposure to the unfathomable entities that dwell
+  in the darkness between the stars, they become dark prophets who drive others to
+  commit terrible deeds in the name of abominable masters.
+
+
+
+
+  On Golarion, the lunar nagas of the nation of Nagajor use their abilities to serve
+  many communities as soothsayers. A few have founded observatories in which they
+  and their followers explore the night sky. Some nagas even use their knowledge of
+  the stars as navigators on ships or overland caravans. In the broader world, where
+  people do not give nagas deference as nearly divine rulers, lunar nagas try to avoid
+  contact with outsiders or use their magical powers of disguise to hide their true
+  forms from all but their most worthy allies.
+
+
+
+
+  **__Recall Knowledge - Aberration__ (__Occultism__)**: DC 24'
+hp: 100
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Aklo
+- Celestial
+- Common
+level: 6
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+8
+    type: piercing
+  name: fangs
+  plus_damage:
+  - formula: null
+    type: lunar naga venom
+  to_hit: 16
+  traits:
+  - agile
+  - finesse
+name: Lunar Naga
+perception: 16
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 'DC 24, attack +16; **3rd** __heal__, __lightning bolt__, __slow__
+    (4 slots); **2nd** __glitterdust__, __humanoid form__, __invisibility__, __web__
+    (4 slots); **1st** __charm__, __fleet step__, __heal__, __spider sting__ (4 slots);
+    **Cantrips** **(3rd)** __dancing lights__, __daze__, __detect magic__, __mage
+    hand__, __read aura__
+
+
+    '
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Primal Spontaneous Spells
+  range: null
+  raw_description: '**Primal Spontaneous Spells** DC 24, attack +16; **3rd** __heal__,
+    __lightning bolt__, __slow__ (4 slots); **2nd** __glitterdust__, __humanoid form__,
+    __invisibility__, __web__ (4 slots); **1st** __charm__, __fleet step__, __heal__,
+    __spider sting__ (4 slots); **Cantrips** **(3rd)** __dancing lights__, __daze__,
+    __detect magic__, __mage hand__, __read aura__
+
+
+    '
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: "The lunar naga twists the coils of their serpentine body, causing the starlike\
+    \ motes on their scales to shift and move as they glow brighter, creating a mesmerizing\
+    \ swirl of light and darkness. All creatures within a 30.foot emanation must succeed\
+    \ at a DC 21 Will save or become __fascinated__ until the end of the naga\x81\
+    fs next turn (on a critical failure, fascinated creatures drop whatever items\
+    \ they are carrying as well). The lunar naga can Sustain a Spell on Hypnosis.\
+    \ If the naga moves, affected creatures are compelled to remain within 30 feet\
+    \ of the naga and must spend each of its actions moving closer to the naga as\
+    \ expediently as possible on its next turn. If a creature is unable to end its\
+    \ turn within 30 feet of the naga, the effect ends for that creature."
+  effects: null
+  failure: null
+  frequency: once per day
+  full_description: null
+  generic_description: null
+  name: Hypnosis
+  range: null
+  raw_description: "**Hypnosis** [Two Actions]  (__concentrate__, __enchantment__,\
+    \ __incapacitation__, __mental__, __primal__, __visual__) **Frequency** once per\
+    \ day; **Effect** The lunar naga twists the coils of their serpentine body, causing\
+    \ the starlike motes on their scales to shift and move as they glow brighter,\
+    \ creating a mesmerizing swirl of light and darkness. All creatures within a 30.foot\
+    \ emanation must succeed at a DC 21 Will save or become __fascinated__ until the\
+    \ end of the naga\x81fs next turn (on a critical failure, fascinated creatures\
+    \ drop whatever items they are carrying as well). The lunar naga can Sustain a\
+    \ Spell on Hypnosis. If the naga moves, affected creatures are compelled to remain\
+    \ within 30 feet of the naga and must spend each of its actions moving closer\
+    \ to the naga as expediently as possible on its next turn. If a creature is unable\
+    \ to end its turn within 30 feet of the naga, the effect ends for that creature."
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - enchantment
+  - incapacitation
+  - mental
+  - primal
+  - visual
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw** DC 24; **Maximum Duration** 6 rounds; **Stage 1**
+    __stupefied 1__ (1 round); **Stage 2** as stage 1 (1 round); **Stage 3** __stupefied
+    2__ (1 round); **Stage 4** __unconscious__ (1 round). Once a creature falls unconscious
+    from lunar naga venom, they remain asleep for 1d8 hours unless woken.'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Lunar Naga Venom
+  range: null
+  raw_description: '**Lunar Naga Venom** (__poison__, __sleep__) **Saving Throw**
+    DC 24; **Maximum Duration** 6 rounds; **Stage 1** __stupefied 1__ (1 round); **Stage
+    2** as stage 1 (1 round); **Stage 3** __stupefied 2__ (1 round); **Stage 4** __unconscious__
+    (1 round). Once a creature falls unconscious from lunar naga venom, they remain
+    asleep for 1d8 hours unless woken.'
+  requirements: null
+  success: null
+  traits:
+  - poison
+  - sleep
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 15
+  fort_misc: null
+  misc: null
+  ref: 16
+  ref_misc: null
+  will: 17
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +16
+- darkvision
+size: Large
+skills:
+- bonus: 14
+  misc: null
+  name: 'Acrobatics '
+- bonus: 11
+  misc: null
+  name: 'Astronomy Lore '
+- bonus: 15
+  misc: null
+  name: 'Deception '
+- bonus: 15
+  misc: null
+  name: 'Diplomacy '
+- bonus: 13
+  misc: null
+  name: 'Nature '
+- bonus: 14
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 178
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists: null
+traits:
+- Uncommon
+- N
+- Large
+- Aberration
+type: Creature
+weaknesses: null

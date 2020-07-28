@@ -1,0 +1,400 @@
+ability_mods:
+  cha_mod: 7
+  con_mod: 5
+  dex_mod: 4
+  int_mod: 1
+  str_mod: 6
+  wis_mod: 4
+ac: 30
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The herecite warps the caster's prayers into a sacrilegious echo praising
+    the evils of its own deity. The triggering caster must succeed at a DC 29 Will
+    saving throw or their spell is disrupted and their action wasted.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Perverse Prayer
+  range: null
+  raw_description: '**Perverse Prayer** [Reaction] (__auditory__, __divine__, __evil__)
+    **Trigger** A creature within 30 feet uses the Sustain a Spell action to sustain
+    a divine spell or the Cast a Spell action to cast a divine spell with a verbal
+    component; **Effect** The herecite warps the caster''s prayers into a sacrilegious
+    echo praising the evils of its own deity. The triggering caster must succeed at
+    a DC 29 Will saving throw or their spell is disrupted and their action wasted.'
+  requirements: null
+  success: null
+  traits:
+  - auditory
+  - divine
+  - evil
+  trigger: A creature within 30 feet uses the Sustain a Spell action to sustain a
+    divine spell or the Cast a Spell action to cast a divine spell with a verbal component
+description: 'Secreted away in the dark corners of unnamed libraries, necromancer''s
+  dens, and heretical scriptoriums, obscure texts describe a horrifying ritual that
+  combines sacrifice and suffering to create a powerful undead being known as a herecite.
+  These monsters, stripped of personal will or desire, are born into the service of
+  an evil god whom they worship unerringly and untiringly, often in spite of any opposing
+  religious leanings they may have had in life. Every herecite harbors an unquenchable
+  self-hatred because it was defiled by such a foul resurrection—a rage it turns outward
+  in an attempt to rob others of their faith and lives.
+
+
+
+
+  Herecites often outlast the cults that create them. Stranded herecites are drawn
+  to others of their kind, even if they are dedicated to different evil deities, and
+  when brought together they perform rites to magically bind themselves in a group
+  known as a cabal. While cabal members share enhanced magic and defenses, induction
+  into a cabal appears to hold even deeper significance for herecites. The presence
+  of others of their kind with whom they can pray—in verses warped to venerate wicked
+  gods—seems the only solace these tormented beings can find in undeath. Such a fellowship
+  of sorrow is nigh unbreakable, as many an overzealous crusader has discovered far
+  too late.
+
+
+
+
+  Customarily found within heavily modified temples to the pantheon of gods they collectively
+  worship, herecites act in service to their creators or as protectors of unholy ground.
+  High priests of different evil gods may even trade herecites among themselves, allowing
+  their minions to form cabals strengthened by their varied faiths. A lone herecite
+  cut off from its creators—often because it is the sole remnant of a destroyed temple
+  or its master has perished—may wander far and wide in search of a cabal to join.
+  Other times, the herecite seeks out a place sacred to the deity it worshipped in
+  life. Whether motivated by a desire for contrition or vengeance, the end result
+  of this baleful pilgrimage is always the desecration of the holy site and the slaughter
+  of its congregants, who may in turn rise as lesser forms of undead.
+
+
+
+
+  **__Recall Knowledge - Undead__ (__Religion__)**: DC 29'
+hp: 200
+hp_misc: negative healing
+immunities: null
+items:
+- +1 striking spiked gauntlet
+languages:
+- Common
+- Draconic
+- Infernal
+level: 10
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d4+10
+    type: piercing
+  name: unholy spiked gauntlet
+  plus_damage:
+  - formula: 1d6
+    type: evil
+  to_hit: 22
+  traits:
+  - agile
+  - free-hand
+name: Herecite of Zevgavizeb
+perception: 20
+proactive_abilities:
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The herecite is in a cabal of three or more members, two of which are within
+    60 feet and have used Cabal Communion within the last round
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Assault the Soul
+  range: null
+  raw_description: '**Assault the Soul** [Three Actions]  (__concentrate__, __divine__,
+    __evil__, __necromancy__) **Requirements** The herecite is in a cabal of three
+    or more members, two of which are within 60 feet and have used Cabal Communion
+    within the last round; **Effect** The herecite casts __bind soul__, __spirit blast__,
+    or __spiritual epidemic__ (DC 31). Once a herecite has used this ability (whether
+    or not it was successful), the cabal must wait 24 hours before one of its members
+    can use Assault the Soul again.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - divine
+  - evil
+  - necromancy
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: With murmurs and chants, the herecite casts its consciousness toward
+    the other members of its cabal. For 1 round, it senses what other members are
+    sensing, knows their thoughts, and knows their exact location.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Cabal Communion
+  range: null
+  raw_description: '**Cabal Communion** [Two Actions]  (__auditory__, __concentrate__)
+    With murmurs and chants, the herecite casts its consciousness toward the other
+    members of its cabal. For 1 round, it senses what other members are sensing, knows
+    their thoughts, and knows their exact location.'
+  requirements: null
+  success: null
+  traits:
+  - auditory
+  - concentrate
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: Recalling the cruelty of the foul ritual that birthed it, the herecite
+    curses an enemy with a fragment of its blasphemy. The herecite targets one creature
+    within 30 feet, which must attempt a DC 29 Will save. On a failure, the creature
+    is cursed. As long as the creature is cursed, any art object, symbol, or implement
+    of religious significance in the creature's possession—such as a divine spellcasting
+    focus, holy text, fetish, or rendering of a deity—becomes physically corrupted
+    in a way that debases the deity's tenets (a depiction of __Shelyn's__ songbird,
+    for example, might lose its beautiful plumage to reveal a hideous skeletal form
+    beneath). While these items continue to function normally, the cursed creature
+    is __stupefied__ 2 as long as it possesses an object corrupted in this fashion.
+    The creature can cast off its corrupted objects to remove the stupefied condition,
+    but any new religious objects it takes into its possession become similarly corrupted.
+    The curse can be lifted by a __remove curse__ spell or by an __atone__ ritual.
+    After a creature is targeted with this ability, regardless of whether it was affected,
+    it becomes immune to herecites' Curse of Defiled Idols for 1 day.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Curse of Defiled Idols
+  range: null
+  raw_description: '**Curse of Defiled Idols** [Two Actions]  (__curse__, __divine__,
+    __evil__) Recalling the cruelty of the foul ritual that birthed it, the herecite
+    curses an enemy with a fragment of its blasphemy. The herecite targets one creature
+    within 30 feet, which must attempt a DC 29 Will save. On a failure, the creature
+    is cursed. As long as the creature is cursed, any art object, symbol, or implement
+    of religious significance in the creature''s possession—such as a divine spellcasting
+    focus, holy text, fetish, or rendering of a deity—becomes physically corrupted
+    in a way that debases the deity''s tenets (a depiction of __Shelyn''s__ songbird,
+    for example, might lose its beautiful plumage to reveal a hideous skeletal form
+    beneath). While these items continue to function normally, the cursed creature
+    is __stupefied__ 2 as long as it possesses an object corrupted in this fashion.
+    The creature can cast off its corrupted objects to remove the stupefied condition,
+    but any new religious objects it takes into its possession become similarly corrupted.
+    The curse can be lifted by a __remove curse__ spell or by an __atone__ ritual.
+    After a creature is targeted with this ability, regardless of whether it was affected,
+    it becomes immune to herecites'' Curse of Defiled Idols for 1 day.'
+  requirements: null
+  success: null
+  traits:
+  - curse
+  - divine
+  - evil
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances: null
+ritual_lists:
+- dc: 28
+  misc: null
+  name: Rituals
+  spell_groups:
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: null
+      name: consecrate
+      requirement: null
+  to_hit: null
+saves:
+  fort: 19
+  fort_misc: null
+  misc: null
+  ref: 20
+  ref_misc: null
+  will: 22
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Multiple herecites can form a cabal to gain increased magical abilities
+    and defenses. A cabal consists of two to five herecites. The ritual to form a
+    cabal (or to welcome new herecites into an existing cabal) requires 24 hours of
+    worship, prayer, and vile sacrifice, after which point the herecites become magically
+    bound to one another. All herecites in a cabal gain the cleric domain spells granted
+    by each individual herecite's deity, and each herecite's focus pool increases
+    to 3 Focus Points. As long as the cabal exists, herecites in the cabal gain a
+    +2 status bonus to Perception checks and fast healing 10. These benefits persist
+    as long as the cabal consists of two or more herecites that remain within 1 mile
+    of one another.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Cabal
+  range: null
+  raw_description: '**Cabal** Multiple herecites can form a cabal to gain increased
+    magical abilities and defenses. A cabal consists of two to five herecites. The
+    ritual to form a cabal (or to welcome new herecites into an existing cabal) requires
+    24 hours of worship, prayer, and vile sacrifice, after which point the herecites
+    become magically bound to one another. All herecites in a cabal gain the cleric
+    domain spells granted by each individual herecite''s deity, and each herecite''s
+    focus pool increases to 3 Focus Points. As long as the cabal exists, herecites
+    in the cabal gain a +2 status bonus to Perception checks and fast healing 10.
+    These benefits persist as long as the cabal consists of two or more herecites
+    that remain within 1 mile of one another.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 'A herecite is associated with one evil god and is always of the same
+    alignment as that god. Whenever it wields its deity''s favored weapon, that weapon
+    gains the __unholy__ rune. The herecite''s creators select two domains from their
+    deity; the herecite can cast the domain spells and the advanced domain spells
+    from those domains as cleric focus spells. The herecite can cast the deity''s
+    other granted cleric spells as divine innate spells. Most herecites have 2 Focus
+    Points in their focus pool. The herecite presented here is a herecite of __Zevgavizeb__.
+
+
+    '
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Herecite Deity
+  range: null
+  raw_description: '**Herecite Deity** A herecite is associated with one evil god
+    and is always of the same alignment as that god. Whenever it wields its deity''s
+    favored weapon, that weapon gains the __unholy__ rune. The herecite''s creators
+    select two domains from their deity; the herecite can cast the domain spells and
+    the advanced domain spells from those domains as cleric focus spells. The herecite
+    can cast the deity''s other granted cleric spells as divine innate spells. Most
+    herecites have 2 Focus Points in their focus pool. The herecite presented here
+    is a herecite of __Zevgavizeb__.
+
+
+    '
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +20
+- darkvision
+- detect alignment (good only)
+size: Medium
+skills:
+- bonus: 20
+  misc: null
+  name: 'Athletics '
+- bonus: 23
+  misc: null
+  name: 'Intimidation '
+- bonus: 22
+  misc: null
+  name: 'Religion '
+- bonus: 19
+  misc: null
+  name: 'Zevgavizeb Lore '
+source:
+- abbr: 'Pathfinder #153: Life''s Long Shadow'
+  page_start: 80
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+spell_lists:
+- dc: 28
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: null
+      name: ravening maw
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: null
+      name: crisis of faith
+      requirement: null
+    - frequency: at will
+      name: harm
+      requirement: null
+    - frequency: null
+      name: meld into stone
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: x3
+      name: darkness
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: ray of enfeeblement
+      requirement: null
+  - heightened_level: 5
+    level: -1
+    spells:
+    - frequency: good only
+      name: detect alignment
+      requirement: null
+  to_hit: null
+- dc: 28
+  misc: null
+  name: Cleric Focus Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: enduring might
+      requirement: null
+    - frequency: null
+      name: nature's bounty
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: athletic rush
+      requirement: null
+    - frequency: null
+      name: vibrant thorns
+      requirement: null
+  to_hit: null
+traits:
+- Uncommon
+- CE
+- Medium
+- Undead
+type: Creature
+weaknesses:
+- amount: 10
+  type: good

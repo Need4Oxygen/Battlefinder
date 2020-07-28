@@ -1,0 +1,360 @@
+ability_mods:
+  cha_mod: 3
+  con_mod: 7
+  dex_mod: 5
+  int_mod: 0
+  str_mod: 9
+  wis_mod: 6
+ac: 39
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 30 feet. A non-evil creature that ends its turn in the aura must attempt
+    a DC 35 Fortitude save. If it fails, it's slowed 1 for 1 round, and if it critically
+    fails, it is instead paralyzed for 1 round.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Paralyzing Gaze
+  range: null
+  raw_description: '**Paralyzing Gaze** (__aura__, __divine__, __enchantment__, __visual__)
+    30 feet. A non-evil creature that ends its turn in the aura must attempt a DC
+    35 Fortitude save. If it fails, it''s slowed 1 for 1 round, and if it critically
+    fails, it is instead paralyzed for 1 round.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - divine
+  - enchantment
+  - visual
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A shemhazian's mutilation is a part of them, and they can't bear to
+    see it reversed. The first time each round that a creature heals from damage the
+    shemhazian dealt on their last turn, the demon takes 3d6 mental damage.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Succor Vulnerability
+  range: null
+  raw_description: '**Succor Vulnerability** A shemhazian''s mutilation is a part
+    of them, and they can''t bear to see it reversed. The first time each round that
+    a creature heals from damage the shemhazian dealt on their last turn, the demon
+    takes 3d6 mental damage.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The shemhazian attempts to Trip the triggering creature. On a success, the
+    creature also takes damage as if the shemhazian had hit with a tail Strike, and
+    if the creature was flying, it falls 30 feet.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Tail Whip
+  range: null
+  raw_description: '**Tail Whip** [Reaction] **Trigger** A creature within reach of
+    the shemhazian''s tail leaves a square during a move action it''s using. **Effect**
+    The shemhazian attempts to Trip the triggering creature. On a success, the creature
+    also takes damage as if the shemhazian had hit with a tail Strike, and if the
+    creature was flying, it falls 30 feet.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within reach of the shemhazian's tail leaves a square during
+    a move action it's using.
+description: 'Shemhazians rise from the souls of torturers and those who reveled in
+  mutilating the physical bodies of their victims. Standing 35 feet tall, a shemhazian
+  is well equipped with a wide range of talons, claws, and fangs to continue inflicting
+  such torments on those it encounters.
+
+
+
+
+  Shemhazians delight in visiting torment upon mortals, of course, but more than most
+  demons, these fiends revel in sharing the pain with their own kind. Other demons
+  fear and hate shemhazians for this reason, with only the most powerful willing to
+  work with a shemhazian to achieve a shared goal. Even then, the shemhazian is always
+  on the watch for an opportunity to bring pain and suffering to its allies along
+  with any foe.
+
+
+
+
+  **__Recall Knowledge - Fiend__ (__Religion__)**: DC 35'
+hp: 350
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Abyssal
+- Celestial
+- Draconic
+- telepathy 100 feet
+level: 16
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d12+17
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 1d6
+    type: evil and enfeebling bite
+  to_hit: 33
+  traits:
+  - evil
+  - magical
+  - reach 20 feet
+- action_cost: One Action
+  damage:
+    formula: 3d8+17
+    type: slashing
+  name: claw
+  plus_damage:
+  - formula: 1d6
+    type: evil
+  to_hit: 33
+  traits:
+  - agile
+  - evil
+  - magical
+  - reach 20 feet
+- action_cost: One Action
+  damage:
+    formula: 3d8+17
+    type: bludgeoning
+  name: pincer
+  plus_damage:
+  - formula: 1d6
+    type: evil and Improved Grab
+  to_hit: 33
+  traits:
+  - evil
+  - magical
+  - reach 20 feet
+- action_cost: One Action
+  damage:
+    formula: 3d6+17
+    type: slashing
+  name: tail
+  plus_damage:
+  - formula: 1d6
+    type: evil
+  to_hit: 33
+  traits:
+  - evil
+  - magical
+  - reach 30 feet
+name: Shemhazian
+perception: 30
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: If the shemhazian's jaws Strike damages a creature, the target is __enfeebled
+    3__. The target can attempt a DC 37 Fortitude save to reduce this to __enfeebled
+    1__ (or be unaffected on a critical success).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Enfeebling Bite
+  range: null
+  raw_description: '**Enfeebling Bite** (__divine__, __necromancy__) If the shemhazian''s
+    jaws Strike damages a creature, the target is __enfeebled 3__. The target can
+    attempt a DC 37 Fortitude save to reduce this to __enfeebled 1__ (or be unaffected
+    on a critical success).'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - necromancy
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The shemhazian focuses their gaze on a non-evil creature they can see
+    within 30 feet. If that creature isn't already slowed by the shemhazian's paralyzing
+    gaze, it must attempt a save against the shemhazian's paralyzing gaze. If that
+    creature is __slowed__, it must succeed at a DC 35 Fortitude save or be __paralyzed__
+    for 1 round. A shemhazian can't use this ability against the same creature more
+    than once per round.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Focused Gaze
+  range: null
+  raw_description: '**Focused Gaze**   (__concentrate__, __divine__, __enchantment__,
+    __incapacitation__, __visual__) The shemhazian focuses their gaze on a non-evil
+    creature they can see within 30 feet. If that creature isn''t already slowed by
+    the shemhazian''s paralyzing gaze, it must attempt a save against the shemhazian''s
+    paralyzing gaze. If that creature is __slowed__, it must succeed at a DC 35 Fortitude
+    save or be __paralyzed__ for 1 round. A shemhazian can''t use this ability against
+    the same creature more than once per round.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - divine
+  - enchantment
+  - incapacitation
+  - visual
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: claw
+  effect: The monster automatically deals that Strike's damage again to the enemy.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Rend
+  range: null
+  raw_description: A Rend entry lists a Strike the monster has. **Requirements** The
+    monster hit the same enemy with two consecutive Strikes of the listed type in
+    the same round. **Effect** The monster automatically deals that Strike's damage
+    again to the enemy.
+  requirements: The monster hit the same enemy with two consecutive Strikes of the
+    listed type in the same round.
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists:
+- dc: 36
+  misc: null
+  name: Divine Rituals
+  spell_groups:
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: abyssal pact
+      requirement: null
+  to_hit: null
+saves:
+  fort: 32
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 26
+  ref_misc: null
+  will: 27
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +30
+- darkvision
+- scent (imprecise) 60 feet
+- true seeing
+size: Gargantuan
+skills:
+- bonus: 31
+  misc: null
+  name: 'Athletics '
+- bonus: 25
+  misc: null
+  name: 'Deception '
+- bonus: 27
+  misc: null
+  name: 'Intimidation '
+- bonus: 28
+  misc: null
+  name: 'Medicine '
+- bonus: 30
+  misc: null
+  name: 'Religion '
+source:
+- abbr: Bestiary
+  page_start: 80
+  page_stop: null
+speed:
+- amount: 35
+  type: Land
+- amount: 20
+  type: climb
+- amount: 35
+  type: fly  (from <a style="text-decoration:underline" href="Spells.aspx?ID="><i>fly</i></a>)
+spell_lists:
+- dc: 37
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 8
+    spells:
+    - frequency: evil only
+      name: divine decree
+      requirement: null
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: null
+      name: dimension door
+      requirement: null
+    - frequency: x3
+      name: prying eye
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: x3
+      name: clairvoyance
+      requirement: null
+    - frequency: at will
+      name: dimension door
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: at will
+      name: invisibility
+      requirement: null
+  - heightened_level: 7
+    level: -1
+    spells:
+    - frequency: null
+      name: fly
+      requirement: null
+    - frequency: null
+      name: true seeing
+      requirement: null
+  to_hit: null
+traits:
+- CE
+- Gargantuan
+- Demon
+- Fiend
+type: Creature
+weaknesses:
+- amount: 15
+  type: cold iron
+- amount: 15
+  type: good

@@ -1,0 +1,161 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 0
+  dex_mod: 4
+  int_mod: 2
+  str_mod: -2
+  wis_mod: 2
+ac: 17
+ac_special: null
+alignment: CE
+automatic_abilities: null
+description: 'Jinkins are sadistic tinkers who steal and sabotage items and take great
+  pride in their power to curse precious objects. They hold grudges and create convoluted
+  plans for revenge whenever they feel slighted, such as when a creature dares to
+  remove one of their curses. Rarely content to wreak simple mayhem, jinkins also
+  take immense pleasure in torture and murder, though they prefer to lead victims
+  into traps designed to capture or incapacitate rather than kill outright. Deep pits
+  are favorites, since victims who survive the fall face a slow death from starvation
+  and thirst. Jinkins enjoy gathering at the edge of pits to mock, tease, and torment.
+
+
+
+
+  **__Recall Knowledge - Fey__ (__Nature__)**: DC 15'
+hp: 19
+hp_misc: null
+immunities: null
+items:
+- shortsword
+languages:
+- Undercommon
+level: 1
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6-2
+    type: piercing
+  name: shortsword
+  plus_damage: null
+  to_hit: 9
+  traits:
+  - agile
+  - finesse
+  - magical
+  - versatile S
+name: Jinkin
+perception: 7
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The jinkin deals 1d6 extra precision damage to __flat-footed__ creatures.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sneak Attack
+  range: null
+  raw_description: '**__Sneak Attack__** The jinkin deals 1d6 extra precision damage
+    to __flat-footed__ creatures.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A group of six jinkins can work together for an hour to imbue an item
+    with a curse at a range of 60 feet. While this process is lengthy, it's also unobtrusive
+    and can be performed while Hiding. Jinkins prefer to use this ability on magic
+    items. The curse makes the item unreliable (DC 5 flat check or waste any action
+    to Interact with or Activate the item), adds a bizarre requirement to use the
+    item, or imparts some other curse of a similar caliber.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Tinker
+  range: null
+  raw_description: '**Tinker** (__curse__, __primal__, __transmutation__) A group
+    of six jinkins can work together for an hour to imbue an item with a curse at
+    a range of 60 feet. While this process is lengthy, it''s also unobtrusive and
+    can be performed while Hiding. Jinkins prefer to use this ability on magic items.
+    The curse makes the item unreliable (DC 5 flat check or waste any action to Interact
+    with or Activate the item), adds a bizarre requirement to use the item, or imparts
+    some other curse of a similar caliber.'
+  requirements: null
+  success: null
+  traits:
+  - curse
+  - primal
+  - transmutation
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 6
+  fort_misc: null
+  misc: null
+  ref: 10
+  ref_misc: null
+  will: 7
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +7
+- darkvision
+size: Tiny
+skills:
+- bonus: 7
+  misc: null
+  name: 'Acrobatics '
+- bonus: 5
+  misc: +7 traps
+  name: 'Crafting '
+- bonus: 5
+  misc: null
+  name: 'Deception '
+- bonus: 5
+  misc: null
+  name: 'Nature '
+- bonus: 7
+  misc: null
+  name: 'Stealth '
+- bonus: 7
+  misc: null
+  name: 'Thievery '
+source:
+- abbr: Bestiary
+  page_start: 193
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+spell_lists:
+- dc: 17
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: 1
+    level: 0
+    spells:
+    - frequency: null
+      name: prestidigitation
+      requirement: null
+  to_hit: null
+traits:
+- CE
+- Tiny
+- Fey
+- Gremlin
+type: Creature
+weaknesses:
+- amount: 2
+  type: cold iron

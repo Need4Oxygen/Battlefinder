@@ -1,0 +1,247 @@
+ability_mods:
+  cha_mod: 5
+  con_mod: 8
+  dex_mod: 6
+  int_mod: -5
+  str_mod: 9
+  wis_mod: 4
+ac: 40
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 'When a Xotanispawn dies, it explodes, dealing 15d8 fire damage to
+    creatures in a 30-foot emanation (DC 39 basic Reflex save).
+
+
+    __**Light Blindness**__'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Explosion
+  range: null
+  raw_description: '**Explosion** (__fire__) When a Xotanispawn dies, it explodes,
+    dealing 15d8 fire damage to creatures in a 30-foot emanation (DC 39 basic Reflex
+    save).
+
+
+    __**Light Blindness**__'
+  requirements: null
+  success: null
+  traits:
+  - fire
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The triggering creature takes 5d8 __persistent__ fire damage (DC 37 Reflex
+    save to negate).
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Internal Furnace
+  range: null
+  raw_description: '**Internal Furnace** [Reaction] (__fire__) **Trigger** A creature
+    adjacent to the Xotanispawn touches it or hits it with a physical attack; **Effect**
+    The triggering creature takes 5d8 __persistent__ fire damage (DC 37 Reflex save
+    to negate).'
+  requirements: null
+  success: null
+  traits:
+  - fire
+  trigger: A creature adjacent to the Xotanispawn touches it or hits it with a physical
+    attack
+description: 'Xotanispawn are monstrous versions of scavenging beetle larvae that
+  have been corrupted and mutated by feeding on the remains of Xotani the Firebleeder,
+  a slain Spawn of Rovagug buried beneath Pale Mountain in Katapesh. These creatures
+  look vaguely like the minute insects they once were, with a sclerotized head and
+  chitinous body plates, six legs, and numerous dorsal spines lining the joints and
+  edges of each segment. However, by feeding on the unholy remains of Xotani, the
+  spawn have manifested many of the traits of the infamous Firebleeder, most notably
+  a blisteringly hot internal temperature and powerful fire attacks—to say nothing
+  of their monstrous size.
+
+
+
+
+  Internal heat radiates from every surface of a Xotanispawn, even from its mouth.
+  Any contact with a Xotanispawn results in burns and the risk of catching on fire.
+  Thankfully, Xotanispawn have also inherited Xotani''s weaknesses to cold and sunlight.
+  They are rarely encountered on the surface during the day, opting to emerge from
+  their subterranean lairs only at night.
+
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 41'
+hp: 340
+hp_misc: null
+immunities:
+- chaotic
+- evil
+- fire
+items: null
+languages: null
+level: 17
+melee:
+- action_cost: One Action
+  damage:
+    formula: 4d8+9
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 2d8
+    type: persistent fire and Grab
+  to_hit: 30
+  traits:
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 4d6+9
+    type: slashing
+  name: claw
+  plus_damage:
+  - formula: 2d8
+    type: persistent fire
+  to_hit: 30
+  traits:
+  - agile
+  - reach 10 feet
+name: Xotanispawn
+perception: 29
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The Xotanispawn sprays a 60-foot cone of magma that deals 10d10 fire
+    damage and 2d6 __persistent__ fire damage to all creatures in the area (DC 39
+    basic Reflex save). The Xotanispawn can't use its Breath Weapon again for 1d4
+    rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Breath Weapon
+  range: null
+  raw_description: '**Breath Weapon** [Two Actions]  (__arcane__, __evocation__, __fire__)
+    The Xotanispawn sprays a 60-foot cone of magma that deals 10d10 fire damage and
+    2d6 __persistent__ fire damage to all creatures in the area (DC 39 basic Reflex
+    save). The Xotanispawn can''t use its Breath Weapon again for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - evocation
+  - fire
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When the Xotanispawn critically hits, its body surges with heat, increasing
+    the damage of its Internal Furnace to 10d8 until the start of its next turn.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Heat Surge
+  range: null
+  raw_description: '**Heat Surge** When the Xotanispawn critically hits, its body
+    surges with heat, increasing the damage of its Internal Furnace to 10d8 until
+    the start of its next turn.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Rare
+resistances:
+- amount: 20
+  type: cold
+ritual_lists: null
+saves:
+  fort: 31
+  fort_misc: null
+  misc: null
+  ref: 29
+  ref_misc: null
+  will: 23
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: The creature is frightened 4.
+  critical_success: The creature is unaffected by the presence.
+  description: ' (__aura__, __emotion__, __fear__, __mental__) 60 feet, DC 36'
+  effect: null
+  effects: null
+  failure: The creature is frightened 2.
+  frequency: null
+  full_description: null
+  generic_description: A creature that first enters the area must attempt a Will save.
+    Regardless of the result of the saving throw, the creature is temporarily immune
+    to this monster's Frightful Presence for 1 minute.
+  name: Frightful Presence
+  range: null
+  raw_description: '**Frightful Presence**  (__aura__, __emotion__, __fear__, __mental__)
+    60 feet, DC 36 A creature that first enters the area must attempt a Will save.
+    Regardless of the result of the saving throw, the creature is temporarily immune
+    to this monster''s Frightful Presence for 1 minute.
+
+    Critical Success The creature is unaffected by the presence.
+
+    Success The creature is frightened 1.
+
+    Failure The creature is frightened 2.
+
+    Critical Success The creature is frightened 4.'
+  requirements: null
+  success: The creature is frightened 1.
+  traits: null
+  trigger: null
+senses:
+- Perception +29
+- darkvision
+- tremorsense (imprecise) 60 feet
+size: Large
+skills:
+- bonus: 34
+  misc: null
+  name: 'Athletics '
+- bonus: 31
+  misc: null
+  name: 'Stealth '
+- bonus: 29
+  misc: null
+  name: 'Survival '
+source:
+- abbr: 'Pathfinder #149: Against the Scarlet Triad'
+  page_start: 91
+  page_stop: null
+speed:
+- amount: 40
+  type: Land
+- amount: 40
+  type: burrow
+- amount: 40
+  type: climb
+spell_lists: null
+traits:
+- Rare
+- CE
+- Large
+- Animal
+- Fire
+type: Creature
+weaknesses: null

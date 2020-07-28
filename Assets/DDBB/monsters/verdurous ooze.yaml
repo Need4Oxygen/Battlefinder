@@ -1,0 +1,259 @@
+ability_mods:
+  cha_mod: -5
+  con_mod: 5
+  dex_mod: -4
+  int_mod: -5
+  str_mod: 5
+  wis_mod: 0
+ac: 12
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A creature that hits a verdurous ooze with a metal weapon or unarmed
+    attack must attempt a DC 21 Reflex save. On a failure, the weapon or creature
+    takes 2d4 acid damage (after dealing damage to the ooze as normal). __Thrown__
+    weapons take this damage automatically with no save.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Corrosive Surface
+  range: null
+  raw_description: '**Corrosive Surface** A creature that hits a verdurous ooze with
+    a metal weapon or unarmed attack must attempt a DC 21 Reflex save. On a failure,
+    the weapon or creature takes 2d4 acid damage (after dealing damage to the ooze
+    as normal). __Thrown__ weapons take this damage automatically with no save.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 20 feet. The verdurous ooze constantly emits supernatural vapors that
+    cause nearby plants to grow rapidly and writhe and grasp at anything and everything
+    within the emanation. This area becomes difficult terrain for non-verdurous ooze
+    creatures. When a creature starts its turn in this aura, it must succeed at a
+    DC 21 Reflex save or take a -10-foot circumstance penalty to its Speeds until
+    it leaves the emanation.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Enliven Foliage
+  range: null
+  raw_description: '**Enliven Foliage** (__aura__, __primal__, __transmutation__)
+    20 feet. The verdurous ooze constantly emits supernatural vapors that cause nearby
+    plants to grow rapidly and writhe and grasp at anything and everything within
+    the emanation. This area becomes difficult terrain for non-verdurous ooze creatures.
+    When a creature starts its turn in this aura, it must succeed at a DC 21 Reflex
+    save or take a -10-foot circumstance penalty to its Speeds until it leaves the
+    emanation.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - primal
+  - transmutation
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When a verdurous ooze that has 10 or more HP is hit by an attack that
+    would deal piercing or slashing damage, it splits into two identical oozes, each
+    with half the original's HP. One ooze is in the same space as the original, and
+    the other is in an adjacent, unoccupied space. If no adjacent space is unoccupied,
+    it automatically pushes creatures and objects out of the way to fill a space (the
+    GM decides if an object or creature is too big or heavy to push).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Split
+  range: null
+  raw_description: '**Split** When a verdurous ooze that has 10 or more HP is hit
+    by an attack that would deal piercing or slashing damage, it splits into two identical
+    oozes, each with half the original''s HP. One ooze is in the same space as the
+    original, and the other is in an adjacent, unoccupied space. If no adjacent space
+    is unoccupied, it automatically pushes creatures and objects out of the way to
+    fill a space (the GM decides if an object or creature is too big or heavy to push).'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Verdurous oozes are found in temperate forests, warm jungles, or other
+  places where plant life grows in abundance. Unlike many types of oozes, verdurous
+  oozes are not particularly good climbers and have been known to get trapped in natural
+  or artificial chasms. Warlords and wizards sometimes make use of that fact and keep
+  verdurous oozes as guardians in pits around the walls of their fortresses or towers.
+
+
+
+
+  **__Recall Knowledge - Ooze__ (__Occultism__)**: DC 22'
+hp: 157
+hp_misc: null
+immunities:
+- acid
+- critical hits
+- mental
+- piercing
+- precision
+- slashing
+- unconscious
+- visual
+items: null
+languages: null
+level: 6
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+7
+    type: bludgeoning
+  name: pseudopod
+  plus_damage:
+  - formula: 1d6
+    type: acid and Grab
+  to_hit: 15
+  traits: null
+name: Verdurous Ooze
+perception: 8
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: 2d6 bludgeoning plus 1d6 acid, DC 24
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Constrict
+  range: null
+  raw_description: '**__Constrict__**   2d6 bludgeoning plus 1d6 acid, DC 24'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: The creature falls unconscious. If it's still unconscious after
+    1 hour, it wakes up automatically.
+  critical_success: The creature is unaffected and becomes temporarily immune to Sleep
+    Gas for 24 hours.
+  description: "The verdurous ooze adjusts its aura of supernatural vapors to affect\
+    \ living creatures within a 20-foot emanation, forcing them to attempt a DC 24\
+    \ Will save. \n\n"
+  effect: null
+  effects: null
+  failure: The creature falls unconscious. If it's still unconscious after 1 minute,
+    it wakes up automatically.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sleep Gas
+  range: null
+  raw_description: "**Sleep Gas** [Two Actions]  (__incapacitation__, __mental__,\
+    \ __poison__, __sleep__) The verdurous ooze adjusts its aura of supernatural vapors\
+    \ to affect living creatures within a 20-foot emanation, forcing them to attempt\
+    \ a DC 24 Will save. \n\n**Critical Success** The creature is unaffected and becomes\
+    \ temporarily immune to Sleep Gas for 24 hours. \n\n**Success** The creature is\
+    \ __stupefied 1__ for 1 round. \n\n**Failure** The creature falls __unconscious__.\
+    \ If it's still unconscious after 1 minute, it wakes up automatically. \n\n**Critical\
+    \ Failure** The creature falls unconscious. If it's still unconscious after 1\
+    \ hour, it wakes up automatically."
+  requirements: null
+  success: The creature is stupefied 1 for 1 round.
+  traits:
+  - incapacitation
+  - mental
+  - poison
+  - sleep
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A verdurous ooze's acid damages only metal and flesh—not bone, stone,
+    or other materials.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Verdurous Ooze Acid
+  range: null
+  raw_description: '**Verdurous Ooze Acid** A verdurous ooze''s acid damages only
+    metal and flesh—not bone, stone, or other materials.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 17
+  fort_misc: null
+  misc: null
+  ref: 8
+  ref_misc: null
+  will: 10
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A verdurous ooze can sense nearby creatures through vibration and air
+    or water movement.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Motion Sense
+  range: null
+  raw_description: '**Motion Sense** A verdurous ooze can sense nearby creatures through
+    vibration and air or water movement.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +8
+- motion sense 60 feet
+- no vision
+size: Medium
+skills:
+- bonus: 15
+  misc: null
+  name: 'Athletics '
+- bonus: 4
+  misc: +10 in tall grass or undergrowth
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 194
+  page_stop: null
+speed:
+- amount: 15
+  type: Land
+spell_lists: null
+traits:
+- N
+- Medium
+- Mindless
+- Ooze
+type: Creature
+weaknesses: null

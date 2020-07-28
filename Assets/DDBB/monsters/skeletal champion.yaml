@@ -1,0 +1,172 @@
+ability_mods:
+  cha_mod: 1
+  con_mod: 1
+  dex_mod: 4
+  int_mod: -1
+  str_mod: 4
+  wis_mod: 2
+ac: 19
+ac_special:
+- descr: 21 with shield raised
+alignment: NE
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: You snap your shield in place to ward off a blow. Your shield prevents you
+    from taking an amount of damage up to the shield's Hardness. You and the shield
+    each take any remaining damage, possibly breaking or destroying the shield.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Shield Block
+  range: null
+  raw_description: '**Shield Block** [Reaction] **Trigger** While you have your shield
+    raised, you would take damage from a physical attack. **Effect** You snap your
+    shield in place to ward off a blow. Your shield prevents you from taking an amount
+    of damage up to the shield''s Hardness. You and the shield each take any remaining
+    damage, possibly breaking or destroying the shield.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: While you have your shield raised, you would take damage from a physical
+    attack.
+description: 'These skeletons retain the cunning they possessed in life.
+
+
+
+
+  **__Recall Knowledge - Undead__ (__Religion__)**: DC 16'
+hp: 25
+hp_misc: negative healing
+immunities:
+- death effects
+- disease
+- paralyzed
+- poison
+- unconscious
+items:
+- chain mail
+- lance
+- longsword
+- steel shield (Hardness 5, HP 20, BT 10)
+languages:
+- Common
+- Necril
+level: 2
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d8+4
+    type: slashing
+  name: longsword
+  plus_damage: null
+  to_hit: 10
+  traits:
+  - versatile P
+- action_cost: One Action
+  damage:
+    formula: 1d6+4
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 10
+  traits:
+  - agile
+- action_cost: One Action
+  damage:
+    formula: 1d8+4
+    type: piercing
+  name: lance
+  plus_damage: null
+  to_hit: 10
+  traits:
+  - deadly d8
+  - jousting d6
+  - reach 10 feet
+name: Skeletal Champion
+perception: 8
+proactive_abilities: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 5
+  type: cold
+- amount: 5
+  type: electricity
+- amount: 5
+  type: fire
+- amount: 5
+  type: piercing
+- amount: 5
+  type: slashing
+ritual_lists: null
+saves:
+  fort: 7
+  fort_misc: null
+  misc: null
+  ref: 10
+  ref_misc: null
+  will: 6
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +8
+- darkvision
+size: Medium
+skills:
+- bonus: 8
+  misc: null
+  name: 'Acrobatics '
+- bonus: 8
+  misc: null
+  name: 'Athletics '
+- bonus: 7
+  misc: null
+  name: 'Intimidation '
+source:
+- abbr: Bestiary
+  page_start: 298
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists: null
+traits:
+- NE
+- Medium
+- Skeleton
+- Undead
+type: Creature
+weaknesses: null

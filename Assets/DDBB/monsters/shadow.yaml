@@ -1,0 +1,186 @@
+ability_mods:
+  cha_mod: 3
+  con_mod: 0
+  dex_mod: 4
+  int_mod: -2
+  str_mod: -5
+  wis_mod: 2
+ac: 20
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: An object shedding magical light (such as from the light spell) is
+    treated as magical when used to attack the shadow.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Light Vulnerability
+  range: null
+  raw_description: '**Light Vulnerability** An object shedding magical light (such
+    as from the light spell) is treated as magical when used to attack the shadow.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'The mysterious undead known as shadows lurk in dark places and feed
+  on those who stray too far from the light. Those who parley with shadows, typically
+  by keeping them at bay with a glowing weapon, may learn great secrets, for they
+  are ideal spies.
+
+
+
+
+  **__Recall Knowledge - Undead__ (__Religion__)**: DC 19'
+hp: 40
+hp_misc: null
+immunities:
+- death effects
+- disease
+- paralyzed
+- poison
+- precision
+- unconscious
+items: null
+languages:
+- Necril
+level: 4
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+3
+    type: negative
+  name: shadow hand
+  plus_damage: null
+  to_hit: 15
+  traits:
+  - finesse
+  - magical
+name: Shadow
+perception: 10
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When a creature's shadow is pulled free by Steal Shadow, it becomes
+    a shadow spawn under the command of the shadow that created it. This shadow spawn
+    doesn't have Steal Shadow and is perpetually and incurably __clumsy 2__. If the
+    creature the shadow spawn was pulled from dies, the shadow spawn becomes a full-fledged,
+    autonomous shadow. If the creature recovers from its enfeeblement, its shadow
+    returns to it and the shadow spawn is extinguished.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Shadow Spawn
+  range: null
+  raw_description: '**Shadow Spawn** When a creature''s shadow is pulled free by Steal
+    Shadow, it becomes a shadow spawn under the command of the shadow that created
+    it. This shadow spawn doesn''t have Steal Shadow and is perpetually and incurably
+    __clumsy 2__. If the creature the shadow spawn was pulled from dies, the shadow
+    spawn becomes a full-fledged, autonomous shadow. If the creature recovers from
+    its enfeeblement, its shadow returns to it and the shadow spawn is extinguished.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The shadow can Hide or end its Sneak in a creature's or object's shadow.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Slink in Shadows
+  range: null
+  raw_description: '**Slink in Shadows** The shadow can Hide or end its Sneak in a
+    creature''s or object''s shadow.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The shadow hit a living creature with a shadow hand Strike on its previous
+    action.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Steal Shadow
+  range: null
+  raw_description: '**Steal Shadow**   (__divine__, __necromancy__) **Requirement**
+    The shadow hit a living creature with a shadow hand Strike on its previous action.
+    **Effect** The shadow pulls at the target''s shadow, making the creature __enfeebled
+    1__. This is cumulative with other __enfeebled__ conditions from shadows, to a
+    maximum of __enfeebled 4__. If this increases a creature''s __enfeebled__ value
+    to 3 or more, the target''s shadow is separated from its body (see shadow spawn).
+    __Enfeebled__ from Steal Shadow decreases by 1 every hour.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - necromancy
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 5
+  type: all (except force
+- amount: null
+  type: ghost touch
+- amount: null
+  type: or positive
+- amount: null
+  type: double resistance against non-magical)
+ritual_lists: null
+saves:
+  fort: 8
+  fort_misc: null
+  misc: null
+  ref: 14
+  ref_misc: null
+  will: 12
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +10
+- darkvision
+size: Medium
+skills:
+- bonus: 10
+  misc: null
+  name: 'Acrobatics '
+- bonus: 14
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 289
+  page_stop: null
+speed:
+- amount: 30
+  type: fly
+spell_lists: null
+traits:
+- CE
+- Medium
+- Incorporeal
+- Undead
+type: Creature
+weaknesses:
+- amount: null
+  type: light vulnerability

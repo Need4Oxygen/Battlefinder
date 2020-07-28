@@ -1,0 +1,207 @@
+ability_mods:
+  cha_mod: 1
+  con_mod: 4
+  dex_mod: 3
+  int_mod: 2
+  str_mod: 1
+  wis_mod: 2
+ac: 16
+ac_special: null
+alignment: CE
+automatic_abilities: null
+description: 'The cythnigot is a foul fungal parasite that grows and thrives in the
+  corpses of small creatures. It wears these bodies like a suit, but also adjusts
+  and tailors the fleshy covering to suit its needs, and the body ends up looking
+  as alien as anything else spawned from the __Abyssal__ depths. The cythnigot''s
+  most identifying feature is the long stalk of fungal material that extends from
+  creature''s body, ending in a surprisingly strong set of fanged jaws.
+
+
+
+
+  **__Recall Knowledge - Fiend__ (__Religion__)**: DC 17'
+hp: 14
+hp_misc: null
+immunities:
+- controlled
+- fear
+items: null
+languages:
+- Abyssal
+- telepathy (touch only)
+level: 1
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d10+1
+    type: piercing
+  name: bite
+  plus_damage:
+  - formula: 1d4
+    type: chaotic and tangle spores
+  to_hit: 8
+  traits:
+  - agile
+  - chaotic
+  - finesse
+  - magical
+name: Cythnigot
+perception: 5
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: The creature is sickened 2 and is flat-footed for as long as it's
+    sickened.
+  critical_success: The creature is unaffected.
+  description: "The cythnigot presents its awful appearance fully, and creatures in\
+    \ a 10-foot emanation must attempt a DC 17 Will save. Once a creature attempts\
+    \ this save, it's temporarily immune to further Sickening Displays for 1 minute.\
+    \ \n\n"
+  effect: null
+  effects: null
+  failure: The creature is sickened 1, and is flat-footed for as long as it's sickened.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sickening Display
+  range: null
+  raw_description: "**Sickening Display**   (__concentrate__, __emotion__, __enchantment__,\
+    \ __fear__, __mental__, __occult__, __visual__) The cythnigot presents its awful\
+    \ appearance fully, and creatures in a 10-foot emanation must attempt a DC 17\
+    \ Will save. Once a creature attempts this save, it's temporarily immune to further\
+    \ Sickening Displays for 1 minute. \n\n**Critical Success** The creature is unaffected.\
+    \ \n\n**Success** The creature is __flat-footed__ until its next turn. \n\n**Failure**\
+    \ The creature is __sickened 1__, and is flat-footed for as long as it's sickened.\
+    \ \n\n**Critical Failure** The creature is sickened 2 and is flat-footed for as\
+    \ long as it's sickened."
+  requirements: null
+  success: The creature is flat-footed until its next turn.
+  traits:
+  - concentrate
+  - emotion
+  - enchantment
+  - fear
+  - mental
+  - occult
+  - visual
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A creature bitten by a cythnigot becomes afflicted by fast-growing
+    spores that swiftly grow into twitching spikes and hideous pallid growths of hairlike
+    fibers. These growths erupt from the bite wound and writhe and wrap around the
+    creature's limbs. __Plant__ creatures take a -2 circumstance penalty to save against
+    tangle spores; **Saving Throw** DC 17 Fortitude; **Maximum Duration** 6 rounds;
+    **Stage 1** __clumsy 1__ (1 round); **Stage 2** clumsy 1 and __flat-footed__ (1
+    round); **Stage 3** clumsy 2, flat-footed, and if you attempt a __manipulate__
+    action, you must succeed at a DC 5 flat check or it's lost; roll the check after
+    spending the action, but before any effects are applied (1 round).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Tangle Spores
+  range: null
+  raw_description: '**Tangle Spores** (__disease__) A creature bitten by a cythnigot
+    becomes afflicted by fast-growing spores that swiftly grow into twitching spikes
+    and hideous pallid growths of hairlike fibers. These growths erupt from the bite
+    wound and writhe and wrap around the creature''s limbs. __Plant__ creatures take
+    a -2 circumstance penalty to save against tangle spores; **Saving Throw** DC 17
+    Fortitude; **Maximum Duration** 6 rounds; **Stage 1** __clumsy 1__ (1 round);
+    **Stage 2** clumsy 1 and __flat-footed__ (1 round); **Stage 3** clumsy 2, flat-footed,
+    and if you attempt a __manipulate__ action, you must succeed at a DC 5 flat check
+    or it''s lost; roll the check after spending the action, but before any effects
+    are applied (1 round).'
+  requirements: null
+  success: null
+  traits:
+  - disease
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances:
+- amount: 3
+  type: mental
+- amount: 3
+  type: physical (except cold iron)
+ritual_lists: null
+saves:
+  fort: 9
+  fort_misc: null
+  misc: null
+  ref: 6
+  ref_misc: null
+  will: 5
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +5
+- darkvision
+size: Tiny
+skills:
+- bonus: 6
+  misc: null
+  name: 'Acrobatics '
+- bonus: 7
+  misc: null
+  name: 'Occultism '
+- bonus: 6
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 212
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+- amount: 40
+  type: fly
+spell_lists:
+- dc: 17
+  misc: null
+  name: Occult Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: read omens
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: at will, lawful only
+      name: detect alignment
+      requirement: null
+    - frequency: null
+      name: paranoia
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: phantom pain
+      requirement: null
+  - heightened_level: 1
+    level: 0
+    spells:
+    - frequency: null
+      name: daze
+      requirement: null
+    - frequency: null
+      name: detect magic
+      requirement: null
+  to_hit: null
+traits:
+- Uncommon
+- CE
+- Tiny
+- Fiend
+- Qlippoth
+type: Creature
+weaknesses:
+- amount: 3
+  type: lawful

@@ -1,0 +1,153 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 3
+  dex_mod: 3
+  int_mod: -2
+  str_mod: 4
+  wis_mod: 1
+ac: 20
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 30 feet. Water in the area that is in the same body of water as the
+    living waterfall is difficult terrain for Swimming creatures that don't have the
+    water trait.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Vortex
+  range: null
+  raw_description: '**Vortex** (__aura__, __water__) 30 feet. Water in the area that
+    is in the same body of water as the living waterfall is difficult terrain for
+    Swimming creatures that don''t have the water trait.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - water
+  trigger: null
+description: 'Living waterfalls are humanoid-shaped columns of churning water.
+
+
+
+
+  **__Recall Knowledge - Elemental__ (__Arcana__, __Nature__)**: DC 20'
+hp: 90
+hp_misc: null
+immunities:
+- bleed
+- paralyzed
+- poison
+- sleep
+items: null
+languages:
+- Aquan
+level: 5
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+7
+    type: bludgeoning
+  name: wave
+  plus_damage:
+  - formula: null
+    type: Push or Pull 5 feet
+  to_hit: 15
+  traits:
+  - reach 10 feet
+name: Living Waterfall
+perception: 10
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The elemental puts out all fires in a 5-foot emanation. It extinguishes
+    all non-magical fires automatically and attempts to counteract magical fires (+14
+    counteract modifier).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Drench
+  range: null
+  raw_description: '**Drench**   (__abjuration__, __primal__, __water__) The elemental
+    puts out all fires in a 5-foot emanation. It extinguishes all non-magical fires
+    automatically and attempts to counteract magical fires (+14 counteract modifier).'
+  requirements: null
+  success: null
+  traits:
+  - abjuration
+  - primal
+  - water
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 5
+  type: fire
+ritual_lists: null
+saves:
+  fort: 14
+  fort_misc: null
+  misc: null
+  ref: 12
+  ref_misc: null
+  will: 10
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When not touching water, the living waterfall is slowed 1 and can't
+    use reactions.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Water-Bound
+  range: null
+  raw_description: '**Water-Bound** When not touching water, the living waterfall
+    is slowed 1 and can''t use reactions.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +10
+- darkvision
+size: Large
+skills:
+- bonus: 13
+  misc: null
+  name: 'Athletics '
+- bonus: 12
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 152
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 60
+  type: swim
+spell_lists: null
+traits:
+- N
+- Large
+- Aquatic
+- Elemental
+- Water
+type: Creature
+weaknesses: null

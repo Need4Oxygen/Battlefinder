@@ -1,0 +1,218 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 4
+  dex_mod: 2
+  int_mod: -4
+  str_mod: 6
+  wis_mod: 3
+ac: 28
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: An aurumvorax gains a +4 circumstance bonus to its Fortitude or Reflex
+    DC against __Shove__ and __Trip__ attempts, and to its __Athletics__ DC against
+    attempts to escape its __Grab__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Tenacious Stance
+  range: null
+  raw_description: '**Tenacious Stance** An aurumvorax gains a +4 circumstance bonus
+    to its Fortitude or Reflex DC against __Shove__ and __Trip__ attempts, and to
+    its __Athletics__ DC against attempts to escape its __Grab__.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The monster avoids being knocked out and remains at 1 HP, but its wounded
+    value increases by 1. When it is wounded 3, it can no longer use this ability.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Ferocity
+  range: null
+  raw_description: '**Ferocity** [Reaction] **Trigger** The monster is reduced to
+    0 HP. **Effect** The monster avoids being knocked out and remains at 1 HP, but
+    its wounded value increases by 1. When it is wounded 3, it can no longer use this
+    ability.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: The monster is reduced to 0 HP.
+description: 'Aurumvoraxes are highly aggressive and territorial predators that sprint
+  on eight legs, using their terrific strength and iron-hard claws to dig through
+  solid stone. A typical aurumvorax is only 3 feet long but weighs more than 200 pounds,
+  for its thick, sturdy bones are densely packed with muscle, making the creature
+  very strong but a notoriously poor swimmer. Its fur is golden, sometimes with a
+  silvery or russet tone depending on the metals it has ingested, and its claws are
+  always the shiny black of seasoned iron.
+
+
+
+
+  Aurumvorax adults claim hunting territories spanning a mile or more, driving out
+  other predators and leading solitary lives except when they mate. They are irascible
+  creatures, impossible to train as adults, but daring trainers can rear aurumvorax
+  pups as deadly guard beasts, which they sell for hundreds of gold pieces to discriminating
+  buyers. Aurumvorax pups are usually single births, and their mothers are fiercely
+  protective, making their acquisition a dangerous proposition. Even when trained,
+  the creatures are prone to dangerous bursts of rage.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 26'
+hp: 170
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 9
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d10+12
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 21
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 2d8+12
+    type: slashing
+  name: claw
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 21
+  traits:
+  - agile
+name: Aurumvorax
+perception: 18
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When an aurumvorax scores a critical hit, the target takes 1d6 __persistent
+    bleed damage__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Bleeding Critical
+  range: null
+  raw_description: '**Bleeding Critical** When an aurumvorax scores a critical hit,
+    the target takes 1d6 __persistent bleed damage__.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The aurumvorax makes a jaws Strike against a creature it has grabbed.
+    If the attack hits, the target is knocked __prone__ if it is Medium or smaller.
+    In addition, if the target is wearing armor with Hardness 10 or lower, the armor
+    becomes __broken__. If this Strike breaks a creature's armor or damages a creature
+    that is unarmored or wearing broken armor, the target also takes 1d6 __persistent
+    bleed damage__. This Strike doesn't further damage armor that's already broken.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Gnaw Metal
+  range: null
+  raw_description: '**Gnaw Metal**   The aurumvorax makes a jaws Strike against a
+    creature it has grabbed. If the attack hits, the target is knocked __prone__ if
+    it is Medium or smaller. In addition, if the target is wearing armor with Hardness
+    10 or lower, the armor becomes __broken__. If this Strike breaks a creature''s
+    armor or damages a creature that is unarmored or wearing broken armor, the target
+    also takes 1d6 __persistent bleed damage__. This Strike doesn''t further damage
+    armor that''s already broken.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The aurumvorax makes four claw Strikes against a creature it has grabbed.
+    Each attack counts toward the aurumvorax's multiple attack penalty, and the multiple
+    attack penalty increases with each attack.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Rapid Rake
+  range: null
+  raw_description: '**Rapid Rake** [Two Actions]  The aurumvorax makes four claw Strikes
+    against a creature it has grabbed. Each attack counts toward the aurumvorax''s
+    multiple attack penalty, and the multiple attack penalty increases with each attack.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 19
+  fort_misc: null
+  misc: null
+  ref: 17
+  ref_misc: null
+  will: 16
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +18
+- darkvision
+- scent (imprecise) 30 feet
+size: Small
+skills:
+- bonus: 20
+  misc: +6 to Swim
+  name: 'Athletics '
+- bonus: 18
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 29
+  page_stop: null
+speed:
+- amount: 35
+  type: Land
+- amount: 10
+  type: burrow
+spell_lists: null
+traits:
+- N
+- Small
+- Animal
+type: Creature
+weaknesses: null

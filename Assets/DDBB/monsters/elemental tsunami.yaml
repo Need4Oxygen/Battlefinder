@@ -1,0 +1,178 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 6
+  dex_mod: 6
+  int_mod: 0
+  str_mod: 6
+  wis_mod: 3
+ac: 31
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 50 feet. Water in the area that is in the same body of water as the
+    elemental tsunami is difficult terrain for Swimming creatures that don't have
+    the water trait.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Vortex
+  range: null
+  raw_description: '**Vortex** (__aura__, __water__) 50 feet. Water in the area that
+    is in the same body of water as the elemental tsunami is difficult terrain for
+    Swimming creatures that don''t have the water trait.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - water
+  trigger: null
+description: 'Elemental tsunamis are huge and destructive.
+
+
+
+
+  **__Recall Knowledge - Elemental__ (__Arcana__, __Nature__)**: DC 28'
+hp: 195
+hp_misc: null
+immunities:
+- bleed
+- paralyzed
+- poison
+- sleep
+items: null
+languages:
+- Aquan
+level: 11
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d12+12
+    type: bludgeoning
+  name: wave
+  plus_damage:
+  - formula: null
+    type: Push or Pull 10 feet
+  to_hit: 24
+  traits:
+  - reach 20 feet
+name: Elemental Tsunami
+perception: 22
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The elemental puts out all fires in a 20-foot emanation. It extinguishes
+    all non-magical fires automatically and attempts to counteract magical fires (+20
+    counteract modifier).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Drench
+  range: null
+  raw_description: '**Drench**   (__abjuration__, __primal__, __water__) The elemental
+    puts out all fires in a 20-foot emanation. It extinguishes all non-magical fires
+    automatically and attempts to counteract magical fires (+20 counteract modifier).'
+  requirements: null
+  success: null
+  traits:
+  - abjuration
+  - primal
+  - water
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The elemental tsunami quickly expands its space to fill the area of
+    its vortex. Creatures within the vortex's emanation take 5d12+6 bludgeoning damage
+    (DC 31 basic Fortitude save). A creature that fails this save is Pushed 20 feet.
+    The elemental tsunami then retracts to its former space. The elemental tsunami
+    can't Surge again for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Surge
+  range: null
+  raw_description: '**Surge** [Two Actions]  The elemental tsunami quickly expands
+    its space to fill the area of its vortex. Creatures within the vortex''s emanation
+    take 5d12+6 bludgeoning damage (DC 31 basic Fortitude save). A creature that fails
+    this save is Pushed 20 feet. The elemental tsunami then retracts to its former
+    space. The elemental tsunami can''t Surge again for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 10
+  type: fire
+ritual_lists: null
+saves:
+  fort: 21
+  fort_misc: null
+  misc: null
+  ref: 22
+  ref_misc: null
+  will: 19
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When not touching water, the elemental tsunami is slowed 1 and can't
+    use reactions.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Water-Bound
+  range: null
+  raw_description: '**Water-Bound** When not touching water, the elemental tsunami
+    is slowed 1 and can''t use reactions.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +22
+- darkvision
+size: Huge
+skills:
+- bonus: 23
+  misc: null
+  name: 'Athletics '
+- bonus: 23
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 153
+  page_stop: null
+speed:
+- amount: 35
+  type: Land
+- amount: 100
+  type: swim
+spell_lists: null
+traits:
+- N
+- Huge
+- Aquatic
+- Elemental
+- Water
+type: Creature
+weaknesses: null

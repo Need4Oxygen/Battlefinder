@@ -1,0 +1,242 @@
+senses:
+- descr: A creature with darkvision or greater darkvision can see perfectly well in
+    areas of darkness and dim light, though such vision is in black and white only.
+    Some forms of magical darkness, such as a 4th-level *darkness* spell, block normal
+    darkvision. A creature with greater darkvision, however, can see through even
+    these forms of magical darkness.
+  name: Darkvision
+  source:
+  - abbr: CRB
+    page_start: 465
+    page_stop: 465
+- descr: You can see in dim light as though it were bright light, and you ignore the
+    concealed condition due to dim light.
+  name: Low-Light Vision
+  source:
+  - abbr: CRB
+    page_start: 465
+    page_stop: 465
+- descr: Your eyes are sharp, allowing you to make out small details about concealed
+    or even invisible creatures that others might miss. You gain a +2 circumstance
+    bonus when using the Seek action to find hidden or undetected creatures within
+    30 feet of you. When you target an opponent that is concealed from you or hidden
+    from you, reduce the DC of the flat check to 3 for a concealed target or 9 for
+    a hidden one.
+  name: Keen Eyes
+  source:
+  - abbr: CRB
+    page_start: 51
+    page_stop: 51
+- descr: No vision.
+  name: No vision
+  source:
+  - abbr: CRB
+    page_start: 0
+    page_stop: 0
+- descr: Smoke doesn't impair this creature's vision; it ignores the concealed condition
+    from smoke.
+  name: Smoke Vision
+  source:
+  - abbr: BST1
+    page_start: 112
+    page_stop: 112
+- descr: This monster can see in all directions simultaneously, and therefore can’t
+    be flanked.
+  name: All-Around Vision
+  source:
+  - abbr: BST1
+    page_start: 342
+    page_stop: 342
+- descr: Snow doesn't impair this creature's vision; it ignores the concealed condition
+    from snowfall.
+  name: Snow Vision
+  source:
+  - abbr: BST1
+    page_start: 115
+    page_stop: 115
+- descr: While its core is implanted, the creature can see through the eyes it creates
+    through the area of its infestation aura, gaining the benefits of all-around vision.
+  name: Manifold Vision
+  source:
+  - abbr: BST1
+    page_start: 195
+    page_stop: 195
+- descr: A creature with darkvision or greater darkvision can see perfectly well in
+    areas of darkness and dim light, though such vision is in black and white only.
+    Some forms of magical darkness, such as a 4th-level *darkness* spell, block normal
+    darkvision. A creature with greater darkvision, however, can see through even
+    these forms of magical darkness.
+  name: Greater Darkvision
+  source:
+  - abbr: CRB
+    page_start: 465
+    page_stop: 465
+- descr: 'Scent involves sensing creatures or objects by smell, and is usually a vague
+    sense. The range is listed in the ability, and it functions only if the creature
+    or object being detected emits an aroma (for instance, incorporeal creatures usually
+    do not exude an aroma).
+
+    If a creature emits a heavy aroma or is upwind, the GM can double or even triple
+    the range of scent abilities used to detect that creature, and the GM can reduce
+    the range if a creature is downwind.'
+  name: Scent
+  source:
+  - abbr: CRB
+    page_start: 465
+    page_stop: 465
+  - abbr: BST1
+    page_start: 344
+    page_stop: 344
+- descr: The creature can use its hearing as a precise sense at the listed range.
+  name: Echolocation
+  source:
+  - abbr: BST1
+    page_start: 39
+    page_stop: 39
+- descr: Tremorsense allows a monster to feel the vibrations through a solid surface
+    caused by movement. It is an imprecise sense with a limited range (listed in the
+    ability). Tremorsense functions only if the monster is on the same surface as
+    the subject, and only if the subject is moving along (or burrowing through) the
+    surface.
+  name: Tremorsense
+  source:
+  - abbr: CRB
+    page_start: 465
+    page_stop: 465
+  - abbr: BST1
+    page_start: 344
+    page_stop: 344
+- descr: When first exposed to bright light, the monster is blinded until the end
+    of its next turn. After this exposure, light doesn’t blind the monster again until
+    after it spends 1 hour in darkness. However, as long as the monster is in an area
+    of bright light, it’s dazzled.
+  name: Light Blindness
+  source:
+  - abbr: BST1
+    page_start: 343
+    page_stop: 343
+- descr: The creature senses a creature's mental essence at the listed range.
+  name: Thoughtsense
+  source:
+  - abbr: BST1
+    page_start: 55
+    page_stop: 55
+- descr: The creature can precisely sense bleeding creatures within the listed range.
+  name: Bloodsense
+  source:
+  - abbr: AoA3
+    page_start: 76
+    page_stop: 76
+- descr: Lifesense allows a monster to sense the vital essence of living and undead
+    creatures within the listed range. The sense can distinguish between the positive
+    energy animating living creatures and the negative energy animating undead creatures,
+    much as sight distinguishes colors.
+  name: Lifesense
+  source:
+  - abbr: BST1
+    page_start: 343
+    page_stop: 343
+- descr: This creature senses any creature with a disease, and it knows the type and
+    current stage of all diseases carried by any creature within range.
+  name: Plaguesense
+  source:
+  - abbr: BST1
+    page_start: 72
+    page_stop: 72
+- descr: This creature ignores the concealed condition from fog and clouds.
+  name: Fog Vision
+  source:
+  - abbr: BST1
+    page_start: 126
+    page_stop: 126
+- descr: The creature exudes a cloud of spores that it uses to see. This is an imprecise
+    sense that functions only in areas without strong wind currents. Sporesight does
+    not function underwater.
+  name: Sporesight
+  source:
+  - abbr: BST1
+    page_start: 129
+    page_stop: 129
+- descr: This sense allows a monster to feel vibrations caused by movement through
+    a liquid. It’s an imprecise sense with a limited range (listed in the ability).
+    Wavesense functions only if monster and the subject are in the same body of liquid,
+    and only if the subject is moving through the liquid.
+  name: Wavesense
+  source:
+  - abbr: BST1
+    page_start: 344
+    page_stop: 344
+- descr: This creature senses vibrations in the air through its aerial spores.
+  name: Windsense
+  source:
+  - abbr: BST1
+    page_start: 238
+    page_stop: 238
+- descr: The creature can sense nearby motion through vibration and air movement.
+  name: Motion Sense
+  source:
+  - abbr: BST1
+    page_start: 255
+    page_stop: 255
+- descr: The creature can smell metal as a precise scent.
+  name: Metal Scent
+  source:
+  - abbr: BST1
+    page_start: 283
+    page_stop: 283
+- descr: Hungersense allows the creature to sense creatures that require food to live.
+    (imprecise)
+  name: Hungersense
+  source:
+  - abbr: BST1
+    page_start: 177
+    page_stop: 177
+- descr: This creature can anticipate the most likely presence of a creature through
+    a supernatural insight into chaotic probabilities and chance. This grants it the
+    ability to sense creatures within the listed range. A creature under the effects
+    of nondetection or that is otherwise shielded from divinations and predictions
+    cannot be noticed via entropy sense. (imprecise)
+  name: Entropy Sense
+  source:
+  - abbr: BST1
+    page_start: 266
+    page_stop: 266
+- descr: The creature has imprecise tremorsense to detect the vibrations of creatures
+    touching its web.
+  name: Websense
+  source:
+  - abbr: BST1
+    page_start: 306
+    page_stop: 306
+- descr: Heatsight is a precise sense that sees heat signatures.
+  name: Heatsight
+  source:
+  - abbr: BST1
+    page_start: 327
+    page_stop: 327
+- descr: This creature can smell creatures that reflect its sin, as the scent ability.
+    The GM determines which creatures are appropriately sinful.
+  name: Sin Scent
+  source:
+  - abbr: BST1
+    page_start: 297
+    page_stop: 297
+- descr: null
+  name: Detect Alignment (evil or good only) (constant)
+  source:
+  - abbr: BST1
+    page_start: 165
+    page_stop: 165
+- descr: null
+  name: Detect Alignment (chaotic only) (at will)
+  source:
+  - abbr: BST1
+    page_start: 8
+    page_stop: 8
+- descr: The creature can always sense the direction of the neareast non-arbiter inevitable
+    on the plane, but it cannot sense the range of the inevitable.
+  name: Locate Inevitable
+  source:
+  - abbr: CRB
+    page_start: 8
+    page_stop: 8

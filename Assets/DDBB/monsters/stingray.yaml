@@ -1,0 +1,128 @@
+ability_mods:
+  cha_mod: -4
+  con_mod: 1
+  dex_mod: 3
+  int_mod: -4
+  str_mod: 1
+  wis_mod: 1
+ac: 16
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Found in salt or fresh water, stingrays are normally passive creatures,
+  but when threatened or cornered, they lash out with their tails to lance foes with
+  their toxic stingers. Stingrays often bury themselves in mud, sand, or sea grass,
+  and unfortunately for those wading in shallow waters, stepping on an unseen stingray
+  is a surefire way to receive a painful sting.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 14'
+hp: 15
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 0
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6+1
+    type: piercing
+  name: sting
+  plus_damage:
+  - formula: null
+    type: stingray venom
+  to_hit: 7
+  traits:
+  - agile
+  - finesse
+name: Stingray
+perception: 6
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw** DC 16 Fortitude; **Maximum Duration** 4 rounds; **Stage
+    1** 1d4 poison damage (1 round); **Stage 2** 1d6 poison damage and __clumsy 1__
+    (1 round)'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Stingray Venom
+  range: null
+  raw_description: '**Stingray Venom** (__poison__) **Saving Throw** DC 16 Fortitude;
+    **Maximum Duration** 4 rounds; **Stage 1** 1d4 poison damage (1 round); **Stage
+    2** 1d6 poison damage and __clumsy 1__ (1 round)'
+  requirements: null
+  success: null
+  traits:
+  - poison
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 5
+  fort_misc: null
+  misc: null
+  ref: 7
+  ref_misc: null
+  will: 5
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A stingray in water can use its electrolocation as an imprecise sense
+    at the listed range to detect living creatures that are in the same body of water
+    as itself.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Electrolocation
+  range: null
+  raw_description: '**Electrolocation** A stingray in water can use its electrolocation
+    as an imprecise sense at the listed range to detect living creatures that are
+    in the same body of water as itself.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +6
+- electrolocation (imprecise) 30 feet
+- low-light vision
+size: Medium
+skills:
+- bonus: 5
+  misc: null
+  name: 'Athletics '
+- bonus: 7
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 226
+  page_stop: null
+speed:
+- amount: 30
+  type: swim
+spell_lists: null
+traits:
+- N
+- Medium
+- Animal
+- Aquatic
+type: Creature
+weaknesses: null

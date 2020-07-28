@@ -1,0 +1,276 @@
+ability_mods:
+  cha_mod: 3
+  con_mod: 2
+  dex_mod: 0
+  int_mod: 0
+  str_mod: 3
+  wis_mod: 4
+ac: 18
+ac_special: null
+alignment: CE
+automatic_abilities: null
+description: 'The boggard swampseer has been gifted with magic through its worship
+  of the demon lord Gogunta, and uses its power to rule a boggard village, keeping
+  the rest of the village in line and planning raids on nearby communities.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 18'
+hp: 40
+hp_misc: null
+immunities: null
+items:
+- staff
+languages:
+- Abyssal
+- Boggard
+- Common
+level: 3
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d4+6
+    type: bludgeoning
+  name: staff
+  plus_damage: null
+  to_hit: 10
+  traits:
+  - two-hand d8
+- action_cost: One Action
+  damage: null
+  name: Tongue
+  plus_damage: null
+  to_hit: 10
+  traits:
+  - reach 10 feet
+name: Boggard Swampseer
+perception: 11
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The swampseer utters a powerful croak that deals 4d6 sonic damage to
+    any non-boggard within a 15-foot emanation (DC 19 basic Fortitude save); any creature
+    with the __frightened__ condition takes additional sonic damage equal to twice
+    the value of their frightened condition. The boggard can't use Destructive Croak
+    again for 1d4 rounds
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Destructive Croak
+  range: null
+  raw_description: '**Destructive Croak** [Two Actions]  (__sonic__) The swampseer
+    utters a powerful croak that deals 4d6 sonic damage to any non-boggard within
+    a 15-foot emanation (DC 19 basic Fortitude save); any creature with the __frightened__
+    condition takes additional sonic damage equal to twice the value of their frightened
+    condition. The boggard can''t use Destructive Croak again for 1d4 rounds'
+  requirements: null
+  success: null
+  traits:
+  - sonic
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The swampseer releases a croak that drowns out other sound. It rolls a __Performance__
+    check. It and boggard allies in the area can use the higher result of the swampseer's
+    Performance check or their saves to resolve the effects against the __auditory__
+    or __sonic__ effect.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Drowning Drone
+  range: null
+  raw_description: '**Drowning Drone** [Reaction]  (__auditory__, __mental__) **Trigger**
+    The boggard swampseer or one of its allies within 60 feet attempts a saving throw
+    against an __auditory__ or __sonic__ effect. **Effect** The swampseer releases
+    a croak that drowns out other sound. It rolls a __Performance__ check. It and
+    boggard allies in the area can use the higher result of the swampseer''s Performance
+    check or their saves to resolve the effects against the __auditory__ or __sonic__
+    effect.'
+  requirements: null
+  success: null
+  traits:
+  - auditory
+  - mental
+  trigger: The boggard swampseer or one of its allies within 60 feet attempts a saving
+    throw against an __auditory__ or __sonic__ effect.
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A boggard swampseer ignores difficult terrain caused by swamp terrain
+    features.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Swamp Stride
+  range: null
+  raw_description: '**Swamp Stride** A boggard swampseer ignores difficult terrain
+    caused by swamp terrain features.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The boggard swampseer unleashes a terrifying croak. Any non-boggard
+    within 30 feet becomes __frightened 1__ unless they succeed at a DC 19 Will save;
+    those who critically succeed are temporarily immune for 1 minute.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Terrifying Croak
+  range: null
+  raw_description: '**Terrifying Croak**   (__auditory__, __emotion__, __fear__, __mental__)
+    The boggard swampseer unleashes a terrifying croak. Any non-boggard within 30
+    feet becomes __frightened 1__ unless they succeed at a DC 19 Will save; those
+    who critically succeed are temporarily immune for 1 minute.'
+  requirements: null
+  success: null
+  traits:
+  - auditory
+  - emotion
+  - fear
+  - mental
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: If the boggard swampseer hits a creature with its tongue, that creature
+    becomes __grabbed__ by the boggard. Unlike with a normal grab, the creature isn't
+    __immobilized__, but it can't move beyond the reach of the boggard's tongue. A
+    creature can sever the tongue by hitting AC 15 and dealing at least 4 slashing
+    damage. Though this doesn't deal any damage to the boggard, it prevents it from
+    using its tongue Strike until it regrows its tongue, which takes a week.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Tongue Grab
+  range: null
+  raw_description: '**Tongue Grab** If the boggard swampseer hits a creature with
+    its tongue, that creature becomes __grabbed__ by the boggard. Unlike with a normal
+    grab, the creature isn''t __immobilized__, but it can''t move beyond the reach
+    of the boggard''s tongue. A creature can sever the tongue by hitting AC 15 and
+    dealing at least 4 slashing damage. Though this doesn''t deal any damage to the
+    boggard, it prevents it from using its tongue Strike until it regrows its tongue,
+    which takes a week.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 9
+  fort_misc: null
+  misc: null
+  ref: 7
+  ref_misc: null
+  will: 11
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +11
+- darkvision
+size: Medium
+skills:
+- bonus: 8
+  misc: null
+  name: 'Athletics '
+- bonus: 8
+  misc: null
+  name: 'Intimidation '
+- bonus: 9
+  misc: null
+  name: 'Medicine '
+- bonus: 11
+  misc: null
+  name: 'Nature '
+- bonus: 8
+  misc: null
+  name: 'Performance '
+- bonus: 9
+  misc: null
+  name: 'Religion '
+source:
+- abbr: Bestiary
+  page_start: 45
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 25
+  type: swim
+- amount: null
+  type: swamp stride
+spell_lists:
+- dc: 21
+  misc: ''
+  name: Primal Prepared Spells
+  spell_groups:
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: null
+      name: acid arrow
+      requirement: null
+    - frequency: null
+      name: obscuring mist
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: fear
+      requirement: null
+    - frequency: null
+      name: jump
+      requirement: null
+    - frequency: null
+      name: shillelagh
+      requirement: null
+  - heightened_level: 2
+    level: 0
+    spells:
+    - frequency: null
+      name: acid splash
+      requirement: null
+    - frequency: null
+      name: dancing lights
+      requirement: null
+    - frequency: null
+      name: ray of frost
+      requirement: null
+    - frequency: null
+      name: tanglefoot
+      requirement: null
+  to_hit: 11
+traits:
+- CE
+- Medium
+- Amphibious
+- Boggard
+- Humanoid
+type: Creature
+weaknesses: null

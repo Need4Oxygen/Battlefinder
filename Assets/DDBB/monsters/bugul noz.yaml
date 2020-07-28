@@ -1,0 +1,298 @@
+ability_mods:
+  cha_mod: 7
+  con_mod: 4
+  dex_mod: 5
+  int_mod: 4
+  str_mod: 3
+  wis_mod: 5
+ac: 31
+ac_special: null
+alignment: CN
+automatic_abilities:
+- action_cost: None
+  critical_failure: The creature is frightened 4.
+  critical_success: The creature is unaffected by the presence.
+  description: 60 feet, DC 29. __Animals__ take a -2 circumstance penalty to the Will
+    save.
+  effect: null
+  effects: null
+  failure: The creature is frightened 2.
+  frequency: null
+  full_description: null
+  generic_description: A creature that first enters the area must attempt a Will save.
+    Regardless of the result of the saving throw, the creature is temporarily immune
+    to this monster's Frightful Presence for 1 minute.
+  name: Frightful Presence
+  range: null
+  raw_description: '**Frightful Presence** 60 feet, DC 29. __Animals__ take a -2 circumstance
+    penalty to the Will save. A creature that first enters the area must attempt a
+    Will save. Regardless of the result of the saving throw, the creature is temporarily
+    immune to this monster''s Frightful Presence for 1 minute.
+
+    Critical Success The creature is unaffected by the presence.
+
+    Success The creature is frightened 1.
+
+    Failure The creature is frightened 2.
+
+    Critical Success The creature is frightened 4.'
+  requirements: null
+  success: The creature is frightened 1.
+  traits:
+  - aura
+  - emotion
+  - fear
+  - mental
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Creatures that see the bugul noz must succeed at a DC 31 Fortitude
+    saving throw. On a failure, creatures are __doomed 1__ (or doomed 2 on a critical
+    failure).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Horrid Visage
+  range: null
+  raw_description: '**Horrid Visage** (__visual__) Creatures that see the bugul noz
+    must succeed at a DC 31 Fortitude saving throw. On a failure, creatures are __doomed
+    1__ (or doomed 2 on a critical failure).'
+  requirements: null
+  success: null
+  traits:
+  - visual
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Upon seeing its own reflection in a mirror or other reflective surface,
+    the bugul noz must succeed at a DC 34 Will save or become __confused__ and __immobilized__
+    for 1d4 - 1 rounds (minimum 1 round). While confused and immobilized, the bugul
+    noz cries and wallows in misery, making it immune to __visual__ and __auditory__
+    effects for the duration.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Mirror Vulnerability
+  range: null
+  raw_description: '**Mirror Vulnerability** Upon seeing its own reflection in a mirror
+    or other reflective surface, the bugul noz must succeed at a DC 34 Will save or
+    become __confused__ and __immobilized__ for 1d4 - 1 rounds (minimum 1 round).
+    While confused and immobilized, the bugul noz cries and wallows in misery, making
+    it immune to __visual__ and __auditory__ effects for the duration.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'This gangly fey humanoid wanders the overgrown paths of dark, misty
+  forests, voluntarily isolating themself in an attempt to protect others from their
+  hideous form. A bugul noz''s appearance is not merely unsightly—to view the being''s
+  form is said to tempt death, and backwoods villagers tell tales of wanderers found
+  struck dead after merely glancing at the creature. As they jaunt through the forest,
+  the bugul noz sings an eerie tune to alert others to their presence and deter these
+  creatures from looking upon them. The bugul noz does not, after all, want to harm
+  anyone; they are inherently kind, if unpredictable, and if they accidentally kill
+  a creature out of panic or confusion, they grieve. A bugul noz who roams the same
+  road long enough compiles a long list of such accidental victims, and they might
+  carry the corpses off to a single mass grave deep in the forest. When not wandering,
+  the bugul noz watches over this grave to ensure that the spirits of their victims
+  are never lonely.
+
+
+
+
+  **__Recall Knowledge - Fey__ (__Nature__)**: DC 35'
+hp: 200
+hp_misc: null
+immunities:
+- emotion
+items: null
+languages:
+- Common
+- Sylvan
+level: 12
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d8+6
+    type: piercing
+  name: claw
+  plus_damage: null
+  to_hit: 23
+  traits:
+  - magical
+name: Bugul Noz
+perception: 23
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The bugul noz swings its limbs about wildly. It makes up to three claw
+    Strikes, each against a different creature and each with a -2 circumstance penalty.
+    Its multiple attack penalty doesn't increase until after it makes all the attacks.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Flail
+  range: null
+  raw_description: '**Flail**   The bugul noz swings its limbs about wildly. It makes
+    up to three claw Strikes, each against a different creature and each with a -2
+    circumstance penalty. Its multiple attack penalty doesn''t increase until after
+    it makes all the attacks.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The bugul noz ignores difficult terrain in forests.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Forest Jaunt
+  range: null
+  raw_description: '**Forest Jaunt** The bugul noz ignores difficult terrain in forests.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: As failure, and the target becomes fleeing for 1 round.
+  critical_success: The target is unaffected.
+  description: 'The bugul noz lets out a hair-raising keen. Other creatures within
+    30 feet must attempt a DC 31 Fortitude save. The bugul noz can''t use this ability
+    again for 1d4 rounds.
+
+
+    '
+  effect: null
+  effects: null
+  failure: The target takes 4d10 sonic damage and gains sonic weakness 10 for 1 minute.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Haunting Wail
+  range: null
+  raw_description: '**Haunting Wail** [Two Actions]  (__illusion__, __vocal__) The
+    bugul noz lets out a hair-raising keen. Other creatures within 30 feet must attempt
+    a DC 31 Fortitude save. The bugul noz can''t use this ability again for 1d4 rounds.
+
+
+    **Critical Success** The target is unaffected.
+
+
+    **Success** The target takes 2d10 sonic damage.
+
+
+    **Failure** The target takes 4d10 sonic damage and gains sonic weakness 10 for
+    1 minute.
+
+
+    **Critical Failure** As failure, and the target becomes __fleeing__ for 1 round.'
+  requirements: null
+  success: The target takes 2d10 sonic damage.
+  traits:
+  - illusion
+  - vocal
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 2d8+6
+    type: bludgeoning
+  name: rock
+  plus_damage: null
+  to_hit: 25
+  traits:
+  - range increment 30 feet
+rarity: Rare
+resistances:
+- amount: 18
+  type: cold iron
+ritual_lists: null
+saves:
+  fort: 22
+  fort_misc: null
+  misc: null
+  ref: 25
+  ref_misc: null
+  will: 23
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +23
+- darkvision
+size: Medium
+skills:
+- bonus: 21
+  misc: null
+  name: 'Acrobatics '
+- bonus: 19
+  misc: null
+  name: 'Athletics '
+- bonus: 22
+  misc: null
+  name: 'Forest Lore '
+- bonus: 25
+  misc: null
+  name: 'Nature '
+- bonus: 25
+  misc: null
+  name: 'Survival '
+source:
+- abbr: 'Pathfinder #153: Life''s Long Shadow'
+  page_start: 76
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: null
+  type: forest jaunt
+spell_lists:
+- dc: 33
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: x3
+      name: blindness
+      requirement: null
+    - frequency: null
+      name: wanderer's guide
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: null
+      name: pass without trace
+      requirement: null
+  - heightened_level: 3
+    level: 0
+    spells:
+    - frequency: null
+      name: dancing lights
+      requirement: null
+  to_hit: null
+traits:
+- Rare
+- CN
+- Medium
+- Fey
+type: Creature
+weaknesses: null

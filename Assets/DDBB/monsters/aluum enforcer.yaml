@@ -1,0 +1,202 @@
+ability_mods:
+  cha_mod: -5
+  con_mod: 5
+  dex_mod: 2
+  int_mod: -5
+  str_mod: 7
+  wis_mod: 1
+ac: 30
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+description: 'The most common aluum is powered by the bound soul of a loyal city servant,
+  but its creation is among the Pactmasters'' most guarded secrets. There are dozens
+  of dormant aluums spread throughout Katapesh, and only someone wearing an aluum
+  charm can activate and command one of these 14-foot-tall soldiers. The Pactmasters
+  entrust few beyond the Zephyr Guard to carry these charms, and stealing such a charm
+  is one of the most severe crimes in the city.
+
+
+
+
+  **__Recall Knowledge - Construct__ (__Arcana__, __Crafting__)**: DC 29'
+hp: 145
+hp_misc: null
+immunities:
+- bleed
+- disease
+- death effects
+- doomed
+- drained
+- fatigued
+- magic (see below)
+- mental
+- nonlethal attacks
+- paralyzed
+- poison
+- sickened
+- unconscious
+items: null
+languages: null
+level: 10
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d10+13
+    type: bludgeoning
+  name: fist
+  plus_damage:
+  - formula: null
+    type: paralyzing force
+  to_hit: 23
+  traits:
+  - magical
+name: Aluum Enforcer
+perception: 17
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Aluum enforcers are immune to spells and magical abilities, with two
+    exceptions. A __negative__ spell or magical ability grants an aluum enforcer the
+    __quickened__ condition until the end of its next turn instead of its normal effects.
+    A __positive__ spell or ability makes an aluum enforcer __slowed 1__ until the
+    end of its next turn instead of its normal effects.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Aluum Antimagic
+  range: null
+  raw_description: '**Aluum Antimagic** Aluum enforcers are immune to spells and magical
+    abilities, with two exceptions. A __negative__ spell or magical ability grants
+    an aluum enforcer the __quickened__ condition until the end of its next turn instead
+    of its normal effects. A __positive__ spell or ability makes an aluum enforcer
+    __slowed 1__ until the end of its next turn instead of its normal effects.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A creature damaged by the aluum enforcer's fist Strike must succeed
+    at a DC 27 Fortitude save or become __paralyzed__ for 1 round. On a critical failure,
+    the creature is paralyzed for 1d4 minutes and falls __prone__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Paralyzing Force
+  range: null
+  raw_description: '**Paralyzing Force** (__arcane__, __incapacitation__, __necromancy__)
+    A creature damaged by the aluum enforcer''s fist Strike must succeed at a DC 27
+    Fortitude save or become __paralyzed__ for 1 round. On a critical failure, the
+    creature is paralyzed for 1d4 minutes and falls __prone__.'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - incapacitation
+  - necromancy
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The aluum enforcer emits a keening wail in a 15-foot cone that deals
+    9d6 sonic damage (DC 27 basic Fortitude save). A creature that fails its save
+    is __stunned 1__, or stunned 3 on a critical failure. The aluum can't use Soul
+    Shriek again for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Soul Shriek
+  range: null
+  raw_description: '**Soul Shriek** [Two Actions]  (__arcane__, __auditory__, __evocation__,
+    __mental__, __sonic__) The aluum enforcer emits a keening wail in a 15-foot cone
+    that deals 9d6 sonic damage (DC 27 basic Fortitude save). A creature that fails
+    its save is __stunned 1__, or stunned 3 on a critical failure. The aluum can''t
+    use Soul Shriek again for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - auditory
+  - evocation
+  - mental
+  - sonic
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances:
+- amount: 10
+  type: physical (except adamantine)
+ritual_lists: null
+saves:
+  fort: 21
+  fort_misc: null
+  misc: null
+  ref: 18
+  ref_misc: null
+  will: 15
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +17
+- darkvision
+size: Large
+skills:
+- bonus: 23
+  misc: null
+  name: 'Athletics '
+source:
+- abbr: 'Pathfinder #149: Against the Scarlet Triad'
+  page_start: 82
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists: null
+traits:
+- Uncommon
+- N
+- Large
+- Construct
+- Mindless
+type: Creature
+weaknesses: null

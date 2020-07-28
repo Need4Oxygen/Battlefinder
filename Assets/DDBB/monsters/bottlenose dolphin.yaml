@@ -1,0 +1,141 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 2
+  dex_mod: 3
+  int_mod: -4
+  str_mod: 2
+  wis_mod: 3
+ac: 15
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: "The bottlenose dolphin is the most common and widespread species of\
+  \ dolphin. They are social predators who hunt shallow seas and rivers in large family\
+  \ groups called pods. Sailors are fond of bottlenose dolphins and frequently tell\
+  \ tales of how they save drowning fishers or kill sharks with blows from their powerful\
+  \ snouts. \n\n\n\n**__Recall Knowledge - Animal__ (__Nature__)**: DC 14"
+hp: 16
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 0
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6+2
+    type: bludgeoning
+  name: snout
+  plus_damage: null
+  to_hit: 6
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 1d6+2
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 6
+  traits: null
+name: Bottlenose Dolphin
+perception: 7
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The bottlenose dolphin __Swims__ twice and then makes a snout Strike.
+    As long as it moved at least 20 feet, it gains a +1 circumstance bonus to its
+    attack roll. A Large or smaller creature hit by this attack must succeed at a
+    DC 16 Fortitude save or be __slowed 1__ for 1 round.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Ramming Speed
+  range: null
+  raw_description: '**Ramming Speed** [Two Actions]  The bottlenose dolphin __Swims__
+    twice and then makes a snout Strike. As long as it moved at least 20 feet, it
+    gains a +1 circumstance bonus to its attack roll. A Large or smaller creature
+    hit by this attack must succeed at a DC 16 Fortitude save or be __slowed 1__ for
+    1 round.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 6
+  fort_misc: null
+  misc: null
+  ref: 7
+  ref_misc: null
+  will: 5
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A bottlenose dolphin can use its hearing as a __precise sense__ at
+    the listed range, but only underwater.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Aquatic Echolocation
+  range: null
+  raw_description: '**Aquatic Echolocation** A bottlenose dolphin can use its hearing
+    as a __precise sense__ at the listed range, but only underwater.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A bottlenose dolphin can hold its breath for 2 hours.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Deep Breath
+  range: null
+  raw_description: '**Deep Breath** A bottlenose dolphin can hold its breath for 2
+    hours.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +7
+- aquatic echolocation 120 feet
+- low-light vision
+size: Medium
+skills:
+- bonus: 6
+  misc: null
+  name: 'Athletics '
+source:
+- abbr: Bestiary 2
+  page_start: 84
+  page_stop: null
+speed:
+- amount: 60
+  type: swim
+spell_lists: null
+traits:
+- N
+- Medium
+- Animal
+type: Creature
+weaknesses: null

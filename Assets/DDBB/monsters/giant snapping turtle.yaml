@@ -1,0 +1,166 @@
+ability_mods:
+  cha_mod: -2
+  con_mod: 4
+  dex_mod: 0
+  int_mod: -4
+  str_mod: 7
+  wis_mod: 4
+ac: 28
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'If the regular-sized snapping turtle is foul-tempered, then the giant
+  snapping turtle seems to be willfully violent toward anything that dares intrude
+  upon its domain. Measuring over 20 feet long and weighing thousands of pounds, this
+  creature is capable of swallowing a humanoid whole. Swamp-dwelling societies, particularly
+  __boggards__ and __lizardfolk__, have often tried to domesticate giant snapping
+  turtles to serve as powerful guardians, but in most cases the casualties pile up
+  quickly. Those unfortunate enough to be swallowed whole by a giant snapping turtle
+  find that even the creature''s stomach is somewhat armored, making it difficult
+  to cut through.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 26'
+hp: 170
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 9
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d12+10
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: null
+    type: Improved Grab
+  to_hit: 22
+  traits: null
+name: Giant Snapping Turtle
+perception: 17
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The turtle tries to capsize an adjacent aquatic vessel of its size
+    or smaller. The turtle must succeed at a DC 35 __Athletics__ check (reduced by
+    5 for each size smaller the vessel is than the turtle) or the pilot's __Sailing
+    Lore__ DC, whichever is higher.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Capsize
+  range: null
+  raw_description: '**Capsize**   (__attack__, __move__) The turtle tries to capsize
+    an adjacent aquatic vessel of its size or smaller. The turtle must succeed at
+    a DC 35 __Athletics__ check (reduced by 5 for each size smaller the vessel is
+    than the turtle) or the pilot''s __Sailing Lore__ DC, whichever is higher.'
+  requirements: null
+  success: null
+  traits:
+  - attack
+  - move
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The giant snapping turtle retracts its limbs and head into its shell
+    and ends its turn. This increases its AC to 30, but it can't act except to reemerge,
+    which it can do as a single action.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Shell Defense
+  range: null
+  raw_description: '**Shell Defense**   The giant snapping turtle retracts its limbs
+    and head into its shell and ends its turn. This increases its AC to 30, but it
+    can''t act except to reemerge, which it can do as a single action.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: Large, 2d12+7 bludgeoning, Rupture 30
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Swallow Whole
+  range: null
+  raw_description: '**__Swallow Whole__**   Large, 2d12+7 bludgeoning, Rupture 30'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 19
+  fort_misc: null
+  misc: null
+  ref: 15
+  ref_misc: null
+  will: 19
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The giant snapping turtle can hold its breath for 2 hours.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Deep Breath
+  range: null
+  raw_description: '**Deep Breath** The giant snapping turtle can hold its breath
+    for 2 hours.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +17
+- low-light vision
+- scent (imprecise) 30 feet
+size: Gargantuan
+skills:
+- bonus: 20
+  misc: null
+  name: 'Athletics '
+source:
+- abbr: Bestiary 2
+  page_start: 269
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 40
+  type: swim
+spell_lists: null
+traits:
+- N
+- Gargantuan
+- Animal
+type: Creature
+weaknesses: null

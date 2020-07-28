@@ -1,0 +1,210 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 0
+  dex_mod: 4
+  int_mod: 2
+  str_mod: -2
+  wis_mod: 0
+ac: 18
+ac_special: null
+alignment: CG
+automatic_abilities: null
+description: 'Although they are much smaller than their larger dragon cousins, faerie
+  dragons have the many of the same physiological attributes, including long necks,
+  toothy maws, sinuous tails, and sharp claws. They flit about on iridescent butterfly
+  wings, the coloring of which changes based on where they live, giving them a natural
+  camouflage. Unlike their larger kin, an adult faerie dragon remains the same size
+  throughout its lifespan. The only visual clue to the age of a faerie dragon is the
+  sheen on its scales, a glimmer that becomes more lustrous the older it gets.
+
+
+
+
+  Faerie dragons usually exhibit pleasant and good-natured temperaments, though they
+  have a mischievous streak that leads them to play tricks on those around them. In
+  search of an amusement, they prefer harmless annoyances to wounding malice. While
+  often spontaneous, they may also spend months if not years planning the perfect
+  prank. Especially responsive targets endear themselves to faerie dragons and may
+  create a lifelong bond. A faerie dragon''s reputation as a trickster leads many
+  to associate them with fey, with whom the tiny dragons have cordial relationships.
+
+
+
+
+  Peaceful by nature, faerie dragons do not enjoy confrontation. If faced with hostility,
+  they prefer to remain at a distance and breathe euphoric gas at their foes, diffusing
+  the skirmish by creating an atmosphere of bliss. If conflict escalates, they target
+  their opponents with spells, using their renowned trickery to escape. If their companions
+  are in danger, however, their desire to remain out of combat changes. Faerie dragons
+  protect their friends by any means available, including physical combat.
+
+
+
+
+  Sometimes as faerie dragons grow older, their connection to the First World grows
+  stronger. In addition to growing more lustrous and vibrant in appearance, these
+  faerie dragons gain an increasing amount of magical primal power. Such faerie dragons
+  increase in strength as appropriate—a faerie dragon of 20th level or even higher
+  is possible, but it is exceptionally unusual to encounter a faerie dragon of 9th
+  level or higher beyond the most remote regions of the First World. When creating
+  a more powerful faerie dragon, change its tradition to primal and grant it a number
+  of primal spells known appropriate for a druid of its level. Faerie dragons don''t
+  grow much larger, regardless of how powerful they become. Those who would seek to
+  torment or vex a faerie dragon would do well to consider this, as it''s often difficult
+  to tell how powerful one of these tiny dragons truly is at a simple glance!
+
+
+
+
+  **__Recall Knowledge - Dragon__ (__Arcana__)**: DC 18'
+hp: 30
+hp_misc: null
+immunities:
+- paralyzed
+- sleep
+items: null
+languages:
+- Common
+- Draconic
+- Sylvan
+- telepathy 100 feet
+level: 2
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d4
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 10
+  traits:
+  - magical
+  - finesse
+name: Faerie Dragon
+perception: 16
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The dragon breathes euphoric gas in a 10-foot cone. Each creature in
+    the area must succeed at a DC 18 Fortitude save or become __stupefied 2__ and
+    __slowed 1__ for 1d4 rounds; on a critical failure, the duration is 1 minute.
+    The faerie dragon can't use Breath Weapon again for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Breath Weapon
+  range: null
+  raw_description: '**Breath Weapon** [Two Actions]  (__arcane__, __evocation__, __poison__)
+    The dragon breathes euphoric gas in a 10-foot cone. Each creature in the area
+    must succeed at a DC 18 Fortitude save or become __stupefied 2__ and __slowed
+    1__ for 1d4 rounds; on a critical failure, the duration is 1 minute. The faerie
+    dragon can''t use Breath Weapon again for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - evocation
+  - poison
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances: null
+ritual_lists: null
+saves:
+  fort: 5
+  fort_misc: null
+  misc: null
+  ref: 12
+  ref_misc: null
+  will: 11
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +16
+- darkvision
+size: Tiny
+skills:
+- bonus: 8
+  misc: null
+  name: 'Acrobatics '
+- bonus: 8
+  misc: null
+  name: 'Deception '
+- bonus: 8
+  misc: null
+  name: 'Diplomacy '
+- bonus: 4
+  misc: null
+  name: 'Nature '
+- bonus: 10
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 157
+  page_stop: null
+speed:
+- amount: 15
+  type: Land
+- amount: 40
+  type: fly
+- amount: 20
+  type: swim
+spell_lists:
+- dc: 21
+  misc: null
+  name: Arcane Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: self only
+      name: invisibility
+      requirement: null
+  to_hit: null
+- dc: 18
+  misc: ''
+  name: Arcane Spontaneous Spells
+  spell_groups:
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: grease
+      requirement: null
+    - frequency: null
+      name: illusory object
+      requirement: null
+    - frequency: 4 slots
+      name: sleep
+      requirement: null
+  - heightened_level: 1
+    level: 0
+    spells:
+    - frequency: null
+      name: dancing lights
+      requirement: null
+    - frequency: null
+      name: ghost sound
+      requirement: null
+    - frequency: null
+      name: prestidigitation
+      requirement: null
+    - frequency: null
+      name: tanglefoot
+      requirement: null
+    - frequency: null
+      name: telekinetic projectile
+      requirement: null
+  to_hit: 10
+traits:
+- Uncommon
+- CG
+- Tiny
+- Dragon
+type: Creature
+weaknesses: null

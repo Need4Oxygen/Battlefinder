@@ -1,0 +1,266 @@
+ability_mods:
+  cha_mod: 1
+  con_mod: 4
+  dex_mod: 3
+  int_mod: 2
+  str_mod: 5
+  wis_mod: 3
+ac: 22
+ac_special: null
+alignment: CN
+automatic_abilities: null
+description: 'Weird and paranoid creatures that dwell in the Darklands, cloakers resemble
+  hideous, flying manta rays. Crafty and careful hunters, their motivations, their
+  patterns of attack, and even their societies and history are often an inscrutable
+  jumble of contradicting reports, confused rumors, and terrifying accounts.
+
+
+
+
+  Like many of the stranger creatures of Golarion, cloakers were originally created
+  by the alghollthus, who bred them to spy on their Azlanti thralls. Upon the fall
+  of the Azlanti empire, the alghollthus cast out their cloaker creations, who, in
+  turn, fled to the lower reaches of the Darklands. Amid the vaults and twisted corridors
+  of their new home, their attitudes—particularly regarding their apprehension toward
+  their former masters—changed dramatically. Suspicion became paranoia, egotism, sadism,
+  and much worse. Now, most cloakers lead solitary lives, stalking the Darklands for
+  easy prey and delving deeper into internal horrors. Their paranoia is so great that
+  they interact only rarely even with their own kind, encountering another cloaker
+  only briefly to mate before flitting back to isolation.
+
+
+
+
+  But there are exceptions. Every so often, a charismatic cloaker priest can call
+  together a dark cabal of these creatures and other Darklands denizens to worship
+  unspeakable ancient gods. These rare cloakers whip their acolytes and followers
+  into a frenzy of dark rituals and heinous acts. While these cults are depraved and
+  destructive, they rarely survive longer than their founder.
+
+
+
+
+  **__Recall Knowledge - Aberration__ (__Occultism__)**: DC 20'
+hp: 80
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Aklo
+- Undercommon
+level: 5
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d10+7
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 14
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 2d6+7
+    type: slashing
+  name: tail
+  plus_damage: null
+  to_hit: 14
+  traits:
+  - agile
+  - reach 10 feet
+name: Cloaker
+perception: 12
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The cloaker makes an attack roll with a +14 bonus against an adjacent
+    creature's Reflex DC. If it succeeds, it envelops the target, who is restrained.
+    Attacks that hit an enveloping cloaker deal half their damage to the cloaker and
+    half to the trapped victim. The cloaker can't Fly, and when it moves using its
+    land Speed it moves the enveloped creature with it. The cloaker can make only
+    jaws Strikes against the restrained creature but can make tail Strikes against
+    other creatures.A creature that voluntarily puts on the cloaker becomes engulfed
+    automatically. A cloaker can engulf only Large or smaller creatures, and no more
+    than one creature at a time.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Envelop
+  range: null
+  raw_description: '**Envelop**   (__attack__, __incapacitation__) The cloaker makes
+    an attack roll with a +14 bonus against an adjacent creature''s Reflex DC. If
+    it succeeds, it envelops the target, who is restrained. Attacks that hit an enveloping
+    cloaker deal half their damage to the cloaker and half to the trapped victim.
+    The cloaker can''t Fly, and when it moves using its land Speed it moves the enveloped
+    creature with it. The cloaker can make only jaws Strikes against the restrained
+    creature but can make tail Strikes against other creatures.A creature that voluntarily
+    puts on the cloaker becomes engulfed automatically. A cloaker can engulf only
+    Large or smaller creatures, and no more than one creature at a time.'
+  requirements: null
+  success: null
+  traits:
+  - attack
+  - incapacitation
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The cloaker lets out an infrasonic moan that has one of the effects
+    below. A creature that succeeds at a DC 22 Will save is unaffected. Any creature
+    that attempts this save becomes temporarily immune for 1 hour. Because the moan
+    is infrasonic, most humanoids don't detect the source of their plight if they
+    aren't already aware of the cloaker.
+  effect: null
+  effects:
+  - action_cost: None
+    critical_failure: null
+    critical_success: null
+    description: Each creature within a 30-foot emanation becomes frightened 1 (or,
+      on a critical failure, frightened 2 and fleeing until the end of its next turn).
+    effect: null
+    effects: null
+    failure: null
+    frequency: null
+    full_description: null
+    generic_description: null
+    name: Fear
+    range: null
+    raw_description: '**Fear** (fear, incapacitation) Each creature within a 30-foot
+      emanation becomes frightened 1 (or, on a critical failure, frightened 2 and
+      fleeing until the end of its next turn).'
+    requirements: null
+    success: null
+    traits:
+    - fear
+    - incapacitation
+    trigger: null
+  - action_cost: None
+    critical_failure: null
+    critical_success: null
+    description: Each creature within a 30-foot emanation falls prone and become sickened
+      2.
+    effect: null
+    effects: null
+    failure: null
+    frequency: null
+    full_description: null
+    generic_description: null
+    name: Nausea
+    range: null
+    raw_description: '**Nausea** Each creature within a 30-foot emanation falls prone
+      and become sickened 2.'
+    requirements: null
+    success: null
+    traits: null
+    trigger: null
+  - action_cost: None
+    critical_failure: null
+    critical_success: null
+    description: The cloaker targets a single creature within 30 feet. The creature
+      becomes clumsy 1 and stupefied 1 for 1 minute.
+    effect: null
+    effects: null
+    failure: null
+    frequency: null
+    full_description: null
+    generic_description: null
+    name: Stupor
+    range: null
+    raw_description: '**Stupor** The cloaker targets a single creature within 30 feet.
+      The creature becomes clumsy 1 and stupefied 1 for 1 minute.'
+    requirements: null
+    success: null
+    traits: null
+    trigger: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Infrasonic Moan
+  range: null
+  raw_description: "**Infrasonic Moan** [Two Actions]  (__auditory__, __emotion__,\
+    \ __mental__) The cloaker lets out an infrasonic moan that has one of the effects\
+    \ below. A creature that succeeds at a DC 22 Will save is unaffected. Any creature\
+    \ that attempts this save becomes temporarily immune for 1 hour. Because the moan\
+    \ is infrasonic, most humanoids don't detect the source of their plight if they\
+    \ aren't already aware of the cloaker.\n\n  * **Fear** (fear, incapacitation)\
+    \ Each creature within a 30-foot emanation becomes frightened 1 (or, on a critical\
+    \ failure, frightened 2 and fleeing until the end of its next turn).\n\n  * **Nausea**\
+    \ Each creature within a 30-foot emanation falls prone and become sickened 2.\n\
+    \n  * **Stupor** The cloaker targets a single creature within 30 feet. The creature\
+    \ becomes clumsy 1 and stupefied 1 for 1 minute."
+  requirements: null
+  success: null
+  traits:
+  - auditory
+  - emotion
+  - mental
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 13
+  fort_misc: null
+  misc: null
+  ref: 12
+  ref_misc: null
+  will: 12
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Cloakers are concealed in dim light even to creatures with low-light
+    vision and darkvision.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Shadow Shift
+  range: null
+  raw_description: '**Shadow Shift** Cloakers are concealed in dim light even to creatures
+    with low-light vision and darkvision.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +12
+- darkvision
+size: Large
+skills:
+- bonus: 14
+  misc: +16 to Impersonate a cloak, sheet, or ray
+  name: 'Deception '
+- bonus: 12
+  misc: null
+  name: 'Religion '
+- bonus: 14
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 65
+  page_stop: null
+speed:
+- amount: 10
+  type: Land
+- amount: 30
+  type: fly
+spell_lists: null
+traits:
+- CN
+- Large
+- Aberration
+type: Creature
+weaknesses: null

@@ -1,0 +1,165 @@
+ability_mods:
+  cha_mod: -3
+  con_mod: 4
+  dex_mod: -2
+  int_mod: -5
+  str_mod: 4
+  wis_mod: 0
+ac: 19
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When the grothlut is reduced to 0 Hit Points, its digestive organs
+    rupture, unleashing alchemical acid and poison upon all creatures in a 30-foot
+    emanation. Each creature in the area must succeed at a DC 19 Fortitude save or
+    take 2d6 acid damage and become sickened 1 (double damage and sickened 2 on a
+    critical failure).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Disgusting Demise
+  range: null
+  raw_description: '**Disgusting Demise** (__acid__, __poison__) When the grothlut
+    is reduced to 0 Hit Points, its digestive organs rupture, unleashing alchemical
+    acid and poison upon all creatures in a 30-foot emanation. Each creature in the
+    area must succeed at a DC 19 Fortitude save or take 2d6 acid damage and become
+    sickened 1 (double damage and sickened 2 on a critical failure).'
+  requirements: null
+  success: null
+  traits:
+  - acid
+  - poison
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 60 feet. Each non-grothlut creature that enters or starts its turn
+    within the area must succeed at a DC 17 Will saving throw or become sickened 1
+    (sickened 2 on a critical failure). The creature then becomes temporarily immune
+    for 1 minute. The grothlut can activate or deactivate the aura by using a single
+    free action that has the concentrate trait. A grothlut usually does not begin
+    moaning until it senses the presence of a non-grothlut creature, and it usually
+    stops once it doesn't sense any more such creatures.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Piteous Moan
+  range: null
+  raw_description: '**Piteous Moan** (__aura__, __auditory__, __emotion__, __mental__,
+    __occult__) 60 feet. Each non-grothlut creature that enters or starts its turn
+    within the area must succeed at a DC 17 Will saving throw or become sickened 1
+    (sickened 2 on a critical failure). The creature then becomes temporarily immune
+    for 1 minute. The grothlut can activate or deactivate the aura by using a single
+    free action that has the concentrate trait. A grothlut usually does not begin
+    moaning until it senses the presence of a non-grothlut creature, and it usually
+    stops once it doesn''t sense any more such creatures.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - auditory
+  - emotion
+  - mental
+  - occult
+  trigger: null
+description: 'Sluglike abominations, grothluts are fleshwarps that were once humans.
+  While their head and torsos are vaguely human, their arms are rubbery and move awkwardly
+  at their sides. Wretched creatures, they moan piteously when other creatures are
+  near, perhaps as the last remnants of their shattered human consciousness pleads
+  to be free from their horrid warped form.
+
+
+
+
+  Many fleshwarpers consider the grothlut to be a failure of a creation, as the transformation
+  all but stamps out the human consciousness. Others disagree, arguing that warping
+  the creature''s mind makes it all the more useful, since its stupidity makes it
+  pliable and easy to herd. Drow typically use grothluts as guardians that slowly
+  patrol the edges of their enclaves. Once in position, grothluts can be used as crude
+  shock troops, unleashed to soften enemy forces before more-valuable warriors wade
+  in and cut down the enemies who have been nauseated by the grothluts'' exploded
+  organs and flesh.
+
+
+
+
+  **__Recall Knowledge - Aberration__ (__Occultism__)**: DC 18'
+hp: 50
+hp_misc: null
+immunities:
+- acid
+- mental
+items: null
+languages: null
+level: 3
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d10+8
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 11
+  traits:
+  - agile
+name: Grothlut
+perception: 5
+proactive_abilities: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 2d6
+    type: acid damage
+  name: digestive spew
+  plus_damage:
+  - formula: 1d6
+    type: splash acid damage
+  to_hit: 7
+  traits:
+  - acid
+  - range increment 15 feet
+  - splash
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 11
+  fort_misc: null
+  misc: null
+  ref: 5
+  ref_misc: null
+  will: 7
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +5
+- darkvision
+size: Medium
+skills:
+- bonus: 11
+  misc: null
+  name: 'Athletics '
+source:
+- abbr: Bestiary
+  page_start: 158
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+spell_lists: null
+traits:
+- N
+- Medium
+- Aberration
+- Mindless
+type: Creature
+weaknesses: null

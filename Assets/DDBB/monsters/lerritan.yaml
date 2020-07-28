@@ -1,0 +1,270 @@
+ability_mods:
+  cha_mod: 4
+  con_mod: 7
+  dex_mod: 5
+  int_mod: 2
+  str_mod: 10
+  wis_mod: 7
+ac: 46
+ac_special: null
+alignment: NE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '100 feet. Creatures in the emanation
+
+
+    cannot recover from __persistent fire damage__.'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Tenacious Flames
+  range: null
+  raw_description: '**Tenacious Flames** (__aura__, __evocation__, __fire__, __primal__)
+    100 feet. Creatures in the emanation
+
+
+    cannot recover from __persistent fire damage__.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - evocation
+  - fire
+  - primal
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+description: 'Lerritans are unstoppable giants with skin of volcanic glass and blood
+  of roiling lava. These malicious arsonists would see the world burned to a cinder.
+  They pay homage to __Ymeri__, the evil elemental demigod of fire, and they bully
+  other fiery creatures. When the urge to immolate grows too great to ignore, lerritans
+  burn forests, destroy villages, and boil rivers, but they avoid large bodies of
+  water.
+
+
+
+
+  **__Recall Knowledge - Elemental__ (__Arcana__, __Nature__)**: DC 42'
+hp: 490
+hp_misc: null
+immunities:
+- fire
+- paralyzed
+- poison
+- sleep
+items:
+- +3 greater striking warhammer
+languages:
+- Common
+- Ignan
+- Jotun
+- Terran
+level: 21
+melee:
+- action_cost: One Action
+  damage:
+    formula: 4d12+18
+    type: bludgeoning
+  name: warhammer
+  plus_damage:
+  - formula: 2d6
+    type: persistent fire damage
+  to_hit: 40
+  traits:
+  - magical
+  - reach 25 feet
+  - shove
+- action_cost: One Action
+  damage:
+    formula: 4d10+18
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 2d6
+    type: persistent fire damage
+  to_hit: 39
+  traits:
+  - agile
+  - reach 25 feet
+name: Lerritan
+perception: 35
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: The creature takes double damage and is encased in a rocky crust
+    with lava on the inside. The creature is restrained (Escape DC 46), can't breathe,
+    takes 3d12 persistent fire damage, and can't recover from this persistent fire
+    damage until freed.
+  critical_success: The creature is unaffected.
+  description: "A lerritan can break stony scales off its body to throw; these scales\
+    \ reform at the end of each round, so the lerritan is never without a supply of\
+    \ rocks to hurl. __Volcanic Eruption__ [Two Actions] (earth, evocation, fire,\
+    \ primal); The volcano on the lerritan's back erupts and sends lava bombs raining\
+    \ down in a 30-foot emanation, dealing 12d12 fire damage. Each creature in the\
+    \ area must attempt a DC 46 Reflex saving throw. The lava globules quickly cool\
+    \ into heavy stones, transforming the area into greater difficult terrain for\
+    \ non-lerritans. The lerritan can't use Volcanic Eruption for 1d4 rounds. \n\n"
+  effect: null
+  effects: null
+  failure: The creature takes full damage and is immobilized (Escape DC 46).
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Throw Rock
+  range: null
+  raw_description: "**__Throw Rock__**   A lerritan can break stony scales off its\
+    \ body to throw; these scales reform at the end of each round, so the lerritan\
+    \ is never without a supply of rocks to hurl. __Volcanic Eruption__  (earth, evocation,\
+    \ fire, primal); The volcano on the lerritan's back erupts and sends lava bombs\
+    \ raining down in a 30-foot emanation, dealing 12d12 fire damage. Each creature\
+    \ in the area must attempt a DC 46 Reflex saving throw. The lava globules quickly\
+    \ cool into heavy stones, transforming the area into greater difficult terrain\
+    \ for non-lerritans. The lerritan can't use Volcanic Eruption for 1d4 rounds.\
+    \ \n\n**Critical Success** The creature is unaffected. \n\n**Success** The creature\
+    \ takes half damage and is __encumbered__ for 1 round. \n\n**Failure** The creature\
+    \ takes full damage and is __immobilized__ (Escape DC 46). \n\n**Critical Failure**\
+    \ The creature takes double damage and is encased in a rocky crust with lava on\
+    \ the inside. The creature is __restrained__ (Escape DC 46), can't breathe, takes\
+    \ 3d12 __persistent fire damage__, and can't recover from this persistent fire\
+    \ damage until freed."
+  requirements: null
+  success: The creature takes half damage and is encumbered for 1 round.
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 4d6+18
+    type: bludgeoning
+  name: rock
+  plus_damage:
+  - formula: 2d6
+    type: persistent fire
+  to_hit: 39
+  traits:
+  - brutal
+  - range increment 120 feet
+rarity: Common
+resistances:
+- amount: 20
+  type: piercing
+- amount: 20
+  type: slashing
+ritual_lists: null
+saves:
+  fort: 38
+  fort_misc: null
+  misc: null
+  ref: 34
+  ref_misc: null
+  will: 36
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +35
+- low-light vision
+size: Gargantuan
+skills:
+- bonus: 41
+  misc: null
+  name: 'Athletics '
+- bonus: 33
+  misc: null
+  name: 'Crafting '
+- bonus: 35
+  misc: null
+  name: 'Intimidation '
+- bonus: 36
+  misc: null
+  name: 'Religion '
+- bonus: 38
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 159
+  page_stop: null
+speed:
+- amount: 50
+  type: Land
+spell_lists:
+- dc: 46
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 10
+    spells:
+    - frequency: null
+      name: cataclysm
+      requirement: null
+  - heightened_level: null
+    level: 9
+    spells:
+    - frequency: null
+      name: fireball
+      requirement: null
+    - frequency: null
+      name: meteor swarm
+      requirement: null
+  - heightened_level: null
+    level: 8
+    spells:
+    - frequency: null
+      name: earthquake
+      requirement: null
+  - heightened_level: null
+    level: 7
+    spells:
+    - frequency: to the Material Plane, <a style="text-decoration:underline" href="Planes.aspx?ID=6">Plane
+        of Fire</a>, or <a style="text-decoration:underline" href="Planes.aspx?ID=5">Plane
+        of Earth</a> only
+      name: plane shift
+      requirement: null
+  - heightened_level: 10
+    level: 0
+    spells:
+    - frequency: null
+      name: produce flame
+      requirement: null
+  to_hit: null
+traits:
+- NE
+- Gargantuan
+- Earth
+- Elemental
+- Fire
+type: Creature
+weaknesses:
+- amount: 20
+  type: cold

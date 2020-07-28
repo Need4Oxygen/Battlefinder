@@ -1,0 +1,288 @@
+ability_mods:
+  cha_mod: 8
+  con_mod: 8
+  dex_mod: 6
+  int_mod: 6
+  str_mod: 8
+  wis_mod: 10
+ac: 45
+ac_special: null
+alignment: CG
+automatic_abilities: null
+description: 'Veranallias represent the freedom of life to grow, change, and adapt.
+  They rarely interact directly with non-azatas, as most other beings find their nature
+  hard to comprehend, but those who secure their aid find them powerful allies. The
+  lower half of a veranallia''s body is made of vegetation that constantly repeats
+  a dizzying cycle of sprouting, blooming, thriving, and wilting. The upper half of
+  their body appears as that of a humanoid of any gender—it is rare for a veranallia
+  to remain consistent in their gender for more than a few seasons at a time.
+
+
+
+
+  Veranallias transform the landscape in their wake, bringing creation and destruction
+  alike. The world around them overflows with an abundance of vegetation, with plenty
+  of food for nearby animals, and when they bring destruction, they do so without
+  cruelty, as it is sometimes necessary to make room for new life. They trigger forest
+  fires in woodlands before dry brush piles up to dangerous levels, and bring bitter
+  winters to areas plagued with parasites that thrive in hot weather.
+
+
+
+
+  **__Recall Knowledge - Celestial__ (__Religion__)**: DC 40'
+hp: 475
+hp_misc: null
+immunities: null
+items:
+- +3 greater striking sickle
+languages:
+- Celestial
+- Draconic
+- Infernal
+- speak with animals
+- speak with plants
+- tongues
+level: 20
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d4+16
+    type: slashing
+  name: sickle
+  plus_damage:
+  - formula: 4d6
+    type: cold and 1d6 good
+  to_hit: 39
+  traits:
+  - agile
+  - finesse
+  - trip
+- action_cost: One Action
+  damage:
+    formula: 4d12+16
+    type: bludgeoning
+  name: vine
+  plus_damage:
+  - formula: 1d6
+    type: good and Improved Grab
+  to_hit: 39
+  traits:
+  - reach 20 feet
+name: Veranallia
+perception: 38
+proactive_abilities:
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The veranallia dramatically alters weather patterns in the surrounding area,
+    producing any of the results of a successful 9th-level __control weather__ ritual.
+  effects: null
+  failure: null
+  frequency: three times per day
+  full_description: null
+  generic_description: null
+  name: Alter Weather
+  range: null
+  raw_description: '**Alter Weather** [Three Actions]  **Frequency **three times per
+    day; **Effect **The veranallia dramatically alters weather patterns in the surrounding
+    area, producing any of the results of a successful 9th-level __control weather__
+    ritual.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The veranallia spends a minute to encase a creature that has been dead for
+    no more than a year in a cocoon. After 24 hours, the creature is restored to life,
+    and the cocoon explodes in a shower of colorful blossoms. If the veranallia's
+    chooses, Rebirth can change the creature's ancestry or heritage, typically into
+    an aasimar.
+  effects: null
+  failure: null
+  frequency: once per day
+  full_description: null
+  generic_description: null
+  name: Rebirth
+  range: null
+  raw_description: '**Rebirth** (__divine__, __necromancy__) **Frequency **once per
+    day; **Effect **The veranallia spends a minute to encase a creature that has been
+    dead for no more than a year in a cocoon. After 24 hours, the creature is restored
+    to life, and the cocoon explodes in a shower of colorful blossoms. If the veranallia''s
+    chooses, Rebirth can change the creature''s ancestry or heritage, typically into
+    an aasimar.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - necromancy
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 20
+  type: fire
+- amount: 20
+  type: cold
+ritual_lists:
+- dc: 42
+  misc: also has Reincarnate; spell not out yet at time of printing
+  name: Rituals
+  spell_groups:
+  - heightened_level: null
+    level: 6
+    spells:
+    - frequency: null
+      name: awaken animal
+      requirement: null
+    - frequency: null
+      name: commune with nature
+      requirement: null
+    - frequency: null
+      name: primal call
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: blight
+      requirement: null
+    - frequency: null
+      name: plant growth
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: null
+      name: consecrate
+      requirement: null
+  to_hit: null
+saves:
+  fort: 36
+  fort_misc: null
+  misc: null
+  ref: 34
+  ref_misc: null
+  will: 38
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +38
+- darkvision
+- tremorsense (imprecise) 120 feet
+size: Medium
+skills:
+- bonus: 34
+  misc: null
+  name: 'Athletics '
+- bonus: 36
+  misc: null
+  name: 'Deception '
+- bonus: 38
+  misc: null
+  name: 'Diplomacy '
+- bonus: 36
+  misc: null
+  name: 'Elysium Lore '
+- bonus: 36
+  misc: null
+  name: 'Intimidation '
+- bonus: 36
+  misc: null
+  name: 'Medicine '
+- bonus: 34
+  misc: null
+  name: 'Nature '
+- bonus: 38
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 31
+  page_stop: null
+speed:
+- amount: 40
+  type: Land
+- amount: 40
+  type: fly
+spell_lists:
+- dc: 42
+  misc: ''
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 10
+    spells:
+    - frequency: null
+      name: cataclysm
+      requirement: null
+    - frequency: once per year
+      name: primal phenomenon
+      requirement: null
+    - frequency: null
+      name: revival
+      requirement: null
+  - heightened_level: null
+    level: 9
+    spells:
+    - frequency: null
+      name: nature's enmity
+      requirement: null
+    - frequency: ×3
+      name: regenerate
+      requirement: null
+    - frequency: null
+      name: storm of vengeance
+      requirement: null
+    - frequency: at will
+      name: tree stride
+      requirement: null
+  - heightened_level: null
+    level: 8
+    spells:
+    - frequency: at will
+      name: polar ray
+      requirement: null
+    - frequency: at will
+      name: sunburst
+      requirement: null
+  - heightened_level: null
+    level: 6
+    spells:
+    - frequency: at will
+      name: baleful polymorph
+      requirement: null
+    - frequency: at will
+      name: tangling creepers
+      requirement: null
+  - heightened_level: 9
+    level: -1
+    spells:
+    - frequency: null
+      name: endure elements
+      requirement: null
+    - frequency: null
+      name: speak with animals
+      requirement: null
+    - frequency: null
+      name: speak with plants
+      requirement: null
+    - frequency: null
+      name: tongues
+      requirement: null
+  to_hit: 32
+traits:
+- CG
+- Medium
+- Azata
+- Celestial
+type: Creature
+weaknesses:
+- amount: 20
+  type: cold iron
+- amount: 20
+  type: evil

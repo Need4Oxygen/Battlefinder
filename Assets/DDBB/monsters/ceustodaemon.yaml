@@ -1,0 +1,223 @@
+ability_mods:
+  cha_mod: 3
+  con_mod: 4
+  dex_mod: 2
+  int_mod: 0
+  str_mod: 5
+  wis_mod: 2
+ac: 23
+ac_special: null
+alignment: NE
+automatic_abilities: null
+description: 'Ceustodaemons are formed from the souls of vile mortals, particularly
+  those who took efforts to hasten their own death, their willingness shaping them
+  into daemonic servants. Their otherworldly senses make them useful for protecting
+  vaults and similar locations on the Material Plane. Ceustodaemons are created to
+  serve, but always seek ways to subvert their bindings, so they can rend their mortal
+  summoners'' flesh. The worst type of conjurer calls upon ceustodaemons merely to
+  set them free into the world in hopes of currying favor with the powers of Abaddon.
+
+
+
+
+  **__Recall Knowledge - Fiend__ (__Religion__)**: DC 22'
+hp: 130
+hp_misc: null
+immunities:
+- death effects
+items: null
+languages:
+- Common
+- Daemonic
+- telepathy 100 feet
+level: 6
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d10+5
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 1d6
+    type: evil and vicious wounds
+  to_hit: 16
+  traits:
+  - evil
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 2d6+5
+    type: slashing
+  name: claw
+  plus_damage:
+  - formula: 1d6
+    type: evil and vicious wounds
+  to_hit: 16
+  traits:
+  - agile
+  - evil
+  - magical
+  - reach 10 feet
+name: Ceustodaemon
+perception: 14
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The ceustodaemon breathes flames in a 30-foot cone. Creatures in the
+    cone take 7d6 fire damage (DC 24 basic Reflex save). The ceustodaemon and each
+    creature that fails the save catch fire, taking 2d6 persistent fire damage. The
+    breath weapon can't be used again for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Breath Weapon
+  range: null
+  raw_description: '**Breath Weapon** [Two Actions]  (__divine__, __evocation__, __fire__)
+    The ceustodaemon breathes flames in a 30-foot cone. Creatures in the cone take
+    7d6 fire damage (DC 24 basic Reflex save). The ceustodaemon and each creature
+    that fails the save catch fire, taking 2d6 persistent fire damage. The breath
+    weapon can''t be used again for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - evocation
+  - fire
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When bringing a ceustodaemon to another plane with effects like a __planar
+    binding__ or __planar ally__ ritual, the primary and secondary skill DCs are reduced
+    by 5, and the ceustodaemon demands only half the normal cost for its service.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Drawn to Service
+  range: null
+  raw_description: '**Drawn to Service** When bringing a ceustodaemon to another plane
+    with effects like a __planar binding__ or __planar ally__ ritual, the primary
+    and secondary skill DCs are reduced by 5, and the ceustodaemon demands only half
+    the normal cost for its service.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: On a successful jaws or claw Strike, the ceustodaemon viciously tears
+    into its victim as similar wounds appear on its own body. The target takes an
+    extra 1d6 amount of damage, and the ceustodaemon takes the same extra damage.
+    If this extra damage to the target is doubled, due to a critical hit, the ceustodaemon
+    takes double damage as well.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Vicious Wounds
+  range: null
+  raw_description: '**Vicious Wounds** On a successful jaws or claw Strike, the ceustodaemon
+    viciously tears into its victim as similar wounds appear on its own body. The
+    target takes an extra 1d6 amount of damage, and the ceustodaemon takes the same
+    extra damage. If this extra damage to the target is doubled, due to a critical
+    hit, the ceustodaemon takes double damage as well.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 10
+  type: good
+ritual_lists: null
+saves:
+  fort: 16
+  fort_misc: null
+  misc: null
+  ref: 12
+  ref_misc: null
+  will: 12
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +14
+- darkvision
+- see invisibility
+size: Large
+skills:
+- bonus: 15
+  misc: null
+  name: 'Deception '
+- bonus: 13
+  misc: null
+  name: 'Intimidation '
+- bonus: 12
+  misc: null
+  name: 'Stealth '
+- bonus: 10
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 71
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists:
+- dc: 23
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 7
+    spells:
+    - frequency: null
+      name: fly
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: at will
+      name: dimension door
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: x2
+      name: dispel magic
+      requirement: null
+    - frequency: null
+      name: paralyze
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: at will, good only
+      name: detect alignment
+      requirement: null
+  - heightened_level: 2
+    level: -1
+    spells:
+    - frequency: null
+      name: see invisibility
+      requirement: null
+  to_hit: null
+traits:
+- NE
+- Large
+- Daemon
+- Fiend
+type: Creature
+weaknesses: null

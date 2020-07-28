@@ -1,0 +1,242 @@
+ability_mods:
+  cha_mod: 8
+  con_mod: 5
+  dex_mod: 9
+  int_mod: 0
+  str_mod: -5
+  wis_mod: 7
+ac: 45
+ac_special: null
+alignment: NE
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The aiudara wraith teleports with the creature, arriving in an empty space
+    of its choice adjacent to the triggering creature's destination. If the triggering
+    effect targets multiple creatures, the aiudara wraith chooses which creature it
+    arrives beside.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Teleportation Attachment
+  range: null
+  raw_description: '**Teleportation Attachment** [Reaction] (__conjuration__, __teleportation__)
+    **Trigger** A creature within 60 feet uses a teleportation effect; **Effect**
+    The aiudara wraith teleports with the creature, arriving in an empty space of
+    its choice adjacent to the triggering creature''s destination. If the triggering
+    effect targets multiple creatures, the aiudara wraith chooses which creature it
+    arrives beside.'
+  requirements: null
+  success: null
+  traits:
+  - conjuration
+  - teleportation
+  trigger: A creature within 60 feet uses a teleportation effect
+description: 'Dahak''s influence in Alseta''s Landing created a soul-draining effect
+  that slays unprotected creatures within, transforming them into ghostly creatures
+  known as aiudara wraiths, but these rare undead can rise within modern aiudara portals
+  as well. Each time an individual travels through an aiudara, there''s a chance their
+  passage could leave a faint imprint of their subconscious in the network. Normally
+  this imprint simply fades away, but when an aiudara is damaged or the individual
+  is suffering from necromantic contagions, these imprints can accumulate and, in
+  time, coalesce on the Astral Plane or within Alseta''s Landing as a full-fledged
+  aiudara wraith. The wraith is forced to live with an incomplete sense of self, always
+  seeking its own memories and swiftly growing violent and vengeful as its quest to
+  reclaim these ephemeral notions constantly meets with failure.
+
+
+
+
+  **__Recall Knowledge - Astral__ (__Occultism__)**: DC 43
+
+
+  **__Recall Knowledge - Undead__ (__Religion__)**: DC 43'
+hp: 300
+hp_misc: negative healing
+immunities:
+- death effects
+- disease
+- paralyzed
+- poison
+- precision
+- unconscious
+items: null
+languages:
+- Common
+- Elven
+- Necril
+level: 18
+melee:
+- action_cost: One Action
+  damage:
+    formula: 4d10+16
+    type: force
+  name: spectral hand
+  plus_damage:
+  - formula: null
+    type: dimensional shunt and drain life
+  to_hit: 35
+  traits:
+  - agile
+  - finesse
+  - magical
+name: Aiudara Wraith
+perception: 33
+proactive_abilities:
+- action_cost: None
+  critical_failure: As failure, but the creature is also stunned 2.
+  critical_success: The creature is unaffected and becomes temporarily immune to dimensional
+    shunt for 1 minute.
+  description: 'The aiudara wraith''s touch displaces creatures and flings them through
+    space. The creature must attempt a DC 40 Fortitude save.
+
+
+    '
+  effect: null
+  effects: null
+  failure: The creature is teleported 20 feet in a direction of the aiudara wraith's
+    choice.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Dimensional Shunt
+  range: null
+  raw_description: '**Dimensional Shunt** (__arcane__, __conjuration__, __teleportation__)
+    The aiudara wraith''s touch displaces creatures and flings them through space.
+    The creature must attempt a DC 40 Fortitude save.
+
+
+    **Critical Success** The creature is unaffected and becomes temporarily immune
+    to dimensional shunt for 1 minute.
+
+
+    **Success** The creature is pushed 5 feet in a random direction.
+
+
+    **Failure** The creature is teleported 20 feet in a direction of the aiudara wraith''s
+    choice.
+
+
+    **Critical Failure** As failure, but the creature is also __stunned 2__.'
+  requirements: null
+  success: The creature is pushed 5 feet in a random direction.
+  traits:
+  - arcane
+  - conjuration
+  - teleportation
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When an aiudara wraith damages a living creature with its spectral
+    hand Strike, the aiudara wraith gains 18 temporary Hit Points and the target must
+    succeed at a DC 40 Fortitude save or become __drained 1__ and __stupefied 1__
+    as long as it is drained. Further damage dealt by the aiudara wraith's spectral
+    hand Strikes increases the value of the __drained__ and __stupefied__ conditions
+    by 1 each on a failed save, to a maximum of 10 for both.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Drain Life
+  range: null
+  raw_description: '**Drain Life** (__arcane__, __necromancy__) When an aiudara wraith
+    damages a living creature with its spectral hand Strike, the aiudara wraith gains
+    18 temporary Hit Points and the target must succeed at a DC 40 Fortitude save
+    or become __drained 1__ and __stupefied 1__ as long as it is drained. Further
+    damage dealt by the aiudara wraith''s spectral hand Strikes increases the value
+    of the __drained__ and __stupefied__ conditions by 1 each on a failed save, to
+    a maximum of 10 for both.'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - necromancy
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: An aiudara wraith moves by means of localized teleportation. An aiudara
+    wraith's Stride does not have the move trait. When an aiudara wraith Strides,
+    it reaches its destination within the range of its Speed immediately.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Instantaneous Movement
+  range: null
+  raw_description: '**Instantaneous Movement** (__arcane__, __conjuration__, __teleportation__)
+    An aiudara wraith moves by means of localized teleportation. An aiudara wraith''s
+    Stride does not have the move trait. When an aiudara wraith Strides, it reaches
+    its destination within the range of its Speed immediately.'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - conjuration
+  - teleportation
+  trigger: null
+ranged: null
+rarity: Rare
+resistances:
+- amount: 15
+  type: all damage (except force
+- amount: null
+  type: ghost touch
+- amount: null
+  type: or positive
+- amount: null
+  type: double resistance vs. non-magical)
+ritual_lists: null
+saves:
+  fort: 33
+  fort_misc: null
+  misc: null
+  ref: 37
+  ref_misc: null
+  will: 33
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +33
+- darkvision
+- lifesense 60 feet
+size: Medium
+skills:
+- bonus: 35
+  misc: null
+  name: 'Acrobatics '
+- bonus: 31
+  misc: null
+  name: 'Arcana '
+- bonus: 35
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: 'Pathfinder #150: Broken Promises'
+  page_start: 78
+  page_stop: null
+speed:
+- amount: 60
+  type: fly
+- amount: null
+  type: instantaneous movement
+spell_lists: null
+traits:
+- Rare
+- NE
+- Medium
+- Astral
+- Incorporeal
+- Undead
+- Wraith
+type: Creature
+weaknesses: null

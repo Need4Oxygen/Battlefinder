@@ -1,0 +1,154 @@
+ability_mods:
+  cha_mod: -2
+  con_mod: 3
+  dex_mod: 3
+  int_mod: 0
+  str_mod: 1
+  wis_mod: 2
+ac: 17
+ac_special: null
+alignment: LE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Light Blindness
+  range: null
+  raw_description: '**Light Blindness**'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Duergar sharpshooters serve both as ranged support for slaver parties
+  and as snipers posted on towers overlooking quarries and other areas where enslaved
+  workers toil away the hours. Duergar sharpshooters also specialize in nonlethal
+  methods of ranged combat—tactics they are often called upon to use when quelling
+  slave riots or capturing escaped slaves.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 14'
+hp: 16
+hp_misc: null
+immunities: null
+items:
+- chain shirt
+- crossbow (3 bola bolts and 10 bolts)
+- light mace
+languages:
+- Common
+- Dwarven
+- Undercommon
+level: 0
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d4+1
+    type: bludgeoning
+  name: Light Mace
+  plus_damage: null
+  to_hit: 5
+  traits:
+  - agile
+  - finesse
+  - shove
+- action_cost: One Action
+  damage:
+    formula: 1d8
+    type: piercing or bola bolt
+  name: Crossbow
+  plus_damage: null
+  to_hit: 7
+  traits:
+  - range increment 120 feet
+  - reload 1
+name: Duergar Sharpshooter
+perception: 4
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: This shot deals no damage, but on a hit, the target must succeed at
+    a DC 16 Reflex save or be knocked __prone__ and __immobilized__ until it is freed
+    with a successful DC 15 check to __Escape__. This check can be attempted either
+    by the target or a creature adjacent to the target.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Bola Bolt
+  range: null
+  raw_description: '**Bola Bolt** This shot deals no damage, but on a hit, the target
+    must succeed at a DC 16 Reflex save or be knocked __prone__ and __immobilized__
+    until it is freed with a successful DC 15 check to __Escape__. This check can
+    be attempted either by the target or a creature adjacent to the target.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 7
+  fort_misc: null
+  misc: +2 status to saves vs. magic
+  ref: 7
+  ref_misc: null
+  will: 4
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +4
+- darkvision
+size: Medium
+skills:
+- bonus: 3
+  misc: null
+  name: 'Athletics '
+- bonus: 5
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 138
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+spell_lists:
+- dc: 12
+  misc: null
+  name: Occult Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: self only
+      name: enlarge
+      requirement: null
+    - frequency: self only
+      name: invisibility
+      requirement: null
+  to_hit: null
+traits:
+- LE
+- Medium
+- Duergar
+- Dwarf
+- Humanoid
+type: Creature
+weaknesses: null

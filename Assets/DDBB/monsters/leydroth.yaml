@@ -1,0 +1,265 @@
+ability_mods:
+  cha_mod: 5
+  con_mod: 9
+  dex_mod: 7
+  int_mod: -3
+  str_mod: 8
+  wis_mod: 5
+ac: 40
+ac_special: null
+alignment: NE
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The leydroth attempts an __Intimidation__ check to counteract the triggering
+    spell.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Menace to Magic
+  range: null
+  raw_description: '**Menace to Magic [Reaction]** (__abjuration__, __primal__) **Trigger**
+    A creature within 60 feet Casts a Spell; **Effect** The leydroth attempts an __Intimidation__
+    check to counteract the triggering spell.'
+  requirements: null
+  success: null
+  traits:
+  - abjuration
+  - primal
+  trigger: A creature within 60 feet Casts a Spell
+description: 'In ancient times, a cabal of primalists imbued an amalgam of beasts
+  with both supernatural might and a hatred of magic itself, hoping to achieve a potent
+  weapon for use against arcane spellcasters. Effective beyond expectation, the first
+  leydroths broke free and turned on their creators. Worse, the leydroths bred true,
+  and these reclusive predators have long outlived their original creators.
+
+
+
+
+  Leydroths look like distorted, apelike felines with many-branching horns growing
+  from the backs of their heads. Their thickly muscled limbs end in glowing claws.
+
+
+
+
+  **__Recall Knowledge - Beast__ (__Arcana__, __Nature__)**: DC 38'
+hp: 315
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Aklo
+level: 17
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d10+16
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 1d10
+    type: persistent bleed
+  to_hit: 33
+  traits:
+  - magical
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 3d10+16
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 33
+  traits:
+  - agile
+  - magical
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 3d12+16
+    type: bludgeoning
+  name: horn sweep
+  plus_damage: null
+  to_hit: 33
+  traits:
+  - magical
+  - reach 10 feet
+  - sweep
+  - versatile P
+name: Leydroth
+perception: 30
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The leydroth unleashes a bestial roar that reverberates within a 30-foot
+    emanation. It rolls an __Intimidation__ check and compares the result to the Will
+    DC of each creature in the area, with the effects of __Demoralize__. It also uses
+    this result to attempt to counteract each spell or magical effect in the area,
+    plus one item or effect on each creature in the area, with the effects of __dispel
+    magic__. The leydroth can't use Dispelling Roar again for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Dispelling Roar
+  range: null
+  raw_description: '**Dispelling Roar** [Two Actions]  (__abjuration__, __auditory__,
+    __emotion__, __fear__, __mental__, __primal__) The leydroth unleashes a bestial
+    roar that reverberates within a 30-foot emanation. It rolls an __Intimidation__
+    check and compares the result to the Will DC of each creature in the area, with
+    the effects of __Demoralize__. It also uses this result to attempt to counteract
+    each spell or magical effect in the area, plus one item or effect on each creature
+    in the area, with the effects of __dispel magic__. The leydroth can''t use Dispelling
+    Roar again for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - abjuration
+  - auditory
+  - emotion
+  - fear
+  - mental
+  - primal
+  trigger: null
+- action_cost: Free Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The leydroth casts its innate __dispel magic__, targeting one effect on
+    the creature struck.
+  effects: null
+  failure: null
+  frequency: once per round
+  full_description: null
+  generic_description: null
+  name: Dispelling Strike
+  range: null
+  raw_description: '**Dispelling Strike** [Free Action]  (__abjuration__, __primal__)
+    **Frequency** once per round; **Trigger** The leydroth hits a creature, object,
+    or spell effect with a Strike; **Effect** The leydroth casts its innate __dispel
+    magic__, targeting one effect on the creature struck.'
+  requirements: null
+  success: null
+  traits:
+  - abjuration
+  - primal
+  trigger: The leydroth hits a creature, object, or spell effect with a Strike
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Any time a leydroth counteracts a spell or item, the spell's caster
+    or the creature holding the item takes 8d6 mental damage (DC 38 basic Will save).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Spell Feedback
+  range: null
+  raw_description: '**Spell Feedback** (__primal__) Any time a leydroth counteracts
+    a spell or item, the spell''s caster or the creature holding the item takes 8d6
+    mental damage (DC 38 basic Will save).'
+  requirements: null
+  success: null
+  traits:
+  - primal
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances:
+- amount: 15
+  type: all (except non-magical)
+ritual_lists: null
+saves:
+  fort: 32
+  fort_misc: null
+  misc: +2 status to all saves vs. magic
+  ref: 30
+  ref_misc: null
+  will: 28
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The leydroth detects the source and school of each source of magic
+    within 60 feet as an imprecise sense.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Magic Sense
+  range: null
+  raw_description: '**Magic Sense** (__primal__) The leydroth detects the source and
+    school of each source of magic within 60 feet as an imprecise sense.'
+  requirements: null
+  success: null
+  traits:
+  - primal
+  trigger: null
+senses:
+- Perception +30
+- darkvision
+- magic sense (imprecise) 60 feet
+size: Large
+skills:
+- bonus: 32
+  misc: null
+  name: 'Acrobatics '
+- bonus: 33
+  misc: null
+  name: 'Athletics '
+- bonus: 28
+  misc: null
+  name: 'Deception '
+- bonus: 28
+  misc: null
+  name: 'Intimidation '
+- bonus: 32
+  misc: null
+  name: 'Stealth '
+- bonus: 30
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 163
+  page_stop: null
+speed:
+- amount: 50
+  type: Land
+spell_lists:
+- dc: 38
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 9
+    spells:
+    - frequency: ×2
+      name: disjunction
+      requirement: null
+  - heightened_level: null
+    level: 7
+    spells:
+    - frequency: at will
+      name: dispel magic
+      requirement: null
+  to_hit: null
+traits:
+- Uncommon
+- NE
+- Large
+- Beast
+type: Creature
+weaknesses: null

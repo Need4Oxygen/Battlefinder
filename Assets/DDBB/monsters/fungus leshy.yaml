@@ -1,0 +1,205 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 2
+  dex_mod: 4
+  int_mod: -1
+  str_mod: 2
+  wis_mod: 2
+ac: 19
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When a fungus leshy dies, a burst of primal energy explodes from its
+    body, restoring 2d8 Hit Points to each fungi creature in a 30-foot emanation.
+    This area is filled with fungi, becoming difficult terrain. If the terrain is
+    not a viable environment for this fungi, they wither after 24 hours.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Verdant Burst
+  range: null
+  raw_description: '**Verdant Burst** (__healing__) When a fungus leshy dies, a burst
+    of primal energy explodes from its body, restoring 2d8 Hit Points to each fungi
+    creature in a 30-foot emanation. This area is filled with fungi, becoming difficult
+    terrain. If the terrain is not a viable environment for this fungi, they wither
+    after 24 hours.'
+  requirements: null
+  success: null
+  traits:
+  - healing
+  trigger: null
+description: 'Fungus leshys guard caves, bogs, and damp, dark places. Their fungus
+  gardens are bizarre by most standards, but fungus leshys are extremely proud of
+  their works.
+
+
+
+
+  **__Recall Knowledge - Fungus__ (__Nature__)**: DC 16'
+hp: 30
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Common
+- Druidic
+- Sylvan
+- speak with plants (fungi only)
+level: 2
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6+2
+    type: bludgeoning
+  name: fist
+  plus_damage: null
+  to_hit: 10
+  traits:
+  - agile
+  - finesse
+name: Fungus Leshy
+perception: 6
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The fungus leshy transforms into a Small giant mushroom or patch of
+    fungi. This ability otherwise uses the effects of __tree shape__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Change Shape
+  range: null
+  raw_description: '**Change Shape**   (__concentrate__, __polymorph__, __primal__,
+    __transmutation__) The fungus leshy transforms into a Small giant mushroom or
+    patch of fungi. This ability otherwise uses the effects of __tree shape__.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - polymorph
+  - primal
+  - transmutation
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: A fungus leshy can unleash a cloud of spores that irritates the eyes
+    and throats of non-fungi creatures in a 15-foot emanation. Each creature must
+    succeed at a DC 16 Fortitude save or take 1 persistent poison damage. A creature
+    has its vision reduced as long as the persistent damage continues and can see
+    only within 20 feet (or 10 feet, on a critical failure).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Spore Cloud
+  range: null
+  raw_description: '**Spore Cloud** [Two Actions]  (__poison__) A fungus leshy can
+    unleash a cloud of spores that irritates the eyes and throats of non-fungi creatures
+    in a 15-foot emanation. Each creature must succeed at a DC 16 Fortitude save or
+    take 1 persistent poison damage. A creature has its vision reduced as long as
+    the persistent damage continues and can see only within 20 feet (or 10 feet, on
+    a critical failure).'
+  requirements: null
+  success: null
+  traits:
+  - poison
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A creature that takes damage from a fungus leshy's spore pod Strike
+    must attempt a saving throw with the same DC and effect as its Spore Cloud ability
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Spores
+  range: null
+  raw_description: '**Spores** A creature that takes damage from a fungus leshy''s
+    spore pod Strike must attempt a saving throw with the same DC and effect as its
+    Spore Cloud ability'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d6+2
+    type: bludgeoning
+  name: spore pod
+  plus_damage:
+  - formula: null
+    type: spores
+  to_hit: 10
+  traits:
+  - range increment 30 feet
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 8
+  fort_misc: null
+  misc: null
+  ref: 10
+  ref_misc: null
+  will: 6
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +6
+- darkvision
+size: Small
+skills:
+- bonus: 6
+  misc: null
+  name: 'Athletics '
+- bonus: 6
+  misc: null
+  name: 'Nature '
+- bonus: 8
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 219
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists:
+- dc: 16
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: speak with plants
+      requirement: null
+  to_hit: null
+traits:
+- N
+- Small
+- Fungus
+- Leshy
+type: Creature
+weaknesses: null

@@ -1,0 +1,222 @@
+ability_mods:
+  cha_mod: 3
+  con_mod: 4
+  dex_mod: 3
+  int_mod: 3
+  str_mod: 6
+  wis_mod: 6
+ac: 27
+ac_special: null
+alignment: CE
+automatic_abilities: null
+description: 'This underground reptilian horror walks on two powerful hind legs. Its
+  forelimbs are armed with sharp curving claws, and its toothy, eyeless, tubular head
+  has three hypersensitive frilled ears that turn toward any sound made in its vicinity.
+  This cruel monster''s true weapon, however, is an amplified version of the sonic
+  cry that it uses to navigate, communicate, and hunt. It communicates with others
+  of its kind through a complex series of clicks, shrieks, and whistles, but it is
+  intelligent enough to understand other languages. Most destrachans understand at
+  least one other language—usually Undercommon—and can often be reasoned with.
+
+
+
+
+  An obligate carnivore, the destrachan relishes fresh meat but won''t hesitate to
+  make a meal of carrion it finds in its path. When traveling in packs, the creatures
+  take great delight in stalking travelers through miles of tunnels before attacking
+  and subduing them, then devouring them alive.
+
+
+
+
+  **__Recall Knowledge - Aberration__ (__Occultism__)**: DC 24'
+hp: 135
+hp_misc: null
+immunities:
+- blinded
+- visual
+items: null
+languages:
+- Destrachan
+- Undercommon
+- can speak only Destrachan
+level: 8
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+10
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 1d8
+    type: sonic
+  to_hit: 20
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 2d8+10
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 20
+  traits:
+  - agile
+name: Destrachan
+perception: 20
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The destrachan emits a harsh sonic cry that deals 9d6 sonic damage
+    (DC 26 basic Reflex save) in either a 60-foot cone or a 30-foot burst. It can't
+    use Destructive Harmonics again for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Destructive Harmonics
+  range: null
+  raw_description: '**Destructive Harmonics** [Two Actions]  (__auditory__, __evocation__,
+    __occult__, __sonic__) The destrachan emits a harsh sonic cry that deals 9d6 sonic
+    damage (DC 26 basic Reflex save) in either a 60-foot cone or a 30-foot burst.
+    It can''t use Destructive Harmonics again for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - auditory
+  - evocation
+  - occult
+  - sonic
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: "The destrachan emits a sonic cry in either a 60-foot cone or a 30-foot\
+    \ burst. This discordant ululation resonates along the nerves and bones of living\
+    \ creatures in the area, manifesting as waves of incapacitating pain washing over\
+    \ the victims. Each living creature in the area must attempt a DC 26 Fortitude\
+    \ save. The destrachan can't use Painful Harmonics again for 1d4 rounds. \n\n\
+    **Critical Success **The creature is unaffected. \n\n**Success **The creature\
+    \ is __sickened 1__ for 1 round. \n\n**Failure **The creature is __deafened__\
+    \ for 3 rounds and __stunned 2__. \n\n**Critical Failure **The creature is deafened\
+    \ for 1 minute and stunned 3."
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Painful Harmonics
+  range: null
+  raw_description: "**Painful Harmonics** [Two Actions]  (__auditory__, __evocation__,\
+    \ __incapacitation__, __occult__) The destrachan emits a sonic cry in either a\
+    \ 60-foot cone or a 30-foot burst. This discordant ululation resonates along the\
+    \ nerves and bones of living creatures in the area, manifesting as waves of incapacitating\
+    \ pain washing over the victims. Each living creature in the area must attempt\
+    \ a DC 26 Fortitude save. The destrachan can't use Painful Harmonics again for\
+    \ 1d4 rounds. \n\n**Critical Success **The creature is unaffected. \n\n**Success\
+    \ **The creature is __sickened 1__ for 1 round. \n\n**Failure **The creature is\
+    \ __deafened__ for 3 rounds and __stunned 2__. \n\n**Critical Failure **The creature\
+    \ is deafened for 1 minute and stunned 3."
+  requirements: null
+  success: null
+  traits:
+  - auditory
+  - evocation
+  - incapacitation
+  - occult
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The destrachan focuses its harmonics against a single item within 60
+    feet that is made of crystal, metal, stone, or wood. The target object takes 7d8
+    sonic damage. If the item is attended, its bearer can attempt a DC 26 basic Reflex
+    save for the item. The destrachan can't use Shattering Harmonics again for 1d4
+    rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Shattering Harmonics
+  range: null
+  raw_description: '**Shattering Harmonics** [Two Actions]  (__evocation__, __occult__,
+    __sonic__) The destrachan focuses its harmonics against a single item within 60
+    feet that is made of crystal, metal, stone, or wood. The target object takes 7d8
+    sonic damage. If the item is attended, its bearer can attempt a DC 26 basic Reflex
+    save for the item. The destrachan can''t use Shattering Harmonics again for 1d4
+    rounds.'
+  requirements: null
+  success: null
+  traits:
+  - evocation
+  - occult
+  - sonic
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 15
+  type: sonic
+ritual_lists: null
+saves:
+  fort: 16
+  fort_misc: null
+  misc: null
+  ref: 13
+  ref_misc: null
+  will: 18
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A destrachan can use its hearing as a __precise sense__ at the listed
+    range.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Echolocation
+  range: null
+  raw_description: '**Echolocation** A destrachan can use its hearing as a __precise
+    sense__ at the listed range.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +20
+- echolocation 120 feet
+- no vision
+size: Large
+skills:
+- bonus: 18
+  misc: null
+  name: 'Athletics '
+- bonus: 15
+  misc: null
+  name: 'Stealth '
+- bonus: 18
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 71
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists: null
+traits:
+- CE
+- Large
+- Aberration
+type: Creature
+weaknesses: null

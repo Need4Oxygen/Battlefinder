@@ -1,0 +1,110 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 0
+  dex_mod: 3
+  int_mod: -4
+  str_mod: -3
+  wis_mod: 3
+ac: 15
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'These omnivorous birds are cunning and opportunistic scavengers. Capable
+  of solving simple puzzles in order to retrieve desired items, ravens gather at the
+  periphery of civilization, raiding it as needed when they are not hunting in the
+  wilds. Whether singularly, in pairs, or as a flock, ravens live off scraps as often
+  as they do carrion or prey. They are also unusually social among their own kind,
+  even alerting other ravens to large carcasses with loud, croaking cries; it is rumored
+  that this extends between flocks as well.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 13'
+hp: 7
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: -1
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6
+    type: piercing
+  name: beak
+  plus_damage: null
+  to_hit: 7
+  traits:
+  - finesse
+name: Raven
+perception: 5
+proactive_abilities: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 2
+  fort_misc: null
+  misc: null
+  ref: 7
+  ref_misc: null
+  will: 5
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A raven can use simple items as tools, such as poking a stick at an
+    opening to tease out a piece of food. They are also quite adept at stealing objects.
+    A raven can't use __Thievery__ to __Palm an Object__, __Disable a Device__, or
+    __Pick a Lock__, but it can use Thievery to __Steal__ light objects that it can
+    carry in its beak or talons or to accomplish other relatively simple tasks.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Cunning
+  range: null
+  raw_description: '**Cunning** A raven can use simple items as tools, such as poking
+    a stick at an opening to tease out a piece of food. They are also quite adept
+    at stealing objects. A raven can''t use __Thievery__ to __Palm an Object__, __Disable
+    a Device__, or __Pick a Lock__, but it can use Thievery to __Steal__ light objects
+    that it can carry in its beak or talons or to accomplish other relatively simple
+    tasks.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +5
+- low-light vision
+size: Tiny
+skills:
+- bonus: 5
+  misc: null
+  name: 'Acrobatics '
+- bonus: 5
+  misc: null
+  name: 'Thievery '
+source:
+- abbr: Bestiary 2
+  page_start: 221
+  page_stop: null
+speed:
+- amount: 10
+  type: Land
+- amount: 40
+  type: fly
+spell_lists: null
+traits:
+- N
+- Tiny
+- Animal
+type: Creature
+weaknesses: null

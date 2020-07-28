@@ -1,0 +1,257 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 0
+  dex_mod: 4
+  int_mod: 1
+  str_mod: 2
+  wis_mod: 4
+ac: 23
+ac_special: null
+alignment: CG
+automatic_abilities: null
+description: 'Anadi elders must make the difficult decision of whether to continue
+  negotiations or to escalate a disagreement to outright conflict.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 24'
+hp: 95
+hp_misc: null
+immunities: null
+items:
+- composite longbow (20 arrows)
+- hide armor
+- shortsword
+languages:
+- Anadi
+- Common
+level: 6
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6+5
+    type: piercing
+  name: shortsword
+  plus_damage: null
+  to_hit: 16
+  traits:
+  - agile
+  - finesse
+  - versatile S
+- action_cost: One Action
+  damage:
+    formula: 2d6+5
+    type: piercing
+  name: fangs
+  plus_damage:
+  - formula: null
+    type: anadi venom
+  to_hit: 16
+  traits:
+  - finesse
+name: Anadi Elder
+perception: 15
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw** DC 22 Fortitude; **Maximum Duration** 6 rounds; **Stage
+    1** 2d6 poison damage and __flat-footed__ (1 round); **Stage 2** 2d6 poison damage,
+    __flat-footed__, and __clumsy 1__ (1 round)'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Anadi Venom
+  range: null
+  raw_description: '**Anadi Venom** (__poison__) **Saving Throw** DC 22 Fortitude;
+    **Maximum Duration** 6 rounds; **Stage 1** 2d6 poison damage and __flat-footed__
+    (1 round); **Stage 2** 2d6 poison damage, __flat-footed__, and __clumsy 1__ (1
+    round)'
+  requirements: null
+  success: null
+  traits:
+  - poison
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The anadi changes into their true form, spider form, or human form.
+    The above statistics assume the anadi is in their true form. While in their human
+    form, the anadi elder can't use their fangs attack and loses their climb Speed.
+    When in spider form, they can't use weapons.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Change Shape
+  range: null
+  raw_description: '**Change Shape**   (__arcane__, __concentrate__, __polymorph__,
+    __transmutation__) The anadi changes into their true form, spider form, or human
+    form. The above statistics assume the anadi is in their true form. While in their
+    human form, the anadi elder can''t use their fangs attack and loses their climb
+    Speed. When in spider form, they can''t use weapons.'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - concentrate
+  - polymorph
+  - transmutation
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: By spending several minutes, an anadi can produce silk to craft items
+    made of cloth. A single anadi can produce enough silk in a day to craft a single
+    garment.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Spin Silk
+  range: null
+  raw_description: '**Spin Silk** (__concentrate__, __exploration__, __manipulate__)
+    By spending several minutes, an anadi can produce silk to craft items made of
+    cloth. A single anadi can produce enough silk in a day to craft a single garment.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - exploration
+  - manipulate
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d8+1
+    type: piercing
+  name: composite longbow
+  plus_damage: null
+  to_hit: 16
+  traits:
+  - deadly 1d10
+  - propulsive
+  - range increment 100 feet
+  - reload 0
+  - volley 30 feet
+rarity: Uncommon
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 10
+  fort_misc: null
+  misc: null
+  ref: 14
+  ref_misc: null
+  will: 16
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +15
+size: Medium
+skills:
+- bonus: 12
+  misc: +14 to Climb in true or spider form
+  name: 'Athletics '
+- bonus: 13
+  misc: +17 weaving
+  name: 'Crafting '
+- bonus: 12
+  misc: null
+  name: 'Deception '
+- bonus: 10
+  misc: null
+  name: 'Diplomacy '
+- bonus: 14
+  misc: null
+  name: 'Nature '
+- bonus: 9
+  misc: null
+  name: 'Society '
+- bonus: 12
+  misc: null
+  name: 'Survival '
+source:
+- abbr: 'Pathfinder #145: Hellknight Hill'
+  page_start: 85
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 25
+  type: climb
+spell_lists:
+- dc: 25
+  misc: ''
+  name: Arcane Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: null
+      name: hypnotic pattern
+      requirement: null
+    - frequency: null
+      name: invisibility sphere
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: null
+      name: blur
+      requirement: null
+    - frequency: null
+      name: invisibility
+      requirement: null
+    - frequency: null
+      name: mirror image
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: color spray
+      requirement: null
+    - frequency: null
+      name: illusory disguise
+      requirement: null
+    - frequency: null
+      name: illusory object
+      requirement: null
+  - heightened_level: 3
+    level: 0
+    spells:
+    - frequency: null
+      name: detect magic
+      requirement: null
+    - frequency: null
+      name: electric arc
+      requirement: null
+    - frequency: null
+      name: ghost sound
+      requirement: null
+    - frequency: null
+      name: mage hand
+      requirement: null
+    - frequency: null
+      name: message
+      requirement: null
+  to_hit: 17
+traits:
+- Uncommon
+- CG
+- Medium
+- Anadi
+- Humanoid
+type: Creature
+weaknesses: null

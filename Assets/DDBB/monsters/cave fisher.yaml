@@ -1,0 +1,160 @@
+ability_mods:
+  cha_mod: -3
+  con_mod: 3
+  dex_mod: 3
+  int_mod: -5
+  str_mod: 4
+  wis_mod: 1
+ac: 18
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Cave fishers lurk in dark corners near the ceilings of caves and underground
+  structures, lying in wait for prey to approach. When it does, the cave fisher excretes
+  thin, tough, and very sticky filaments at its prey with lightning speed to capture
+  it.
+
+
+
+
+  A cave fisher eats just about any live prey smaller than itself, though anything
+  smaller than a rat isn''t much of a meal for it. When a cave fisher captures such
+  a creature, it often leaves the hapless animal entangled, using it as bait to attract
+  larger creatures. Because the adhesive on its filament doesn''t last long, the fisher
+  frequently needs to eat one filament and excrete a new one. The filaments are translucent
+  and can be hard to see when they''re still and in darkness.
+
+
+
+
+  Cave fishers hatch with the ability to excrete filaments, but they molt many times
+  before reaching their adult size of about 7 feet long and 400 pounds. They often
+  leave shed shells in conspicuous locations as decoys.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 16'
+hp: 30
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 2
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d10+6
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 10
+  traits: null
+name: Cave Fisher
+perception: 7
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The cave fisher pulls a creature __grabbed__ by its filament toward
+    itself, even suspending the target vertically if necessary. The cave fisher attempts
+    an __Athletics__ check against the creature's Fortitude DC. On a success, the
+    cave fisher pulls the creature 15 feet closer to it (30 feet closer on a critical
+    success).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Pull Filament
+  range: null
+  raw_description: '**Pull Filament**   The cave fisher pulls a creature __grabbed__
+    by its filament toward itself, even suspending the target vertically if necessary.
+    The cave fisher attempts an __Athletics__ check against the creature''s Fortitude
+    DC. On a success, the cave fisher pulls the creature 15 feet closer to it (30
+    feet closer on a critical success).'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Any creature hit by the cave fisher's sticky filament is __grabbed__.
+    The cave fisher can move while it has a creature grabbed with its filament, but
+    it automatically releases the creature if the cave fisher moves beyond the filament's
+    60-foot length. The cave fisher can use only one filament at a time, and it can
+    sever the filament and release any creature grabbed by it as a free action. The
+    filament can be severed by a Strike that deals at least 10 slashing damage to
+    it. This doesn't deal any damage to the cave fisher itself. The filament has AC
+    17, and its __Escape__ DC is 19.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sticky Filament
+  range: null
+  raw_description: '**Sticky Filament** Any creature hit by the cave fisher''s sticky
+    filament is __grabbed__. The cave fisher can move while it has a creature grabbed
+    with its filament, but it automatically releases the creature if the cave fisher
+    moves beyond the filament''s 60-foot length. The cave fisher can use only one
+    filament at a time, and it can sever the filament and release any creature grabbed
+    by it as a free action. The filament can be severed by a Strike that deals at
+    least 10 slashing damage to it. This doesn''t deal any damage to the cave fisher
+    itself. The filament has AC 17, and its __Escape__ DC is 19.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage: null
+  name: filament
+  plus_damage: null
+  to_hit: 11
+  traits:
+  - range 60 feet
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 9
+  fort_misc: null
+  misc: null
+  ref: 9
+  ref_misc: null
+  will: 7
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +7
+- darkvision
+size: Medium
+skills:
+- bonus: 10
+  misc: null
+  name: 'Athletics '
+- bonus: 9
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 49
+  page_stop: null
+speed:
+- amount: 15
+  type: Land
+- amount: 15
+  type: climb
+spell_lists: null
+traits:
+- N
+- Medium
+- Animal
+type: Creature
+weaknesses: null

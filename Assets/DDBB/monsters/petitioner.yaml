@@ -1,0 +1,249 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 2
+  dex_mod: 2
+  int_mod: 2
+  str_mod: 2
+  wis_mod: 2
+ac: 15
+ac_special: null
+alignment: Any
+automatic_abilities: null
+description: 'When a mortal dies, their soul travels to the __Boneyard__ in the Outer
+  Planes where they are judged by __Pharasma__, the goddess of the dead. Once they
+  have been judged, their soul is sent on to their final reward or punishment in the
+  afterlife, and in the process is transformed into a creature known as a petitioner.
+  This process grants the soul a new body, one whose shape is the result of the prevailing
+  philosophical forces of the plane to which it is sent. The petitioner''s memories
+  from their life are typically wiped nearly clean, allowing them to retain only a
+  few hazy fragments akin to half-remembered dreams. Regardless of the petitioner''s
+  size, power, or nature in life, they''re a Medium creature in their afterlife.
+
+
+
+
+  Existence as a petitioner can last for eons, but this state is not necessarily eternal.
+  Deities, powerful denizens of the Great Beyond, or even the outer planes themselves
+  can further change the petitioner''s nature by transforming them into raw quintessence,
+  spiritual essence that is then used to expand a plane''s physical manifestation,
+  or by transforming the petitioner into a new form of supernatural life such as a
+  __celestial__, __monitor__, or __fiend__. Should a petitioner die, their body breaks
+  down in a process akin to decay, their nature reverting back to the quintessence
+  or elements that make up their plane. This represents the true end of a soul''s
+  journey: their associated life essence travels back to the heart of the Great Beyond
+  to be recycled into the __Positive Energy plane__, fueling the creation of entirely
+  new souls.'
+hp: 22
+hp_misc: null
+immunities: null
+items: null
+languages:
+- see Planar Incarnation
+level: 1
+melee: null
+name: Petitioner
+perception: 7
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: "All petitioners are formed from and personify the nature of the plane\
+    \ on which they manifest, and their statistics are adjusted as summarized below.\
+    \ They also gain any trait associated with creatures from their plane. \n\n**__Abaddon__\
+    \ (the Hunted)** The hunted appear as Medium sized versions of themselves from\
+    \ their prior lives, and they exist to be pursued and consumed by daemons; **Alignment**\
+    \ NE; **Language** __Daemonic__; **Additional Ability** __fast healing 5__; **Melee**\
+    \ fist +7, **Damage** 1d8+2 bludgeoning \n\n**__Abyss__ (the Larvae)** The larvae\
+    \ appear as maggot-like grubs with the face the petitioners had in life; **Alignment**\
+    \ CE; **Language** __Abyssal__; **Additional Ability** immune to __disease__ and\
+    \ __poison__; **Melee** jaws +7, **Damage** 1d8+2 piercing \n\n**__Astral Plane__\
+    \ (the Untethered)** The untethered appear as astrally projected versions of their\
+    \ mortal forms, yet they lack a silver cord; **Alignment** any; **Language** any\
+    \ one spoken in life (such as __Common__); **Additional Ability** fly Speed 20\
+    \ feet; **Melee** fist +7, **Damage** 1d8+2 bludgeoning \n\n**__Axis__ (the Unmade)**\
+    \ The unmade appear as parchment-skinned humanoids covered in lines of close black\
+    \ script; **Alignment** LN; **Language** __Utopian__; **Additional Ability** immune\
+    \ to __emotion__ and __fear__; **Melee** fist +7, **Damage** 1d8+2 bludgeoning\
+    \ \n\n**__Boneyard__ (the Dead)** The dead appear as animated skeletons of the\
+    \ type of creature they were when they were alive; **Alignment** N; **Language**\
+    \ __Requian__; **Additional Ability** resist piercing and slashing 3; Melee claw\
+    \ +7, Damage 1d8+2 slashing \n\n**Dead Vault (the Caged)** The caged are sent\
+    \ to __Rovagug's__ prison plane, the Dead Vault; they appear as chained versions\
+    \ of their mortal bodies, save that their faces are hideous insectile visages;\
+    \ **Alignment** CE; **Language** __Abyssal__; **Additional Ability** __Rend__\
+    \  bite; **Melee** bite +7, **Damage** 1d8+2 piercing \n\n**__Dimension of Dreams__\
+    \ (the Dreamers)** The dreamers appear as their ideal appearance, age, and gender\
+    \ from their mortal bodies; **Alignment** any; **Language** __Aklo__; **Additional\
+    \ Ability** +1 circumstance bonus on all saving throws; **Melee** fist +7, **Damage**\
+    \ 1d8+2 bludgeoning \n\n**__Elysium__ (the Chosen)** The chosen appear as idealized\
+    \ versions of their mortal selves with glowing eyes; **Alignment** CG; **Language**\
+    \ __Celestial__; **Additional Ability** immune to __blindness__ and __dazzled__;\
+    \ **Melee** fist +7, **Damage** 1d8+2 bludgeoning \n\n**__Ethereal Plane__ (the\
+    \ Terrorized)** The terrorized appear as sickly, haunted-looking versions of their\
+    \ mortal selves; **Alignment** any; **Language** any one spoken in life (such\
+    \ as __Common__); **Additional Ability** immune to bleed and __death__ effects;\
+    \ **Melee** fist +7, **Damage** 1d8+2 bludgeoning \n\n**__Heaven__ (the Elect)**\
+    \ The elect have golden halos and ghostly wings, but they otherwise appear as\
+    \ their mortal forms; **Alignment** LG; **Language** __Celestial__; **Additional\
+    \ Ability** fly Speed 20 feet; **Melee** wing +7, **Damage** 1d8+2 bludgeoning\
+    \ \n\n**__Hell__ (the Damned)** The damned look like terribly scarred or mutilated\
+    \ versions of their mortal selves; **Alignment** LE; **Language** __Infernal__;\
+    \ **Additional Ability** immune to fire; **Melee** jaws +7, **Damage** 1d8+2 piercing\
+    \ \n\n**__Maelstrom__ (the Shapeless)** The shapeless appear as half-melted reflections\
+    \ of their former mortal selves; **Alignment** CN; **Language** __Protean__; **Additional\
+    \ Ability** immune to critical hits and precision; **Melee** fist +7, **Damage**\
+    \ 1d8+2 bludgeoning \n\n**Material Plane (the Remnants)** The remnants are among\
+    \ the rarest of petitioners; they appear as plain, bland versions of the ancestry\
+    \ of their mortal lives; **Alignment** any; **Language** any one spoken in life\
+    \ (such as __Common__); **Additional Ability** __ferocity__; **Melee** fist +7,\
+    \ **Damage** 1d8+2 bludgeoning \n\n**__Nirvana__ (the Cleansed)** The cleansed\
+    \ take on animal forms that match their personalities in life; **Alignment** NG;\
+    \ **Language** __Celestial__; **Additional Ability** speed 35 feet; **Melee**\
+    \ claw +7, **Damage** 1d8+2 slashing \n\n**__Plane of Air__ (the Air Pneuma)**\
+    \ Air pneuma appear as versions of their mortal selves composed of air; **Alignment**\
+    \ any; **Language** __Auran__; **Additional Ability** fly Speed 20 feet; **Melee**\
+    \ gust +7 (air), **Damage** 1d8+2 bludgeoning \n\n**__Plane of Earth__ (the Earth\
+    \ Pneuma)** Earth pneuma appear as versions of their mortal selves built of earth\
+    \ or stone; **Alignment** any; **Language** __Terran__; **Additional Ability**\
+    \ burrow Speed 20 feet; **Melee** fist +7 (earth), **Damage** 1d8+2 bludgeoning\
+    \ \n\n**__Plane of Fire__ (the Fire Pneuma)** Fire pneuma appear as versions of\
+    \ their mortal selves shaped from flame; **Alignment** any; **Language** __Ignan__;\
+    \ **Additional Ability** immunity to fire; **Melee** cinder +7 (fire), **Damage**\
+    \ 1d8+2 fire \n\n**__Plane of Water__ (the Water Pneuma)** Water pneuma appear\
+    \ as versions of their mortal selves formed of flowing water; **Alignment** any;\
+    \ **Language** __Aquan__; **Additional Ability** __amphibious__, swim Speed 20\
+    \ feet; **Melee** current +7 (water), **Damage** 1d8+2 bludgeoning \n\n**__Positive\
+    \ Energy Plane__ (the Enlightened)** The enlightened appear as diaphanous, radiant\
+    \ versions of their mortal selves; **Alignment** any good; **Language** __Jyoti__;\
+    \ **Additional Ability** __fast healing 5__; **Melee** glowing touch +7, **Damage**\
+    \ 1d8+2 positive \n\n**__Shadow Plane__ (the Mutilated)** The mutilated appear\
+    \ as they did in their mortal lives, yet are covered in wounds or partially adorned\
+    \ or wrapped in chains; **Alignment** any evil; **Language** __Shadowtongue__;\
+    \ **Additional Ability** immune to bleed and __fear__; **Melee** chain +7, **Damage**\
+    \ 1d8+2 bludgeoning"
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Planar Incarnation
+  range: null
+  raw_description: "**Planar Incarnation** All petitioners are formed from and personify\
+    \ the nature of the plane on which they manifest, and their statistics are adjusted\
+    \ as summarized below. They also gain any trait associated with creatures from\
+    \ their plane. \n\n**__Abaddon__ (the Hunted)** The hunted appear as Medium sized\
+    \ versions of themselves from their prior lives, and they exist to be pursued\
+    \ and consumed by daemons; **Alignment** NE; **Language** __Daemonic__; **Additional\
+    \ Ability** __fast healing 5__; **Melee** fist +7, **Damage** 1d8+2 bludgeoning\
+    \ \n\n**__Abyss__ (the Larvae)** The larvae appear as maggot-like grubs with the\
+    \ face the petitioners had in life; **Alignment** CE; **Language** __Abyssal__;\
+    \ **Additional Ability** immune to __disease__ and __poison__; **Melee** jaws\
+    \ +7, **Damage** 1d8+2 piercing \n\n**__Astral Plane__ (the Untethered)** The\
+    \ untethered appear as astrally projected versions of their mortal forms, yet\
+    \ they lack a silver cord; **Alignment** any; **Language** any one spoken in life\
+    \ (such as __Common__); **Additional Ability** fly Speed 20 feet; **Melee** fist\
+    \ +7, **Damage** 1d8+2 bludgeoning \n\n**__Axis__ (the Unmade)** The unmade appear\
+    \ as parchment-skinned humanoids covered in lines of close black script; **Alignment**\
+    \ LN; **Language** __Utopian__; **Additional Ability** immune to __emotion__ and\
+    \ __fear__; **Melee** fist +7, **Damage** 1d8+2 bludgeoning \n\n**__Boneyard__\
+    \ (the Dead)** The dead appear as animated skeletons of the type of creature they\
+    \ were when they were alive; **Alignment** N; **Language** __Requian__; **Additional\
+    \ Ability** resist piercing and slashing 3; Melee claw +7, Damage 1d8+2 slashing\
+    \ \n\n**Dead Vault (the Caged)** The caged are sent to __Rovagug's__ prison plane,\
+    \ the Dead Vault; they appear as chained versions of their mortal bodies, save\
+    \ that their faces are hideous insectile visages; **Alignment** CE; **Language**\
+    \ __Abyssal__; **Additional Ability** __Rend__  bite; **Melee** bite +7, **Damage**\
+    \ 1d8+2 piercing \n\n**__Dimension of Dreams__ (the Dreamers)** The dreamers appear\
+    \ as their ideal appearance, age, and gender from their mortal bodies; **Alignment**\
+    \ any; **Language** __Aklo__; **Additional Ability** +1 circumstance bonus on\
+    \ all saving throws; **Melee** fist +7, **Damage** 1d8+2 bludgeoning \n\n**__Elysium__\
+    \ (the Chosen)** The chosen appear as idealized versions of their mortal selves\
+    \ with glowing eyes; **Alignment** CG; **Language** __Celestial__; **Additional\
+    \ Ability** immune to __blindness__ and __dazzled__; **Melee** fist +7, **Damage**\
+    \ 1d8+2 bludgeoning \n\n**__Ethereal Plane__ (the Terrorized)** The terrorized\
+    \ appear as sickly, haunted-looking versions of their mortal selves; **Alignment**\
+    \ any; **Language** any one spoken in life (such as __Common__); **Additional\
+    \ Ability** immune to bleed and __death__ effects; **Melee** fist +7, **Damage**\
+    \ 1d8+2 bludgeoning \n\n**__Heaven__ (the Elect)** The elect have golden halos\
+    \ and ghostly wings, but they otherwise appear as their mortal forms; **Alignment**\
+    \ LG; **Language** __Celestial__; **Additional Ability** fly Speed 20 feet; **Melee**\
+    \ wing +7, **Damage** 1d8+2 bludgeoning \n\n**__Hell__ (the Damned)** The damned\
+    \ look like terribly scarred or mutilated versions of their mortal selves; **Alignment**\
+    \ LE; **Language** __Infernal__; **Additional Ability** immune to fire; **Melee**\
+    \ jaws +7, **Damage** 1d8+2 piercing \n\n**__Maelstrom__ (the Shapeless)** The\
+    \ shapeless appear as half-melted reflections of their former mortal selves; **Alignment**\
+    \ CN; **Language** __Protean__; **Additional Ability** immune to critical hits\
+    \ and precision; **Melee** fist +7, **Damage** 1d8+2 bludgeoning \n\n**Material\
+    \ Plane (the Remnants)** The remnants are among the rarest of petitioners; they\
+    \ appear as plain, bland versions of the ancestry of their mortal lives; **Alignment**\
+    \ any; **Language** any one spoken in life (such as __Common__); **Additional\
+    \ Ability** __ferocity__; **Melee** fist +7, **Damage** 1d8+2 bludgeoning \n\n\
+    **__Nirvana__ (the Cleansed)** The cleansed take on animal forms that match their\
+    \ personalities in life; **Alignment** NG; **Language** __Celestial__; **Additional\
+    \ Ability** speed 35 feet; **Melee** claw +7, **Damage** 1d8+2 slashing \n\n**__Plane\
+    \ of Air__ (the Air Pneuma)** Air pneuma appear as versions of their mortal selves\
+    \ composed of air; **Alignment** any; **Language** __Auran__; **Additional Ability**\
+    \ fly Speed 20 feet; **Melee** gust +7 (air), **Damage** 1d8+2 bludgeoning \n\n\
+    **__Plane of Earth__ (the Earth Pneuma)** Earth pneuma appear as versions of their\
+    \ mortal selves built of earth or stone; **Alignment** any; **Language** __Terran__;\
+    \ **Additional Ability** burrow Speed 20 feet; **Melee** fist +7 (earth), **Damage**\
+    \ 1d8+2 bludgeoning \n\n**__Plane of Fire__ (the Fire Pneuma)** Fire pneuma appear\
+    \ as versions of their mortal selves shaped from flame; **Alignment** any; **Language**\
+    \ __Ignan__; **Additional Ability** immunity to fire; **Melee** cinder +7 (fire),\
+    \ **Damage** 1d8+2 fire \n\n**__Plane of Water__ (the Water Pneuma)** Water pneuma\
+    \ appear as versions of their mortal selves formed of flowing water; **Alignment**\
+    \ any; **Language** __Aquan__; **Additional Ability** __amphibious__, swim Speed\
+    \ 20 feet; **Melee** current +7 (water), **Damage** 1d8+2 bludgeoning \n\n**__Positive\
+    \ Energy Plane__ (the Enlightened)** The enlightened appear as diaphanous, radiant\
+    \ versions of their mortal selves; **Alignment** any good; **Language** __Jyoti__;\
+    \ **Additional Ability** __fast healing 5__; **Melee** glowing touch +7, **Damage**\
+    \ 1d8+2 positive \n\n**__Shadow Plane__ (the Mutilated)** The mutilated appear\
+    \ as they did in their mortal lives, yet are covered in wounds or partially adorned\
+    \ or wrapped in chains; **Alignment** any evil; **Language** __Shadowtongue__;\
+    \ **Additional Ability** immune to bleed and __fear__; **Melee** chain +7, **Damage**\
+    \ 1d8+2 bludgeoning"
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 7
+  fort_misc: null
+  misc: null
+  ref: 7
+  ref_misc: null
+  will: 7
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +7
+- darkvision
+size: Medium
+skills:
+- bonus: 7
+  misc: null
+  name: 'Athletics '
+- bonus: 7
+  misc: null
+  name: 'Planar Lore '
+source:
+- abbr: Bestiary 2
+  page_start: 198
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists: null
+traits:
+- Any
+- Medium
+- Petitioner
+type: Creature
+weaknesses: null

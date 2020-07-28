@@ -1,0 +1,257 @@
+ability_mods:
+  cha_mod: 5
+  con_mod: 4
+  dex_mod: 4
+  int_mod: 4
+  str_mod: 6
+  wis_mod: 5
+ac: 30
+ac_special: null
+alignment: NG
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 20 feet. Allies in the movanic deva's aura gain a +1 status bonus to
+    all saving throws, resistance 10 to positive and negative damage, and are unharmed
+    by the effects of a plane's __positive__ and __negative__ traits. Animals in the
+    aura of 12th level or lower don't attack the movanic deva or the deva's allies
+    unless they are controlled or otherwise forced to attack.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Aura of Vitality
+  range: null
+  raw_description: '**Aura of Vitality** (__abjuration__, __aura__, __divine__) 20
+    feet. Allies in the movanic deva''s aura gain a +1 status bonus to all saving
+    throws, resistance 10 to positive and negative damage, and are unharmed by the
+    effects of a plane''s __positive__ and __negative__ traits. Animals in the aura
+    of 12th level or lower don''t attack the movanic deva or the deva''s allies unless
+    they are controlled or otherwise forced to attack.'
+  requirements: null
+  success: null
+  traits:
+  - abjuration
+  - aura
+  - divine
+  trigger: null
+description: 'Movanic devas are stewards of the flow of good creatures'' souls through
+  the cycle of life and death, from the point a creature is born to the day it dies.
+  These angels arise from the souls of stalwart nurturers and protectors, and share
+  a specific connection with a creature''s vital essence—its life force. Movanic devas
+  are most concerned with guiding and protecting good creatures during their mortal
+  lives, so once a soul has passed into the River of Souls, the movanic deva leaves
+  its protection to the soul angels, or monadic devas. As part of their stewardship
+  over good creatures, movanic devas can waken within animals a level of sapience
+  to allow them to become kindly and benevolent as well, thus increasing the flow
+  of goodness into the afterlife. They also spend time patrolling the __Positive Energy
+  Plane__ and __Negative Energy Plane__, seeking to contain significant threats to
+  life.
+
+
+
+
+  **__Recall Knowledge - Celestial__ (__Religion__)**: DC 27'
+hp: 195
+hp_misc: null
+immunities:
+- negative
+items:
+- +1 striking bastard sword
+languages:
+- Celestial
+- Draconic
+- Infernal
+- tongues
+level: 10
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+9
+    type: slashing
+  name: flaming bastard sword
+  plus_damage:
+  - formula: 1d6
+    type: fire and 1d6 good
+  to_hit: 23
+  traits:
+  - good
+  - magical
+  - two-hand d12
+name: Movanic Deva
+perception: 22
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The movanic deva attempts to unravel unwelcome magic effects on allies within
+    its aura of vitality to protect them from malevolent forces. The movanic deva
+    attempts a counteract check against as many spell effects affecting allies in
+    the area as it wishes with a +19 counteract modifier and a counteract level of
+    4, rolling once for the selected effects.
+  effects: null
+  failure: null
+  frequency: once per day
+  full_description: null
+  generic_description: null
+  name: Dispelling Field
+  range: null
+  raw_description: '**Dispelling Field** [Two Actions]  (__divine__, __transmutation__)
+    **Frequency **once per day; **Effect **The movanic deva attempts to unravel unwelcome
+    magic effects on allies within its aura of vitality to protect them from malevolent
+    forces. The movanic deva attempts a counteract check against as many spell effects
+    affecting allies in the area as it wishes with a +19 counteract modifier and a
+    counteract level of 4, rolling once for the selected effects.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - transmutation
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When a movanic deva wields a weapon, that weapon gains the effect of
+    a __flaming__ rune.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Flaming Armaments
+  range: null
+  raw_description: '**Flaming Armaments** (__divine__, __transmutation__) When a movanic
+    deva wields a weapon, that weapon gains the effect of a __flaming__ rune.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - transmutation
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 10
+  type: evil
+ritual_lists:
+- dc: 29
+  misc: null
+  name: Rituals
+  spell_groups:
+  - heightened_level: null
+    level: 6
+    spells:
+    - frequency: null
+      name: awaken animal
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: angelic messenger
+      requirement: null
+  to_hit: null
+saves:
+  fort: 21
+  fort_misc: null
+  misc: +1 to all saves vs. magic
+  ref: 17
+  ref_misc: null
+  will: 19
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +22
+- darkvision
+size: Medium
+skills:
+- bonus: 20
+  misc: null
+  name: 'Athletics '
+- bonus: 22
+  misc: null
+  name: 'Diplomacy '
+- bonus: 22
+  misc: null
+  name: 'Intimidation '
+- bonus: 22
+  misc: null
+  name: 'Nature '
+- bonus: 19
+  misc: null
+  name: 'Religion '
+- bonus: 17
+  misc: null
+  name: 'Stealth '
+- bonus: 17
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 14
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+- amount: 40
+  type: fly
+spell_lists:
+- dc: 29
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: null
+      name: divine wrath
+      requirement: null
+    - frequency: null
+      name: remove curse
+      requirement: null
+    - frequency: null
+      name: remove disease
+      requirement: null
+    - frequency: null
+      name: remove fear
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: create food
+      requirement: null
+    - frequency: ×3
+      name: heal
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: at will, self only
+      name: invisibility
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: at will, evil only
+      name: detect alignment
+      requirement: null
+  - heightened_level: 5
+    level: -1
+    spells:
+    - frequency: null
+      name: tongues
+      requirement: null
+  to_hit: null
+traits:
+- NG
+- Medium
+- Angel
+- Celestial
+type: Creature
+weaknesses: null

@@ -1,0 +1,236 @@
+ability_mods:
+  cha_mod: 5
+  con_mod: 2
+  dex_mod: 4
+  int_mod: 3
+  str_mod: 1
+  wis_mod: -1
+ac: 22
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A dero magister takes 10 damage for every hour they're exposed to sunlight.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Vulnerable to Sunlight
+  range: null
+  raw_description: '**Vulnerable to Sunlight** A dero magister takes 10 damage for
+    every hour they''re exposed to sunlight.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Dero magisters are leaders among dero society. They perform the bulk
+  of the cruel operations and memory-altering procedures inflicted upon their victims.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 22'
+hp: 65
+hp_misc: null
+immunities:
+- confusion
+items:
+- aklys
+languages:
+- Aklo
+- Undercommon
+level: 5
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6+3
+    type: bludgeoning
+  name: aklys
+  plus_damage: null
+  to_hit: 10
+  traits:
+  - trip
+name: Dero Magister
+perception: 8
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The magister focuses their gaze on a creature they can see within 30 feet.
+    The target is __dazzled__ for 1 round and must succeed at a DC 24 Will saving
+    throw or be __confused__ for 1 round.
+  effects: null
+  failure: null
+  frequency: once per round
+  full_description: null
+  generic_description: null
+  name: Cytillesh Stare
+  range: null
+  raw_description: '**Cytillesh Stare**   (__concentrate__, __incapacitation__, __mental__,
+    __visual__) **Frequency** once per round; **Effect** The magister focuses their
+    gaze on a creature they can see within 30 feet. The target is __dazzled__ for
+    1 round and must succeed at a DC 24 Will saving throw or be __confused__ for 1
+    round.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - incapacitation
+  - mental
+  - visual
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d6+3
+    type: bludgeoning
+  name: aklys
+  plus_damage: null
+  to_hit: 13
+  traits:
+  - ranged trip
+  - tethered
+  - thrown 20 feet
+rarity: Uncommon
+resistances:
+- amount: null
+  type: vulnerable to sunlight
+ritual_lists: null
+saves:
+  fort: 10
+  fort_misc: null
+  misc: null
+  ref: 13
+  ref_misc: null
+  will: 10
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +8
+- darkvision
+size: Small
+skills:
+- bonus: 12
+  misc: null
+  name: 'Crafting '
+- bonus: 8
+  misc: null
+  name: 'Medicine '
+- bonus: 12
+  misc: null
+  name: 'Occultism '
+- bonus: 11
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 85
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+spell_lists:
+- dc: 24
+  misc: null
+  name: Occult Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: modify memory
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: at will
+      name: darkness
+      requirement: null
+    - frequency: null
+      name: sound burst
+      requirement: null
+  - heightened_level: 1
+    level: 0
+    spells:
+    - frequency: null
+      name: daze
+      requirement: null
+    - frequency: null
+      name: ghost sound
+      requirement: null
+  to_hit: null
+- dc: 24
+  misc: null
+  name: Occult Spontaneous Spells
+  spell_groups:
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: null
+      name: blindness
+      requirement: null
+    - frequency: 3 slots
+      name: vampiric touch
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: null
+      name: hideous laughter
+      requirement: null
+    - frequency: null
+      name: paranoia
+      requirement: null
+    - frequency: null
+      name: spectral hand
+      requirement: null
+    - frequency: 4 slots
+      name: touch of idiocy
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: grim tendrils
+      requirement: null
+    - frequency: null
+      name: magic missile
+      requirement: null
+    - frequency: null
+      name: phantom pain
+      requirement: null
+    - frequency: 4 slots
+      name: soothe
+      requirement: null
+  - heightened_level: 3
+    level: 0
+    spells:
+    - frequency: null
+      name: chill touch
+      requirement: null
+    - frequency: null
+      name: dancing lights
+      requirement: null
+    - frequency: null
+      name: detect magic
+      requirement: null
+    - frequency: null
+      name: forbidding ward
+      requirement: null
+    - frequency: null
+      name: message
+      requirement: null
+  to_hit: null
+traits:
+- Uncommon
+- CE
+- Small
+- Dero
+- Humanoid
+type: Creature
+weaknesses: null

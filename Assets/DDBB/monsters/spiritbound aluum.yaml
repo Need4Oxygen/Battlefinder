@@ -1,0 +1,285 @@
+ability_mods:
+  cha_mod: -2
+  con_mod: 6
+  dex_mod: 3
+  int_mod: -5
+  str_mod: 9
+  wis_mod: 4
+ac: 39
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+description: 'Whereas most aluums are animated by the souls of volunteers loyal to
+  Katapesh, the Pactmasters created a handful of more capable (and deadly) aluums
+  powered by the souls of a dozen or more dangerous criminals. These spiritbound aluums
+  are rarely used as peacekeepers, instead serving as assassins, elite bodyguards,
+  or riot control during times of martial law.
+
+
+
+
+  A spiritbound aluum has a dull blue crystalline focus that stores constituent souls,
+  surrounded by a host of smaller gems used for trapping souls the Pactmasters wish
+  to deny from entering the Great Beyond. Spiritbound aluums rarely use this soul-binding
+  ability except when instructed by their masters. However, the murderous or embittered
+  souls within the aluum sometimes exert control and willfully consume a departing
+  soul either out of malice or to incorporate it into the construct''s core. If not
+  relieved of its trapped souls in a timely manner, a spiritbound aluum can develop
+  enough will to overcome its masters'' orders and even awaken to full sentience.
+  These rogue aluums typically lose the __mindless__ trait, are evil, have an Intelligence
+  modifier of -2 or higher, and gain several skills with bonuses ranging from +25
+  to +32.
+
+
+
+
+  **__Recall Knowledge - Construct__ (__Arcana__, __Crafting__)**: DC 40'
+hp: 255
+hp_misc: null
+immunities:
+- bleed
+- disease
+- death effects
+- doomed
+- drained
+- fatigued
+- magic (see below)
+- mental
+- nonlethal attacks
+- paralyzed
+- poison
+- sickened
+- unconscious
+items: null
+languages: null
+level: 16
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d10+17
+    type: bludgeoning
+  name: fist
+  plus_damage:
+  - formula: null
+    type: paralyzing force
+  to_hit: 33
+  traits:
+  - magical
+name: Spiritbound Aluum
+perception: 28
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Spiritbound aluum are immune to spells and magical abilities, with
+    two exceptions. A __negative__ spell or magical ability grants a spiritbound aluum
+    the __quickened__ condition until the end of its next turn instead of its normal
+    effects. A __positive__ spell or ability makes a spiritbound aluum __slowed 1__
+    until the end of its next turn instead of its normal effects.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Aluum Antimagic
+  range: null
+  raw_description: '**Aluum Antimagic** Spiritbound aluum are immune to spells and
+    magical abilities, with two exceptions. A __negative__ spell or magical ability
+    grants a spiritbound aluum the __quickened__ condition until the end of its next
+    turn instead of its normal effects. A __positive__ spell or ability makes a spiritbound
+    aluum __slowed 1__ until the end of its next turn instead of its normal effects.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The spiritbound aluum has bound a soul using its __bind soul__ innate spell
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Obliteration Beam
+  range: null
+  raw_description: '**Obliteration Beam** [Two Actions]  (__arcane__, __evocation__,
+    __force__) **Requirements** The spiritbound aluum has bound a soul using its __bind
+    soul__ innate spell; **Effect** The spiritbound aluum transforms the captured
+    soul''s essence into raw magical energy, channeling the spirit into a beam that
+    deals 20d6 force damage in a 30-foot line (DC 38 basic Reflex save). The remaining
+    fragments of the captured soul are released to the Great Beyond. The spiritbound
+    aluum can''t use Obliteration Beam again for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - evocation
+  - force
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A creature damaged by the spiritbound aluum's fist Strike must succeed
+    at a DC 35 Fortitude save or become __paralyzed__ for 1 round. On a critical failure,
+    the creature is paralyzed for 1d4 minutes and falls __prone__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Paralyzing Force
+  range: null
+  raw_description: '**Paralyzing Force** (__arcane__, __incapacitation__, __necromancy__)
+    A creature damaged by the spiritbound aluum''s fist Strike must succeed at a DC
+    35 Fortitude save or become __paralyzed__ for 1 round. On a critical failure,
+    the creature is paralyzed for 1d4 minutes and falls __prone__.'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - incapacitation
+  - necromancy
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When a spiritbound aluum uses its __bind soul__ innate spell, it binds
+    the soul into its central crystal instead of the normal material component. The
+    crystal can hold up to 60 souls. When encountered, a spiritbound aluum's crystal
+    typically contains 1d6 souls.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Soul Binder
+  range: null
+  raw_description: '**Soul Binder** When a spiritbound aluum uses its __bind soul__
+    innate spell, it binds the soul into its central crystal instead of the normal
+    material component. The crystal can hold up to 60 souls. When encountered, a spiritbound
+    aluum''s crystal typically contains 1d6 souls.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The spiritbound aluum emits a keening wail in a 15-foot cone that deals
+    16d6 sonic damage (DC 27 basic Fortitude save). A creature that fails its save
+    is __stunned 1__, or stunned 3 on a critical failure. The aluum can't use Soul
+    Shriek again for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Soul Shriek
+  range: null
+  raw_description: '**Soul Shriek** [Two Actions]  (__arcane__, __auditory__, __evocation__,
+    __mental__, __sonic__) The spiritbound aluum emits a keening wail in a 15-foot
+    cone that deals 16d6 sonic damage (DC 27 basic Fortitude save). A creature that
+    fails its save is __stunned 1__, or stunned 3 on a critical failure. The aluum
+    can''t use Soul Shriek again for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - auditory
+  - evocation
+  - mental
+  - sonic
+  trigger: null
+ranged: null
+rarity: Rare
+resistances:
+- amount: 15
+  type: physical (except adamantine)
+ritual_lists: null
+saves:
+  fort: 30
+  fort_misc: null
+  misc: null
+  ref: 25
+  ref_misc: null
+  will: 28
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +28
+- darkvision
+size: Large
+skills:
+- bonus: 33
+  misc: null
+  name: 'Athletics '
+source:
+- abbr: 'Pathfinder #149: Against the Scarlet Triad'
+  page_start: 83
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 25
+  type: fly
+spell_lists:
+- dc: 38
+  misc: null
+  name: Arcane Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 9
+    spells:
+    - frequency: x3
+      name: bind soul
+      requirement: null
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: null
+      name: locate
+      requirement: null
+  to_hit: null
+traits:
+- Rare
+- N
+- Large
+- Construct
+- Mindless
+- Soulbound
+type: Creature
+weaknesses: null

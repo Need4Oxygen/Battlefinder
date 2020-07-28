@@ -1,0 +1,187 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 2
+  dex_mod: 3
+  int_mod: -4
+  str_mod: 3
+  wis_mod: 2
+ac: 18
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: DC 17
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Buck
+  range: null
+  raw_description: '**__Buck__ [Reaction]** DC 17'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'With the proud bearing of a great raptor and the magnificence of a powerful
+  horse, hippogriffs are thought to be an accidental fusion of creatures or perhaps
+  the creation of a flesh-warping wizard with a keen aesthetic sense. Regardless of
+  their original source, these animals are now a common sight in the skies above their
+  favored plains or hill country.
+
+
+
+
+  Hippogriffs bear the wings, forelegs, and head of a bird of prey, with feather coloration
+  similar to that of a hawk or eagle, though some breeders have managed to produce
+  specimens with stark-white or coal-black feathers. Their torso, hindquarters, and
+  tail resemble those of a horse and usually are colored bay, chestnut, or gray, with
+  some coats bearing black, pinto, or even palomino coloration.
+
+
+
+
+  Hippogriffs are similar in size to large horses. Much like their equine cousins,
+  hippogriffs often have to keep wary eyes on the skies above them, as both are preferred
+  meals for hungry griffons and wyverns. Only hippogriffs'' superior speed helps protect
+  them from these predators.
+
+
+
+
+  Hippogriffs are exceptionally territorial and fiercely protect the lands under their
+  domain. They typically favor sweeping grasslands, rolling hills, and prairies. Exceptionally
+  hardy hippogriffs make their homes nestled into niches on canyon walls, from which
+  they comb the rocky deserts for coyotes, deer, and the occasional humanoid. Hippogriffs
+  prefer mammalian prey, but they graze after every meal to aid in digestion.
+
+
+
+
+  Since hippogriff hunting habits can be dangerous to both ranchers and their livestock,
+  such communities often set bounties on hippogriffs. As a result, preserved hippogriffs
+  frequently decorate frontier taverns and remote outposts alongside the taxidermic
+  remains of deer, elk, and bears.
+
+
+
+
+  However, other communities train hippogriffs from hatching to be ridden by elite
+  soldiers in combat— the most notable among these groups in the Inner Sea region
+  is the Sable Company Mercenaries in the city-state of Korvosa. Attempts are sometimes
+  made to train adult hippogriffs in the same manner, but this often proves far more
+  difficult. Hippogriff riders must use special saddles and combat techniques that
+  allow them to act in concert with their mount, fighting effectively while avoiding
+  interfering with the movement of their companion''s wings.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 16'
+hp: 32
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 2
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d10+3
+    type: piercing
+  name: beak
+  plus_damage: null
+  to_hit: 9
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 1d6+3
+    type: slashing
+  name: talon
+  plus_damage: null
+  to_hit: 9
+  traits:
+  - agile
+- action_cost: One Action
+  damage:
+    formula: 1d6+3
+    type: bludgeoning
+  name: wing
+  plus_damage: null
+  to_hit: 9
+  traits:
+  - reach 10 feet
+name: Hippogriff
+perception: 8
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The hippogriff __Flies__ up to its fly speed and makes two talon Strikes
+    at any point during that movement. Each Strike must target a different creature.
+    The attacks take the normal multiple attack penalty.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Flying Strafe
+  range: null
+  raw_description: '**Flying Strafe** [Two Actions]  The hippogriff __Flies__ up to
+    its fly speed and makes two talon Strikes at any point during that movement. Each
+    Strike must target a different creature. The attacks take the normal multiple
+    attack penalty.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 8
+  fort_misc: null
+  misc: null
+  ref: 9
+  ref_misc: null
+  will: 6
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +8
+- darkvision
+- scent (imprecise) 30 feet
+size: Large
+skills:
+- bonus: 7
+  misc: null
+  name: 'Acrobatics '
+- bonus: 7
+  misc: null
+  name: 'Athletics '
+- bonus: 6
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 143
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+- amount: 65
+  type: fly
+spell_lists: null
+traits:
+- N
+- Large
+- Animal
+type: Creature
+weaknesses: null

@@ -1,0 +1,177 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 3
+  dex_mod: 5
+  int_mod: -2
+  str_mod: 2
+  wis_mod: 4
+ac: 25
+ac_special: null
+alignment: NE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The belker can occupy the same space as other creatures.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Smoke Form
+  range: null
+  raw_description: '**Smoke Form** The belker can occupy the same space as other creatures.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'These reclusive elementals have glowing red eyes, leathery wings, and
+  long, sharp claws. While they always retain their shape, belkers can control the
+  solidity of their forms at will, transforming into clouds of smoke, ash, and dust.
+
+
+
+
+  **__Recall Knowledge - Elemental__ (__Arcana__, __Nature__)**: DC 22'
+hp: 78
+hp_misc: null
+immunities:
+- bleed
+- paralyzed
+- poison
+- precision
+- sleep
+items: null
+languages:
+- Auran
+level: 6
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d10+5
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 17
+  traits:
+  - agile
+  - finesse
+- action_cost: One Action
+  damage:
+    formula: 2d8+5
+    type: bludgeoning
+  name: wing
+  plus_damage: null
+  to_hit: 17
+  traits:
+  - agile
+  - finesse
+  - reach 10 feet
+name: Belker
+perception: 14
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The belker occupies the same space as a Medium or smaller creature
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Noxious Fumes
+  range: null
+  raw_description: '**Noxious Fumes** [Two Actions]  **Requirement **The belker occupies
+    the same space as a Medium or smaller creature; **Effect **The belker attempts
+    to flow into the creature''s lungs; the creature must attempt a DC 23 Fortitude
+    save. On a failure, the creature partially inhales the belker and is __immobilized__
+    by the pain of the smoke rasping in its throat and lungs. The creature can attempt
+    to exhale the belker by spending an action coughing and succeeding at a DC 23
+    Fortitude save. Most of the belker remains outside the creature, so the belker
+    can still act normally. If the belker moves out of the creature''s space or uses
+    Noxious Fumes again, the creature automatically exhales it.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The belker is partially inhaled by a creature
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Smoke Slash
+  range: null
+  raw_description: '**Smoke Slash**   **Requirement **The belker is partially inhaled
+    by a creature; **Effect **The belker automatically deals its claw damage to the
+    inhaling creature by forming a claw to slash and scrape the creature from within.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 13
+  fort_misc: null
+  misc: null
+  ref: 17
+  ref_misc: null
+  will: 12
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The belker ignores the __concealed__ condition from smoke.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Smoke Vision
+  range: null
+  raw_description: '**Smoke Vision** The belker ignores the __concealed__ condition
+    from smoke.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +14
+- darkvision
+- smoke vision
+size: Large
+skills:
+- bonus: 15
+  misc: null
+  name: 'Acrobatics '
+- bonus: 15
+  misc: +17 in smoke
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 106
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 40
+  type: fly
+spell_lists: null
+traits:
+- NE
+- Large
+- Air
+- Elemental
+type: Creature
+weaknesses: null

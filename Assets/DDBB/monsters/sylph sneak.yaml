@@ -1,0 +1,207 @@
+ability_mods:
+  cha_mod: 3
+  con_mod: 1
+  dex_mod: 4
+  int_mod: 1
+  str_mod: 0
+  wis_mod: 0
+ac: 18
+ac_special: null
+alignment: CG
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The sylph sneak is aware of the attack
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Deflecting Gale
+  range: null
+  raw_description: '**Deflecting Gale [Reaction]** (__air__, __evocation__, __primal__)
+    **Trigger** The sylph sneak is the target of a physical ranged attack; **Requirements**
+    The sylph sneak is aware of the attack; **Effect** A swift gale whips up between
+    the sylph sneak and the source of the ranged attack, giving the sneak a +3 status
+    bonus to AC against the triggering attack. If the attack misses, the wind deflected
+    it. The wind can''t deflect unusually large or heavy ranged projectiles (such
+    as boulders or ballista bolts).'
+  requirements: null
+  success: null
+  traits:
+  - air
+  - evocation
+  - primal
+  trigger: The sylph sneak is the target of a physical ranged attack
+description: 'Born with elemental gales coursing through their breath, sylphs are
+  wispy planar scions whose bodies seem caught in a perpetual, gentle breeze. Born
+  of unions between mortals and __djinn__, sylphs are quick-witted and creative, but
+  they are prone to flights of fancy and tend to be easily distracted.
+
+
+
+
+  Sylphs are notorious for their practice of "listening to the wind," which most others
+  dismiss as a fancy name for eavesdropping. Yet this custom means much more to sylphs,
+  who spend hours listening to the stories brought to them on the proverbial breeze.
+  While some less scrupulous sylphs may use the information they learn to blackmail
+  or abuse others, most of them see listening to the wind as their way of staying
+  connected to the world around them while still keeping it comfortably at arm''s
+  length. Certainly the typical sylph sneak doesn''t seek to use what they learn for
+  ill, but instead tries to warn others of dangers yet unrealized or to prepare themself
+  for a dangerous task.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 15'
+hp: 17
+hp_misc: null
+immunities: null
+items:
+- leather armor
+- starknife
+languages:
+- Auran
+- Common
+level: 1
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d4+4
+    type: null
+  name: starknife
+  plus_damage: null
+  to_hit: 9
+  traits:
+  - agile
+  - deadly d6
+  - finesse
+  - versatile S
+name: Sylph Sneak
+perception: 5
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The sylph sneak's Strikes deal 1d6 extra precision damage to __flat-footed__
+    creatures.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sneak Attack
+  range: null
+  raw_description: '**__Sneak Attack__** The sylph sneak''s Strikes deal 1d6 extra
+    precision damage to __flat-footed__ creatures.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: On the first round of combat, creatures that haven't acted yet are
+    __flat-footed__ to the sylph sneak.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Surprise Attacker
+  range: null
+  raw_description: '**Surprise Attacker**  On the first round of combat, creatures
+    that haven''t acted yet are __flat-footed__ to the sylph sneak.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When the sylph sneak attacks with a __thrown__ weapon, the range increment
+    increases by 10 feet.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Wind's Guidance
+  range: null
+  raw_description: '**Wind''s Guidance**  When the sylph sneak attacks with a __thrown__
+    weapon, the range increment increases by 10 feet.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d4+1
+    type: null
+  name: starknife
+  plus_damage: null
+  to_hit: 9
+  traits:
+  - agile
+  - deadly d6
+  - thrown 30 feet
+  - versatile S
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 4
+  fort_misc: null
+  misc: null
+  ref: 9
+  ref_misc: null
+  will: 8
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +5
+size: Medium
+skills:
+- bonus: 7
+  misc: null
+  name: 'Acrobatics '
+- bonus: 6
+  misc: null
+  name: 'Deception '
+- bonus: 6
+  misc: null
+  name: 'Diplomacy '
+- bonus: 4
+  misc: null
+  name: 'Society '
+- bonus: 7
+  misc: null
+  name: 'Stealth '
+- bonus: 7
+  misc: null
+  name: 'Thievery '
+source:
+- abbr: Bestiary 2
+  page_start: 202
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists: null
+traits:
+- CG
+- Medium
+- Human
+- Humanoid
+- Sylph
+type: Creature
+weaknesses: null

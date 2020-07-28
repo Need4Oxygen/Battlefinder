@@ -1,0 +1,317 @@
+ability_mods:
+  cha_mod: 4
+  con_mod: 4
+  dex_mod: 3
+  int_mod: 1
+  str_mod: 6
+  wis_mod: 3
+ac: 28
+ac_special: null
+alignment: NE
+automatic_abilities:
+- action_cost: None
+  critical_failure: The creature is frightened 4.
+  critical_success: The creature is unaffected by the presence.
+  description: 30 feet, DC 25
+  effect: null
+  effects: null
+  failure: The creature is frightened 2.
+  frequency: null
+  full_description: null
+  generic_description: A creature that first enters the area must attempt a Will save.
+    Regardless of the result of the saving throw, the creature is temporarily immune
+    to this monster's Frightful Presence for 1 minute.
+  name: Frightful Presence
+  range: null
+  raw_description: '**Frightful Presence** 30 feet, DC 25 A creature that first enters
+    the area must attempt a Will save. Regardless of the result of the saving throw,
+    the creature is temporarily immune to this monster''s Frightful Presence for 1
+    minute.
+
+    Critical Success The creature is unaffected by the presence.
+
+    Success The creature is frightened 1.
+
+    Failure The creature is frightened 2.
+
+    Critical Success The creature is frightened 4.'
+  requirements: null
+  success: The creature is frightened 1.
+  traits:
+  - aura
+  - emotion
+  - fear
+  - mental
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Unpolluted fresh water burns a nuckelavee like acid, dealing 1d6 damage
+    to it and causing it to be __sickened 2__. A nuckelavee can't heal from damage
+    when it's in an area that isn't polluted (subject to GM discretion).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Purity Vulnerability
+  range: null
+  raw_description: '**Purity Vulnerability** Unpolluted fresh water burns a nuckelavee
+    like acid, dealing 1d6 damage to it and causing it to be __sickened 2__. A nuckelavee
+    can''t heal from damage when it''s in an area that isn''t polluted (subject to
+    GM discretion).'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+description: 'When pollution despoils a natural waterway, it draws the dreaded nuckelavee
+  to it from the __First World__. This spirit of wrath is a grisly sight to behold:
+  a horselike monstrosity with the gnarled upper body of a humanoid growing directly
+  from its back. Further enhancing the awfulness, not a patch of skin exists on the
+  misshapen hybrid form, as though it survived its own flaying.
+
+
+
+
+  When a nuckelavee rides forth from its domain, it wreaks a trail of destruction
+  across the lands surrounding its path. Nuckelavees are considered among the cruelest
+  and most monstrous fey, seen by some as just desserts visited upon those who would
+  befoul the waters of their homes. A nuckelavee, though, doesn''t discriminate between
+  those who pollute and those who merely have the misfortune to be in the wrong place
+  at the wrong time.
+
+
+
+
+  **__Recall Knowledge - Fey__ (__Nature__)**: DC 26'
+hp: 190
+hp_misc: null
+immunities:
+- disease
+- poison
+items:
+- +1 striking bastard sword
+languages:
+- Aklo
+- Common
+- Sylvan
+level: 9
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+12
+    type: slashing
+  name: bastard sword
+  plus_damage:
+  - formula: 1d6
+    type: poison and mortasheen
+  to_hit: 21
+  traits:
+  - magical
+  - reach 10 feet
+  - two-hand d12
+- action_cost: One Action
+  damage:
+    formula: 2d8+12
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 1d6
+    type: poison and mortasheen
+  to_hit: 20
+  traits:
+  - agile
+- action_cost: One Action
+  damage:
+    formula: 2d6+12
+    type: bludgeoning
+  name: hoof
+  plus_damage:
+  - formula: null
+    type: mortasheen
+  to_hit: 20
+  traits: null
+name: Nuckelavee
+perception: 16
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The nuckelavee breathes a 30-foot cone of foulness, dealing 8d6 negative
+    damage (DC 28 basic Fortitude save) to living creatures in the area. A creature
+    that fails also takes 2d6 __persistent bleed damage__. The nuckelavee can't use
+    Breath Weapon again for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Breath Weapon
+  range: null
+  raw_description: '**Breath Weapon** [Two Actions]  (__disease__, __necromancy__,
+    __poison__, __primal__) The nuckelavee breathes a 30-foot cone of foulness, dealing
+    8d6 negative damage (DC 28 basic Fortitude save) to living creatures in the area.
+    A creature that fails also takes 2d6 __persistent bleed damage__. The nuckelavee
+    can''t use Breath Weapon again for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - disease
+  - necromancy
+  - poison
+  - primal
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The target can't recover from the __fatigued__ condition caused by
+    mortasheen until the disease is cured. Mortasheen gains the __virulent__ trait
+    against __animals__ and __plants__; **Saving Throw** DC 28 Fortitude; **Stage
+    1** Carrier with no ill effect (1 day); **Stage 2** __drained 1__ and fatigued
+    (1 day); **Stage 3** drained 2 and fatigued (1 day); **Stage 4** dead
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Mortasheen
+  range: null
+  raw_description: '**Mortasheen** (__disease__) The target can''t recover from the
+    __fatigued__ condition caused by mortasheen until the disease is cured. Mortasheen
+    gains the __virulent__ trait against __animals__ and __plants__; **Saving Throw**
+    DC 28 Fortitude; **Stage 1** Carrier with no ill effect (1 day); **Stage 2** __drained
+    1__ and fatigued (1 day); **Stage 3** drained 2 and fatigued (1 day); **Stage
+    4** dead'
+  requirements: null
+  success: null
+  traits:
+  - disease
+  trigger: null
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: Medium or smaller, hoof, DC 28
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Trample
+  range: null
+  raw_description: '**__Trample__** [Three Actions]  Medium or smaller, hoof, DC 28'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 10
+  type: cold iron
+ritual_lists:
+- dc: 28
+  misc: null
+  name: Rituals
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: blight
+      requirement: null
+  to_hit: null
+saves:
+  fort: 19
+  fort_misc: null
+  misc: null
+  ref: 16
+  ref_misc: null
+  will: 20
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +16
+- low-light vision
+size: Large
+skills:
+- bonus: 19
+  misc: null
+  name: 'Athletics '
+- bonus: 19
+  misc: null
+  name: 'Intimidation '
+- bonus: 16
+  misc: null
+  name: 'Nature '
+- bonus: 18
+  misc: null
+  name: 'Stealth '
+- bonus: 16
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 186
+  page_stop: null
+speed:
+- amount: 40
+  type: Land
+- amount: 40
+  type: swim
+spell_lists:
+- dc: 28
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: null
+      name: control water
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: null
+      name: stinking cloud
+      requirement: null
+  to_hit: null
+traits:
+- NE
+- Large
+- Amphibious
+- Fey
+type: Creature
+weaknesses: null

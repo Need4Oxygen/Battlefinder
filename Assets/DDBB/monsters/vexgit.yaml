@@ -1,0 +1,258 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 2
+  dex_mod: 4
+  int_mod: 1
+  str_mod: 1
+  wis_mod: 1
+ac: 16
+ac_special: null
+alignment: LE
+automatic_abilities: null
+description: 'These gremlins are covered head-to-toe by a crustacean-like exoskeleton
+  that clacks and rattles whenever a vexgit moves. They delight in sabotaging the
+  works of other creatures, often turning these works into dangerous traps. An individual
+  vexgit might jam a door lock, loosen the wheels on a carriage, or remove nails from
+  a boat hull. Buildings infested by vexgits become filled with traps like portcullises
+  descending suddenly, water pipes exploding violently, and clock towers disgorging
+  an avalanches of gears.
+
+
+  Aware of their own physical weakness, vexgits carry hammers and other tools to leverage
+  pieces apart or smash whatever they''re unable to disassemble. Indeed, a hammer
+  sized for a human becomes a maul in the tiny hands of a vexgit.
+
+
+  Vexgit infestations range from one to a score. Larger groups are often led by a
+  more powerful vexgit with additional skill in thievery or primal magic. Trained
+  giant rats, vipers, and rat swarms are common in vexgit lairs.
+
+
+
+
+  **__Recall Knowledge - Fey__ (__Nature__)**: DC 15'
+hp: 24
+hp_misc: null
+immunities: null
+items:
+- maul
+languages:
+- Undercommon
+level: 1
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d12+1
+    type: bludgeoning
+  name: maul
+  plus_damage:
+  - formula: null
+    type: Destructive Smash
+  to_hit: 8
+  traits:
+  - shove
+- action_cost: One Action
+  damage:
+    formula: 1d6+1
+    type: piercing
+  name: bite
+  plus_damage: null
+  to_hit: 11
+  traits:
+  - agile
+  - finesse
+name: Vexgit
+perception: 6
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A vexgit's maul Strike against an object deals ignores up to 5 of the
+    object's Hardness.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Destructive Smash
+  range: null
+  raw_description: '**Destructive Smash** A vexgit''s maul Strike against an object
+    deals ignores up to 5 of the object''s Hardness.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The vexgit creates a snare of their level or lower that normally takes 1
+    minute to craft at no cost. A single vexgit can maintain one gremlin snare at
+    a time—if they create a new snare, the previously created one vanishes.
+  effects: null
+  failure: null
+  frequency: once per hour
+  full_description: null
+  generic_description: null
+  name: Gremlin Snare
+  range: null
+  raw_description: '**Gremlin Snare** [Three Actions]  (__conjuration__, __primal__)
+    **Frequency** once per hour; **Effect** The vexgit creates a snare of their level
+    or lower that normally takes 1 minute to craft at no cost. A single vexgit can
+    maintain one gremlin snare at a time—if they create a new snare, the previously
+    created one vanishes.'
+  requirements: null
+  success: null
+  traits:
+  - conjuration
+  - primal
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The vexgit makes a +9 spell attack against a creature or unattended object.
+    If they succeed, the vexgit deals 1d6 damage (doubled on a critical hit) to a
+    metal item the target is wearing or holding, ignoring its Hardness. If they hit
+    an unattended metal item, the item takes this damage automatically. If a creature
+    uses __Shield Block__ with a metal shield against this attack, the shield is automatically
+    __broken__, but no other item is rusted on that attack.
+  effects: null
+  failure: null
+  frequency: once per hour
+  full_description: null
+  generic_description: null
+  name: Rusting Grasp
+  range: null
+  raw_description: '**Rusting Grasp** [Two Actions]  (__primal__, __transmutation__)
+    **Frequency** once per hour; **Effect** The vexgit makes a +9 spell attack against
+    a creature or unattended object. If they succeed, the vexgit deals 1d6 damage
+    (doubled on a critical hit) to a metal item the target is wearing or holding,
+    ignoring its Hardness. If they hit an unattended metal item, the item takes this
+    damage automatically. If a creature uses __Shield Block__ with a metal shield
+    against this attack, the shield is automatically __broken__, but no other item
+    is rusted on that attack.'
+  requirements: null
+  success: null
+  traits:
+  - primal
+  - transmutation
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When a vexgit succeeds or critically succeeds at a check to __Disable
+    a Device__, they gain an additional success toward disabling a complex device.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Speedy Sabotage
+  range: null
+  raw_description: '**Speedy Sabotage** When a vexgit succeeds or critically succeeds
+    at a check to __Disable a Device__, they gain an additional success toward disabling
+    a complex device.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 5
+  fort_misc: null
+  misc: null
+  ref: 9
+  ref_misc: null
+  will: 6
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 'A creature that can hear gains a +2 circumstance bonus to its Perception
+    DC against a vexgit''s attempts to __Sneak__.
+
+
+    '
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Clacking Exoskeleton
+  range: null
+  raw_description: '**Clacking Exoskeleton** A creature that can hear gains a +2 circumstance
+    bonus to its Perception DC against a vexgit''s attempts to __Sneak__.
+
+
+    '
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +6
+- darkvision
+size: Tiny
+skills:
+- bonus: 7
+  misc: null
+  name: 'Acrobatics '
+- bonus: 6
+  misc: null
+  name: 'Athletics '
+- bonus: 6
+  misc: +8 traps
+  name: 'Crafting '
+- bonus: 6
+  misc: null
+  name: 'Nature '
+- bonus: 5
+  misc: see clacking exoskeleton
+  name: 'Stealth '
+- bonus: 7
+  misc: null
+  name: 'Thievery '
+source:
+- abbr: Bestiary 2
+  page_start: 134
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 20
+  type: climb
+spell_lists:
+- dc: 17
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: alarm
+      requirement: null
+  - heightened_level: 1
+    level: 0
+    spells:
+    - frequency: null
+      name: prestidigitation
+      requirement: null
+  to_hit: null
+traits:
+- LE
+- Tiny
+- Fey
+- Gremlin
+type: Creature
+weaknesses:
+- amount: 2
+  type: cold iron

@@ -1,0 +1,129 @@
+ability_mods:
+  cha_mod: -1
+  con_mod: 2
+  dex_mod: -1
+  int_mod: -2
+  str_mod: 3
+  wis_mod: 0
+ac: 15
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Earth mephits are humorless and trudge about their tasks with little
+  enthusiasm. They are somewhat more stout than other mephits, and their dark-brown
+  or gray bodies are always coated with layers of dirt and filth. An earth mephit
+  can fly, just as any other mephit, but the act of flight is uncomfortable and unnerving
+  to them—they rarely ascend higher than 5 feet off the ground if they can help it.
+
+
+
+
+  **__Recall Knowledge - Elemental__ (__Arcana__, __Nature__)**: DC 15'
+hp: 20
+hp_misc: fast healing 2 (while underground)
+immunities:
+- bleed
+- paralyzed
+- poison
+- sleep
+items: null
+languages:
+- Terran
+level: 1
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6+3
+    type: bludgeoning
+  name: fist
+  plus_damage: null
+  to_hit: 8
+  traits: null
+name: Earth Mephit
+perception: 3
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The earth mephit breathes rocks in a 15-foot cone that deals 2d6 bludgeoning
+    damage to each creature within the area (DC 17 basic Reflex save). The earth mephit
+    can't use Breath Weapon again for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Breath Weapon
+  range: null
+  raw_description: '**Breath Weapon** [Two Actions]  (__arcane__, __earth__) The earth
+    mephit breathes rocks in a 15-foot cone that deals 2d6 bludgeoning damage to each
+    creature within the area (DC 17 basic Reflex save). The earth mephit can''t use
+    Breath Weapon again for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - earth
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 8
+  fort_misc: null
+  misc: null
+  ref: 4
+  ref_misc: null
+  will: 3
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +3
+- darkvision
+- tremorsense (imprecise) 30 feet
+size: Small
+skills:
+- bonus: 6
+  misc: null
+  name: 'Athletics '
+- bonus: 2
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 150
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 20
+  type: burrow
+- amount: 15
+  type: fly
+spell_lists:
+- dc: 17
+  misc: null
+  name: Arcane Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: null
+      name: meld into stone
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: self only
+      name: enlarge
+      requirement: null
+  to_hit: null
+traits:
+- N
+- Small
+- Earth
+- Elemental
+type: Creature
+weaknesses: null

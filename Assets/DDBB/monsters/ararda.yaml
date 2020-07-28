@@ -1,0 +1,290 @@
+ability_mods:
+  cha_mod: 6
+  con_mod: 7
+  dex_mod: 6
+  int_mod: 3
+  str_mod: 9
+  wis_mod: 7
+ac: 43
+ac_special: null
+alignment: LE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 60 feet. Blightburn crystals infused into an ararda's body attempt
+    to __counteract__ any __teleportation__ spell moving into or out of the aura's
+    emanation (counteract check +31; 7th level). In addition, any creature that starts
+    its turn within the emanation is exposed to __blightburn sickness__. The aura
+    is blocked by lead sheeting, 1 foot of stone, or large force effects (such as
+    a __wall of force__, but not a __shield__ spell). An ararda can suppress their
+    aura with an action that has the __concentrate__ trait.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Blightburn Radiation
+  range: null
+  raw_description: '**Blightburn Radiation** (__abjuration__, __arcane__, __aura__,
+    __disease__) 60 feet. Blightburn crystals infused into an ararda''s body attempt
+    to __counteract__ any __teleportation__ spell moving into or out of the aura''s
+    emanation (counteract check +31; 7th level). In addition, any creature that starts
+    its turn within the emanation is exposed to __blightburn sickness__. The aura
+    is blocked by lead sheeting, 1 foot of stone, or large force effects (such as
+    a __wall of force__, but not a __shield__ spell). An ararda can suppress their
+    aura with an action that has the __concentrate__ trait.'
+  requirements: null
+  success: null
+  traits:
+  - abjuration
+  - arcane
+  - aura
+  - disease
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Any creature that hits an ararda with an unarmed attack or touches
+    the ararda takes 2d8 electricity damage. Weapons that hit an ararda also take
+    2d8 electricity damage.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Charged Earth
+  range: null
+  raw_description: '**Charged Earth** (__electricity__) Any creature that hits an
+    ararda with an unarmed attack or touches the ararda takes 2d8 electricity damage.
+    Weapons that hit an ararda also take 2d8 electricity damage.'
+  requirements: null
+  success: null
+  traits:
+  - electricity
+  trigger: null
+description: '__Shaitans__ corrupted by the Black Desert''s blightburn become scorpion-like
+  arardas. While other earth genies sparkle with the iridescence of gemstones and
+  evoke the power of the earth itself, arardas use their connection to the ground
+  to harness the might of electricity. Arardas are so infused with this radioactive
+  crystal that their mere presence is toxic to most living creatures.
+
+
+
+
+  **__Recall Knowledge - Elemental__ (__Arcana__, __Nature__)**: DC 43'
+hp: 280
+hp_misc: null
+immunities:
+- disease
+items:
+- +2 greater striking maul
+languages:
+- Terran
+- Undercommon
+level: 18
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d12+17
+    type: bludgeoning
+  name: maul
+  plus_damage: null
+  to_hit: 35
+  traits:
+  - magical
+  - reach 10 feet
+  - shove
+- action_cost: One Action
+  damage:
+    formula: 2d8+17
+    type: bludgeoning
+  name: sand fist
+  plus_damage:
+  - formula: 2d8
+    type: electricity and blightburn sickness
+  to_hit: 35
+  traits:
+  - agile
+  - earth
+  - electricity
+  - magical
+  - nonlethal
+  - reach 10 feet
+name: Ararda
+perception: 31
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The ararda can take on the form of an scorpion. The scorpion form always
+    looks the same, but the ararda can choose to become either Tiny or Small in this
+    form. This transformation doesn't change their Speed or the attack and damage
+    bonuses of their Strikes, but might change the damage type their Strikes deal
+    (typically to piercing).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Change Shape
+  range: null
+  raw_description: '**__Change Shape__**   (__arcane__, __concentrate__, __polymorph__,
+    __transmutation__) The ararda can take on the form of an scorpion. The scorpion
+    form always looks the same, but the ararda can choose to become either Tiny or
+    Small in this form. This transformation doesn''t change their Speed or the attack
+    and damage bonuses of their Strikes, but might change the damage type their Strikes
+    deal (typically to piercing).'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - concentrate
+  - polymorph
+  - transmutation
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The ararda can __Burrow__ through dirt and stone at its full burrow
+    Speed, leaving no tunnels or signs of its passing.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Earth Glide
+  range: null
+  raw_description: '**Earth Glide** The ararda can __Burrow__ through dirt and stone
+    at its full burrow Speed, leaving no tunnels or signs of its passing.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 4d8
+    type: piercing
+  name: sand spear
+  plus_damage:
+  - formula: 2d8
+    type: electricity and blightburn sickness
+  to_hit: 32
+  traits:
+  - earth
+  - electricity
+  - magical
+  - range increment 30 feet
+rarity: Rare
+resistances:
+- amount: 20
+  type: electricity
+ritual_lists: null
+saves:
+  fort: 33
+  fort_misc: null
+  misc: null
+  ref: 30
+  ref_misc: null
+  will: 31
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +31
+- darkvision
+- detect magic
+- tremorsense (imprecise) 60 feet
+size: Large
+skills:
+- bonus: 35
+  misc: null
+  name: 'Athletics '
+- bonus: 27
+  misc: null
+  name: 'Black Desert Lore '
+- bonus: 30
+  misc: null
+  name: 'Deception '
+- bonus: 30
+  misc: null
+  name: 'Intimidation '
+- bonus: 33
+  misc: null
+  name: 'Nature '
+- bonus: 33
+  misc: null
+  name: 'Survival '
+source:
+- abbr: 'Pathfinder #155: Lord of the Black Sands'
+  page_start: 79
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+- amount: 45
+  type: burrow
+- amount: 20
+  type: fly
+- amount: null
+  type: earth glide
+spell_lists:
+- dc: 37
+  misc: null
+  name: Arcane Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 7
+    spells:
+    - frequency: null
+      name: chain lightning
+      requirement: null
+    - frequency: null
+      name: flesh to stone
+      requirement: null
+  - heightened_level: null
+    level: 6
+    spells:
+    - frequency: self only
+      name: veil
+      requirement: null
+    - frequency: null
+      name: wall of stone
+      requirement: null
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: at will
+      name: shape stone
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: self only
+      name: gaseous form
+      requirement: null
+    - frequency: ×3
+      name: glitterdust
+      requirement: null
+  - heightened_level: 4
+    level: -1
+    spells:
+    - frequency: null
+      name: detect magic
+      requirement: null
+  to_hit: null
+traits:
+- Rare
+- LE
+- Large
+- Earth
+- Elemental
+- Genie
+type: Creature
+weaknesses:
+- amount: 20
+  type: sonic

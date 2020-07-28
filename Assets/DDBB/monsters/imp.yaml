@@ -1,0 +1,322 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 0
+  dex_mod: 4
+  int_mod: 1
+  str_mod: -1
+  wis_mod: 2
+ac: 17
+ac_special: null
+alignment: LE
+automatic_abilities: null
+description: 'Imps are infiltrators and corruptors who, despite their diminutive stature,
+  are more than capable of subtly influencing a weak-willed individual into performing
+  increasingly evil acts over time. An imp will often agree to serve a mortal and
+  act docile and loyal in a long-term plot to eventually damn its master''s soul to
+  Hell. Imps are born directly from Hell itself, rather than from mortal souls, and
+  thus they serve outside the usual diabolic hierarchy, granting them leeway to pursue
+  their specialties. Despite standing a mere 2-feet tall, imps can be vicious combatants,
+  flying out of reach and turning invisible to escape should the odds turn against
+  them.
+
+
+
+
+  **__Recall Knowledge - Fiend__ (__Religion__)**: DC 15'
+hp: 15
+hp_misc: null
+immunities:
+- fire
+items: null
+languages:
+- Common
+- Infernal
+- telepathy (touch)
+level: 1
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d4-1
+    type: piercing
+  name: stinger
+  plus_damage:
+  - formula: 1d4
+    type: evil and imp venom
+  to_hit: 9
+  traits:
+  - agile
+  - evil
+  - finesse
+  - magical
+name: Imp
+perception: 7
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: ''
+  effect: null
+  effects:
+  - action_cost: None
+    critical_failure: null
+    critical_success: null
+    description: size Medium; scent (imprecise) 30 feet; **Speed **40 feet; **Melee
+      **tusk +9 (__finesse__), **Damage **1d10-1 piercing
+    effect: null
+    effects: null
+    failure: null
+    frequency: null
+    full_description: null
+    generic_description: null
+    name: Boar
+    range: null
+    raw_description: '**Boar **size Medium; scent (imprecise) 30 feet; **Speed **40
+      feet; **Melee **tusk +9 (__finesse__), **Damage **1d10-1 piercing'
+    requirements: null
+    success: null
+    traits: null
+    trigger: null
+  - action_cost: None
+    critical_failure: null
+    critical_success: null
+    description: size Medium; **Speed **25 feet, climb 25 feet; **Melee **fangs +9
+      (__finesse__, __poison__), **Damage **1d6-1 piercing plus 1d4 poison
+    effect: null
+    effects: null
+    failure: null
+    frequency: null
+    full_description: null
+    generic_description: null
+    name: Giant Spider
+    range: null
+    raw_description: '**Giant Spider** size Medium; **Speed **25 feet, climb 25 feet;
+      **Melee **fangs +9 (__finesse__, __poison__), **Damage **1d6-1 piercing plus
+      1d4 poison'
+    requirements: null
+    success: null
+    traits: null
+    trigger: null
+  - action_cost: None
+    critical_failure: null
+    critical_success: null
+    description: scent; **Speed **20 feet; **Melee **jaws +9 (__agile__, __finesse__),
+      **Damage **1 piercing
+    effect: null
+    effects: null
+    failure: null
+    frequency: null
+    full_description: null
+    generic_description: null
+    name: Rat
+    range: null
+    raw_description: '**Rat **scent; **Speed **20 feet; **Melee **jaws +9 (__agile__,
+      __finesse__), **Damage **1 piercing'
+    requirements: null
+    success: null
+    traits: null
+    trigger: null
+  - action_cost: None
+    critical_failure: null
+    critical_success: null
+    description: scent; **Speed **10 feet, fly 40 feet; **Melee **beak +9 (__finesse__),
+      **Damage **1 piercing
+    effect: null
+    effects: null
+    failure: null
+    frequency: null
+    full_description: null
+    generic_description: null
+    name: Raven
+    range: null
+    raw_description: '**Raven **scent; **Speed **10 feet, fly 40 feet; **Melee **beak
+      +9 (__finesse__), **Damage **1 piercing'
+    requirements: null
+    success: null
+    traits: null
+    trigger: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Change Shape
+  range: null
+  raw_description: "**Change Shape**   (__concentrate__, __divine__, __polymorph__,\
+    \ __transmutation__) \n\n  * **Boar **size Medium; scent (imprecise) 30 feet;\
+    \ **Speed **40 feet; **Melee **tusk +9 (__finesse__), **Damage **1d10-1 piercing\n\
+    \n  * **Giant Spider** size Medium; **Speed **25 feet, climb 25 feet; **Melee\
+    \ **fangs +9 (__finesse__, __poison__), **Damage **1d6-1 piercing plus 1d4 poison\n\
+    \n  * **Rat **scent; **Speed **20 feet; **Melee **jaws +9 (__agile__, __finesse__),\
+    \ **Damage **1 piercing\n\n  * **Raven **scent; **Speed **10 feet, fly 40 feet;\
+    \ **Melee **beak +9 (__finesse__), **Damage **1 piercing"
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - divine
+  - polymorph
+  - transmutation
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The imp regains 1d6 Hit Points.
+  effects: null
+  failure: null
+  frequency: once per round.
+  full_description: null
+  generic_description: null
+  name: Diabolic Healing
+  range: null
+  raw_description: '**Diabolic Healing**   (__concentrate__, __divine__, __healing__,
+    __necromancy__) **Frequency** once per round. **Effect** The imp regains 1d6 Hit
+    Points.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - divine
+  - healing
+  - necromancy
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw** DC 16 Fortitude; **Maximum Duration** 6 rounds; **Stage
+    1** 1d6 poison and __clumsy 1__ (1 round); **Stage 2** 1d6 poison damage, __clumsy
+    1__, and __slowed 1__ (1 round)'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Imp Venom
+  range: null
+  raw_description: '**Imp Venom** (__poison__) **Saving Throw** DC 16 Fortitude; **Maximum
+    Duration** 6 rounds; **Stage 1** 1d6 poison and __clumsy 1__ (1 round); **Stage
+    2** 1d6 poison damage, __clumsy 1__, and __slowed 1__ (1 round)'
+  requirements: null
+  success: null
+  traits:
+  - poison
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The imp offers a non-fiend within 15 feet a bargain, granting a boon of
+    good luck if the creature accepts. The boon lasts for 1 hour once accepted. If
+    the creature dies while the boon is in place, its soul travels to Hell, where
+    it is bound for eternity and unable to be raised or resurrected except by __wish__
+    or similar magic. Once during the hour, the creature can roll an attack roll or
+    saving throw twice and use the higher result.
+  effects: null
+  failure: null
+  frequency: once per day.
+  full_description: null
+  generic_description: null
+  name: Infernal Temptation
+  range: null
+  raw_description: '**Infernal Temptation**   (__divine__, __concentrate__, __enchantment__,
+    __evil__, __fortune__) **Frequency** once per day. **Effect** The imp offers a
+    non-fiend within 15 feet a bargain, granting a boon of good luck if the creature
+    accepts. The boon lasts for 1 hour once accepted. If the creature dies while the
+    boon is in place, its soul travels to Hell, where it is bound for eternity and
+    unable to be raised or resurrected except by __wish__ or similar magic. Once during
+    the hour, the creature can roll an attack roll or saving throw twice and use the
+    higher result.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - concentrate
+  - enchantment
+  - evil
+  - fortune
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 3
+  type: physical (except silver)
+- amount: 5
+  type: poison
+ritual_lists: null
+saves:
+  fort: 5
+  fort_misc: null
+  misc: null
+  ref: 9
+  ref_misc: null
+  will: 7
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +7
+- greater darkvision
+size: Tiny
+skills:
+- bonus: 7
+  misc: null
+  name: 'Acrobatics '
+- bonus: 6
+  misc: null
+  name: 'Athletics '
+- bonus: 7
+  misc: null
+  name: 'Deception '
+- bonus: 5
+  misc: null
+  name: 'Religion '
+source:
+- abbr: Bestiary
+  page_start: 87
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 30
+  type: fly
+spell_lists:
+- dc: 17
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: read omens
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: at will, self only
+      name: invisibility
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: charm
+      requirement: null
+    - frequency: at will, good only
+      name: detect alignment
+      requirement: null
+  - heightened_level: 1
+    level: -1
+    spells:
+    - frequency: null
+      name: detect magic
+      requirement: null
+  to_hit: null
+traits:
+- LE
+- Tiny
+- Devil
+- Fiend
+type: Creature
+weaknesses:
+- amount: 3
+  type: good

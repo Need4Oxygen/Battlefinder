@@ -1,0 +1,202 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 2
+  dex_mod: 4
+  int_mod: -4
+  str_mod: 6
+  wis_mod: 2
+ac: 22
+ac_special: null
+alignment: NE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A lion visitant takes 7 additional damage from whips.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Whip Vulnerability
+  range: null
+  raw_description: '**Whip Vulnerability** A lion visitant takes 7 additional damage
+    from whips.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Scars and other marks of obvious mistreatment are the clearest indicators
+  that an undead animal is no mere zombie.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 20
+
+
+  **__Recall Knowledge - Undead__ (__Religion__)**: DC 20'
+hp: 95
+hp_misc: negative healing
+immunities:
+- death effects
+- disease
+- paralyzed
+- poison
+- unconscious
+items: null
+languages: null
+level: 5
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+8
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 15
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 2d4+8
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 15
+  traits:
+  - agile
+name: Lion Visitant
+perception: 13
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The visitant deals an extra 1d4 damage to any creature that's within
+    reach of at least two of the visitant's allies.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Pack Attack
+  range: null
+  raw_description: '**Pack Attack** The visitant deals an extra 1d4 damage to any
+    creature that''s within reach of at least two of the visitant''s allies.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The visitant Strides and makes a Strike at the end of that movement.
+    If the visitant began this action hidden, it remains hidden until after the ability's
+    Strike.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Pounce
+  range: null
+  raw_description: '**Pounce**   The visitant Strides and makes a Strike at the end
+    of that movement. If the visitant began this action hidden, it remains hidden
+    until after the ability''s Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: The creature is frightened 3.
+  critical_success: The creature is unaffected.
+  description: "The visitant lets out a loud and horrifying roar. Each creature within\
+    \ 100 feet must attempt at a Will save. No matter the result, affected creatures\
+    \ are then temporarily immune to the effect for 1 minute. \n\n"
+  effect: null
+  effects: null
+  failure: The creature is frightened 2.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Roar
+  range: null
+  raw_description: "**Roar**   The visitant lets out a loud and horrifying roar. Each\
+    \ creature within 100 feet must attempt at a Will save. No matter the result,\
+    \ affected creatures are then temporarily immune to the effect for 1 minute. \n\
+    \n**Critical Success** The creature is unaffected.\n\n**Success** The creature\
+    \ is frightened 1.\n\n**Failure** The creature is frightened 2.\n\n**Critical\
+    \ Failure** The creature is frightened 3."
+  requirements: null
+  success: The creature is frightened 1.
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The visitant deals an extra 1d8 precision damage to flat-footed creatures.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sneak Attack
+  range: null
+  raw_description: '**__Sneak Attack__** The visitant deals an extra 1d8 precision
+    damage to flat-footed creatures.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 7
+  type: positive
+- amount: null
+  type: whip vulnerability
+ritual_lists: null
+saves:
+  fort: 9
+  fort_misc: null
+  misc: null
+  ref: 11
+  ref_misc: null
+  will: 15
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +13
+- darkvision
+- lifesense (imprecise) 60 feet
+size: Large
+skills:
+- bonus: 13
+  misc: null
+  name: 'Acrobatics '
+- bonus: 13
+  misc: null
+  name: 'Athletics '
+- bonus: 13
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: 'Pathfinder #152: Legacy of the Lost God'
+  page_start: 83
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+spell_lists: null
+traits:
+- NE
+- Large
+- Animal
+- Undead
+type: Creature
+weaknesses: null

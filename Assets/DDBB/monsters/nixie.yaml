@@ -1,0 +1,189 @@
+ability_mods:
+  cha_mod: 4
+  con_mod: 1
+  dex_mod: 3
+  int_mod: 0
+  str_mod: 0
+  wis_mod: 1
+ac: 16
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'These aquatic fey often guard ponds, rivers, lakes, and springs, protecting
+  their bucolic homes from the advances of predators and careless humanoids alike.
+  Nixies tend to be reclusive and try to keep their presence hidden from humanoids,
+  hoping trespassers won''t give them cause to act. Stories of minor miracles granted
+  by nixies to those they befriend encourage humanoids to seek out these reclusive
+  fey, and ironically make it even more unlikely for a nixie to grant such a boon.
+  On the other hand, if someone approaches a nixie with respect, or even better, a
+  positive attitude that displays just the right amount of humility and easygoing
+  openness, a nixie is far more likely to respond positively to any requests for aid.
+  Often a nixie will ask those who seek their assistance to perform a task for them
+  first; such requests can be minor acts of entertainment (such as telling a rousing
+  story or performing a requested song), but in other cases the nixie might need more
+  significant aid, such as driving off an unwanted local predator or investigating
+  the source of pollution near their home.
+
+
+
+
+  Nixies resort to violence only if no other tactic works. They much prefer solutions
+  that rely upon primal magic to defuse conflicts before they can escalate to bloodshed.
+  In pursuit of such resolutions, nixies rely on their ability to charm individuals
+  and, when they can establish magical influence, encourage intruders to leave peacefully.
+  While some nixies try to confuse intruders and subtly guide them from the area,
+  others use local animals and beasts to scare off trespassers. Occasionally, nixies
+  recruit charmed humanoids to act as protectors or help with a task that is simply
+  too big for them to deal with. If this task is underwater, nixies use their magic
+  to temporarily grant the ability to breathe water to the charmed creature. Only
+  those who manage to befriend a nixie are given invitations to return to swim or
+  dine with the fey, and only the most trusted of allies are granted a minor wish.
+
+
+
+
+  Nixies appear as aquatic humanoids the size of a child, with large eyes, catfish-like
+  whiskers, and webbed fingers and toes. They have scaly skin, pointed ears, and long
+  hair the color of seaweed. Nixies often form small communities, even building underwater
+  societies if their numbers are great enough. In many cultures'' folklore, there
+  are stories of nixie nations hidden at the bottom of particularly large lakes.
+
+
+
+
+  **__Recall Knowledge - Fey__ (__Nature__)**: DC 15'
+hp: 25
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Aquan
+- Sylvan
+level: 1
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 7
+  traits:
+  - agile
+  - finesse
+name: Nixie
+perception: 6
+proactive_abilities:
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The nixie can duplicate any 1st-level spell or produce any effect with a
+    power level in line with a 1st-level spell, but only in response to the request
+    or desire of a non-fey creature. The creature whose desire is granted can never
+    again benefit from that particular nixie's Grant Desire ability.
+  effects: null
+  failure: null
+  frequency: once per day
+  full_description: null
+  generic_description: null
+  name: Grant Desire
+  range: null
+  raw_description: '**Grant Desire** [Three Actions]  (__divination__, __primal__)
+    **Frequency** once per day; **Effect** The nixie can duplicate any 1st-level spell
+    or produce any effect with a power level in line with a 1st-level spell, but only
+    in response to the request or desire of a non-fey creature. The creature whose
+    desire is granted can never again benefit from that particular nixie''s Grant
+    Desire ability.'
+  requirements: null
+  success: null
+  traits:
+  - divination
+  - primal
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 6
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 10
+  ref_misc: null
+  will: 6
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The nixie can use __Diplomacy__ to __Make an Impression__ on and make
+    very simple Requests of __aquatic__ or __amphibious__ animals.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Wild Empathy
+  range: null
+  raw_description: '**Wild Empathy** The nixie can use __Diplomacy__ to __Make an
+    Impression__ on and make very simple Requests of __aquatic__ or __amphibious__
+    animals.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +6
+- low-light vision
+size: Small
+skills:
+- bonus: 6
+  misc: null
+  name: 'Athletics '
+- bonus: 5
+  misc: null
+  name: 'Nature '
+- bonus: 8
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 183
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 30
+  type: swim
+spell_lists:
+- dc: 17
+  misc: ''
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: null
+      name: water breathing
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: ×3
+      name: charm
+      requirement: null
+    - frequency: null
+      name: hydraulic push
+      requirement: null
+  to_hit: 9
+traits:
+- N
+- Small
+- Aquatic
+- Fey
+type: Creature
+weaknesses:
+- amount: 3
+  type: cold iron

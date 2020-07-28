@@ -1,0 +1,130 @@
+ability_mods:
+  cha_mod: -2
+  con_mod: 5
+  dex_mod: 0
+  int_mod: -4
+  str_mod: 7
+  wis_mod: 2
+ac: 25
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'The anancus is an ancient species of elephant with unusually long tusks
+  and a trunk shorter than its more modern cousins.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 24'
+hp: 170
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 8
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d12+11
+    type: piercing
+  name: tusk
+  plus_damage: null
+  to_hit: 19
+  traits:
+  - reach 15 feet
+- action_cost: One Action
+  damage:
+    formula: 2d10+9
+    type: bludgeoning
+  name: foot
+  plus_damage: null
+  to_hit: 17
+  traits:
+  - reach 10 feet
+name: Anancus
+perception: 16
+proactive_abilities:
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: Large or smaller, foot, DC 25
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Trample
+  range: null
+  raw_description: '**__Trample__** [Three Actions]  Large or smaller, foot, DC 25'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: The target takes double damage, is knocked prone, and is pushed
+    5 feet away from the anancus.
+  critical_success: null
+  description: "The anancus sweeps its long tusks back and forth, dealing 4d6 bludgeoning\
+    \ damage to all creatures in a 15-foot cone, who must make a DC 27 basic Reflex\
+    \ save. \n\n**Critical Success **The target is unaffected. \n\n"
+  effect: null
+  effects: null
+  failure: The target takes full damage and is knocked prone.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Tusk Sweep
+  range: null
+  raw_description: "**Tusk Sweep** [Two Actions]  The anancus sweeps its long tusks\
+    \ back and forth, dealing 4d6 bludgeoning damage to all creatures in a 15-foot\
+    \ cone, who must make a DC 27 basic Reflex save. \n\n**Critical Success **The\
+    \ target is unaffected. \n\n**Success** The target takes half damage. \n\n**Failure**\
+    \ The target takes full damage and is knocked __prone__. \n\n**Critical Failure**\
+    \ The target takes double damage, is knocked prone, and is pushed 5 feet away\
+    \ from the anancus."
+  requirements: null
+  success: The target takes half damage.
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 19
+  fort_misc: null
+  misc: null
+  ref: 14
+  ref_misc: null
+  will: 16
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +16
+- low-light vision
+- scent (imprecise) 30 feet
+size: Huge
+skills:
+- bonus: 19
+  misc: null
+  name: 'Athletics '
+- bonus: 16
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 116
+  page_stop: null
+speed:
+- amount: 40
+  type: Land
+spell_lists: null
+traits:
+- N
+- Huge
+- Animal
+type: Creature
+weaknesses: null

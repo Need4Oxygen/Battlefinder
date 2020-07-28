@@ -1,0 +1,207 @@
+ability_mods:
+  cha_mod: -5
+  con_mod: 5
+  dex_mod: 6
+  int_mod: -5
+  str_mod: 6
+  wis_mod: 2
+ac: 31
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'These mechanical constructs were created to serve as guardians in an
+  ancient and bygone era, although exactly who made them and the secrets of their
+  construction have long since been lost to history. From the waist up, they resemble
+  humanoids made of metal, but from the waist down their bodies take the form of spinning
+  metal tops ringed with blades, which excel at cutting down nearby foes. Most spiral
+  centurions can be directed to stand down with a password, although often these command
+  phrases have been lost to the mists of time. In rare cases, a spiral centurion may
+  also wield manufactured weapons or a shield in addition to its built-in weapons,
+  giving it access to additional actions besides those listed below.
+
+
+
+
+  Most spiral centurions are hundreds or even thousands of years old, only staying
+  functional because of the powerful magic used in their creation. Still, millennia
+  of neglect have caused many spiral centurions to develop small glitches or malfunctions.
+
+
+
+
+  **__Recall Knowledge - Construct__ (__Arcana__, __Crafting__)**: DC 28'
+hp: 170
+hp_misc: null
+immunities:
+- bleed
+- death effects
+- disease
+- doomed
+- drained
+- fatigued
+- healing
+- mental
+- necromancy
+- nonlethal attacks
+- paralyzed
+- poison
+- sickened
+- unconscious
+items: null
+languages: null
+level: 11
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d12+12
+    type: slashing
+  name: blade
+  plus_damage: null
+  to_hit: 23
+  traits:
+  - agile
+  - sweep
+name: Spiral Centurion
+perception: 20
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The spiral centurion hurls one of its blades with an angled spin to
+    ensure a swooping flight path. The blade deals 6d6 slashing damage to each creature
+    in a 40-foot line (DC 30 basic Reflex save). At the start of the spiral centurion-s
+    next turn, the blade swoops around and returns along the same flight path, again
+    dealing 6d6 slashing damage (DC 30 basic Reflex save) to each creature along the
+    same line.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Hurl Blade
+  range: null
+  raw_description: '**Hurl Blade** [Two Actions]  The spiral centurion hurls one of
+    its blades with an angled spin to ensure a swooping flight path. The blade deals
+    6d6 slashing damage to each creature in a 40-foot line (DC 30 basic Reflex save).
+    At the start of the spiral centurion-s next turn, the blade swoops around and
+    returns along the same flight path, again dealing 6d6 slashing damage (DC 30 basic
+    Reflex save) to each creature along the same line.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The spiral centurion has not acted yet this turn
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Rev Up
+  range: null
+  raw_description: '**Rev Up**   **Requirements** The spiral centurion has not acted
+    yet this turn; **Effect** The spiral centurion Strides up to its Speed. It then
+    gains a +2 circumstance bonus to attack and damage rolls until the end of its
+    turn.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: Medium or smaller, blade, DC 30
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Trample
+  range: null
+  raw_description: '**__Trample__** [Three Actions]  Medium or smaller, blade, DC
+    30'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: The spiral centurion spins furiously in place, its blades extended
+    to slice through nearby creatures. It makes up to five melee blade Strikes. No
+    single creature can be targeted by more than one blade Strike during one use of
+    this ability. These attacks count toward the spiral centurion's multiple attack
+    penalty, but the multiple attack penalty doesn't increase until after all the
+    attacks are made.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Whirling Death
+  range: null
+  raw_description: '**Whirling Death** [Three Actions]  The spiral centurion spins
+    furiously in place, its blades extended to slice through nearby creatures. It
+    makes up to five melee blade Strikes. No single creature can be targeted by more
+    than one blade Strike during one use of this ability. These attacks count toward
+    the spiral centurion''s multiple attack penalty, but the multiple attack penalty
+    doesn''t increase until after all the attacks are made.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: Top-Heavy A spiral centurion's top-like design makes it susceptible to effects
+    that would cause it to fall prone. The DC of any attempt to knock the spiral centurion
+    prone is reduced by 5. If the spiral centurion attempts a check or saving throw
+    to resist being knocked prone
+- amount: -5
+  type: it takes a status penalty. A spiral centurion that has been knocked prone
+    can-t use any actions other than to attempt to Stand
+- amount: 30
+  type: but it must succeed at a DC Acrobatics check to do so.
+ritual_lists: null
+saves:
+  fort: 22
+  fort_misc: null
+  misc: null
+  ref: 25
+  ref_misc: null
+  will: 16
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +20
+- darkvision
+size: Medium
+skills:
+- bonus: 23
+  misc: null
+  name: 'Acrobatics '
+- bonus: 23
+  misc: null
+  name: 'Athletics '
+source:
+- abbr: Bestiary 2
+  page_start: 250
+  page_stop: null
+speed:
+- amount: 40
+  type: Land
+spell_lists: null
+traits:
+- N
+- Medium
+- Construct
+- Mindless
+type: Creature
+weaknesses: null

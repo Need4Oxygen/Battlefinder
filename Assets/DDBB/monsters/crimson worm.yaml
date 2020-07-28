@@ -1,0 +1,327 @@
+ability_mods:
+  cha_mod: -1
+  con_mod: 9
+  dex_mod: -1
+  int_mod: -3
+  str_mod: 10
+  wis_mod: -1
+ac: 40
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: As long as a crimson worm is in contact with a fire or body of magma
+    at least as large as itself, it gains fast healing 20. When struck by a magical
+    fire effect from anything other than itself, a crimson worm regains Hit Points
+    equal to half the fire damage the effect would otherwise deal.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Fire Healing
+  range: null
+  raw_description: '**Fire Healing** As long as a crimson worm is in contact with
+    a fire or body of magma at least as large as itself, it gains fast healing 20.
+    When struck by a magical fire effect from anything other than itself, a crimson
+    worm regains Hit Points equal to half the fire damage the effect would otherwise
+    deal.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The crimson worm recovers from the paralyzed, slowed, and stunned conditions
+    at the end of its turn. It's also immune to penalties to its Speeds and the immobilized
+    condition, and it ignores difficult terrain and greater difficult terrain.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Inexorable
+  range: null
+  raw_description: '**Inexorable** The crimson worm recovers from the paralyzed, slowed,
+    and stunned conditions at the end of its turn. It''s also immune to penalties
+    to its Speeds and the immobilized condition, and it ignores difficult terrain
+    and greater difficult terrain.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The crimson worm negates the triggering condition or effect. Effects from
+    artifacts, deities, or a similarly powerful source can't be avoided in this way.
+  effects: null
+  failure: null
+  frequency: once per day
+  full_description: null
+  generic_description: null
+  name: Shake It Off
+  range: null
+  raw_description: '**Shake It Off** [Reaction] **Frequency** once per day; **Trigger**
+    The crimson worm would be affected by a condition or adverse effect (such as __baleful
+    polymorph__). **Effect** The crimson worm negates the triggering condition or
+    effect. Effects from artifacts, deities, or a similarly powerful source can''t
+    be avoided in this way.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: The crimson worm would be affected by a condition or adverse effect (such
+    as __baleful polymorph__).
+description: 'Among the most dangerous cave worms are the fiery crimson worms. In
+  addition to being even larger than azure or purple worms, the crimson worm has a
+  penchant for burrowing through volcanic regions that, over the generations, have
+  infused it with a supernatural link to the Elemental Plane of Fire. The molten heart
+  of an active volcano is an attractive lair for a crimson worm, as are the sprawling
+  fields of bubbling magma found in the deepest reaches of the Darklands. Legends
+  from ancient peoples, precursor dwarven societies, and colonists of the Elemental
+  Planes populated moats of lava with crimson worms likely have some basis in truth,
+  although the methods such ancients used to keep these "moat worms" contained and
+  prevented them from chewing their way through fortress foundations must have been
+  significant.
+
+
+
+
+  Crimson worms sometimes frequent areas on the surface where volcanism creates hot
+  springs or other geothermal features, but even then they prefer to spend most of
+  their time burrowing through the ground in their never-ending search for sustenance.
+  Surface lands claimed by crimson worms are notable for the mound-shaped burrows
+  these creatures leave behind as they dig.
+
+
+
+
+  **__Recall Knowledge - Beast__ (__Arcana__, __Nature__)**: DC 43'
+hp: 410
+hp_misc: fire healing
+immunities:
+- fire
+items: null
+languages: null
+level: 18
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d10+18
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 2d6
+    type: fire and Improved Grab
+  to_hit: 36
+  traits:
+  - deadly 3d10
+  - fire
+  - reach 20 feet
+- action_cost: One Action
+  damage:
+    formula: 2d12+18
+    type: piercing
+  name: stinger
+  plus_damage:
+  - formula: 2d6
+    type: fire and crimson worm venom
+  to_hit: 36
+  traits:
+  - agile
+  - fire
+  - poison
+  - reach 20 feet
+- action_cost: One Action
+  damage:
+    formula: 2d10+16
+    type: bludgeoning
+  name: body
+  plus_damage:
+  - formula: 2d6
+    type: fire
+  to_hit: 34
+  traits:
+  - fire
+  - reach 15 feet
+name: Crimson Worm
+perception: 25
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The crimson worm breathes a blast of flame in a 60-foot cone that deals
+    18d6 fire damage to all creatures in the area (DC 41 basic Reflex save). It can't
+    use Breath Weapon again for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Breath Weapon
+  range: null
+  raw_description: '**Breath Weapon** [Two Actions]  (__evocation__, __fire__, __primal__)
+    The crimson worm breathes a blast of flame in a 60-foot cone that deals 18d6 fire
+    damage to all creatures in the area (DC 41 basic Reflex save). It can''t use Breath
+    Weapon again for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - evocation
+  - fire
+  - primal
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw** DC 41 Fortitude, **Maximum Duration** 6 rounds; **Stage
+    1** 1d6 poison damage and drained 1 (1 round), **Stage 2** 2d6 poison damage and
+    drained 1 (1 round); **Stage 3** 2d6 poison damage and drained 2 (1 round).'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Crimson Worm Venom
+  range: null
+  raw_description: '**Crimson Worm Venom** (__poison__) **Saving Throw** DC 41 Fortitude,
+    **Maximum Duration** 6 rounds; **Stage 1** 1d6 poison damage and drained 1 (1
+    round), **Stage 2** 2d6 poison damage and drained 1 (1 round); **Stage 3** 2d6
+    poison damage and drained 2 (1 round).'
+  requirements: null
+  success: null
+  traits:
+  - poison
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The worm uses Swallow Whole.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Fast Swallow
+  range: null
+  raw_description: '**Fast Swallow** [Reaction]  **Trigger** The worm Grabs a creature.
+    **Effect** The worm uses Swallow Whole.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: The worm Grabs a creature.
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A crimson worm can burrow through solid stone at a Speed of 20 feet.
+    It can leave a tunnel if it desires, and it usually does.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Rock Tunneler
+  range: null
+  raw_description: '**Rock Tunneler** A crimson worm can burrow through solid stone
+    at a Speed of 20 feet. It can leave a tunnel if it desires, and it usually does.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: Huge, 3d10+10 bludgeoning plus 2d6 fire, Rupture 36
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Swallow Whole
+  range: null
+  raw_description: '**Swallow Whole**   Huge, 3d10+10 bludgeoning plus 2d6 fire, Rupture
+    36'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The worm makes a Strike once against each creature in its reach. It
+    can Strike up to once with its jaws, up to once with its stinger, and any number
+    of times with its body. Each attack counts toward the worm's multiple attack penalty,
+    but the multiple attack penalty doesn't increase until after it makes all the
+    attacks.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Thrash
+  range: null
+  raw_description: '**Thrash** [Two Actions]  The worm makes a Strike once against
+    each creature in its reach. It can Strike up to once with its jaws, up to once
+    with its stinger, and any number of times with its body. Each attack counts toward
+    the worm''s multiple attack penalty, but the multiple attack penalty doesn''t
+    increase until after it makes all the attacks.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Rare
+resistances:
+- amount: 15
+  type: cold
+ritual_lists: null
+saves:
+  fort: 36
+  fort_misc: null
+  misc: null
+  ref: 25
+  ref_misc: null
+  will: 27
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +25
+- darkvision
+- tremorsense (imprecise) 100 feet
+size: Gargantuan
+skills:
+- bonus: 38
+  misc: null
+  name: 'Athletics '
+source:
+- abbr: Bestiary
+  page_start: 59
+  page_stop: null
+speed:
+- amount: 40
+  type: Land
+- amount: 40
+  type: burrow
+- amount: 20
+  type: swim
+spell_lists: null
+traits:
+- Rare
+- N
+- Gargantuan
+- Beast
+- Fire
+type: Creature
+weaknesses: null

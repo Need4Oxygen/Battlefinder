@@ -1,0 +1,204 @@
+ability_mods:
+  cha_mod: 6
+  con_mod: 4
+  dex_mod: 3
+  int_mod: 0
+  str_mod: 5
+  wis_mod: 4
+ac: 30
+ac_special: null
+alignment: CE
+automatic_abilities: null
+description: 'The biggest difference between a gahlepod and a grown brughadatch isn''t
+  their humanoid appearance, but the powerful magic they gain as they mature.
+
+
+
+
+  **__Recall Knowledge - Fey__ (__Nature__)**: DC 27'
+hp: 210
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Common
+- Sylvan
+level: 10
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d10+9
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 21
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 2d8+5
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 19
+  traits:
+  - agile
+name: Brughadatch
+perception: 19
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 'DC 28, attack +22; **4th** __charm__ (at will), __confusion__; **3rd**
+    __enthrall__ (x3); **2nd** __faerie fire__, __hideous laughter__; **1st** __fear__
+    (at will); **Cantrips** **(4th)** __detect magic__, __produce flame__
+
+
+    '
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Primal Innate Spels
+  range: null
+  raw_description: '**Primal Innate Spels** DC 28, attack +22; **4th** __charm__ (at
+    will), __confusion__; **3rd** __enthrall__ (x3); **2nd** __faerie fire__, __hideous
+    laughter__; **1st** __fear__ (at will); **Cantrips** **(4th)** __detect magic__,
+    __produce flame__
+
+
+    '
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: As failure, plus for 1 hour, the creature's attitude becomes helpful
+    to the brughadatch, and the creature can't use hostile actions against them.
+  critical_success: The creature sees through the illusion and becomes immune to the
+    effects of Deceitful Feast for 24 hours.
+  description: 'The brughadatch conjures a decadent, enticing feast void of nutritional
+    substance. This conjuration takes 1 minute and lasts for 24 hours. For each item
+    of illusory food a creature eats, it must attempt a DC 29 Will save.
+
+
+    '
+  effect: null
+  effects: null
+  failure: The creature takes a -1 circumstance penalty to Will saves against any
+    of the brughadatch's spells or abilities. The penalty increases with each failed
+    save, to a maximum of -5.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Deceitful Feast
+  range: null
+  raw_description: '**Deceitful Feast** (__illusion__) The brughadatch conjures a
+    decadent, enticing feast void of nutritional substance. This conjuration takes
+    1 minute and lasts for 24 hours. For each item of illusory food a creature eats,
+    it must attempt a DC 29 Will save.
+
+
+    **Critical Success** The creature sees through the illusion and becomes immune
+    to the effects of Deceitful Feast for 24 hours.
+
+
+    **Success** The creature doesn''t see through the illusion but is unaffected by
+    the food.
+
+
+    **Failure** The creature takes a -1 circumstance penalty to Will saves against
+    any of the brughadatch''s spells or abilities. The penalty increases with each
+    failed save, to a maximum of -5.
+
+
+    **Critical Failure** As failure, plus for 1 hour, the creature''s attitude becomes
+    __helpful__ to the brughadatch, and the creature can''t use hostile actions against
+    them.'
+  requirements: null
+  success: The creature doesn't see through the illusion but is unaffected by the
+    food.
+  traits:
+  - illusion
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: once per round
+  effects: null
+  failure: null
+  frequency: Targets must have critically failed a save against a brughadatch's Deceitful
+    Feast or <a style="text-decoration:underline" href="Spells.aspx?ID=34"><i>charm</i></a>
+    innate spell
+  full_description: null
+  generic_description: null
+  name: Psychic Sip
+  range: null
+  raw_description: '**Psychic Sip**   **Requirements** Targets must have critically
+    failed a save against a brughadatch''s Deceitful Feast or __charm__ innate spell;
+    **Frequency** once per round; **Effect** The brughadatch feasts on the souls of
+    the creatures they''ve tricked. They target up to five creatures within 30 feet
+    and feast on their ambient brainpower, dealing 4d10 mental damage (DC 26 basic
+    Will save) to each creature. Unless a target succeeds at the Will save, this damage
+    does not end the charm effect or the effect of Deceitful Feast as a hostile action
+    normally would.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 22
+  fort_misc: null
+  misc: null
+  ref: 16
+  ref_misc: null
+  will: 20
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +19
+- darkvision
+size: Medium
+skills:
+- bonus: 19
+  misc: null
+  name: 'Athletics '
+- bonus: 22
+  misc: null
+  name: 'Deception '
+- bonus: 22
+  misc: null
+  name: 'Intimidation '
+- bonus: 22
+  misc: null
+  name: 'Nature '
+- bonus: 20
+  misc: null
+  name: 'Survival '
+source:
+- abbr: 'Pathfinder #154: Siege of the Dinosaurs'
+  page_start: 78
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 25
+  type: swim
+spell_lists: null
+traits:
+- CE
+- Medium
+- Amphibious
+- Fey
+type: Creature
+weaknesses:
+- amount: 10
+  type: cold iron

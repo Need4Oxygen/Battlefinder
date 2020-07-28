@@ -1,0 +1,189 @@
+ability_mods:
+  cha_mod: -5
+  con_mod: 5
+  dex_mod: -5
+  int_mod: -5
+  str_mod: 4
+  wis_mod: 0
+ac: 10
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Found underground or in dungeons, these quivering cubes of slime continuously
+  scour their domain for food. The acid in their bodies is weak enough that many gelatinous
+  cubes still contain the gear of their victims, as they''re unable to break them
+  down.
+
+
+
+
+  **__Recall Knowledge - Ooze__ (__Occultism__)**: DC 18'
+hp: 90
+hp_misc: null
+immunities:
+- acid
+- critical hits
+- mental
+- precision
+- unconscious
+- visual
+items: null
+languages: null
+level: 3
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6
+    type: acid
+  name: cube face
+  plus_damage:
+  - formula: null
+    type: paralysis
+  to_hit: 11
+  traits: null
+name: Gelatinous Cube
+perception: 5
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: DC 19, 2d6 acid, Escape DC 19, Rupture 7. A creature Engulfed by the
+    gelatinous cube must also attempt a saving throw against paralysis.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Engulf
+  range: null
+  raw_description: '**Engulf** [Two Actions]  DC 19, 2d6 acid, Escape DC 19, Rupture
+    7. A creature Engulfed by the gelatinous cube must also attempt a saving throw
+    against paralysis.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A creature Engulfed by the cube or hit by its attack is paralyzed unless
+    it succeeds at a DC 20 Fortitude save. A victim can attempt a new save to recover
+    at the end of each of its turns.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Paralysis
+  range: null
+  raw_description: '**Paralysis** (__incapacitation__) A creature Engulfed by the
+    cube or hit by its attack is paralyzed unless it succeeds at a DC 20 Fortitude
+    save. A victim can attempt a new save to recover at the end of each of its turns.'
+  requirements: null
+  success: null
+  traits:
+  - incapacitation
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A gelatinous cube's acid damages only organic material—not metal, stone,
+    or other inorganic substances.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Weak Acid
+  range: null
+  raw_description: '**Weak Acid** A gelatinous cube''s acid damages only organic material—not
+    metal, stone, or other inorganic substances.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 5
+  type: electricity
+ritual_lists: null
+saves:
+  fort: 12
+  fort_misc: null
+  misc: null
+  ref: 0
+  ref_misc: null
+  will: 5
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A gelatinous cube can sense nearby motion through vibration and air
+    movement.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Motion Sense
+  range: null
+  raw_description: '**Motion Sense** A gelatinous cube can sense nearby motion through
+    vibration and air movement.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A gelatinous cube is so clear that it's difficult to spot. A successful
+    DC 23 Perception check is required to notice a stationary cube, and a creature
+    must be Searching to attempt this check. A creature that walks into the cube is
+    automatically Engulfed (this usually causes the GM to call for initiative).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Transparent
+  range: null
+  raw_description: '**Transparent** A gelatinous cube is so clear that it''s difficult
+    to spot. A successful DC 23 Perception check is required to notice a stationary
+    cube, and a creature must be Searching to attempt this check. A creature that
+    walks into the cube is automatically Engulfed (this usually causes the GM to call
+    for initiative).'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +5
+- motion sense 60 feet
+- no vision
+size: Large
+skills:
+- bonus: 11
+  misc: +13 to Shove
+  name: 'Athletics '
+source:
+- abbr: Bestiary
+  page_start: 254
+  page_stop: null
+speed:
+- amount: 15
+  type: Land
+spell_lists: null
+traits:
+- N
+- Large
+- Mindless
+- Ooze
+type: Creature
+weaknesses: null

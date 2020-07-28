@@ -1,0 +1,240 @@
+ability_mods:
+  cha_mod: 4
+  con_mod: 3
+  dex_mod: 5
+  int_mod: -2
+  str_mod: 5
+  wis_mod: 3
+ac: 28
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '[reaction]'
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [None] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+description: 'Irnakurse are surface elves who __drow__ have subjected to particularly
+  cruel and humiliating fleshwarping practices, as drow take special delight in the
+  torment of their surface-dwelling kin. The process of crafting an irnakurse involves
+  twisting an unfortunate elf into a deformed mass of misplaced limbs, loose flesh,
+  and bony protrusions—parts that should be internal are often left on full display
+  to the world. Irnakurse are subject to mental conditioning that causes them to hate
+  their prior forms, and these creatures prefer to attack surface elves over all other
+  targets.
+
+
+
+
+  **__Recall Knowledge - Aberration__ (__Occultism__)**: DC 26'
+hp: 152
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Abyssal
+- Elven
+- Undercommon
+- can't speak any language
+level: 9
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d12+11
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 20
+  traits:
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 2d8+11
+    type: slashing
+  name: tentacle
+  plus_damage:
+  - formula: null
+    type: mind lash
+  to_hit: 20
+  traits:
+  - agile
+  - reach 20 feet
+name: Irnakurse
+perception: 18
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A non-evil creature hit by an irnakurse's tentacle is overwhelmed with
+    corrupted images of a ruined life and must succeed at a DC 28 Will save or be
+    __stunned 2__ (or stunned 4 on a critical failure). After attempting this save,
+    a creature is temporarily immune to Mind Lash for 24 hours.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Mind Lash
+  range: null
+  raw_description: '**Mind Lash** (__emotion__, __enchantment__, __mental__, __occult__)
+    A non-evil creature hit by an irnakurse''s tentacle is overwhelmed with corrupted
+    images of a ruined life and must succeed at a DC 28 Will save or be __stunned
+    2__ (or stunned 4 on a critical failure). After attempting this save, a creature
+    is temporarily immune to Mind Lash for 24 hours.'
+  requirements: null
+  success: null
+  traits:
+  - emotion
+  - enchantment
+  - mental
+  - occult
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: tentacle
+  effect: The monster automatically deals that Strike's damage again to the enemy.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Rend
+  range: null
+  raw_description: A Rend entry lists a Strike the monster has. **Requirements** The
+    monster hit the same enemy with two consecutive Strikes of the listed type in
+    the same round. **Effect** The monster automatically deals that Strike's damage
+    again to the enemy.
+  requirements: The monster hit the same enemy with two consecutive Strikes of the
+    listed type in the same round.
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: The creature is unaffected, and is temporarily immune to Soul
+    Scream for 24 hours.
+  description: null
+  effect: "The irnakurse unleashes an alien shriek of nightmarish horror and pain.\
+    \ All non-evil creatures within a 10-foot emanation must attempt a DC 28 Will\
+    \ save. The irnakurse can Sustain Soul Scream for up to 6 rounds; each time it\
+    \ does, it repeats the effect. \n\n"
+  effects: null
+  failure: null
+  frequency: once per day
+  full_description: null
+  generic_description: null
+  name: Soul Scream
+  range: null
+  raw_description: "**Soul Scream** [Two Actions]  (__auditory__, __concentrate__,\
+    \ __emotion__, __enchantment__, __mental__, __occult__) **Frequency** once per\
+    \ day; **Effect** The irnakurse unleashes an alien shriek of nightmarish horror\
+    \ and pain. All non-evil creatures within a 10-foot emanation must attempt a DC\
+    \ 28 Will save. The irnakurse can Sustain Soul Scream for up to 6 rounds; each\
+    \ time it does, it repeats the effect. \n\n**Critical Success** The creature is\
+    \ unaffected, and is temporarily immune to Soul Scream for 24 hours. \n\n**Success\
+    \ **The creature is __stupefied 1__ for 1 round. \n\n**Failure **The creature\
+    \ is stupefied 1. Further failed saves against Soul Scream increase the condition\
+    \ value by 1, to a maximum of stupefied 4. Each time the character gets a full\
+    \ night's rest, the stupefied condition gained from Soul Scream decreases by 1.\
+    \ \n\n**Critical Failure **As failure, except the stupefied value increases by\
+    \ 2 instead of by 1."
+  requirements: null
+  success: null
+  traits:
+  - auditory
+  - concentrate
+  - emotion
+  - enchantment
+  - mental
+  - occult
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The irnakurse makes up to four tentacle Strikes, each against a different
+    target. These attacks count toward the irnakurse's multiple attack penalty, but
+    the multiple attack penalty doesn't increase until after it makes all of its attacks.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Storm of Tentacles
+  range: null
+  raw_description: '**Storm of Tentacles** [Two Actions]  The irnakurse makes up to
+    four tentacle Strikes, each against a different target. These attacks count toward
+    the irnakurse''s multiple attack penalty, but the multiple attack penalty doesn''t
+    increase until after it makes all of its attacks.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 20
+  fort_misc: null
+  misc: null
+  ref: 18
+  ref_misc: null
+  will: 16
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +18
+- darkvision
+size: Large
+skills:
+- bonus: 20
+  misc: null
+  name: 'Acrobatics '
+- bonus: 20
+  misc: null
+  name: 'Athletics '
+- bonus: 20
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 118
+  page_stop: null
+speed:
+- amount: 15
+  type: Land
+spell_lists: null
+traits:
+- CE
+- Large
+- Aberration
+type: Creature
+weaknesses: null

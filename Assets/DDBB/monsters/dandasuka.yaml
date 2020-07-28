@@ -1,0 +1,224 @@
+ability_mods:
+  cha_mod: 3
+  con_mod: 3
+  dex_mod: 4
+  int_mod: 1
+  str_mod: 1
+  wis_mod: 1
+ac: 23
+ac_special: null
+alignment: LE
+automatic_abilities: null
+description: 'Known as "biters" among the more powerful rakshasa castes, dandasukas
+  serve as spies and assassins for rakshasa clans or powerful spellcasters who have
+  found methods to bind one of these fiends to their will. Born to manipulate and
+  murder, these half-sized terrors revel in their work and delight in the sight of
+  blood. They often dress in extravagant clothes dyed with ostentatious colors and
+  wear numerous elaborate accessories, whether in their true form or in disguise as
+  human children, halfling merchants, or anything else that helps them blend into
+  their targeted society.
+
+
+
+
+  A dandasuka rakshasa is constantly haunted by a monstrous hunger that gnaws at its
+  hyperactive body, forcing it to feed often. In combat, a dandasuka might pause to
+  lick a bloody blade or lap at a pool of spilled blood on the floor. These creatures
+  settle for other meat when they must, but much prefer the taste of mortal humanoid
+  flesh. Regular offers of such victuals can keep a dandasuka loyal to anyone willing
+  to provide frequent meals, but care must be taken in keeping a dandasuka, for many
+  stories tell of them being overly eager to serve an adored benefactor, taking off-hand
+  remarks too literally, and performing services of violence that were never intended.
+
+
+
+
+  **__Recall Knowledge - Fiend__ (__Religion__)**: DC 20'
+hp: 60
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Common
+- Infernal
+- Undercommon
+level: 5
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+4
+    type: piercing
+  name: fangs
+  plus_damage:
+  - formula: 1d6
+    type: persistent bleed
+  to_hit: 15
+  traits:
+  - finesse
+  - magical
+- action_cost: One Action
+  damage:
+    formula: 2d4+4
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 15
+  traits:
+  - agile
+  - finesse
+  - magical
+name: Dandasuka
+perception: 12
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The dandasuka takes on the appearance of any Small humanoid. This doesn't
+    change the dandasuka's Speed or its attack and damage modifiers with its Strikes,
+    but it might change the damage type its Strikes deal (typically to bludgeoning).
+    It typically loses its fangs Strike unless the humanoid form has fangs or a similar
+    unarmed attack.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Change Shape
+  range: null
+  raw_description: '**Change Shape**   (__concentrate__, __occult__, __polymorph__,
+    __transmutation__) The dandasuka takes on the appearance of any Small humanoid.
+    This doesn''t change the dandasuka''s Speed or its attack and damage modifiers
+    with its Strikes, but it might change the damage type its Strikes deal (typically
+    to bludgeoning). It typically loses its fangs Strike unless the humanoid form
+    has fangs or a similar unarmed attack.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - occult
+  - polymorph
+  - transmutation
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The dandasuka deals an extra 1d6 precision damage to __flat-footed__
+    creatures.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sneak Attack
+  range: null
+  raw_description: '**__Sneak Attack__** The dandasuka deals an extra 1d6 precision
+    damage to __flat-footed__ creatures.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 5
+  type: physical (except piercing)
+ritual_lists: null
+saves:
+  fort: 12
+  fort_misc: null
+  misc: +2 status to all saves vs. magic, +3 status to all saves vs. divine magic
+  ref: 13
+  ref_misc: null
+  will: 10
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +12
+- darkvision
+size: Small
+skills:
+- bonus: 13
+  misc: null
+  name: 'Acrobatics '
+- bonus: 14
+  misc: null
+  name: 'Deception '
+- bonus: 13
+  misc: null
+  name: 'Stealth '
+- bonus: 13
+  misc: null
+  name: 'Thievery '
+source:
+- abbr: Bestiary
+  page_start: 274
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 20
+  type: climb
+spell_lists:
+- dc: 22
+  misc: ''
+  name: Occult Spontaneous Spells
+  spell_groups:
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: charm
+      requirement: null
+    - frequency: 4 slots
+      name: ventriloquism
+      requirement: null
+  - heightened_level: 1
+    level: 0
+    spells:
+    - frequency: null
+      name: daze
+      requirement: null
+    - frequency: null
+      name: detect magic
+      requirement: null
+    - frequency: null
+      name: ghost sound
+      requirement: null
+    - frequency: null
+      name: mage hand
+      requirement: null
+    - frequency: null
+      name: sigil
+      requirement: null
+  to_hit: 15
+- dc: 19
+  misc: null
+  name: Occult Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: clairvoyance
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: null
+      name: clairaudience
+      requirement: null
+    - frequency: at will
+      name: mind reading
+      requirement: null
+  to_hit: null
+traits:
+- LE
+- Small
+- Fiend
+- Rakshasa
+type: Creature
+weaknesses:
+- amount: 5
+  type: good

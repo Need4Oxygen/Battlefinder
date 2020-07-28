@@ -1,0 +1,371 @@
+ability_mods:
+  cha_mod: 4
+  con_mod: 4
+  dex_mod: 7
+  int_mod: 5
+  str_mod: 4
+  wis_mod: 3
+ac: 34
+ac_special: null
+alignment: LE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 15 feet. Tangled roots, jagged divots, sharp rocks and other hazards
+    appear on surfaces in the aura, creating difficult terrain.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Treacherous Aura
+  range: null
+  raw_description: '**Treacherous Aura** (__aura__, __primal__, __transmutation__)
+    15 feet. Tangled roots, jagged divots, sharp rocks and other hazards appear on
+    surfaces in the aura, creating difficult terrain.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - primal
+  - transmutation
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The triggering creature must attempt a DC 32 Reflex save.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Trip Up
+  range: null
+  raw_description: '**Trip Up** [Reaction] **Trigger** A creature critically fails
+    a melee attack to hit the gimmerling or moves into a space within the gimmerling''s
+    treacherous aura. **Effect** The triggering creature must attempt a DC 32 Reflex
+    save.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature critically fails a melee attack to hit the gimmerling or moves
+    into a space within the gimmerling's treacherous aura.
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The target is unaffected.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Critical Success
+  range: null
+  raw_description: '**Critical Success** The target is unaffected.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The target is flat-footed until the start of its next turn.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Success
+  range: null
+  raw_description: '**Success** The target is flat-footed until the start of its next
+    turn.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The target takes 2d10 bludgeoning damage and is flat-footed until the
+    start of its next turn.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Failure
+  range: null
+  raw_description: '**Failure** The target takes 2d10 bludgeoning damage and is flat-footed
+    until the start of its next turn.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: As failure, and the target is knocked prone.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Critical Failure
+  range: null
+  raw_description: '**Critical Failure** As failure, and the target is knocked prone.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Gimmerlings are small, shapeshifting fey who stage ambushes to sate
+  their endless hunger and childish greed. These cruelly curious fey obsess over finding
+  and making unusual traps and sadistic weapons, and their favorite amusement is se
+  eing these traps sprung or the weapons wielded. When on the Material Plane, they
+  are frequently found in urban areas, particularly slums or other parts of town where
+  they can either go unnoticed or be easily forgotten—and have plenty of victims to
+  choose from.
+
+
+
+
+  A typical gimmerling disguises itself as an endangered child, doing so in hopes
+  of drawing creatures close enough to rob. The gimmerling puts itself in apparent
+  danger using a trap, construct, or bribed ally, or even a coerced monster like a
+  redcap.
+
+
+
+
+  Because gimmerlings sometimes trade obscure smithing or trapping techniques in exchange
+  for gifts that sate their curiosity, their greed, or their hunger, they have at
+  times been worshipped as minor gods of the forge. Some disciplined gimmerlings work
+  as honored artisans, elite guards, or spies for the demigods known as the Eldest
+  who dwell in the depths of the First World.
+
+
+
+
+  **__Recall Knowledge - Fey__ (__Nature__)**: DC 32'
+hp: 235
+hp_misc: null
+immunities: null
+items:
+- +1 striking hand crossbow (20 bolts)
+languages:
+- Aklo
+- Common
+- Sylvan
+level: 12
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+7
+    type: slashing
+  name: claw
+  plus_damage:
+  - formula: null
+    type: Disarm
+  to_hit: 26
+  traits:
+  - agile
+  - finesse
+- action_cost: One Action
+  damage:
+    formula: 3d8+7
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 2d6
+    type: poison
+  to_hit: 26
+  traits:
+  - finesse
+name: Gimmerling
+perception: 21
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The gimmerling changes into its natural form or that of any humanoid.
+    In humanoid form, it loses its treacherous aura, and its equipment appears to
+    be trinkets or toys. As a humanoid that lacks claws or fangs, it loses the matching
+    Strike. If it loses its claw Strike, it gains a fist Strike that is identical
+    except that it deals bludgeoning damage.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Change Shape
+  range: null
+  raw_description: '**Change Shape**   (__concentrate__, __polymorph__, __primal__,
+    __transmutation__) The gimmerling changes into its natural form or that of any
+    humanoid. In humanoid form, it loses its treacherous aura, and its equipment appears
+    to be trinkets or toys. As a humanoid that lacks claws or fangs, it loses the
+    matching Strike. If it loses its claw Strike, it gains a fist Strike that is identical
+    except that it deals bludgeoning damage.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - polymorph
+  - primal
+  - transmutation
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The gimmerling's last action was a success with a Strike that has Disarm
+    in its damage entry.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Disarm
+  range: null
+  raw_description: '**Disarm** [Two Actions]  **Requirement** The gimmerling''s last
+    action was a success with a Strike that has Disarm in its damage entry. **Effect**
+    The gimmerling knocks a held or carried weapon to the ground in the target''s
+    space.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The gimmerling deals 2d6 extra precision damage to __flat-footed__
+    creatures.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sneak Attack
+  range: null
+  raw_description: '**__Sneak Attack__** The gimmerling deals 2d6 extra precision
+    damage to __flat-footed__ creatures.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The gimmerling ignores difficult terrain and doesn't trigger traps
+    with its movement.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Trickster's Step
+  range: null
+  raw_description: '**Trickster''s Step** The gimmerling ignores difficult terrain
+    and doesn''t trigger traps with its movement.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 2d6+3
+    type: piercing
+  name: hand crossbow
+  plus_damage:
+  - formula: 2d6
+    type: poison
+  to_hit: 28
+  traits:
+  - range increment 60 feet
+  - reload 1
+rarity: Uncommon
+resistances: null
+ritual_lists: null
+saves:
+  fort: 22
+  fort_misc: null
+  misc: null
+  ref: 25
+  ref_misc: null
+  will: 19
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 'Hungersense allows the gimmerling to sense creatures that require
+    food to live.
+
+
+    '
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Hungersense
+  range: null
+  raw_description: '**Hungersense** Hungersense allows the gimmerling to sense creatures
+    that require food to live.
+
+
+    '
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +21
+- hungersense (imprecise) 30 feet
+- low-light vision
+size: Small
+skills:
+- bonus: 23
+  misc: null
+  name: 'Crafting '
+- bonus: 25
+  misc: null
+  name: 'Deception '
+- bonus: 21
+  misc: null
+  name: 'Nature '
+- bonus: 25
+  misc: null
+  name: 'Stealth '
+- bonus: 25
+  misc: null
+  name: 'Thievery '
+source:
+- abbr: Bestiary
+  page_start: 177
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+- amount: null
+  type: trickster's step
+spell_lists: null
+traits:
+- Uncommon
+- LE
+- Small
+- Fey
+type: Creature
+weaknesses:
+- amount: 10
+  type: cold iron

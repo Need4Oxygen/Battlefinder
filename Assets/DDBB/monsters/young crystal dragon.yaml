@@ -1,0 +1,292 @@
+ability_mods:
+  cha_mod: 4
+  con_mod: 3
+  dex_mod: 1
+  int_mod: 1
+  str_mod: 5
+  wis_mod: 2
+ac: 27
+ac_special: null
+alignment: NG
+automatic_abilities:
+- action_cost: None
+  critical_failure: The creature is frightened 4.
+  critical_success: The creature is unaffected by the presence.
+  description: 90 feet, DC 25
+  effect: null
+  effects: null
+  failure: The creature is frightened 2.
+  frequency: null
+  full_description: null
+  generic_description: A creature that first enters the area must attempt a Will save.
+    Regardless of the result of the saving throw, the creature is temporarily immune
+    to this monster's Frightful Presence for 1 minute.
+  name: Frightful Presence
+  range: null
+  raw_description: '**Frightful Presence** 90 feet, DC 25 A creature that first enters
+    the area must attempt a Will save. Regardless of the result of the saving throw,
+    the creature is temporarily immune to this monster''s Frightful Presence for 1
+    minute.
+
+    Critical Success The creature is unaffected by the presence.
+
+    Success The creature is frightened 1.
+
+    Failure The creature is frightened 2.
+
+    Critical Success The creature is frightened 4.'
+  requirements: null
+  success: The creature is frightened 1.
+  traits:
+  - aura
+  - emotion
+  - fear
+  - mental
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The dragon makes a tail Strike at the creature with a -2 penalty. If it
+    hits, the dragon disrupts the creature's action.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Twisting Tail
+  range: null
+  raw_description: '**Twisting Tail [Reaction]** **Trigger **A creature within reach
+    of the dragon''s tail uses a __move__ action or leaves a square during a move
+    action it''s using; **Effect **The dragon makes a tail Strike at the creature
+    with a -2 penalty. If it hits, the dragon disrupts the creature''s action.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within reach of the dragon's tail uses a __move__ action or
+    leaves a square during a move action it's using
+description: 'Good-natured but vain, crystal dragons are beautiful creatures with
+  brilliant hides made of multicolored crystal and gemstone. Their beauty is a source
+  of great pride but is also something of a weakness, as crystal dragons are easily
+  angered by insults about their appearance. Despite their relatively benign natures
+  when compared to other true dragons, crystal dragons can be short tempered and prone
+  to finding insults where none were intended. Although their opinions are changeable,
+  crystal dragons prefer orderly environments and are not fond of sudden interruptions
+  or distractions.
+
+
+
+
+  Crystal dragons build their lairs in underground grottoes, where they cultivate
+  environments of great beauty. Their exacting standards and vivid imaginations mean
+  that they are always working to improve the appearance or layout of some part of
+  their lair. These lairs are unique to each individual crystal dragon, but there
+  are always plenty of reflective surfaces that allow the dragon to observe their
+  own appearance. These range from crystals to reflecting pools to finely crafted
+  mirrors, which are arranged throughout the lair in a pleasing array. Gifts of well-crafted
+  or magical mirrors are an excellent way to curry favor with a crystal dragon.
+
+
+
+
+  Although crystal dragons are easily distracted by their sparkling collections or
+  their vanity, they remain good-hearted creatures at the core and make friends quickly.
+  While a crystal dragon tends to find evil creatures uncouth and unpleasant, any
+  other nearby denizen or inhabitant of their home could become fast friends or beloved
+  pets, depending upon the creature''s capacity for conversation (and for providing
+  the frequent praise and compliments that crystal dragons hunger for).
+
+
+
+
+  **__Recall Knowledge - Dragon__ (__Arcana__)**: DC 25
+
+
+  **__Recall Knowledge - Elemental__ (__Arcana__, __Nature__)**: DC 25'
+hp: 105
+hp_misc: null
+immunities:
+- paralyzed
+- sleep
+items: null
+languages:
+- Common
+- Draconic
+- Terran
+level: 7
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+8
+    type: slashing
+  name: jaws
+  plus_damage:
+  - formula: 2d6
+    type: piercing
+  to_hit: 18
+  traits:
+  - sonic
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 2d6+8
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 18
+  traits:
+  - agile
+- action_cost: One Action
+  damage:
+    formula: 1d10+8
+    type: slashing
+  name: tail
+  plus_damage: null
+  to_hit: 16
+  traits:
+  - reach 15 feet
+name: Young Crystal Dragon
+perception: 15
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The dragon breathes a flurry of piercing crystals that deal 8d6 piercing
+    damage in a 30-foot cone (DC 25 basic Reflex save). They can't use Breath Weapon
+    again for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Breath Weapon
+  range: null
+  raw_description: '**Breath Weapon** [Two Actions]  (__evocation__, __primal__) The
+    dragon breathes a flurry of piercing crystals that deal 8d6 piercing damage in
+    a 30-foot cone (DC 25 basic Reflex save). They can''t use Breath Weapon again
+    for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - evocation
+  - primal
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The dragon makes two claw Strikes and one tail Strike in any order.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Draconic Frenzy
+  range: null
+  raw_description: '**Draconic Frenzy** [Two Actions]  The dragon makes two claw Strikes
+    and one tail Strike in any order.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The dragon recharges their Breath Weapon whenever they critically hit
+    with a Strike.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Draconic Momentum
+  range: null
+  raw_description: '**Draconic Momentum** The dragon recharges their Breath Weapon
+    whenever they critically hit with a Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances:
+- amount: 5
+  type: sonic
+ritual_lists: null
+saves:
+  fort: 16
+  fort_misc: null
+  misc: null
+  ref: 14
+  ref_misc: null
+  will: 15
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +15
+- darkvision
+- scent (imprecise) 60 feet
+- tremorsense (imprecise) 30 feet
+size: Large
+skills:
+- bonus: 14
+  misc: null
+  name: 'Acrobatics '
+- bonus: 16
+  misc: null
+  name: 'Athletics '
+- bonus: 15
+  misc: null
+  name: 'Deception '
+- bonus: 15
+  misc: null
+  name: 'Intimidation '
+- bonus: 15
+  misc: null
+  name: 'Nature '
+- bonus: 18
+  misc: null
+  name: 'Stealth '
+- bonus: 15
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 91
+  page_stop: null
+speed:
+- amount: 40
+  type: Land
+- amount: 30
+  type: burrow
+- amount: 100
+  type: fly
+spell_lists:
+- dc: 25
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: null
+      name: color spray
+      requirement: null
+  - heightened_level: 3
+    level: 0
+    spells:
+    - frequency: null
+      name: dancing lights
+      requirement: null
+  to_hit: null
+traits:
+- Uncommon
+- NG
+- Large
+- Dragon
+- Earth
+- Elemental
+type: Creature
+weaknesses: null

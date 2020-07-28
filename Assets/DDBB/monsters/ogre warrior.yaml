@@ -1,0 +1,98 @@
+ability_mods:
+  cha_mod: -2
+  con_mod: 4
+  dex_mod: -1
+  int_mod: -2
+  str_mod: 5
+  wis_mod: 0
+ac: 17
+ac_special: null
+alignment: CE
+automatic_abilities: null
+description: 'The simplest of ogres are slabs of muscle with hatefully beady eyes,
+  misshapen visages, and malformed bodies. Always eager for mayhem and murder, ogre
+  warriors are quick to turn on their kin when there''s a shortage of smaller folk
+  to torment, so those who lead ogres do their best to keep them constantly distracted
+  with new opportunities for raids and ruin.
+
+
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 18'
+hp: 50
+hp_misc: null
+immunities: null
+items:
+- hide armor
+- javelin (6)
+- ogre hook
+languages:
+- Jotun
+level: 3
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d10+7
+    type: piercing
+  name: ogre hook
+  plus_damage: null
+  to_hit: 12
+  traits:
+  - deadly 1d10
+  - reach 10 feet
+  - trip
+name: Ogre Warrior
+perception: 5
+proactive_abilities: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d6+7
+    type: piercing
+  name: javelin
+  plus_damage: null
+  to_hit: 6
+  traits:
+  - thrown 30 feet
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 11
+  fort_misc: null
+  misc: null
+  ref: 6
+  ref_misc: null
+  will: 5
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +5
+- darkvision
+size: Large
+skills:
+- bonus: 12
+  misc: null
+  name: 'Athletics '
+- bonus: 9
+  misc: null
+  name: 'Intimidation '
+source:
+- abbr: Bestiary
+  page_start: 252
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists: null
+traits:
+- CE
+- Large
+- Giant
+- Humanoid
+type: Creature
+weaknesses: null

@@ -1,0 +1,301 @@
+ability_mods:
+  cha_mod: 1
+  con_mod: 4
+  dex_mod: 6
+  int_mod: 2
+  str_mod: 4
+  wis_mod: 5
+ac: 34
+ac_special: null
+alignment: NE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When an urdefhan dies, its invisible flesh quickly rots away and sublimates
+    into a foul-smelling gas that fills a 5-foot emanation around the body. This gas
+    deals 12d6 negative damage to creatures in this area as their flesh curdles and
+    rots as well (DC 32 basic Fortitude save).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Necrotic Decay
+  range: null
+  raw_description: '**Necrotic Decay** (__divine__, __necromancy__, __negative__)
+    When an urdefhan dies, its invisible flesh quickly rots away and sublimates into
+    a foul-smelling gas that fills a 5-foot emanation around the body. This gas deals
+    12d6 negative damage to creatures in this area as their flesh curdles and rots
+    as well (DC 32 basic Fortitude save).'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - necromancy
+  - negative
+  trigger: null
+description: 'Urdefhan hunters serve as their cults'' trappers, hunters, and poachers.
+  Many urdefhan hunters use __skavelings__ to traverse the massive caverns of the
+  Darklands and scout for prey.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 30'
+hp: 190
+hp_misc: negative healing
+immunities:
+- death effects (except necrotic decay)
+- disease
+- fear
+items:
+- +1 striking rhoka sword
+- +1 striking composite longbow with 50 arrows
+languages:
+- Aklo
+- Daemonic
+- Undercommon
+level: 12
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+10
+    type: slashing
+  name: rhoka sword
+  plus_damage: null
+  to_hit: 24
+  traits:
+  - fatal d10
+  - magical
+  - two-hand d12
+- action_cost: One Action
+  damage:
+    formula: 3d6+10
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: null
+    type: wicked bite
+  to_hit: 22
+  traits:
+  - agile
+name: Urdefhan Hunter
+perception: 26
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The urdefhan hunter makes a ranged Strike at a -2 penalty. The urdefhan
+    deals 4 additional damage with this Strike.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Deadly Aim
+  range: null
+  raw_description: '**Deadly Aim**   (__open__) The urdefhan hunter makes a ranged
+    Strike at a -2 penalty. The urdefhan deals 4 additional damage with this Strike.'
+  requirements: null
+  success: null
+  traits:
+  - open
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The urdefhan hunter is wielding a ranged weapon with __reload 0__
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Double Shot
+  range: null
+  raw_description: '**Double Shot**   **Requirement** The urdefhan hunter is wielding
+    a ranged weapon with __reload 0__; **Effect** The urdefhan hunter makes two Strikes
+    with the required weapon at a single target. These Strikes both count toward the
+    urdefhan''s multiple attack penalty, but the penalty doesn''t increase until both
+    attacks are resolved.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Urdefhan hunters can make composite longbow Strikes while mounted.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Mounted Bow Expert
+  range: null
+  raw_description: '**Mounted Bow Expert** Urdefhan hunters can make composite longbow
+    Strikes while mounted.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The urdefhan damaged a creature with a jaws Strike on its last action
+  effects:
+  - action_cost: None
+    critical_failure: null
+    critical_success: null
+    description: The urdefhan drinks some of the creature's blood. On a failed save,
+      the creature is __drained 1__ and the urdefhan regains 5 HP (or, on a critical
+      failure, it's drained 2 and the urdefhan regains 10 HP).
+    effect: null
+    effects: null
+    failure: null
+    frequency: null
+    full_description: null
+    generic_description: null
+    name: Drain Blood
+    range: null
+    raw_description: '**Drain Blood** The urdefhan drinks some of the creature''s
+      blood. On a failed save, the creature is __drained 1__ and the urdefhan regains
+      5 HP (or, on a critical failure, it''s drained 2 and the urdefhan regains 10
+      HP).'
+    requirements: null
+    success: null
+    traits: null
+    trigger: null
+  - action_cost: None
+    critical_failure: null
+    critical_success: null
+    description: The urdefhan draws out some of the creature's vital essence. The
+      creature becomes __enfeebled 1__ for 1 hour on a failed save (or enfeebled 2
+      for 1 hour on a critical failure).
+    effect: null
+    effects: null
+    failure: null
+    frequency: null
+    full_description: null
+    generic_description: null
+    name: Drain Vitality
+    range: null
+    raw_description: ' **Drain Vitality** (__necromancy__) The urdefhan draws out
+      some of the creature''s vital essence. The creature becomes __enfeebled 1__
+      for 1 hour on a failed save (or enfeebled 2 for 1 hour on a critical failure).'
+    requirements: null
+    success: null
+    traits:
+    - necromancy
+    trigger: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Wicked Bite
+  range: null
+  raw_description: "**Wicked Bite**   **Requirements** The urdefhan damaged a creature\
+    \ with a jaws Strike on its last action; **Effect** The urdefhan maintains contact,\
+    \ turning the creature's flesh translucent around the site of the injury. The\
+    \ urdefhan chooses one of two options, each of which requires a DC 32 Fortitude\
+    \ save. If the jaws Strike was a critical hit, the creature suffers both effects,\
+    \ using the same save result for both. \n\n  * **Drain Blood** The urdefhan drinks\
+    \ some of the creature's blood. On a failed save, the creature is __drained 1__\
+    \ and the urdefhan regains 5 HP (or, on a critical failure, it's drained 2 and\
+    \ the urdefhan regains 10 HP).\n\n  *  **Drain Vitality** (__necromancy__) The\
+    \ urdefhan draws out some of the creature's vital essence. The creature becomes\
+    \ __enfeebled 1__ for 1 hour on a failed save (or enfeebled 2 for 1 hour on a\
+    \ critical failure)."
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 2d8+4
+    type: piercing
+  name: composite longbow
+  plus_damage: null
+  to_hit: 26
+  traits:
+  - deadly d10
+  - magical
+  - propulsive
+  - range increment 100 feet
+  - reload 0
+  - volley 30 feet
+rarity: Common
+resistances:
+- amount: 12
+  type: positive
+ritual_lists: null
+saves:
+  fort: 20
+  fort_misc: null
+  misc: null
+  ref: 26
+  ref_misc: null
+  will: 23
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +26
+- greater darkvision
+size: Medium
+skills:
+- bonus: 24
+  misc: null
+  name: 'Acrobatics '
+- bonus: 23
+  misc: null
+  name: 'Nature '
+- bonus: 21
+  misc: null
+  name: 'Religion '
+- bonus: 26
+  misc: null
+  name: 'Stealth '
+- bonus: 25
+  misc: +27 to Track
+  name: 'Survival '
+source:
+- abbr: 'Pathfinder #155: Lord of the Black Sands'
+  page_start: 82
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+spell_lists:
+- dc: 29
+  misc: ''
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: death knell
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: at will, self only
+      name: feather fall
+      requirement: null
+    - frequency: null
+      name: ray of enfeeblement
+      requirement: null
+  to_hit: 23
+traits:
+- NE
+- Medium
+- Humanoid
+- Urdefhan
+type: Creature
+weaknesses: null

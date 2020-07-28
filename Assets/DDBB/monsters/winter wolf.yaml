@@ -1,0 +1,181 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 4
+  dex_mod: 4
+  int_mod: 2
+  str_mod: 6
+  wis_mod: 3
+ac: 23
+ac_special: null
+alignment: NE
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: DC 21
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Buck
+  range: null
+  raw_description: '**Buck** [Reaction] DC 21'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The winter wolf makes a jaws Strike against the triggering creature.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Avenging Bite
+  range: null
+  raw_description: '**Avenging Bite** [Reaction] **Trigger** A creature within reach
+    of the winter wolf''s jaws attacks one of the winter wolf''s allies. **Effect**
+    The winter wolf makes a jaws Strike against the triggering creature.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within reach of the winter wolf's jaws attacks one of the winter
+    wolf's allies.
+description: 'Winter wolves are related to wargs, but are larger, smarter, and far
+  more dangerous. They are capable of exhaling plumes of freezing breath and are big
+  enough to easily serve as mounts for orcs and hobgoblins—provided the winter wolf
+  is willing, of course. Like wargs, winter wolves hunt in packs, but unlike their
+  smaller cousins, they have a notable proud streak. When they deign to serve others,
+  they reserve this privilege for larger and more dangerous creatures such as frost
+  giants, renegade yetis, or even white dragons.
+
+
+
+
+  **__Recall Knowledge - Beast__ (__Arcana__, __Nature__)**: DC 20'
+hp: 70
+hp_misc: null
+immunities:
+- cold
+items: null
+languages:
+- Common
+- Jotun
+level: 5
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d10+6
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 1d6
+    type: cold and Knockdown
+  to_hit: 15
+  traits:
+  - cold
+name: Winter Wolf
+perception: 14
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The winter wolf breathes a cloud of frost in a 15-foot cone that deals
+    5d8 cold damage (DC 23 basic Reflex save). The winter wolf can't use Breath Weapon
+    again for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Breath Weapon
+  range: null
+  raw_description: '**Breath Weapon** [Two Actions]  (__cold__, __evocation__, __primal__)
+    The winter wolf breathes a cloud of frost in a 15-foot cone that deals 5d8 cold
+    damage (DC 23 basic Reflex save). The winter wolf can''t use Breath Weapon again
+    for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - cold
+  - evocation
+  - primal
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The winter wolf's Strikes deal 1d6 extra damage to creatures within
+    the reach of at least two of the winter wolf's allies.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Pack Attack
+  range: null
+  raw_description: '**Pack Attack** The winter wolf''s Strikes deal 1d6 extra damage
+    to creatures within the reach of at least two of the winter wolf''s allies.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 5
+  type: fire
+ritual_lists: null
+saves:
+  fort: 13
+  fort_misc: null
+  misc: null
+  ref: 15
+  ref_misc: null
+  will: 10
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +14
+- darkvision
+- scent (imprecise) 30 feet
+size: Large
+skills:
+- bonus: 13
+  misc: null
+  name: 'Acrobatics '
+- bonus: 13
+  misc: null
+  name: 'Athletics '
+- bonus: 11
+  misc: null
+  name: 'Deception '
+- bonus: 11
+  misc: null
+  name: 'Intimidation '
+- bonus: 13
+  misc: +16 in snow
+  name: 'Stealth '
+- bonus: 12
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 322
+  page_stop: null
+speed:
+- amount: 40
+  type: Land
+spell_lists: null
+traits:
+- NE
+- Large
+- Beast
+type: Creature
+weaknesses: null

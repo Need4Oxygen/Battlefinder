@@ -1,0 +1,224 @@
+ability_mods:
+  cha_mod: 1
+  con_mod: 1
+  dex_mod: 4
+  int_mod: 0
+  str_mod: 1
+  wis_mod: 3
+ac: 20
+ac_special: null
+alignment: LE
+automatic_abilities: null
+description: 'Zebubs serve as __Hell''s__ messengers and spies. Their ability to share
+  what they''ve seen with other creatures makes them especially useful—not only to
+  other devils, but also to mortal conjurers. Some infernal lords unleash them in
+  enormous, horrid swarms upon unsuspecting lands to debase flesh and land alike while
+  collecting secrets the infernal host might later put to use. Zebubs use any opportunity
+  to manipulate weak-willed or easily tempted mortals into serving the zebubs'' whims.
+  While arrogant and deceitful, zebubs lack the cunning and confidence of most devils,
+  and thus their schemes often focus on satisfying self-serving or self-destructive
+  ambitions. Zebubs form from the souls of childish and craven mortals, reshaped by
+  the archdevil Baalzebul in the frozen, filthy wastes of Hell''s seventh layer, Cocytus.
+
+
+
+
+  **__Recall Knowledge - Fiend__ (__Religion__)**: DC 18'
+hp: 30
+hp_misc: null
+immunities:
+- fire
+items: null
+languages:
+- Celestial
+- Draconic
+- Infernal
+- telepathy 100 feet
+level: 3
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d10+3
+    type: piercing
+  name: mandibles
+  plus_damage:
+  - formula: 1d6
+    type: evil and Cocytan filth
+  to_hit: 12
+  traits:
+  - evil
+  - finesse
+  - magical
+name: Zebub
+perception: 12
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw **DC 18 Fortitude; **Onset **1d4 days; **Stage 1 **__enfeebled
+    1__ (1 day); **Stage 2 **enfeebled 2 (1 day); **Stage 3 **enfeebled 3 (1 day)'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Cocytan Filth
+  range: null
+  raw_description: '**Cocytan Filth** (__disease__, __virulent__) **Saving Throw **DC
+    18 Fortitude; **Onset **1d4 days; **Stage 1 **__enfeebled 1__ (1 day); **Stage
+    2 **enfeebled 2 (1 day); **Stage 3 **enfeebled 3 (1 day)'
+  requirements: null
+  success: null
+  traits:
+  - disease
+  - virulent
+  trigger: null
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: The zebub records everything they see, and though they don't remember
+    all observations, they can pass them along to another creature. The zebub replays
+    10 minutes of witnessed events to a touched willing creature, which receives the
+    memories in a flash of information. By remaining in contact, the zebub can spend
+    additional 3-action activities to replay more information. After relaying their
+    visions to another, the zebub can't ever recall those events again.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Infernal Eye
+  range: null
+  raw_description: '**Infernal Eye** [Three Actions]  (__divine__, __divination__)
+    The zebub records everything they see, and though they don''t remember all observations,
+    they can pass them along to another creature. The zebub replays 10 minutes of
+    witnessed events to a touched willing creature, which receives the memories in
+    a flash of information. By remaining in contact, the zebub can spend additional
+    3-action activities to replay more information. After relaying their visions to
+    another, the zebub can''t ever recall those events again.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - divination
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The zebub's Strikes deal an additional 1d6 precision damage to __flat-footed__
+    creatures.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sneak Attack
+  range: null
+  raw_description: '**__Sneak Attack__** The zebub''s Strikes deal an additional 1d6
+    precision damage to __flat-footed__ creatures.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 5
+  type: physical (except silver)
+- amount: 5
+  type: poison
+ritual_lists:
+- dc: 17
+  misc: null
+  name: Rituals
+  spell_groups:
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: infernal pact
+      requirement: null
+  to_hit: null
+saves:
+  fort: 8
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 10
+  ref_misc: null
+  will: 8
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +12
+- greater darkvision
+size: Small
+skills:
+- bonus: 10
+  misc: null
+  name: 'Acrobatics '
+- bonus: 7
+  misc: null
+  name: 'Arcana '
+- bonus: 8
+  misc: null
+  name: 'Deception '
+- bonus: 9
+  misc: null
+  name: 'Religion '
+- bonus: 10
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 72
+  page_stop: null
+speed:
+- amount: 15
+  type: Land
+- amount: 50
+  type: fly
+spell_lists:
+- dc: 17
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: null
+      name: dimension door
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: at will
+      name: dimension door
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: at will, self only
+      name: invisibility
+      requirement: null
+    - frequency: swarm creatures only
+      name: summon animal
+      requirement: null
+  - heightened_level: 2
+    level: 0
+    spells:
+    - frequency: null
+      name: message
+      requirement: null
+  to_hit: null
+traits:
+- LE
+- Small
+- Devil
+- Fiend
+type: Creature
+weaknesses:
+- amount: 5
+  type: good

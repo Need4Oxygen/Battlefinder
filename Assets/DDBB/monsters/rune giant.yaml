@@ -1,0 +1,454 @@
+ability_mods:
+  cha_mod: 4
+  con_mod: 7
+  dex_mod: 2
+  int_mod: 2
+  str_mod: 9
+  wis_mod: 6
+ac: 38
+ac_special: null
+alignment: LE
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: The rune giant gains an additional reaction at the beginning of each
+    of its turns that it can only use for an Attack of Opportunity.
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Catch Rock
+  range: null
+  raw_description: '**Catch Rock** [Reaction]'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Magically crafted and bred by ancient wizards, rune giants are anathema
+  to and tyrants among their own kind, who were given power to command and magically
+  control other giants. The rune giants themselves served even more powerful masters—potent
+  wizards known as runelords—and in so doing commanded entire armies of giants on
+  behalf of the runelords'' empires. In the eons since these empires collapsed, rune
+  giants have persisted as a people of their own, though to the outside world they''re
+  little more than fabled horrors whispered of late at night by superstitious giants.
+  Rune giants usually dwell in the most remote and rugged of towering mountain ranges,
+  but they can also be found in immense ruins atop lost islands, glacial valleys,
+  or even more remote or magical regions.
+
+
+
+
+  Rune giants'' striking charcoal flesh is decorated by dozens of runes, which are
+  potent manifestations of their eldritch powers. Rune giants are towering creatures,
+  averaging at 40 feet in height and weighing 25,000 pounds.
+
+
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 37'
+hp: 330
+hp_misc: null
+immunities:
+- fire
+items:
+- +1 striking longspear
+- +2 greater striking greatsword
+- +1 splint mail
+languages:
+- Common
+- Jotun
+- Terran
+level: 16
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d12+17
+    type: slashing
+  name: greatsword
+  plus_damage: null
+  to_hit: 33
+  traits:
+  - magical
+  - reach 20 feet
+  - versatile P
+- action_cost: One Action
+  damage:
+    formula: 2d8+17
+    type: piercing
+  name: longspear
+  plus_damage: null
+  to_hit: 32
+  traits:
+  - magical
+  - reach 25 feet
+- action_cost: One Action
+  damage:
+    formula: 3d8+17
+    type: bludgeoning
+  name: fist
+  plus_damage: null
+  to_hit: 31
+  traits:
+  - agile
+  - reach 20 feet
+name: Rune Giant
+perception: 28
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When a rune giant casts a mental spell against another giant, the DC
+    is 39, rather than 35.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Command Giants
+  range: null
+  raw_description: '**Command Giants** When a rune giant casts a mental spell against
+    another giant, the DC is 39, rather than 35.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Free Action
+  critical_failure: null
+  critical_success: null
+  description: When a rune giant casts its innate __sending__ spell, it can also cast
+    __suggestion__ on the target.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Demand
+  range: null
+  raw_description: '**Demand** [Free Action]  (__arcane__, __enchantment__, __mental__)
+    When a rune giant casts its innate __sending__ spell, it can also cast __suggestion__
+    on the target.'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - enchantment
+  - mental
+  trigger: null
+- action_cost: Free Action
+  critical_failure: null
+  critical_success: The creature is unaffected.
+  description: null
+  effect: 'The runes on the giant''s body flash as they produce magical energy. Each
+    creature within a 10-foot emanation must attempt a DC 35 Fortitude save.
+
+
+    '
+  effects: null
+  failure: The creature is blinded for 1 round.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Flashing Runes
+  range: null
+  raw_description: '**Flashing Runes** [Free Action]  (__arcane__, __evocation__,
+    __light__) **Trigger** The rune giant uses an arcane ability or casts an arcane
+    spell. **Effect** The runes on the giant''s body flash as they produce magical
+    energy. Each creature within a 10-foot emanation must attempt a DC 35 Fortitude
+    save.
+
+
+    **Critical Success** The creature is unaffected.
+
+
+    **Success** The creature is __dazzled__ for 1 round.
+
+
+    **Failure** The creature is __blinded__ for 1 round.'
+  requirements: null
+  success: The creature is dazzled for 1 round.
+  traits:
+  - arcane
+  - evocation
+  - light
+  trigger: The rune giant uses an arcane ability or casts an arcane spell.
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: 'The rune giant invokes one of the runes on its body, causing the rune
+    to spray forth a 30-foot cone of sparks that deals 6d12 electricity damage to
+    all creatures in the cone (DC 37 basic Reflex save).
+
+
+    A glowing copy of the invoked rune appears on a single weapon the giant holds,
+    granting the weapon one effect listed below of the giant''s choice. The giant
+    can''t use Invoke Rune again for 1d4 rounds. The effect on the weapon lasts for
+    1 minute. If the giant places a new rune on a weapon, any previously placed rune
+    immediately vanishes, ending its effect.'
+  effect: null
+  effects:
+  - action_cost: None
+    critical_failure: null
+    critical_success: null
+    description: The weapon gains the __deadly__ trait with three weapon damage dice
+      of the same die size as for the base weapon, and a creature hit with the weapon
+      is drained 1 unless it succeeds at a DC 35 Fortitude save.
+    effect: null
+    effects: null
+    failure: null
+    frequency: null
+    full_description: null
+    generic_description: null
+    name: Rune of Destruction
+    range: null
+    raw_description: '**Rune of Destruction** The weapon gains the __deadly__ trait
+      with three weapon damage dice of the same die size as for the base weapon, and
+      a creature hit with the weapon is drained 1 unless it succeeds at a DC 35 Fortitude
+      save.'
+    requirements: null
+    success: null
+    traits: null
+    trigger: null
+  - action_cost: None
+    critical_failure: null
+    critical_success: null
+    description: The weapon deals an additional 3d6 fire damage on all attacks.
+    effect: null
+    effects: null
+    failure: null
+    frequency: null
+    full_description: null
+    generic_description: null
+    name: Rune of Flames
+    range: null
+    raw_description: '**Rune of Flames** The weapon deals an additional 3d6 fire damage
+      on all attacks.'
+    requirements: null
+    success: null
+    traits: null
+    trigger: null
+  - action_cost: None
+    critical_failure: null
+    critical_success: null
+    description: When the weapon hits, the giant can Push the target back 10 feet,
+      or 20 feet on a critical hit.
+    effect: null
+    effects: null
+    failure: null
+    frequency: null
+    full_description: null
+    generic_description: null
+    name: Rune of Smiting
+    range: null
+    raw_description: '**Rune of Smiting** When the weapon hits, the giant can Push
+      the target back 10 feet, or 20 feet on a critical hit.'
+    requirements: null
+    success: null
+    traits: null
+    trigger: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Invoke Rune
+  range: null
+  raw_description: "**Invoke Rune**   (__arcane__, __concentrate__, __electricity__,\
+    \ __evocation__) The rune giant invokes one of the runes on its body, causing\
+    \ the rune to spray forth a 30-foot cone of sparks that deals 6d12 electricity\
+    \ damage to all creatures in the cone (DC 37 basic Reflex save).\n\nA glowing\
+    \ copy of the invoked rune appears on a single weapon the giant holds, granting\
+    \ the weapon one effect listed below of the giant's choice. The giant can't use\
+    \ Invoke Rune again for 1d4 rounds. The effect on the weapon lasts for 1 minute.\
+    \ If the giant places a new rune on a weapon, any previously placed rune immediately\
+    \ vanishes, ending its effect. \n\n  * **Rune of Destruction** The weapon gains\
+    \ the __deadly__ trait with three weapon damage dice of the same die size as for\
+    \ the base weapon, and a creature hit with the weapon is drained 1 unless it succeeds\
+    \ at a DC 35 Fortitude save.\n\n  * **Rune of Flames** The weapon deals an additional\
+    \ 3d6 fire damage on all attacks.\n\n  * **Rune of Smiting** When the weapon hits,\
+    \ the giant can Push the target back 10 feet, or 20 feet on a critical hit."
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - concentrate
+  - electricity
+  - evocation
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: ''
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Throw Rock
+  range: null
+  raw_description: '**Throw Rock**  '
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The rune giant makes a single greatsword Strike and compares the attack
+    roll result to the ACs of up to two foes within its reach. This counts as two
+    attacks for the giant's multiple attack penalty.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Wide Swing
+  range: null
+  raw_description: '**Wide Swing**   The rune giant makes a single greatsword Strike
+    and compares the attack roll result to the ACs of up to two foes within its reach.
+    This counts as two attacks for the giant''s multiple attack penalty.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 2d12+17
+    type: bludgeoning
+  name: rock
+  plus_damage: null
+  to_hit: 31
+  traits:
+  - brutal
+  - range increment 120 feet
+rarity: Uncommon
+resistances: null
+ritual_lists: null
+saves:
+  fort: 33
+  fort_misc: null
+  misc: null
+  ref: 26
+  ref_misc: null
+  will: 28
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +28
+- low-light vision
+size: Gargantuan
+skills:
+- bonus: 28
+  misc: null
+  name: 'Arcana '
+- bonus: 32
+  misc: null
+  name: 'Athletics '
+- bonus: 28
+  misc: null
+  name: 'Crafting '
+- bonus: 28
+  misc: null
+  name: 'Intimidation '
+- bonus: 27
+  misc: null
+  name: 'Society '
+source:
+- abbr: Bestiary
+  page_start: 175
+  page_stop: null
+speed:
+- amount: 45
+  type: Land
+- amount: 6
+  type: <a style="text-decoration:underline" href="Spells.aspx?ID="><i>air walk</i></a>
+spell_lists:
+- dc: 35
+  misc: null
+  name: Arcane Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 8
+    spells:
+    - frequency: null
+      name: charm
+      requirement: null
+    - frequency: null
+      name: suggestion
+      requirement: null
+  - heightened_level: null
+    level: 6
+    spells:
+    - frequency: x3
+      name: dominate
+      requirement: null
+    - frequency: null
+      name: true seeing
+      requirement: null
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: null
+      name: sending
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: at will
+      name: charm
+      requirement: null
+    - frequency: at will
+      name: suggestion
+      requirement: null
+  - heightened_level: 4
+    level: -1
+    spells:
+    - frequency: null
+      name: air walk
+      requirement: null
+  to_hit: null
+traits:
+- Uncommon
+- LE
+- Gargantuan
+- Evil
+- Giant
+- Humanoid
+type: Creature
+weaknesses: null

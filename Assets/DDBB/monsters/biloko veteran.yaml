@@ -1,0 +1,199 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 0
+  dex_mod: 4
+  int_mod: 0
+  str_mod: 4
+  wis_mod: 3
+ac: 21
+ac_special: null
+alignment: NE
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+description: 'A biloko who has led a sufficient number of successful hunts garners
+  the respect (and fear) of their companions.
+
+
+
+
+  **__Recall Knowledge - Fey__ (__Nature__)**: DC 19'
+hp: 58
+hp_misc: null
+immunities: null
+items:
+- longspear
+- shortbow (20 arrows)
+languages:
+- Mwangi
+- Sylvan
+level: 4
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+5
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 14
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 1d8+5
+    type: piercing
+  name: longspear
+  plus_damage: null
+  to_hit: 14
+  traits:
+  - reach 10 feet
+name: Biloko Veteran
+perception: 11
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: If a biloko feasts on a human corpse for 1 minute or more, they gain
+    a +1 status bonus to attack rolls and a +2 status bonus to damage rolls for 1
+    hour.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Inspired Feast
+  range: null
+  raw_description: '**Inspired Feast** (__emotion__, __mental__) If a biloko feasts
+    on a human corpse for 1 minute or more, they gain a +1 status bonus to attack
+    rolls and a +2 status bonus to damage rolls for 1 hour.'
+  requirements: null
+  success: null
+  traits:
+  - emotion
+  - mental
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The veteran makes a melee Strike and compares the attack roll result
+    to the AC of up to two foes, each of whom must be within their melee reach and
+    adjacent to each other. Roll damage only once and apply it to each creature hit.
+    A Swipe counts as two attacks for the veteran's multiple attack penalty.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Swipe
+  range: null
+  raw_description: '**Swipe** [Two Actions]  The veteran makes a melee Strike and
+    compares the attack roll result to the AC of up to two foes, each of whom must
+    be within their melee reach and adjacent to each other. Roll damage only once
+    and apply it to each creature hit. A Swipe counts as two attacks for the veteran''s
+    multiple attack penalty.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d6+3
+    type: piercing
+  name: shortbow
+  plus_damage: null
+  to_hit: 14
+  traits:
+  - deadly d10
+  - range increment 60 feet
+  - reload 0
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 8
+  fort_misc: null
+  misc: null
+  ref: 13
+  ref_misc: null
+  will: 11
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +11
+- low-light vision
+- scent (imprecise) 30 feet
+size: Small
+skills:
+- bonus: 10
+  misc: null
+  name: 'Athletics '
+- bonus: 10
+  misc: null
+  name: 'Crafting '
+- bonus: 12
+  misc: null
+  name: 'Intimidation '
+- bonus: 9
+  misc: null
+  name: 'Nature '
+- bonus: 13
+  misc: null
+  name: 'Stealth '
+- bonus: 11
+  misc: null
+  name: 'Survival '
+source:
+- abbr: 'Pathfinder #146: Cult of Cinders'
+  page_start: 82
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+spell_lists:
+- dc: 21
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: charm
+      requirement: null
+  to_hit: null
+traits:
+- NE
+- Small
+- Fey
+type: Creature
+weaknesses: null

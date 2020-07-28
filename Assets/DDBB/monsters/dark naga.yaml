@@ -1,0 +1,235 @@
+ability_mods:
+  cha_mod: 3
+  con_mod: 4
+  dex_mod: 6
+  int_mod: 3
+  str_mod: 2
+  wis_mod: 2
+ac: 27
+ac_special: null
+alignment: LE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Dark nagas are immune to any form of mind reading.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Guarded Thoughts
+  range: null
+  raw_description: '**Guarded Thoughts** (__abjuration__, __occult__) Dark nagas are
+    immune to any form of mind reading.'
+  requirements: null
+  success: null
+  traits:
+  - abjuration
+  - occult
+  trigger: null
+description: 'Dark nagas are wicked, jealous creatures that crave power and wealth.
+  Indeed, the dark naga sees such ideals as spiritual expressions of an essential
+  truth: if one can take something, that something is theirs to have. The dark naga
+  sees other creatures as lessers worthy only of subjugation or as rivals who must
+  be eliminated.
+
+
+
+
+  Dark nagas dwell in remote places other creatures have forsaken, searching abandoned
+  ruins for wealth and potent magic items. Those unlucky trespassers into a dark naga''s
+  lair typically find themselves as the naga''s slaves or playthings, put to sleep
+  with the monster''s poison or incinerated by its deadly magic. Some dark nagas are
+  more disposed toward socializing than others; in these cases, they may become wicked
+  despots who rule over enclaves of captive or unsuspecting subjects. Subtler dark
+  nagas, especially those who crave finer luxuries, dwell in or under the wealthy
+  settlements and use their wiles to garner a decadent following, forming something
+  akin to a cult with the naga as the jewelry-bedecked object of worship.
+
+
+
+
+  **__Recall Knowledge - Aberration__ (__Occultism__)**: DC 25'
+hp: 115
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Aklo
+- Common
+level: 7
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+5
+    type: piercing
+  name: fangs
+  plus_damage:
+  - formula: null
+    type: dark naga venom
+  to_hit: 19
+  traits:
+  - agile
+  - finesse
+name: Dark Naga
+perception: 15
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw** DC 25 Fortitude; **Maximum Duration** 5 minutes;
+    **Stage 1** __slowed 1__ (1 round); **Stage 2** __slowed 2__ (1 round); **Stage
+    3** unconscious with no Perception check to wake up (1d4+1 minutes)'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Dark Naga Venom
+  range: null
+  raw_description: '**Dark Naga Venom** (__incapacitation__, __poison__) **Saving
+    Throw** DC 25 Fortitude; **Maximum Duration** 5 minutes; **Stage 1** __slowed
+    1__ (1 round); **Stage 2** __slowed 2__ (1 round); **Stage 3** unconscious with
+    no Perception check to wake up (1d4+1 minutes)'
+  requirements: null
+  success: null
+  traits:
+  - incapacitation
+  - poison
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 15
+  fort_misc: null
+  misc: guarded thoughts
+  ref: 17
+  ref_misc: null
+  will: 15
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +15
+- mind reading 30 feet
+- darkvision
+size: Large
+skills:
+- bonus: 17
+  misc: null
+  name: 'Acrobatics '
+- bonus: 16
+  misc: null
+  name: 'Arcana '
+- bonus: 13
+  misc: null
+  name: 'Athletics '
+- bonus: 16
+  misc: null
+  name: 'Deception '
+- bonus: 16
+  misc: null
+  name: 'Intimidation '
+- bonus: 19
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 242
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+spell_lists:
+- dc: 26
+  misc: ''
+  name: Arcane Spontaneous Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: blink
+      requirement: null
+    - frequency: 3 slots
+      name: wall of fire
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: null
+      name: dispel magic
+      requirement: null
+    - frequency: null
+      name: haste
+      requirement: null
+    - frequency: 4 slots
+      name: lightning bolt
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: null
+      name: illusory creature
+      requirement: null
+    - frequency: null
+      name: invisibility
+      requirement: null
+    - frequency: 4 slots
+      name: magic missile
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: feather fall
+      requirement: null
+    - frequency: null
+      name: illusory object
+      requirement: null
+    - frequency: 4 slots
+      name: longstrider
+      requirement: null
+  - heightened_level: 4
+    level: 0
+    spells:
+    - frequency: null
+      name: daze
+      requirement: null
+    - frequency: null
+      name: detect magic
+      requirement: null
+    - frequency: null
+      name: mage hand
+      requirement: null
+    - frequency: null
+      name: read aura
+      requirement: null
+    - frequency: null
+      name: shield
+      requirement: null
+  to_hit: 18
+- dc: 25
+  misc: null
+  name: Occult Innate Spells
+  spell_groups:
+  - heightened_level: 3
+    level: -1
+    spells:
+    - frequency: null
+      name: mind reading
+      requirement: null
+  to_hit: null
+traits:
+- Uncommon
+- LE
+- Large
+- Aberration
+type: Creature
+weaknesses: null

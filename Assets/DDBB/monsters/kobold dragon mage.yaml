@@ -1,0 +1,206 @@
+ability_mods:
+  cha_mod: 4
+  con_mod: 0
+  dex_mod: 3
+  int_mod: 2
+  str_mod: -1
+  wis_mod: 1
+ac: 17
+ac_special: null
+alignment: LE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 'A kobold dragon mage''s resistance depends on the color of its scales:
+    **Black** acid 5, **Blue** electricity 5, **Green** poison 5, **Red** fire 5,
+    **White** cold 5.'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Dragonscaled
+  range: null
+  raw_description: '**Dragonscaled** A kobold dragon mage''s resistance depends on
+    the color of its scales: **Black** acid 5, **Blue** electricity 5, **Green** poison
+    5, **Red** fire 5, **White** cold 5.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Kobold dragon mages use magic to carry out their secret schemes. The
+  presence of a dragon mage in a kobold warren is one of the greatest testaments to
+  the kobolds'' claim to draconic heritage.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 16'
+hp: 25
+hp_misc: null
+immunities: null
+items:
+- staff
+languages:
+- Common
+- Draconic
+level: 2
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6-1
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 7
+  traits:
+  - agile
+  - finesse
+- action_cost: One Action
+  damage:
+    formula: 1d4-1
+    type: bludgeoning
+  name: staff
+  plus_damage: null
+  to_hit: 3
+  traits:
+  - two-hand d8
+name: Kobold Dragon Mage
+perception: 5
+proactive_abilities:
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The kobold dragon mage is adjacent to at least one enemy.
+  effects: null
+  failure: null
+  frequency: once per hour
+  full_description: null
+  generic_description: null
+  name: Illusory Retreat
+  range: null
+  raw_description: '**Illusory Retreat** [Three Actions]  (__arcane__, __illusion__,
+    __manipulate__, __move__) **Frequency** once per hour; **Requirements** The kobold
+    dragon mage is adjacent to at least one enemy. **Effect** The dragon mage creates
+    an illusion of itself in its square and then becomes invisible (with the effects
+    of a 2nd-level __invisibility__ spell) for 1d4 rounds. The dragon mage can move
+    up to half its Speed, but it must end its movement in a space that''s not adjacent
+    to any enemeies. This is a 1st-level spell that requires a somatic component.'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - illusion
+  - manipulate
+  - move
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The dragon mage deals an extra 1d6 precision damage to flat-footed
+    creatures.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sneak Attack
+  range: null
+  raw_description: '**__Sneak Attack__** The dragon mage deals an extra 1d6 precision
+    damage to flat-footed creatures.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 5
+  type: poison (see dragonscaled)
+ritual_lists: null
+saves:
+  fort: 4
+  fort_misc: null
+  misc: null
+  ref: 7
+  ref_misc: null
+  will: 7
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +5
+- darkvision
+size: Small
+skills:
+- bonus: 6
+  misc: null
+  name: 'Arcana '
+- bonus: 8
+  misc: null
+  name: 'Deception '
+- bonus: 8
+  misc: null
+  name: 'Diplomacy '
+- bonus: 10
+  misc: null
+  name: 'Dragon Lore '
+- bonus: 8
+  misc: null
+  name: 'Intimidation '
+- bonus: 7
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 213
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists:
+- dc: 20
+  misc: null
+  name: Arcane Spontaneous Spells
+  spell_groups:
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: fear
+      requirement: null
+    - frequency: null
+      name: illusory object
+      requirement: null
+    - frequency: 4 slots
+      name: magic missile
+      requirement: null
+  - heightened_level: 1
+    level: 0
+    spells:
+    - frequency: null
+      name: detect magic
+      requirement: null
+    - frequency: null
+      name: electric arc
+      requirement: null
+    - frequency: null
+      name: ghost sound
+      requirement: null
+    - frequency: null
+      name: mage hand
+      requirement: null
+    - frequency: null
+      name: tanglefoot
+      requirement: null
+  to_hit: null
+traits:
+- LE
+- Small
+- Humanoid
+- Kobold
+type: Creature
+weaknesses: null

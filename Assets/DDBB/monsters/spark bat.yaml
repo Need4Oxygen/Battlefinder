@@ -1,0 +1,111 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 1
+  dex_mod: 3
+  int_mod: -4
+  str_mod: 0
+  wis_mod: 1
+ac: 19
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Spark bats congregate around volatile weather in the Plane of Air.
+
+
+
+
+  **__Recall Knowledge - Elemental__ (__Arcana__, __Nature__)**: DC 16'
+hp: 18
+hp_misc: null
+immunities:
+- bleed
+- electricity
+- paralyzed
+- poison
+- sleep
+items: null
+languages: null
+level: 2
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d4+5
+    type: electricity
+  name: jaws
+  plus_damage: null
+  to_hit: 11
+  traits:
+  - agile
+  - finesse
+name: Spark Bat
+perception: 7
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The spark bat transforms into lightning that arcs to a large piece
+    of metal within 100 feet, such as a suit of metal armor or a metal weapon. The
+    bat then returns to its normal form in a space adjacent to the metal. This movement
+    doesn't trigger reactions.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Arc Lightning
+  range: null
+  raw_description: '**Arc Lightning** (__move__, __electricity__, __primal__, __transmutation__)
+    The spark bat transforms into lightning that arcs to a large piece of metal within
+    100 feet, such as a suit of metal armor or a metal weapon. The bat then returns
+    to its normal form in a space adjacent to the metal. This movement doesn''t trigger
+    reactions.'
+  requirements: null
+  success: null
+  traits:
+  - move
+  - electricity
+  - primal
+  - transmutation
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 5
+  fort_misc: null
+  misc: null
+  ref: 11
+  ref_misc: null
+  will: 7
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +7
+- darkvision
+size: Tiny
+skills:
+- bonus: 9
+  misc: null
+  name: 'Acrobatics '
+- bonus: 9
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 106
+  page_stop: null
+speed:
+- amount: 5
+  type: Land
+- amount: 50
+  type: fly
+spell_lists: null
+traits:
+- N
+- Tiny
+- Air
+- Elemental
+type: Creature
+weaknesses: null

@@ -1,0 +1,140 @@
+ability_mods:
+  cha_mod: 1
+  con_mod: 2
+  dex_mod: 3
+  int_mod: -4
+  str_mod: 0
+  wis_mod: 1
+ac: 16
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'A smaller cousin of the deinonychus, the velociraptor is a swift, cunning
+  pack hunter. It has no fear of larger creatures, and a group of these dinosaurs
+  won''t hesitate to attack creatures the size of a horse. Velociraptors are social
+  animals, and tend to live in groups of up to a dozen other velociraptors. They have
+  manes of feathery plumage that extend down their backs and along the sides of their
+  arms, legs, and tail, while their underbellies and flanks are scaly. These feathers
+  allow them to blend into their natural terrains with ease, but when excited, attempting
+  to intimidate, or seeking a mate, a velociraptor can puff and frill this plumage
+  to expose much brighter colors normally covered by the longer feathers. A typical
+  velociraptor is 1-1/2 feet tall, 7 feet long, and weighs 35 pounds.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 15'
+hp: 20
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 1
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6+3
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 8
+  traits:
+  - finesse
+- action_cost: One Action
+  damage:
+    formula: 1d4+3
+    type: slashing
+  name: talon
+  plus_damage: null
+  to_hit: 8
+  traits:
+  - agile
+  - finesse
+name: Velociraptor
+perception: 6
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The velociraptor Strides up to 10 feet, ignoring difficult terrain
+    as it leaps over obstacles. It then makes a Strike with its talons, gaining a
+    +1 circumstance bonus to its attack roll.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Leaping Charge
+  range: null
+  raw_description: '**Leaping Charge**   The velociraptor Strides up to 10 feet, ignoring
+    difficult terrain as it leaps over obstacles. It then makes a Strike with its
+    talons, gaining a +1 circumstance bonus to its attack roll. '
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The velociraptor deals 1d4 extra damage to any creature that's within
+    reach of at least two of the velociraptor's allies.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Pack Attack
+  range: null
+  raw_description: '**Pack Attack** The velociraptor deals 1d4 extra damage to any
+    creature that''s within reach of at least two of the velociraptor''s allies.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 5
+  fort_misc: null
+  misc: null
+  ref: 7
+  ref_misc: null
+  will: 4
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +6
+- low-light vision
+- scent (imprecise) 30 feet
+size: Small
+skills:
+- bonus: 8
+  misc: null
+  name: 'Acrobatics '
+- bonus: 5
+  misc: +8 jumping
+  name: 'Athletics '
+- bonus: 6
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 96
+  page_stop: null
+speed:
+- amount: 40
+  type: Land
+spell_lists: null
+traits:
+- N
+- Small
+- Animal
+- Dinosaur
+type: Creature
+weaknesses: null

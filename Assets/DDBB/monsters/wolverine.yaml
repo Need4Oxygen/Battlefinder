@@ -1,0 +1,165 @@
+ability_mods:
+  cha_mod: -2
+  con_mod: 3
+  dex_mod: 3
+  int_mod: -4
+  str_mod: 3
+  wis_mod: 0
+ac: 18
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Wolverines resemble small bears, to which they are related. Stocky and
+  muscular with long claws, wolverines are about 3 feet in length and weigh approximately
+  40 pounds. They have a thick fur coat that protects them from the cold temperatures
+  of the forests and frozen tundras where they reside.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 16'
+hp: 34
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 2
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d8+5
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 11
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 1d6+5
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 11
+  traits:
+  - agile
+name: Wolverine
+perception: 8
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The wolverine Strides and makes a Strike at the end of that movement.
+    If the wolverine begins this action __hidden__, it remains hidden until after
+    the attack.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Pounce
+  range: null
+  raw_description: '**Pounce**   The wolverine Strides and makes a Strike at the end
+    of that movement. If the wolverine begins this action __hidden__, it remains hidden
+    until after the attack.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: claw
+  effect: The monster automatically deals that Strike's damage again to the enemy.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Rend
+  range: null
+  raw_description: A Rend entry lists a Strike the monster has. **Requirements** The
+    monster hit the same enemy with two consecutive Strikes of the listed type in
+    the same round. **Effect** The monster automatically deals that Strike's damage
+    again to the enemy.
+  requirements: The monster hit the same enemy with two consecutive Strikes of the
+    listed type in the same round.
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The wolverine enters a state of pure rage that lasts either for 1 minute,
+    until there are no enemies it can perceive, or until it falls __unconscious__,
+    whichever comes first. While raging, the wolverine has AC 17, its jaws Strike
+    deals 1d8+7 damage, and its claw Strike deals 1d6+7 damage. While raging, the
+    wolverine can't use actions that have the __concentrate__ trait, except for __Seek__.
+    After it's stopped raging, a wolverine can't use Wolverine Rage again for 1 minute.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Wolverine Rage
+  range: null
+  raw_description: '**Wolverine Rage**   (__concentrate__, __emotion__, __mental__)
+    The wolverine enters a state of pure rage that lasts either for 1 minute, until
+    there are no enemies it can perceive, or until it falls __unconscious__, whichever
+    comes first. While raging, the wolverine has AC 17, its jaws Strike deals 1d8+7
+    damage, and its claw Strike deals 1d6+7 damage. While raging, the wolverine can''t
+    use actions that have the __concentrate__ trait, except for __Seek__. After it''s
+    stopped raging, a wolverine can''t use Wolverine Rage again for 1 minute.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - emotion
+  - mental
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 9
+  fort_misc: null
+  misc: null
+  ref: 7
+  ref_misc: null
+  will: 6
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +8
+- low-light vision
+- scent (imprecise) 30 feet
+size: Medium
+skills:
+- bonus: 7
+  misc: null
+  name: 'Athletics '
+- bonus: 7
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 295
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 10
+  type: burrow
+- amount: 10
+  type: climb
+spell_lists: null
+traits:
+- N
+- Medium
+- Animal
+type: Creature
+weaknesses: null

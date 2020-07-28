@@ -1,0 +1,300 @@
+ability_mods:
+  cha_mod: 5
+  con_mod: 6
+  dex_mod: 3
+  int_mod: 3
+  str_mod: 8
+  wis_mod: 6
+ac: 41
+ac_special: null
+alignment: NG
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 50 feet. A creature that starts its turn in the aura must attempt a
+    DC 37 Will save or be affected by calm emotions. Creatures that successfully save
+    are unaffected, but must attempt another save each turn they start in the aura.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Aura of Peace
+  range: null
+  raw_description: '**Aura of Peace** (__divine__, __emotion__, __enchantment__, __incapacitation__,
+    __mental__) 50 feet. A creature that starts its turn in the aura must attempt
+    a DC 37 Will save or be affected by calm emotions. Creatures that successfully
+    save are unaffected, but must attempt another save each turn they start in the
+    aura.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - emotion
+  - enchantment
+  - incapacitation
+  - mental
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+description: 'Desert-dwelling people consider the sight of a simurgh a herald to a
+  lifetime''s worth of luck, and those who are unfamiliar with the majestic beast
+  might mistake it for the avatar of a deity. Beautiful, graceful, and truly gargantuan,
+  the simurgh resembles nothing so much as a massive multicolored bird with the head
+  of an equally enormous and regal lupine. Simurghs act as intermediaries in world-threatening
+  conflicts, serving as agents of good deities or vigilantes who spread their own
+  brand of justice, typically by obliterating or banishing evil extraplanar beings.
+
+
+
+
+  Simurghs can live for thousands of years, and because these ancient beings are so
+  rare many doubt their existence. But they are very real, as those who have been
+  aided by a simurgh can enthusiastically attest. A simurgh does not show itself often,
+  but when it does, it is typically in response to a truly grave threat, such as the
+  incursion of an undead army or the rampage of some truly epic monster. Simurghs
+  are nothing if not paragons of righteousness, and goodly heroes can hardly find
+  a better ally in their quest to vanquish evil than a simurgh.
+
+
+
+
+  **__Recall Knowledge - Beast__ (__Arcana__, __Nature__)**: DC 43'
+hp: 350
+hp_misc: null
+immunities:
+- disease
+- fire
+- negative energy
+- sleep
+items: null
+languages:
+- Celestial
+- Common
+- Draconic
+- tongues
+level: 18
+melee:
+- action_cost: One Action
+  damage:
+    formula: 4d12+12
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 34
+  traits:
+  - magical
+  - reach 20 feet
+- action_cost: One Action
+  damage:
+    formula: 4d8+12
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 34
+  traits:
+  - agile
+  - magical
+  - reach 15 feet
+- action_cost: One Action
+  damage:
+    formula: 4d8+10
+    type: slashing
+  name: tail
+  plus_damage:
+  - formula: null
+    type: banishing swipe
+  to_hit: 34
+  traits:
+  - magical
+  - reach 20 feet
+name: Simurgh
+perception: 32
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: If a creature hit by the simurgh's tail Strike is not currently on
+    its home plane, it must succeed at a DC 42 Will save or be affected by __banishment__,
+    except that if the creature critically succeeds its save the simurgh is not stunned.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Banishing Swipe
+  range: null
+  raw_description: '**Banishing Swipe** If a creature hit by the simurgh''s tail Strike
+    is not currently on its home plane, it must succeed at a DC 42 Will save or be
+    affected by __banishment__, except that if the creature critically succeeds its
+    save the simurgh is not stunned.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The simurgh fans out its glimmering tail feathers and blasts its foes with
+    a 100-foot cone of radiant light. Aside from the size of the cone, this effect
+    is identical to __prismatic spray__ (DC 42).
+  effects: null
+  failure: null
+  frequency: Once per day.
+  full_description: null
+  generic_description: null
+  name: Radiant Feathers
+  range: null
+  raw_description: '**Radiant Feathers** [Two Actions]  (__attack__) **Frequency**
+    Once per day. **Effect** The simurgh fans out its glimmering tail feathers and
+    blasts its foes with a 100-foot cone of radiant light. Aside from the size of
+    the cone, this effect is identical to __prismatic spray__ (DC 42).'
+  requirements: null
+  success: null
+  traits:
+  - attack
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage: null
+  name: glaring ray
+  plus_damage: null
+  to_hit: 34
+  traits:
+  - magical
+  - range 100 feet
+rarity: Rare
+resistances: null
+ritual_lists: null
+saves:
+  fort: 30
+  fort_misc: null
+  misc: +1 status bonus to all saves vs. magic
+  ref: 29
+  ref_misc: null
+  will: 32
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +32
+- darkvision
+size: Gargantuan
+skills:
+- bonus: 27
+  misc: null
+  name: 'Acrobatics '
+- bonus: 28
+  misc: null
+  name: 'Arcana '
+- bonus: 32
+  misc: null
+  name: 'Athletics '
+- bonus: 34
+  misc: null
+  name: 'Diplomacy '
+- bonus: 35
+  misc: null
+  name: 'Medicine '
+- bonus: 28
+  misc: null
+  name: 'Performance '
+- bonus: 35
+  misc: null
+  name: 'Religion '
+- bonus: 32
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 295
+  page_stop: null
+speed:
+- amount: 40
+  type: Land
+- amount: 90
+  type: fly
+spell_lists:
+- dc: 42
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 9
+    spells:
+    - frequency: null
+      name: flame strike
+      requirement: null
+    - frequency: null
+      name: heal
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: at will
+      name: zone of truth
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: evil only, at will
+      name: detect alignment
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: dazzling flash
+      requirement: null
+  - heightened_level: 9
+    level: 0
+    spells:
+    - frequency: null
+      name: detect magic
+      requirement: null
+    - frequency: null
+      name: light
+      requirement: null
+  - heightened_level: 5
+    level: -1
+    spells:
+    - frequency: null
+      name: tongues
+      requirement: null
+  to_hit: null
+traits:
+- Rare
+- NG
+- Gargantuan
+- Beast
+type: Creature
+weaknesses: null

@@ -1,0 +1,119 @@
+ability_mods:
+  cha_mod: -2
+  con_mod: 3
+  dex_mod: 1
+  int_mod: 0
+  str_mod: 4
+  wis_mod: 0
+ac: 16
+ac_special: null
+alignment: LE
+automatic_abilities: null
+description: 'The most numerous of the alghollthus are the ulat-kinis, a servitor
+  race created from human stock to serve as rank-and-file soldiers in alghollthu armies.
+  At the zenith of alghollthu power, ulat-kinis formed massive legions and enjoyed
+  significant power over other species. When the alghollthus retreated from the world,
+  they abandoned teeming hordes of ulatkinis. Although these erstwhile soldiers tried
+  to continue their conquering ways, their numbers declined rapidly in battlefield
+  defeats and purposeful exterminations enacted by their enemies. Ulat-kini society
+  degenerated, so that now only a few enclaves exist in the depths of the earth or
+  along isolated coastlines. Few remember their own species'' name, instead using
+  the epithet their foes gave them: "skum."
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 16'
+hp: 40
+hp_misc: null
+immunities: null
+items:
+- trident
+languages:
+- Alghollthu
+- Undercommon
+level: 2
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d8+4
+    type: piercing
+  name: trident
+  plus_damage: null
+  to_hit: 10
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 1d6+4
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 10
+  traits:
+  - agile
+- action_cost: One Action
+  damage:
+    formula: 2d4+4
+    type: piercing
+  name: fangs
+  plus_damage: null
+  to_hit: 10
+  traits: null
+name: Skum
+perception: 6
+proactive_abilities: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d8+3
+    type: piercing
+  name: trident
+  plus_damage: null
+  to_hit: 7
+  traits:
+  - thrown 20 feet
+rarity: Common
+resistances:
+- amount: 5
+  type: cold
+ritual_lists: null
+saves:
+  fort: 7
+  fort_misc: null
+  misc: null
+  ref: 7
+  ref_misc: null
+  will: 4
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +6
+- darkvision
+size: Medium
+skills:
+- bonus: 8
+  misc: null
+  name: 'Athletics '
+- bonus: 4
+  misc: null
+  name: 'Intimidation '
+- bonus: 7
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 12
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 40
+  type: swim
+spell_lists: null
+traits:
+- LE
+- Medium
+- Amphibious
+- Humanoid
+type: Creature
+weaknesses: null

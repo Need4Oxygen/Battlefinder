@@ -1,0 +1,241 @@
+ability_mods:
+  cha_mod: 4
+  con_mod: 2
+  dex_mod: 5
+  int_mod: 2
+  str_mod: 4
+  wis_mod: 2
+ac: 22
+ac_special: null
+alignment: CG
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 20 feet. All squares in the djinni's aura are difficult terrain for
+    Striding and Flying creatures. Creatures with the air trait are immune.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Whirlwind
+  range: null
+  raw_description: '**Whirlwind** (__air__, __arcane__, __aura__, __evocation__) 20
+    feet. All squares in the djinni''s aura are difficult terrain for Striding and
+    Flying creatures. Creatures with the air trait are immune.'
+  requirements: null
+  success: null
+  traits:
+  - air
+  - arcane
+  - aura
+  - evocation
+  trigger: null
+description: 'Benevolent genies from the Plane of Air, djinn value art, culture, knowledge,
+  and trade. They also love new experiences, succulent dishes, and heady wines. Of
+  all geniekind, they are most likely to approach humans and other mortals, interacting
+  with them on friendly terms. Still, djinn are proud of their genie heritage and
+  have a tendency to be patronizing toward mortals, a habit that has earned them a
+  reputation for arrogance.
+
+
+  Djinn get along with jann and marids, but they find shaitans too stiff and harbor
+  undying hatred for efreet. Although djinn are formidable combatants, they despise
+  war and prefer to eschew violence in favor of dealing with their opponents using
+  magic or subterfuge (making an exception, of course, when they encounter efreet).
+
+
+
+
+  **__Recall Knowledge - Elemental__ (__Arcana__, __Nature__)**: DC 22'
+hp: 71
+hp_misc: null
+immunities:
+- acid
+items:
+- scimitar
+languages:
+- Auran
+- Common
+level: 5
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6+10
+    type: slashing
+  name: scimitar
+  plus_damage: null
+  to_hit: 15
+  traits:
+  - forceful +1
+  - reach 10 feet
+  - sweep
+- action_cost: One Action
+  damage:
+    formula: 1d4+10
+    type: bludgeoning
+  name: fist
+  plus_damage: null
+  to_hit: 16
+  traits:
+  - agile
+  - finesse
+  - magical
+  - nonlethal
+  - reach 10 feet
+name: Djinni
+perception: 13
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The djinni all creatures in its whirlwind pushes back 20 feet, or forces
+    all creatures in the aura to move 20 feet clockwise or counterclockwise. Each
+    creature must attempt a DC 21 Fortitude save. On a success, it avoids being moved,
+    and on a critical failure it falls __prone__ in addition to being moved. Creatures
+    with the __air__ trait are immune.
+  effects: null
+  failure: null
+  frequency: Once per round.
+  full_description: null
+  generic_description: null
+  name: Hurricane Blast
+  range: null
+  raw_description: '**Hurricane Blast**   (__air__, __arcane__, __evocation__) **Frequency
+    **Once per round. **Effect **The djinni all creatures in its whirlwind pushes
+    back 20 feet, or forces all creatures in the aura to move 20 feet clockwise or
+    counterclockwise. Each creature must attempt a DC 21 Fortitude save. On a success,
+    it avoids being moved, and on a critical failure it falls __prone__ in addition
+    to being moved. Creatures with the __air__ trait are immune.'
+  requirements: null
+  success: null
+  traits:
+  - air
+  - arcane
+  - evocation
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d8+6
+    type: bludgeoning
+  name: crashing wind
+  plus_damage: null
+  to_hit: 15
+  traits:
+  - air
+  - arcane
+  - evocation
+  - range increment 20 feet
+rarity: Uncommon
+resistances:
+- amount: 5
+  type: mental
+- amount: 5
+  type: sonic
+ritual_lists: null
+saves:
+  fort: 9
+  fort_misc: null
+  misc: null
+  ref: 14
+  ref_misc: null
+  will: 11
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +13
+- darkvision
+- detect magic
+size: Large
+skills:
+- bonus: 14
+  misc: null
+  name: 'Acrobatics '
+- bonus: 11
+  misc: null
+  name: 'Arcana '
+- bonus: 11
+  misc: null
+  name: 'Athletics '
+- bonus: 9
+  misc: null
+  name: 'Crafting '
+- bonus: 11
+  misc: null
+  name: 'Deception '
+- bonus: 13
+  misc: null
+  name: 'Diplomacy '
+- bonus: 9
+  misc: null
+  name: 'Society '
+- bonus: 12
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 163
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 40
+  type: fly
+spell_lists:
+- dc: 23
+  misc: null
+  name: Arcane Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 7
+    spells:
+    - frequency: at will, to Astral Plane, Elemental Planes, or Material Plane only
+      name: plane shift
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: creation
+      requirement: null
+    - frequency: null
+      name: gaseous form
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: null
+      name: illusory creature
+      requirement: null
+    - frequency: null
+      name: illusory object
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: at will
+      name: enhance victuals
+      requirement: null
+    - frequency: at will, self only
+      name: invisibility
+      requirement: null
+  - heightened_level: 3
+    level: -1
+    spells:
+    - frequency: null
+      name: detect magic
+      requirement: null
+  to_hit: null
+traits:
+- Uncommon
+- CG
+- Large
+- Air
+- Elemental
+- Genie
+type: Creature
+weaknesses: null

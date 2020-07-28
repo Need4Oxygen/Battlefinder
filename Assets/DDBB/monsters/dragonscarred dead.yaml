@@ -1,0 +1,243 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 4
+  dex_mod: 5
+  int_mod: 1
+  str_mod: 6
+  wis_mod: 1
+ac: 33
+ac_special: null
+alignment: NE
+automatic_abilities:
+- action_cost: None
+  critical_failure: The creature is frightened 4.
+  critical_success: The creature is unaffected by the presence.
+  description: 60 feet, DC 29
+  effect: null
+  effects: null
+  failure: The creature is frightened 2.
+  frequency: null
+  full_description: null
+  generic_description: A creature that first enters the area must attempt a Will save.
+    Regardless of the result of the saving throw, the creature is temporarily immune
+    to this monster's Frightful Presence for 1 minute.
+  name: Frightful Presence
+  range: null
+  raw_description: '**Frightful Presence** 60 feet, DC 29 A creature that first enters
+    the area must attempt a Will save. Regardless of the result of the saving throw,
+    the creature is temporarily immune to this monster''s Frightful Presence for 1
+    minute.
+
+    Critical Success The creature is unaffected by the presence.
+
+    Success The creature is frightened 1.
+
+    Failure The creature is frightened 2.
+
+    Critical Success The creature is frightened 4.'
+  requirements: null
+  success: The creature is frightened 1.
+  traits:
+  - aura
+  - emotion
+  - fear
+  - mental
+  trigger: null
+description: 'Not all would-be dragonslayers who die a valiant death rest peacefully
+  amid the annals of legend. Sometimes, a draconic necromancer is so impressed by
+  its fallen foe that the dragon ritually raises the dead warrior to serve the dragon
+  in undeath. These undead guardians are infused with a fraction of the power of the
+  dragon who slew them, channeling the same energy as their draconic masters'' breath.
+
+
+
+
+  Dragonscarred dead are similar to skeletal champions or graveknights in that they
+  are not merely reanimated servants who mindlessly follow orders, but are instead
+  powerful wardens who maintain the same agency they bore in life. While a dragonscarred
+  dead is often magically compelled to follow its reanimator''s commands, some of
+  these undead dragonslayers manage to escape their masters and pursue their own vile
+  agendas—which may involve rallying allies to challenge their draconic creator once
+  more and finish the dire mission they started in life.
+
+
+
+
+  **__Recall Knowledge - Undead__ (__Religion__)**: DC 33'
+hp: 210
+hp_misc: regeneration 20 (deactivated by cold
+immunities:
+- death effects
+- disease
+- fire
+- paralyzed
+- poison
+- unconscious
+items:
+- broken greatsword
+languages:
+- Common
+- Draconic
+- Necril
+level: 13
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d12+9
+    type: slashing
+  name: breath-seared greatsword
+  plus_damage:
+  - formula: 2d6
+    type: negative
+  to_hit: 27
+  traits:
+  - magical
+  - versatile P
+name: Dragonscarred Dead
+perception: 24
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The dragonscarred dead's weapon is magically scorched by a dragon's
+    breath. When wielded by the dragonscarred dead who carried it in life, the sword
+    deals an extra 2d6 negative damage and 3d6 fire damage. In the hands of any other
+    creature, it is merely a broken greatsword.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Breath-Seared Sword
+  range: null
+  raw_description: '**Breath-Seared Sword** The dragonscarred dead''s weapon is magically
+    scorched by a dragon''s breath. When wielded by the dragonscarred dead who carried
+    it in life, the sword deals an extra 2d6 negative damage and 3d6 fire damage.
+    In the hands of any other creature, it is merely a broken greatsword.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: The creature is stunned for 1d4 rounds and is fatigued.
+  critical_success: The creature is unaffected.
+  description: 'The dragonscarred dead focuses its boundless frustration in a gaze
+    targeting one creature it can see within 30 feet. That creature must attempt a
+    DC 30 Will save.
+
+
+    '
+  effect: null
+  effects: null
+  failure: The creature is stunned for 1 round.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Glare of Rage
+  range: null
+  raw_description: '**Glare of Rage** [Two Actions]  (__arcane__, __enchantment__,
+    __mental__, __visual__) The dragonscarred dead focuses its boundless frustration
+    in a gaze targeting one creature it can see within 30 feet. That creature must
+    attempt a DC 30 Will save.
+
+
+    **Critical Success** The creature is unaffected.
+
+
+    **Success** The creature is __stunned 1__.
+
+
+    **Failure** The creature is stunned for 1 round.
+
+
+    **Critical Failure** The creature is stunned for 1d4 rounds and is fatigued.'
+  requirements: null
+  success: The creature is stunned 1.
+  traits:
+  - arcane
+  - enchantment
+  - mental
+  - visual
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances:
+- amount: 10
+  type: cold
+- amount: 10
+  type: good
+ritual_lists: null
+saves:
+  fort: 25
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 20
+  ref_misc: null
+  will: 22
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 'The dragonscarred dead is immediately aware of any intruder that enters
+    the lair of its creator dragon. It does not know the exact location of the intruder
+    but remains aware of the intruder''s presence until the intruder either leaves
+    or is destroyed.
+
+
+    '
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Guardian Sense
+  range: null
+  raw_description: '**Guardian Sense** (__arcane__, __detection__, __divination__)
+    The dragonscarred dead is immediately aware of any intruder that enters the lair
+    of its creator dragon. It does not know the exact location of the intruder but
+    remains aware of the intruder''s presence until the intruder either leaves or
+    is destroyed.
+
+
+    '
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - detection
+  - divination
+  trigger: null
+senses:
+- Perception +24
+- darkvision
+- guardian sense
+size: Medium
+skills:
+- bonus: 25
+  misc: null
+  name: 'Athletics '
+- bonus: 22
+  misc: null
+  name: 'Dragon Lore '
+- bonus: 21
+  misc: null
+  name: 'Intimidation '
+source:
+- abbr: 'Pathfinder #148: Fires of the Haunted City'
+  page_start: 82
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists: null
+traits:
+- Uncommon
+- NE
+- Medium
+- Fire
+- Undead
+type: Creature
+weaknesses: null

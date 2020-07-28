@@ -1,0 +1,228 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 2
+  dex_mod: 4
+  int_mod: 0
+  str_mod: 2
+  wis_mod: 1
+ac: 18
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+description: 'Drow fighters train to master techniques that inflict deep, bleeding
+  wounds and use poisoned crossbow bolts to exhaust enemies.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 15'
+hp: 18
+hp_misc: null
+immunities:
+- sleep
+items:
+- hand crossbow (10 bolts)
+- leather armor
+- lethargy poison (2 doses)
+- rapier
+languages:
+- Elven
+- Undercommon
+level: 1
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6+2
+    type: piercing
+  name: Rapier
+  plus_damage: null
+  to_hit: 9
+  traits:
+  - deadly 1d8
+  - disarm
+  - finesse
+- action_cost: One Action
+  damage:
+    formula: 1d4+2
+    type: piercing
+  name: Main-gauche
+  plus_damage: null
+  to_hit: 9
+  traits:
+  - agile
+  - disarm
+  - finesse
+  - parry
+  - versatile S
+name: Drow Fighter
+perception: 6
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The drow fighter draws a weapon using the __Interact__ action, then
+    Strikes with that weapon.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Quick Draw
+  range: null
+  raw_description: '**Quick Draw**   The drow fighter draws a weapon using the __Interact__
+    action, then Strikes with that weapon.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The drow fighter Strikes with its rapier, and gains a +1 circumstance
+    bonus to the attack roll. A creature damaged by the attack takes 1d6 __persistent__
+    __bleed damage__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Skewer
+  range: null
+  raw_description: '**Skewer** [Two Actions]  The drow fighter Strikes with its rapier,
+    and gains a +1 circumstance bonus to the attack roll. A creature damaged by the
+    attack takes 1d6 __persistent__ __bleed damage__.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d6+1
+    type: piercing
+  name: Hand Crossbow
+  plus_damage:
+  - formula: null
+    type: lethargy poison
+  to_hit: 9
+  traits:
+  - range increment 60 feet
+  - reload 1
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 7
+  fort_misc: null
+  misc: +1 status to all saves vs. magic, +2 status to all saves vs. mental
+  ref: 9
+  ref_misc: null
+  will: 4
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '
+
+
+    '
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Light Blindness
+  range: null
+  raw_description: '**Light Blindness**
+
+
+    '
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +6
+- darkvision
+size: Medium
+skills:
+- bonus: 7
+  misc: null
+  name: 'Acrobatics '
+- bonus: 5
+  misc: null
+  name: 'Athletics '
+- bonus: 3
+  misc: null
+  name: 'Intimidation '
+- bonus: 7
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 136
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+spell_lists:
+- dc: 14
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: at will
+      name: darkness
+      requirement: null
+    - frequency: at will
+      name: faerie fire
+      requirement: null
+  - heightened_level: 2
+    level: 0
+    spells:
+    - frequency: null
+      name: dancing lights
+      requirement: null
+  to_hit: null
+traits:
+- CE
+- Medium
+- Drow
+- Elf
+- Humanoid
+type: Creature
+weaknesses: null

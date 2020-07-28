@@ -1,0 +1,200 @@
+ability_mods:
+  cha_mod: 4
+  con_mod: 5
+  dex_mod: 8
+  int_mod: 4
+  str_mod: 7
+  wis_mod: 5
+ac: 34
+ac_special: null
+alignment: NE
+automatic_abilities: null
+description: 'Irlgaunts resemble titanic spiders or crabs, but with cephalopod-like
+  tendrils erupting from the tips of their chitin-armored legs. Their jagged gray
+  shells allow them to blend into the rocky walls of the high mountain passes and
+  deep ravines that serve as their hunting grounds. Despite their size, they move
+  with incredible alacrity, bounding across chasms and skittering up sheer mountain
+  cliffs without pause. Though they are formidable in melee, irlgaunts have an even
+  more powerful ranged attack. These creatures can pelt their opponents by forcefully
+  regurgitating gastroliths—melon-sized clusters of rocks enveloped in coagulated
+  digestive enzymes strong enough to break down flesh and bone. Gastroliths are fragile
+  and explode on contact, spraying the area with shards of rock and caustic acid.
+
+
+
+
+  While one might easily mistake an irlgaunt for a simple brutish beast, they have
+  a keen intelligence and use devious hunting strategies. They set traps for travelers
+  and are fond of using gems and magical items taken from previous victims as bait.
+  They have been known to start rockslides or otherwise block passages to reroute
+  explorers into their clutches. They also use their gastroliths to direct the movements
+  of their prey, forcing victims into dead ends at the edge of chasms or cliffs.
+
+
+
+
+  For the most part, irlgaunts live solitary lives, likely because finding enough
+  food to sustain a community tends to be difficult. However, they still maintain
+  a sense of extended, regional community, actively gathering when organizing for
+  war or to discuss other issues that affect their species or shared territories.
+  They have been known to occasionally ally with giants, but these truces are usually
+  nebulous.
+
+
+
+
+  **__Recall Knowledge - Aberration__ (__Occultism__)**: DC 31'
+hp: 265
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Aklo
+- Common
+- Jotun
+- Terran
+level: 13
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d8+13
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 2d6
+    type: acid
+  to_hit: 26
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 3d10+13
+    type: bludgeoning
+  name: legs
+  plus_damage: null
+  to_hit: 26
+  traits:
+  - agile
+name: Irlgaunt
+perception: 24
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The irlgaunt violently regurgitates a melonsized clot of brittle stone
+    supernaturally infused with digestive enzymes. The stone and acid explode on impact
+    within a range of 30 feet, dealing 7d6 piercing damage and 7d6 acid damage to
+    creatures in a 20-foot burst (DC 33 basic Reflex save). The irlgaunt can't Regurgitate
+    Gastroliths for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Regurgitate Gastrolith
+  range: null
+  raw_description: '**Regurgitate Gastrolith** [Two Actions]  (__acid__, __evocation__,
+    __primal__) The irlgaunt violently regurgitates a melonsized clot of brittle stone
+    supernaturally infused with digestive enzymes. The stone and acid explode on impact
+    within a range of 30 feet, dealing 7d6 piercing damage and 7d6 acid damage to
+    creatures in a 20-foot burst (DC 33 basic Reflex save). The irlgaunt can''t Regurgitate
+    Gastroliths for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - acid
+  - evocation
+  - primal
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The irlgaunt ignores difficult terrain composed of rocks and stone.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Stone Step
+  range: null
+  raw_description: '**Stone Step** The irlgaunt ignores difficult terrain composed
+    of rocks and stone.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 22
+  fort_misc: null
+  misc: null
+  ref: 25
+  ref_misc: null
+  will: 24
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +24
+- darkvision
+size: Large
+skills:
+- bonus: 25
+  misc: null
+  name: 'Acrobatics '
+- bonus: 26
+  misc: null
+  name: 'Athletics '
+- bonus: 23
+  misc: null
+  name: 'Deception '
+- bonus: 27
+  misc: null
+  name: 'Stealth '
+- bonus: 22
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 148
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+- amount: 30
+  type: climb
+- amount: null
+  type: stone step
+spell_lists:
+- dc: 31
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 6
+    spells:
+    - frequency: null
+      name: stone tell
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: at will
+      name: meld into stone
+      requirement: null
+    - frequency: at will
+      name: shape stone
+      requirement: null
+  to_hit: null
+traits:
+- NE
+- Large
+- Aberration
+- Earth
+type: Creature
+weaknesses:
+- amount: 10
+  type: bludgeoning

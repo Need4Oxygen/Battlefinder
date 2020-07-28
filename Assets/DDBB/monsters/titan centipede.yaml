@@ -1,0 +1,171 @@
+ability_mods:
+  cha_mod: -4
+  con_mod: 5
+  dex_mod: 1
+  int_mod: -5
+  str_mod: 8
+  wis_mod: 5
+ac: 28
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'These colossal, solitary centipedes claim vast hunting grounds.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 26'
+hp: 155
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 9
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d10+12
+    type: piercing
+  name: mandibles
+  plus_damage:
+  - formula: null
+    type: titan centipede venom
+  to_hit: 21
+  traits:
+  - reach 20 feet
+- action_cost: One Action
+  damage:
+    formula: 2d8+10
+    type: bludgeoning
+  name: foot
+  plus_damage: null
+  to_hit: 19
+  traits: null
+name: Titan Centipede
+perception: 18
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When a titan centipede scores a critical hit with its mandibles, the
+    target is painfully pierced with barbed spines and bristles, taking 1d6 __persistent
+    bleed damage__ and becoming __flat-footed__ as long as the bleed damage continues.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Impaling Critical
+  range: null
+  raw_description: '**Impaling Critical** When a titan centipede scores a critical
+    hit with its mandibles, the target is painfully pierced with barbed spines and
+    bristles, taking 1d6 __persistent bleed damage__ and becoming __flat-footed__
+    as long as the bleed damage continues.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw **DC 28 Fortitude; **Maximum Duration **6 rounds; **Stage
+    1** 2d6 poison damage and __clumsy 2__ (1 round); **Stage 2** 2d8 poison damage,
+    clumsy 2, and __slowed 1__ (1 round); **Stage 3** 2d10 poison damage, clumsy 2,
+    and slowed 2 (1 round)'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Titan Centipede Venom
+  range: null
+  raw_description: '**Titan Centipede Venom** (__poison__) **Saving Throw **DC 28
+    Fortitude; **Maximum Duration **6 rounds; **Stage 1** 2d6 poison damage and __clumsy
+    2__ (1 round); **Stage 2** 2d8 poison damage, clumsy 2, and __slowed 1__ (1 round);
+    **Stage 3** 2d10 poison damage, clumsy 2, and slowed 2 (1 round)'
+  requirements: null
+  success: null
+  traits:
+  - poison
+  trigger: null
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: Huge or smaller, foot, DC 28
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Trample
+  range: null
+  raw_description: '**__Trample__** [Three Actions]  Huge or smaller, foot, DC 28'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The titan centipede Strides up to its Speed or Steps. During this movement,
+    it can pass through spaces as narrow as 10 feet without __Squeezing__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Undulate
+  range: null
+  raw_description: '**Undulate**   The titan centipede Strides up to its Speed or
+    Steps. During this movement, it can pass through spaces as narrow as 10 feet without
+    __Squeezing__.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 20
+  fort_misc: null
+  misc: null
+  ref: 16
+  ref_misc: null
+  will: 18
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +18
+- darkvision
+size: Gargantuan
+skills:
+- bonus: 16
+  misc: null
+  name: 'Acrobatics '
+- bonus: 21
+  misc: null
+  name: 'Athletics '
+source:
+- abbr: Bestiary 2
+  page_start: 50
+  page_stop: null
+speed:
+- amount: 50
+  type: Land
+- amount: 50
+  type: climb
+spell_lists: null
+traits:
+- N
+- Gargantuan
+- Animal
+type: Creature
+weaknesses: null

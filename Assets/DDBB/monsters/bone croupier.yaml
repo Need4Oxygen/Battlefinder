@@ -1,0 +1,209 @@
+ability_mods:
+  cha_mod: 5
+  con_mod: 2
+  dex_mod: 5
+  int_mod: 1
+  str_mod: 2
+  wis_mod: 2
+ac: 22
+ac_special: null
+alignment: NE
+automatic_abilities: null
+description: 'For many, gambling is just fun and games, but for some, it can become
+  a bad habit or even a life-consuming addiction. Bone croupiers take the meaning
+  of "life-consuming" to its literal extreme. Undead gamblers whose lust for cards
+  and dice couldn''t be sated in life, they haunt the shadowy corners of gambling
+  halls and continue their search for that next hit of adrenaline.
+
+
+
+
+  In undeath, gaming takes on a different flavor; with nothing left to lose, bone
+  croupiers turn their attentions toward others, cajoling and palavering normally
+  casual gamers into committing themselves to ever higher stakes. Before they know
+  it, these unsuspecting victims have called in decades-old favors and put liens on
+  their homes in the hope of winning back just a fraction of the pot. But by then
+  the bone croupier has already claimed its prize—for to this undead chiseler, any
+  earnings are incidental, and the real prize is encouraging others to lose their
+  own.
+
+
+
+
+  Bone croupiers often enshroud themselves in thick layers of cigar smoke or voluminous
+  robes to mask their undead nature, but they almost always wear wicked grins at the
+  table. This smile is no ruse or part of its poker face, however—the truth is that
+  bone croupiers truly delight in games, regardless of whether they are winning or
+  losing, and despite their incredible skills of deception and trickery, most simply
+  can''t disguise their unbridled mirth.
+
+
+
+
+
+  **__Recall Knowledge - Undead__ (__Religion__)**: DC 20'
+hp: 50
+hp_misc: negative healing
+immunities:
+- death effects
+- disease
+- paralyzed
+- poison
+- unconscious
+items: null
+languages:
+- Common
+level: 5
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+5
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 14
+  traits:
+  - agile
+  - finesse
+name: Bone Croupier
+perception: 11
+proactive_abilities:
+- action_cost: Free Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The bone croupier pulls on the threads of luck that bind all things. Instead
+    of rolling its check, the target automatically gets a failure.
+  effects: null
+  failure: null
+  frequency: once per day
+  full_description: null
+  generic_description: null
+  name: Change of Luck
+  range: null
+  raw_description: '**Change of Luck** [Free Action]  (__divination__, __misfortune__,
+    __occult__) **Frequency** once per day; **Trigger** A creature within 30 feet
+    of the bone croupier attempts a check that uses a d20, but hasn''t rolled yet;
+    **Effect** The bone croupier pulls on the threads of luck that bind all things.
+    Instead of rolling its check, the target automatically gets a failure.'
+  requirements: null
+  success: null
+  traits:
+  - divination
+  - misfortune
+  - occult
+  trigger: A creature within 30 feet of the bone croupier attempts a check that uses
+    a d20, but hasn't rolled yet
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The bone croupier targets an adjacent creature that is __dying__. That
+    creature can either increase its dying value by 1 or roll a d4. On a 4, the creature
+    is no longer dying and is __unconscious__ at 0 HP. On a 1, 2, or 3, however, the
+    creature increases its dying value by that amount. Regardless, the creature is
+    temporarily immune for the next 24 hours.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Roll the Bones
+  range: null
+  raw_description: '**Roll the Bones** [Two Actions]  (__death__, __occult__) The
+    bone croupier targets an adjacent creature that is __dying__. That creature can
+    either increase its dying value by 1 or roll a d4. On a 4, the creature is no
+    longer dying and is __unconscious__ at 0 HP. On a 1, 2, or 3, however, the creature
+    increases its dying value by that amount. Regardless, the creature is temporarily
+    immune for the next 24 hours.'
+  requirements: null
+  success: null
+  traits:
+  - death
+  - occult
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 5
+  type: cold
+- amount: 5
+  type: piercing
+- amount: 5
+  type: slashing
+ritual_lists: null
+saves:
+  fort: 9
+  fort_misc: null
+  misc: null
+  ref: 14
+  ref_misc: null
+  will: 14
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +11
+- darkvision
+size: Medium
+skills:
+- bonus: 14
+  misc: null
+  name: 'Acrobatics '
+- bonus: 14
+  misc: null
+  name: 'Deception '
+- bonus: 14
+  misc: null
+  name: 'Diplomacy '
+- bonus: 12
+  misc: null
+  name: 'Gambling Lore '
+- bonus: 14
+  misc: null
+  name: 'Stealth '
+- bonus: 14
+  misc: null
+  name: 'Thievery '
+source:
+- abbr: 'Pathfinder #151: The Show Must Go On'
+  page_start: 80
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists:
+- dc: 22
+  misc: null
+  name: Occult Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: discern lies
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: null
+      name: mind reading
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: illusory disguise
+      requirement: null
+  - heightened_level: 4
+    level: 0
+    spells:
+    - frequency: null
+      name: prestidigitation
+      requirement: null
+  to_hit: null
+traits:
+- NE
+- Medium
+- Undead
+type: Creature
+weaknesses: null

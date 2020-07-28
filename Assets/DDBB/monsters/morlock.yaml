@@ -1,0 +1,235 @@
+ability_mods:
+  cha_mod: 1
+  con_mod: 1
+  dex_mod: 3
+  int_mod: -2
+  str_mod: 4
+  wis_mod: 3
+ac: 17
+ac_special: null
+alignment: CE
+automatic_abilities: null
+description: 'Originating from humans long lost from the world of light, morlocks
+  are brutal monsters that dwell in the tangled tunnels of the upper reaches of the
+  Darklands. Their wiry frames mask the strength of their limbs and their swift reactions,
+  and their arms are long enough that they can drop into an uncanny, four-limbed shuffle
+  for speed or stealth. They no longer remember the lives their ancestors led on the
+  surface, although many morlocks still dwell in the shattered ruins of their ancient
+  homes. Some morlocks worship the statues of humans from these bygone eras as gods,
+  but others now worship __Lamashtu__, __Rovagug__, or other violent deities.
+
+
+
+
+  Morlock young are insatiable and clamor for even the slightest morsel of food, even
+  consuming their siblings if no other meal presents itself. Most morlocks encourage
+  the practice to ensure their ancestral group as a whole grows stronger.
+
+
+
+
+  A typical morlock stands just over 5 feet tall and weighs roughly 150 pounds.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 16'
+hp: 38
+hp_misc: null
+immunities: null
+items:
+- club
+languages:
+- Undercommon
+level: 2
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6+4
+    type: bludgeoning
+  name: club
+  plus_damage: null
+  to_hit: 9
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 1d4+4
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 9
+  traits:
+  - agile
+name: Morlock
+perception: 7
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: "The morlock injures itself, taking 2d6 damage (typically bludgeoning,\
+    \ piercing, or slashing, but potentially a different type at the GM\x81fs discretion)."
+  critical_success: The target gains 4d6 HP and a +1 circumstance bonus to attack
+    rolls for 1 minute.
+  description: "The morlock tinkers with an adjacent construct or mechanical hazard.\
+    \ They attempt a __Crafting__ check against the construct's or hazard's Fortitude\
+    \ DC. The morlock can't succeed if the target's level is more than double the\
+    \ morlock's. \n\n"
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Instinctual Tinker
+  range: null
+  raw_description: "**Instinctual Tinker** [Two Actions]  The morlock tinkers with\
+    \ an adjacent construct or mechanical hazard. They attempt a __Crafting__ check\
+    \ against the construct's or hazard's Fortitude DC. The morlock can't succeed\
+    \ if the target's level is more than double the morlock's. \n\n**Critical Success**\
+    \ The target gains 4d6 HP and a +1 circumstance bonus to attack rolls for 1 minute.\
+    \ \n\n**Success** The target gains 2d6 HP. \n\n**Critical Failure** The morlock\
+    \ injures itself, taking 2d6 damage (typically bludgeoning, piercing, or slashing,\
+    \ but potentially a different type at the GM\x81fs discretion)."
+  requirements: null
+  success: The target gains 2d6 HP.
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The morlock Strides up to twice its Speed, during which it attempts
+    a __High Jump__ or a __Long Jump__. At any point during its movement, the morlock
+    can make a melee Strike against an enemy in its reach. The morlock then can't
+    use Leap Attack for 1 round.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Leap Attack
+  range: null
+  raw_description: '**Leap Attack** [Two Actions]  The morlock Strides up to twice
+    its Speed, during which it attempts a __High Jump__ or a __Long Jump__. At any
+    point during its movement, the morlock can make a melee Strike against an enemy
+    in its reach. The morlock then can''t use Leap Attack for 1 round.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: "A morlock\x81fs Strikes deal an extra 1d6 precision damage to __flat-footed__\
+    \ creatures."
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sneak Attack
+  range: null
+  raw_description: "**__Sneak Attack__** A morlock\x81fs Strikes deal an extra 1d6\
+    \ precision damage to __flat-footed__ creatures."
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A morlock can share the same space as another morlock, but no more
+    than two morlocks can occupy the same space. When morlocks share the same space,
+    they gain a +1 circumstance bonus to attack rolls.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Swarming Stance
+  range: null
+  raw_description: '**Swarming Stance** A morlock can share the same space as another
+    morlock, but no more than two morlocks can occupy the same space. When morlocks
+    share the same space, they gain a +1 circumstance bonus to attack rolls.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d6+4
+    type: bludgeoning
+  name: club
+  plus_damage: null
+  to_hit: 8
+  traits:
+  - range increment 10 feet
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 7
+  fort_misc: null
+  misc: +2 status to all saves vs. <a style="text-decoration:underline" href="Traits.aspx?ID=46">disease</a>
+    and <a style="text-decoration:underline" href="Traits.aspx?ID=126">poison</a>
+  ref: 11
+  ref_misc: null
+  will: 9
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '
+
+
+    '
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Light Blindness
+  range: null
+  raw_description: "**__Light Blindness__** \n\n"
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +7
+- darkvision
+size: Medium
+skills:
+- bonus: 7
+  misc: null
+  name: 'Acrobatics '
+- bonus: 8
+  misc: +11 Climbing
+  name: 'Athletics '
+- bonus: 8
+  misc: Repair only
+  name: 'Crafting '
+- bonus: 9
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 174
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+- amount: 20
+  type: climb
+spell_lists: null
+traits:
+- CE
+- Medium
+- Humanoid
+type: Creature
+weaknesses: null

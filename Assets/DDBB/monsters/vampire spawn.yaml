@@ -1,0 +1,137 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 1
+  dex_mod: 5
+  int_mod: -1
+  str_mod: 3
+  wis_mod: 3
+ac: 22
+ac_special: null
+alignment: CE
+automatic_abilities: null
+description: 'Vampires use their spawn for infiltration and reconnaissance.
+
+
+
+
+  **__Recall Knowledge - Undead__ (__Religion__)**: DC 19'
+hp: 40
+hp_misc: coffin restoration, fast healing 5, negative healing
+immunities:
+- death effects
+- disease
+- paralyze
+- poison
+- sleep
+items: null
+languages:
+- Common
+- plus one regional language
+level: 4
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d8+6
+    type: slashing
+  name: claw
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 14
+  traits:
+  - agile
+name: Vampire Spawn
+perception: 12
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: When Drinking Blood, the spawn regains 5 HP.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Drink Blood
+  range: null
+  raw_description: '**Drink Blood**   (__divine__, __necromancy__) When Drinking Blood,
+    the spawn regains 5 HP.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - necromancy
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The vampire spawn deals 1d6 extra precision damage to flat-footed creatures.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sneak Attack
+  range: null
+  raw_description: '**__Sneak Attack__** The vampire spawn deals 1d6 extra precision
+    damage to flat-footed creatures.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 5
+  type: physical (except silver)
+ritual_lists: null
+saves:
+  fort: 9
+  fort_misc: null
+  misc: null
+  ref: 13
+  ref_misc: null
+  will: 11
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +12
+- darkvision
+size: Medium
+skills:
+- bonus: 11
+  misc: null
+  name: 'Acrobatics '
+- bonus: 9
+  misc: null
+  name: 'Athletics '
+- bonus: 8
+  misc: null
+  name: 'Intimidation '
+- bonus: 5
+  misc: null
+  name: 'Society '
+- bonus: 12
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 320
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 25
+  type: climb
+spell_lists: null
+traits:
+- CE
+- Medium
+- Undead
+- Vampire
+type: Creature
+weaknesses:
+- amount: null
+  type: vampire weaknesses

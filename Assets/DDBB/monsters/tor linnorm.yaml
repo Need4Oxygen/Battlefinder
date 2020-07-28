@@ -1,0 +1,322 @@
+ability_mods:
+  cha_mod: 9
+  con_mod: 9
+  dex_mod: 8
+  int_mod: -1
+  str_mod: 11
+  wis_mod: 8
+ac: 47
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When a creature slays a tor linnorm, it must succeed at a DC 48 Will
+    save or permanently gain weakness to fire 20 and slowed 1 from the agonizing pain
+    it now endures at all times. As long as a character continues to suffer this curse,
+    its slowed condition can never be reduced below slowed 1.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Curse of Boiling Blood
+  range: null
+  raw_description: '**Curse of Boiling Blood** (__curse__, __fire__, __primal__) When
+    a creature slays a tor linnorm, it must succeed at a DC 48 Will save or permanently
+    gain weakness to fire 20 and slowed 1 from the agonizing pain it now endures at
+    all times. As long as a character continues to suffer this curse, its slowed condition
+    can never be reduced below slowed 1.'
+  requirements: null
+  success: null
+  traits:
+  - curse
+  - fire
+  - primal
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A tor linnorm can breathe and swim freely while submerged in lava and
+    magma.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Lava Affinity
+  range: null
+  raw_description: '**Lava Affinity** A tor linnorm can breathe and swim freely while
+    submerged in lava and magma.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: Tail only.
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+description: 'Tor linnorms dwell in the tallest volcanic mountains, either within
+  natural formed caverns or within molten craters. A tor linnorm''s temper can be
+  as hot and destructive as the magma the creature resembles.
+
+
+
+
+  **__Recall Knowledge - Dragon__ (__Arcana__)**: DC 44'
+hp: 440
+hp_misc: regeneration 20 (deactivated by cold iron)
+immunities:
+- curse
+- fire
+- paralyzed
+- sleep
+items: null
+languages:
+- Aklo
+- Draconic
+- Sylvan
+level: 21
+melee:
+- action_cost: One Action
+  damage:
+    formula: 4d12+19
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: null
+    type: tor linnorm venom
+  to_hit: 40
+  traits:
+  - reach 30 feet
+  - magical
+- action_cost: One Action
+  damage:
+    formula: 4d8+19
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 40
+  traits:
+  - reach 30 feet
+  - agile
+  - magical
+- action_cost: One Action
+  damage:
+    formula: 4d6+19
+    type: bludgeoning
+  name: tail
+  plus_damage:
+  - formula: null
+    type: Improved Grab
+  to_hit: 40
+  traits:
+  - reach 30 feet
+  - agile
+  - magical
+name: Tor Linnorm
+perception: 37
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The tor linnorm expels a 60-foot cone of flame and ash dealing 20d6
+    fire damage to creatures within the area (DC 46 basic Reflex save). At the start
+    of the tor linnorm's next turn, the area affected by the breath weapon is covered
+    in thick, scorching smoke that burns both the lungs and eyes, dealing an additional
+    10d6 fire damage to all creatures in the area (DC 46 basic Reflex save). A creature
+    that spends an entire round in the smoke with open eyes must succeed at a DC 44
+    Fortitude save or is __blinded__ for 1 minute. The smoke dissipates after 1 minute;
+    in strong winds, the smoke dissipates in 5 rounds, and in more powerful winds,
+    it may clear even more quickly. The tor linnorm can't use Breath Weapon again
+    for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Breath Weapon
+  range: null
+  raw_description: '**Breath Weapon** [Two Actions]  (__evocation__, __fire__, __primal__)
+    The tor linnorm expels a 60-foot cone of flame and ash dealing 20d6 fire damage
+    to creatures within the area (DC 46 basic Reflex save). At the start of the tor
+    linnorm''s next turn, the area affected by the breath weapon is covered in thick,
+    scorching smoke that burns both the lungs and eyes, dealing an additional 10d6
+    fire damage to all creatures in the area (DC 46 basic Reflex save). A creature
+    that spends an entire round in the smoke with open eyes must succeed at a DC 44
+    Fortitude save or is __blinded__ for 1 minute. The smoke dissipates after 1 minute;
+    in strong winds, the smoke dissipates in 5 rounds, and in more powerful winds,
+    it may clear even more quickly. The tor linnorm can''t use Breath Weapon again
+    for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - evocation
+  - fire
+  - primal
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: 3d6+21 bludgeoning, DC 46
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Constrict
+  range: null
+  raw_description: '**__Constrict__**   3d6+21 bludgeoning, DC 46'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: A tor linnorm makes four Strikes with its claws, each against a different
+    target. These attacks count toward the tor linnorm's multiple attack penalty,
+    but the multiple attack penalty doesn't increase until after the tor linnorm makes
+    all its attacks.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Slashing Claws
+  range: null
+  raw_description: '**Slashing Claws**   A tor linnorm makes four Strikes with its
+    claws, each against a different target. These attacks count toward the tor linnorm''s
+    multiple attack penalty, but the multiple attack penalty doesn''t increase until
+    after the tor linnorm makes all its attacks.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw** DC 44 Fortitude; **Maximum Duration** 10 rounds;
+    **Stage 1** 8d6 fire damage and __drained 1__; **Stage 2** 12d6 fire damage and
+    __drained 2__.'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Tor Linnorm Venom
+  range: null
+  raw_description: '**Tor Linnorm Venom** (__fire__, __injury__, __poison__) **Saving
+    Throw** DC 44 Fortitude; **Maximum Duration** 10 rounds; **Stage 1** 8d6 fire
+    damage and __drained 1__; **Stage 2** 12d6 fire damage and __drained 2__.'
+  requirements: null
+  success: null
+  traits:
+  - fire
+  - injury
+  - poison
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances:
+- amount: 15
+  type: cold iron
+ritual_lists: null
+saves:
+  fort: 38
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 35
+  ref_misc: null
+  will: 33
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +37
+- darkvision
+- scent (imprecise) 60 feet
+- true seeing
+size: Gargantuan
+skills:
+- bonus: 35
+  misc: null
+  name: 'Acrobatics '
+- bonus: 40
+  misc: null
+  name: 'Athletics '
+- bonus: 37
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 227
+  page_stop: null
+speed:
+- amount: 35
+  type: Land
+- amount: 35
+  type: climb
+- amount: 100
+  type: fly
+- amount: 60
+  type: swim
+- amount: 128
+  type: <a style="text-decoration:underline" href="Spells.aspx?ID="><i>freedom of
+    movement</i></a>
+spell_lists:
+- dc: 44
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: 9
+    level: -1
+    spells:
+    - frequency: null
+      name: freedom of movement
+      requirement: null
+  - heightened_level: 8
+    level: -1
+    spells:
+    - frequency: null
+      name: true seeing
+      requirement: null
+  to_hit: null
+traits:
+- Uncommon
+- CE
+- Gargantuan
+- Dragon
+- Fire
+type: Creature
+weaknesses: null

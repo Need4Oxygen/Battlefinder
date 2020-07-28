@@ -1,0 +1,316 @@
+ability_mods:
+  cha_mod: 5
+  con_mod: 2
+  dex_mod: 4
+  int_mod: 4
+  str_mod: 2
+  wis_mod: 7
+ac: 33
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: 'The vitalia sprays blood at the triggering creature. The creature must
+    succeed at a DC 39 Reflex save or become __dazzled__ for 1
+
+
+    round (or __blinded__ for 1 round on a critical failure).'
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Blood Eruption
+  range: null
+  raw_description: '**Blood Eruption [Reaction]** **Trigger** A creature lands a critical
+    hit with a melee Strike against the vitalia **Effect** The vitalia sprays blood
+    at the triggering creature. The creature must succeed at a DC 39 Reflex save or
+    become __dazzled__ for 1
+
+
+    round (or __blinded__ for 1 round on a critical failure).'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature lands a critical hit with a melee Strike against the vitalia
+description: 'Xulgath deepmouths wield the powers of the __Abyss__ against their clutch''s
+  enemies and invoke righteous fear in their followers. The vast majority of deepmouths
+  worship demon lords, most commonly __Zevgavizeb__. Scalescribing—the warping of
+  xulgath flesh into imitations of __Abyssal__ script—is a widespread practice among
+  deepmouths, enabling them to channel the power of the Abyss through their fanatical
+  devotees'' own bodies.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 32'
+hp: 215
+hp_misc: null
+immunities: null
+items:
+- bone religious symbol of Zevgavizeb
+- +1 hide armor
+- +1 striking spiked gauntlet
+- material component pouch
+languages:
+- Draconic
+- Undercommon
+level: 12
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d4+6
+    type: piercing
+  name: spiked gauntlet
+  plus_damage: null
+  to_hit: 21
+  traits:
+  - agile
+  - free-hand
+  - magical
+- action_cost: One Action
+  damage:
+    formula: 2d6+6
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 20
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 2d4+6
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 20
+  traits:
+  - agile
+name: Xulgath Deepmouth
+perception: 26
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The deepmouth warps part of a scalescribed creature's flesh into a
+    mouthed tentacle, then wills it to lash out. The deepmouth makes a jaws Strike
+    that originates from any living scalescribed creature within 120 feet; this Strike
+    also has __reach 15 feet__ and deals an additional 2d8 negative damage. If the
+    Strike originates from a creature other than the deepmouth, that creature triggers
+    reactions as though it had made the Strike.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Devourer's Dictum
+  range: null
+  raw_description: '**Devourer''s Dictum**   (__concentrate__) The deepmouth warps
+    part of a scalescribed creature''s flesh into a mouthed tentacle, then wills it
+    to lash out. The deepmouth makes a jaws Strike that originates from any living
+    scalescribed creature within 120 feet; this Strike also has __reach 15 feet__
+    and deals an additional 2d8 negative damage. If the Strike originates from a creature
+    other than the deepmouth, that creature triggers reactions as though it had made
+    the Strike.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: With 10 minutes of work, a deepmouth can carve a magical rune called
+    a scalescript on the flesh of a living, willing xulgath (including the deepmouth
+    itself). A creature cannot be inscribed with more than one scalescribe rune at
+    a time, and a deepmouth can create and maintain no more than three scalescripts
+    at a time. If the deepmouth Scalescribed itself, it can provide material and somatic
+    components while Casting a Spell without a free hand.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Scalescribe
+  range: null
+  raw_description: '**Scalescribe** (__manipulate__) With 10 minutes of work, a deepmouth
+    can carve a magical rune called a scalescript on the flesh of a living, willing
+    xulgath (including the deepmouth itself). A creature cannot be inscribed with
+    more than one scalescribe rune at a time, and a deepmouth can create and maintain
+    no more than three scalescripts at a time. If the deepmouth Scalescribed itself,
+    it can provide material and somatic components while Casting a Spell without a
+    free hand.'
+  requirements: null
+  success: null
+  traits:
+  - manipulate
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances:
+- amount: null
+  type: '>'
+ritual_lists:
+- dc: 1
+  misc: null
+  name: Divine Rituals
+  spell_groups:
+  - heightened_level: null
+    level: 6
+    spells:
+    - frequency: null
+      name: commune
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: null
+      name: consecrate
+      requirement: null
+  to_hit: null
+saves:
+  fort: 18
+  fort_misc: null
+  misc: null
+  ref: 22
+  ref_misc: null
+  will: 25
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +26
+- darkvision
+size: Medium
+skills:
+- bonus: 22
+  misc: null
+  name: 'Acrobatics '
+- bonus: 22
+  misc: null
+  name: 'Crafting '
+- bonus: 25
+  misc: null
+  name: 'Diplomacy '
+- bonus: 25
+  misc: null
+  name: 'Intimidation '
+- bonus: 25
+  misc: null
+  name: 'Medicine '
+- bonus: 25
+  misc: null
+  name: 'Religion '
+- bonus: 22
+  misc: null
+  name: 'Society '
+source:
+- abbr: 'Pathfinder #155: Lord of the Black Sands'
+  page_start: 85
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists:
+- dc: 33
+  misc: ''
+  name: Divine Prepared Spells
+  spell_groups:
+  - heightened_level: null
+    level: 6
+    spells:
+    - frequency: null
+      name: divine wrath
+      requirement: null
+    - frequency: ×6
+      name: harm
+      requirement: null
+    - frequency: ×2
+      name: repulsion
+      requirement: null
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: ×2
+      name: heal
+      requirement: null
+    - frequency: null
+      name: ravening maw
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: ×2
+      name: air walk
+      requirement: null
+    - frequency: APG
+      name: null
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: null
+      name: heroism
+      requirement: null
+    - frequency: null
+      name: meld into stone
+      requirement: null
+    - frequency: null
+      name: vampiric touch
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: ×3
+      name: status
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: protection
+      requirement: null
+    - frequency: ×2
+      name: ray of enfeeblement
+      requirement: null
+  - heightened_level: 6
+    level: 0
+    spells:
+    - frequency: null
+      name: chill touch
+      requirement: null
+    - frequency: null
+      name: daze
+      requirement: null
+    - frequency: null
+      name: detect magic
+      requirement: null
+    - frequency: null
+      name: shield
+      requirement: null
+  to_hit: 27
+- dc: 33
+  misc: null
+  name: Cleric Domain Spells
+  spell_groups:
+  - heightened_level: null
+    level: 6
+    spells:
+    - frequency: null
+      name: commanding lash
+      requirement: null
+    - frequency: null
+      name: vibrant thorns
+      requirement: null
+  to_hit: null
+traits:
+- Uncommon
+- CE
+- Medium
+- Humanoid
+- Xulgath
+type: Creature
+weaknesses: null

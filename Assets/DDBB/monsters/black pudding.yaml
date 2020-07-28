@@ -1,0 +1,218 @@
+ability_mods:
+  cha_mod: -5
+  con_mod: 7
+  dex_mod: -5
+  int_mod: -5
+  str_mod: 7
+  wis_mod: 0
+ac: 14
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A creature that hits the pudding with a metal or wooden weapon must
+    succeed at a DC 22 Reflex save or the weapon takes 2d6 acid damage (after dealing
+    damage to the black pudding as normal). Thrown weapons and ammunition take this
+    damage automatically with no save.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Corrosive Mass
+  range: null
+  raw_description: '**Corrosive Mass** A creature that hits the pudding with a metal
+    or wooden weapon must succeed at a DC 22 Reflex save or the weapon takes 2d6 acid
+    damage (after dealing damage to the black pudding as normal). Thrown weapons and
+    ammunition take this damage automatically with no save.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When the black pudding is hit by an attack that would deal slashing
+    or piercing damage and has 10 or more HP, it splits into two identical puddings,
+    each with half the original's HP. One pudding is in the same space as the original,
+    and the other appears in an adjacent unoccupied space. If no adjacent space is
+    unoccupied, it automatically pushes creatures and objects out of the way to fill
+    a space (the GM decides if an object or creature is too big or sturdy to push).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Split
+  range: null
+  raw_description: '**Split** When the black pudding is hit by an attack that would
+    deal slashing or piercing damage and has 10 or more HP, it splits into two identical
+    puddings, each with half the original''s HP. One pudding is in the same space
+    as the original, and the other appears in an adjacent unoccupied space. If no
+    adjacent space is unoccupied, it automatically pushes creatures and objects out
+    of the way to fill a space (the GM decides if an object or creature is too big
+    or sturdy to push).'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Most often found below ground, these oozes scour caves for objects to
+  dissolve with their corrosive secretions. This caustic acid is particularly dangerous
+  to creatures that attack a pudding, as it can quickly damage and destroy gear.
+
+
+
+
+  **__Recall Knowledge - Ooze__ (__Occultism__)**: DC 23'
+hp: 165
+hp_misc: null
+immunities:
+- acid
+- critical hits
+- mental
+- piercing
+- precision
+- slashing
+- unconscious
+- visual
+items: null
+languages: null
+level: 7
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+7
+    type: bludgeoning
+  name: pseudopod
+  plus_damage:
+  - formula: 2d6
+    type: acid
+  - formula: null
+    type: corrosive touch
+  - formula: null
+    type: Grab
+  to_hit: 18
+  traits:
+  - reach 10 feet
+name: Black Pudding
+perception: 9
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: 1d8+7 bludgeoning plus 1d6 acid, DC 26
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Constrict
+  range: null
+  raw_description: '**Constrict**   1d8+7 bludgeoning plus 1d6 acid, DC 26'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When the pudding hits a creature with its pseudopod, any acid damage
+    is dealt to the creature's armor or clothing as well as the creature.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Corrosive Touch
+  range: null
+  raw_description: '**Corrosive Touch** When the pudding hits a creature with its
+    pseudopod, any acid damage is dealt to the creature''s armor or clothing as well
+    as the creature.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The pudding can climb on ceilings and other inverted surfaces, though
+    such surfaces are difficult terrain for it.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Suction
+  range: null
+  raw_description: '**Suction** The pudding can climb on ceilings and other inverted
+    surfaces, though such surfaces are difficult terrain for it.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 18
+  fort_misc: null
+  misc: null
+  ref: 6
+  ref_misc: null
+  will: 11
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A black pudding can sense nearby motion through vibration and air movement.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Motion Sense
+  range: null
+  raw_description: '**Motion Sense** A black pudding can sense nearby motion through
+    vibration and air movement.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +9
+- motion sense 60 feet
+- no vision
+size: Huge
+skills:
+- bonus: 18
+  misc: null
+  name: 'Athletics '
+source:
+- abbr: Bestiary
+  page_start: 255
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 20
+  type: climb
+- amount: null
+  type: suction
+spell_lists: null
+traits:
+- N
+- Huge
+- Mindless
+- Ooze
+type: Creature
+weaknesses: null

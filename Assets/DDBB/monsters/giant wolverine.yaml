@@ -1,0 +1,183 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 3
+  dex_mod: 3
+  int_mod: -4
+  str_mod: 6
+  wis_mod: 3
+ac: 21
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Giant wolverines grow to the approximate size of horses and claim even
+  more expansive territories than their more diminutive wolverine cousins. While a
+  smaller wolverine will defend its prey from armed humanoids, a giant wolverine is
+  unafraid to stalk and kill such creatures.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 19'
+hp: 65
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 4
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+8
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 12
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 2d4+8
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 12
+  traits:
+  - agile
+name: Giant Wolverine
+perception: 9
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The wolverine has a creature grabbed from its jaws Strike
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Gnaw
+  range: null
+  raw_description: '**Gnaw**   **Requirements** The wolverine has a creature grabbed
+    from its jaws Strike; **Effect** The wolverine chews violently on the creature,
+    dealing 2d6 piercing damage (DC 21 basic Fortitude save). A creature that fails
+    its save also takes 2d6 __persistent bleed damage__.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The giant wolverine Strides and makes a Strike at the end of that movement.
+    If the giant wolverine begins this action __hidden__, it remains hidden until
+    after the attack.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Pounce
+  range: null
+  raw_description: '**Pounce**   The giant wolverine Strides and makes a Strike at
+    the end of that movement. If the giant wolverine begins this action __hidden__,
+    it remains hidden until after the attack.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: claw
+  effect: The monster automatically deals that Strike's damage again to the enemy.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Rend
+  range: null
+  raw_description: A Rend entry lists a Strike the monster has. **Requirements** The
+    monster hit the same enemy with two consecutive Strikes of the listed type in
+    the same round. **Effect** The monster automatically deals that Strike's damage
+    again to the enemy.
+  requirements: The monster hit the same enemy with two consecutive Strikes of the
+    listed type in the same round.
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The giant wolverine enters a state of pure rage that lasts either for
+    1 minute, until there are no enemies it can perceive, or until it falls __unconscious__,
+    whichever comes first. While raging, the giant wolverine has AC 20, its jaws Strike
+    deals 2d6+11 damage, and its claw Strike deals 2d4+11 damage. While raging, the
+    giant wolverine can't use actions that have the __concentrate__ trait, except
+    for Seek. After it's stopped raging, a giant wolverine can't use Wolverine Rage
+    again for 1 minute.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Wolverine Rage
+  range: null
+  raw_description: '**Wolverine Rage**   The giant wolverine enters a state of pure
+    rage that lasts either for 1 minute, until there are no enemies it can perceive,
+    or until it falls __unconscious__, whichever comes first. While raging, the giant
+    wolverine has AC 20, its jaws Strike deals 2d6+11 damage, and its claw Strike
+    deals 2d4+11 damage. While raging, the giant wolverine can''t use actions that
+    have the __concentrate__ trait, except for Seek. After it''s stopped raging, a
+    giant wolverine can''t use Wolverine Rage again for 1 minute.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 13
+  fort_misc: null
+  misc: null
+  ref: 11
+  ref_misc: null
+  will: 9
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +9
+- low-light vision
+- scent (imprecise) 30 feet
+size: Large
+skills:
+- bonus: 12
+  misc: null
+  name: 'Athletics '
+- bonus: 11
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 295
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 10
+  type: climb
+spell_lists: null
+traits:
+- N
+- Large
+- Animal
+type: Creature
+weaknesses: null

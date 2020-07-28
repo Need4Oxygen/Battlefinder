@@ -1,0 +1,268 @@
+ability_mods:
+  cha_mod: 3
+  con_mod: 7
+  dex_mod: 1
+  int_mod: 2
+  str_mod: 5
+  wis_mod: 3
+ac: 31
+ac_special:
+- descr: 33 with shield raised
+alignment: LG
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: A shield archon's shield is the focal point of its courage and soul.
+    It always has its shield raised without needing to Raise a Shield, and it can
+    use Shield Block as a free action instead of a reaction (Hardness 10, HP 80).
+    A shield archon can trigger its Shield Block free action when an ally within 10
+    feet is the target of an attack, reducing damage to that ally instead of itself
+    but otherwise following the normal rules of Shield Block.**Menacing Guardian**
+    (__aura__, __divine__, __enchantment__) 30 feet. Enemies that start their turn
+    in the area or enter it must attempt a DC 27 Will save. On a failure, they take
+    a -1 status penalty to attack rolls, spell rolls, and damage rolls against any
+    other target while in the aura for 24 hours or until they damage the archon, whichever
+    comes first. On a critical failure, they can't use hostile actions against any
+    other target while in the area for 24 hours or until they damage the archon, whichever
+    comes first. Regardless of the result, a creature is then temporarily immune to
+    further menacing guardian auras for 24 hours.**Retributive Strike** [Reaction]
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Living Shield
+  range: null
+  raw_description: '**Living Shield** A shield archon''s shield is the focal point
+    of its courage and soul. It always has its shield raised without needing to Raise
+    a Shield, and it can use Shield Block as a free action instead of a reaction (Hardness
+    10, HP 80). A shield archon can trigger its Shield Block free action when an ally
+    within 10 feet is the target of an attack, reducing damage to that ally instead
+    of itself but otherwise following the normal rules of Shield Block.**Menacing
+    Guardian** (__aura__, __divine__, __enchantment__) 30 feet. Enemies that start
+    their turn in the area or enter it must attempt a DC 27 Will save. On a failure,
+    they take a -1 status penalty to attack rolls, spell rolls, and damage rolls against
+    any other target while in the aura for 24 hours or until they damage the archon,
+    whichever comes first. On a critical failure, they can''t use hostile actions
+    against any other target while in the area for 24 hours or until they damage the
+    archon, whichever comes first. Regardless of the result, a creature is then temporarily
+    immune to further menacing guardian auras for 24 hours.**Retributive Strike**
+    [Reaction]'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Shield archons defend the fortresses of Heaven against fiendish incursions.
+  They wield their spears and shields in massive formations capable of withstanding
+  any onslaught. Beneath their armor, they are sheathed in skin of steel. Given their
+  tremendous strength and imposing stature, shield archons are ideal guardians of
+  the meek and are sometimes summoned to the Material Plane to ward off the attacks
+  of great numbers of evildoers.
+
+
+
+
+  **__Recall Knowledge - Celestial__ (__Religion__)**: DC 27'
+hp: 125
+hp_misc: null
+immunities: null
+items:
+- +1 full plate
+languages:
+- Celestial
+- Draconic
+- Infernal
+- tongues
+level: 10
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+10
+    type: piercing
+  name: holy striking spear
+  plus_damage:
+  - formula: 1d6
+    type: good
+  to_hit: 22
+  traits:
+  - magical
+  - reach 10 feet
+name: Shield Archon
+perception: 19
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Once per day, if an archon sees another creature cast __dimension door__,
+    it can cast an innate __dimension door__ (heightened to 5th level) within 1 round
+    to attempt to follow that creature to the maximum distance of the archon's __dimension
+    door__. If the archon's __dimension door__ has enough distance, the archon appears
+    the same distance and direction from the creature as before either used __dimension
+    door__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Archon's Door
+  range: null
+  raw_description: '**Archon''s Door** Once per day, if an archon sees another creature
+    cast __dimension door__, it can cast an innate __dimension door__ (heightened
+    to 5th level) within 1 round to attempt to follow that creature to the maximum
+    distance of the archon''s __dimension door__. If the archon''s __dimension door__
+    has enough distance, the archon appears the same distance and direction from the
+    creature as before either used __dimension door__.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When a shield archon uses its __dimension door__ innate spell, it can
+    choose to move into the space of a willing ally it can see within range. If it
+    does so, the ally switches places with the archon, appearing in the space the
+    archon just vacated, as if it too had cast __dimension door__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Courageous Switch
+  range: null
+  raw_description: '**Courageous Switch** When a shield archon uses its __dimension
+    door__ innate spell, it can choose to move into the space of a willing ally it
+    can see within range. If it does so, the ally switches places with the archon,
+    appearing in the space the archon just vacated, as if it too had cast __dimension
+    door__.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 23
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 15
+  ref_misc: null
+  will: 19
+  will_misc: null
+sense_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: 'A shield archon''s hands can change into a +1 __holy__ __striking__
+    __spear__ and a __lesser sturdy shield__ or back into hands. Transforming does
+    not restore any HP to the items, and if either the weapon or shield is fully destroyed,
+    the archon loses that hand until it receives a __regenerate__ spell or similar
+    magic. If a shield archon is slain, its weapon and shield can be taken, but they
+    fade into nothingness after 24 hours.
+
+
+    '
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Morphic Hands
+  range: null
+  raw_description: '**Morphic Hands**  (divine, transmutation) A shield archon''s
+    hands can change into a +1 __holy__ __striking__ __spear__ and a __lesser sturdy
+    shield__ or back into hands. Transforming does not restore any HP to the items,
+    and if either the weapon or shield is fully destroyed, the archon loses that hand
+    until it receives a __regenerate__ spell or similar magic. If a shield archon
+    is slain, its weapon and shield can be taken, but they fade into nothingness after
+    24 hours.
+
+
+    '
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - transmutation
+  trigger: null
+senses:
+- Perception +19
+- darkvision
+size: Large
+skills:
+- bonus: 21
+  misc: null
+  name: 'Athletics '
+- bonus: 19
+  misc: null
+  name: 'Diplomacy '
+- bonus: 19
+  misc: null
+  name: 'Intimidation '
+- bonus: 19
+  misc: null
+  name: 'Religion '
+- bonus: 17
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 29
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+- amount: 60
+  type: fly
+spell_lists:
+- dc: 27
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: at will
+      name: dimension door
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: x3
+      name: shield other
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: x3
+      name: true strike
+      requirement: null
+  - heightened_level: 5
+    level: 0
+    spells:
+    - frequency: null
+      name: message
+      requirement: null
+  - heightened_level: 5
+    level: -1
+    spells:
+    - frequency: null
+      name: tongues
+      requirement: null
+  to_hit: null
+traits:
+- LG
+- Large
+- Archon
+- Celestial
+type: Creature
+weaknesses:
+- amount: 10
+  type: evil

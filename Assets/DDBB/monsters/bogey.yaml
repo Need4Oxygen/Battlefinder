@@ -1,0 +1,156 @@
+ability_mods:
+  cha_mod: 3
+  con_mod: 2
+  dex_mod: 3
+  int_mod: -2
+  str_mod: 2
+  wis_mod: 1
+ac: 20
+ac_special: null
+alignment: NE
+automatic_abilities: null
+description: 'A bogey typically hunts a single creature at a time, usually a small
+  child or elderly person, methodically stalking and tormenting their prey. Often
+  hiding under a bed, amid a dark attic space, or in a closet left slightly ajar,
+  the bogey delights in the slow, methodical cultivation of fear in its victims.
+
+
+
+
+  **__Recall Knowledge - Fey__ (__Nature__)**: DC 20'
+hp: 35
+hp_misc: null
+immunities:
+- fear
+items: null
+languages:
+- Aklo
+- Sylvan
+level: 3
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d8+3
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 10
+  traits:
+  - agile
+  - finesse
+  - magical
+name: Bogey
+perception: 9
+proactive_abilities:
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The bogey has killed a creature within the last round and is adjacent to
+    the creature
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Devour Soul
+  range: null
+  raw_description: '**Devour Soul** [Three Actions]  (__necromancy__, __occult__)
+    **Requirements** The bogey has killed a creature within the last round and is
+    adjacent to the creature; **Effect** The bogey consumes the creature''s soul.
+    The soul is utterly destroyed—nothing short of wish or a similar effect can restore
+    it to life, and only after the bogey has been slain. The bogey regains Hit Points
+    equal to double the level of the consumed creature. After devouring three souls
+    within a year, the bogey transforms into a bugaboo.'
+  requirements: null
+  success: null
+  traits:
+  - necromancy
+  - occult
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: On the first round of combat, creatures that haven't acted yet are
+    __flat-footed__ to the bogey.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Surprise Attack
+  range: null
+  raw_description: '**Surprise Attack** On the first round of combat, creatures that
+    haven''t acted yet are __flat-footed__ to the bogey.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances:
+- amount: 4
+  type: cold iron
+ritual_lists: null
+saves:
+  fort: 7
+  fort_misc: null
+  misc: null
+  ref: 12
+  ref_misc: null
+  will: 8
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +9
+- low-light vision
+size: Small
+skills:
+- bonus: 10
+  misc: null
+  name: 'Acrobatics '
+- bonus: 10
+  misc: null
+  name: 'Deception '
+- bonus: 8
+  misc: null
+  name: 'Intimidation '
+- bonus: 10
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: 'Pathfinder #152: Legacy of the Lost God'
+  page_start: 78
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+spell_lists:
+- dc: 18
+  misc: null
+  name: Occult Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: x2
+      name: fear
+      requirement: null
+  - heightened_level: 1
+    level: 0
+    spells:
+    - frequency: null
+      name: ghost sound
+      requirement: null
+    - frequency: null
+      name: message
+      requirement: null
+  to_hit: null
+traits:
+- Uncommon
+- NE
+- Small
+- Fey
+type: Creature
+weaknesses: null

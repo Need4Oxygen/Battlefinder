@@ -1,0 +1,137 @@
+ability_mods:
+  cha_mod: -1
+  con_mod: 3
+  dex_mod: 0
+  int_mod: -4
+  str_mod: 6
+  wis_mod: 2
+ac: 21
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The monster avoids being knocked out and remains at 1 HP, but its wounded
+    value increases by 1. When it is wounded 3, it can no longer use this ability.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Ferocity
+  range: null
+  raw_description: '**Ferocity** [Reaction] **Trigger** The monster is reduced to
+    0 HP. **Effect** The monster avoids being knocked out and remains at 1 HP, but
+    its wounded value increases by 1. When it is wounded 3, it can no longer use this
+    ability.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: The monster is reduced to 0 HP.
+description: 'Where the typical boar is merely ill-tempered and generally unfriendly,
+  the towering daeodon is legitimately hateful and ruthlessly violent. Although omnivorous,
+  the daeodon (known in some regions simply as a giant boar) prefers to feed on flesh.
+  Primarily a scavenger, the daeodon isn''t adverse to attacking creatures it encounters
+  while searching for easier meals, or to protect any perceived encroachment into
+  its lair or feeding grounds. Particularly brave or skilled orcs are fond of using
+  daeodons as mounts or war-trained battle beasts; orc cavalry mounted on daeodons
+  is a fearsome force indeed.
+
+
+
+
+  A typical adult daeodon is 10 feet long and 7 feet tall at the shoulder. It weighs
+  approximately 2,000 pounds.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 19'
+hp: 60
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 4
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+6
+    type: piercing
+  name: Tusk
+  plus_damage: null
+  to_hit: 14
+  traits: null
+name: Daeodon
+perception: 12
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The daeodon __Strides__ twice and then makes a tusk Strike. As long
+    as it moved at least 20 feet, it gains a +2 circumstance bonus to its attack roll.
+    A Medium or smaller creature struck by this attack must succeed at a DC 19 Reflex
+    save or be knocked __prone__ by the force of the blow.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Daeodon Charge
+  range: null
+  raw_description: '**Daeodon Charge** [Two Actions]  The daeodon __Strides__ twice
+    and then makes a tusk Strike. As long as it moved at least 20 feet, it gains a
+    +2 circumstance bonus to its attack roll. A Medium or smaller creature struck
+    by this attack must succeed at a DC 19 Reflex save or be knocked __prone__ by
+    the force of the blow.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 13
+  fort_misc: null
+  misc: null
+  ref: 9
+  ref_misc: null
+  will: 10
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +12
+- low-light vision
+- scent (imprecise) 30 feet
+size: Large
+skills:
+- bonus: 8
+  misc: null
+  name: 'Acrobatics '
+- bonus: 12
+  misc: null
+  name: 'Athletics '
+- bonus: 10
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 43
+  page_stop: null
+speed:
+- amount: 40
+  type: Land
+spell_lists: null
+traits:
+- N
+- Large
+- Animal
+type: Creature
+weaknesses: null

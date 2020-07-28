@@ -1,0 +1,193 @@
+ability_mods:
+  cha_mod: 5
+  con_mod: 4
+  dex_mod: 4
+  int_mod: 1
+  str_mod: 6
+  wis_mod: 3
+ac: 28
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Resistances piercing 10, slashing 5
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: unconscious
+  range: null
+  raw_description: '**__unconscious__** Resistances piercing 10, slashing 5'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A living creature slain by a mohrg that had a lower level than the
+    mohrg rises as a mohrg spawn after 1d4 rounds, on its turn. This mohrg spawn is
+    under the command of the mohrg that created it. If the creator of the mohrg spawn
+    is destroyed, the mohrg spawn is destroyed as well, immediately collapsing into
+    a pile of decayed flesh and bones.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Mohrg Spawn
+  range: null
+  raw_description: '**Mohrg Spawn** (__occult__, __necromancy__) A living creature
+    slain by a mohrg that had a lower level than the mohrg rises as a mohrg spawn
+    after 1d4 rounds, on its turn. This mohrg spawn is under the command of the mohrg
+    that created it. If the creator of the mohrg spawn is destroyed, the mohrg spawn
+    is destroyed as well, immediately collapsing into a pile of decayed flesh and
+    bones.'
+  requirements: null
+  success: null
+  traits:
+  - occult
+  - necromancy
+  trigger: null
+description: "The weight of murder wears heavy on the soul. With souls marked by a\
+  \ lifetime of dealing death, these killers, whether mass murderers, bloodthirsty\
+  \ soldiers, or sadistic executioners, sometimes do not let judgment and lawful execution\
+  \ stanch their slaying sprees. When such individuals are brought to justice, they\
+  \ may rise after death as mohrgs to continue their ruinous work.\n\n\n\nDrawn to\
+  \ others of their kind, mohrgs prefer to hunt in small groups, occasionally in partnership\
+  \ with weaker free-willed undead such as shadows and wights. They seek out weak\
+  \ prey and revel in causing drawn-out suffering. Some mohrgs haunt locations they\
+  \ favored in life, reenacting old crimes on new victims. They may even skulk about\
+  \ in public, wearing rags, cloaks, or freshly harvested skins to hide their nature.\
+  \ The most dangerous mohrgs are those who grow powerful enough to no longer fear\
+  \ being struck down again and openly assault settlements in an attempt to turn living\
+  \ towns into mass graves.\n\n\n\nSince those slain by a mohrg rise soon thereafter\
+  \ as mohrg spawn, the murders of a mohrg rarely go unnoticed for long, even when\
+  \ they take extra care to prey only on a society's dregs. Since mohrg spawn remain\
+  \ under a mohrg's control, a canny mohrg might order its spawn to remain in hiding\
+  \ to keep its presence secret until a point where it feels confident unleashing\
+  \ its undead army upon a doomed settlement. Mohrgs retain a twisted sentimentality\
+  \ for the crimes of their mortal life, seeking out trinkets that remind them of\
+  \ favorite murders. When not out hunting, mohrgs arrange their mementos into disturbing\
+  \ shrines. Often, these trinkets are valuable objects, and might even provide important\
+  \ clues to ongoing mysteries.\n\n\n\n\n\n## Mohrg Spawn\n\n When a creature returns\
+  \ after death as a mohrg spawn, its flesh decays away save for its entrails, and\
+  \ it grows a long, awful tongue. The creature gains the undead trait and becomes\
+  \ chaotic evil, and it loses any abilities that come from it being a living creature.\
+  \ It gains __darkvision__, __negative healing__, and the mohrg's immunities and\
+  \ resistances. If the creature had hands, it gains a claw Strike (an unarmed attack\
+  \ that deals slashing damage). The creature also gains a tongue Strike, an __agile__\
+  \ attack that causes paralysis, as the mohrg ability; the Fortitude save uses the\
+  \ DC for the __mohrg spawn's level__. Mohrg spawn cannot create mohrg spawn of their\
+  \ own.\n\n\n\n**__Recall Knowledge - Undead__ (__Religion__)**: DC 24"
+hp: 120
+hp_misc: negative healing
+immunities:
+- death effects
+- disease
+- paralyzed
+- poison
+items: null
+languages:
+- Common
+- Necril
+level: 8
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d10+9
+    type: slashing
+  name: claw
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 20
+  traits: null
+- action_cost: One Action
+  damage: null
+  name: tongue
+  plus_damage: null
+  to_hit: 20
+  traits:
+  - agile
+name: Mohrg
+perception: 17
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A living creature hit by a mohrg's tongue Strike must succeed at a
+    DC 26 Fortitude save or become __paralyzed__. The creature can attempt a new save
+    at the end of each of its turns, and the DC cumulatively decreases by 1 on each
+    attempt.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Paralysis
+  range: null
+  raw_description: '**Paralysis** (__occult__, __incapacitation__, __necromancy__)
+    A living creature hit by a mohrg''s tongue Strike must succeed at a DC 26 Fortitude
+    save or become __paralyzed__. The creature can attempt a new save at the end of
+    each of its turns, and the DC cumulatively decreases by 1 on each attempt.'
+  requirements: null
+  success: null
+  traits:
+  - occult
+  - incapacitation
+  - necromancy
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 18
+  fort_misc: null
+  misc: null
+  ref: 16
+  ref_misc: null
+  will: 13
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +17
+- darkvision
+size: Medium
+skills:
+- bonus: 16
+  misc: null
+  name: 'Acrobatics '
+- bonus: 18
+  misc: null
+  name: 'Athletics '
+- bonus: 19
+  misc: null
+  name: 'Intimidation '
+- bonus: 15
+  misc: null
+  name: 'Society '
+- bonus: 18
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 172
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists: null
+traits:
+- CE
+- Medium
+- Undead
+type: Creature
+weaknesses: null

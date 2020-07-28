@@ -1,0 +1,267 @@
+ability_mods:
+  cha_mod: 6
+  con_mod: 6
+  dex_mod: 5
+  int_mod: 3
+  str_mod: 7
+  wis_mod: 4
+ac: 31
+ac_special: null
+alignment: NE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 20 feet. A meladaemon emanates an aura of intense hunger. Each round
+    a creature begins its turn in the aura, it must attempt a DC 27 Fortitude save.
+    On a failure, the creature takes 1d6 negative damage (2d6 on a critical failure)
+    and becomes __fatigued__. This fatigue ends as soon as the creature eats any food.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Consumptive Aura
+  range: null
+  raw_description: '**Consumptive Aura** (__aura__, __divine__) 20 feet. A meladaemon
+    emanates an aura of intense hunger. Each round a creature begins its turn in the
+    aura, it must attempt a DC 27 Fortitude save. On a failure, the creature takes
+    1d6 negative damage (2d6 on a critical failure) and becomes __fatigued__. This
+    fatigue ends as soon as the creature eats any food.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - divine
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The meladaemon swipes at the triggering creature, which must immediately
+    attempt a save against the meladaemon's withering touch.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Withering Opportunity
+  range: null
+  raw_description: '**Withering Opportunity [Reaction]** **Trigger **The meladaemon
+    is attacked by an adjacent creature and the attack misses; **Effect **The meladaemon
+    swipes at the triggering creature, which must immediately attempt a save against
+    the meladaemon''s withering touch.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: The meladaemon is attacked by an adjacent creature and the attack misses
+description: 'Meladaemons personify death by starvation and thirst, and revel in spreading
+  the same despair that brought about their mortal demise. When they aren''t blighting
+  fields, massacring livestock, or tainting water supplies, they experiment on prisoners
+  to study how long creatures can go without sustenance and the deleterious effects
+  that result from such deprivation. Fiercely loyal to Trelmarixian, Horseman of Famine,
+  they serve no other beings. They work alongside other daemons if Trelmarixian wills
+  it, but are notoriously traitorous.
+
+
+
+
+  **__Recall Knowledge - Fiend__ (__Religion__)**: DC 28'
+hp: 225
+hp_misc: null
+immunities:
+- death effects
+items: null
+languages:
+- Common
+- Daemonic
+- telepathy 100 feet
+level: 11
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d12+13
+    type: null
+  name: bite
+  plus_damage:
+  - formula: 1d6
+    type: evil and daemonic famine
+  to_hit: 24
+  traits:
+  - evil
+  - magical
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 2d8+13
+    type: slashing
+  name: claw
+  plus_damage:
+  - formula: 1d6
+    type: evil
+  - formula: null
+    type: Grab
+  - formula: null
+    type: withering touch
+  to_hit: 24
+  traits:
+  - agile
+  - evil
+  - magical
+  - reach 10 feet
+name: Meladaemon
+perception: 21
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw **DC 29 Fortitude; **Stage 1 **carrier (1 day); **Stage
+    2 **__enfeebled 1__ (1 day); **Stage 3 **enfeebled 2 (1 day); **Stage 4 **as stage
+    3; **Stage 5 **enfeebled 3 (1 week); **Stage 6 **dead'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Daemonic Famine
+  range: null
+  raw_description: '**Daemonic Famine** (__disease__) **Saving Throw **DC 29 Fortitude;
+    **Stage 1 **carrier (1 day); **Stage 2 **__enfeebled 1__ (1 day); **Stage 3 **enfeebled
+    2 (1 day); **Stage 4 **as stage 3; **Stage 5 **enfeebled 3 (1 week); **Stage 6
+    **dead'
+  requirements: null
+  success: null
+  traits:
+  - disease
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When the meladaemon hits with a claw Strike or a creature begins its
+    turn grabbed by the meladaemon, the creature must attempt a DC 30 Fortitude save.
+    On a failure, the creature takes 1d6 negative damage and becomes __fatigued__.
+    This fatigue ends when the creature drinks.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Withering Touch
+  range: null
+  raw_description: '**Withering Touch** (__divine__, __evil__, __necromancy__) When
+    the meladaemon hits with a claw Strike or a creature begins its turn grabbed by
+    the meladaemon, the creature must attempt a DC 30 Fortitude save. On a failure,
+    the creature takes 1d6 negative damage and becomes __fatigued__. This fatigue
+    ends when the creature drinks.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - evil
+  - necromancy
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 10
+  type: good
+ritual_lists:
+- dc: 31
+  misc: null
+  name: Rituals
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: blight
+      requirement: null
+  to_hit: null
+saves:
+  fort: 23
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 20
+  ref_misc: null
+  will: 19
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +21
+- darkvision
+- lifesense (imprecise) 30 feet
+size: Large
+skills:
+- bonus: 20
+  misc: null
+  name: 'Acrobatics '
+- bonus: 23
+  misc: null
+  name: 'Deception '
+- bonus: 23
+  misc: null
+  name: 'Intimidation '
+- bonus: 20
+  misc: null
+  name: 'Religion '
+- bonus: 23
+  misc: null
+  name: 'Stealth '
+- bonus: 19
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 58
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 50
+  type: fly
+spell_lists:
+- dc: 31
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 6
+    spells:
+    - frequency: null
+      name: phantom pain
+      requirement: null
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: null
+      name: dimension door
+      requirement: null
+    - frequency: null
+      name: fear
+      requirement: null
+    - frequency: at will
+      name: magic missile
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: at will
+      name: dimension door
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: good only, at will
+      name: detect alignment
+      requirement: null
+  to_hit: null
+traits:
+- NE
+- Large
+- Daemon
+- Fiend
+type: Creature
+weaknesses: null

@@ -1,0 +1,205 @@
+ability_mods:
+  cha_mod: 1
+  con_mod: 1
+  dex_mod: 5
+  int_mod: 0
+  str_mod: 6
+  wis_mod: 4
+ac: 25
+ac_special: null
+alignment: NE
+automatic_abilities: null
+description: 'If a biloko is lucky enough to consume several spellcasters or other
+  creatures with innate magical abilities, it undergoes a subtle transformation over
+  the course of 1 week. Such a fey is known as an eloko, and in addition to their
+  incredible appetite (even by biloko standards), they have the supernatural ability
+  to grow to immense size.
+
+
+
+
+  **__Recall Knowledge - Fey__ (__Nature__)**: DC 23'
+hp: 115
+hp_misc: null
+immunities: null
+items:
+- +1 dagger
+- blowgun (10 poisoned darts)
+languages:
+- Aklo
+- Mwangi
+- Sylvan
+level: 7
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+8
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 17
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 1d4+8
+    type: piercing
+  name: dagger
+  plus_damage: null
+  to_hit: 18
+  traits:
+  - agile
+  - magical
+  - versatile S
+name: Eloko
+perception: 15
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: If a biloko feasts on a human corpse for 1 minute or more, they gain
+    a +1 status bonus to attack rolls and a +2 status bonus to damage rolls for 1
+    hour.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Inspired Feast
+  range: null
+  raw_description: '**Inspired Feast** (__emotion__, __mental__) If a biloko feasts
+    on a human corpse for 1 minute or more, they gain a +1 status bonus to attack
+    rolls and a +2 status bonus to damage rolls for 1 hour.'
+  requirements: null
+  success: null
+  traits:
+  - emotion
+  - mental
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The eloko is affected by a 4th-level __enlarge__ spell. This lasts
+    for 1 minute, and the eloko can Dismiss the Spell.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Size Alteration
+  range: null
+  raw_description: '**Size Alteration** [Two Actions]  (__polymorph__, __primal__,
+    __transmutation__) The eloko is affected by a 4th-level __enlarge__ spell. This
+    lasts for 1 minute, and the eloko can Dismiss the Spell.'
+  requirements: null
+  success: null
+  traits:
+  - polymorph
+  - primal
+  - transmutation
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The eloko deals 2d6 extra precision damage to __flat-footed__ creatures.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sneak Attack
+  range: null
+  raw_description: '**__Sneak Attack__** The eloko deals 2d6 extra precision damage
+    to __flat-footed__ creatures.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage: null
+  name: blowgun
+  plus_damage: null
+  to_hit: 17
+  traits:
+  - agile
+  - nonlethal
+  - range increment 20 feet
+  - reload 1
+- action_cost: One Action
+  damage:
+    formula: 1d4+8
+    type: piercing
+  name: dagger
+  plus_damage: null
+  to_hit: 18
+  traits:
+  - agile
+  - magical
+  - thrown 10 feet
+  - versatile S
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 12
+  fort_misc: null
+  misc: null
+  ref: 18
+  ref_misc: null
+  will: 15
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +15
+- low-light vision
+- scent (imprecise) 30 feet
+size: Small
+skills:
+- bonus: 18
+  misc: null
+  name: 'Athletics '
+- bonus: 13
+  misc: null
+  name: 'Crafting '
+- bonus: 15
+  misc: null
+  name: 'Deception '
+- bonus: 13
+  misc: null
+  name: 'Nature '
+- bonus: 16
+  misc: null
+  name: 'Stealth '
+- bonus: 13
+  misc: null
+  name: 'Survival '
+source:
+- abbr: 'Pathfinder #146: Cult of Cinders'
+  page_start: 83
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+spell_lists:
+- dc: 22
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: charm
+      requirement: null
+  to_hit: null
+traits:
+- NE
+- Small
+- Fey
+type: Creature
+weaknesses: null

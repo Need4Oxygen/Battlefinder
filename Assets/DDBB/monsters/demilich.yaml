@@ -1,0 +1,425 @@
+ability_mods:
+  cha_mod: 5
+  con_mod: 0
+  dex_mod: 4
+  int_mod: 7
+  str_mod: -3
+  wis_mod: -2
+ac: 38
+ac_special: null
+alignment: NE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 20 feet. Telekinetic whirlwind activates when the demilich ends torpor.
+    Loose debris in the area whip up into a whirling storm. This obscures vision,
+    making any creature in the area concealed, and causes creatures in its area (except
+    the demilich) to treat all creatures as concealed. Any creature other than the
+    demilich that enters or begins its turn in the aura takes 2d12 bludgeoning damage.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Telekinetic Whirlwind
+  range: null
+  raw_description: '**Telekinetic Whirlwind** (__arcane__, __aura__, __evocation__)
+    20 feet. Telekinetic whirlwind activates when the demilich ends torpor. Loose
+    debris in the area whip up into a whirling storm. This obscures vision, making
+    any creature in the area concealed, and causes creatures in its area (except the
+    demilich) to treat all creatures as concealed. Any creature other than the demilich
+    that enters or begins its turn in the aura takes 2d12 bludgeoning damage.'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - aura
+  - evocation
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The demilich ends torpor, rolls initiative, and gains the effect of its
+    __contingency's__ companion spell. The __contingency__ resets after 24 hours.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Contingency
+  range: null
+  raw_description: '**Contingency** [Reaction] A demilich has one permanent 8th-level
+    __contingency__ spell in effect with one of its arcane innate spells of 5th level
+    or lower as the companion spell— typically __dimension door__. **Trigger** While
+    the lich is in torpor, a creature disturbs the demilich''s remains, touches its
+    treasure, or casts a spell that would affect the demilich. **Effect** The demilich
+    ends torpor, rolls initiative, and gains the effect of its __contingency''s__
+    companion spell. The __contingency__ resets after 24 hours.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: While the lich is in torpor, a creature disturbs the demilich's remains,
+    touches its treasure, or casts a spell that would affect the demilich.
+- action_cost: Free Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The demilich casts __blink__, __fly__, __spell turning__, or __true seeing__
+    on itself. It usually chooses spell turning unless it already has that spell in
+    effect.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Countermeasures
+  range: null
+  raw_description: '**Countermeasures** [Free Action] **Trigger** The demilich''s
+    turn begins. **Effect** The demilich casts __blink__, __fly__, __spell turning__,
+    or __true seeing__ on itself. It usually chooses spell turning unless it already
+    has that spell in effect.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: The demilich's turn begins.
+description: 'Demiliches are formed when a lich, through carelessness or by accident,
+  loses its phylactery. As years pass, the lich''s body crumbles to dust, leaving
+  only the skull as the seat of its necromantic power. The lich enters a sort of torpor,
+  its mind left wandering the planes in search of ever greater mysteries. The lich
+  gradually loses the ability to cast spells and its magic items slowly subsume into
+  its new form. Negative energy concentrates around the skull, causing some of its
+  bones and teeth to petrify with power and turn into blight crystals. The resulting
+  lich skull, embedded with arcane gemstones and suffused with palpably powerful magic,
+  forms a creature called a demilich.
+
+
+
+
+  Despite its near-constant state of inactivity, a demilich grows restless from time
+  to time, especially when living creatures draw near. Only then does the demilich''s
+  hunger for life stir once more, causing it to lash out with terrifying bursts of
+  power in attempts to consume vital energy. Unlike an ordinary lich, should the demilich''s
+  skull be destroyed, its bond to the world is permanently severed, although some
+  theorize that even then it is not truly slain. Rather, some think that once the
+  demilich is destroyed, its foul and tormented mind is finally free to wander the
+  planes and find new ways to enact its will. For the short-lived common folk of the
+  Material Plane, this is good enough, though eons later a demilich may reappear in
+  the region it once inhabited with a new—and even more insidious—agenda.
+
+
+
+
+  **__Recall Knowledge - Undead__ (__Religion__)**: DC 39'
+hp: 220
+hp_misc: negative healing
+immunities:
+- disease
+- paralyzed
+- poison
+- polymorph
+- unconscious
+items:
+- demilich eye gem (2)
+languages:
+- Abyssal
+- Aklo
+- Common
+- Draconic
+- Elven
+- Infernal
+- Necril
+- Undercommon
+level: 15
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d4-3
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 6d6
+    type: negative
+  to_hit: 27
+  traits:
+  - reach 0 feet
+  - finesse
+  - magical
+name: Demilich
+perception: 19
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A demilich has gemstone eyes that glow when the demilich is active.
+    Each eye contains an 8th-level spell that targets one creature (usually one eye
+    has __maze__ and the other __polar ray__). The demilich can Activate an eye. This
+    uses the number of spellcasting actions the spell requires, and also requires
+    command and envision components. When the demilich casts a spell from a gemstone
+    eye, that eye stops glowing for 1d4 rounds, during which time that eye's spell
+    can't be used. Occasionally, one or both of the two demilich eye gems can be harvested
+    from a destroyed demilich as __magic items__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Demilich Eye Gems
+  range: null
+  raw_description: '**Demilich Eye Gems** (__arcane__) A demilich has gemstone eyes
+    that glow when the demilich is active. Each eye contains an 8th-level spell that
+    targets one creature (usually one eye has __maze__ and the other __polar ray__).
+    The demilich can Activate an eye. This uses the number of spellcasting actions
+    the spell requires, and also requires command and envision components. When the
+    demilich casts a spell from a gemstone eye, that eye stops glowing for 1d4 rounds,
+    during which time that eye''s spell can''t be used. Occasionally, one or both
+    of the two demilich eye gems can be harvested from a destroyed demilich as __magic
+    items__.'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: A soul has been trapped in one of the demilich's blight quartz gems (see
+    Trap Soul) for 24 hours.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Devour Soul
+  range: null
+  raw_description: '**Devour Soul**   (__arcane__, __necromancy__, __negative__) **Requirements**
+    A soul has been trapped in one of the demilich''s blight quartz gems (see Trap
+    Soul) for 24 hours. **Effect** The demilich consumes the soul. The soul is utterly
+    destroyed, and the demilich regains HP equal to double the creature''s level.'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - necromancy
+  - negative
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A demilich can replace all material and somatic components for casting
+    spells with verbal components, and can replace all Interact components for activating
+    magic items with envision components.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Mental Magic
+  range: null
+  raw_description: '**Mental Magic** A demilich can replace all material and somatic
+    components for casting spells with verbal components, and can replace all Interact
+    components for activating magic items with envision components.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A demilich long ago absorbed the spells from a staff into gemstone
+    nodules embedded in its skull, with larger nodules representing higher-level spells.
+    It can cast any of the spells as though it were Activating the staff, and regains
+    1 charge per 4 hours spent in torpor, to a maximum of 8 charges. A typical demilich
+    has the spells from a __greater staff of necromancy__, but it could have spells
+    from another staff of 8th level or lower instead.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Staff Gems
+  range: null
+  raw_description: '**Staff Gems** A demilich long ago absorbed the spells from a
+    staff into gemstone nodules embedded in its skull, with larger nodules representing
+    higher-level spells. It can cast any of the spells as though it were Activating
+    the staff, and regains 1 charge per 4 hours spent in torpor, to a maximum of 8
+    charges. A typical demilich has the spells from a __greater staff of necromancy__,
+    but it could have spells from another staff of 8th level or lower instead.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: 'Ten blight quartz gemstones on the demilich''s skull can trap the souls
+    of the living. The Activated gem casts __bind soul__. This __bind soul__ can target
+    and affect a dying creature instead of a corpse. The dying creature can attempt
+    a DC 38 Fortitude save; if it succeeds, it doesn''t die and its soul is not trapped
+    but it''s enervated 2 (or is unaffected entirely on a critical success). When
+    the soul of a creature gets trapped, the creature''s body swiftly turns to dust.
+
+
+    The gemstones work like the black sapphires used in __bind soul__, except that
+    they can hold creatures of up to 17th level and have a value of 200 gp apiece.
+    The demilich can Devour a Soul it has trapped.'
+  effects: null
+  failure: null
+  frequency: once per day per gem
+  full_description: null
+  generic_description: null
+  name: Trap Soul
+  range: null
+  raw_description: '**Trap Soul**   command **Frequency** once per day per gem; **Effect**
+    Ten blight quartz gemstones on the demilich''s skull can trap the souls of the
+    living. The Activated gem casts __bind soul__. This __bind soul__ can target and
+    affect a dying creature instead of a corpse. The dying creature can attempt a
+    DC 38 Fortitude save; if it succeeds, it doesn''t die and its soul is not trapped
+    but it''s enervated 2 (or is unaffected entirely on a critical success). When
+    the soul of a creature gets trapped, the creature''s body swiftly turns to dust.
+
+
+    The gemstones work like the black sapphires used in __bind soul__, except that
+    they can hold creatures of up to 17th level and have a value of 200 gp apiece.
+    The demilich can Devour a Soul it has trapped.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Rare
+resistances:
+- amount: 5
+  type: cold
+- amount: 5
+  type: electricity
+- amount: 5
+  type: fire
+- amount: 5
+  type: physical (except bludgeoning)
+ritual_lists: null
+saves:
+  fort: 23
+  fort_misc: null
+  misc: +1 status to all saves vs. positive
+  ref: 27
+  ref_misc: null
+  will: 23
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 'Typically, a demilich is inert when encountered and doesn''t take
+    actions until its __contingency__ reaction has been triggered (see below).
+
+
+    '
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Torpor
+  range: null
+  raw_description: '**Torpor** Typically, a demilich is inert when encountered and
+    doesn''t take actions until its __contingency__ reaction has been triggered (see
+    below).
+
+
+    '
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +19
+- darkvision
+- true seeing
+size: Tiny
+skills:
+- bonus: 25
+  misc: null
+  name: 'Acrobatics '
+- bonus: 32
+  misc: null
+  name: 'Arcana '
+- bonus: 26
+  misc: null
+  name: 'Deception '
+- bonus: 30
+  misc: null
+  name: 'Occultism '
+- bonus: 21
+  misc: null
+  name: 'Religion '
+- bonus: 25
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 222
+  page_stop: null
+speed:
+- amount: 30
+  type: fly
+spell_lists:
+- dc: 40
+  misc: ''
+  name: Arcane Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 9
+    spells:
+    - frequency: null
+      name: wail of the banshee
+      requirement: null
+  - heightened_level: null
+    level: 7
+    spells:
+    - frequency: at will
+      name: spell turning
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: at will
+      name: blink
+      requirement: null
+    - frequency: at will
+      name: dimension door
+      requirement: null
+    - frequency: at will
+      name: telekinetic maneuver
+      requirement: null
+  - heightened_level: 8
+    level: 0
+    spells:
+    - frequency: null
+      name: mage hand
+      requirement: null
+    - frequency: null
+      name: telekinetic projectile
+      requirement: null
+  - heightened_level: 6
+    level: -1
+    spells:
+    - frequency: null
+      name: true seeing
+      requirement: null
+  to_hit: 30
+traits:
+- Rare
+- NE
+- Tiny
+- Undead
+type: Creature
+weaknesses: null

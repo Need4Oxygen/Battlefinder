@@ -1,0 +1,124 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 2
+  dex_mod: 1
+  int_mod: -2
+  str_mod: 3
+  wis_mod: 0
+ac: 14
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Slick in every sense of the word, ooze mephits are unapologetic sycophants,
+  shamelessly flattering anyone they may be able to con a favor out of, although their
+  lack of intelligence and subtlety means that only the most vain or trusting targets
+  fail to see through their honeyed words. Lacking proper bones, these ocher-colored
+  mephits have bodies consisting primarily of ooze and muck. They smell disgusting,
+  and their touch leaves stains that are almost impossible to get out.
+
+
+
+
+  **__Recall Knowledge - Elemental__ (__Arcana__, __Nature__)**: DC 17'
+hp: 24
+hp_misc: fast healing 2 (when touching mud or slime)
+immunities:
+- bleed
+- paralyzed
+- poison
+- sleep
+items: null
+languages:
+- Aquan
+- Terran
+level: 1
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6+3
+    type: bludgeoning
+  name: fist
+  plus_damage: null
+  to_hit: 8
+  traits: null
+name: Ooze Mephit
+perception: 3
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The ooze mephit spits toxic slime in a 15-foot cone that deals 2d6
+    poison damage to each creature within the area (DC 17 basic Reflex save). The
+    ooze mephit can't use Breath Weapon again for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Breath Weapon
+  range: null
+  raw_description: '**Breath Weapon** [Two Actions]  (__arcane__, __poison__) The
+    ooze mephit spits toxic slime in a 15-foot cone that deals 2d6 poison damage to
+    each creature within the area (DC 17 basic Reflex save). The ooze mephit can''t
+    use Breath Weapon again for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - poison
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances: null
+ritual_lists: null
+saves:
+  fort: 7
+  fort_misc: null
+  misc: null
+  ref: 4
+  ref_misc: null
+  will: 3
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +3
+- darkvision
+size: Small
+skills:
+- bonus: 6
+  misc: null
+  name: 'Athletics '
+- bonus: 7
+  misc: null
+  name: 'Diplomacy '
+source:
+- abbr: Bestiary 2
+  page_start: 113
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 20
+  type: fly
+spell_lists:
+- dc: 17
+  misc: null
+  name: Arcane Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: grease
+      requirement: null
+  to_hit: null
+traits:
+- Uncommon
+- N
+- Small
+- Earth
+- Elemental
+- Water
+type: Creature
+weaknesses: null

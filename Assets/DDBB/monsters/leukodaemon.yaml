@@ -1,0 +1,298 @@
+ability_mods:
+  cha_mod: 3
+  con_mod: 1
+  dex_mod: 5
+  int_mod: 3
+  str_mod: 6
+  wis_mod: 5
+ac: 28
+ac_special: null
+alignment: NE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 30 feet. Leukodaemons radiate infection. All creatures within 30 feet
+    of a leukodaemon take a -2 status penalty to saves against disease effects. If
+    a creature within range contracts or progresses a disease, all adjacent creatures
+    are exposed to the same disease, at the same DC.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Infectious Aura
+  range: null
+  raw_description: '**Infectious Aura** (__aura__, __disease__) 30 feet. Leukodaemons
+    radiate infection. All creatures within 30 feet of a leukodaemon take a -2 status
+    penalty to saves against disease effects. If a creature within range contracts
+    or progresses a disease, all adjacent creatures are exposed to the same disease,
+    at the same DC.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - disease
+  trigger: null
+description: 'These skull-headed, vulture-winged daemons are harbingers of pestilence
+  and servants of their patron Horseman, Apollyon. Manifestations of evil souls who
+  perished from disease in life, leukodaemons work tirelessly to spread disease across
+  all the worlds of the multiverse. More than any other daemon, leukodaemons cooperate
+  with each other and those who conjure them to mortal worlds to spread sickness and
+  plague, eschewing personal glory for end results.
+
+
+
+
+  **__Recall Knowledge - Fiend__ (__Religion__)**: DC 26'
+hp: 155
+hp_misc: null
+immunities:
+- death effects
+- disease
+items:
+- +1 striking composite longbow (50 arrows)
+languages:
+- Common
+- Daemonic
+- telepathy 100 feet
+level: 9
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d12+9
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 1d6
+    type: evil and daemonic pestilence
+  to_hit: 21
+  traits:
+  - disease
+  - evil
+  - magical
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 2d8+9
+    type: slashing
+  name: claw
+  plus_damage:
+  - formula: 1d6
+    type: evil and daemonic pestilence
+  to_hit: 21
+  traits:
+  - agile
+  - disease
+  - evil
+  - magical
+  - reach 10 feet
+name: Leukodaemon
+perception: 20
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The leukodaemon exhales a cloud of corpse-bloated, biting black flies
+    in a 20-foot cone. Creatures within the cone take 4d8 piercing damage (DC 28 basic
+    Reflex save). A creature that fails the save becomes __sickened 1__ (or __sickened
+    2__ on a critical failure).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Breath Weapon
+  range: null
+  raw_description: '**Breath Weapon** [Two Actions]  (__evocation__, __divine__) The
+    leukodaemon exhales a cloud of corpse-bloated, biting black flies in a 20-foot
+    cone. Creatures within the cone take 4d8 piercing damage (DC 28 basic Reflex save).
+    A creature that fails the save becomes __sickened 1__ (or __sickened 2__ on a
+    critical failure).'
+  requirements: null
+  success: null
+  traits:
+  - evocation
+  - divine
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The leukodaemon can telepathically communicate with the afflicted creature
+    at any distance on the same plane; **Saving Throw** DC 28 Fortitude; **Stage 1**
+    carrier (1 day); **Stage 2** __drained 1__ (1 day); **Stage 3** __drained 2__
+    (1 day); **Stage 4** __drained 2__ (1 day); **Stage 5** __drained 3__ (1 week);
+    **Stage 6** dead
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Daemonic Pestilence
+  range: null
+  raw_description: '**Daemonic Pestilence** (__disease__) The leukodaemon can telepathically
+    communicate with the afflicted creature at any distance on the same plane; **Saving
+    Throw** DC 28 Fortitude; **Stage 1** carrier (1 day); **Stage 2** __drained 1__
+    (1 day); **Stage 3** __drained 2__ (1 day); **Stage 4** __drained 2__ (1 day);
+    **Stage 5** __drained 3__ (1 week); **Stage 6** dead'
+  requirements: null
+  success: null
+  traits:
+  - disease
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The leukodaemon coaxes a disease into full bloom. It chooses a target
+    in its aura of pestilence that's currently affected by a disease. That creature
+    must attempt a Fortitude save against the disease as if the interval for the disease's
+    current stage had passed.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Quicken Pestilence
+  range: null
+  raw_description: '**Quicken Pestilence**   (__divine__, __manipulate__, __necromancy__)
+    The leukodaemon coaxes a disease into full bloom. It chooses a target in its aura
+    of pestilence that''s currently affected by a disease. That creature must attempt
+    a Fortitude save against the disease as if the interval for the disease''s current
+    stage had passed.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - manipulate
+  - necromancy
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 2d8+9
+    type: piercing
+  name: composite longbow
+  plus_damage:
+  - formula: 1d6
+    type: evil and daemonic pestilence
+  to_hit: 21
+  traits:
+  - deadly 1d10
+  - disease
+  - evil
+  - magical
+  - propulsive
+  - range increment 100 feet
+  - reload 0
+  - volley 30 feet
+rarity: Common
+resistances:
+- amount: 10
+  type: good
+ritual_lists: null
+saves:
+  fort: 15
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 21
+  ref_misc: null
+  will: 19
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 'A leukodaemon senses any creature with a disease, and it knows the
+    type and current stage of all diseases carried by any creature within range.
+
+
+    '
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Plaguesense
+  range: null
+  raw_description: '**Plaguesense** A leukodaemon senses any creature with a disease,
+    and it knows the type and current stage of all diseases carried by any creature
+    within range.
+
+
+    '
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +20
+- darkvision
+- plaguesense 60 feet
+size: Large
+skills:
+- bonus: 18
+  misc: null
+  name: 'Acrobatics '
+- bonus: 18
+  misc: null
+  name: 'Intimidation '
+- bonus: 20
+  misc: null
+  name: 'Medicine '
+- bonus: 20
+  misc: null
+  name: 'Religion '
+- bonus: 18
+  misc: null
+  name: 'Stealth '
+- bonus: 16
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 72
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 40
+  type: fly
+spell_lists:
+- dc: 26
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: null
+      name: dimension door
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: at will
+      name: dimension door
+      requirement: null
+    - frequency: x2
+      name: dispel magic
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: at will, good only
+      name: detect alignment
+      requirement: null
+  to_hit: null
+traits:
+- NE
+- Large
+- Daemon
+- Fiend
+type: Creature
+weaknesses: null

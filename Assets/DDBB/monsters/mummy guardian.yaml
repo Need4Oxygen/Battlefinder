@@ -1,0 +1,173 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 2
+  dex_mod: 0
+  int_mod: -2
+  str_mod: 4
+  wis_mod: 4
+ac: 23
+ac_special: null
+alignment: LE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 30 feet. Living creatures are frightened 1 while in a mummy guardian's
+    despair aura. They can't naturally recover from this fear while in the area but
+    recover instantly once they leave the area. When a creature first enters the area,
+    it must succeed at a DC 22 Will save (after taking the penalty from being frightened)
+    or be paralyzed for 1 round. The creature is then temporarily immune for 24 hours.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Despair
+  range: null
+  raw_description: '**Despair** (__aura__, __divine__, __emotion__, __enchantment__,
+    __fear__, __incapacitation__, __mental__) 30 feet. Living creatures are frightened
+    1 while in a mummy guardian''s despair aura. They can''t naturally recover from
+    this fear while in the area but recover instantly once they leave the area. When
+    a creature first enters the area, it must succeed at a DC 22 Will save (after
+    taking the penalty from being frightened) or be paralyzed for 1 round. The creature
+    is then temporarily immune for 24 hours.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - divine
+  - emotion
+  - enchantment
+  - fear
+  - incapacitation
+  - mental
+  trigger: null
+description: 'The majority of mummies were created by cruel and selfish masters to
+  serve as guardians to protect their tombs from intruders. The traditional method
+  of creating a mummy guardian is a laborious and sadistic process that begins well
+  before the poor soul to be transformed is dead, during which the victim is ritualistically
+  starved of nourishing food and instead fed strange spices, preservative agents,
+  and toxins intended to quicken the desiccation of the flesh. The victim remains
+  immobile but painfully aware during the final stages, where its now-useless entrails
+  are extracted before it''s shrouded in funerary wrappings and entombed within a
+  necromantically ensorcelled sarcophagus to await intrusions in the potentially distant
+  future. While it''s certainly possible to use other methods to create a mummy guardian
+  from an already-deceased body, those who seek to create these foul undead as their
+  guardians in the afterlife often feel that such methods result in inferior undead—the
+  pain and agony of death by mummification being an essential step in the process.
+
+
+
+
+  Regardless of the method of their creation, mummy guardians are more than just physical
+  shells of flesh and bone—they retain fragmented, distorted versions of their minds,
+  with only enough memories of their living personality remaining to fuel their undead
+  anger and jealousy of those who yet live. This burning rage only intensifies over
+  the centuries of waiting within a crypt for the chance to actually act, and thus
+  when most mummy guardians are awoken by tomb robbers or adventurers, they stop at
+  nothing in pursuit of glorious slaughter.
+
+
+
+
+  **__Recall Knowledge - Undead__ (__Religion__)**: DC 22'
+hp: 110
+hp_misc: negative healing
+immunities:
+- death effects
+- disease
+- paralyzed
+- poison
+- unconscious
+items: null
+languages:
+- Necril
+- plus any one ancient language
+level: 6
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+7
+    type: bludgeoning
+  name: fist
+  plus_damage:
+  - formula: null
+    type: mummy rot
+  to_hit: 16
+  traits: null
+name: Mummy Guardian
+perception: 16
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: This disease and any damage from it can't be healed until this curse
+    is removed. A creature killed by mummy rot turns to dust and can't be resurrected
+    except by a 7th-level __resurrect__ ritual or similar magic. **Saving Throw**
+    DC 22 Fortitude; **Stage 1** carrier with no ill effect (1 minute); **Stage 2**
+    4d6 negative damage and __stupefied 1__ (1 day)
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Mummy Rot
+  range: null
+  raw_description: '**Mummy Rot** (__curse__, __disease__, __divine__, __necromancy__,
+    __negative__) This disease and any damage from it can''t be healed until this
+    curse is removed. A creature killed by mummy rot turns to dust and can''t be resurrected
+    except by a 7th-level __resurrect__ ritual or similar magic. **Saving Throw**
+    DC 22 Fortitude; **Stage 1** carrier with no ill effect (1 minute); **Stage 2**
+    4d6 negative damage and __stupefied 1__ (1 day)'
+  requirements: null
+  success: null
+  traits:
+  - curse
+  - disease
+  - divine
+  - necromancy
+  - negative
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 5
+  type: fire
+ritual_lists: null
+saves:
+  fort: 14
+  fort_misc: null
+  misc: null
+  ref: 10
+  ref_misc: null
+  will: 16
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +16
+- darkvision
+size: Medium
+skills:
+- bonus: 15
+  misc: null
+  name: 'Athletics '
+- bonus: 11
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 240
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+spell_lists: null
+traits:
+- LE
+- Medium
+- Mummy
+- Undead
+type: Creature
+weaknesses: null

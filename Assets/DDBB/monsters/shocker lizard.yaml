@@ -1,0 +1,221 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 3
+  dex_mod: 4
+  int_mod: -4
+  str_mod: 1
+  wis_mod: 3
+ac: 18
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'These brightly colored reptiles share the rough size and pack mentality
+  of guard dogs, roaming in small groups. Shocker lizards have specialized glands
+  under their scales that accumulate static electricity, and they can unleash blasts
+  of lightning strong enough to harm significantly larger foes. Though they''re meek
+  and docile when encountered alone, shocker lizards are significantly more aggressive
+  in packs, when they can amplify each other''s electrical attacks.
+
+
+
+
+  Shocker lizards are notoriously difficult to domesticate because they''re dangerously
+  hostile as part of a pack, but will also swiftly wither and die if kept alone in
+  captivity without constant attention. A shocker lizard is 3 feet long and weighs
+  25 pounds.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 16'
+hp: 32
+hp_misc: null
+immunities:
+- electricity
+items: null
+languages: null
+level: 2
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d8+3
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 10
+  traits:
+  - agile
+  - finesse
+name: Shocker Lizard
+perception: 7
+proactive_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The shocker lizard lends some of its electrical power to the nearby lizard.
+    This either causes the other lizard's shock Strike to lose the __nonlethal__ trait
+    or increases the DC of its Discharge to 20.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Amplify Voltage
+  range: null
+  raw_description: '**Amplify Voltage** [Reaction]  **Trigger** A shocker lizard within
+    20 feet makes a shock Strike or uses Discharge; **Effect** The shocker lizard
+    lends some of its electrical power to the nearby lizard. This either causes the
+    other lizard''s shock Strike to lose the __nonlethal__ trait or increases the
+    DC of its Discharge to 20.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A shocker lizard within 20 feet makes a shock Strike or uses Discharge
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The shocker lizard releases a blast of lightning from its body. Creatures
+    within a 10-foot emanation take 3d6 electricity damage (DC 18 basic Reflex save).
+    The shocker lizard can't use Discharge for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Discharge
+  range: null
+  raw_description: '**Discharge** [Two Actions]  (__electricity__) The shocker lizard
+    releases a blast of lightning from its body. Creatures within a 10-foot emanation
+    take 3d6 electricity damage (DC 18 basic Reflex save). The shocker lizard can''t
+    use Discharge for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - electricity
+  trigger: null
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: 'The shocker lizard hunkers down and begins to spark with electricity,
+    which it releases in a 10-foot emanation that deals 3d8 electricity damage (DC
+    18 basic Reflex save). The shocker lizard can''t use Shocking Burst again for
+    1 minute.
+
+
+    Up to four shocker lizards can combine their Shocking Bursts. In this case, the
+    lizards can delay the release of their electricity until any other shocker lizard
+    within 30 feet completes its Shocking Burst. The combined Shocking Bursts create
+    an emanation with the combined area from all participating shocker lizards. For
+    each additional shocker lizard that joins the burst, the damage increases by 3d8
+    and the save DC increases by 1 (to a maximum of four lizards dealing 12d8 damage
+    with a DC 21 save).'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Shocking Burst
+  range: null
+  raw_description: '**Shocking Burst** [Three Actions]  (__electricity__, __evocation__,
+    __primal__) The shocker lizard hunkers down and begins to spark with electricity,
+    which it releases in a 10-foot emanation that deals 3d8 electricity damage (DC
+    18 basic Reflex save). The shocker lizard can''t use Shocking Burst again for
+    1 minute.
+
+
+    Up to four shocker lizards can combine their Shocking Bursts. In this case, the
+    lizards can delay the release of their electricity until any other shocker lizard
+    within 30 feet completes its Shocking Burst. The combined Shocking Bursts create
+    an emanation with the combined area from all participating shocker lizards. For
+    each additional shocker lizard that joins the burst, the damage increases by 3d8
+    and the save DC increases by 1 (to a maximum of four lizards dealing 12d8 damage
+    with a DC 21 save).'
+  requirements: null
+  success: null
+  traits:
+  - electricity
+  - evocation
+  - primal
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 2d6
+    type: electricity
+  name: shock
+  plus_damage: null
+  to_hit: 10
+  traits:
+  - nonlethal
+  - range increment 5 feet
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 7
+  fort_misc: null
+  misc: null
+  ref: 10
+  ref_misc: null
+  will: 7
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A shocker lizard can sense minute electrical charges in living creatures,
+    which it can use as a precise sense at a range of 20 feet. This distance increases
+    to 100 feet against any creature that has used an __electricity__ effect within
+    the last minute.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Greater Electrolocation
+  range: null
+  raw_description: '**Greater Electrolocation** A shocker lizard can sense minute
+    electrical charges in living creatures, which it can use as a precise sense at
+    a range of 20 feet. This distance increases to 100 feet against any creature that
+    has used an __electricity__ effect within the last minute.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +7
+- low-light vision
+- greater electrolocation 20 feet
+size: Small
+skills:
+- bonus: 8
+  misc: null
+  name: 'Acrobatics '
+- bonus: 5
+  misc: null
+  name: 'Athletics '
+- bonus: 8
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 240
+  page_stop: null
+speed:
+- amount: 35
+  type: Land
+- amount: 15
+  type: climb
+- amount: 15
+  type: swim
+spell_lists: null
+traits:
+- N
+- Small
+- Animal
+type: Creature
+weaknesses: null

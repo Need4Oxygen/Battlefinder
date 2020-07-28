@@ -1,0 +1,206 @@
+ability_mods:
+  cha_mod: 4
+  con_mod: 0
+  dex_mod: 2
+  int_mod: 1
+  str_mod: 2
+  wis_mod: 0
+ac: 15
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The dune dancer gain resistance 2 against the triggering damage.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Elemental Bulwark
+  range: null
+  raw_description: '**Elemental Bulwark [Reaction]** **Trigger** An enemy is about
+    to damage the dune dancer with cold, electricity, or fire, or with a spell that
+    has the __air__, __earth__, __fire__, or __water__ trait; **Effect** The dune
+    dancer gain resistance 2 against the triggering damage.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: An enemy is about to damage the dune dancer with cold, electricity, or
+    fire, or with a spell that has the __air__, __earth__, __fire__, or __water__
+    trait
+description: 'Because their genie forebears are native to the __Material Plane__,
+  sulis (scions of mortals and __jann__) are by and large the most common geniekin
+  on the Material Plane. They are often artisans and peace brokers, compelled to try
+  and bring harmony and balance in a world wrought with discord.
+
+
+
+
+  Sulis have a natural charm that often eludes other geniekin, but tend to layer on
+  a level of boastful pride or even arrogance as a personal quirk or humorous facade.
+  Few non-sulis realize that bragging is not simply the symptom of a puffed-up ego
+  for sulis, but instead is a cultural institution easily comparable to human poetry.
+  Sulis'' boasts not only glorify themselves, but also secure their companions'' and
+  families'' accomplishments in history, with the ultimate goal of spinning stories
+  that will be retold for generations. This is especially true for sulis who have
+  lived with other geniekin and have been seen as lesser for not having a strong connection
+  to an Elemental Plane.
+
+
+
+
+  Suli dune dancers are but one way these geniekin seek to integrate with other humanoid
+  societies. They work to hone their skills at boasting to an extent that their claims
+  help to bolster those they travel with. Suli from regions other than deserts adjust
+  their names to match their terrains, but regardless of whether they prefer forests,
+  hills, or arctic plains, their boasts remain as compelling.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 15'
+hp: 16
+hp_misc: null
+immunities: null
+items:
+- scimitar
+- tambourine
+languages:
+- Aquan
+- Auran
+- Common
+- Ignan
+- Terran
+level: 1
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6+2
+    type: slashing
+  name: scimitar
+  plus_damage: null
+  to_hit: 7
+  traits:
+  - forceful
+  - sweep
+name: Suli Dune Dancer
+perception: 5
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: 'Elemental magic fills the dune dancer''s body or weapon. The dune
+    dancer chooses one element and makes a melee Strike. The Strike deals an additional
+    1d4 damage of the indicated type and has the trait corresponding to the element:
+    **Air** electricity, **Earth** bludgeoning, **Fire** fire, or **Water** cold.'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Elemental Assault
+  range: null
+  raw_description: '**Elemental Assault** [Two Actions]  Elemental magic fills the
+    dune dancer''s body or weapon. The dune dancer chooses one element and makes a
+    melee Strike. The Strike deals an additional 1d4 damage of the indicated type
+    and has the trait corresponding to the element: **Air** electricity, **Earth**
+    bludgeoning, **Fire** fire, or **Water** cold.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 3
+  fort_misc: null
+  misc: null
+  ref: 5
+  ref_misc: null
+  will: 5
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +5
+size: Medium
+skills:
+- bonus: 5
+  misc: null
+  name: 'Acrobatics '
+- bonus: 6
+  misc: null
+  name: 'Deception '
+- bonus: 7
+  misc: null
+  name: 'Diplomacy '
+- bonus: 4
+  misc: null
+  name: 'Occultism '
+- bonus: 7
+  misc: null
+  name: 'Performance '
+- bonus: 4
+  misc: null
+  name: 'Society '
+source:
+- abbr: Bestiary 2
+  page_start: 202
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists:
+- dc: 17
+  misc: ''
+  name: Occult Spontaneous Spells
+  spell_groups:
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: color spray
+      requirement: null
+    - frequency: null
+      name: soothe
+      requirement: null
+    - frequency: 2 slots
+      name: true strike
+      requirement: null
+  - heightened_level: 1
+    level: 0
+    spells:
+    - frequency: null
+      name: detect magic
+      requirement: null
+    - frequency: null
+      name: guidance
+      requirement: null
+    - frequency: null
+      name: inspire courage
+      requirement: null
+    - frequency: null
+      name: mage hand
+      requirement: null
+    - frequency: null
+      name: shield
+      requirement: null
+    - frequency: null
+      name: telekinetic projectile
+      requirement: null
+  to_hit: 9
+traits:
+- N
+- Medium
+- Human
+- Humanoid
+- Suli
+type: Creature
+weaknesses: null

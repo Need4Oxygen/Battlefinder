@@ -1,0 +1,218 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 3
+  dex_mod: 1
+  int_mod: -2
+  str_mod: 4
+  wis_mod: 2
+ac: 19
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A wrecker demon loathes the sight of its own reflection. When a creature
+    Interacts with a mirror within sight of the wrecker demon, the demon takes a -2
+    penalty to Will saves against __Intimidation__ checks. A wrecker demon that ends
+    its turn adjacent to a mirror or that is attacked by a creature holding a mirror
+    takes 1d6 mental damage (this usually leads wrecker demons to focus their efforts
+    on destroying nearby mirrors using Wreck).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Hatred of Mirrors
+  range: null
+  raw_description: '**Hatred of Mirrors** A wrecker demon loathes the sight of its
+    own reflection. When a creature Interacts with a mirror within sight of the wrecker
+    demon, the demon takes a -2 penalty to Will saves against __Intimidation__ checks.
+    A wrecker demon that ends its turn adjacent to a mirror or that is attacked by
+    a creature holding a mirror takes 1d6 mental damage (this usually leads wrecker
+    demons to focus their efforts on destroying nearby mirrors using Wreck).'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Wrecker demons, also known as abrikandilus, despise beautiful things
+  and do everything in their power to destroy both people and objects that might be
+  regarded as such. An abrikandilu forms from the soul of a mortal who in life was
+  a vandal or defacer of artworks, particularly if those acts of destruction stemmed
+  from feelings of powerful envy.
+
+
+
+
+  The only thing an abrikandilu loathes more than beauty is its own visage. The mere
+  sight of its own face—reflected in a mirror, a shield, or even a pool of water—is
+  enough to send a wrecker demon into a rage. Many demon slayers use this tactic to
+  their advantage, venturing into battle with polished steel shields and cold iron
+  blades at the ready.
+
+
+
+
+  **__Recall Knowledge - Fiend__ (__Religion__)**: DC 19'
+hp: 70
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Abyssal
+- Celestial
+- Draconic
+- telepathy 100 feet
+level: 4
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+4
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 14
+  traits:
+  - agile
+- action_cost: One Action
+  damage:
+    formula: 3d6+4
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: null
+    type: mutilating bite
+  to_hit: 14
+  traits: null
+name: Abrikandilu
+perception: 10
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When the wrecker demon hits a creature with a jaws Strike, the creature
+    must succeed at a DC 21 Fortitude save or become physically mutilated. The creature
+    then takes a -1 status penalty to Charisma-based checks. This penalty is cumulative
+    up to -3, and remains even if the wounds are healed. The penalty is reduced by
+    1 every 24 hours until it reaches 0.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Mutilating Bite
+  range: null
+  raw_description: '**Mutilating Bite** (__curse__, __divine__, __necromancy__) When
+    the wrecker demon hits a creature with a jaws Strike, the creature must succeed
+    at a DC 21 Fortitude save or become physically mutilated. The creature then takes
+    a -1 status penalty to Charisma-based checks. This penalty is cumulative up to
+    -3, and remains even if the wounds are healed. The penalty is reduced by 1 every
+    24 hours until it reaches 0.'
+  requirements: null
+  success: null
+  traits:
+  - curse
+  - divine
+  - necromancy
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The wrecker demon makes two claw Strikes against an object (if the
+    object is worn or held by a creature, this action gains the __manipulate__ trait).
+    If both Strikes hit, combine their damage for the purpose of overcoming its Hardness.
+    These Strikes do not count toward the wrecker demon's multiple attack penalty,
+    nor does that penalty apply to these Strikes.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Wreck
+  range: null
+  raw_description: '**Wreck**   The wrecker demon makes two claw Strikes against an
+    object (if the object is worn or held by a creature, this action gains the __manipulate__
+    trait). If both Strikes hit, combine their damage for the purpose of overcoming
+    its Hardness. These Strikes do not count toward the wrecker demon''s multiple
+    attack penalty, nor does that penalty apply to these Strikes.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 2d6+4
+    type: bludgeoning
+  name: hurled debris
+  plus_damage: null
+  to_hit: 11
+  traits:
+  - range increment 20 feet
+rarity: Common
+resistances: null
+ritual_lists:
+- dc: null
+  misc: null
+  name: Divine Rituals
+  spell_groups:
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: abyssal pact
+      requirement: null
+  to_hit: null
+saves:
+  fort: 15
+  fort_misc: null
+  misc: null
+  ref: 9
+  ref_misc: null
+  will: 7
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +10
+- darkvision
+size: Medium
+skills:
+- bonus: 12
+  misc: null
+  name: 'Athletics '
+- bonus: 8
+  misc: null
+  name: 'Intimidation '
+source:
+- abbr: 'Pathfinder #151: The Show Must Go On'
+  page_start: 81
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists:
+- dc: 20
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: x2
+      name: fear
+      requirement: null
+  to_hit: null
+traits:
+- CE
+- Medium
+- Demon
+- Fiend
+type: Creature
+weaknesses:
+- amount: 5
+  type: cold iron
+- amount: 5
+  type: good

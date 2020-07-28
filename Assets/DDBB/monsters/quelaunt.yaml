@@ -1,0 +1,260 @@
+ability_mods:
+  cha_mod: 8
+  con_mod: 4
+  dex_mod: 5
+  int_mod: 5
+  str_mod: 6
+  wis_mod: 6
+ac: 36
+ac_special: null
+alignment: CE
+automatic_abilities: null
+description: 'This three-armed, three-legged monster has no discernible eyes, nose,
+  ears, or mouth or no visible means of ingesting food. Its limbs are distributed
+  so evenly across its body that it is all but impossible to tell which way the creature
+  is oriented at any given time. Few who witness the quelaunt linger on its alien
+  looks for long though, as the most pressing concern quickly becomes the invasion
+  of their minds, as the quelaunt sows doubt, sorrow, and rage. This monstrosity not
+  only delights in the negative emotions of its prey, but feeds on them, gaining strength
+  and sustenance from their dismay. For the quelaunt, no act is too terrible or cruel
+  to inflict on its victims, since the more a creature suffers, the more the quelaunt
+  feasts.
+
+
+
+
+  Quelaunts are known to associate with other aberrant horrors, including brain collectors
+  and other creatures associated with the Dominion of the Black. However, the more
+  prevalent theory paints them as more alien—perhaps invasive beings from another
+  dimension of pure thought and feeling—and claims that in their natural state they
+  have no physical bodies at all. Few dare speculate further; the only known autopsy
+  of a quelaunt resulted in the researcher''s suicide just days afterward and all
+  the notes were mysteriously destroyed. Whatever secrets there are to be unlocked
+  in the anatomy of these bizarre monsters are apparently important enough to warrant
+  great protection from quelaunts, even after death.
+
+
+
+
+  **__Recall Knowledge - Aberration__ (__Occultism__)**: DC 34'
+hp: 305
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Aklo
+- (can't speak any language)
+- telepathy 100 feet
+level: 15
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d8+12
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 30
+  traits:
+  - agile
+  - magical
+  - reach 10 feet
+name: Quelaunt
+perception: 29
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 'The quelaunt can cast the following cleric domain spells as 8th-level
+    occult innate spells at will without spending Focus Points: __blind ambition__,
+    __captivating adoration__, and __delusional pride__.'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Emotional Focus
+  range: null
+  raw_description: '**Emotional Focus** The quelaunt can cast the following cleric
+    domain spells as 8th-level occult innate spells at will without spending Focus
+    Points: __blind ambition__, __captivating adoration__, and __delusional pride__.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: The quelaunt casts up to three spells chosen from its at-will innate
+    spells and its emotional focus spells.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Emotional Frenzy
+  range: null
+  raw_description: '**Emotional Frenzy** [Three Actions]  The quelaunt casts up to
+    three spells chosen from its at-will innate spells and its emotional focus spells.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The quelaunt feeds on the emotional unrest of a single creature within 30
+    feet that's under a harmful emotion effect. The target must succeed at a DC 37
+    Will save or take 4d10 mental damage and be stunned for 1 round. If the target
+    fails its saving throw, the quelaunt regains the same number of Hit Points and
+    Feed on Emotion does not cost the quelaunt an action, allowing it to use another
+    action this turn.
+  effects: null
+  failure: null
+  frequency: once per round
+  full_description: null
+  generic_description: null
+  name: Feed on Emotion
+  range: null
+  raw_description: '**Feed on Emotion**   (__attack__, __emotion__, __incapacitation__,
+    __mental__) **Frequency** once per round; **Effect** The quelaunt feeds on the
+    emotional unrest of a single creature within 30 feet that''s under a harmful emotion
+    effect. The target must succeed at a DC 37 Will save or take 4d10 mental damage
+    and be stunned for 1 round. If the target fails its saving throw, the quelaunt
+    regains the same number of Hit Points and Feed on Emotion does not cost the quelaunt
+    an action, allowing it to use another action this turn.'
+  requirements: null
+  success: null
+  traits:
+  - attack
+  - emotion
+  - incapacitation
+  - mental
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The quelaunt makes three melee Strikes, each against a different target
+    within reach. The multiple attack penalty applies to each attack, but increases
+    only after all the attacks have been made.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Rapid Strikes
+  range: null
+  raw_description: '**Rapid Strikes** [Two Actions]  (__attack__) The quelaunt makes
+    three melee Strikes, each against a different target within reach. The multiple
+    attack penalty applies to each attack, but increases only after all the attacks
+    have been made.'
+  requirements: null
+  success: null
+  traits:
+  - attack
+  trigger: null
+- action_cost: Free Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: As the quelaunt invades the triggering creature's mind and plants the seeds
+    of negative emotions, it also strips away the target's feelings of hope or positivity.
+    The quelaunt can immediately end a single __emotion__ effect from which the triggering
+    creature is benefiting.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Spiral of Despair
+  range: null
+  raw_description: '**Spiral of Despair** [Free Action]  (__emotion__, __mental__)
+    **Trigger** A creature fails a saving throw to resist one of the quelaunt''s innate
+    spells or emotional focus spells. **Effect** As the quelaunt invades the triggering
+    creature''s mind and plants the seeds of negative emotions, it also strips away
+    the target''s feelings of hope or positivity. The quelaunt can immediately end
+    a single __emotion__ effect from which the triggering creature is benefiting. '
+  requirements: null
+  success: null
+  traits:
+  - emotion
+  - mental
+  trigger: A creature fails a saving throw to resist one of the quelaunt's innate
+    spells or emotional focus spells.
+ranged: null
+rarity: Common
+resistances:
+- amount: 15
+  type: mental
+ritual_lists: null
+saves:
+  fort: 27
+  fort_misc: null
+  misc: null
+  ref: 26
+  ref_misc: null
+  will: 31
+  will_misc: +33 vs. emotion
+sense_abilities: null
+senses:
+- Perception +29
+- tremorsense (imprecise) 60 feet
+size: Large
+skills:
+- bonus: 30
+  misc: null
+  name: 'Deception '
+- bonus: 30
+  misc: null
+  name: 'Intimidation '
+- bonus: 27
+  misc: null
+  name: 'Occultism '
+source:
+- abbr: Bestiary
+  page_start: 273
+  page_stop: null
+speed:
+- amount: 40
+  type: Land
+- amount: 6
+  type: <a style="text-decoration:underline" href="Spells.aspx?ID="><i>air walk</i></a>
+spell_lists:
+- dc: 39
+  misc: null
+  name: Occult Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 7
+    spells:
+    - frequency: x3
+      name: crushing despair
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: at will
+      name: fear
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: null
+      name: hideous laughter
+      requirement: null
+  - heightened_level: 4
+    level: -1
+    spells:
+    - frequency: null
+      name: air walk
+      requirement: null
+  to_hit: null
+traits:
+- CE
+- Large
+- Aberration
+type: Creature
+weaknesses: null

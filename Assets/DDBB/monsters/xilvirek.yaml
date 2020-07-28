@@ -1,0 +1,279 @@
+ability_mods:
+  cha_mod: 4
+  con_mod: 6
+  dex_mod: 5
+  int_mod: 0
+  str_mod: 7
+  wis_mod: 5
+ac: 34
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 30 feet. A creature that begins its turn in the area must succeed at
+    a DC 32 Will save or become __fascinated__ with the xilvirek. If the creature
+    is already fascinated by the xilvirek and fails its save, the creature is compelled
+    to approach the xilvirek and allow itself to be __grabbed__, which ends the fascination.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Hypnotic Stench
+  range: null
+  raw_description: '**Hypnotic Stench** (__aura__, __emotion__, __enchantment__, __incapacitation__,
+    __mental__) 30 feet. A creature that begins its turn in the area must succeed
+    at a DC 32 Will save or become __fascinated__ with the xilvirek. If the creature
+    is already fascinated by the xilvirek and fails its save, the creature is compelled
+    to approach the xilvirek and allow itself to be __grabbed__, which ends the fascination.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - emotion
+  - enchantment
+  - incapacitation
+  - mental
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+description: 'Xilvireks are the result of the strange evolution that takes place in
+  __Zevgavizeb''s__ Abyssal realm. These fiends resemble their dread demon lord and
+  claim to be living embodiments of the Lord of Reptiles''s snapping jaws.
+
+
+
+
+  **__Recall Knowledge - Fiend__ (__Religion__)**: DC 32'
+hp: 215
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Abyssal
+level: 12
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d10+13
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 25
+  traits:
+  - chaotic
+  - evil
+  - magical
+- action_cost: One Action
+  damage:
+    formula: 2d8+13
+    type: slashing
+  name: claw
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 27
+  traits:
+  - agile
+  - chaotic
+  - evil
+  - magical
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 3d6+13
+    type: bludgeoning
+  name: tail
+  plus_damage:
+  - formula: null
+    type: Knockdown
+  to_hit: 25
+  traits:
+  - chaotic
+  - evil
+  - magical
+  - reach 15 feet
+  - versatile P
+name: Xilvirek
+perception: 23
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The xilvirek retches a small pool of debilitating, acrid bile onto
+    itself. All creatures within 30 feet take 4d6 acid damage as they inhale the bile's
+    noxious fumes (DC 32 basic Fortitude save; on a failure, the creature is __sickened  1__,
+    or sickened 2 on a critical failure). The xilvirek can't Disgorge Bile again for
+    1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Disgorge Bile
+  range: null
+  raw_description: '**Disgorge Bile** [Two Actions]  (__acid__, __inhaled__) The xilvirek
+    retches a small pool of debilitating, acrid bile onto itself. All creatures within
+    30 feet take 4d6 acid damage as they inhale the bile''s noxious fumes (DC 32 basic
+    Fortitude save; on a failure, the creature is __sickened  1__, or sickened 2 on
+    a critical failure). The xilvirek can''t Disgorge Bile again for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - acid
+  - inhaled
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The xilvirek has two tentacles on its back that it can use to suck
+    the life from its prey. A creature that starts its turn grabbed by the xilvirek
+    becomes __drained 1__, and the xilvirek regains 20 HP. The drained value increases
+    by 1 on each subsequent round that the creature starts its turn grabbed, but the
+    xilvirek doesn't regain additional HP from draining the same creature more than
+    once per day.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Feasting Tentacles
+  range: null
+  raw_description: '**Feasting Tentacles** The xilvirek has two tentacles on its back
+    that it can use to suck the life from its prey. A creature that starts its turn
+    grabbed by the xilvirek becomes __drained 1__, and the xilvirek regains 20 HP.
+    The drained value increases by 1 on each subsequent round that the creature starts
+    its turn grabbed, but the xilvirek doesn''t regain additional HP from draining
+    the same creature more than once per day.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances: null
+ritual_lists: null
+saves:
+  fort: 26
+  fort_misc: null
+  misc: null
+  ref: 21
+  ref_misc: null
+  will: 19
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A xilvirek can sense the presence of creatures with an Intelligence
+    of at least -3. Creatures that have silenced their thoughts through magic or other
+    means can potentially counteract this sense at the GM's discretion.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Psionic Scent
+  range: null
+  raw_description: '**Psionic Scent** A xilvirek can sense the presence of creatures
+    with an Intelligence of at least -3. Creatures that have silenced their thoughts
+    through magic or other means can potentially counteract this sense at the GM''s
+    discretion.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +23
+- darkvision
+- psionic scent (imprecise) 120 feet
+size: Large
+skills:
+- bonus: 25
+  misc: null
+  name: 'Athletics '
+- bonus: 22
+  misc: null
+  name: 'Intimidation '
+- bonus: 23
+  misc: null
+  name: 'Stealth '
+- bonus: 25
+  misc: null
+  name: 'Survival '
+source:
+- abbr: 'Pathfinder #154: Siege of the Dinosaurs'
+  page_start: 84
+  page_stop: null
+speed:
+- amount: 40
+  type: Land
+- amount: 30
+  type: swim
+spell_lists:
+- dc: 28
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 6
+    spells:
+    - frequency: self only
+      name: teleport
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: at will
+      name: dimension door
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: at will
+      name: darkness
+      requirement: null
+  to_hit: null
+traits:
+- Uncommon
+- CE
+- Large
+- Fiend
+type: Creature
+weaknesses:
+- amount: 10
+  type: good
+- amount: 10
+  type: lawful

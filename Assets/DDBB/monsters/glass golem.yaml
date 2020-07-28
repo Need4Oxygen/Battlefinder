@@ -1,0 +1,214 @@
+ability_mods:
+  cha_mod: -5
+  con_mod: 5
+  dex_mod: 4
+  int_mod: -5
+  str_mod: 5
+  wis_mod: 0
+ac: 26
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: harmed by sonic (6d6, 2d6 from areas or __persistent damage__); healed
+    by fire (area 2d6 HP); __slowed__ by cold
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Golem Antimagic
+  range: null
+  raw_description: '**Golem Antimagic** harmed by sonic (6d6, 2d6 from areas or __persistent
+    damage__); healed by fire (area 2d6 HP); __slowed__ by cold'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A glass golem is affected by the __shatter__ spell as though the golem
+    were an unattended object.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Vulnerable to Shatter
+  range: null
+  raw_description: '**Vulnerable to Shatter** A glass golem is affected by the __shatter__
+    spell as though the golem were an unattended object.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The glass golem positions its magical, reflective surfaces to turn the spell
+    back on the caster. It tries to counteract the spell by attempting an __Acrobatics__
+    check for its counteract check. If it successfully counteract the spell, the effect
+    is turned back on the caster.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Spell Reflection
+  range: null
+  raw_description: '**Spell Reflection [Reaction]** (__abjuration__, __arcane__) **Trigger**
+    The glass golem is targeted by a spell; **Effect** The glass golem positions its
+    magical, reflective surfaces to turn the spell back on the caster. It tries to
+    counteract the spell by attempting an __Acrobatics__ check for its counteract
+    check. If it successfully counteract the spell, the effect is turned back on the
+    caster.'
+  requirements: null
+  success: null
+  traits:
+  - abjuration
+  - arcane
+  trigger: The glass golem is targeted by a spell
+description: 'Crafted of hardened glass and held together by magically treated lead,
+  glass golems are both deadly guardians and works of exquisite art. Glass golems
+  most often protect grand cathedrals or opulent palaces—testaments to the wealth
+  and power of those they serve, or once served. Once spurred into action by the commands
+  of their creators, glass golems are quicker and more agile than most other golems.
+  Their sharp, blade-like limbs can easily sever veins and arteries, creating wounds
+  that bleed profusely.
+
+
+
+
+  Of all the various types of golems, the glass golem is the one most akin to a work
+  of art. Just as powerful aristocrats might use an ice golem for temperature regulation
+  or a wood golem as an ego-boosting statue, a glass golem''s colorful glass construction
+  can elevate the beauty of any chamber by its mere presence.
+
+
+
+
+  **__Recall Knowledge - Construct__ (__Arcana__, __Crafting__)**: DC 26'
+hp: 135
+hp_misc: null
+immunities:
+- bleed
+- death effects
+- disease
+- doomed
+- drained
+- fatigued
+- healing
+- magic (see Golem Antimagic below)
+- mental
+- necromancy
+- nonlethal attacks
+- paralyzed
+- poison
+- sickened
+- unconscious
+items: null
+languages: null
+level: 8
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+8
+    type: slashing
+  name: bladed limb
+  plus_damage:
+  - formula: 1d6
+    type: bleed
+  to_hit: 20
+  traits:
+  - agile
+  - magical
+  - versatile P
+name: Glass Golem
+perception: 14
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: The creature is blinded for 1 round and then dazzled for an additional
+    4 rounds.
+  critical_success: null
+  description: "The glass golem creates waves of scintillating luminosity that cast\
+    \ bright light in a 60-foot emanation (and dim light for the next 60 feet). The\
+    \ light lasts until the start of the glass golem's next turn, after which the\
+    \ glass golem can't use Dazzling Brilliance for 1d4 rounds. A creature within\
+    \ the bright light or that enters the bright light must attempt a DC 23 Will save.\
+    \ \n\n"
+  effect: null
+  effects: null
+  failure: The creature is dazzled for 1 round.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Dazzling Brilliance
+  range: null
+  raw_description: "**Dazzling Brilliance** [Two Actions]  (__evocation__, __light__,\
+    \ __visual__) The glass golem creates waves of scintillating luminosity that cast\
+    \ bright light in a 60-foot emanation (and dim light for the next 60 feet). The\
+    \ light lasts until the start of the glass golem's next turn, after which the\
+    \ glass golem can't use Dazzling Brilliance for 1d4 rounds. A creature within\
+    \ the bright light or that enters the bright light must attempt a DC 23 Will save.\
+    \ \n\n**Success** The creature is unaffected. \n\n**Failure** The creature is\
+    \ __dazzled__ for 1 round. \n\n**Critical Failure** The creature is __blinded__\
+    \ for 1 round and then dazzled for an additional 4 rounds."
+  requirements: null
+  success: The creature is unaffected.
+  traits:
+  - evocation
+  - light
+  - visual
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances:
+- amount: 10
+  type: physical (except adamantine or bludgeoning)
+ritual_lists: null
+saves:
+  fort: 17
+  fort_misc: null
+  misc: null
+  ref: 16
+  ref_misc: null
+  will: 14
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +14
+- darkvision
+size: Large
+skills:
+- bonus: 16
+  misc: null
+  name: 'Acrobatics '
+- bonus: 19
+  misc: null
+  name: 'Athletics '
+- bonus: 14
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 131
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists: null
+traits:
+- Uncommon
+- N
+- Large
+- Construct
+- Golem
+- Mindless
+type: Creature
+weaknesses: null

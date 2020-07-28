@@ -1,0 +1,160 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 0
+  dex_mod: 3
+  int_mod: 0
+  str_mod: -5
+  wis_mod: 2
+ac: 20
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Setting right the injustice that led to the commoner's death allows
+    it to move on to the afterlife.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Rejuvenation
+  range: null
+  raw_description: '**Rejuvenation** (__divine__, __necromancy__) Setting right the
+    injustice that led to the commoner''s death allows it to move on to the afterlife.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - necromancy
+  trigger: null
+description: 'The ghost commoner is an ordinary person who believes they died unjustly,
+  usually due to foul play or betrayal.
+
+
+
+
+  **__Recall Knowledge - Spirit__ (__Occultism__)**: DC 19
+
+
+  **__Recall Knowledge - Undead__ (__Religion__)**: DC 19'
+hp: 30
+hp_misc: negative healing, rejuvenation
+immunities:
+- death effects
+- disease
+- paralyzed
+- poison
+- precision
+- unconscious
+items: null
+languages:
+- Common
+level: 4
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+2
+    type: negative
+  name: ghostly hand
+  plus_damage: null
+  to_hit: 13
+  traits:
+  - agile
+  - finesse
+  - magical
+name: Ghost Commoner
+perception: 10
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: DC 21
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Frightful Moan
+  range: null
+  raw_description: '**Frightful Moan**   (__auditory__, __divine__, __emotion__, __enchantment__,
+    __fear__, __mental__) DC 21'
+  requirements: null
+  success: null
+  traits:
+  - auditory
+  - divine
+  - emotion
+  - enchantment
+  - fear
+  - mental
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 5
+  type: all damage (except force
+- amount: null
+  type: ghost touch
+- amount: null
+  type: or positive
+- amount: null
+  type: double resistance vs. non-magical)
+ritual_lists: null
+saves:
+  fort: 8
+  fort_misc: null
+  misc: null
+  ref: 11
+  ref_misc: null
+  will: 8
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Site Bound
+  range: null
+  raw_description: '**Site Bound**'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +10
+- darkvision
+size: Medium
+skills:
+- bonus: 10
+  misc: applies to the place the ghost is bound to
+  name: 'Dwelling Lore '
+- bonus: 12
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 167
+  page_stop: null
+speed:
+- amount: 25
+  type: fly
+spell_lists: null
+traits:
+- CE
+- Medium
+- Ghost
+- Incorporeal
+- Spirit
+- Undead
+type: Creature
+weaknesses: null

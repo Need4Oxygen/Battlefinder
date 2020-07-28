@@ -1,0 +1,308 @@
+ability_mods:
+  cha_mod: 6
+  con_mod: 9
+  dex_mod: 7
+  int_mod: 6
+  str_mod: 8
+  wis_mod: 5
+ac: 40
+ac_special: null
+alignment: CE
+automatic_abilities: null
+description: 'Wendigos are incarnations of the fears of starvation, loneliness, and
+  fatal exposure to cold weather. They haunt the frozen expanses of the world.
+
+
+
+
+  **__Recall Knowledge - Beast__ (__Arcana__, __Nature__)**: DC 38'
+hp: 315
+hp_misc: regeneration 30 (deactivated by cold iron
+immunities:
+- cold
+- fear
+items: null
+languages:
+- Aklo
+- Common
+- Jotun
+- telepathy 1 mile
+level: 17
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d10+12
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 2d6
+    type: cold
+  to_hit: 33
+  traits:
+  - cold
+  - magical
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 3d8+12
+    type: slashing
+  name: claw
+  plus_damage:
+  - formula: 2d6
+    type: cold and Grab
+  to_hit: 33
+  traits:
+  - cold
+  - magical
+  - agile
+  - reach 10 feet
+name: Wendigo
+perception: 32
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A target that fails its save against the wendigo's nightmare is exposed
+    to wendigo torment.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Dream Haunting
+  range: null
+  raw_description: '**Dream Haunting** A target that fails its save against the wendigo''s
+    nightmare is exposed to wendigo torment.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The wendigo unleashes a forlorn howl that can be heard up to 1 mile away.
+    Any creature that hears the howl must succeed at a DC 38 Will save or be frightened
+    1. Any creature that critically fails and is within 120 feet of the wendigo is
+    instead frightened 3, and is also fleeing for 1d4 rounds (or until it's no longer
+    frightened, whichever comes first). A creature frightened by a wendigo's howl
+    still naturally recovers from its fright but can't reduce it below frightened
+    1 in this way until 1 hour has passed or magic is used. Whether it succeeds or
+    fails its save, a creature is then temporarily immune to that wendigo's Howl for
+    24 hours.
+  effects: null
+  failure: null
+  frequency: Three times per day
+  full_description: null
+  generic_description: null
+  name: Howl
+  range: null
+  raw_description: '**Howl** [Three Actions]  (__auditory__, __concentrate__, __enchantment__,
+    __fear__, __incapacitation__, __mental__, __primal__) **Frequency** Three times
+    per day; **Effect** The wendigo unleashes a forlorn howl that can be heard up
+    to 1 mile away. Any creature that hears the howl must succeed at a DC 38 Will
+    save or be frightened 1. Any creature that critically fails and is within 120
+    feet of the wendigo is instead frightened 3, and is also fleeing for 1d4 rounds
+    (or until it''s no longer frightened, whichever comes first). A creature frightened
+    by a wendigo''s howl still naturally recovers from its fright but can''t reduce
+    it below frightened 1 in this way until 1 hour has passed or magic is used. Whether
+    it succeeds or fails its save, a creature is then temporarily immune to that wendigo''s
+    Howl for 24 hours.'
+  requirements: null
+  success: null
+  traits:
+  - auditory
+  - concentrate
+  - enchantment
+  - fear
+  - incapacitation
+  - mental
+  - primal
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The wendigo attempts to turn the grabbed creature into wind and carry it
+    along as part of the action. If the target succeeds at a DC 38 Will save, it prevents
+    itself from being transformed; in this case, the wendigo still transforms, automatically
+    releasing the victim. A creature forced to Ride the Wind along with the wendigo
+    is exposed to wendigo torment. The target can attempt a new Will save each round
+    to return to normal, though it immediately becomes corporeal and begins falling
+    if it succeeds.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Ride the Wind
+  range: null
+  raw_description: '**Ride the Wind** [Reaction]  (__air__, __concentrate__, __primal__,
+    __transmutation__) **Trigger** The wendigo casts wind walk while it has Grabbed
+    a foe. **Effect** The wendigo attempts to turn the grabbed creature into wind
+    and carry it along as part of the action. If the target succeeds at a DC 38 Will
+    save, it prevents itself from being transformed; in this case, the wendigo still
+    transforms, automatically releasing the victim. A creature forced to Ride the
+    Wind along with the wendigo is exposed to wendigo torment. The target can attempt
+    a new Will save each round to return to normal, though it immediately becomes
+    corporeal and begins falling if it succeeds.'
+  requirements: null
+  success: null
+  traits:
+  - air
+  - concentrate
+  - primal
+  - transmutation
+  trigger: The wendigo casts wind walk while it has Grabbed a foe.
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A creature affected by wendigo torment can't recover beyond stage 1
+    until it has been restored to full HP. **Saving Throw** Will DC 38; **Stage 1**
+    Stupefied 4 (1 day); **Stage 2** As stage 1 (1 day); **Stage 3** The creature
+    searches for an individual of its own ancestry to kill and devour. It then becomes
+    affected by wind walk and sprints into the sky so fast that its feet burn away
+    into jagged stumps. As the creature wind walks into the sky, it is replaced by
+    a new wendigo over 2d6 minutes. Wish, similar magic, or a 9th-level resurrect
+    ritual can return the victim to life. The new wendigo remains even if the victim
+    is resurrected.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Wendigo Torment
+  range: null
+  raw_description: '**Wendigo Torment** (__curse__, __enchantment__, __mental__, __primal__)
+    A creature affected by wendigo torment can''t recover beyond stage 1 until it
+    has been restored to full HP. **Saving Throw** Will DC 38; **Stage 1** Stupefied
+    4 (1 day); **Stage 2** As stage 1 (1 day); **Stage 3** The creature searches for
+    an individual of its own ancestry to kill and devour. It then becomes affected
+    by wind walk and sprints into the sky so fast that its feet burn away into jagged
+    stumps. As the creature wind walks into the sky, it is replaced by a new wendigo
+    over 2d6 minutes. Wish, similar magic, or a 9th-level resurrect ritual can return
+    the victim to life. The new wendigo remains even if the victim is resurrected.'
+  requirements: null
+  success: null
+  traits:
+  - curse
+  - enchantment
+  - mental
+  - primal
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances:
+- amount: 10
+  type: cold iron
+- amount: 15
+  type: fire
+ritual_lists:
+- dc: 38
+  misc: null
+  name: Primal Rituals
+  spell_groups:
+  - heightened_level: null
+    level: 8
+    spells:
+    - frequency: null
+      name: control weather
+      requirement: null
+  to_hit: null
+saves:
+  fort: 32
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 30
+  ref_misc: null
+  will: 26
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Heatsight is a precise sense that sees heat signatures.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Heatsight
+  range: null
+  raw_description: '**Heatsight** (__divination__, __primal__); Heatsight is a precise
+    sense that sees heat signatures.'
+  requirements: null
+  success: null
+  traits:
+  - divination
+  - primal
+  trigger: null
+senses:
+- Perception +32
+- darkvision
+- heatsight 60 feet
+size: Large
+skills:
+- bonus: 32
+  misc: null
+  name: 'Acrobatics '
+- bonus: 33
+  misc: null
+  name: 'Athletics '
+- bonus: 29
+  misc: null
+  name: 'Deception '
+- bonus: 33
+  misc: null
+  name: 'Intimidation '
+- bonus: 28
+  misc: null
+  name: 'Nature '
+- bonus: 29
+  misc: null
+  name: 'Occultism '
+- bonus: 28
+  misc: null
+  name: 'Religion '
+- bonus: 30
+  misc: null
+  name: 'Stealth '
+- bonus: 30
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 327
+  page_stop: null
+speed:
+- amount: 100
+  type: fly
+spell_lists:
+- dc: 38
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 8
+    spells:
+    - frequency: at will
+      name: wind walk
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: see dream haunting
+      name: nightmare
+      requirement: null
+  to_hit: null
+traits:
+- Uncommon
+- CE
+- Large
+- Beast
+- Cold
+type: Creature
+weaknesses: null

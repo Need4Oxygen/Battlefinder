@@ -1,0 +1,188 @@
+ability_mods:
+  cha_mod: -2
+  con_mod: 0
+  dex_mod: 3
+  int_mod: 0
+  str_mod: -1
+  wis_mod: 1
+ac: 17
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'A homunculus is a tiny servitor construct created by a crafter to serve
+  as a spy, scout, messenger, or assistant. When a crafter first begins to study the
+  art of creating constructs, she often crafts a homunculus first, since the creation
+  process is simple and inexpensive due to a magical shortcut: the use of the creator''s
+  own blood. This forges a link between the homunculus and its master, causing the
+  homunculus to gain a spark of the creator''s intellect, as well as the same moral
+  values and some of the creator''s basic personality traits. Homunculi left to their
+  own devices never stray far from their masters.
+
+
+
+
+  In most cases, a homunculus doesn''t survive the death of its master for long. Deprived
+  of its creator, a homunculus loses focus and grows increasingly self-destructive,
+  and some even end up battering themselves to destruction. Rarely, a homunculus with
+  a slain master survives the trauma with its mind intact, often seeing itself as
+  its deceased creator''s child or successor and attempting to further its creator''s
+  legacy as best it can. In such cases, and if the homunculus was in close proximity
+  to its master upon that creature''s death, a portion of the dead master''s soul
+  "infects" the surviving homunculus as it passes on to the afterlife. This doesn''t
+  result in a truly soulbound homunculus (see sidebar), since only a fragment of the
+  soul is left behind, but this is still enough to grant the homunculus a greater
+  personality, free will of its own, and perhaps most importantly, the ability to
+  speak. Over time, a few of these "awakened" homunculi even go so far as to become
+  convinced that they are the reincarnation of their prior masters, although their
+  actual personalities never quite reach the depth and complexity of a truly living
+  creature. They are, at best, caricatures of the master, and at worst they become
+  awful, bitter-minded parodies of life itself. Still, a free-willed homunculus might
+  pursue studies in its creator''s class, becoming a unique creature with the abilities
+  of that class if time and fortune permit.
+
+
+
+
+  Homunculi are created from a mixture of clay, ash, mandrake root, spring water,
+  and a pint of the creator''s own blood. It is possible for a separate donor to provide
+  the blood, but the process is more difficult.
+
+
+
+
+  **__Recall Knowledge - Construct__ (__Arcana__, __Crafting__)**: DC 14'
+hp: 17
+hp_misc: null
+immunities:
+- bleed
+- death effects
+- disease
+- doomed
+- drained
+- fatigued
+- healing
+- necromancy
+- nonlethal attacks
+- paralyzed
+- poison
+- sickened
+- unconscious
+items: null
+languages:
+- Common
+- (can't speak any language)
+- master link
+level: 0
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d4
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: null
+    type: homunculus poison
+  to_hit: 7
+  traits:
+  - finesse
+  - magical
+name: Homunculus
+perception: 3
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A homunculus has one dose of poison in a reservoir in its head. It
+    can refill this poison from its reserves with an Interact action. **Saving Throw**
+    DC 15 Fortitude; **Maximum Duration** 6 rounds; **Stage 1** 1d6 poison and __enfeebled
+    1__ (1 round)
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Homunculus Poison
+  range: null
+  raw_description: '**Homunculus Poison** (__poison__) A homunculus has one dose of
+    poison in a reservoir in its head. It can refill this poison from its reserves
+    with an Interact action. **Saving Throw** DC 15 Fortitude; **Maximum Duration**
+    6 rounds; **Stage 1** 1d6 poison and __enfeebled 1__ (1 round)'
+  requirements: null
+  success: null
+  traits:
+  - poison
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 2
+  fort_misc: null
+  misc: null
+  ref: 7
+  ref_misc: null
+  will: 3
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A homunculus can't speak, but it is telepathically linked to its creator.
+    It can share information back and forth, including its master's knowledge and
+    everything the homunculus hears. The range of this link is 1,500 feet. The homunculus
+    adopts the same alignment as its creator and is utterly faithful. If the homunculus
+    is destroyed, the master takes 2d10 mental damage. If the master is slain, the
+    homunculus becomes mindless, claims its current location as its lair, and instinctively
+    attacks anyone who comes near.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Master Link
+  range: null
+  raw_description: '**Master Link** (__arcane__, __divination__, __mental__) A homunculus
+    can''t speak, but it is telepathically linked to its creator. It can share information
+    back and forth, including its master''s knowledge and everything the homunculus
+    hears. The range of this link is 1,500 feet. The homunculus adopts the same alignment
+    as its creator and is utterly faithful. If the homunculus is destroyed, the master
+    takes 2d10 mental damage. If the master is slain, the homunculus becomes mindless,
+    claims its current location as its lair, and instinctively attacks anyone who
+    comes near.'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - divination
+  - mental
+  trigger: null
+senses:
+- Perception +3
+- darkvision
+size: Tiny
+skills:
+- bonus: 5
+  misc: null
+  name: 'Acrobatics '
+- bonus: 5
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 208
+  page_stop: null
+speed:
+- amount: 15
+  type: Land
+- amount: 40
+  type: fly
+spell_lists: null
+traits:
+- N
+- Tiny
+- Construct
+type: Creature
+weaknesses: null

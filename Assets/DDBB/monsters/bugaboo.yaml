@@ -1,0 +1,236 @@
+ability_mods:
+  cha_mod: 4
+  con_mod: 3
+  dex_mod: 5
+  int_mod: -1
+  str_mod: 4
+  wis_mod: 2
+ac: 24
+ac_special: null
+alignment: NE
+automatic_abilities: null
+description: 'After devouring enough souls, a bogey transforms into the more powerful
+  and sophisticated bugaboo.
+
+
+
+
+  **__Recall Knowledge - Fey__ (__Nature__)**: DC 24'
+hp: 95
+hp_misc: null
+immunities:
+- fear
+items: null
+languages:
+- Aklo
+- Common
+- Sylvan
+level: 6
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+6
+    type: slashing
+  name: claw
+  plus_damage:
+  - formula: null
+    type: striking fear
+  to_hit: 15
+  traits:
+  - agile
+  - finesse
+  - magical
+name: Bugaboo
+perception: 14
+proactive_abilities:
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The bugaboo has killed a creature within the last round and is adjacent
+    to the creature
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Devour Soul
+  range: null
+  raw_description: '**Devour Soul** [Three Actions]  (__necromancy__, __occult__)
+    **Requirements** The bugaboo has killed a creature within the last round and is
+    adjacent to the creature; **Effect** The bugaboo consumes the creature''s soul.
+    The soul is utterly destroyed—nothing short of wish or a similar effect can restore
+    it to life, and only after the bugaboo has been slain. The bugaboo regains Hit
+    Points equal to double the level of the consumed creature. After devouring six
+    souls within a year, a bugaboo transforms into a bogeyman.'
+  requirements: null
+  success: null
+  traits:
+  - necromancy
+  - occult
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When the bugaboo uses a Stride action to move half their Speed or less,
+    that movement does not trigger reactions.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Mobility
+  range: null
+  raw_description: '**Mobility** When the bugaboo uses a Stride action to move half
+    their Speed or less, that movement does not trigger reactions.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The bugaboo deals 1d6 extra precision damage to __flat-footed__ creatures.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sneak Attack
+  range: null
+  raw_description: '**__Sneak Attack__** The bugaboo deals 1d6 extra precision damage
+    to __flat-footed__ creatures.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: The target is frightened 3 and fleeing for 1 round.
+  critical_success: The target is unaffected.
+  description: "If a bugaboo scores a critical hit with a claw Strike, the target\
+    \ must attempt a DC 24 Will save. \n\n"
+  effect: null
+  effects: null
+  failure: The target is frightened 2.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Striking Fear
+  range: null
+  raw_description: "**Striking Fear** (__emotion__, __fear__, __mental__) If a bugaboo\
+    \ scores a critical hit with a claw Strike, the target must attempt a DC 24 Will\
+    \ save. \n\n**Critical Success** The target is unaffected.\n\n**Success** The\
+    \ target is __frightened 1__.\n\n**Failure** The target is frightened 2.\n\n**Critical\
+    \ Failure** The target is frightened 3 and __fleeing__ for 1 round."
+  requirements: null
+  success: The target is frightened 1.
+  traits:
+  - emotion
+  - fear
+  - mental
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: On the first round of combat, creatures that haven't acted yet are
+    flat-footed to the bugaboo.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Surprise Attack
+  range: null
+  raw_description: '**Surprise Attack** On the first round of combat, creatures that
+    haven''t acted yet are flat-footed to the bugaboo.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances:
+- amount: 6
+  type: cold iron
+ritual_lists: null
+saves:
+  fort: 11
+  fort_misc: null
+  misc: null
+  ref: 17
+  ref_misc: null
+  will: 14
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +14
+- low-light vision
+size: Medium
+skills:
+- bonus: 15
+  misc: null
+  name: 'Acrobatics '
+- bonus: 14
+  misc: null
+  name: 'Deception '
+- bonus: 14
+  misc: null
+  name: 'Intimidation '
+- bonus: 15
+  misc: null
+  name: 'Stealth '
+- bonus: 13
+  misc: null
+  name: 'Thievery '
+source:
+- abbr: 'Pathfinder #152: Legacy of the Lost God'
+  page_start: 78
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+- amount: null
+  type: mobility
+spell_lists:
+- dc: 22
+  misc: null
+  name: Occult Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: null
+      name: fear
+      requirement: null
+    - frequency: null
+      name: paralyze
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: null
+      name: invisibility
+      requirement: null
+    - frequency: null
+      name: knock
+      requirement: null
+  - heightened_level: 3
+    level: 0
+    spells:
+    - frequency: null
+      name: ghost sound
+      requirement: null
+    - frequency: null
+      name: message
+      requirement: null
+  to_hit: null
+traits:
+- Uncommon
+- NE
+- Medium
+- Fey
+type: Creature
+weaknesses: null

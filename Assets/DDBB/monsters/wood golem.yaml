@@ -1,0 +1,203 @@
+ability_mods:
+  cha_mod: -5
+  con_mod: 3
+  dex_mod: 4
+  int_mod: -5
+  str_mod: 5
+  wis_mod: 0
+ac: 23
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: harmed by fire (4d8, 2d6 from areas or __persistent damage__); healed
+    by plant (area 2d6 HP); __slowed__ by earth
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Golem Antimagic
+  range: null
+  raw_description: '**Golem Antimagic** harmed by fire (4d8, 2d6 from areas or __persistent
+    damage__); healed by plant (area 2d6 HP); __slowed__ by earth'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A wood golem targeted by __shape wood__ takes 2d8 damage per spell
+    level, with a basic Fortitude save against the caster's spell DC. On a critical
+    failure, the golem is also __immobilized__ for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Vulnerable to Shape Wood
+  range: null
+  raw_description: '**Vulnerable to Shape Wood** A wood golem targeted by __shape
+    wood__ takes 2d8 damage per spell level, with a basic Fortitude save against the
+    caster''s spell DC. On a critical failure, the golem is also __immobilized__ for
+    1d4 rounds.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: A jagged, sizable splinter of wood lances out at the golem's attacker. The
+    golem makes a splinter Strike against an adjacent creature without triggering
+    reactions.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Splinter
+  range: null
+  raw_description: '**Splinter [Reaction]** (__arcane__, __transmutation__) **Trigger**
+    The wood golem takes physical damage; **Effect** A jagged, sizable splinter of
+    wood lances out at the golem''s attacker. The golem makes a splinter Strike against
+    an adjacent creature without triggering reactions.'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - transmutation
+  trigger: The wood golem takes physical damage
+description: 'Wood golems are often given vaguely humanoid shapes, almost as if cobbled
+  together from scraps of firewood and discarded burls. It''s less common for wood
+  golems to have artistic embellishments such as engraved patterns, or to be carved
+  in the shapes of different types of creatures to meet the tastes of their owners.
+  While wealthy patrons have been known to commission wood golems to be painstakingly
+  carved to resemble themselves or their ancestors, to serve dual purposes of protection
+  and ego bolstering, most wood golem crafters don''t bother. Druids and creatures
+  who protect woodlands, such as arboreals, typically see wood golems as an affront
+  or an abomination, akin to the horror humanoids often feel when facing a carrion
+  or flesh golem. As a result, it is rare to see such creatures serving as guardians
+  for fey or druidic holy sites, despite the thematic match between the wood golem''s
+  appearance and such locations.
+
+
+
+
+  **__Recall Knowledge - Construct__ (__Arcana__, __Crafting__)**: DC 24'
+hp: 95
+hp_misc: null
+immunities:
+- bleed
+- death effects
+- disease
+- doomed
+- drained
+- fatigued
+- healing
+- magic (see Golem Antimagic below)
+- mental
+- necromancy
+- nonlethal attacks
+- paralyzed
+- poison
+- sickened
+- unconscious
+items: null
+languages: null
+level: 6
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+8
+    type: bludgeoning
+  name: fist
+  plus_damage: null
+  to_hit: 17
+  traits:
+  - magical
+name: Wood Golem
+perception: 12
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The wood golem makes up to four splinter Strikes, each against a different
+    target. These attacks count toward the wood golem's multiple attack penalty, but
+    the multiple attack penalty doesn't increase until after the wood golem makes
+    all of its attacks.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Splinter Volley
+  range: null
+  raw_description: '**Splinter Volley** [Two Actions]  (__arcane__, __evocation__)
+    The wood golem makes up to four splinter Strikes, each against a different target.
+    These attacks count toward the wood golem''s multiple attack penalty, but the
+    multiple attack penalty doesn''t increase until after the wood golem makes all
+    of its attacks.'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - evocation
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 2d4+8
+    type: piercing
+  name: splinter
+  plus_damage: null
+  to_hit: 16
+  traits:
+  - magical
+  - range increment 30 feet
+rarity: Uncommon
+resistances:
+- amount: 5
+  type: physical (except adamantine)
+ritual_lists: null
+saves:
+  fort: 15
+  fort_misc: null
+  misc: null
+  ref: 16
+  ref_misc: null
+  will: 12
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +12
+- darkvision
+size: Medium
+skills:
+- bonus: 17
+  misc: null
+  name: 'Athletics '
+source:
+- abbr: Bestiary 2
+  page_start: 130
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists: null
+traits:
+- Uncommon
+- N
+- Medium
+- Construct
+- Golem
+- Mindless
+type: Creature
+weaknesses: null

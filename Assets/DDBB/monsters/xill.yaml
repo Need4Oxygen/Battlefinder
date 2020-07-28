@@ -1,0 +1,297 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 3
+  dex_mod: 5
+  int_mod: 0
+  str_mod: 4
+  wis_mod: 3
+ac: 24
+ac_special:
+- descr: 26 with shield raised
+alignment: LE
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: You snap your shield in place to ward off a blow. Your shield prevents you
+    from taking an amount of damage up to the shield's Hardness. You and the shield
+    each take any remaining damage, possibly breaking or destroying the shield.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Shield Block
+  range: null
+  raw_description: '**Shield Block** [Reaction] **Trigger** While you have your shield
+    raised, you would take damage from a physical attack. **Effect** You snap your
+    shield in place to ward off a blow. Your shield prevents you from taking an amount
+    of damage up to the shield''s Hardness. You and the shield each take any remaining
+    damage, possibly breaking or destroying the shield.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: While you have your shield raised, you would take damage from a physical
+    attack.
+description: 'Xills visit the __Material Plane__, where they''re often known as ethereal
+  stalkers, primarily to maraud and to kidnap creatures back to their native __Ethereal
+  Plane__. These four-armed, warmongering monsters paralyze their victims before implanting
+  them with eggs using an ovipositor normally kept retracted behind their mandibles.
+  Their single-minded drive to expand and conquer is so all-encompassing that while
+  they work together dutifully and without dissent, there is little else in their
+  lives.
+
+
+
+
+  **__Recall Knowledge - Aberration__ (__Occultism__)**: DC 24
+
+
+  **__Recall Knowledge - Ethereal__ (__Occultism__)**: DC 24'
+hp: 100
+hp_misc: null
+immunities: null
+items:
+- +1 longbow (40 arrows)
+- breastplate
+- scimitar (2)
+- steel shield (Hardness 5, HP 20, BT 10)
+languages:
+- Aklo
+level: 6
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+7
+    type: slashing
+  name: scimitar
+  plus_damage: null
+  to_hit: 16
+  traits:
+  - forceful
+  - sweep
+- action_cost: One Action
+  damage:
+    formula: 2d8+7
+    type: piercing
+  name: bite
+  plus_damage:
+  - formula: null
+    type: xill paralysis
+  to_hit: 16
+  traits: null
+name: Xill
+perception: 15
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The xill makes two scimitar Strikes against a single target. If both
+    hit, combine their damage for the purpose of the target's resistances and weaknesses.
+    The xill applies its multiple attack penalty to each strike normally.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Double Slash
+  range: null
+  raw_description: '**Double Slash**   (__flourish__) The xill makes two scimitar
+    Strikes against a single target. If both hit, combine their damage for the purpose
+    of the target''s resistances and weaknesses. The xill applies its multiple attack
+    penalty to each strike normally.'
+  requirements: null
+  success: null
+  traits:
+  - flourish
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The xill is adjacent to a __unconscious__, willing, or __paralyzed__ creature
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Implant
+  range: null
+  raw_description: '**Implant** [Two Actions]  (__manipulate__) **Requirements** The
+    xill is adjacent to a __unconscious__, willing, or __paralyzed__ creature; **Effect**
+    The xill implants xill eggs in the creature''s flesh.'
+  requirements: null
+  success: null
+  traits:
+  - manipulate
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The __sickened__ condition from xill eggs doesn't improve on its own
+    until the disease is cured or runs its course. It can be cured with a 10-minute
+    operation that requires a successful DC 26 __Medicine__ check and deals 4d6 slashing
+    damage to the host; **Saving Throw** DC 24 Fortitude; **Maximum Duration** 24
+    hours; **Stage 1** infested with no ill effect (8 hours); **Stage 2** sickened
+    1 (8 hours); **Stage 3** sickened 2 (4 hours); **Stage 4** sickened 2 and 2d6
+    __persistent bleed damage__ as larval xills burrow out of the body and immediately
+    fade away into the __Ethereal Plane__ (1 hour)
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Xill Eggs
+  range: null
+  raw_description: '**Xill Eggs** (__disease__) The __sickened__ condition from xill
+    eggs doesn''t improve on its own until the disease is cured or runs its course.
+    It can be cured with a 10-minute operation that requires a successful DC 26 __Medicine__
+    check and deals 4d6 slashing damage to the host; **Saving Throw** DC 24 Fortitude;
+    **Maximum Duration** 24 hours; **Stage 1** infested with no ill effect (8 hours);
+    **Stage 2** sickened 1 (8 hours); **Stage 3** sickened 2 (4 hours); **Stage 4**
+    sickened 2 and 2d6 __persistent bleed damage__ as larval xills burrow out of the
+    body and immediately fade away into the __Ethereal Plane__ (1 hour)'
+  requirements: null
+  success: null
+  traits:
+  - disease
+  trigger: null
+- action_cost: None
+  critical_failure: The creature is paralyzed. It can attempt a new save at the end
+    of each of its turns to recover, and the save DC decreases by 1 each round.
+  critical_success: The creature is unaffected and is immune to xill paralysis for
+    1 minute.
+  description: "A creature hit by the xill's bite Strike must attempt a DC 24 Fortitude\
+    \ save. \n\n"
+  effect: null
+  effects: null
+  failure: The creature is paralyzed for 1 round.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Xill Paralysis
+  range: null
+  raw_description: "**Xill Paralysis** (__incapacitation__, __occult__) A creature\
+    \ hit by the xill's bite Strike must attempt a DC 24 Fortitude save. \n\n**Critical\
+    \ Success** The creature is unaffected and is immune to xill paralysis for 1 minute.\
+    \ \n\n**Success** The creature is __slowed 1__ for 1 round. \n\n**Failure** The\
+    \ creature is __paralyzed__ for 1 round. \n\n**Critical Failure** The creature\
+    \ is paralyzed. It can attempt a new save at the end of each of its turns to recover,\
+    \ and the save DC decreases by 1 each round."
+  requirements: null
+  success: The creature is slowed 1 for 1 round.
+  traits:
+  - incapacitation
+  - occult
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 2d8
+    type: piercing
+  name: longbow
+  plus_damage: null
+  to_hit: 17
+  traits:
+  - deadly 1d10
+  - magical
+  - range 100 feet
+  - reload 0
+  - volley 30 feet
+rarity: Uncommon
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 15
+  fort_misc: null
+  misc: null
+  ref: 17
+  ref_misc: null
+  will: 11
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +15
+- darkvision
+size: Medium
+skills:
+- bonus: 15
+  misc: null
+  name: 'Acrobatics '
+- bonus: 14
+  misc: null
+  name: 'Athletics '
+- bonus: 12
+  misc: null
+  name: 'Deception '
+- bonus: 14
+  misc: null
+  name: 'Intimidation '
+- bonus: 15
+  misc: null
+  name: 'Stealth '
+- bonus: 12
+  misc: null
+  name: 'Warfare Lore '
+source:
+- abbr: Bestiary 2
+  page_start: 299
+  page_stop: null
+speed:
+- amount: 35
+  type: Land
+spell_lists:
+- dc: 24
+  misc: null
+  name: Occult Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 7
+    spells:
+    - frequency: to <a style="text-decoration:underline" href="Planes.aspx?ID=9">Ethereal
+        Plane</a> or <a style="text-decoration:underline" href="Planes.aspx?ID=1">Material
+        Plane</a> only, self only
+      name: plane shift
+      requirement: null
+  to_hit: null
+traits:
+- Uncommon
+- LE
+- Medium
+- Aberration
+- Ethereal
+type: Creature
+weaknesses: null

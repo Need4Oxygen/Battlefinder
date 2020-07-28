@@ -1,0 +1,234 @@
+ability_mods:
+  cha_mod: -5
+  con_mod: 4
+  dex_mod: -1
+  int_mod: -5
+  str_mod: 8
+  wis_mod: 0
+ac: 34
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: harmed by acid (6d10, 2d8 from areas and persistent damage); healed
+    by fire (area 2d8 HP); slowed by electricity
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Golem Antimagic
+  range: null
+  raw_description: '**Golem Antimagic** harmed by acid (6d10, 2d8 from areas and persistent
+    damage); healed by fire (area 2d8 HP); slowed by electricity'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Casting __neutralize poison__ on the golem deactivates its Breath Weapon
+    for 1 minute.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Vulnerable to Neutralize Poison
+  range: null
+  raw_description: '**Vulnerable to Neutralize Poison** Casting __neutralize poison__
+    on the golem deactivates its Breath Weapon for 1 minute.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Magical rusting effects, like a rust monster's antennae, affect the
+    iron golem normally.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Vulnerable to Rust
+  range: null
+  raw_description: '**Vulnerable to Rust** Magical rusting effects, like a rust monster''s
+    antennae, affect the iron golem normally.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Traditionally crafted into the forms of giant suits of armor or powerful
+  animals, iron golems are products of exquisite artistry and skill. Their articulated
+  joints and sturdy armored bodies require great care and mathematical precision to
+  craft, and regular cleaning and oiling ensure they don''t rust over the ages. With
+  proper care, iron golems can remain in good shape for thousands of years, being
+  passed down for generations, as long as they aren''t destroyed by meddlesome adventurers.
+  In addition to their incredible strength, iron golems possess a potent toxic breath
+  weapon that is often more than enough to dispatch entire groups of opponents.
+
+
+
+
+  **__Recall Knowledge - Construct__ (__Arcana__, __Crafting__)**: DC 33'
+hp: 190
+hp_misc: null
+immunities:
+- bleed
+- death effects
+- disease
+- doomed
+- drained
+- fatigued
+- fire
+- healing
+- magic (see below)
+- mental
+- necromancy
+- nonlethal attacks
+- paralyzed
+- poison
+- sickened
+- unconscious
+items: null
+languages: null
+level: 13
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d10+12
+    type: bludgeoning
+  name: fist
+  plus_damage: null
+  to_hit: 28
+  traits:
+  - magical
+  - reach 10 feet
+name: Iron Golem
+perception: 21
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The iron golem exhales poisonous gas in a 10-foot radius centered on
+    the corner of one of the iron golem's squares. The gas persists for 1 round. Any
+    creature in the area (or that later enters the area) is exposed to the iron golem's
+    poison. The golem can't use its Breath Weapon again for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Breath Weapon
+  range: null
+  raw_description: '**Breath Weapon** [Two Actions]  (__arcane__, __necromancy__,
+    __poison__) The iron golem exhales poisonous gas in a 10-foot radius centered
+    on the corner of one of the iron golem''s squares. The gas persists for 1 round.
+    Any creature in the area (or that later enters the area) is exposed to the iron
+    golem''s poison. The golem can''t use its Breath Weapon again for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - necromancy
+  - poison
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The iron golem Strides up to its Speed, pushing back each creature
+    whose space it moves into and damaging them if they try to stop its movement.
+    A creature can attempt to bar the way by succeeding at a DC 37 Fortitude save.
+    On a critical success, the resisting creature takes no damage; otherwise, it is
+    damaged as if hit by the golem's fist.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Inexorable March
+  range: null
+  raw_description: '**Inexorable March**   The iron golem Strides up to its Speed,
+    pushing back each creature whose space it moves into and damaging them if they
+    try to stop its movement. A creature can attempt to bar the way by succeeding
+    at a DC 37 Fortitude save. On a critical success, the resisting creature takes
+    no damage; otherwise, it is damaged as if hit by the golem''s fist.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Any __drained__ value from this poison is reduced by 1 every hour.
+    **Saving Throw** DC 33 Fortitude; **Maximum Duration** 4 rounds; **Stage 1** 2d6
+    poison and __drained 1__ (1 round); **Stage 2** 4d6 poison and __drained 2__ (1
+    round); **Stage 3** 8d6 poison and __drained 3__ (1 round).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Iron Golem Poison
+  range: null
+  raw_description: '**Iron Golem Poison** (__poison__) Any __drained__ value from
+    this poison is reduced by 1 every hour. **Saving Throw** DC 33 Fortitude; **Maximum
+    Duration** 4 rounds; **Stage 1** 2d6 poison and __drained 1__ (1 round); **Stage
+    2** 4d6 poison and __drained 2__ (1 round); **Stage 3** 8d6 poison and __drained
+    3__ (1 round).'
+  requirements: null
+  success: null
+  traits:
+  - poison
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances:
+- amount: 15
+  type: physical (except adamantine)
+ritual_lists: null
+saves:
+  fort: 26
+  fort_misc: null
+  misc: null
+  ref: 21
+  ref_misc: null
+  will: 22
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +21
+- darkvision
+size: Large
+skills:
+- bonus: 30
+  misc: null
+  name: 'Athletics '
+source:
+- abbr: Bestiary
+  page_start: 188
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+spell_lists: null
+traits:
+- Uncommon
+- N
+- Large
+- Construct
+- Golem
+- Mindless
+type: Creature
+weaknesses: null

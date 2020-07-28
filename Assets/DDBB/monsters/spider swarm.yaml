@@ -1,0 +1,147 @@
+ability_mods:
+  cha_mod: -4
+  con_mod: 0
+  dex_mod: 3
+  int_mod: -5
+  str_mod: -2
+  wis_mod: 0
+ac: 15
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'An abundance of food, the sudden hatching of a clutch of eggs, or magical
+  influence can cause smaller spiders to gather in terrifying, deadly masses.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 14'
+hp: 12
+hp_misc: null
+immunities:
+- precision
+- swarm mind
+items: null
+languages: null
+level: 0
+melee: null
+name: Spider Swarm
+perception: 4
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: Each enemy in the spider swarm's space takes 1d4 piercing damage with
+    a DC 14 basic Reflex save. A creature that fails its save is exposed to spider
+    swarm venom.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Swarming Bites
+  range: null
+  raw_description: '**Swarming Bites**   Each enemy in the spider swarm''s space takes
+    1d4 piercing damage with a DC 14 basic Reflex save. A creature that fails its
+    save is exposed to spider swarm venom.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw** Fortitude DC 14; **Maximum Duration** 4 rounds; **Stage
+    1** 1 poison and enfeebled 1 (1 round); **Stage 2** 1d4 poison and enfeebled 1
+    (1 round).'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Spider Swarm Venom
+  range: null
+  raw_description: '**Spider Swarm Venom** (__poison__) **Saving Throw** Fortitude
+    DC 14; **Maximum Duration** 4 rounds; **Stage 1** 1 poison and enfeebled 1 (1
+    round); **Stage 2** 1d4 poison and enfeebled 1 (1 round).'
+  requirements: null
+  success: null
+  traits:
+  - poison
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 2
+  type: bludgeoning
+- amount: 5
+  type: piercing
+- amount: 5
+  type: slashing
+ritual_lists: null
+saves:
+  fort: 4
+  fort_misc: null
+  misc: null
+  ref: 7
+  ref_misc: null
+  will: 2
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The spider swarm has imprecise tremorsense to detect the vibrations
+    of creatures touching its web.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Web Sense
+  range: null
+  raw_description: '**Web Sense** The spider swarm has imprecise tremorsense to detect
+    the vibrations of creatures touching its web.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +4
+- darkvision
+- web sense
+size: Large
+skills:
+- bonus: 5
+  misc: null
+  name: 'Acrobatics '
+- bonus: 2
+  misc: null
+  name: 'Athletics '
+- bonus: 5
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 306
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 20
+  type: climb
+spell_lists: null
+traits:
+- N
+- Large
+- Animal
+- Swarm
+type: Creature
+weaknesses:
+- amount: 5
+  type: area damage
+- amount: 5
+  type: splash damage

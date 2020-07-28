@@ -1,0 +1,202 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 2
+  dex_mod: 4
+  int_mod: 0
+  str_mod: 2
+  wis_mod: 2
+ac: 18
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: "The insectile bog striders call themselves seshes, but they take no\
+  \ offense at those who use the more common vernacular to refer to them. They resemble\
+  \ upright water striders with four legs, two arms, and powerful mandibles. Bog striders\
+  \ can move about on water like solid ground, chasing down prey or fleeing from predators\
+  \ across the water. They rarely leave the swampy rivers and lakes they call home.\
+  \ Bog striders stand 5 feet tall and weigh approximately 150 pounds. \n\n\n\nA bog\
+  \ strider's diet consists almost entirely of meat, but they prefer to feed only\
+  \ on animals, as they consider the consumption of the flesh of any sapient creature\
+  \ a taboo.\n\n\n\nIn sesh society, each individual is expected to serve equally\
+  \ in all efforts to ensure the society's survival against the more aggressive creatures\
+  \ often found in or near their swampland homes. In addition, each member of the\
+  \ community is expected to develop a skill that contributes to the community's prosperity,\
+  \ and by extension, the continued survival of the species. Traditionally, female\
+  \ bog striders are builders and artisans while males are hunters and gatherers,\
+  \ but often such roles aren't limited to a single gender, as every member of a small\
+  \ community pitches in to help as they can.\n\n\n\n**__Recall Knowledge - Aberration__\
+  \ (__Occultism__)**: DC 18"
+hp: 30
+hp_misc: null
+immunities: null
+items:
+- net
+- spear
+languages:
+- Aquan
+level: 2
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6+4
+    type: piercing
+  name: spear
+  plus_damage: null
+  to_hit: 8
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 1d6+4
+    type: piercing
+  name: mandibles
+  plus_damage: null
+  to_hit: 8
+  traits:
+  - agile
+name: Bog Strider
+perception: 8
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The bog strider is holding a net in two hands
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Hurl Net
+  range: null
+  raw_description: '**Hurl Net**   **Requirements **The bog strider is holding a net
+    in two hands; **Effect **The bog strider hurls their net to hamper a foe. They
+    make a ranged Strike (with a +10 modifier) against a Medium or smaller creature
+    within 20 feet. On a hit, the target is __flat-footed__ and takes a -10-foot circumstance
+    penalty to its Speeds. On a critical hit, the creature is instead __restrained__.
+    The DC to __Escape__ the net is 16. A creature adjacent to the target can __Interact__
+    with the net to remove it from the target.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: The bog strider Strides up to three times in a straight line across
+    smooth water. They can make a single Strike against a creature at the end of this
+    movement.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Water Sprint
+  range: null
+  raw_description: '**Water Sprint** [Three Actions]  The bog strider Strides up to
+    three times in a straight line across smooth water. They can make a single Strike
+    against a creature at the end of this movement.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The bog strider can stand and move on the surface of water or other
+    liquids without falling through. The bog strider can go underwater if they wish,
+    but they must __Swim__ to do so.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Water Stride
+  range: null
+  raw_description: '**Water Stride** The bog strider can stand and move on the surface
+    of water or other liquids without falling through. The bog strider can go underwater
+    if they wish, but they must __Swim__ to do so.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d6+3
+    type: piercing
+  name: spear
+  plus_damage: null
+  to_hit: 10
+  traits:
+  - thrown 20 feet
+rarity: Uncommon
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 8
+  fort_misc: null
+  misc: null
+  ref: 10
+  ref_misc: null
+  will: 8
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 'A bog strider can hold their breath for 2 hours.
+
+
+    '
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Deep Breath
+  range: null
+  raw_description: '**Deep Breath** A bog strider can hold their breath for 2 hours.
+
+
+    '
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +8
+- darkvision
+- wavesense 120 feet
+size: Medium
+skills:
+- bonus: 8
+  misc: +10 to Leap while Water Striding or Swimming
+  name: 'Athletics '
+- bonus: 8
+  misc: null
+  name: 'Stealth '
+- bonus: 8
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 43
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 20
+  type: swim
+spell_lists: null
+traits:
+- Uncommon
+- N
+- Medium
+- Aberration
+type: Creature
+weaknesses: null

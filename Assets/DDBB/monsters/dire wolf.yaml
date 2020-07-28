@@ -1,0 +1,144 @@
+ability_mods:
+  cha_mod: -2
+  con_mod: 4
+  dex_mod: 3
+  int_mod: -4
+  str_mod: 5
+  wis_mod: 3
+ac: 18
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: DC 20
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Buck
+  range: null
+  raw_description: '**Buck** [Reaction] DC 20'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Much larger and more foul-tempered than their common cousins, dire wolves
+  haunt primeval lands that accommodate their massive size and proportionately large
+  hunting grounds and appetites. Orcs are fond of using dire wolves as mounts, finding
+  their vicious tempers perfect for hunting and warfare.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 18'
+hp: 50
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 3
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d10+5
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: null
+    type: Knockdown or Grab
+  to_hit: 12
+  traits:
+  - reach 10 feet
+name: Dire Wolf
+perception: 10
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The dire wolf's Strikes deal 1d6 extra damage to creatures within reach
+    of at least two of the wolf's allies.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Pack Attack
+  range: null
+  raw_description: '**Pack Attack** The dire wolf''s Strikes deal 1d6 extra damage
+    to creatures within reach of at least two of the wolf''s allies.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The dire wolf has a creature grabbed with its jaws.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Worry
+  range: null
+  raw_description: '**Worry**   (__attack__) **Requirements** The dire wolf has a
+    creature grabbed with its jaws. **Effect** The dire wolf fiercely shakes the grabbed
+    creature with its teeth, dealing 1d10+2 damage (DC 20 basic Fortitude save).'
+  requirements: null
+  success: null
+  traits:
+  - attack
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 11
+  fort_misc: null
+  misc: null
+  ref: 8
+  ref_misc: null
+  will: 8
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +10
+- low-light vision
+- scent (imprecise) 30 feet
+size: Large
+skills:
+- bonus: 8
+  misc: null
+  name: 'Acrobatics '
+- bonus: 12
+  misc: null
+  name: 'Athletics '
+- bonus: 8
+  misc: null
+  name: 'Stealth '
+- bonus: 10
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 334
+  page_stop: null
+speed:
+- amount: 35
+  type: Land
+spell_lists: null
+traits:
+- N
+- Large
+- Animal
+type: Creature
+weaknesses: null

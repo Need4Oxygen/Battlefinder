@@ -1,0 +1,229 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 2
+  dex_mod: 4
+  int_mod: 2
+  str_mod: 4
+  wis_mod: 3
+ac: 22
+ac_special: null
+alignment: CE
+automatic_abilities: null
+description: 'These violently murderous fey have one purpose: to stealthily hunt down
+  and slay humanoids brazen enough to dare set foot in the wilderness. Though they
+  prefer to hunt from the shadows, grimstalkers do not fear taking their grisly work
+  to the very edges of civilization. This boldness serves as a reminder that nature
+  can be cruel, capricious, and owes no debt to humanity. Grimstalkers are happy to
+  perform nature''s dirty work and particularly enjoy targeting loggers, hunters,
+  and explorers, regardless of whether they respect the natural setting they work
+  or travel within.
+
+
+
+
+  Grimstalkers are gaunt and hairless, and their mottled, green and brown flesh gives
+  them the appearance of moss-draped bark. When damaged, they bleed a thick, sap-like
+  blood. They mark their territories by lopping off the heads of their victims and
+  stringing them up in the surrounding trees, a practice that often lures dangerous
+  scavengers into their lands. Carnivorous and thorny plants are often found in wilds
+  where grimstalkers dwell, filling roles that pets might in human society, though
+  grimstalkers tend to treat these "pets" poorly at best.
+
+
+
+
+  There are few accounts of grimstalkers working with other fey—for the most part,
+  grimstalkers see their kin from the First World as cowards or weaklings, or perhaps
+  both. Even notoriously violent fey such as redcaps shy from them, as grimstalkers
+  consider their own kind the only company worth keeping.
+
+
+
+
+  Grimstalkers hunt in small bands, using stealth to approach their targets. They
+  surround enemies first, then work to unnerve them by knocking on trees or howling
+  out threats in Aklo to distract and panic their quarry. Of course, a band of grimstalkers
+  won''t stay together for long, quickly succumbing to bickering and infighting. These
+  violent arguments are common pastimes among grimstalkers, often ending with each
+  grimstalker going its own way. Not even the presence of more powerful fey or commanding
+  creatures can keep grimstalkers from their predisposed bickering. Some scholars
+  theorize that this quality speaks to an ancient curse that once afflicted fey who
+  were judged too cantankerous, but in truth, it''s just part of what makes a grimstalker
+  what it is: ill-tempered, confrontational, and bitter.
+
+
+
+
+  **__Recall Knowledge - Fey__ (__Nature__)**: DC 20'
+hp: 60
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Aklo
+- Common
+level: 5
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+7
+    type: slashing
+  name: claw
+  plus_damage:
+  - formula: null
+    type: grimstalker sap
+  to_hit: 15
+  traits:
+  - agile
+name: Grimstalker
+perception: 12
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw** DC 22 Fortitude; **Maximum Duration** 6 rounds; **Stage
+    1** 1d6 poison damage (1 round); **Stage 2** 1d6 poison damage and __clumsy 1__
+    (1 round), **Stage 3** 2d6 poison damage and clumsy 2 (1 round)'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Grimstalker Sap
+  range: null
+  raw_description: '**Grimstalker Sap** (__poison__) **Saving Throw** DC 22 Fortitude;
+    **Maximum Duration** 6 rounds; **Stage 1** 1d6 poison damage (1 round); **Stage
+    2** 1d6 poison damage and __clumsy 1__ (1 round), **Stage 3** 2d6 poison damage
+    and clumsy 2 (1 round)'
+  requirements: null
+  success: null
+  traits:
+  - poison
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A grimstalker can always find a path, almost as if foliage parts before
+    it. A grimstalker ignores difficult terrain caused by plants, such as bushes,
+    vines, and undergrowth. Even plants manipulated by magic don't impede its progress.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Woodland Stride
+  range: null
+  raw_description: '**Woodland Stride** A grimstalker can always find a path, almost
+    as if foliage parts before it. A grimstalker ignores difficult terrain caused
+    by plants, such as bushes, vines, and undergrowth. Even plants manipulated by
+    magic don''t impede its progress.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 9
+  fort_misc: null
+  misc: null
+  ref: 15
+  ref_misc: null
+  will: 12
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A grimstalker can __Hide__ in natural environments, even if it doesn't
+    have cover.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Camouflage
+  range: null
+  raw_description: '**Camouflage** A grimstalker can __Hide__ in natural environments,
+    even if it doesn''t have cover.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +12
+- low-light vision
+size: Medium
+skills:
+- bonus: 13
+  misc: null
+  name: 'Acrobatics '
+- bonus: 13
+  misc: null
+  name: 'Intimidation '
+- bonus: 11
+  misc: null
+  name: 'Nature '
+- bonus: 13
+  misc: null
+  name: 'Stealth '
+- bonus: 12
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 137
+  page_stop: null
+speed:
+- amount: 40
+  type: Land
+- amount: 20
+  type: climb
+- amount: null
+  type: woodland stride
+spell_lists:
+- dc: 22
+  misc: ''
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: null
+      name: earthbind
+      requirement: null
+    - frequency: null
+      name: wall of thorns
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: null
+      name: entangle
+      requirement: null
+    - frequency: null
+      name: pass without trace
+      requirement: null
+    - frequency: null
+      name: tree shape
+      requirement: null
+  - heightened_level: 3
+    level: 0
+    spells:
+    - frequency: null
+      name: tanglefoot
+      requirement: null
+  to_hit: 14
+traits:
+- CE
+- Medium
+- Fey
+type: Creature
+weaknesses:
+- amount: 5
+  type: cold iron

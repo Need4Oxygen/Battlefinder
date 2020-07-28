@@ -1,0 +1,287 @@
+ability_mods:
+  cha_mod: 4
+  con_mod: 3
+  dex_mod: 3
+  int_mod: 2
+  str_mod: 5
+  wis_mod: 2
+ac: 21
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A green hag who succeeds at a Deception check to Lie can mimic the
+    sounds of any animal found near her lair. She has a +4 circumstance bonus to this
+    check.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sound Imitation
+  range: null
+  raw_description: '**Sound Imitation** A green hag who succeeds at a Deception check
+    to Lie can mimic the sounds of any animal found near her lair. She has a +4 circumstance
+    bonus to this check.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Green hags hate beauty and purity, so they use disguises and treachery
+  to lure and murder innocents, corrupt the pure of heart, and shatter the minds and
+  morals of their victims. Green hags create imaginative schemes to utterly ruin anyone
+  who crosses them, as well as good or righteous folk whose very existence insults
+  the hag''s twisted sensibilities. The complicated scandals perpetuated by green
+  hags involve impersonation, mistaken identity, the seduction and betrayal of loved
+  ones, or all these things in combination.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 19'
+hp: 70
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Aklo
+- Common
+- Jotun
+- tongues
+level: 4
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d10+5
+    type: slashing
+  name: claw
+  plus_damage:
+  - formula: null
+    type: enfeebling humors
+  to_hit: 14
+  traits:
+  - agile
+  - magical
+name: Green Hag
+perception: 10
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The green hag touches a creature that doesn't realize the hag is an
+    enemy. The betrayed creature is affected by the hag's enfeebling humors and takes
+    a -4 circumstance penalty to their saving throw against that effect.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Betraying Touch
+  range: null
+  raw_description: '**Betraying Touch**   The green hag touches a creature that doesn''t
+    realize the hag is an enemy. The betrayed creature is affected by the hag''s enfeebling
+    humors and takes a -4 circumstance penalty to their saving throw against that
+    effect.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The green hag can take on the appearance of any Medium humanoid woman.
+    This doesn't change her Speed or her attack and damage bonuses with her Strikes,
+    but might change the damage type her Strikes deal (typically to bludgeoning).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Change Shape
+  range: null
+  raw_description: '**Change Shape**   (__concentrate__, __occult__, __polymorph__,
+    __transmutation__) The green hag can take on the appearance of any Medium humanoid
+    woman. This doesn''t change her Speed or her attack and damage bonuses with her
+    Strikes, but might change the damage type her Strikes deal (typically to bludgeoning).'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - occult
+  - polymorph
+  - transmutation
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A creature damaged by a hag's claw must succeed at a DC 20 Fortitude
+    save or be __enfeebled 1__ for 1 day. On a critical failure, or if it gets hit
+    again and fails its save a second time, it's enfeebled 2 for 1 day.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Enfeebling Humors
+  range: null
+  raw_description: '**Enfeebling Humors** (__necromancy__, __occult__) A creature
+    damaged by a hag''s claw must succeed at a DC 20 Fortitude save or be __enfeebled
+    1__ for 1 day. On a critical failure, or if it gets hit again and fails its save
+    a second time, it''s enfeebled 2 for 1 day.'
+  requirements: null
+  success: null
+  traits:
+  - necromancy
+  - occult
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The green hag exhales a miasma of green vapors. Each living creature
+    in a 15-foot cone is affected by her enfeebling humors (attempting a save as normal).
+    She can't use Exhale Miasma again for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Exhale Miasma
+  range: null
+  raw_description: '**Exhale Miasma** [Two Actions]  (__necromancy__, __occult__)
+    The green hag exhales a miasma of green vapors. Each living creature in a 15-foot
+    cone is affected by her enfeebling humors (attempting a save as normal). She can''t
+    use Exhale Miasma again for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - necromancy
+  - occult
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 11
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 11
+  ref_misc: null
+  will: 12
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A green hag adds __entangle__, __outcast's curse__, and __wall of thorns__
+    to her coven's spells.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Coven
+  range: null
+  raw_description: '**Coven** A green hag adds __entangle__, __outcast''s curse__,
+    and __wall of thorns__ to her coven''s spells.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +10
+- darkvision
+size: Medium
+skills:
+- bonus: 9
+  misc: null
+  name: 'Acrobatics '
+- bonus: 11
+  misc: null
+  name: 'Athletics '
+- bonus: 10
+  misc: null
+  name: 'Deception '
+- bonus: 8
+  misc: null
+  name: 'Nature '
+- bonus: 8
+  misc: null
+  name: 'Occultism '
+- bonus: 9
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 201
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 25
+  type: swim
+spell_lists:
+- dc: 20
+  misc: ''
+  name: Occult Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: at will
+      name: invisibility
+      requirement: null
+    - frequency: at will
+      name: tree shape
+      requirement: null
+  - heightened_level: 2
+    level: 0
+    spells:
+    - frequency: null
+      name: acid splash
+      requirement: null
+    - frequency: null
+      name: dancing lights
+      requirement: null
+    - frequency: null
+      name: ghost sound
+      requirement: null
+    - frequency: null
+      name: message
+      requirement: null
+  - heightened_level: 5
+    level: -1
+    spells:
+    - frequency: null
+      name: tongues
+      requirement: null
+  - heightened_level: 2
+    level: -1
+    spells:
+    - frequency: null
+      name: water breathing
+      requirement: null
+  - heightened_level: 1
+    level: -1
+    spells:
+    - frequency: null
+      name: pass without trace
+      requirement: null
+  to_hit: 14
+traits:
+- CE
+- Medium
+- Hag
+- Humanoid
+type: Creature
+weaknesses:
+- amount: 5
+  type: cold iron

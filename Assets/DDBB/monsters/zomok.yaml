@@ -1,0 +1,301 @@
+ability_mods:
+  cha_mod: 6
+  con_mod: 9
+  dex_mod: 5
+  int_mod: 3
+  str_mod: 9
+  wis_mod: 6
+ac: 39
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Mighty plant-dragons, zomoks prowl the woodlands, defending their homes
+  from destructive forces while healing and restoring the woods following natural
+  disasters and ravaging intruders. Zomoks vary in appearance with the seasons, growing
+  verdant green in the spring and summer, changing to autumnal colors in the fall,
+  and decaying to brown in winter. While zomoks can and often do swallow their foes,
+  they have no real need to eat. Any creature they gulp down is typically left behind
+  as a mangled corpse the next time the zomok travels via their Forest Step ability.
+  Zomoks reach 35 to 40 feet in length and weigh 30 tons.
+
+
+
+
+  **__Recall Knowledge - Dragon__ (__Arcana__)**: DC 35
+
+
+  **__Recall Knowledge - Plant__ (__Nature__)**: DC 35'
+hp: 310
+hp_misc: null
+immunities:
+- paralyzed
+- poison
+- sleep
+- stunned
+items: null
+languages:
+- Arboreal
+- Common
+- Sylvan
+- Terran
+- speak with plants
+level: 16
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d12+17
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: null
+    type: Improved Grab
+  to_hit: 33
+  traits:
+  - magical
+  - reach 15 feet
+- action_cost: One Action
+  damage:
+    formula: 3d8+17
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 33
+  traits:
+  - agile
+  - magical
+  - reach 15 feet
+- action_cost: One Action
+  damage:
+    formula: 3d10+17
+    type: bludgeoning
+  name: tail
+  plus_damage: null
+  to_hit: 33
+  traits:
+  - magical
+  - reach 20 feet
+name: Zomok
+perception: 28
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: 'The zomok blasts forth a 60-foot cone of earth and gravel, dealing
+    17d6 bludgeoning damage (DC 34 basic Reflex save); __prone__ creatures take a
+    -2 circumstance penalty to this saving throw. Creatures touching the ground that
+    fail their saves take a 10-foot circumstance penalty to their Speeds and are __restrained__
+    (__Escape__ DC 34) on a critical failure. The zomok can''t use Entombing Breath
+    again for 1d4 rounds.
+
+
+    The bodies of creatures slain by Entombing Breath instantly decompose and are
+    destroyed—they can be restored to life only by a 7th-level or higher spell or
+    ritual that restores life. The creature''s equipment is unharmed but buried under
+    5 feet of earth.'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Entombing Breath
+  range: null
+  raw_description: '**Entombing Breath** [Two Actions]  (__conjuration__, __earth__,
+    __primal__) The zomok blasts forth a 60-foot cone of earth and gravel, dealing
+    17d6 bludgeoning damage (DC 34 basic Reflex save); __prone__ creatures take a
+    -2 circumstance penalty to this saving throw. Creatures touching the ground that
+    fail their saves take a 10-foot circumstance penalty to their Speeds and are __restrained__
+    (__Escape__ DC 34) on a critical failure. The zomok can''t use Entombing Breath
+    again for 1d4 rounds.
+
+
+    The bodies of creatures slain by Entombing Breath instantly decompose and are
+    destroyed—they can be restored to life only by a 7th-level or higher spell or
+    ritual that restores life. The creature''s equipment is unharmed but buried under
+    5 feet of earth.'
+  requirements: null
+  success: null
+  traits:
+  - conjuration
+  - earth
+  - primal
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The zomok teleports itself with the effects of a 5th-level __dimension door__
+    spell, but the zomok must begin and end the teleportation effect in forest terrain.
+    The zomok regains 10d10 Hit Points during this teleportation. Creatures swallowed
+    by the zomok are left behind. The zomok can't use Forest Step again for 1d6+1
+    rounds.
+  effects: null
+  failure: null
+  frequency: three times per day
+  full_description: null
+  generic_description: null
+  name: Forest Step
+  range: null
+  raw_description: '**Forest Step**   (__conjuration__, __healing__, __necromancy__,
+    __primal__, __teleportation__) **Frequency** three times per day; **Effect** The
+    zomok teleports itself with the effects of a 5th-level __dimension door__ spell,
+    but the zomok must begin and end the teleportation effect in forest terrain. The
+    zomok regains 10d10 Hit Points during this teleportation. Creatures swallowed
+    by the zomok are left behind. The zomok can''t use Forest Step again for 1d6+1
+    rounds.'
+  requirements: null
+  success: null
+  traits:
+  - conjuration
+  - healing
+  - necromancy
+  - primal
+  - teleportation
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: Huge, 3d12+9 bludgeoning, Rupture 35
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Swallow Whole
+  range: null
+  raw_description: '**Swallow Whole**   (__attack__) Huge, 3d12+9 bludgeoning, Rupture
+    35'
+  requirements: null
+  success: null
+  traits:
+  - attack
+  trigger: null
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: Huge or smaller, tail, DC 32
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Trample
+  range: null
+  raw_description: '**Trample** [Three Actions]  Huge or smaller, tail, DC 32'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 15
+  type: fire
+ritual_lists:
+- dc: 34
+  misc: null
+  name: Rituals
+  spell_groups:
+  - heightened_level: null
+    level: 6
+    spells:
+    - frequency: doesn't require secondary casters
+      name: primal call
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: blight
+      requirement: null
+    - frequency: null
+      name: plant growth
+      requirement: null
+  to_hit: null
+saves:
+  fort: 31
+  fort_misc: null
+  misc: null
+  ref: 25
+  ref_misc: null
+  will: 28
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +28
+- darkvision
+- tremorsense (imprecise) 60 feet
+size: Gargantuan
+skills:
+- bonus: 27
+  misc: null
+  name: 'Acrobatics '
+- bonus: 33
+  misc: null
+  name: 'Athletics '
+- bonus: 29
+  misc: null
+  name: 'Nature '
+- bonus: 29
+  misc: null
+  name: 'Stealth '
+- bonus: 30
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 303
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+- amount: 80
+  type: fly
+- amount: 215
+  type: <a style="text-decoration:underline" href="Spells.aspx?ID="><i>pass without
+    trace</i></a>
+spell_lists:
+- dc: 34
+  misc: ''
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 8
+    spells:
+    - frequency: plant creatures only
+      name: charm
+      requirement: null
+  - heightened_level: null
+    level: 7
+    spells:
+    - frequency: null
+      name: wall of thorns
+      requirement: null
+  - heightened_level: null
+    level: 6
+    spells:
+    - frequency: null
+      name: tangling creepers
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: pass without trace
+      requirement: null
+  - heightened_level: 4
+    level: -1
+    spells:
+    - frequency: null
+      name: speak with plants
+      requirement: null
+  to_hit: 26
+traits:
+- N
+- Gargantuan
+- Dragon
+- Plant
+type: Creature
+weaknesses: null

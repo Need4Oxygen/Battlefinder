@@ -1,0 +1,148 @@
+ability_mods:
+  cha_mod: -5
+  con_mod: 3
+  dex_mod: -2
+  int_mod: -5
+  str_mod: 0
+  wis_mod: 0
+ac: 9
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'An amoeba swarm consists of thousands of individual single-celled organisms
+  held together by acrid-smelling slime. As ravenous as they are mindless, amoeba
+  swarms use no tactics.
+
+
+
+
+  **__Recall Knowledge - Ooze__ (__Occultism__)**: DC 15'
+hp: 35
+hp_misc: null
+immunities:
+- acid
+- critical hits
+- mental
+- precision
+- unconscious
+- visual
+items: null
+languages: null
+level: 1
+melee: null
+name: Amoeba Swarm
+perception: 3
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The amoeba swarm slithers over each creature in its space, dealing
+    1d6 acid damage (DC 14 basic Reflex save). A creature that critically fails is
+    __sickened 1__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Swarming Slither
+  range: null
+  raw_description: '**Swarming Slither**   The amoeba swarm slithers over each creature
+    in its space, dealing 1d6 acid damage (DC 14 basic Reflex save). A creature that
+    critically fails is __sickened 1__.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: An amoeba's acid damages only organic material—not metal, stone, or
+    other inorganic substances.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Weak Acid
+  range: null
+  raw_description: '**Weak Acid** An amoeba''s acid damages only organic material—not
+    metal, stone, or other inorganic substances.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 4
+  type: slashing
+- amount: 4
+  type: piercing
+ritual_lists: null
+saves:
+  fort: 8
+  fort_misc: null
+  misc: null
+  ref: 1
+  ref_misc: null
+  will: 3
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: An amoeba swarm can sense nearby creatures through vibration and air
+    or water movement.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Motion Sense
+  range: null
+  raw_description: '**Motion Sense** An amoeba swarm can sense nearby creatures through
+    vibration and air or water movement.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +3
+- motion sense 60 feet
+- no vision
+size: Large
+skills:
+- bonus: 1
+  misc: +3 in water
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 192
+  page_stop: null
+speed:
+- amount: 5
+  type: Land
+- amount: 5
+  type: climb
+- amount: 10
+  type: swim
+spell_lists: null
+traits:
+- N
+- Large
+- Amphibious
+- Mindless
+- Ooze
+- Swarm
+type: Creature
+weaknesses:
+- amount: 3
+  type: area
+- amount: 3
+  type: fire
+- amount: 3
+  type: <a style="text-decoration:underline" href="Traits.aspx?ID=150">splash</a>
+    damage

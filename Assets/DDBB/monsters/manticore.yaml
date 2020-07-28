@@ -1,0 +1,162 @@
+ability_mods:
+  cha_mod: -1
+  con_mod: 4
+  dex_mod: 2
+  int_mod: -2
+  str_mod: 5
+  wis_mod: 2
+ac: 23
+ac_special: null
+alignment: LE
+automatic_abilities: null
+description: 'The manticore is a monstrous amalgamation of lion, dragon, and human
+  with a penchant for feasting on human flesh. Its distinctive tail is festooned with
+  large quills like those of a porcupine, which the manticore flings at prey by whipping
+  its tail like a sling. These deadly spikes give the manticore the power to slaughter
+  even well-armed warriors from the safety of the sky.
+
+
+
+
+  Although the anthropomorphic face of the manticore suggests a keen intellect, most
+  creatures of its kind are simple-minded killers. They can be clever liars, however,
+  and their voices have a strangely musical sound that has lured many unwitting travelers
+  into an ambush. A manticore discovered by uneducated humanoids (especially those
+  who are both lawful and evil) can sometimes become the center of adoration and even
+  worship; a manticore in this situation swiftly gives in to its laziness and allows
+  its acolytes to bring it tribute in the form of food and treasure, feasting upon
+  its own followers when offerings become scarce. Stronger humanoids who encounter
+  a manticore can cow it through intimidation and violence, sometimes even forcing
+  it into service as a mount. As long as the manticore is well fed with human flesh
+  and its master leads it to victory, a manticore mount can prove surprisingly loyal.
+
+
+
+
+  **__Recall Knowledge - Beast__ (__Arcana__, __Nature__)**: DC 22'
+hp: 90
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Common
+level: 6
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+8
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 17
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 2d6+8
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 17
+  traits:
+  - agile
+name: Manticore
+perception: 14
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: 'The manticore flings up to two spikes from its tail, targeting either
+    two different creatures or a single creature. If the manticore targets two different
+    creatures, these creatures must be within 20 feet of one another, and the manticore
+    makes a separate Strike against each; this counts as only one Strike for the manticore''s
+    multiple attack penalty, and the penalty doesn''t increase until after both attacks.
+    If the manticore fires both spikes at the same creature, it makes a single Strike.
+    If the attack hits, it deals the damage of a single spike, but the target is pinned
+    in place, Rendering it immobilized. A creature that succeeds at a DC 23 __Athletics__
+    check (attempted as a single action) can pull the spike free.
+
+
+    A manticore can hurl no more than 12 spikes in 24 hours.'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Spike Volley
+  range: null
+  raw_description: '**Spike Volley**   The manticore flings up to two spikes from
+    its tail, targeting either two different creatures or a single creature. If the
+    manticore targets two different creatures, these creatures must be within 20 feet
+    of one another, and the manticore makes a separate Strike against each; this counts
+    as only one Strike for the manticore''s multiple attack penalty, and the penalty
+    doesn''t increase until after both attacks. If the manticore fires both spikes
+    at the same creature, it makes a single Strike. If the attack hits, it deals the
+    damage of a single spike, but the target is pinned in place, Rendering it immobilized.
+    A creature that succeeds at a DC 23 __Athletics__ check (attempted as a single
+    action) can pull the spike free.
+
+
+    A manticore can hurl no more than 12 spikes in 24 hours.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d10+5
+    type: piercing
+  name: spike
+  plus_damage: null
+  to_hit: 14
+  traits:
+  - range increment 40 feet
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 16
+  fort_misc: null
+  misc: null
+  ref: 12
+  ref_misc: null
+  will: 12
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +14
+- darkvision
+- scent (imprecise) 30 feet
+size: Large
+skills:
+- bonus: 10
+  misc: null
+  name: 'Acrobatics '
+- bonus: 15
+  misc: null
+  name: 'Athletics '
+- bonus: 11
+  misc: null
+  name: 'Intimidation '
+- bonus: 12
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 232
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 40
+  type: fly
+spell_lists: null
+traits:
+- LE
+- Large
+- Beast
+type: Creature
+weaknesses: null

@@ -1,0 +1,240 @@
+ability_mods:
+  cha_mod: 3
+  con_mod: 5
+  dex_mod: 3
+  int_mod: -2
+  str_mod: 7
+  wis_mod: 5
+ac: 30
+ac_special: null
+alignment: LE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: If the peluda takes 30 or more slashing damage from a critical hit,
+    the attacker severs the peluda's tail. The peluda takes 2d6 __persistent bleed
+    damage__ and can't make tail attacks until their tail grows back (in about 1 week).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Vulnerable Tail
+  range: null
+  raw_description: '**Vulnerable Tail** If the peluda takes 30 or more slashing damage
+    from a critical hit, the attacker severs the peluda''s tail. The peluda takes
+    2d6 __persistent bleed damage__ and can''t make tail attacks until their tail
+    grows back (in about 1 week).'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The peluda shifts their position and makes a quill Strike against the attacking
+    creature. This Strike doesn't count toward the peluda's multiple attack penalty,
+    and the peluda's multiple attack penalty doesn't apply to this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Quill Thrust
+  range: null
+  raw_description: '**Quill Thrust [Reaction]** **Trigger** A creature within 10 feet
+    attempts a melee Strike against the peluda; **Effect** The peluda shifts their
+    position and makes a quill Strike against the attacking creature. This Strike
+    doesn''t count toward the peluda''s multiple attack penalty, and the peluda''s
+    multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within 10 feet attempts a melee Strike against the peluda
+description: 'Peludas are wild and savage dragons that favor reedy marshlands, sparsely
+  forested bogs, and river valleys for lairs. A single peluda typically claims a stretch
+  of waterways a few miles in length, then systematically drives off any potential
+  rivals so that the peluda can despoil the land as they please, leaving clawed footprints
+  on muddy riverbanks, toppling trees, and impaling half-eaten corpses on their quills
+  as trophies left to rot. They venture beyond their domains to hunt, roasting prey
+  with their breath or pulverizing them with their tails, burning and killing for
+  cruel sport before slithering, sated, back to their mucky lairs.
+
+
+
+
+  Peludas despise weakness and loathe creatures smaller than themselves, especially
+  humanoids, whom they see as fragile and soft, good only for eating or breaking.
+  In contrast, peludas have a massive inferiority complex regarding more impressive
+  creatures—especially larger and stronger dragons. Peludas will try anything to become
+  stronger, including ingesting shiny coins, gems, and jewelry, which old folk tales
+  claim will strengthen their quills and fire breath.
+
+
+
+
+  **__Recall Knowledge - Dragon__ (__Arcana__)**: DC 27'
+hp: 170
+hp_misc: null
+immunities:
+- fire
+- paralyzed
+- sleep
+items: null
+languages:
+- Draconic
+level: 10
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d12+13
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 23
+  traits:
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 2d6
+    type: piercing
+  name: quill
+  plus_damage:
+  - formula: null
+    type: peluda venom
+  to_hit: 23
+  traits:
+  - agile
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 2d6+13
+    type: bludgeoning
+  name: tail
+  plus_damage:
+  - formula: null
+    type: Improved Knockdown
+  to_hit: 23
+  traits:
+  - reach 15 feet
+  - versatile piercing
+name: Peluda
+perception: 21
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The peluda breathes a torrent of flames that deals 7d10 fire damage
+    in a 60-foot line (DC 29 basic Reflex save). They can't use their Breath Weapon
+    again for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Breath Weapon
+  range: null
+  raw_description: '**Breath Weapon** [Two Actions]  (__evocation__, __fire__, __primal__)
+    The peluda breathes a torrent of flames that deals 7d10 fire damage in a 60-foot
+    line (DC 29 basic Reflex save). They can''t use their Breath Weapon again for
+    1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - evocation
+  - fire
+  - primal
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw** DC 29 Fortitude; **Maximum Duration** 6 rounds; **Stage
+    1** 2d6 poison and __flat-footed__ (1 round); **Stage 2** 2d6 poison, __enfeebled
+    1__, and flat-footed (1 round); **Stage 3** 2d6 poison, enfeebled 2, and flat-footed
+    (1 round)'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Peluda Venom
+  range: null
+  raw_description: '**Peluda Venom** (__poison__) **Saving Throw** DC 29 Fortitude;
+    **Maximum Duration** 6 rounds; **Stage 1** 2d6 poison and __flat-footed__ (1 round);
+    **Stage 2** 2d6 poison, __enfeebled 1__, and flat-footed (1 round); **Stage 3**
+    2d6 poison, enfeebled 2, and flat-footed (1 round)'
+  requirements: null
+  success: null
+  traits:
+  - poison
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The peluda bristles their quills and shakes, sending dozens of spear-like
+    barbs in every direction. All creatures within 30 feet take 11d6 piercing damage
+    (DC 29 basic Reflex save) and are exposed to peluda venom if they take any damage.
+    The peluda can't use Quill Barrage again for 1 minute.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Quill Barrage
+  range: null
+  raw_description: '**Quill Barrage** [Two Actions]  The peluda bristles their quills
+    and shakes, sending dozens of spear-like barbs in every direction. All creatures
+    within 30 feet take 11d6 piercing damage (DC 29 basic Reflex save) and are exposed
+    to peluda venom if they take any damage. The peluda can''t use Quill Barrage again
+    for 1 minute.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 21
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 17
+  ref_misc: null
+  will: 19
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +21
+- darkvision
+size: Large
+skills:
+- bonus: 23
+  misc: null
+  name: 'Athletics '
+- bonus: 19
+  misc: null
+  name: 'Intimidation '
+source:
+- abbr: Bestiary 2
+  page_start: 196
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+- amount: 30
+  type: swim
+spell_lists: null
+traits:
+- LE
+- Large
+- Dragon
+- Fire
+type: Creature
+weaknesses: null

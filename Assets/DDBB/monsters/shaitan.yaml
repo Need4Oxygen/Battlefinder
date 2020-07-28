@@ -1,0 +1,202 @@
+ability_mods:
+  cha_mod: 3
+  con_mod: 4
+  dex_mod: 1
+  int_mod: 3
+  str_mod: 6
+  wis_mod: 2
+ac: 25
+ac_special: null
+alignment: LN
+automatic_abilities: null
+description: 'Hailing from the Plane of Earth, shaitans are proud and brazen genies.
+  They value physical skill and love bargaining, games of chance, and working with
+  metal and stone. Immense gemstones and veins of precious metal crisscross their
+  home plane, and the industrious shaitans have built a vast mercantile empire from
+  these abundant natural resources.
+
+
+
+
+  **__Recall Knowledge - Elemental__ (__Arcana__, __Nature__)**: DC 25'
+hp: 110
+hp_misc: null
+immunities: null
+items:
+- +1 falchion
+languages:
+- Common
+- Terran
+level: 7
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d10+12
+    type: slashing
+  name: falchion
+  plus_damage: null
+  to_hit: 20
+  traits:
+  - forceful +1
+  - magical
+  - reach 10 feet
+  - sweep
+- action_cost: One Action
+  damage:
+    formula: 1d4+12
+    type: bludgeoning
+  name: fist
+  plus_damage:
+  - formula: null
+    type: Push 10 feet and shove into stone
+  to_hit: 19
+  traits:
+  - agile
+  - magical
+  - nonlethal
+  - reach 10 feet
+name: Shaitan
+perception: 15
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The shaitan can Burrow through dirt and stone at its full burrow Speed,
+    leaving no tunnels or signs of its passing.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Earth Glide
+  range: null
+  raw_description: '**Earth Glide** The shaitan can Burrow through dirt and stone
+    at its full burrow Speed, leaving no tunnels or signs of its passing.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When the shaitan Pushes a creature into a stone barrier, the target
+    must succeed at a DC 22 Reflex save or become merged with the barrier (as __meld
+    with stone__). The victim can attempt to Escape (DC 28).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Shove into Stone
+  range: null
+  raw_description: '**Shove into Stone** (__arcane__, __earth__, __transmutation__)
+    When the shaitan Pushes a creature into a stone barrier, the target must succeed
+    at a DC 22 Reflex save or become merged with the barrier (as __meld with stone__).
+    The victim can attempt to Escape (DC 28).'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - earth
+  - transmutation
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances:
+- amount: 10
+  type: electricity
+ritual_lists: null
+saves:
+  fort: 18
+  fort_misc: null
+  misc: null
+  ref: 12
+  ref_misc: null
+  will: 15
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +15
+- darkvision
+- detect magic
+- tremorsense (imprecise) 60 feet
+size: Large
+skills:
+- bonus: 19
+  misc: null
+  name: 'Athletics '
+- bonus: 14
+  misc: null
+  name: 'Crafting '
+- bonus: 16
+  misc: null
+  name: 'Deception '
+- bonus: 15
+  misc: null
+  name: 'Nature '
+- bonus: 14
+  misc: null
+  name: 'Society '
+source:
+- abbr: Bestiary
+  page_start: 164
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 45
+  type: burrow
+- amount: 20
+  type: climb
+- amount: null
+  type: earth glide
+spell_lists:
+- dc: 24
+  misc: null
+  name: Arcane Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 7
+    spells:
+    - frequency: to Astral Plane, Elemental Planes, or Material Plane only
+      name: plane shift
+      requirement: null
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: self only
+      name: veil
+      requirement: null
+    - frequency: null
+      name: wall of stone
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: at will
+      name: shape stone
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: x2
+      name: glitterdust
+      requirement: null
+  - heightened_level: 4
+    level: -1
+    spells:
+    - frequency: null
+      name: detect magic
+      requirement: null
+  to_hit: null
+traits:
+- Uncommon
+- LN
+- Large
+- Earth
+- Elemental
+- Genie
+type: Creature
+weaknesses: null

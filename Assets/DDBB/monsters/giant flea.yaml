@@ -1,0 +1,124 @@
+ability_mods:
+  cha_mod: -4
+  con_mod: 3
+  dex_mod: 3
+  int_mod: -5
+  str_mod: 2
+  wis_mod: 1
+ac: 19
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Giant fleas are commonly found in areas containing hardy megafauna,
+  such as dinosaurs or mammoths.
+
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 18'
+hp: 50
+hp_misc: null
+immunities:
+- disease
+items: null
+languages: null
+level: 3
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d8+4
+    type: piercing
+  name: proboscis
+  plus_damage:
+  - formula: null
+    type: Suck Blood and flea fever
+  to_hit: 12
+  traits: null
+name: Giant Flea
+perception: 10
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Drain from flea fever can't be reduced or recovered from naturally
+    until the disease is cured. **Saving Throw** DC 18 Fortitude; **Stage 1** __drained
+    1__ (1d4 hours), **Stage 2** drained 1 and __sickened 1__ (1 day), **Stage 3**
+    drained 2 and sickened 1 (1 day), **Stage 4** drained 3 and sickened 1 (1 day),
+    **Stage 5** dead
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Flea Fever
+  range: null
+  raw_description: '**Flea Fever** (__disease__) Drain from flea fever can''t be reduced
+    or recovered from naturally until the disease is cured. **Saving Throw** DC 18
+    Fortitude; **Stage 1** __drained 1__ (1d4 hours), **Stage 2** drained 1 and __sickened
+    1__ (1 day), **Stage 3** drained 2 and sickened 1 (1 day), **Stage 4** drained
+    3 and sickened 1 (1 day), **Stage 5** dead'
+  requirements: null
+  success: null
+  traits:
+  - disease
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The giant flea's last action was a successful proboscis Strike
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Suck Blood
+  range: null
+  raw_description: '**Suck Blood**   **Requirements** The giant flea''s last action
+    was a successful proboscis Strike; **Effect** The giant flea drinks the creature''s
+    blood. The victim becomes drained 1 and the flea regains 5 HP.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 12
+  fort_misc: null
+  misc: null
+  ref: 12
+  ref_misc: null
+  will: 4
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +10
+- low-light vision
+- scent (imprecise) 30 feet
+size: Large
+skills:
+- bonus: 10
+  misc: null
+  name: 'Acrobatics '
+- bonus: 9
+  misc: +15 to Jump
+  name: 'Athletics '
+source:
+- abbr: 'Pathfinder #151: The Show Must Go On'
+  page_start: 83
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+spell_lists: null
+traits:
+- N
+- Large
+- Animal
+type: Creature
+weaknesses: null

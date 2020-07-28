@@ -1,0 +1,228 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 4
+  dex_mod: 2
+  int_mod: -4
+  str_mod: 4
+  wis_mod: 3
+ac: 16
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: An akata doesn't breathe and is immune to effects that require breathing
+    (such as an __inhaled__ poison).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: No Breath
+  range: null
+  raw_description: '**No Breath** An akata doesn''t breathe and is immune to effects
+    that require breathing (such as an __inhaled__ poison).'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Salt water acts as an extremely strong acid to an akata. Full immersion
+    in salt water deals 4d6 acid damage per round.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Salt Water Vulnerability
+  range: null
+  raw_description: '**Salt Water Vulnerability** Salt water acts as an extremely strong
+    acid to an akata. Full immersion in salt water deals 4d6 acid damage per round.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'An akata is a hairless, blue-skinned quadruped with fearsome jaws, glowing
+  eyes, a pair of thin tails, and a mane of writhing tentacles. It is a strangely
+  silent beast, as it lacks the lungs and vocal chords necessary to vocalize. It also
+  lacks ears, but it has heightened visual and olfactory senses.
+
+
+
+
+  When food is scarce, an akata secretes a resin from its pores that forms into a
+  sturdy cocoon of pale green crystal—the skymetal noqual. An akata can hibernate
+  in this cocoon without needing to eat or drink for centuries, though it retains
+  a rudimentary sense of its surroundings and can break out in only a few minutes''
+  time. These cocoons allow the creatures to travel through the void of space, seeking
+  new worlds where they can infect suitable humanoid hosts with their larval young.
+  Once a victim succumbs to this infection, the offspring fight among themselves until
+  one proves the strongest. The surviving akata then animates the corpse—now a __void
+  zombie__—which shambles about of its own accord.
+
+
+
+
+  **__Recall Knowledge - Aberration__ (__Occultism__)**: DC 20'
+hp: 15
+hp_misc: null
+immunities:
+- disease
+items: null
+languages: null
+level: 1
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6+4
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: null
+    type: void death
+  to_hit: 9
+  traits:
+  - agile
+name: Akata
+perception: 6
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: An akata implants its parasitic larval young into any creature it bites,
+    but only Medium or Small humanoids make suitable hosts; all other creatures are
+    immune to this disease; **Saving Throw** DC 17 Fortitude; **Stage 1** carrier
+    with no ill effect 1 (1 day); **Stage 2** __drained 1__ (1 day); **Stage 3** as
+    stage 2 (1 day); **Stage 4** drained 2 and __fatigued__ (1 day); **Stage 5** as
+    stage 4 (1 day); **Stage 6** dead and corpse rises as a void zombie in 2d4 hours
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Void Death
+  range: null
+  raw_description: '**Void Death** (__disease__) An akata implants its parasitic larval
+    young into any creature it bites, but only Medium or Small humanoids make suitable
+    hosts; all other creatures are immune to this disease; **Saving Throw** DC 17
+    Fortitude; **Stage 1** carrier with no ill effect 1 (1 day); **Stage 2** __drained
+    1__ (1 day); **Stage 3** as stage 2 (1 day); **Stage 4** drained 2 and __fatigued__
+    (1 day); **Stage 5** as stage 4 (1 day); **Stage 6** dead and corpse rises as
+    a void zombie in 2d4 hours'
+  requirements: null
+  success: null
+  traits:
+  - disease
+  trigger: null
+ranged: null
+rarity: Rare
+resistances:
+- amount: 5
+  type: fire
+- amount: 5
+  type: poison
+ritual_lists: null
+saves:
+  fort: 9
+  fort_misc: null
+  misc: null
+  ref: 5
+  ref_misc: null
+  will: 6
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: After 3 or more days without eating, an akata can secrete resin that
+    encases it in a noqual cocoon. The cocoon has Hardness 9, 40 HP, and a Broken
+    Threshold of 18. It has resistance 5 to damage from magical sources. As long as
+    the cocoon remains intact, the akata can't be harmed, and it doesn't need to eat
+    or drink. While inside the cocoon, the akata gains __lifesense 30 feet__. The
+    akata remains in a state of hibernation until it is exposed to extreme heat or
+    senses a living creature, at which point it can burst free of its cocoon in 1d4
+    minutes.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Hibernation
+  range: null
+  raw_description: '**Hibernation** After 3 or more days without eating, an akata
+    can secrete resin that encases it in a noqual cocoon. The cocoon has Hardness
+    9, 40 HP, and a Broken Threshold of 18. It has resistance 5 to damage from magical
+    sources. As long as the cocoon remains intact, the akata can''t be harmed, and
+    it doesn''t need to eat or drink. While inside the cocoon, the akata gains __lifesense
+    30 feet__. The akata remains in a state of hibernation until it is exposed to
+    extreme heat or senses a living creature, at which point it can burst free of
+    its cocoon in 1d4 minutes.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: An akata has no auditory senses. It is immune to __auditory__ effects,
+    automatically critically fails Perception checks that require it to hear, and
+    takes a -2 status penalty to Perception checks (but not initiative rolls) that
+    involve sound but also rely on other senses.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: No Hearing
+  range: null
+  raw_description: '**No Hearing** An akata has no auditory senses. It is immune to
+    __auditory__ effects, automatically critically fails Perception checks that require
+    it to hear, and takes a -2 status penalty to Perception checks (but not initiative
+    rolls) that involve sound but also rely on other senses.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +6
+- darkvision
+- no hearing
+- scent (imprecise) 30 feet
+size: Medium
+skills:
+- bonus: 7
+  misc: null
+  name: 'Acrobatics '
+- bonus: 7
+  misc: null
+  name: 'Athletics '
+- bonus: 7
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 13
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+- amount: 15
+  type: climb
+spell_lists: null
+traits:
+- Rare
+- N
+- Medium
+- Aberration
+type: Creature
+weaknesses:
+- amount: 5
+  type: salt water

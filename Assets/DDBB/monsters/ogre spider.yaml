@@ -1,0 +1,173 @@
+ability_mods:
+  cha_mod: -4
+  con_mod: 4
+  dex_mod: 4
+  int_mod: -5
+  str_mod: 6
+  wis_mod: 2
+ac: 23
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'These terrifying creatures grow as large as elephants. The placement
+  of their eyes above their wide mandibles evokes the grimacing visage of an ogre''s
+  leer. __Ogres__ themselves find the appearance of ogre spider faces simultaneously
+  amusing and adorable, but in most cases, ogres'' attempts to keep these spiders
+  as pets result in dead ogres and well-fed spiders.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 20'
+hp: 70
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 5
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+8
+    type: null
+  name: bite
+  plus_damage:
+  - formula: null
+    type: ogre spider venom
+  to_hit: 15
+  traits: null
+name: Ogre Spider
+perception: 13
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: An ogre spider can fit through tight spaces as if it were a Large creature.
+    While __Squeezing__, it can move at its full speed.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Eerie Flexibility
+  range: null
+  raw_description: '**Eerie Flexibility** An ogre spider can fit through tight spaces
+    as if it were a Large creature. While __Squeezing__, it can move at its full speed.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw** Fortitude DC 22; **Maximum Duration** 6 rounds; **Stage
+    1** 1d6 poison damage (1 round); **Stage 2** 1d6 poison damage, __clumsy 1__,
+    and __enfeebled 1__ (1 round); **Stage 3** 2d6 poison damage, clumsy 1, and enfeebled
+    1 (1 round); **Stage 4** 2d6 poison damage, clumsy 2, and enfeebled 2 (1 round)'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Ogre Spider Venom
+  range: null
+  raw_description: '**Ogre Spider Venom** (__poison__) **Saving Throw** Fortitude
+    DC 22; **Maximum Duration** 6 rounds; **Stage 1** 1d6 poison damage (1 round);
+    **Stage 2** 1d6 poison damage, __clumsy 1__, and __enfeebled 1__ (1 round); **Stage
+    3** 2d6 poison damage, clumsy 1, and enfeebled 1 (1 round); **Stage 4** 2d6 poison
+    damage, clumsy 2, and enfeebled 2 (1 round)'
+  requirements: null
+  success: null
+  traits:
+  - poison
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A creature hit by the ogre spider's web attack is __immobilized__ and
+    stuck to the nearest surface until it __Escapes__ (DC 22).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Web Trap
+  range: null
+  raw_description: '**Web Trap** A creature hit by the ogre spider''s web attack is
+    __immobilized__ and stuck to the nearest surface until it __Escapes__ (DC 22).'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage: null
+  name: web
+  plus_damage: null
+  to_hit: 13
+  traits:
+  - range increment 30 feet
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 15
+  fort_misc: null
+  misc: null
+  ref: 13
+  ref_misc: null
+  will: 9
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The ogre spider has __imprecise tremorsense__ to detect the vibrations
+    of creatures touching its web.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Web Sense
+  range: null
+  raw_description: '**Web Sense** The ogre spider has __imprecise tremorsense__ to
+    detect the vibrations of creatures touching its web.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +13
+- darkvision
+- web sense
+size: Huge
+skills:
+- bonus: 13
+  misc: null
+  name: 'Acrobatics '
+- bonus: 13
+  misc: null
+  name: 'Athletics '
+source:
+- abbr: Bestiary 2
+  page_start: 249
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+- amount: 30
+  type: climb
+spell_lists: null
+traits:
+- N
+- Huge
+- Animal
+type: Creature
+weaknesses: null

@@ -1,0 +1,277 @@
+ability_mods:
+  cha_mod: 7
+  con_mod: 10
+  dex_mod: 9
+  int_mod: 0
+  str_mod: 11
+  wis_mod: 8
+ac: 43
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 60 feet, DC 45. A creature entering or starting its turn in the aura
+    that fails at a Fortitude save becomes __doomed 1__ and __drained 1__. If the
+    target was already doomed or drained, the values of these conditions increase
+    by 1, to a maximum of doomed 3 and drained 3. A creature that dies while doomed
+    3 and drained 3 in this way disintegrates into black sand.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Aura of Annihilation
+  range: null
+  raw_description: '**Aura of Annihilation** (__aura__, __necromancy__, __occult__)
+    60 feet, DC 45. A creature entering or starting its turn in the aura that fails
+    at a Fortitude save becomes __doomed 1__ and __drained 1__. If the target was
+    already doomed or drained, the values of these conditions increase by 1, to a
+    maximum of doomed 3 and drained 3. A creature that dies while doomed 3 and drained
+    3 in this way disintegrates into black sand.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - necromancy
+  - occult
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Unlike most undead, Iffdahsil isn't destroyed at 0 HP. Iffdahsil's
+    fast healing continues to function normally, though on any round it begins its
+    turn at 0 HP, it is __enfeebled 4__ and __slowed 1__ until the start of its next
+    turn. While Iffdahsil is at 0 HP, it can be killed permanently only by simultaneously
+    exposing it to direct sunlight (or a 10th-level __sunburst__ spell) and casting
+    a __miracle__ or __wish__ spell (or similar magic) directed at destroying it.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Unkillable
+  range: null
+  raw_description: '**Unkillable** (__necromancy__, __occult__) Unlike most undead,
+    Iffdahsil isn''t destroyed at 0 HP. Iffdahsil''s fast healing continues to function
+    normally, though on any round it begins its turn at 0 HP, it is __enfeebled 4__
+    and __slowed 1__ until the start of its next turn. While Iffdahsil is at 0 HP,
+    it can be killed permanently only by simultaneously exposing it to direct sunlight
+    (or a 10th-level __sunburst__ spell) and casting a __miracle__ or __wish__ spell
+    (or similar magic) directed at destroying it.'
+  requirements: null
+  success: null
+  traits:
+  - necromancy
+  - occult
+  trigger: null
+description: 'The slithering horror known as Iffdahsil is an undead __shoggoth__ that
+  has haunted the vault of the Black Desert for millennia. __Drow__ legends in particular
+  tend to feature Iffdahsil, terrifying the elves from a young age.
+
+
+
+
+  **__Recall Knowledge - Aberration__ (__Occultism__)**: DC 52
+
+
+  **__Recall Knowledge - Undead__ (__Religion__)**: DC 52'
+hp: 380
+hp_misc: fast healing 30, negative healing
+immunities:
+- blinded
+- controlled
+- critical hits
+- deafened
+- death effects
+- disease
+- paralyze
+- poison
+- precision
+- sleep
+- unconscious
+items: null
+languages:
+- Aklo
+- Necril
+level: 21
+melee:
+- action_cost: One Action
+  damage:
+    formula: 5d10+21
+    type: piercing
+  name: pseudopod
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 38
+  traits:
+  - magical
+  - reach 30 feet
+name: Iffdahsil
+perception: 38
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: 3d10+17 piercing
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Constrict
+  range: null
+  raw_description: '**__Constrict__**   3d10+17 piercing'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A creature that begins its turn inside Iffdahsil takes 10d6 negative
+    damage. Iffdahsil gains temporary HP for 1 minute equal to half the damage dealt.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Eat Away
+  range: null
+  raw_description: '**Eat Away** A creature that begins its turn inside Iffdahsil
+    takes 10d6 negative damage. Iffdahsil gains temporary HP for 1 minute equal to
+    half the damage dealt.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: DC 43, 10d6 negative, Escape DC 43, Rupture 45
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Engulf
+  range: null
+  raw_description: '**__Engulf__** [Two Actions]  DC 43, 10d6 negative, Escape DC
+    43, Rupture 45'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: Iffdahsil deals 8d8 piercing damage to each creature in a 10-foot emanation
+    (DC 43 basic Reflex save) and can also attempt to __Grab__ any creatures who critically
+    fail their save as a free action. Iffdahsil is then __flat-footed__ until the
+    start of its next turn.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Tentacular Burst
+  range: null
+  raw_description: '**Tentacular Burst** [Two Actions]  Iffdahsil deals 8d8 piercing
+    damage to each creature in a 10-foot emanation (DC 43 basic Reflex save) and can
+    also attempt to __Grab__ any creatures who critically fail their save as a free
+    action. Iffdahsil is then __flat-footed__ until the start of its next turn.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Rare
+resistances:
+- amount: 20
+  type: acid
+- amount: 20
+  type: cold
+- amount: 15
+  type: physical (except magical silver)
+- amount: 20
+  type: sonic
+ritual_lists: null
+saves:
+  fort: 39
+  fort_misc: null
+  misc: +1 status to all saves vs. magical effects
+  ref: 36
+  ref_misc: null
+  will: 35
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +38
+- darkvision
+- lifesense (imprecise) 60 feet
+- scent (imprecise) 60 feet
+- tremorsense (imprecise) 60 feet
+size: Gargantuan
+skills:
+- bonus: 40
+  misc: null
+  name: 'Athletics '
+- bonus: 36
+  misc: null
+  name: 'Intimidation '
+source:
+- abbr: 'Pathfinder #155: Lord of the Black Sands'
+  page_start: 81
+  page_stop: null
+speed:
+- amount: 40
+  type: Land
+- amount: 40
+  type: burrow
+- amount: 25
+  type: climb
+spell_lists:
+- dc: 42
+  misc: null
+  name: Occult Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 9
+    spells:
+    - frequency: null
+      name: overwhelming presence
+      requirement: null
+  - heightened_level: null
+    level: 8
+    spells:
+    - frequency: at will, self only
+      name: disappearance
+      requirement: null
+    - frequency: null
+      name: hallucination
+      requirement: null
+  - heightened_level: null
+    level: 7
+    spells:
+    - frequency: null
+      name: hallucinatory terrain
+      requirement: null
+  to_hit: null
+traits:
+- Rare
+- CE
+- Gargantuan
+- Aberration
+- Undead
+type: Creature
+weaknesses:
+- amount: 20
+  type: good

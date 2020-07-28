@@ -1,0 +1,174 @@
+ability_mods:
+  cha_mod: -5
+  con_mod: 2
+  dex_mod: -2
+  int_mod: -5
+  str_mod: 3
+  wis_mod: 0
+ac: 8
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'These blobs of nearly transparent protoplasm are identical in form and
+  behavior to the microscopic creatures from which they have evolved, except their
+  outlandish size makes them all the more dangerous. Unlike slimes, puddings, and
+  other deadly oozes, giant amoebas have an outer membrane that contains their internal
+  structures, making them more susceptible to slashing weapons than their amorphous
+  kin. However, this membrane is also extremely flexible and permeable, allowing them
+  to surround prey and absorb it, suffocating and slowly digesting it in the amoeba''s
+  acidic fluids.
+
+
+
+
+  **__Recall Knowledge - Ooze__ (__Occultism__)**: DC 15'
+hp: 45
+hp_misc: null
+immunities:
+- acid
+- critical hits
+- mental
+- precision
+- unconscious
+- visual
+items: null
+languages: null
+level: 1
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6
+    type: acid
+  name: pseudopod
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 8
+  traits: null
+name: Giant Amoeba
+perception: 4
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: 1d4 bludgeoning plus 1d4 acid, DC 17
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Constrict
+  range: null
+  raw_description: '**__Constrict__**   1d4 bludgeoning plus 1d4 acid, DC 17'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The giant amoeba begins its turn with a target its size or smaller __grabbed__
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Envelop
+  range: null
+  raw_description: '**Envelop** [Three Actions]  **Requirements** The giant amoeba
+    begins its turn with a target its size or smaller __grabbed__; **Effect** The
+    giant amoeba maintains the __Grab__ and extends pseudopods to surround the creature
+    and pull it inside the amoeba''s body. This thereafter has the same effect as
+    if the amoeba had __Engulfed__ the creature (DC 17, 1d6 acid, Escape DC 17, Rupture
+    3).'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A giant amoeba's acid damages only organic material—not metal, stone,
+    or other inorganic substances.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Weak Acid
+  range: null
+  raw_description: '**Weak Acid** A giant amoeba''s acid damages only organic material—not
+    metal, stone, or other inorganic substances.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 5
+  type: slashing
+ritual_lists: null
+saves:
+  fort: 7
+  fort_misc: null
+  misc: null
+  ref: 3
+  ref_misc: null
+  will: 5
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A giant amoeba can sense nearby creatures through vibration and air
+    or water movement.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Motion Sense
+  range: null
+  raw_description: '**Motion Sense** A giant amoeba can sense nearby creatures through
+    vibration and air or water movement.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +4
+- motion sense 60 feet
+- no vision
+size: Small
+skills:
+- bonus: 6
+  misc: null
+  name: 'Athletics '
+- bonus: 3
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 192
+  page_stop: null
+speed:
+- amount: 10
+  type: Land
+- amount: 10
+  type: climb
+- amount: 10
+  type: swim
+spell_lists: null
+traits:
+- N
+- Small
+- Amphibious
+- Mindless
+- Ooze
+type: Creature
+weaknesses: null

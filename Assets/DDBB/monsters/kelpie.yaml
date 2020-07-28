@@ -1,0 +1,178 @@
+ability_mods:
+  cha_mod: 4
+  con_mod: 3
+  dex_mod: 2
+  int_mod: -1
+  str_mod: 5
+  wis_mod: 3
+ac: 21
+ac_special: null
+alignment: NE
+automatic_abilities: null
+description: 'Kelpies are malevolent amphibious fey shapechangers intent on luring
+  mortals to their doom. These cruel predators lurk in and around areas of water,
+  slightly preferring freshwater over saltwater. Kelpies lure or drag their prey underwater
+  then drown and devour them, leaving behind only the victim''s heart and liver— the
+  only parts of a meal kelpies find unpleasant. Kelpies are fond of magically disguising
+  itself as fine steeds or attractive strangers to draw in victims, but its true appearance
+  takes the form of a hideous equine with slimy, green flesh resembling aquatic plants.
+
+
+
+
+  **__Recall Knowledge - Fey__ (__Nature__)**: DC 19'
+hp: 60
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Aquan
+- Common
+- Sylvan
+level: 4
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+7
+    type: bludgeoning
+  name: jaws
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 13
+  traits: null
+name: Kelpie
+perception: 11
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: As failure, but the target doesn't consider water a danger and
+    will enter an area of water even if it can't swim or breathe water. If it is attacked
+    by the kelpie or starts to drown, it can attempt a new save at the start of its
+    next turn, but it isn't freed automatically.
+  critical_success: The creature is unaffected and is temporarily immune to Captivating
+    Lure for 24 hours.
+  description: "The kelpie instills an overwhelming attraction to itself within the\
+    \ mind of a single creature within 60 feet. The target perceives the kelpie as\
+    \ a desirable person (if the kelpie is in humanoid form) or a valuable steed (if\
+    \ the kelpie is in equine form) and must attempt a DC 23 Will saving throw. \n\
+    \n"
+  effect: null
+  effects: null
+  failure: The creature is fascinated, and it must spend each of its actions to move
+    closer to the kelpie as expediently as possible while avoiding obvious dangers.
+    If a captivated creature is adjacent to the kelpie, it either attempts to mount
+    the kelpie (if the kelpie is in equine form) or stays still and doesn't act. If
+    the creature is attacked by the kelpie, or if it can't breathe water and enters
+    an area of water, the creature is freed from captivation at the end of the kelpie's
+    turn.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Captivating Lure
+  range: null
+  raw_description: "**Captivating Lure** [Two Actions]  (__concentrate__, __emotion__,\
+    \ __enchantment__, __incapacitation__, __mental__, __primal__) The kelpie instills\
+    \ an overwhelming attraction to itself within the mind of a single creature within\
+    \ 60 feet. The target perceives the kelpie as a desirable person (if the kelpie\
+    \ is in humanoid form) or a valuable steed (if the kelpie is in equine form) and\
+    \ must attempt a DC 23 Will saving throw. \n\n**Critical Success** The creature\
+    \ is unaffected and is temporarily immune to Captivating Lure for 24 hours. \n\
+    \n**Success** The creature is __stupefied 1__ for 1 round and is then temporarily\
+    \ immune to Captivating Lure for 24 hours. \n\n**Failure** The creature is __fascinated__,\
+    \ and it must spend each of its actions to move closer to the kelpie as expediently\
+    \ as possible while avoiding obvious dangers. If a captivated creature is adjacent\
+    \ to the kelpie, it either attempts to mount the kelpie (if the kelpie is in equine\
+    \ form) or stays still and doesn't act. If the creature is attacked by the kelpie,\
+    \ or if it can't breathe water and enters an area of water, the creature is freed\
+    \ from captivation at the end of the kelpie's turn. \n\n**Critical Failure** As\
+    \ failure, but the target doesn't consider water a danger and will enter an area\
+    \ of water even if it can't swim or breathe water. If it is attacked by the kelpie\
+    \ or starts to drown, it can attempt a new save at the start of its next turn,\
+    \ but it isn't freed automatically."
+  requirements: null
+  success: The creature is stupefied 1 for 1 round and is then temporarily immune
+    to Captivating Lure for 24 hours.
+  traits:
+  - concentrate
+  - emotion
+  - enchantment
+  - incapacitation
+  - mental
+  - primal
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The kelpie can take on the appearance of any Medium or Large animal
+    of an equine nature (such as a horse, __hippocampus__, or pony), or any Small
+    or Medium humanoid. This doesn't change its Speeds or its attack and damage modifiers
+    with its Strikes.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Change Shape
+  range: null
+  raw_description: '**__Change Shape__**   (__concentrate__, __polymorph__, __primal__,
+    __transmutation__) The kelpie can take on the appearance of any Medium or Large
+    animal of an equine nature (such as a horse, __hippocampus__, or pony), or any
+    Small or Medium humanoid. This doesn''t change its Speeds or its attack and damage
+    modifiers with its Strikes.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - polymorph
+  - primal
+  - transmutation
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 5
+  type: fire
+ritual_lists: null
+saves:
+  fort: 11
+  fort_misc: null
+  misc: null
+  ref: 12
+  ref_misc: null
+  will: 14
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +11
+- low-light vision
+size: Large
+skills:
+- bonus: 11
+  misc: null
+  name: 'Athletics '
+- bonus: 14
+  misc: null
+  name: 'Deception '
+- bonus: 10
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 154
+  page_stop: null
+speed:
+- amount: 35
+  type: Land
+- amount: 35
+  type: swim
+spell_lists: null
+traits:
+- NE
+- Large
+- Amphibious
+- Fey
+type: Creature
+weaknesses:
+- amount: 5
+  type: cold iron

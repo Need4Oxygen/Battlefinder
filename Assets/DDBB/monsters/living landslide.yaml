@@ -1,0 +1,148 @@
+ability_mods:
+  cha_mod: -1
+  con_mod: 4
+  dex_mod: -1
+  int_mod: -2
+  str_mod: 5
+  wis_mod: 1
+ac: 21
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The living landslide crumbles into the ground, Burrowing down 10 feet. This
+    Burrowing does not trigger reactions. The living landslide can't Crumble again
+    for 1d4 rounds.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Crumble
+  range: null
+  raw_description: '**Crumble** [Reaction] **Trigger** The living landslide takes
+    damage from a hostile source while atop rock or earth. **Effect** The living landslide
+    crumbles into the ground, Burrowing down 10 feet. This Burrowing does not trigger
+    reactions. The living landslide can''t Crumble again for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: The living landslide takes damage from a hostile source while atop rock
+    or earth.
+description: 'Living landslides resemble humanoids made of earth and gravel.
+
+
+
+
+  **__Recall Knowledge - Elemental__ (__Arcana__, __Nature__)**: DC 20'
+hp: 90
+hp_misc: null
+immunities:
+- bleed
+- paralyzed
+- poison
+- sleep
+items: null
+languages:
+- Terran
+level: 5
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+8
+    type: bludgeoning
+  name: fist
+  plus_damage: null
+  to_hit: 16
+  traits:
+  - reach 10 feet
+name: Living Landslide
+perception: 12
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The living landslide can Burrow through any earthen matter, including
+    rock. When it does so, the living landslide moves at its full burrow Speed, leaving
+    no tunnels or signs of its passing.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Earth Glide
+  range: null
+  raw_description: '**Earth Glide** The living landslide can Burrow through any earthen
+    matter, including rock. When it does so, the living landslide moves at its full
+    burrow Speed, leaving no tunnels or signs of its passing.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 15
+  fort_misc: null
+  misc: null
+  ref: 8
+  ref_misc: null
+  will: 10
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When not touching solid ground, the living landslide is slowed 1 and
+    can't use reactions.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Earthbound
+  range: null
+  raw_description: '**Earthbound** When not touching solid ground, the living landslide
+    is slowed 1 and can''t use reactions.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +12
+- darkvision
+- tremorsense (imprecise) 60 feet
+size: Medium
+skills:
+- bonus: 14
+  misc: null
+  name: 'Athletics '
+- bonus: 8
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 146
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 25
+  type: burrow
+- amount: null
+  type: earth glide
+spell_lists: null
+traits:
+- N
+- Medium
+- Earth
+- Elemental
+type: Creature
+weaknesses: null

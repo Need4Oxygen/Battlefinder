@@ -1,0 +1,406 @@
+ability_mods:
+  cha_mod: 4
+  con_mod: 6
+  dex_mod: 3
+  int_mod: 5
+  str_mod: 7
+  wis_mod: 6
+ac: 38
+ac_special: null
+alignment: LG
+automatic_abilities:
+- action_cost: None
+  critical_failure: The creature is frightened 4.
+  critical_success: The creature is unaffected by the presence.
+  description: 90 feet, DC 33
+  effect: null
+  effects: null
+  failure: The creature is frightened 2.
+  frequency: null
+  full_description: null
+  generic_description: A creature that first enters the area must attempt a Will save.
+    Regardless of the result of the saving throw, the creature is temporarily immune
+    to this monster's Frightful Presence for 1 minute.
+  name: Frightful Presence
+  range: null
+  raw_description: '**Frightful Presence** 90 feet, DC 33 A creature that first enters
+    the area must attempt a Will save. Regardless of the result of the saving throw,
+    the creature is temporarily immune to this monster''s Frightful Presence for 1
+    minute.
+
+    Critical Success The creature is unaffected by the presence.
+
+    Success The creature is frightened 1.
+
+    Failure The creature is frightened 2.
+
+    Critical Success The creature is frightened 4.'
+  requirements: null
+  success: The creature is frightened 1.
+  traits:
+  - aura
+  - emotion
+  - fear
+  - mental
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: Jaws only.
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The dragon improves its result by one degree of success, turning a failure
+    into a success or a critical failure into a normal failure. The dragon can't use
+    this ability again for 1d4 rounds.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Golden Luck
+  range: null
+  raw_description: '**Golden Luck** [Reaction] **Trigger** The gold dragon fails a
+    saving throw. **Effect** The dragon improves its result by one degree of success,
+    turning a failure into a success or a critical failure into a normal failure.
+    The dragon can''t use this ability again for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: The gold dragon fails a saving throw.
+description: 'Gold dragons are the epitome of metallic dragonkind, unrivaled in their
+  strength as well as their wisdom. They command the unwavering reverence of all other
+  metallic dragons, who view gold dragons as their leaders and counselors. Golds rival
+  the raw power of even red dragons, much to the chagrin of their chromatic cousins,
+  and the two races are often regarded as bitter rivals. But despite their incredible
+  power, gold dragons are fond of discourse and prefer to talk through solutions to
+  problems rather than rely upon brute strength. Long-lived as they are, they necessarily
+  take a wide view of all situations and never act without considering all possible
+  options and outcomes. Because of this, gold dragons willingly converse with any
+  creature that seeks them out, even evil chromatic dragons. Mortals might find this
+  behavior strange, considering the longstanding war between chromatic and metallic
+  dragons, but dragons know all too well that desperate situations sometimes call
+  for drastic alliances. And although gold dragons might consider brief truces with
+  their chromatic brethren in the case of world-ending threats, they also know when
+  such alliances have run their course.
+
+
+
+
+  When another metallic dragon faces a quandary or a foe beyond its own ability to
+  overcome, its best option is often to seek the counsel of the eternally wise and
+  gloriously righteous gold dragons. Locating these legendary beings is no easy task,
+  however, for gold dragons are notoriously reclusive. Their intellect and wisdom
+  is such that they prefer to ponder the great questions of life in seclusion, where
+  they strive to formulate solutions to the world''s most pressing problems. As a
+  result, gold dragons are sometimes absent when metallic dragons gather together,
+  or are missing from tribunals where their counsel would be beneficial. Impatient
+  dragons sometimes begrudge gold dragons for this apparent unreliability, but such
+  aspersions are usually a result of jealousy rather than any true criticism; in their
+  hearts, other dragons know that few gold dragons purposefully exclude themselves
+  from truly important matters.
+
+
+  A gold dragon''s incredible foresight and unparalleled enlightenment means they
+  are unlikely to interfere in the business of individual mortals, though the rare
+  person who captures the attention of a gold dragon is fortunate indeed, for there
+  are few beings in the cosmos who can offer such prudent and considerate advice.
+  Rulers and individuals in stations of high power have an easier time of garnering
+  the aid of a gold dragon; entire wars have been avoided thanks to a gold dragon''s
+  last-minute intermediation.
+
+
+  Gold dragons are often found in warm grasslands and savannas, lands where they can
+  enjoy long, meditative flights without attracting the attention of potential enemies.
+  They tend to sleep either out in the open in a barren, remote place, or within a
+  heavily secreted or fortified lair, such as a forgotten sink hole or in the labyrinthine
+  caverns of a terrestrial chasm. Gold dragons may enlist trusted servants and allies
+  to guard their lairs, though many live truly solitary lives, preferring to protect
+  their hoards with nonlethal traps and magical wards.
+
+
+
+
+  **__Recall Knowledge - Dragon__ (__Arcana__)**: DC 34'
+hp: 330
+hp_misc: null
+immunities:
+- fire
+- paralyzed
+- sleep
+items: null
+languages:
+- Common
+- Draconic
+- Dwarven
+- Elven
+- Sylvan
+level: 15
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d12+15
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 3d6
+    type: fire
+  to_hit: 30
+  traits:
+  - fire
+  - magical
+  - reach 15 feet
+- action_cost: One Action
+  damage:
+    formula: 3d10+15
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 30
+  traits:
+  - agile
+  - magical
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 3d10+13
+    type: slashing
+  name: tail
+  plus_damage: null
+  to_hit: 28
+  traits:
+  - magical
+  - reach 20 feet
+- action_cost: One Action
+  damage:
+    formula: 2d12+13
+    type: piercing
+  name: horns
+  plus_damage: null
+  to_hit: 28
+  traits:
+  - agile
+  - magical
+  - reach 15 feet
+name: Adult Gold Dragon
+perception: 29
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The gold dragon breathes in one of two ways. The dragon can't use Breath
+    Weapon again for 1d4 rounds.
+  effect: null
+  effects:
+  - action_cost: None
+    critical_failure: null
+    critical_success: null
+    description: The dragon breathes a blast of flame in a 40-foot cone that deals
+      15d6 fire damage (DC 37 basic Reflex save).
+    effect: null
+    effects: null
+    failure: null
+    frequency: null
+    full_description: null
+    generic_description: null
+    name: Flame
+    range: null
+    raw_description: '**Flame** (__arcane__, __evocation__,__fire__); The dragon breathes
+      a blast of flame in a 40-foot cone that deals 15d6 fire damage (DC 37 basic
+      Reflex save).'
+    requirements: null
+    success: null
+    traits:
+    - arcane
+    - evocation
+    - fire
+    trigger: null
+  - action_cost: None
+    critical_failure: null
+    critical_success: null
+    description: The dragon breathes a blast of weakening gas. Each creature within
+      a 40-foot cone must succeed at a DC 37 Fortitude save or become __enfeebled__
+      2 for 1 minute (or enfeebled 3 on a critical failure).
+    effect: null
+    effects: null
+    failure: null
+    frequency: null
+    full_description: null
+    generic_description: null
+    name: Weakening Gas
+    range: null
+    raw_description: '**Weakening Gas** (__arcane__, __necromancy__); The dragon breathes
+      a blast of weakening gas. Each creature within a 40-foot cone must succeed at
+      a DC 37 Fortitude save or become __enfeebled__ 2 for 1 minute (or enfeebled
+      3 on a critical failure).'
+    requirements: null
+    success: null
+    traits:
+    - arcane
+    - necromancy
+    trigger: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Breath Weapon
+  range: null
+  raw_description: "**Breath Weapon ** [Two Actions]  The gold dragon breathes in\
+    \ one of two ways. The dragon can't use Breath Weapon again for 1d4 rounds.\n\n\
+    \  * **Flame** (__arcane__, __evocation__,__fire__); The dragon breathes a blast\
+    \ of flame in a 40-foot cone that deals 15d6 fire damage (DC 37 basic Reflex save).\n\
+    \n  * **Weakening Gas** (__arcane__, __necromancy__); The dragon breathes a blast\
+    \ of weakening gas. Each creature within a 40-foot cone must succeed at a DC 37\
+    \ Fortitude save or become __enfeebled__ 2 for 1 minute (or enfeebled 3 on a critical\
+    \ failure)."
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The gold dragon makes two claw Strikes and one horns Strike in any
+    order
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Draconic Frenzy
+  range: null
+  raw_description: '**Draconic Frenzy** [Two Actions]  The gold dragon makes two claw
+    Strikes and one horns Strike in any order'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When the gold dragon scores a critical hit with a strike, it recharges
+    Breath Weapon.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Draconic Momentum
+  range: null
+  raw_description: '**Draconic Momentum** When the gold dragon scores a critical hit
+    with a strike, it recharges Breath Weapon.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 15
+  type: cold
+ritual_lists: null
+saves:
+  fort: 28
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 25
+  ref_misc: null
+  will: 28
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +29
+- darkvision
+- scent (imprecise) 60 feet
+size: Huge
+skills:
+- bonus: 22
+  misc: null
+  name: 'Acrobatics '
+- bonus: 24
+  misc: null
+  name: 'Arcana '
+- bonus: 28
+  misc: null
+  name: 'Athletics '
+- bonus: 29
+  misc: null
+  name: 'Diplomacy '
+- bonus: 27
+  misc: null
+  name: 'Medicine '
+- bonus: 29
+  misc: null
+  name: 'Religion '
+- bonus: 26
+  misc: null
+  name: 'Society '
+source:
+- abbr: Bestiary
+  page_start: 124
+  page_stop: null
+speed:
+- amount: 50
+  type: Land
+- amount: 180
+  type: fly
+- amount: 50
+  type: swim
+spell_lists:
+- dc: 35
+  misc: null
+  name: Arcane Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 7
+    spells:
+    - frequency: null
+      name: sunburst
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: gems only
+      name: locate
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: evil only
+      name: detect alignment
+      requirement: null
+  to_hit: null
+traits:
+- LG
+- Huge
+- Dragon
+- Fire
+type: Creature
+weaknesses: null

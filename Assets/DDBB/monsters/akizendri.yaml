@@ -1,0 +1,354 @@
+ability_mods:
+  cha_mod: 1
+  con_mod: 1
+  dex_mod: 4
+  int_mod: 4
+  str_mod: 3
+  wis_mod: 3
+ac: 19
+ac_special: null
+alignment: CN
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 'An akizendri''s vital organs shift and change shape and position constantly.
+    Immediately after the akizendri takes acid, electricity, or sonic damage, it gains
+    the listed amount of resistance to that damage type. This lasts for 1 hour or
+    until the next time the protean takes damage of one of the other types (in which
+    case its resistance changes to match that type), whichever comes first.
+
+
+    The akizendri is immune to __polymorph__ effects unless it is a willing target.
+    If __blinded__ or __deafened__, the akizendri automatically recovers at the end
+    of its next turn as new sensory organs grow to replace the compromised ones.'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Protean Anatomy
+  range: null
+  raw_description: '**Protean Anatomy** (__divine__, __transmutation__) An akizendri''s
+    vital organs shift and change shape and position constantly. Immediately after
+    the akizendri takes acid, electricity, or sonic damage, it gains the listed amount
+    of resistance to that damage type. This lasts for 1 hour or until the next time
+    the protean takes damage of one of the other types (in which case its resistance
+    changes to match that type), whichever comes first.
+
+
+    The akizendri is immune to __polymorph__ effects unless it is a willing target.
+    If __blinded__ or __deafened__, the akizendri automatically recovers at the end
+    of its next turn as new sensory organs grow to replace the compromised ones.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - transmutation
+  trigger: null
+description: 'Akizendris gnaw at sources of knowledge and lore, gleefully corrupting
+  and altering them to vex scholars and sages across the planes with contradictions
+  and untruths. These proteans appear as cackling, serpentine creatures with elongated
+  crocodilian faces, luminous eyes, and arms that vanish at the elbows into swirling
+  clouds of runes before reforming into solid talons.
+
+
+
+
+  Akizendris amuse themselves by rearranging or deleting texts, placing insulting
+  acrostics in poetic verses, and penning crude insults upon title pages. Libraries
+  in such places as __Heaven__, __Axis__, and __Hell__ are especially keen to avoid
+  such contamination, knowing that their records are choice targets for every akizendri
+  in existence.
+
+
+
+
+  **__Recall Knowledge - Monitor__ (__Religion__)**: DC 18'
+hp: 42
+hp_misc: fast healing 1
+immunities: null
+items: null
+languages:
+- Abyssal
+- Celestial
+- Protean
+- telepathy (touch)
+level: 3
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+3
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 1d4
+    type: chaotic and garbled thoughts
+  to_hit: 12
+  traits:
+  - chaotic
+  - finesse
+  - magical
+- action_cost: One Action
+  damage:
+    formula: 2d6+3
+    type: bludgeoning
+  name: tail
+  plus_damage:
+  - formula: 1d4
+    type: chaotic and Grab
+  to_hit: 12
+  traits:
+  - chaotic
+  - finesse
+  - magical
+name: Akizendri
+perception: 8
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The akizendri takes on the appearance of any Small or smaller creature.
+    This doesn't change its Speed or its attack and damage bonuses with its Strikes,
+    but might change the damage type its Strikes deal.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Change Shape
+  range: null
+  raw_description: '**__Change Shape__**   (__concentrate__, __divine__, __polymorph__,
+    __transmutation__) The akizendri takes on the appearance of any Small or smaller
+    creature. This doesn''t change its Speed or its attack and damage bonuses with
+    its Strikes, but might change the damage type its Strikes deal.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - divine
+  - polymorph
+  - transmutation
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: 1d8+3 bludgeoning, DC 20
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Constrict
+  range: null
+  raw_description: '**__Constrict__**   1d8+3 bludgeoning, DC 20'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: As failure, but the creature is also confused for 1 round.
+  critical_success: null
+  description: "A creature hit by the akizendri's bite Strike must attempt a DC 20\
+    \ Will save. \n\n"
+  effect: null
+  effects: null
+  failure: The creature is stupefied 1 for 1d4 rounds.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Garbled Thoughts
+  range: null
+  raw_description: "**Garbled Thoughts** (__divine__, __emotion__, __enchantment__,\
+    \ __mental__) A creature hit by the akizendri's bite Strike must attempt a DC\
+    \ 20 Will save. \n\n**Success** The creature is unaffected. \n\n**Failure** The\
+    \ creature is __stupefied 1__ for 1d4 rounds. \n\n**Critical Failure** As failure,\
+    \ but the creature is also __confused__ for 1 round."
+  requirements: null
+  success: The creature is unaffected.
+  traits:
+  - divine
+  - emotion
+  - enchantment
+  - mental
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When the akizendri casts __secret page__, it can physically immerse
+    itself in the text, changing the message of the text in the process. It can exit
+    the book at any point by Dismissing secret page, at which point it appears in
+    a space adjacent to the text. If it does so to begin combat, it rolls a __Deception__
+    check for initiative. As long as it remains immersed in the text, the akizendri
+    has no body. It can communicate telepathically with a creature as long as the
+    creature touches the book or scroll that contains the secret page. It can sense
+    nearby creatures using its entropy sense, but not in any other way, nor can it
+    use any attack, manipulate, or move actions or speak aloud. If the object it is
+    immersed in is destroyed, the akizendri reappears in an adjacent square and is
+    __stunned 1__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Text Immersion
+  range: null
+  raw_description: '**Text Immersion** (__divine__, __transmutation__) When the akizendri
+    casts __secret page__, it can physically immerse itself in the text, changing
+    the message of the text in the process. It can exit the book at any point by Dismissing
+    secret page, at which point it appears in a space adjacent to the text. If it
+    does so to begin combat, it rolls a __Deception__ check for initiative. As long
+    as it remains immersed in the text, the akizendri has no body. It can communicate
+    telepathically with a creature as long as the creature touches the book or scroll
+    that contains the secret page. It can sense nearby creatures using its entropy
+    sense, but not in any other way, nor can it use any attack, manipulate, or move
+    actions or speak aloud. If the object it is immersed in is destroyed, the akizendri
+    reappears in an adjacent square and is __stunned 1__.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - transmutation
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 3
+  type: precision
+- amount: 6
+  type: protean anatomy
+ritual_lists: null
+saves:
+  fort: 6
+  fort_misc: null
+  misc: null
+  ref: 11
+  ref_misc: null
+  will: 10
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: An akizendri can anticipate the most likely location of a creature
+    through their supernatural insight into the forces of chaotic probabilities and
+    chance. This grants the akizendri the ability to sense creatures within the listed
+    range. A creature under the effects of __nondetection__ or that is otherwise shielded
+    from __divinations__ and __predictions__ cannot be noticed via entropy sense.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Entropy Sense
+  range: null
+  raw_description: '**Entropy Sense** (__divination__, __divine__, __prediction__)
+    An akizendri can anticipate the most likely location of a creature through their
+    supernatural insight into the forces of chaotic probabilities and chance. This
+    grants the akizendri the ability to sense creatures within the listed range. A
+    creature under the effects of __nondetection__ or that is otherwise shielded from
+    __divinations__ and __predictions__ cannot be noticed via entropy sense.'
+  requirements: null
+  success: null
+  traits:
+  - divination
+  - divine
+  - prediction
+  trigger: null
+senses:
+- Perception +8
+- darkvision
+- entropy sense (imprecise) 30 feet
+size: Small
+skills:
+- bonus: 9
+  misc: null
+  name: 'Acrobatics '
+- bonus: 10
+  misc: null
+  name: 'Deception '
+- bonus: 11
+  misc: null
+  name: 'Occultism '
+- bonus: 10
+  misc: null
+  name: 'Society '
+- bonus: 9
+  misc: null
+  name: 'Stealth '
+- bonus: 9
+  misc: null
+  name: 'Thievery '
+source:
+- abbr: Bestiary 2
+  page_start: 204
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 25
+  type: fly
+- amount: 25
+  type: swim
+- amount: 128
+  type: <a style="text-decoration:underline" href="Spells.aspx?ID="><i>freedom of
+    movement</i></a>
+spell_lists:
+- dc: 20
+  misc: ''
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: null
+      name: glyph of warding
+      requirement: null
+    - frequency: null
+      name: secret page
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: at will, lawful only
+      name: detect alignment
+      requirement: null
+  - heightened_level: 2
+    level: 0
+    spells:
+    - frequency: null
+      name: acid splash
+      requirement: null
+    - frequency: null
+      name: daze
+      requirement: null
+    - frequency: null
+      name: ghost sound
+      requirement: null
+    - frequency: null
+      name: mage hand
+      requirement: null
+    - frequency: null
+      name: sigil
+      requirement: null
+  - heightened_level: 4
+    level: -1
+    spells:
+    - frequency: null
+      name: freedom of movement
+      requirement: null
+  to_hit: 12
+traits:
+- CN
+- Small
+- Monitor
+- Protean
+type: Creature
+weaknesses:
+- amount: 3
+  type: lawful

@@ -1,0 +1,234 @@
+ability_mods:
+  cha_mod: -5
+  con_mod: 5
+  dex_mod: 6
+  int_mod: -5
+  str_mod: 9
+  wis_mod: 0
+ac: 40
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: An obsidian golem that submerges itself in lava or magma takes no damage
+    from it, and for as long as it remains submerged, it becomes __slowed 2__ and
+    gains __fast healing 15__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Assimilate Lava
+  range: null
+  raw_description: '**Assimilate Lava** An obsidian golem that submerges itself in
+    lava or magma takes no damage from it, and for as long as it remains submerged,
+    it becomes __slowed 2__ and gains __fast healing 15__.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: harmed by sonic (8d10, 2d10 from area or persistent damage); healed
+    by cold (area 2d10 HP); __slowed__ by fire
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Golem Antimagic
+  range: null
+  raw_description: '**Golem Antimagic** harmed by sonic (8d10, 2d10 from area or persistent
+    damage); healed by cold (area 2d10 HP); __slowed__ by fire'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Casting a __shatter__ spell on an obsidian golem affects the golem
+    normally, but also causes jagged chunks of obsidian to flake off its body. The
+    squares on which the golem was standing (or the squares below it, if it was flying)
+    become difficult terrain.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Vulnerable to Shatter
+  range: null
+  raw_description: '**Vulnerable to Shatter** Casting a __shatter__ spell on an obsidian
+    golem affects the golem normally, but also causes jagged chunks of obsidian to
+    flake off its body. The squares on which the golem was standing (or the squares
+    below it, if it was flying) become difficult terrain.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'The art of golem animation is not limited to societies with access to
+  expensive crafting materials or a long history of arcane mastery. Among the resource-poor
+  __xulgaths__ who dwell in the Darklands, especially those hardy clutches that call
+  the Black Desert their home, obsidian is one of the most common crafting materials
+  available. Combine this ingredient with a powerful spellcaster and the xulgath tradition
+  of inflection—magically warping and working normally inflexible stone—and the end
+  result is an obsidian golem.
+
+
+
+
+  **__Recall Knowledge - Construct__ (__Arcana__, __Crafting__)**: DC 37'
+hp: 230
+hp_misc: null
+immunities:
+- bleed
+- death effects
+- disease
+- doomed
+- drained
+- fatigued
+- fire (see below)
+- healing
+- magic (see below)
+- mental
+- necromancy
+- nonlethal attacks
+- paralyzed
+- poison
+- sickened
+- unconscious
+items: null
+languages: null
+level: 16
+melee:
+- action_cost: One Action
+  damage:
+    formula: 4d10+15
+    type: piercing
+  name: fist
+  plus_damage: null
+  to_hit: 33
+  traits:
+  - deadly d10
+  - magical
+  - reach 10 feet
+  - versatile S
+- action_cost: One Action
+  damage:
+    formula: 3d10+15
+    type: piercing
+  name: wing
+  plus_damage: null
+  to_hit: 31
+  traits:
+  - agile
+  - deadly d10
+  - magical
+  - reach 10 feet
+  - versatile S
+name: Obsidian Golem
+perception: 28
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The obsidian golem slings razor-sharp shards of itself in a 15-foot
+    cone. Creatures in the area take 4d8+9 slashing damage (DC 37 basic Reflex save).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Fling Shards
+  range: null
+  raw_description: '**Fling Shards**   The obsidian golem slings razor-sharp shards
+    of itself in a 15-foot cone. Creatures in the area take 4d8+9 slashing damage
+    (DC 37 basic Reflex save).'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: An obsidian golem's body is so sharp that it tears through armor like
+    a knife through butter. Whenever the golem scores a critical hit with a fist Strike
+    against a creature wearing non-__adamantine armor__, the creature's armor becomes
+    __broken__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Shred Armor
+  range: null
+  raw_description: '**Shred Armor** An obsidian golem''s body is so sharp that it
+    tears through armor like a knife through butter. Whenever the golem scores a critical
+    hit with a fist Strike against a creature wearing non-__adamantine armor__, the
+    creature''s armor becomes __broken__.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 4d8+15
+    type: piercing
+  name: obsidian sliver
+  plus_damage: null
+  to_hit: 32
+  traits:
+  - deadly d8
+  - magical
+  - range increment 30 feet
+  - versatile S
+rarity: Uncommon
+resistances:
+- amount: 15
+  type: physical (except adamantine or bludgeoning)
+ritual_lists: null
+saves:
+  fort: 29
+  fort_misc: null
+  misc: null
+  ref: 24
+  ref_misc: null
+  will: 26
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +28
+- darkvision
+size: Large
+skills:
+- bonus: 33
+  misc: null
+  name: 'Athletics '
+source:
+- abbr: 'Pathfinder #155: Lord of the Black Sands'
+  page_start: 80
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 25
+  type: fly
+spell_lists: null
+traits:
+- Uncommon
+- N
+- Large
+- Construct
+- Golem
+- Mindless
+type: Creature
+weaknesses: null

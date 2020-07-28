@@ -1,0 +1,339 @@
+ability_mods:
+  cha_mod: 4
+  con_mod: 5
+  dex_mod: 2
+  int_mod: 2
+  str_mod: 8
+  wis_mod: 4
+ac: 34
+ac_special: null
+alignment: CN
+automatic_abilities:
+- action_cost: None
+  critical_failure: The creature is frightened 4.
+  critical_success: The creature is unaffected by the presence.
+  description: 90 feet, DC 30
+  effect: null
+  effects: null
+  failure: The creature is frightened 2.
+  frequency: null
+  full_description: null
+  generic_description: A creature that first enters the area must attempt a Will save.
+    Regardless of the result of the saving throw, the creature is temporarily immune
+    to this monster's Frightful Presence for 1 minute.
+  name: Frightful Presence
+  range: null
+  raw_description: '**Frightful Presence** 90 feet, DC 30 A creature that first enters
+    the area must attempt a Will save. Regardless of the result of the saving throw,
+    the creature is temporarily immune to this monster''s Frightful Presence for 1
+    minute.
+
+    Critical Success The creature is unaffected by the presence.
+
+    Success The creature is frightened 1.
+
+    Failure The creature is frightened 2.
+
+    Critical Success The creature is frightened 4.'
+  requirements: null
+  success: The creature is frightened 1.
+  traits:
+  - aura
+  - emotion
+  - fear
+  - mental
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The dragon raises a wing, gaining a +2 circumstance bonus to AC against
+    the triggering attack. If the dragon is Flying, they descend 10 feet after the
+    attack.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Wing Deflection
+  range: null
+  raw_description: '**Wing Deflection [Reaction]** **Trigger **The dragon is targeted
+    with an attack; **Effect **The dragon raises a wing, gaining a +2 circumstance
+    bonus to AC against the triggering attack. If the dragon is Flying, they descend
+    10 feet after the attack.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: The dragon is targeted with an attack
+description: 'Magma dragons have a reputation among other dragons for being unpredictable
+  and brash. Their temperament and tendency for violent outbursts ensure that the
+  typical magma dragon lives a solitary life, with hatchlings often bickering or fighting
+  to establish dominance among themselves before they leave the nest. A magma dragon
+  always has a reason for their outbursts and can always justify their sudden turns
+  in mood, yet they rarely feel the need to do so.
+
+
+
+
+  Magma dragons build lairs within volcanically active mountains or deep underground
+  amid vast lakes of bubbling magma. As with all true dragons, magma dragons keep
+  hoards of treasure, but the nature of their searing lairs limits the type of valuables
+  they collect to metals, gems, and items capable of resisting the heat of a volcano''s
+  core.
+
+
+
+
+  **__Recall Knowledge - Dragon__ (__Arcana__)**: DC 33
+
+
+  **__Recall Knowledge - Elemental__ (__Arcana__, __Nature__)**: DC 33'
+hp: 270
+hp_misc: null
+immunities:
+- fire
+- paralyzed
+- sleep
+items: null
+languages:
+- Common
+- Draconic
+- Ignan
+- Terran
+level: 13
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d10+12
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 3d6
+    type: fire
+  to_hit: 27
+  traits:
+  - fire
+  - magical
+  - reach 15 feet
+- action_cost: One Action
+  damage:
+    formula: 3d10+12
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 27
+  traits:
+  - agile
+  - magical
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 3d12+12
+    type: bludgeoning
+  name: tail
+  plus_damage: null
+  to_hit: 25
+  traits:
+  - magical
+  - reach 20 feet
+- action_cost: One Action
+  damage:
+    formula: 2d10+12
+    type: piercing
+  name: horns
+  plus_damage: null
+  to_hit: 25
+  traits:
+  - magical
+  - reach 15 feet
+name: Adult Magma Dragon
+perception: 23
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The dragon breathes a blast of magma that deals 9d6 fire damage and
+    4d12 bludgeoning damage in a 40-foot cone (DC 33 basic Reflex save). They can't
+    use Breath Weapon again for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Breath Weapon
+  range: null
+  raw_description: '**Breath Weapon** [Two Actions]  (__evocation__, __fire__, __primal__)
+    The dragon breathes a blast of magma that deals 9d6 fire damage and 4d12 bludgeoning
+    damage in a 40-foot cone (DC 33 basic Reflex save). They can''t use Breath Weapon
+    again for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - evocation
+  - fire
+  - primal
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The dragon makes two claw Strikes and one horn Strike in any order.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Draconic Frenzy
+  range: null
+  raw_description: '**Draconic Frenzy** [Two Actions]  The dragon makes two claw Strikes
+    and one horn Strike in any order.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The dragon recharges their Breath Weapon whenever they score a critical
+    hit with a Strike.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Draconic Momentum
+  range: null
+  raw_description: '**Draconic Momentum** The dragon recharges their Breath Weapon
+    whenever they score a critical hit with a Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A magma dragon's swim Speed functions only when the dragon is Swimming
+    through magma or molten lava.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Magma Swim
+  range: null
+  raw_description: '**Magma Swim** A magma dragon''s swim Speed functions only when
+    the dragon is Swimming through magma or molten lava.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: If the next action the dragon uses is Breath Weapon, the magma clings
+    to those it damages. Each creature that fails its save against the Breath Weapon
+    takes 4d6 __persistent fire damage__, and as long as it has this persistent fire
+    damage, it also takes a -10-foot status penalty to its Speeds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Volcanic Purge
+  range: null
+  raw_description: '**Volcanic Purge**   If the next action the dragon uses is Breath
+    Weapon, the magma clings to those it damages. Each creature that fails its save
+    against the Breath Weapon takes 4d6 __persistent fire damage__, and as long as
+    it has this persistent fire damage, it also takes a -10-foot status penalty to
+    its Speeds.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances:
+- amount: 15
+  type: cold
+ritual_lists: null
+saves:
+  fort: 26
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 21
+  ref_misc: null
+  will: 23
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +23
+- darkvision
+- scent (imprecise) 60 feet
+size: Huge
+skills:
+- bonus: 21
+  misc: null
+  name: 'Acrobatics '
+- bonus: 27
+  misc: null
+  name: 'Athletics '
+- bonus: 19
+  misc: null
+  name: 'Deception '
+- bonus: 25
+  misc: null
+  name: 'Intimidation '
+- bonus: 21
+  misc: null
+  name: 'Nature '
+- bonus: 21
+  misc: null
+  name: 'Stealth '
+- bonus: 23
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 94
+  page_stop: null
+speed:
+- amount: 40
+  type: Land
+- amount: 140
+  type: fly
+- amount: 40
+  type: magma swim
+spell_lists:
+- dc: 31
+  misc: ''
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 6
+    spells:
+    - frequency: at will
+      name: burning hands
+      requirement: null
+    - frequency: at will
+      name: wall of fire
+      requirement: null
+  - heightened_level: 6
+    level: 0
+    spells:
+    - frequency: null
+      name: produce flame
+      requirement: null
+  to_hit: 23
+traits:
+- Uncommon
+- CN
+- Huge
+- Dragon
+- Elemental
+- Fire
+type: Creature
+weaknesses: null

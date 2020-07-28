@@ -1,0 +1,255 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 6
+  dex_mod: 4
+  int_mod: -4
+  str_mod: 8
+  wis_mod: 2
+ac: 35
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'These fabled beasts resemble massive snakes with long rows of finned
+  spines down their back. Temperamental and territorial, sea serpents can capsize
+  a boat with ease, and most won''t hesitate to do so when hungry or threatened. Stories
+  abound of aggrieved captains who spend their entire lives hunting down the elusive
+  monster that sunk their ships and took their livelihoods. These hunts rely on rumors
+  and glimpses of the beasts, as few survive the catastrophes wrought by sea serpents.
+
+
+
+
+  While many fishermen''s tales paint sea serpents as divinely appointed guardians
+  of the ocean or, alternately, as evil and demonic agents, the truth is that most
+  sea serpents are simply very large beasts with a knack for avoiding magical detection.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 32'
+hp: 210
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 12
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d10+14
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 27
+  traits:
+  - reach 20 feet
+- action_cost: One Action
+  damage:
+    formula: 2d10+14
+    type: bludgeoning
+  name: tail
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 27
+  traits:
+  - agile
+  - reach 30 feet
+name: Sea Serpent
+perception: 22
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The sea serpent attempts to capsize an aquatic vessel of its size or
+    smaller that it's adjacent to. It must succeed at an __Athletics__ check with
+    a DC of 35 or the pilot's __Sailing Lore__ DC, whichever is higher.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Capsize
+  range: null
+  raw_description: '**Capsize**   (__attack__) The sea serpent attempts to capsize
+    an aquatic vessel of its size or smaller that it''s adjacent to. It must succeed
+    at an __Athletics__ check with a DC of 35 or the pilot''s __Sailing Lore__ DC,
+    whichever is higher.'
+  requirements: null
+  success: null
+  traits:
+  - attack
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: 1d10+14 bludgeoning
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Constrict
+  range: null
+  raw_description: '**__Constrict__**   1d10+14 bludgeoning'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The water in the ballast organs around the sea serpent's neck is full
+    of psychotropic algae. **Saving Throw** DC 34 Fortitude; **Maximum Duration**
+    6 rounds; **Stage 1** __confused__ and, if flying, spends its first action each
+    turn to descend 20 feet (1 round); **Stage 2** __confused__ and, if flying, descends
+    until reaching the ground or water below (1 round).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sea Serpent Algae
+  range: null
+  raw_description: '**Sea Serpent Algae** (__incapacitation__, __poison__) The water
+    in the ballast organs around the sea serpent''s neck is full of psychotropic algae.
+    **Saving Throw** DC 34 Fortitude; **Maximum Duration** 6 rounds; **Stage 1** __confused__
+    and, if flying, spends its first action each turn to descend 20 feet (1 round);
+    **Stage 2** __confused__ and, if flying, descends until reaching the ground or
+    water below (1 round).'
+  requirements: null
+  success: null
+  traits:
+  - incapacitation
+  - poison
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The sea serpent extends the spines along its back and Swims or Strides.
+    Each creature the serpent is adjacent to at any point during its movement takes
+    4d6+8 slashing damage (DC 32 basic Reflex save).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Spine Rake
+  range: null
+  raw_description: '**Spine Rake** [Two Actions]  (__attack__, __move__) The sea serpent
+    extends the spines along its back and Swims or Strides. Each creature the serpent
+    is adjacent to at any point during its movement takes 4d6+8 slashing damage (DC
+    32 basic Reflex save).'
+  requirements: null
+  success: null
+  traits:
+  - attack
+  - move
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: Huge, 2d10+6 bludgeoning, Rupture 20
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Swallow Whole
+  range: null
+  raw_description: '**Swallow Whole**   (__attack__) Huge, 2d10+6 bludgeoning, Rupture
+    20'
+  requirements: null
+  success: null
+  traits:
+  - attack
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 2d6+12
+    type: bludgeoning
+  name: water spout
+  plus_damage:
+  - formula: null
+    type: sea serpent algae
+  to_hit: 25
+  traits:
+  - brutal
+  - range increment 100 feet
+  - water
+rarity: Uncommon
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 25
+  fort_misc: null
+  misc: null
+  ref: 21
+  ref_misc: null
+  will: 21
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A sea serpent automatically tries to counteract any detection, revelation,
+    or scrying divination attempted against it, using its Stealth modifler for its
+    counteract modifier.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Undetectable
+  range: null
+  raw_description: '**Undetectable** (__abjuration__, __primal__) A sea serpent automatically
+    tries to counteract any detection, revelation, or scrying divination attempted
+    against it, using its Stealth modifler for its counteract modifier.'
+  requirements: null
+  success: null
+  traits:
+  - abjuration
+  - primal
+  trigger: null
+senses:
+- Perception +22
+- darkvision
+size: Gargantuan
+skills:
+- bonus: 18
+  misc: null
+  name: 'Acrobatics '
+- bonus: 26
+  misc: +28 to Swim
+  name: 'Athletics '
+- bonus: 28
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 288
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 60
+  type: swim
+spell_lists: null
+traits:
+- Uncommon
+- N
+- Gargantuan
+- Animal
+type: Creature
+weaknesses: null

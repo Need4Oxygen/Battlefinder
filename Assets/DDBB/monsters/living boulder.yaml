@@ -1,0 +1,127 @@
+ability_mods:
+  cha_mod: -1
+  con_mod: 4
+  dex_mod: -1
+  int_mod: -4
+  str_mod: 4
+  wis_mod: 2
+ac: 17
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Living boulders roll and glide through the Plane of Earth, gathering
+  gemstones and metal shards until their surfaces resemble a ship''s hull covered
+  in barnacles. Barely more intelligent than many animals, living boulders fill much
+  the same role on the Plane of Earth as the great herd animals found on Material
+  Plane worlds.
+
+
+
+
+  **__Recall Knowledge - Elemental__ (__Arcana__, __Nature__)**: DC 16'
+hp: 36
+hp_misc: null
+immunities:
+- bleed
+- paralyzed
+- poison
+- sleep
+items: null
+languages: null
+level: 2
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d8+6
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 10
+  traits: null
+name: Living Boulder
+perception: 6
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A living boulder can __Burrow__ through earthen matter, including rock.
+    When it does so, it moves at its full burrow Speed, leaving no tunnels or signs
+    of its passing.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Earth Glide
+  range: null
+  raw_description: '**Earth Glide** A living boulder can __Burrow__ through earthen
+    matter, including rock. When it does so, it moves at its full burrow Speed, leaving
+    no tunnels or signs of its passing.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The living boulder Strides twice, and can then make a Strike with its
+    jaws. This jaws Strike gains __Knockdown__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Rolling Charge
+  range: null
+  raw_description: '**Rolling Charge** [Two Actions]  The living boulder Strides twice,
+    and can then make a Strike with its jaws. This jaws Strike gains __Knockdown__.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 10
+  fort_misc: null
+  misc: null
+  ref: 5
+  ref_misc: null
+  will: 8
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +6
+- darkvision
+- tremorsense 30 feet
+size: Small
+skills:
+- bonus: 8
+  misc: null
+  name: 'Athletics '
+- bonus: 5
+  misc: +7 in rocky areas
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 108
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 20
+  type: burrow
+- amount: null
+  type: earth glide
+spell_lists: null
+traits:
+- N
+- Small
+- Earth
+- Elemental
+type: Creature
+weaknesses: null

@@ -1,0 +1,229 @@
+ability_mods:
+  cha_mod: 1
+  con_mod: 5
+  dex_mod: 3
+  int_mod: -1
+  str_mod: 6
+  wis_mod: 3
+ac: 27
+ac_special: null
+alignment: NE
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The desert drake raises its wing, gaining a +2 circumstance bonus to AC
+    against the triggering attack. If the desert drake is flying at the time it is
+    attacked, it descends 10 feet after the attack is complete.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Wing Deflection
+  range: null
+  raw_description: '**Wing Deflection** [Reaction] **Trigger** The desert drake is
+    targeted with an attack. **Effect** The desert drake raises its wing, gaining
+    a +2 circumstance bonus to AC against the triggering attack. If the desert drake
+    is flying at the time it is attacked, it descends 10 feet after the attack is
+    complete.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: The desert drake is targeted with an attack.
+description: 'Distant cousins of blue dragons that lack their relatives'' magical
+  talents and intelligence, these desert-dwelling drakes are nonetheless dangerous
+  ambush predators, preying upon isolated desert travelers and outposts for food and
+  supplies. They retain their true-blooded forebears'' resistance to electricity and
+  affinity for sandy environs. Desert drakes'' scales range in coloration from rust-brown
+  to light tan and ocher shades, mimicking the colors of the dunes they call home.
+
+
+
+
+  Desert drakes are among the lightest and most compact of the drakes, though this
+  shouldn''t be mistaken for frailty. Their swooped-back horns and feather-thin wings
+  are adapted to make burrowing as easy as possible. Indeed, a desert drake''s powerful
+  neck makes wriggling through sand and other loose scree as easy as walking for it.
+
+
+
+
+  **__Recall Knowledge - Dragon__ (__Arcana__)**: DC 24'
+hp: 135
+hp_misc: null
+immunities:
+- paralyzed
+- unconscious
+items: null
+languages:
+- Draconic
+level: 8
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d12+8
+    type: piercing
+  name: Fangs
+  plus_damage:
+  - formula: 1d6
+    type: electricity
+  to_hit: 20
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 2d10+8
+    type: bludgeoning
+  name: Tail
+  plus_damage:
+  - formula: null
+    type: Push 5 feet
+  to_hit: 20
+  traits:
+  - reach 10 feet
+name: Desert Drake
+perception: 15
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The desert drake makes two Fangs Strikes and one Tail Strike in any
+    order.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Draconic Frenzy
+  range: null
+  raw_description: '**Draconic Frenzy** [Two Actions]  The desert drake makes two
+    Fangs Strikes and one Tail Strike in any order.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The desert drake spits a ball of electrically charged sand to a range
+    of 60 feet that explodes into a cloud with a 15-foot-radius __burst__. Creatures
+    in the area take 9d6 electricity damage (DC 27 basic Reflex save). The cloud remains
+    for 1d4 rounds, granting __concealment__ to everything within. The desert drake
+    can't use Sandstorm Breath again for 1d6 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sandstorm Breath
+  range: null
+  raw_description: '**Sandstorm Breath** [Two Actions]  (__arcane__, __electricity__,
+    __evocation__) The desert drake spits a ball of electrically charged sand to a
+    range of 60 feet that explodes into a cloud with a 15-foot-radius __burst__. Creatures
+    in the area take 9d6 electricity damage (DC 27 basic Reflex save). The cloud remains
+    for 1d4 rounds, granting __concealment__ to everything within. The desert drake
+    can''t use Sandstorm Breath again for 1d6 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - electricity
+  - evocation
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The desert drake moves up to twice its Speed. It can do this three
+    times per day.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Speed Surge
+  range: null
+  raw_description: '**Speed Surge**   (__move__) The desert drake moves up to twice
+    its Speed. It can do this three times per day.'
+  requirements: null
+  success: null
+  traits:
+  - move
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: On the first round of combat, creatures that haven't acted yet are
+    __flat-footed__ to the desert drake.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Surprise Attacker
+  range: null
+  raw_description: '**Surprise Attacker** On the first round of combat, creatures
+    that haven''t acted yet are __flat-footed__ to the desert drake.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 16
+  type: electricity
+ritual_lists: null
+saves:
+  fort: 17
+  fort_misc: null
+  misc: null
+  ref: 15
+  ref_misc: null
+  will: 13
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +15
+- darkvision
+- scent (imprecise) 30 feet
+size: Large
+skills:
+- bonus: 17
+  misc: null
+  name: 'Acrobatics '
+- bonus: 18
+  misc: null
+  name: 'Athletics '
+- bonus: 13
+  misc: null
+  name: 'Intimidation '
+- bonus: 15
+  misc: null
+  name: 'Stealth '
+- bonus: 15
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 135
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 20
+  type: burrow  (sand only)
+- amount: 50
+  type: fly
+spell_lists: null
+traits:
+- NE
+- Large
+- Dragon
+- Earth
+type: Creature
+weaknesses: null

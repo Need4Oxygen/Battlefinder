@@ -1,0 +1,205 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 2
+  dex_mod: 4
+  int_mod: -1
+  str_mod: 3
+  wis_mod: 1
+ac: 19
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 30 feet. A creature that enters the area must attempt a DC 16 Fortitude
+    save. On a failure, the creature is sickened 1, and on a critical failure, the
+    creature also takes a -5-foot status penalty to its Speeds for 1 round. While
+    within the aura, the creature takes a -2 circumstance penalty to saves to recover
+    from the sickened condition. A creature that succeeds at its save is temporarily
+    immune to all xulgaths' stenches for 1 minute.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Stench
+  range: null
+  raw_description: '**Stench** (__aura__, __olfactory__) 30 feet. A creature that
+    enters the area must attempt a DC 16 Fortitude save. On a failure, the creature
+    is sickened 1, and on a critical failure, the creature also takes a -5-foot status
+    penalty to its Speeds for 1 round. While within the aura, the creature takes a
+    -2 circumstance penalty to saves to recover from the sickened condition. A creature
+    that succeeds at its save is temporarily immune to all xulgaths'' stenches for
+    1 minute.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - olfactory
+  trigger: null
+- action_cost: Free Action
+  critical_failure: null
+  critical_success: null
+  description: A xulgath skulker can suppress its stench aura as a free action to
+    better hide its presence. The skulker can resume its stench aura as a free action.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Stench Suppression
+  range: null
+  raw_description: '**Stench Suppression** [Free Action] A xulgath skulker can suppress
+    its stench aura as a free action to better hide its presence. The skulker can
+    resume its stench aura as a free action.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Xulgath warrens are patrolled—some might say "haunted"—by the community''s
+  skulkers. These xulgaths specialize in stealth, striking swiftly from the shadows
+  and otherwise ambushing foes.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 16'
+hp: 28
+hp_misc: null
+immunities: null
+items:
+- dagger (4)
+languages:
+- Draconic
+- Undercommon
+level: 2
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d4+3
+    type: piercing
+  name: dagger
+  plus_damage: null
+  to_hit: 10
+  traits:
+  - agile
+  - finesse
+  - versatile S
+- action_cost: One Action
+  damage:
+    formula: 1d6+3
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 9
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 1d4+3
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 10
+  traits:
+  - agile
+  - finesse
+name: Xulgath Skulker
+perception: 7
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: If a xulgath skulker starts its turn undetected by a creature or merely
+    hidden from it, that creature is __flat-footed__ against the skulker's attacks
+    until the end of the skulker's turn.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Hidden Movement
+  range: null
+  raw_description: '**Hidden Movement** If a xulgath skulker starts its turn undetected
+    by a creature or merely hidden from it, that creature is __flat-footed__ against
+    the skulker''s attacks until the end of the skulker''s turn.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A xulgath skulker deals an additional 1d6 precision damage to flat-footed creatures.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sneak Attack
+  range: null
+  raw_description: '**__Sneak Attack__** A xulgath skulker deals an additional 1d6
+    precision damage to flat-footed creatures. '
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d4+3
+    type: piercing
+  name: dagger
+  plus_damage: null
+  to_hit: 10
+  traits:
+  - agile
+  - thrown 10 feet
+  - versatile S
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 8
+  fort_misc: null
+  misc: null
+  ref: 10
+  ref_misc: null
+  will: 5
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +7
+- darkvision
+size: Medium
+skills:
+- bonus: 8
+  misc: null
+  name: 'Acrobatics '
+- bonus: 8
+  misc: null
+  name: 'Stealth '
+- bonus: 8
+  misc: null
+  name: 'Thievery '
+source:
+- abbr: Bestiary
+  page_start: 337
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists: null
+traits:
+- CE
+- Medium
+- Humanoid
+- Xulgath
+type: Creature
+weaknesses: null

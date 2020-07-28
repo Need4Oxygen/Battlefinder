@@ -1,0 +1,216 @@
+ability_mods:
+  cha_mod: 4
+  con_mod: 1
+  dex_mod: 3
+  int_mod: 1
+  str_mod: 1
+  wis_mod: 3
+ac: 19
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 20 feet. The colorful runes that decorate a d'ziriak's body create
+    dim light. The natural bioluminescence is specially adapted to the Shadow Plane,
+    able to overcome magical __darkness__ as if it were magical __light__ of the d'ziriak's
+    level.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Glow
+  range: null
+  raw_description: '**Glow** (__aura__, __light__) 20 feet. The colorful runes that
+    decorate a d''ziriak''s body create dim light. The natural bioluminescence is
+    specially adapted to the Shadow Plane, able to overcome magical __darkness__ as
+    if it were magical __light__ of the d''ziriak''s level.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - light
+  trigger: null
+description: 'These strange creatures are native to the __Plane of Shadows__, where
+  their colorful nature is in opposition to that realm''s overwhelmingly monochromatic
+  palette. Averaging 7 feet in height, D''ziriaks have four arms, two legs, and a
+  termite-like abdomen. The larger pair of arms, used for most tasks, have five-fingered
+  hands with sharp, insectile claws. The smaller pair of arms are reserved for fine
+  manipulations and are not effective in combat.
+
+
+
+
+  D''ziriaks'' otherwise dull brown carapaces are decorated with numerous runes glowing
+  in bright colors. These tattoo-like runes indicate an individual''s role in D''ziriak
+  society, and set them apart from their home plane''s other native inhabitants. The
+  runes glow with natural bioluminescence, and D''ziriaks can make them flare brightly
+  for an instant, at the expense of overstressing the biochemical glands that create
+  and maintain the runes for an extended time. The color and shape of the runes are
+  partially natural, but can be shaped and customized carefully over time to fit the
+  individual''s station.
+
+
+
+
+  The D''ziriak language is a mix of buzzes and chitters, and is spoken by few other
+  creatures. D''ziriaks prefer to communicate with other species using telepathy rather
+  than endure the sound of their language being "butchered by fleshy throats." D''ziriaks
+  organize into hive cities led by a king and queen. These hive cities consist of
+  impressive spires, yet these towers are only the foremost part of the settlement,
+  with many more chambers reaching deep below for residences, workshops, and fungus
+  farms. D''ziriak settlements are lit inside and out with alchemical and magical
+  light sources, often in the shapes of runes. These dimly glowing towers provide
+  travelers with landmarks, and perhaps promise safe havens, on the otherwise gloomy
+  Shadow Plane.
+
+
+
+
+  **__Recall Knowledge - Aberration__ (__Occultism__)**: DC 18'
+hp: 45
+hp_misc: null
+immunities: null
+items: null
+languages:
+- D'ziriak
+- Shadowtongue
+- telepathy 100 feet
+level: 3
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d10+4
+    type: piercing
+  name: claw
+  plus_damage: null
+  to_hit: 12
+  traits:
+  - agile
+  - finesse
+name: D'ziriak
+perception: 10
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: "The d'ziriak causes its body to flare with intense colorful light.\
+    \ Non-d'ziriaks in a 20-foot emanation must attempt a DC 20 Fortitude save. After\
+    \ using this ability, the d'ziriak loses its glow for 24 hours; during this time\
+    \ it can't use Dazzling Burst again. A creature that attempts this save is immune\
+    \ to all Dazzling Bursts for 1 minute. \n\n**Critical Success **The creature is\
+    \ unaffected. \n\n**Success **The creature is __dazzled__ for 1 round. \n\n**Failure\
+    \ **The creature is dazzled for 1 minute. \n\n**Critical Failure **The creature\
+    \ is __blinded__ for 1 round and dazzled for 1 minute."
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Dazzling Burst
+  range: null
+  raw_description: "**Dazzling Burst** [Two Actions]  (__light__, __visual__) The\
+    \ d'ziriak causes its body to flare with intense colorful light. Non-d'ziriaks\
+    \ in a 20-foot emanation must attempt a DC 20 Fortitude save. After using this\
+    \ ability, the d'ziriak loses its glow for 24 hours; during this time it can't\
+    \ use Dazzling Burst again. A creature that attempts this save is immune to all\
+    \ Dazzling Bursts for 1 minute. \n\n**Critical Success **The creature is unaffected.\
+    \ \n\n**Success **The creature is __dazzled__ for 1 round. \n\n**Failure **The\
+    \ creature is dazzled for 1 minute. \n\n**Critical Failure **The creature is __blinded__\
+    \ for 1 round and dazzled for 1 minute."
+  requirements: null
+  success: null
+  traits:
+  - light
+  - visual
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The d'ziriak makes two claw Strikes. If both hit the same creature, combine
+    their damage for the purpose of resistances and weaknesses. This counts as two
+    attacks for the d'ziriak's multiple attack penalty, and the penalty doesn't increase
+    until after both attacks.
+  effects: null
+  failure: null
+  frequency: once per round
+  full_description: null
+  generic_description: null
+  name: Double Claw
+  range: null
+  raw_description: '**Double Claw**   **Frequency **once per round; **Effect **The
+    d''ziriak makes two claw Strikes. If both hit the same creature, combine their
+    damage for the purpose of resistances and weaknesses. This counts as two attacks
+    for the d''ziriak''s multiple attack penalty, and the penalty doesn''t increase
+    until after both attacks.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 6
+  fort_misc: null
+  misc: null
+  ref: 12
+  ref_misc: null
+  will: 10
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +10
+- darkvision
+size: Medium
+skills:
+- bonus: 8
+  misc: null
+  name: 'Arcana '
+- bonus: 6
+  misc: null
+  name: 'Athletics '
+- bonus: 10
+  misc: null
+  name: 'Occultism '
+- bonus: 10
+  misc: null
+  name: 'Stealth '
+- bonus: 8
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 104
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists:
+- dc: 19
+  misc: null
+  name: Occult Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 7
+    spells:
+    - frequency: self only, to <a style="text-decoration:underline" href="Planes.aspx?ID=11">Shadow
+        Plane</a> only
+      name: plane shift
+      requirement: null
+  to_hit: null
+traits:
+- N
+- Medium
+- Aberration
+- Shadow
+type: Creature
+weaknesses: null

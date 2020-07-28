@@ -1,0 +1,481 @@
+ability_mods:
+  cha_mod: 8
+  con_mod: 9
+  dex_mod: 8
+  int_mod: 8
+  str_mod: 9
+  wis_mod: 9
+ac: 46
+ac_special: null
+alignment: LE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 100 feet. Commanded or allied evil creatures in the aura of lower level
+    than the pit fiend gain a +1 circumstance bonus to attack rolls, damage rolls,
+    AC, saves, and skill checks.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Commander's Aura
+  range: null
+  raw_description: '**Commander''s Aura** (__aura__, __divine__, __enchantment__)
+    100 feet. Commanded or allied evil creatures in the aura of lower level than the
+    pit fiend gain a +1 circumstance bonus to attack rolls, damage rolls, AC, saves,
+    and skill checks.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - divine
+  - enchantment
+  trigger: null
+- action_cost: None
+  critical_failure: The creature is frightened 4.
+  critical_success: The creature is unaffected by the presence.
+  description: 20 feet, DC 42
+  effect: null
+  effects: null
+  failure: The creature is frightened 2.
+  frequency: null
+  full_description: null
+  generic_description: A creature that first enters the area must attempt a Will save.
+    Regardless of the result of the saving throw, the creature is temporarily immune
+    to this monster's Frightful Presence for 1 minute.
+  name: Frightful Presence
+  range: null
+  raw_description: '**Frightful Presence** 20 feet, DC 42 A creature that first enters
+    the area must attempt a Will save. Regardless of the result of the saving throw,
+    the creature is temporarily immune to this monster''s Frightful Presence for 1
+    minute.
+
+    Critical Success The creature is unaffected by the presence.
+
+    Success The creature is frightened 1.
+
+    Failure The creature is frightened 2.
+
+    Critical Success The creature is frightened 4.'
+  requirements: null
+  success: The creature is frightened 1.
+  traits:
+  - aura
+  - divine
+  - emotion
+  - enchantment
+  - fear
+  - mental
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: The pit fiend can make an Attack of Opportunity when a creature within
+    reach uses a concentrate action, in addition to the usual trigger. The devil can
+    disrupt triggering concentrate actions, and they disrupt actions on any hit, not
+    only a critical hit.
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+description: "When an army of devils invades to bathe a region in bloodshed and hellfire,\
+  \ it is likely that one of Hell's most powerful and diabolical generals, the pit\
+  \ fiend, masterminded the incursion. Cunning, powerful, and ruthless, pit fiends\
+  \ often serve the archdevils directly. They rule infernal duchies, subjugate mortal\
+  \ worlds, and usurp infernal rivals using unparalleled despotism and calculated\
+  \ ferocity. To realize their tyrannical machinations, pit fiends claim mortal souls\
+  \ that they corrupt into lemure servants, which can then be shaped and transformed\
+  \ through infernal manipulation into the terrifying devils that form Hell's formidable\
+  \ legions. They often select the most wicked and vicious lemures for their armies,\
+  \ drawing upon these lesser devils' depravity during powerful magical ceremonies\
+  \ to create hideous and terrifying abominations that can cow and eviscerate the\
+  \ pit fiend's enemies.\n\n\n\nPit fiends themselves are crafted deep within the\
+  \ nightmarish bowels of Nessus, the ninth layer of Hell, to serve the whims of archdevils\
+  \ and infernal dukes. Those pit fiends that don't leave Nessus to command infernal\
+  \ legions in the upper layers of Hell often form the courts of Hell's elite, gathering\
+  \ cabals and sects that shape Hell's political landscape through subterfuge and\
+  \ manipulation. But many pit fiends see themselves as living embodiments of hellfire,\
+  \ the all-encompassing wrath of Hell, and thus prefer to dwell in realms consumed\
+  \ by fire. In Avernus, Dis, Malebolge, Nessus, and Phlegethon, pit fiends build\
+  \ vast citadels of brimstone wreathed in flame to lord over.\n\n\n\nPit fiends tower\
+  \ over other devils, standing at least 16 feet tall, weighing over 1,000 pounds,\
+  \ and brandishing wingspans in excess of 20 feet. \n\n## Infernal Dukes\n\n Elite\
+  \ members of Hell's political infrastructure and leadership hierarchy, the dukes\
+  \ of Hell are chosen from among the most tyrannical, oppressive, and conniving devils.\
+  \ While not all infernal dukes are pit fiends, a pit fiend's natural disposition\
+  \ toward conquest and oppression often make it an ideal candidate for this position.\
+  \ To create an infernal duke, adjust the pit fiend to be between 21st and 25th level.\
+  \ Because of their physical prowess, manipulative nature, and powerful spellcasting\
+  \ abilities, infernal dukes make excellent villains for long-running campaigns.\n\
+  \n\n\n**__Recall Knowledge - Fiend__ (__Religion__)**: DC 40"
+hp: 335
+hp_misc: regeneration 30 (deactivated by good)
+immunities:
+- fire
+items: null
+languages:
+- Celestial
+- Common
+- Draconic
+- Infernal
+- telepathy 100 feet
+level: 20
+melee:
+- action_cost: One Action
+  damage:
+    formula: 4d10+17
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 2d6
+    type: evil and pit fiend venom
+  to_hit: 40
+  traits:
+  - evil
+  - magical
+  - poison
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 4d6+17
+    type: slashing
+  name: claw
+  plus_damage:
+  - formula: 2d6
+    type: evil
+  to_hit: 38
+  traits:
+  - agile
+  - evil
+  - magical
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 4d10+17
+    type: bludgeoning
+  name: tail
+  plus_damage:
+  - formula: 2d6
+    type: evil and Improved Grab
+  to_hit: 36
+  traits:
+  - evil
+  - magical
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 4d6+17
+    type: slashing
+  name: wing
+  plus_damage:
+  - formula: 2d6
+    type: evil
+  to_hit: 36
+  traits:
+  - evil
+  - magical
+  - reach 15 feet
+name: Pit Fiend
+perception: 37
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: 2d10+17 bludgeoning plus 2d6 evil, DC 43
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Constrict
+  range: null
+  raw_description: '**__Constrict__**   2d10+17 bludgeoning plus 2d6 evil, DC 43'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: The pit fiend fails to shape any devils and draws the ire of an
+    archdevil for its waste of resources.
+  critical_success: The pit fiend shapes two devils from the massed lemures instead
+    of one.
+  description: 'The pit fiend reshapes a large number of lemures within a 600-foot
+    radius into more powerful devils to swell Hell''s legions. The pit fiend must
+    have available the number of lemures listed on the table in the sidebar. The pit
+    fiend can shape 100 lemures per day, to a maximum of 1,100 lemures in 11 days.
+    Devils created in this way are in thrall to the pit fiend and follow its orders,
+    with the exception of created pit fiends or other devils of similar power, which
+    are always independent. As a result, few pit fiends choose to create peers. At
+    the end of the Devil Shaping activity, the pit fiend attempts an incredibly hard
+    Religion check of the desired devil''s level, with results as follows.
+
+
+    '
+  effect: null
+  effects: null
+  failure: The devil shaped from the lemures is 2 levels lower than the intended devil.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Devil Shaping
+  range: null
+  raw_description: '**Devil Shaping** (__divine__, __downtime__, __transmutation__)
+    The pit fiend reshapes a large number of lemures within a 600-foot radius into
+    more powerful devils to swell Hell''s legions. The pit fiend must have available
+    the number of lemures listed on the table in the sidebar. The pit fiend can shape
+    100 lemures per day, to a maximum of 1,100 lemures in 11 days. Devils created
+    in this way are in thrall to the pit fiend and follow its orders, with the exception
+    of created pit fiends or other devils of similar power, which are always independent.
+    As a result, few pit fiends choose to create peers. At the end of the Devil Shaping
+    activity, the pit fiend attempts an incredibly hard Religion check of the desired
+    devil''s level, with results as follows.
+
+
+    **Critical Success** The pit fiend shapes two devils from the massed lemures instead
+    of one.
+
+
+    **Success** The pit fiend shapes a devil of the desired type and level.
+
+
+    **Failure** The devil shaped from the lemures is 2 levels lower than the intended
+    devil.
+
+
+    **Critical Failure** The pit fiend fails to shape any devils and draws the ire
+    of an archdevil for its waste of resources.'
+  requirements: null
+  success: The pit fiend shapes a devil of the desired type and level.
+  traits:
+  - divine
+  - downtime
+  - transmutation
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The pit fiend Flies and makes a wing Strike at any point during its
+    movement.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Fast Swoop
+  range: null
+  raw_description: '**Fast Swoop**   The pit fiend Flies and makes a wing Strike at
+    any point during its movement.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Free Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: If the pit fiend's next action is to cast an 8th-level or lower innate spell,
+    reduce the number of actions to cast it by 1 (minimum 1 action).
+  effects: null
+  failure: null
+  frequency: once per round.
+  full_description: null
+  generic_description: null
+  name: Masterful Quickened Casting
+  range: null
+  raw_description: '**Masterful Quickened Casting** [Free Action]  (__concentrate__)
+    **Frequency** once per round. **Effect** If the pit fiend''s next action is to
+    cast an 8th-level or lower innate spell, reduce the number of actions to cast
+    it by 1 (minimum 1 action).'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw** DC 43 Fortitude; **Maximum Duration** 10 rounds;
+    **Stage 1** 6d6 poison damage and __drained 1__ (1 round); **Stage 2** 7d6 poison
+    damage and __drained 2__ (1 round); **Stage 3** 8d6 poison damage and __drained
+    3__ (1 round)'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Pit Fiend Venom
+  range: null
+  raw_description: '**Pit Fiend Venom** (__poison__) **Saving Throw** DC 43 Fortitude;
+    **Maximum Duration** 10 rounds; **Stage 1** 6d6 poison damage and __drained 1__
+    (1 round); **Stage 2** 7d6 poison damage and __drained 2__ (1 round); **Stage
+    3** 8d6 poison damage and __drained 3__ (1 round)'
+  requirements: null
+  success: null
+  traits:
+  - poison
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 15
+  type: physical (except silver)
+- amount: 15
+  type: poison
+ritual_lists:
+- dc: 42
+  misc: null
+  name: Rituals
+  spell_groups:
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: infernal pact
+      requirement: null
+  to_hit: null
+saves:
+  fort: 37
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 32
+  ref_misc: null
+  will: 35
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +37
+- greater darkvision
+- true seeing
+size: Large
+skills:
+- bonus: 34
+  misc: null
+  name: 'Acrobatics '
+- bonus: 32
+  misc: null
+  name: 'Arcana '
+- bonus: 33
+  misc: null
+  name: 'Athletics '
+- bonus: 39
+  misc: null
+  name: 'Deception '
+- bonus: 34
+  misc: null
+  name: 'Diplomacy '
+- bonus: 39
+  misc: null
+  name: 'Intimidation '
+- bonus: 37
+  misc: null
+  name: 'Religion '
+- bonus: 36
+  misc: null
+  name: 'Society '
+- bonus: 34
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 92
+  page_stop: null
+speed:
+- amount: 35
+  type: Land
+- amount: 50
+  type: fly
+spell_lists:
+- dc: 42
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 10
+    spells:
+    - frequency: null
+      name: meteor swarm
+      requirement: null
+    - frequency: once per year
+      name: miracle
+      requirement: null
+    - frequency: null
+      name: power word stun
+      requirement: null
+  - heightened_level: null
+    level: 9
+    spells:
+    - frequency: at will
+      name: bind soul
+      requirement: null
+  - heightened_level: null
+    level: 8
+    spells:
+    - frequency: at will
+      name: dispel magic
+      requirement: null
+    - frequency: at will
+      name: divine decree
+      requirement: null
+    - frequency: at will
+      name: fireball
+      requirement: null
+    - frequency: null
+      name: scrying
+      requirement: null
+    - frequency: at will
+      name: wall of fire
+      requirement: null
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: null
+      name: dimension door
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: at will
+      name: dimension door
+      requirement: null
+  - heightened_level: 8
+    level: -1
+    spells:
+    - frequency: null
+      name: true seeing
+      requirement: null
+  to_hit: null
+traits:
+- LE
+- Large
+- Devil
+- Fiend
+type: Creature
+weaknesses:
+- amount: 15
+  type: good

@@ -1,0 +1,193 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 2
+  dex_mod: 5
+  int_mod: -1
+  str_mod: 4
+  wis_mod: 1
+ac: 22
+ac_special: null
+alignment: NE
+automatic_abilities: null
+description: "Sabosans are evil, intelligent, bat-like humanoids who live in warm\
+  \ forests and drink the blood of other creatures, particularly people. They have\
+  \ thin, emaciated torsos and broad, leathery wings that can reach a span of almost\
+  \ 20 feet. Sabosans' heads, necks, shoulders, and upper chests are covered with\
+  \ red or dark-brown fur that barely obscures their stretched.thin flesh. Their ears\
+  \ are large and pointed like a bat\x81fs, and indeed they can echolocate to locate\
+  \ prey much like bats can, though their eyes are also capable of seeing in low light.\n\
+  \n\n\nSome believe that sabosans are distant descendants of humans who were afflicted\
+  \ with vampirism but managed to avoid succumbing to undeath. Others posit they were\
+  \ once a tribe of demon worshippers whose dark rites transformed them into their\
+  \ current forms. No matter their true origins, sabosans have infamous reputations\
+  \ among residents of towns and cities south of the equator. Even mere rumors of\
+  \ sabosans in an area are enough to set off city-wide hunts, and the truly superstitious\
+  \ aren\x81ft above setting fires near every grotto, nook, and foxhole they come\
+  \ across in order to smoke out the nocturnal creatures.\n\n\n\nSabosans hunt during\
+  \ the twilight hours or just after dark, when their echolocation gives them a predatory\
+  \ edge over their sleeping prey. They are capable hunters but indiscriminating when\
+  \ it comes to food sources; their rapid metabolisms means sabosans must eat nearly\
+  \ 20 pounds of meat and fruit per day (supplemented, naturally, with copious amounts\
+  \ of blood).\n\n\n\n**__Recall Knowledge - Humanoid__ (__Society__)**: DC 20"
+hp: 78
+hp_misc: null
+immunities: null
+items:
+- spear
+languages:
+- Abyssal
+- Mwangi
+level: 5
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+4
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 1
+    type: persistent bleed
+  to_hit: 14
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 2d6+4
+    type: slashing
+  name: claw
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 15
+  traits:
+  - agile
+  - finesse
+- action_cost: One Action
+  damage:
+    formula: 1d6+4
+    type: piercing
+  name: spear
+  plus_damage: null
+  to_hit: 13
+  traits: null
+name: Sabosan
+perception: 10
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The sabosan has a creature grabbed.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Drain Blood
+  range: null
+  raw_description: '**Drain Blood**   **Requirement** The sabosan has a creature grabbed.
+    **Effect** The sabosan drains blood from the creature. The creature must succeed
+    at a DC 23 Fortitude save or become __drained 1__. The sabosan gains a number
+    of temporary Hit Points equal to the number of Hit Points lost by the creature.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The sabosan emits a deafening cry in a 30-foot cone. Non-sabosan creatures
+    in this area must each succeed at a DC 23 Fortitude save or be __deafened__ for
+    1 minute.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Fell Shriek
+  range: null
+  raw_description: '**Fell Shriek** [Two Actions]  (__auditory__) The sabosan emits
+    a deafening cry in a 30-foot cone. Non-sabosan creatures in this area must each
+    succeed at a DC 23 Fortitude save or be __deafened__ for 1 minute.'
+  requirements: null
+  success: null
+  traits:
+  - auditory
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The sabosan Strides up to double its Speed and then makes a claw Strike.
+    If the sabosan moved at least 20 feet, it deals an additional 1d6 damage on a
+    hit.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Powerful Charge
+  range: null
+  raw_description: '**Powerful Charge** [Two Actions]  The sabosan Strides up to double
+    its Speed and then makes a claw Strike. If the sabosan moved at least 20 feet,
+    it deals an additional 1d6 damage on a hit.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d6+4
+    type: piercing
+  name: spear
+  plus_damage: null
+  to_hit: 14
+  traits:
+  - thrown 20 feet
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 11
+  fort_misc: null
+  misc: null
+  ref: 14
+  ref_misc: null
+  will: 10
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +10
+- echolocation 20 feet
+- low-light vision
+- scent (imprecise) 30 feet
+size: Medium
+skills:
+- bonus: 16
+  misc: null
+  name: 'Acrobatics '
+- bonus: 11
+  misc: null
+  name: 'Athletics '
+- bonus: 16
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: 'Pathfinder #146: Cult of Cinders'
+  page_start: 91
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 25
+  type: fly
+spell_lists: null
+traits:
+- NE
+- Medium
+- Humanoid
+type: Creature
+weaknesses: null

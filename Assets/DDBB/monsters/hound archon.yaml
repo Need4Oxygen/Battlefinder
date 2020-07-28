@@ -1,0 +1,232 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 4
+  dex_mod: 2
+  int_mod: 0
+  str_mod: 4
+  wis_mod: 3
+ac: 22
+ac_special: null
+alignment: LG
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Retributive Strike
+  range: null
+  raw_description: '**__Retributive Strike__ [Reaction]**'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Among the rank-and-file soldiers of Heaven''s armies, few individuals
+  are more dependable and truer to the cause than the noble hound archons, embodiments
+  of the virtue of diligence. Unlike __horned archons__, who perform at a similar
+  level along Heaven''s grand hierarchy, hound archons do not scout ahead for evil
+  or perform reconnaissance missions in hostile territory. A hound archon''s role
+  is as a soldier in the heart of battle or, occasionally, as a sentinel tasked with
+  protecting a particular strategic location or holy site.
+
+
+
+
+  **__Recall Knowledge - Celestial__ (__Religion__)**: DC 19'
+hp: 70
+hp_misc: null
+immunities: null
+items:
+- full plate
+- greatsword
+languages:
+- Celestial
+- Draconic
+- Infernal
+- tongues
+level: 4
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d12+6
+    type: slashing
+  name: greatsword
+  plus_damage:
+  - formula: 1d6
+    type: good
+  to_hit: 14
+  traits:
+  - good
+  - magical
+  - versatile P
+- action_cost: One Action
+  damage:
+    formula: 1d6+6
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 1d6
+    type: good
+  to_hit: 14
+  traits:
+  - agile
+  - good
+  - magical
+name: Hound Archon
+perception: 13
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Once per day, if an archon sees another creature cast __dimension door__,
+    the archon can use dimension door (heightened to 5th level) within 1 round to
+    attempt to follow that creature to the maximum distance of the archon's dimension
+    door. If the archon's dimension door has enough distance, the archon appears the
+    same distance and direction from the creature as before either creature used dimension
+    door.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Archon's Door
+  range: null
+  raw_description: '**Archon''s Door** Once per day, if an archon sees another creature
+    cast __dimension door__, the archon can use dimension door (heightened to 5th
+    level) within 1 round to attempt to follow that creature to the maximum distance
+    of the archon''s dimension door. If the archon''s dimension door has enough distance,
+    the archon appears the same distance and direction from the creature as before
+    either creature used dimension door.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: A hound archon can take the appearance of any canid __animal__ of Small
+    to Large size. This doesn't change their Speed or the attack and damage bonuses
+    for their Strikes, but if the canid's bite attack has the __Knockdown__ ability,
+    then the hound archon's bite attack gains that ability while they are in that
+    form.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Change Shape
+  range: null
+  raw_description: '**Change Shape**   (__concentrate__, __divine__, __polymorph__,
+    __transmutation__) A hound archon can take the appearance of any canid __animal__
+    of Small to Large size. This doesn''t change their Speed or the attack and damage
+    bonuses for their Strikes, but if the canid''s bite attack has the __Knockdown__
+    ability, then the hound archon''s bite attack gains that ability while they are
+    in that form.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - divine
+  - polymorph
+  - transmutation
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The hound archon carefully makes one greatsword Strike and one jaws
+    Strike in any order. These attacks count toward the hound archon's multiple attack
+    penalty, but the multiple attack penalty doesn't increase until after all the
+    attacks.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Diligent Assault
+  range: null
+  raw_description: '**Diligent Assault** [Two Actions]  The hound archon carefully
+    makes one greatsword Strike and one jaws Strike in any order. These attacks count
+    toward the hound archon''s multiple attack penalty, but the multiple attack penalty
+    doesn''t increase until after all the attacks.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 14
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 8
+  ref_misc: null
+  will: 11
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +13
+- darkvision
+size: Medium
+skills:
+- bonus: 12
+  misc: null
+  name: 'Athletics '
+- bonus: 10
+  misc: null
+  name: 'Intimidation '
+- bonus: 9
+  misc: null
+  name: 'Religion '
+- bonus: 10
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 22
+  page_stop: null
+speed:
+- amount: 35
+  type: Land
+spell_lists:
+- dc: 19
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: dimension door
+      requirement: null
+  - heightened_level: 2
+    level: 0
+    spells:
+    - frequency: null
+      name: message
+      requirement: null
+  - heightened_level: 5
+    level: -1
+    spells:
+    - frequency: null
+      name: tongues
+      requirement: null
+  to_hit: null
+traits:
+- LG
+- Medium
+- Archon
+- Celestial
+type: Creature
+weaknesses:
+- amount: 5
+  type: evil

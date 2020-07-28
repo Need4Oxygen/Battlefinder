@@ -1,0 +1,340 @@
+ability_mods:
+  cha_mod: 6
+  con_mod: 6
+  dex_mod: 4
+  int_mod: 8
+  str_mod: 8
+  wis_mod: 5
+ac: 41
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 30 feet. A vaspercham's shell distorts nearby magic. Any creature in
+    the aura who Casts a Spell must attempt a DC 37 Will save.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Magic-Warping Aura
+  range: null
+  raw_description: '**Magic-Warping Aura** (__arcane__, __aura__, __transmutation__)
+    30 feet. A vaspercham''s shell distorts nearby magic. Any creature in the aura
+    who Casts a Spell must attempt a DC 37 Will save.'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - aura
+  - transmutation
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The spell is unaffected and the caster is temporarily immune to the
+    magic-warping aura for 1 minute.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Critical Success
+  range: null
+  raw_description: '**Critical Success** The spell is unaffected and the caster is
+    temporarily immune to the magic-warping aura for 1 minute.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The spell is unaffected, but if the spell allows a saving throw, the
+    vaspercham gains a +1 circumstance bonus to save against it.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Success
+  range: null
+  raw_description: '**Success** The spell is unaffected, but if the spell allows a
+    saving throw, the vaspercham gains a +1 circumstance bonus to save against it.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: If the spell has a target and there are one or more viable targets
+    within its range, the spell's target changes, determined randomly by the GM. If
+    there is no other possible target within range or the spell has no target, the
+    spell is disrupted.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Failure
+  range: null
+  raw_description: '**Failure** If the spell has a target and there are one or more
+    viable targets within its range, the spell''s target changes, determined randomly
+    by the GM. If there is no other possible target within range or the spell has
+    no target, the spell is disrupted.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The caster instead Casts another Spell, choosing randomly from their
+    spell repertoire, prepared spells, or available focus spells (as appropriate)
+    and selecting any targets at random.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Critical Failure
+  range: null
+  raw_description: '**Critical Failure** The caster instead Casts another Spell, choosing
+    randomly from their spell repertoire, prepared spells, or available focus spells
+    (as appropriate) and selecting any targets at random.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'The darkly intelligent vaspercham, an aquatic horror who delights in
+  violence and destruction, lurks in the shallows near shorelines. Once a vaspercham
+  settles on a new home, they stubbornly stay there, regardless of any communities
+  dwelling nearby. A vaspercham''s physical might and magic-warping abilities make
+  them incredibly hard to dislodge once entrenched, and many seaside communities have
+  relocated after a vaspercham came calling. The monster responds only to strength,
+  so one must best a vaspercham in combat to gain their begrudging cooperation. But
+  once the creature recovers their strength, they inevitably betray any temporary
+  alliance.
+
+
+
+
+  **__Recall Knowledge - Aberration__ (__Occultism__)**: DC 36'
+hp: 335
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Aklo
+level: 17
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d10+16
+    type: bludgeoning
+  name: tentacle
+  plus_damage:
+  - formula: null
+    type: hallucinatory brine
+  to_hit: 33
+  traits:
+  - agile
+  - magical
+  - reach 20 feet
+name: Vaspercham
+perception: 30
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A creature hit by the vaspercham's Strikes or Mindwarping Tide must
+    attempt a DC 38 Fortitude save. On a failure, the creature is overwhelmed with
+    phantasmal visions, becoming __confused__ for 1 round (1 minute on a critical
+    failure).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Hallucinatory Brine
+  range: null
+  raw_description: '**Hallucinatory Brine** (__arcane__, __illusion__, __mental__)
+    A creature hit by the vaspercham''s Strikes or Mindwarping Tide must attempt a
+    DC 38 Fortitude save. On a failure, the creature is overwhelmed with phantasmal
+    visions, becoming __confused__ for 1 round (1 minute on a critical failure).'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - illusion
+  - mental
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The vaspercham releases an effusion of noxious water from its shell.
+    Creatures within a 15-foot emanation must save against the vaspercham's hallucinatory
+    brine.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Mindwarping Tide
+  range: null
+  raw_description: '**Mindwarping Tide**   (__concentrate__) The vaspercham releases
+    an effusion of noxious water from its shell. Creatures within a 15-foot emanation
+    must save against the vaspercham''s hallucinatory brine.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The vaspercham makes four tentacle Strikes, each against a different
+    target. These attacks count toward the vaspercham's multiple attack penalty, but
+    the multiple attack penalty doesn't increase until after the vaspercham makes
+    all of their attacks.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Whipping Tentacles
+  range: null
+  raw_description: '**Whipping Tentacles** [Two Actions]  The vaspercham makes four
+    tentacle Strikes, each against a different target. These attacks count toward
+    the vaspercham''s multiple attack penalty, but the multiple attack penalty doesn''t
+    increase until after the vaspercham makes all of their attacks.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 2d8+16
+    type: bludgeoning
+  name: water blast
+  plus_damage:
+  - formula: null
+    type: hallucinatory brine
+  to_hit: 33
+  traits:
+  - brutal
+  - magical
+  - range increment 100 feet
+  - water
+rarity: Common
+resistances:
+- amount: 10
+  type: cold
+- amount: 10
+  type: electricity
+ritual_lists: null
+saves:
+  fort: 31
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 25
+  ref_misc: null
+  will: 32
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +30
+- darkvision
+- see invisibility
+size: Huge
+skills:
+- bonus: 33
+  misc: null
+  name: 'Arcana '
+- bonus: 33
+  misc: null
+  name: 'Athletics '
+- bonus: 31
+  misc: null
+  name: 'Deception '
+- bonus: 29
+  misc: null
+  name: 'Intimidation '
+- bonus: 33
+  misc: null
+  name: 'Sea Lore '
+source:
+- abbr: Bestiary 2
+  page_start: 279
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 50
+  type: swim
+spell_lists:
+- dc: 41
+  misc: null
+  name: Arcane Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 9
+    spells:
+    - frequency: null
+      name: cone of cold
+      requirement: null
+    - frequency: null
+      name: spell immunity
+      requirement: null
+  - heightened_level: null
+    level: 8
+    spells:
+    - frequency: null
+      name: lightning bolt
+      requirement: null
+  - heightened_level: null
+    level: 7
+    spells:
+    - frequency: null
+      name: regenerate
+      requirement: null
+  - heightened_level: null
+    level: 6
+    spells:
+    - frequency: x3
+      name: spellwrack
+      requirement: null
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: at will
+      name: control water
+      requirement: null
+  - heightened_level: 7
+    level: -1
+    spells:
+    - frequency: null
+      name: see invisibility
+      requirement: null
+  to_hit: null
+traits:
+- CE
+- Huge
+- Aberration
+- Aquatic
+type: Creature
+weaknesses:
+- amount: 15
+  type: fire

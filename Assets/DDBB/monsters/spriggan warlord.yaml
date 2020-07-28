@@ -1,0 +1,244 @@
+ability_mods:
+  cha_mod: 4
+  con_mod: 4
+  dex_mod: 4
+  int_mod: 1
+  str_mod: 6
+  wis_mod: 3
+ac: 25
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The spriggan warlord grows to size Large, along with their equipment (which
+    returns to natural size if removed). The spriggan warlord's reach increases by
+    5 feet. They regain 15 Hit Points and gain a +2 status bonus to melee attack and
+    damage rolls. This effect continues until the end of the spriggan warlord's next
+    turn, but on any turn in which the spriggan warlord deals damage to another creature
+    and is not __fatigued__, the effect extends until the end of the following turn.
+    When Enraged Growth ends, the spriggan warlord is fatigued for 1 hour.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Enraged Growth
+  range: null
+  raw_description: '**Enraged Growth [Reaction]** (__polymorph__, __primal__, __transmutation__)
+    **Trigger** The spriggan warlord takes damage; **Effect** The spriggan warlord
+    grows to size Large, along with their equipment (which returns to natural size
+    if removed). The spriggan warlord''s reach increases by 5 feet. They regain 15
+    Hit Points and gain a +2 status bonus to melee attack and damage rolls. This effect
+    continues until the end of the spriggan warlord''s next turn, but on any turn
+    in which the spriggan warlord deals damage to another creature and is not __fatigued__,
+    the effect extends until the end of the following turn. When Enraged Growth ends,
+    the spriggan warlord is fatigued for 1 hour.'
+  requirements: null
+  success: null
+  traits:
+  - polymorph
+  - primal
+  - transmutation
+  trigger: The spriggan warlord takes damage
+description: 'While the leaders of larger spriggan enclaves tend to be uniquely trained
+  warriors with highly specialized skills, spriggan warlords are fond of the traditional
+  spriggan weaponry of morningstar and crossbow, valuing this traditional fighting
+  style for its simplicity and for using both weapons to their full potential. Spriggan
+  warlords often serve as sub-commanders in large groups, filling roles in spriggan
+  society akin to captains of the guard or bodyguards to spriggan royalty. In smaller
+  groups or remote outposts, a single spriggan warlord is typically in charge of a
+  band of spriggan bullies.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 23'
+hp: 120
+hp_misc: null
+immunities: null
+items:
+- +1 crossbow (10 bolts)
+- +1 morningstar
+languages:
+- Aklo
+- Common
+level: 7
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+9
+    type: bludgeoning
+  name: morningstar
+  plus_damage: null
+  to_hit: 18
+  traits:
+  - magical
+  - versatile P
+name: Spriggan Warlord
+perception: 14
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The spriggan warlord makes a morningstar Strike with a +2 circumstance
+    bonus to its attack roll. This attack is __nonlethal__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Bully's Bludgeon
+  range: null
+  raw_description: '**Bully''s Bludgeon**   The spriggan warlord makes a morningstar
+    Strike with a +2 circumstance bonus to its attack roll. This attack is __nonlethal__.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The spriggan warlord's Strikes deal an additional 2d6 precision damage
+    to __flat-footed__ creatures.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sneak Attack
+  range: null
+  raw_description: '**__Sneak Attack__** The spriggan warlord''s Strikes deal an additional
+    2d6 precision damage to __flat-footed__ creatures.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A spriggan warlord has access to the critical specialization effects
+    for __crossbows__ and __morningstars__, and the reload of any crossbow they wield
+    is reduced by 1 (to a minimum of 0).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Warlord's Training
+  range: null
+  raw_description: '**Warlord''s Training** A spriggan warlord has access to the critical
+    specialization effects for __crossbows__ and __morningstars__, and the reload
+    of any crossbow they wield is reduced by 1 (to a minimum of 0).'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 2d8
+    type: piercing
+  name: crossbow
+  plus_damage: null
+  to_hit: 18
+  traits:
+  - magical
+  - range increment 120 feet
+  - reload 0
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 13
+  fort_misc: null
+  misc: null
+  ref: 17
+  ref_misc: null
+  will: 14
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +14
+- low-light vision
+size: Small
+skills:
+- bonus: 15
+  misc: null
+  name: 'Acrobatics '
+- bonus: 17
+  misc: null
+  name: 'Athletics '
+- bonus: 17
+  misc: null
+  name: 'Intimidation '
+- bonus: 12
+  misc: null
+  name: 'Society '
+- bonus: 17
+  misc: null
+  name: 'Stealth '
+- bonus: 14
+  misc: null
+  name: 'Survival '
+- bonus: 15
+  misc: null
+  name: 'Thievery '
+source:
+- abbr: Bestiary 2
+  page_start: 253
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+spell_lists:
+- dc: 25
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: fly
+      requirement: null
+    - frequency: null
+      name: shatter
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: null
+      name: dispel magic
+      requirement: null
+    - frequency: null
+      name: fear
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: null
+      name: blur
+      requirement: null
+  - heightened_level: 4
+    level: 0
+    spells:
+    - frequency: null
+      name: dancing lights
+      requirement: null
+  to_hit: null
+traits:
+- N
+- Small
+- Gnome
+- Humanoid
+- Spriggan
+type: Creature
+weaknesses: null

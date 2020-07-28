@@ -1,0 +1,194 @@
+ability_mods:
+  cha_mod: -3
+  con_mod: 7
+  dex_mod: 5
+  int_mod: -4
+  str_mod: 8
+  wis_mod: 5
+ac: 33
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When exposed to a __cold__ effect, the viper vine is overwhelmed by
+    lethargy, becoming __slowed 1__ for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Cold Vulnerability
+  range: null
+  raw_description: '**Cold Vulnerability** When exposed to a __cold__ effect, the
+    viper vine is overwhelmed by lethargy, becoming __slowed 1__ for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'A voracious, flesh-eating carnivore, the viper vine has a single enormous
+  blossom arising from a thick, leafy tangle of snake-like vines. When the plant senses
+  the approach of suitable prey through its sensitive, shallowly buried root system,
+  it rises up like an agitated snake and unfurls its brightly colored bloom, an act
+  that releases a cloud of mind-numbing pollen. Persistent stories claim the viper
+  vine can lure prey into its clutches by swaying with a hypnotic motion, but this
+  effect is in fact created by this invisible, odorless pollen cloud.
+
+
+
+
+  Since a viper vine gains nourishment by consuming creatures rather than through
+  ingesting moisture and soil, it has developed rudimentary locomotion and can drag
+  itself along the ground with its tentacle-like roots. It even has a form of rudimentary
+  sentience, allowing it to not only discern differences in prey and make limited
+  tactical decisions, but also to avoid creatures that are particularly large or dangerous-looking.
+
+
+
+
+  The area around viper vine hunting grounds is often strewn with the partially devoured
+  remains of victims. It''s not unusual to find the rotting corpses of wild animals,
+  ill-fated adventurers, and even giants in the plant''s immediate vicinity, along
+  with a scattering of incidental treasure left behind on the corpses. A viper vine
+  rarely returns to the carcass of a creature it killed earlier, preferring to hunt
+  fresh meat.
+
+
+
+
+  **__Recall Knowledge - Plant__ (__Nature__)**: DC 31'
+hp: 270
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 13
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d6+11
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 3d6
+    type: poison
+  to_hit: 27
+  traits:
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 3d10+11
+    type: bludgeoning
+  name: vine
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 27
+  traits:
+  - agile
+  - reach 15 feet
+name: Viper Vine
+perception: 22
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: As failure, plus the creature is stupefied 2 for 24 hours.
+  critical_success: The creature is unaffected and is temporarily immune to Captivating
+    Pollen for 24 hours.
+  description: "The viper vine releases a 60-foot emanation of invisible pollen that\
+    \ stays in the air for 5 rounds unless dispersed by a moderate or stronger wind.\
+    \ Each creature that enters or starts its turn in the area must attempt a DC 33\
+    \ Will save or be captivated. The viper vine can't use Captivating Pollen for\
+    \ 1d4 rounds. \n\n"
+  effect: null
+  effects: null
+  failure: The creature is fascinated, and it must spend each of its actions to move
+    closer to the viper vine as expediently as possible while avoiding obvious dangers.
+    If a captivated creature is adjacent to the viper vine, it stays still and doesn't
+    act. It ceases to be fascinated if it's no longer in the pollen aura at the end
+    of its turn.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Captivating Pollen
+  range: null
+  raw_description: "**Captivating Pollen**   (__enchantment__, __incapacitation__,\
+    \ __mental__, __poison__) The viper vine releases a 60-foot emanation of invisible\
+    \ pollen that stays in the air for 5 rounds unless dispersed by a moderate or\
+    \ stronger wind. Each creature that enters or starts its turn in the area must\
+    \ attempt a DC 33 Will save or be captivated. The viper vine can't use Captivating\
+    \ Pollen for 1d4 rounds. \n\n**Critical Success** The creature is unaffected and\
+    \ is temporarily immune to Captivating Pollen for 24 hours. \n\n**Success** The\
+    \ creature is __sickened 1__. \n\n**Failure** The creature is __fascinated__,\
+    \ and it must spend each of its actions to move closer to the viper vine as expediently\
+    \ as possible while avoiding obvious dangers. If a captivated creature is adjacent\
+    \ to the viper vine, it stays still and doesn't act. It ceases to be fascinated\
+    \ if it's no longer in the pollen aura at the end of its turn. \n\n**Critical\
+    \ Failure** As failure, plus the creature is __stupefied 2__ for 24 hours."
+  requirements: null
+  success: The creature is sickened 1.
+  traits:
+  - enchantment
+  - incapacitation
+  - mental
+  - poison
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: 3d8+8 bludgeoning, DC 33
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Constrict
+  range: null
+  raw_description: '**__Constrict__**   3d8+8 bludgeoning, DC 33'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 15
+  type: poison
+ritual_lists: null
+saves:
+  fort: 26
+  fort_misc: null
+  misc: null
+  ref: 24
+  ref_misc: null
+  will: 22
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +22
+- low-light vision
+- tremorsense (imprecise) 60 feet
+size: Large
+skills:
+- bonus: 27
+  misc: null
+  name: 'Athletics '
+- bonus: 24
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 287
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+spell_lists: null
+traits:
+- N
+- Large
+- Plant
+type: Creature
+weaknesses: null

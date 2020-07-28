@@ -1,0 +1,169 @@
+ability_mods:
+  cha_mod: -1
+  con_mod: 5
+  dex_mod: 1
+  int_mod: -4
+  str_mod: 6
+  wis_mod: 3
+ac: 25
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The woolly rhinoceros treats __environmental cold effects__ as if they
+    were one step less extreme.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Cold Adaptation
+  range: null
+  raw_description: '**Cold Adaptation** The woolly rhinoceros treats __environmental
+    cold effects__ as if they were one step less extreme.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The monster avoids being knocked out and remains at 1 HP, but its wounded
+    value increases by 1. When it is wounded 3, it can no longer use this ability.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Ferocity
+  range: null
+  raw_description: '**Ferocity** [Reaction] **Trigger** The monster is reduced to
+    0 HP. **Effect** The monster avoids being knocked out and remains at 1 HP, but
+    its wounded value increases by 1. When it is wounded 3, it can no longer use this
+    ability.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: The monster is reduced to 0 HP.
+description: 'Even bulkier than their non-woolly cousins, these rhinoceroses have
+  a shaggy pelt of long, thick fur and a huge crescent-shaped horn. Woolly rhinos
+  inhabit areas of arid tundra and cold steppes, spending much of their day grazing
+  for sustenance.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 22'
+hp: 100
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 6
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d12+6
+    type: piercing
+  name: horn
+  plus_damage: null
+  to_hit: 16
+  traits:
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 2d8+6
+    type: bludgeoning
+  name: foot
+  plus_damage: null
+  to_hit: 16
+  traits: null
+name: Wooly Rhinoceros
+perception: 11
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The wooly rhinoceros Strides twice, then makes a horn Strike. As long
+    as the wooly rhinoceros moved at least 20 feet, the Strike's damage increases
+    to 3d12+6. A Medium or smaller creature struck by this attack must succeed at
+    a DC 24 Reflex save or be automatically __Shoved__ back 5 feet and knocked __prone__
+    by the force of the blow.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Rhinoceros Charge
+  range: null
+  raw_description: '**Rhinoceros Charge** [Two Actions]  The wooly rhinoceros Strides
+    twice, then makes a horn Strike. As long as the wooly rhinoceros moved at least
+    20 feet, the Strike''s damage increases to 3d12+6. A Medium or smaller creature
+    struck by this attack must succeed at a DC 24 Reflex save or be automatically
+    __Shoved__ back 5 feet and knocked __prone__ by the force of the blow.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: Medium or smaller, foot, DC 21
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Trample
+  range: null
+  raw_description: '**__Trample__** [Three Actions]  Medium or smaller, foot, DC 21'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 17
+  fort_misc: null
+  misc: +2 status to all saves vs. cold
+  ref: 11
+  ref_misc: null
+  will: 15
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +11
+- scent (imprecise) 30 feet
+size: Large
+skills:
+- bonus: 16
+  misc: null
+  name: 'Athletics '
+- bonus: 13
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 228
+  page_stop: null
+speed:
+- amount: 35
+  type: Land
+spell_lists: null
+traits:
+- N
+- Large
+- Animal
+type: Creature
+weaknesses: null

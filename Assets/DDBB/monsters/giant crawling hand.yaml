@@ -1,0 +1,207 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 4
+  dex_mod: 2
+  int_mod: -4
+  str_mod: 4
+  wis_mod: 3
+ac: 22
+ac_special: null
+alignment: NE
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: A random creature adjacent to the giant crawling hand is sprayed with vile
+    pus that deals 4d6 negative damage. The affected creature must attempt a DC 21
+    Reflex save.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Pus Burst
+  range: null
+  raw_description: '**Pus Burst [Reaction]** **Trigger **The giant crawling hand takes
+    piercing or slashing damage; **Effect **A random creature adjacent to the giant
+    crawling hand is sprayed with vile pus that deals 4d6 negative damage. The affected
+    creature must attempt a DC 21 Reflex save.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: The giant crawling hand takes piercing or slashing damage
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The creature takes no damage.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Critical Success
+  range: null
+  raw_description: '**Critical Success **The creature takes no damage.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The creature takes half damage and becomes __sickened 1__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Success
+  range: null
+  raw_description: '**Success **The creature takes half damage and becomes __sickened
+    1__.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The creature takes full damage and becomes sickened 2.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Failure
+  range: null
+  raw_description: '**Failure **The creature takes full damage and becomes sickened
+    2.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The creature takes double damage and becomes sickened 3.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Critical Failure
+  range: null
+  raw_description: '**Critical Failure **The creature takes double damage and becomes
+    sickened 3.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'A giant crawling hand is the appendage of a very large creature, such
+  as a giant.
+
+
+
+
+  **__Recall Knowledge - Undead__ (__Religion__)**: DC 20'
+hp: 75
+hp_misc: negative healing
+immunities:
+- death effects
+- disease
+- paralyzed
+- poison
+- unconscious
+- visual
+items: null
+languages:
+- Common
+- can't speak any language
+level: 5
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+7
+    type: slashing
+  name: claw
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 15
+  traits: null
+name: Giant Crawling Hand
+perception: 12
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A crawling hand can be assigned a quarry by anointing the hand with
+    a drop of the intended quarry's blood. If the hand ever has no quarry, it automatically
+    gains the next creature it damages as its quarry. The hand gains a +1 circumstance
+    bonus to Perception checks when it __Seeks__ its quarry, to __Survival__ checks
+    when it __Tracks__ its quarry, and damage rolls when it Strikes its quarry.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Mark Quarry
+  range: null
+  raw_description: '**Mark Quarry** A crawling hand can be assigned a quarry by anointing
+    the hand with a drop of the intended quarry''s blood. If the hand ever has no
+    quarry, it automatically gains the next creature it damages as its quarry. The
+    hand gains a +1 circumstance bonus to Perception checks when it __Seeks__ its
+    quarry, to __Survival__ checks when it __Tracks__ its quarry, and damage rolls
+    when it Strikes its quarry.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 13
+  fort_misc: null
+  misc: null
+  ref: 11
+  ref_misc: null
+  will: 10
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +12
+- lifesense 30 feet
+- tremorsense (imprecise) 30 feet
+size: Medium
+skills:
+- bonus: 13
+  misc: null
+  name: 'Athletics '
+- bonus: 11
+  misc: null
+  name: 'Stealth '
+- bonus: 12
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 56
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+spell_lists: null
+traits:
+- NE
+- Medium
+- Undead
+type: Creature
+weaknesses: null

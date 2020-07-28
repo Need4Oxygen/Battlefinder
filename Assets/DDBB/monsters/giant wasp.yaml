@@ -1,0 +1,145 @@
+ability_mods:
+  cha_mod: 1
+  con_mod: 4
+  dex_mod: 4
+  int_mod: -5
+  str_mod: 4
+  wis_mod: 1
+ac: 19
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Giant wasps are much more dangerous but less common than their smaller
+  kin, and—to the relief of those who encounter them—they tend to be solitary.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 18'
+hp: 45
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 3
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d12+4
+    type: piercing
+  name: stinger
+  plus_damage:
+  - formula: null
+    type: giant wasp venom
+  to_hit: 12
+  traits:
+  - poison
+name: Giant Wasp
+perception: 8
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw** Fortitude DC 19; **Maximum Duration** 6 rounds; **Stage
+    1** no effect (1 round); **Stage 2** clumsy 2 (1 round); **Stage 3** paralyzed
+    (1 round)'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Giant Wasp Venom
+  range: null
+  raw_description: '**Giant Wasp Venom** (__incapacitation__, __poison__) **Saving
+    Throw** Fortitude DC 19; **Maximum Duration** 6 rounds; **Stage 1** no effect
+    (1 round); **Stage 2** clumsy 2 (1 round); **Stage 3** paralyzed (1 round)'
+  requirements: null
+  success: null
+  traits:
+  - incapacitation
+  - poison
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The giant wasp lays eggs in an adjacent creature that is paralyzed
+    or unconscious, exposing it to the wasp larva disease.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Implant Eggs
+  range: null
+  raw_description: '**Implant Eggs**   The giant wasp lays eggs in an adjacent creature
+    that is paralyzed or unconscious, exposing it to the wasp larva disease.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw** Fortitude DC 21; **Stage 1** carrier with no ill
+    effect (1d6 days); **Stage 2** drained 1 (1d3 days); **Stage 3** 5d6 damage, larva
+    emerges (disease ends)'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Wasp Larva
+  range: null
+  raw_description: '**Wasp Larva** (__disease__) **Saving Throw** Fortitude DC 21;
+    **Stage 1** carrier with no ill effect (1d6 days); **Stage 2** drained 1 (1d3
+    days); **Stage 3** 5d6 damage, larva emerges (disease ends)'
+  requirements: null
+  success: null
+  traits:
+  - disease
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 9
+  fort_misc: null
+  misc: null
+  ref: 11
+  ref_misc: null
+  will: 6
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +8
+- darkvision
+size: Large
+skills:
+- bonus: 11
+  misc: null
+  name: 'Acrobatics '
+- bonus: 9
+  misc: null
+  name: 'Athletics '
+source:
+- abbr: Bestiary
+  page_start: 324
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 40
+  type: fly
+spell_lists: null
+traits:
+- N
+- Large
+- Animal
+type: Creature
+weaknesses: null

@@ -1,0 +1,312 @@
+ability_mods:
+  cha_mod: 6
+  con_mod: 6
+  dex_mod: 6
+  int_mod: 2
+  str_mod: 10
+  wis_mod: 6
+ac: 43
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When the sard dies, its body explodes in a 30-foot emanation. All creatures
+    in the area take 10d6 electricity damage and 10d6 piercing damage (DC 43 basic
+    Reflex save). Any creature that takes piercing damage is also exposed to sard
+    venom.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Splintering Death
+  range: null
+  raw_description: '**Splintering Death** (__electricity__, __evocation__, __primal__)
+    When the sard dies, its body explodes in a 30-foot emanation. All creatures in
+    the area take 10d6 electricity damage and 10d6 piercing damage (DC 43 basic Reflex
+    save). Any creature that takes piercing damage is also exposed to sard venom.'
+  requirements: null
+  success: null
+  traits:
+  - electricity
+  - evocation
+  - primal
+  trigger: null
+description: 'An immense, gnarled, tree awoken with raw, primal power by one of the
+  fey Eldest of the First World, this monster—one of the legendary Tane—skitters on
+  huge, spidery roots and thrashes its branches as fiery lightning courses within
+  its blackened bark, a living manifestation of the violent clash between ancient
+  forest and stormy sky.
+
+
+
+
+  **__Recall Knowledge - Plant__ (__Nature__)**: DC 44'
+hp: 400
+hp_misc: null
+immunities:
+- electricity
+items: null
+languages:
+- Aklo
+- Arboreal
+- Common
+- Sylvan
+level: 19
+melee:
+- action_cost: One Action
+  damage:
+    formula: 4d6+18
+    type: bludgeoning
+  name: trunk
+  plus_damage:
+  - formula: 3d6
+    type: persistent electricity
+  to_hit: 37
+  traits:
+  - fatal d12
+  - reach 20 feet
+- action_cost: One Action
+  damage:
+    formula: 4d8+18
+    type: piercing
+  name: branch
+  plus_damage:
+  - formula: null
+    type: sard venom
+  to_hit: 37
+  traits:
+  - agile
+  - reach 20 feet
+- action_cost: One Action
+  damage:
+    formula: 4d6+18
+    type: bludgeoning
+  name: root
+  plus_damage:
+  - formula: 1d6
+    type: electricity
+  to_hit: 37
+  traits:
+  - reach 10 feet
+name: Sard
+perception: 35
+proactive_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: An instant before the target takes the electricity damage from the triggering
+    event, the sard's electrical sparks glow red. The target must succeed at a DC
+    41 Will save or lose any electricity resistance it has until this curse is lifted.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Lightning-Struck Curse
+  range: null
+  raw_description: '**Lightning-Struck Curse** [Reaction]  (__curse__, __necromancy__,
+    __primal__) **Trigger** The sard is about to damage a creature that has electricity
+    resistance; **Effect** An instant before the target takes the electricity damage
+    from the triggering event, the sard''s electrical sparks glow red. The target
+    must succeed at a DC 41 Will save or lose any electricity resistance it has until
+    this curse is lifted.'
+  requirements: null
+  success: null
+  traits:
+  - curse
+  - necromancy
+  - primal
+  trigger: The sard is about to damage a creature that has electricity resistance
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw** DC 41 Fortitude; **Maximum Duration** 10 rounds;
+    **Stage 1** 2d6 electricity damage, 2d6 poison damage, and __clumsy 2__ (1 round);
+    **Stage 2** 3d6 electricity damage, 3d6 poison damage, clumsy 2, and __slowed
+    1__ (1 round); **Stage 3** 4d6 electricity damage, 4d6 poison damage, clumsy 2,
+    and slowed 2 (1 round)'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sard Venom
+  range: null
+  raw_description: '**Sard Venom** (__poison__, __primal__, __virulent__) **Saving
+    Throw** DC 41 Fortitude; **Maximum Duration** 10 rounds; **Stage 1** 2d6 electricity
+    damage, 2d6 poison damage, and __clumsy 2__ (1 round); **Stage 2** 3d6 electricity
+    damage, 3d6 poison damage, clumsy 2, and __slowed 1__ (1 round); **Stage 3** 4d6
+    electricity damage, 4d6 poison damage, clumsy 2, and slowed 2 (1 round)'
+  requirements: null
+  success: null
+  traits:
+  - poison
+  - primal
+  - virulent
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The sard makes up to four thorn Strikes, each against a different target.
+    The sard's multiple attack penalty doesn't increase until after all the attacks
+    have been made.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Thorn Volley
+  range: null
+  raw_description: '**Thorn Volley** [Two Actions]  The sard makes up to four thorn
+    Strikes, each against a different target. The sard''s multiple attack penalty
+    doesn''t increase until after all the attacks have been made.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: Huge or smaller, root, DC 39
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Trample
+  range: null
+  raw_description: '**__Trample__** [Three Actions]  Huge or smaller, root, DC 39'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 4d4+16
+    type: piercing
+  name: thorn
+  plus_damage:
+  - formula: null
+    type: sard venom
+  to_hit: 35
+  traits:
+  - deadly d10
+  - primal
+  - propulsive
+  - range 180 feet
+rarity: Rare
+resistances:
+- amount: 15
+  type: fire
+- amount: 15
+  type: physical (except slashing)
+ritual_lists:
+- dc: 39
+  misc: null
+  name: Rituals
+  spell_groups:
+  - heightened_level: null
+    level: 8
+    spells:
+    - frequency: doesn't require secondary casters
+      name: control weather
+      requirement: null
+  to_hit: null
+saves:
+  fort: 35
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 31
+  ref_misc: null
+  will: 33
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The sard treats the plane it is located on as its home plane.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Planar Acclimation
+  range: null
+  raw_description: '**Planar Acclimation** The sard treats the plane it is located
+    on as its home plane.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +35
+- low-light vision
+- tremorsense 120 feet
+size: Gargantuan
+skills:
+- bonus: 33
+  misc: null
+  name: 'Acrobatics '
+- bonus: 37
+  misc: null
+  name: 'Athletics '
+- bonus: 31
+  misc: null
+  name: 'Nature '
+source:
+- abbr: Bestiary 2
+  page_start: 231
+  page_stop: null
+speed:
+- amount: 40
+  type: Land
+- amount: 25
+  type: climb
+spell_lists:
+- dc: 41
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 9
+    spells:
+    - frequency: null
+      name: storm of vengeance
+      requirement: null
+  - heightened_level: null
+    level: 8
+    spells:
+    - frequency: null
+      name: punishing winds
+      requirement: null
+    - frequency: null
+      name: tree stride
+      requirement: null
+  - heightened_level: null
+    level: 7
+    spells:
+    - frequency: ×3
+      name: chain lightning
+      requirement: null
+  to_hit: null
+traits:
+- Rare
+- CE
+- Gargantuan
+- Electricity
+- Plant
+- Tane
+type: Creature
+weaknesses:
+- amount: 15
+  type: cold iron

@@ -1,0 +1,147 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 3
+  dex_mod: 2
+  int_mod: -4
+  str_mod: 6
+  wis_mod: 1
+ac: 21
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Hadrosaurids are a broad grouping of herbivorous dinosaurs that share
+  characteristic flat snouts filled with rows of grinding teeth well suited for feeding
+  on vegetation. Also known as "duck-billed dinosaurs" due to the unusual shape of
+  their jaws, hadrosaurids are lumbering creatures that can rival an elephant for
+  size, although they tend to be much less aggressive and are prone to flight when
+  confronted with danger rather than stubbornly standing their ground. Many species
+  of hadrosaurids have uniquely shaped crests on their heads that give each species
+  its own unusual profile, making them easily recognizable even to an amateur dinosaur
+  watcher.
+
+
+
+
+  Giants and other oversized creatures have been known to domesticate hadrosaurids
+  to serve as livestock. Despite their ability to sprint quickly, they don''t make
+  particularly viable mounts due to their timid natures, but in a large group, a panicked
+  gathering of hadrosaurids can wreak great damage with their trampling.
+
+
+
+
+  A hadrosaurid can walk for short distances on its hind legs but prefers to graze
+  and travel on all fours. The typical hadrosaurid is 20 to 30 feet long and can weigh
+  up to 10,000 pounds.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 19'
+hp: 60
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 4
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+8
+    type: bludgeoning
+  name: tail
+  plus_damage: null
+  to_hit: 14
+  traits:
+  - reach 15 feet
+- action_cost: One Action
+  damage:
+    formula: 2d4+8
+    type: bludgeoning
+  name: foot
+  plus_damage: null
+  to_hit: 12
+  traits:
+  - reach 15 feet
+name: Hadrosaurid
+perception: 13
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The hadrosaurid Strides twice. It has a +20-foot circumstance bonus to its
+    Speed during these Strides.
+  effects: null
+  failure: null
+  frequency: once per minute
+  full_description: null
+  generic_description: null
+  name: Sprint
+  range: null
+  raw_description: '**Sprint** [Two Actions]  **Frequency **once per minute; **Effect
+    **The hadrosaurid Strides twice. It has a +20-foot circumstance bonus to its Speed
+    during these Strides.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: Large or smaller, foot, DC 21
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Trample
+  range: null
+  raw_description: '**__Trample__** [Three Actions]  Large or smaller, foot, DC 21'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 12
+  fort_misc: null
+  misc: null
+  ref: 10
+  ref_misc: null
+  will: 11
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +13
+- low-light vision
+- scent (imprecise) 30 feet
+size: Huge
+skills:
+- bonus: 12
+  misc: null
+  name: 'Athletics '
+- bonus: 10
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 81
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+spell_lists: null
+traits:
+- N
+- Huge
+- Animal
+- Dinosaur
+type: Creature
+weaknesses: null

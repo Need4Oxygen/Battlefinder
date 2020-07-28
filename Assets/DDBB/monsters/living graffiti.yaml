@@ -1,0 +1,175 @@
+ability_mods:
+  cha_mod: 1
+  con_mod: 1
+  dex_mod: 4
+  int_mod: -2
+  str_mod: 2
+  wis_mod: 2
+ac: 19
+ac_special: null
+alignment: CN
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When a creature attempts to Strike a living graffiti and critically
+    misses, the attacker hits the surface (a wall, canvas, or so on) behind the living
+    graffiti. This may damage or break the weapon or surface.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Backdrop
+  range: null
+  raw_description: '**Backdrop** When a creature attempts to Strike a living graffiti
+    and critically misses, the attacker hits the surface (a wall, canvas, or so on)
+    behind the living graffiti. This may damage or break the weapon or surface.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A living graffiti can move only along flat surfaces such as floors
+    and walls. If the surface it's on is destroyed (such as a portrait hit by a __fireball__
+    spell or a puddle being splashed), the graffiti takes 2d6 damage and is shunted
+    to the nearest flat surface. If there is no flat surface within 5 feet, the living
+    graffiti is destroyed.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Surface-Bound
+  range: null
+  raw_description: '**Surface-Bound** A living graffiti can move only along flat surfaces
+    such as floors and walls. If the surface it''s on is destroyed (such as a portrait
+    hit by a __fireball__ spell or a puddle being splashed), the graffiti takes 2d6
+    damage and is shunted to the nearest flat surface. If there is no flat surface
+    within 5 feet, the living graffiti is destroyed.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: "A living graffiti is a painting or drawing that has come to life by\
+  \ way of strange magic. It typically looks like a cartoonish humanoid made of wet\
+  \ oil paint. These two-dimensional beings are unbound from the canvases on which\
+  \ they were originally drawn and can move along any flat surface they touch, including\
+  \ walls, floors, furniture, doors, and even bodies of still water. They cannot exist\
+  \ apart from the surfaces they traverse except in brief bursts, which they typically\
+  \ use to harass or attack nearby creatures. Although they are not incredibly intelligent,\
+  \ living graffiti exhibit a mischievous spitefulness and seeming desire to make\
+  \ the real world as much of a caricature as their own two-dimensional domain. \n\
+  \n## Variant Living Graffiti\n\n The living graffiti below is but one type of this\
+  \ strange creature. Other living graffiti exist, made from media like chalk, pastels,\
+  \ ink, or tempera, or even more archaic materials like mud, beeswax, or blood. The\
+  \ following are a few examples of the kinds of abilities such a variant living graffiti\
+  \ might have. \n\n\n\n**Blood**: The living graffiti gains the following ability.\n\
+  \n**Absorb Blood** Anytime a creature within 5 feet of the living graffiti takes\
+  \ slashing, piercing, or __persistent bleed__ damage, the graffiti gains a number\
+  \ of temporary HP equal to half the damage dealt to the adjacent creature. \n\n\n\
+  \n**Chalk**: The living graffiti gains the following ability. \n\n**Cone of Chalk**\
+  \ [Two Actions] The living graffiti expels a 15-foot cone of chalk. Creatures in\
+  \ the area must succeed at a DC 20 Reflex save or be blinded for 1 round. The living\
+  \ graffiti can't use Cone of Chalk again for 1d4 rounds. \n\n\n\n**Ink**: The living\
+  \ graffiti's HP increases to 60 and its splatter Strike deals 2d6 damage (in addition\
+  \ to blinding for 1 round), but it gains the following weakness.\n\n**Water Weakness**\
+  \ When the living graffiti is doused with water or starts its turn in water (either\
+  \ through a spell or some other effect, such as pouring a bucket of water over it),\
+  \ it takes 2d6 damage.\n\n\n\n**__Recall Knowledge - Construct__ (__Arcana__, __Crafting__)**:\
+  \ DC 18"
+hp: 50
+hp_misc: null
+immunities:
+- bleed
+- death effects
+- disease
+- doomed
+- drained
+- fatigued
+- healing
+- necromancy
+- nonlethal
+- paralyzed
+- poison
+- sickened
+- unconscious
+items: null
+languages:
+- Common
+- (can't speak any language)
+level: 3
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d4+4
+    type: bludgeoning
+  name: fist
+  plus_damage: null
+  to_hit: 13
+  traits:
+  - agile
+  - finesse
+name: Living Graffiti
+perception: 9
+proactive_abilities: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d4+4
+    type: null
+  name: splatter
+  plus_damage:
+  - formula: null
+    type: blinded 1 round
+  to_hit: 11
+  traits:
+  - nonlethal
+  - range increment 20 feet
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 8
+  fort_misc: null
+  misc: null
+  ref: 11
+  ref_misc: null
+  will: 7
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +9
+- darkvision
+size: Medium
+skills:
+- bonus: 11
+  misc: null
+  name: 'Acrobatics '
+- bonus: 5
+  misc: null
+  name: 'Crafting '
+- bonus: 10
+  misc: null
+  name: 'Deception '
+- bonus: 11
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: 'Pathfinder #151: The Show Must Go On'
+  page_start: 84
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists: null
+traits:
+- CN
+- Medium
+- Construct
+type: Creature
+weaknesses: null

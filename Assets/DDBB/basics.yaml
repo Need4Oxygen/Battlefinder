@@ -1,0 +1,135 @@
+abilityscore:
+- flag_rep: 1
+  long_name: Strength
+  short_name: STR
+- flag_rep: 2
+  long_name: Dexterity
+  short_name: DEX
+- flag_rep: 4
+  long_name: Constitution
+  short_name: CON
+- flag_rep: 8
+  long_name: Intelligence
+  short_name: INT
+- flag_rep: 16
+  long_name: Wisdom
+  short_name: WIS
+- flag_rep: 32
+  long_name: Charisma
+  short_name: CHA
+- flag_rep: 64
+  long_name: Free 1
+  short_name: Free1
+- flag_rep: 128
+  long_name: Free 2
+  short_name: Free2
+actioncost:
+- abbr: 1
+  name: Single Action
+- abbr: 2
+  name: Two Actions
+- abbr: 3
+  name: Three Actions
+- abbr: F
+  name: Free Action
+- abbr: R
+  name: Reaction
+- abbr: V
+  name: Varies
+- abbr: 1m
+  name: 1 minute
+- abbr: 10m
+  name: 10 minutes
+- abbr: 1h
+  name: 1 hour
+alignment:
+- abbr: LG
+  name: Lawful Good
+- abbr: NG
+  name: Neutral Good
+- abbr: CG
+  name: Chaotic Good
+- abbr: LN
+  name: Lawful Neutral
+- abbr: N
+  name: True Neutral
+- abbr: CN
+  name: Chaotic Neutral
+- abbr: LE
+  name: Lawful Evil
+- abbr: NE
+  name: Neutral Evil
+- abbr: CE
+  name: Chaotic Evil
+frequency:
+- once per round
+- once per turn
+- once per minute
+- once every 10 minutes
+- once per hour
+- once per day
+lang_rarity:
+- Common
+- Uncommon
+- Secret
+movement:
+- Air Walk (constant)
+- Burrow
+- Burrow (sand only)
+- Burrow (snow only)
+- Can't Move
+- Climb
+- Climb Stone
+- Cloud Walk
+- Compression
+- Earth Glide
+- Fly
+- Fly (from fly)
+- Freedom of Movement (constant)
+- Glide
+- Ice Climb
+- Ice Stride
+- Land
+- Magma Swim
+- Powerful Jumper
+- Sand Glide
+- Spider Climb (constant)
+- Suction
+- Swim
+- Swamp Stride
+- Swiftness
+- Trickster's Step
+- Trackless Step
+- Unstoppable Burrow
+- Walk in Shadow
+- Woodland Stride
+size:
+- name: Tiny
+  reach_long_ft: 0
+  reach_tall_ft: 0
+  space_in_ft: 4
+- name: Small
+  reach_long_ft: 5
+  reach_tall_ft: 5
+  space_in_ft: 5
+- name: Medium
+  reach_long_ft: 5
+  reach_tall_ft: 5
+  space_in_ft: 5
+- name: Large
+  reach_long_ft: 5
+  reach_tall_ft: 10
+  space_in_ft: 10
+- name: Huge
+  reach_long_ft: 10
+  reach_tall_ft: 15
+  space_in_ft: 15
+- name: Gargantuan
+  reach_long_ft: 15
+  reach_tall_ft: 20
+  space_in_ft: 20
+weaponcategory:
+- Unarmed
+- Simple
+- Martial
+- Advanced

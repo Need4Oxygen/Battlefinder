@@ -1,0 +1,287 @@
+ability_mods:
+  cha_mod: 6
+  con_mod: 6
+  dex_mod: 4
+  int_mod: 1
+  str_mod: 8
+  wis_mod: 5
+ac: 37
+ac_special: null
+alignment: LN
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: ' [Reaction]'
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+description: 'A marut is tasked with hunting mortals who cheat death by artificially
+  extending their lifespans. This includes those who seek undeath, such as liches
+  and vampires, but also includes those who use powerful magic to cling to their youth,
+  use divination to discover and avoid an appointed death, or call too often on the
+  power of resurrection. Once the marut has selected its target, the inevitable pursues
+  its quarry without surcease or deviation until either it or the target is dead.
+
+
+
+
+  Maruts seem to be carved from stone and clad in golden armor, yet they move with
+  the deliberate grace of a creature made of flesh and bone. A marut never rushes,
+  but its thunderous footfalls are relentless as it pursues its target. Though able
+  to speak any language, the marut is taciturn even among inevitables.
+
+
+
+
+  **__Recall Knowledge - Monitor__ (__Religion__)**: DC 34'
+hp: 230
+hp_misc: regeneration 15 (deactivated by chaotic
+immunities:
+- death effects
+- disease
+- emotion
+- poison
+- unconscious
+items: null
+languages:
+- Celestial
+- Infernal
+- Utopian
+- truespeech
+level: 15
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d8+11
+    type: bludgeoning
+  name: fist
+  plus_damage:
+  - formula: 1d6
+    type: lawful and fists of thunder and lightning
+  to_hit: 30
+  traits:
+  - lawful
+  - magical
+  - reach 10 feet
+name: Marut
+perception: 26
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The marut is anathema to beings that unnaturally extend their existence,
+    including undead. Its fists bypass such creatures' resistances to damage and apply
+    the creatures' highest weakness to damage. If a marut kills a creature that rejuvenates,
+    like a lich or ghost, it always knows that the creature isn't fully defeated.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Final End
+  range: null
+  raw_description: '**Final End** The marut is anathema to beings that unnaturally
+    extend their existence, including undead. Its fists bypass such creatures'' resistances
+    to damage and apply the creatures'' highest weakness to damage. If a marut kills
+    a creature that rejuvenates, like a lich or ghost, it always knows that the creature
+    isn''t fully defeated.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Each time the marut makes a fist Strike, it chooses either lightning
+    or thunder. If it chooses lightning, the attack deals an additional 2d12 electricity
+    damage and the target must succeed at a DC 33 Fortitude save or be __blinded__
+    for 1 minute. If it chooses thunder, the attack deals an additional 3d8 sonic
+    damage and the target must succeed at a DC 36 Fortitude save or be __deafened__
+    for 1 minute.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Fists of Thunder and Lightning
+  range: null
+  raw_description: '**Fists of Thunder and Lightning** (__divine__, __evocation__,
+    __incapacitation__) Each time the marut makes a fist Strike, it chooses either
+    lightning or thunder. If it chooses lightning, the attack deals an additional
+    2d12 electricity damage and the target must succeed at a DC 33 Fortitude save
+    or be __blinded__ for 1 minute. If it chooses thunder, the attack deals an additional
+    3d8 sonic damage and the target must succeed at a DC 36 Fortitude save or be __deafened__
+    for 1 minute.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - evocation
+  - incapacitation
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 15
+  type: chaotic
+ritual_lists:
+- dc: 36
+  misc: null
+  name: Rituals
+  spell_groups:
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: null
+      name: geas
+      requirement: null
+  to_hit: null
+saves:
+  fort: 27
+  fort_misc: null
+  misc: +2 status to all saves vs. magic
+  ref: 25
+  ref_misc: null
+  will: 26
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A marut can speak with and understand any creature with a language.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Truespeech
+  range: null
+  raw_description: '**Truespeech** A marut can speak with and understand any creature
+    with a language.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +26
+- darkvision
+- true seeing
+size: Large
+skills:
+- bonus: 31
+  misc: null
+  name: 'Athletics '
+- bonus: 22
+  misc: null
+  name: 'Axis Lore '
+- bonus: 27
+  misc: null
+  name: 'Diplomacy '
+- bonus: 29
+  misc: null
+  name: 'Intimidation '
+- bonus: 26
+  misc: null
+  name: 'Religion '
+- bonus: 28
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 10
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 6
+  type: <a style="text-decoration:underline" href="Spells.aspx?ID="><i>air walk</i></a>
+spell_lists:
+- dc: 37
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 8
+    spells:
+    - frequency: null
+      name: chain lightning
+      requirement: null
+    - frequency: null
+      name: dispel magic
+      requirement: null
+    - frequency: null
+      name: earthquake
+      requirement: null
+    - frequency: null
+      name: harm
+      requirement: null
+  - heightened_level: null
+    level: 7
+    spells:
+    - frequency: null
+      name: fear
+      requirement: null
+    - frequency: null
+      name: plane shift
+      requirement: null
+    - frequency: null
+      name: wall of force
+      requirement: null
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: null
+      name: command
+      requirement: null
+    - frequency: null
+      name: locate
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: at will
+      name: dimension door
+      requirement: null
+  - heightened_level: 8
+    level: -1
+    spells:
+    - frequency: null
+      name: air walk
+      requirement: null
+    - frequency: null
+      name: true seeing
+      requirement: null
+  to_hit: null
+traits:
+- LN
+- Large
+- Aeon
+- Inevitable
+- Monitor
+type: Creature
+weaknesses: null

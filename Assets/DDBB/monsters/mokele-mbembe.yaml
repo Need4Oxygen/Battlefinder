@@ -1,0 +1,162 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 6
+  dex_mod: 4
+  int_mod: -4
+  str_mod: 7
+  wis_mod: 2
+ac: 27
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Mokele-mbembes are large, reptilian predators found deep within Golarion''s
+  jungles. Mwangi view mokele-mbembes as embodiments of nature''s strength and majesty,
+  and they consider the sighting of this rare being a sign of favor from the gods
+  and an omen of powerful natural forces.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 28'
+hp: 172
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 9
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d12+10
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 22
+  traits:
+  - reach 15 feet
+- action_cost: One Action
+  damage:
+    formula: 2d6+10
+    type: bludgeoning
+  name: tail
+  plus_damage: null
+  to_hit: 22
+  traits:
+  - reach 20 feet
+- action_cost: One Action
+  damage:
+    formula: 2d8+10
+    type: bludgeoning
+  name: foot
+  plus_damage: null
+  to_hit: 22
+  traits:
+  - reach 10 feet
+name: Mokele-Mbembe
+perception: 15
+proactive_abilities:
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: Large or smaller, foot, DC 28
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Trample
+  range: null
+  raw_description: '**Trample** [Three Actions]  Large or smaller, foot, DC 28'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: The creature is stunned 3.
+  critical_success: The creature is unaffected.
+  description: 'The mokele-mbembe cracks its tail, creating a sonic boom in a 5-foot
+    burst centered on a corner within reach of its tail Strike. Each creature in the
+    burst''s area must attempt a DC 28 Fortitude save. Mokele-mbembes are immune.
+
+
+    '
+  effect: null
+  effects: null
+  failure: The creature is stunned 2.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Whip Tail
+  range: null
+  raw_description: '**Whip Tail** [Two Actions]  (__sonic__) The mokele-mbembe cracks
+    its tail, creating a sonic boom in a 5-foot burst centered on a corner within
+    reach of its tail Strike. Each creature in the burst''s area must attempt a DC
+    28 Fortitude save. Mokele-mbembes are immune.
+
+
+    **Critical Success** The creature is unaffected.
+
+
+    **Success** The creature is __stunned 1__.
+
+
+    **Failure** The creature is __stunned 2__.
+
+
+    **Critical Failure** The creature is __stunned 3__.
+
+
+    '
+  requirements: null
+  success: The creature is stunned 1.
+  traits:
+  - sonic
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 21
+  fort_misc: null
+  misc: null
+  ref: 15
+  ref_misc: null
+  will: 17
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +15
+- darkvision
+- scent (imprecise) 30 feet
+size: Huge
+skills:
+- bonus: 20
+  misc: null
+  name: 'Athletics '
+- bonus: 19
+  misc: null
+  name: 'Stealth '
+- bonus: 17
+  misc: null
+  name: 'Survival '
+source:
+- abbr: 'Pathfinder #146: Cult of Cinders'
+  page_start: 90
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+- amount: 30
+  type: swim
+spell_lists: null
+traits:
+- Uncommon
+- N
+- Huge
+- Animal
+type: Creature
+weaknesses: null

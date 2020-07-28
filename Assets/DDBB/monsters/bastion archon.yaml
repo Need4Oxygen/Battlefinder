@@ -1,0 +1,340 @@
+ability_mods:
+  cha_mod: 6
+  con_mod: 10
+  dex_mod: 7
+  int_mod: 6
+  str_mod: 10
+  wis_mod: 8
+ac: 47
+ac_special: null
+alignment: LG
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 50 feet. All good-aligned creatures in the aura have __fast healing
+    30__ for as long as they remain in range, and they gain a +2 status bonus to attack
+    rolls and damage rolls.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Bastion Aura
+  range: null
+  raw_description: '**Bastion Aura** (__aura__, __divine__, __good__, __healing__,
+    __necromancy__) 50 feet. All good-aligned creatures in the aura have __fast healing
+    30__ for as long as they remain in range, and they gain a +2 status bonus to attack
+    rolls and damage rolls.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - divine
+  - good
+  - healing
+  - necromancy
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: If the bastion archon is slain by an evil creature, it explodes in
+    a geyser of holy light, restoring 140 HP to all good-aligned creatures in a 40-foot
+    emanation. The ground in the affected area is also subjected to a level 10 __consecrate__
+    ritual, and the ground is consecrated for 10 years (or only 24 hours if the ultimate
+    sacrifice took place in __Hell__, __Abaddon__, or the __Abyss__).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Ultimate Sacrifice
+  range: null
+  raw_description: '**Ultimate Sacrifice** (__divine__, __good__, __healing__, __necromancy__)
+    If the bastion archon is slain by an evil creature, it explodes in a geyser of
+    holy light, restoring 140 HP to all good-aligned creatures in a 40-foot emanation.
+    The ground in the affected area is also subjected to a level 10 __consecrate__
+    ritual, and the ground is consecrated for 10 years (or only 24 hours if the ultimate
+    sacrifice took place in __Hell__, __Abaddon__, or the __Abyss__).'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - good
+  - healing
+  - necromancy
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Retributive Strike
+  range: null
+  raw_description: '**__Retributive Strike__ [Reaction]**'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'The mightiest of archon-kind form in the heat of battle from incredibly
+  uncommon circumstances. When a gathering of __lantern archons__ converges into a
+  gestalt in order to defend allies in a fight that seems all but lost, a fellow archon
+  of significant strength—such as a __star archon__—can commit a brave act of self-sacrifice
+  by dimensionally transposing itself with the gestalt. If the circumstances are just
+  right and luck is with the archons, the result is not a glorious sacrifice, but
+  instead the earth-rocking emergence of a bastion archon. In this way, the lowliest
+  of archons—the lanterns—can, in an instant, become their kind''s greatest hope.
+
+
+
+
+  Bastion archons are massive beings made of the very stone of Heaven''s Holy Mountain,
+  with their visages obscured by a blinding light surrounding the gestalt that originally
+  formed the bastion. Tireless in their embodiment of the virtue of sacrifice, a bastion
+  archon almost always protects the area where they manifested, and even when they
+  are destroyed they leave an indelible mark of righteousness upon the surrounding
+  region.
+
+
+
+
+  **__Recall Knowledge - Celestial__ (__Religion__)**: DC 45'
+hp: 280
+hp_misc: fast healing 30
+immunities: null
+items: null
+languages:
+- Celestial
+- Draconic
+- Infernal
+- tongues
+level: 20
+melee:
+- action_cost: One Action
+  damage:
+    formula: 4d8+20
+    type: bludgeoning
+  name: fist
+  plus_damage:
+  - formula: 2d6
+    type: good
+  to_hit: 40
+  traits:
+  - good
+  - lawful
+  - magical
+  - reach 15 feet
+name: Bastion Archon
+perception: 37
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Once per day, if an archon sees another creature cast __dimension door__,
+    the archon can use dimension door (heightened to 5th level) within 1 round to
+    attempt to follow that creature to the maximum distance of the archon's dimension
+    door. If the archon's dimension door has enough distance, the archon appears the
+    same distance and direction from the creature as before either creature used dimension
+    door.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Archon's Door
+  range: null
+  raw_description: '**Archon''s Door** Once per day, if an archon sees another creature
+    cast __dimension door__, the archon can use dimension door (heightened to 5th
+    level) within 1 round to attempt to follow that creature to the maximum distance
+    of the archon''s dimension door. If the archon''s dimension door has enough distance,
+    the archon appears the same distance and direction from the creature as before
+    either creature used dimension door.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Free Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The bastion archon fires its Holy Beam at only the creature it hit twice.
+    The creature's save result is one degree of success worse than the result it rolled.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Blinding Beams
+  range: null
+  raw_description: '**Blinding Beams** [Free Action]  **Trigger **The bastion archon
+    hits a creature with two fist Strikes this turn and can use its Holy Beam; **Effect
+    **The bastion archon fires its Holy Beam at only the creature it hit twice. The
+    creature''s save result is one degree of success worse than the result it rolled.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: The bastion archon hits a creature with two fist Strikes this turn and
+    can use its Holy Beam
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The bastion archon locks itself in place, becoming voluntarily __immobilized__.
+    While Entrenched, the archon can't be forcibly moved or tripped, and it gains
+    a +2 circumstance bonus to AC and Reflex saves. Entrench ends automatically as
+    soon as the bastion archon uses another __move__ action.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Entrench
+  range: null
+  raw_description: '**Entrench**   The bastion archon locks itself in place, becoming
+    voluntarily __immobilized__. While Entrenched, the archon can''t be forcibly moved
+    or tripped, and it gains a +2 circumstance bonus to AC and Reflex saves. Entrench
+    ends automatically as soon as the bastion archon uses another __move__ action.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: "The bastion archon releases a blinding beam of holy light in a 500-foot\
+    \ line that deals 20d6 good damage to non-archons in the area, with a DC 38 Reflex\
+    \ save. The bastion archon can't use Holy Beam again for 1d4 rounds. \n\n**Critical\
+    \ Success **The creature is unaffected. \n\n**Success **The creature takes half\
+    \ damage. \n\n**Failure **The creature takes full damage and is __blinded__ for\
+    \ 1d4 rounds. \n\n**Critical Failure **The creature takes double damage and is\
+    \ blinded permanently."
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Holy Beam
+  range: null
+  raw_description: "**Holy Beam** [Two Actions]  (__divine__, __good__, __incapacitation__,\
+    \ __light__) The bastion archon releases a blinding beam of holy light in a 500-foot\
+    \ line that deals 20d6 good damage to non-archons in the area, with a DC 38 Reflex\
+    \ save. The bastion archon can't use Holy Beam again for 1d4 rounds. \n\n**Critical\
+    \ Success **The creature is unaffected. \n\n**Success **The creature takes half\
+    \ damage. \n\n**Failure **The creature takes full damage and is __blinded__ for\
+    \ 1d4 rounds. \n\n**Critical Failure **The creature takes double damage and is\
+    \ blinded permanently."
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - good
+  - incapacitation
+  - light
+  trigger: null
+ranged: null
+rarity: Rare
+resistances: null
+ritual_lists: null
+saves:
+  fort: 38
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 31
+  ref_misc: null
+  will: 34
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +37
+- darkvision
+- true seeing
+size: Huge
+skills:
+- bonus: 38
+  misc: null
+  name: 'Athletics '
+- bonus: 34
+  misc: null
+  name: 'Diplomacy '
+- bonus: 34
+  misc: null
+  name: 'Intimidation '
+- bonus: 32
+  misc: null
+  name: 'Religion '
+source:
+- abbr: Bestiary 2
+  page_start: 24
+  page_stop: null
+speed:
+- amount: 70
+  type: Land
+- amount: 6
+  type: <a style="text-decoration:underline" href="Spells.aspx?ID="><i>air walk</i></a>
+spell_lists:
+- dc: 42
+  misc: ''
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 10
+    spells:
+    - frequency: null
+      name: meteor swarm
+      requirement: null
+    - frequency: null
+      name: polar ray
+      requirement: null
+    - frequency: null
+      name: sunburst
+      requirement: null
+  - heightened_level: null
+    level: 7
+    spells:
+    - frequency: null
+      name: prismatic spray
+      requirement: null
+    - frequency: x3
+      name: true target
+      requirement: null
+    - frequency: null
+      name: vibrant pattern
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: at will
+      name: dimension door
+      requirement: null
+  - heightened_level: 10
+    level: -1
+    spells:
+    - frequency: null
+      name: air walk
+      requirement: null
+    - frequency: null
+      name: tongues
+      requirement: null
+    - frequency: null
+      name: true seeing
+      requirement: null
+  to_hit: 34
+traits:
+- Rare
+- LG
+- Huge
+- Archon
+- Celestial
+type: Creature
+weaknesses:
+- amount: 15
+  type: evil

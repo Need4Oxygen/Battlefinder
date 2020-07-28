@@ -1,0 +1,133 @@
+ability_mods:
+  cha_mod: -1
+  con_mod: 2
+  dex_mod: 4
+  int_mod: 0
+  str_mod: 2
+  wis_mod: 2
+ac: 17
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Deep gnome scouts patrol the tunnels that lead into their settlements.
+  Some scout alone to make the most of their stealth, but others form groups for the
+  sake of safety.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 15'
+hp: 18
+hp_misc: null
+immunities: null
+items:
+- light pick
+- sling (20 bullets)
+languages:
+- Gnomish
+- Undercommon
+level: 1
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d4+2
+    type: piercing
+  name: light pick
+  plus_damage: null
+  to_hit: 7
+  traits:
+  - agile
+  - fatal d8
+name: Deep Gnome Scout
+perception: 7
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: If the deep gnome scout starts its turn undetected or hidden to a creature,
+    that creature is __flat-footed__ against the deep gnome scout's attacks until
+    the end of the turn.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Hidden Movement
+  range: null
+  raw_description: '**Hidden Movement** If the deep gnome scout starts its turn undetected
+    or hidden to a creature, that creature is __flat-footed__ against the deep gnome
+    scout''s attacks until the end of the turn.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d6+1
+    type: bludgeoning
+  name: sling
+  plus_damage: null
+  to_hit: 9
+  traits:
+  - propulsive
+  - range increment 50 feet
+  - reload 1
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 7
+  fort_misc: null
+  misc: null
+  ref: 9
+  ref_misc: null
+  will: 5
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +7
+- darkvision
+size: Small
+skills:
+- bonus: 7
+  misc: null
+  name: 'Acrobatics '
+- bonus: 5
+  misc: null
+  name: 'Nature '
+- bonus: 7
+  misc: +10 underground
+  name: 'Stealth '
+- bonus: 5
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 74
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+spell_lists:
+- dc: 14
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: illusory disguise
+      requirement: null
+  to_hit: null
+traits:
+- N
+- Small
+- Gnome
+- Humanoid
+type: Creature
+weaknesses: null

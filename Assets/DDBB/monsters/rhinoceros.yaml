@@ -1,0 +1,129 @@
+ability_mods:
+  cha_mod: -1
+  con_mod: 4
+  dex_mod: 0
+  int_mod: -4
+  str_mod: 6
+  wis_mod: 3
+ac: 22
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Rhinoceroses are short-tempered, territorial, and easily startled, and
+  these traits combined with their innate ferocity means their natural instinct when
+  disturbed is to attack. When intruders disturb or surprise rhinoceroses, the animals
+  respond by charging directly at the interlopers and then lashing out with their
+  mighty horns.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 19'
+hp: 70
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 4
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+6
+    type: piercing
+  name: horn
+  plus_damage: null
+  to_hit: 14
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 2d6+6
+    type: bludgeoning
+  name: foot
+  plus_damage: null
+  to_hit: 12
+  traits: null
+name: Rhinoceros
+perception: 9
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The rhinoceros Strides twice, then makes a horn Strike. As long as
+    the rhinoceros moved at least 20 feet, the Strike's damage increases to 3d8+6.
+    A Medium or smaller creature struck by this attack must succeed at a DC 21 Reflex
+    save or be automatically __Shoved__ back 5 feet and knocked __prone__ by the force
+    of the blow.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Rhinoceros Charge
+  range: null
+  raw_description: '**Rhinoceros Charge** [Two Actions]  The rhinoceros Strides twice,
+    then makes a horn Strike. As long as the rhinoceros moved at least 20 feet, the
+    Strike''s damage increases to 3d8+6. A Medium or smaller creature struck by this
+    attack must succeed at a DC 21 Reflex save or be automatically __Shoved__ back
+    5 feet and knocked __prone__ by the force of the blow.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: Medium or smaller, foot, DC 18
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Trample
+  range: null
+  raw_description: '**__Trample__** [Three Actions]  Medium or smaller, foot, DC 18'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 14
+  fort_misc: null
+  misc: null
+  ref: 8
+  ref_misc: null
+  will: 11
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +9
+- scent (imprecise) 30 feet
+size: Large
+skills:
+- bonus: 12
+  misc: null
+  name: 'Athletics '
+- bonus: 10
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 228
+  page_stop: null
+speed:
+- amount: 35
+  type: Land
+spell_lists: null
+traits:
+- N
+- Large
+- Animal
+type: Creature
+weaknesses: null

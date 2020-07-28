@@ -1,0 +1,235 @@
+ability_mods:
+  cha_mod: 7
+  con_mod: 5
+  dex_mod: 7
+  int_mod: 3
+  str_mod: 0
+  wis_mod: 5
+ac: 30
+ac_special: null
+alignment: CN
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When underwater, the nereid's body is __invisible__. The nereid can
+    dismiss or resume this transparency as an action that has the __concentrate__
+    trait.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Watery Transparency
+  range: null
+  raw_description: '**Watery Transparency** (__primal__, __transmutation__, __water__)
+    When underwater, the nereid''s body is __invisible__. The nereid can dismiss or
+    resume this transparency as an action that has the __concentrate__ trait.'
+  requirements: null
+  success: null
+  traits:
+  - primal
+  - transmutation
+  - water
+  trigger: null
+description: 'Nereids are aquatic fey with deep ties to water. They share some similarities
+  with naiads, but they are not guardians and do not bind themselves to a specific
+  body of water. Although they are primarily aquatic creatures, their unique ability
+  to imbue their vitality into a supernatural shawl allows them to travel on land
+  as well. A nereid must be careful when manifesting a shawl, however, as their life
+  essence is bound to it, so it can be stolen or destroyed to threaten the nereid.
+
+
+
+
+  Nereids prefer to exist in isolation. Left to their own devices, they avoid combat,
+  but when forced to fight, their ability to transform the natural waters in their
+  flesh into poison serves them as well as any weapon.
+
+
+
+
+  Often, ignorant sailors lump all water-dwelling fey into a single category of "aquatic
+  tempters," regardless of the fey''s type or gender, using these creatures'' names
+  interchangeably to represent the concept of a beautiful figure who exists to lure
+  mortals to a drowning death. Whereas naiads have more patience and often seek to
+  educate the ignorant regarding the harm that stereotypes can cause, nereids and
+  rusalkas have little patience for such methods. Rusalkas are the primary source
+  for the legends of fey preying upon sailors, and nereids loathe them for that, as
+  they prefer to live apart from humanity and enjoy the beauty of the natural world
+  in peace.
+
+
+
+
+  When a nereid learns of a rusalka''s increased activity, it often seeks out the
+  rusalka to route them—not so much out of an urge to protect humanoids (in whom nereids
+  traditionally have little interest), but to prevent the rusalka from inadvertently
+  riling up violent responses from humanoids who can''t be bothered to note the difference
+  between a murderous fey and one who just wants to be left alone.
+
+
+
+
+  **__Recall Knowledge - Fey__ (__Nature__)**: DC 27'
+hp: 175
+hp_misc: null
+immunities:
+- poison
+items: null
+languages:
+- Aquan
+- Common
+- Sylvan
+level: 10
+melee:
+- action_cost: One Action
+  damage:
+    formula: 6d6
+    type: poison
+  name: poisonous touch
+  plus_damage: null
+  to_hit: 23
+  traits:
+  - agile
+  - finesse
+  - magical
+name: Nereid
+perception: 20
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: The creature chokes on the water and runs out of air. It falls
+    unconscious and starts drowning. If the creature is above water, it recovers from
+    drowning as soon as it succeeds at a saving throw against suffocation.
+  critical_success: null
+  description: "The nereid touches a creature and causes water from its own body to\
+    \ flow into the creature's lungs. If the creature cannot breathe water, it must\
+    \ attempt a DC 29 Fortitude save. \n\n"
+  effect: null
+  effects: null
+  failure: The creature becomes sickened 3 as it chokes on the water.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Drowning Touch
+  range: null
+  raw_description: "**Drowning Touch** [Two Actions]  (__conjuration__, __incapacitation__,\
+    \ __primal__, __water__) The nereid touches a creature and causes water from its\
+    \ own body to flow into the creature's lungs. If the creature cannot breathe water,\
+    \ it must attempt a DC 29 Fortitude save. \n\n**Success** The creature is unaffected\
+    \ and is temporarily immune to Drowning Touch for 24 hours. \n\n**Failure** The\
+    \ creature becomes __sickened 3__ as it chokes on the water. \n\n**Critical Failure**\
+    \ The creature chokes on the water and runs out of air. It falls unconscious and\
+    \ starts __drowning__. If the creature is above water, it recovers from drowning\
+    \ as soon as it succeeds at a saving throw against suffocation."
+  requirements: null
+  success: The creature is unaffected and is temporarily immune to Drowning Touch
+    for 24 hours.
+  traits:
+  - conjuration
+  - incapacitation
+  - primal
+  - water
+  trigger: null
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: The nereid divests themself of part of their connection to the __First
+    World__ and imbues this essence into a flowing shawl that enables them to function
+    on land. The nereid can Dismiss this effect as long as they are touching the shawl.
+    As long as the shawl exists, the nereid gains the __amphibious__ trait. A nonnereid
+    who carries the shawl also gains the amphibious trait. If a nereid's shawl is
+    destroyed rather than Dismissed, the nereid can't Manifest a Shawl for 24 hours.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Manifest Shawl
+  range: null
+  raw_description: '**Manifest Shawl** [Three Actions]  (__conjuration__, __primal__)
+    The nereid divests themself of part of their connection to the __First World__
+    and imbues this essence into a flowing shawl that enables them to function on
+    land. The nereid can Dismiss this effect as long as they are touching the shawl.
+    As long as the shawl exists, the nereid gains the __amphibious__ trait. A nonnereid
+    who carries the shawl also gains the amphibious trait. If a nereid''s shawl is
+    destroyed rather than Dismissed, the nereid can''t Manifest a Shawl for 24 hours.'
+  requirements: null
+  success: null
+  traits:
+  - conjuration
+  - primal
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 10
+  type: cold iron
+ritual_lists: null
+saves:
+  fort: 16
+  fort_misc: null
+  misc: null
+  ref: 22
+  ref_misc: null
+  will: 18
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +20
+- low-light vision
+size: Medium
+skills:
+- bonus: 12
+  misc: +18 to Swim
+  name: 'Athletics '
+- bonus: 20
+  misc: null
+  name: 'Deception '
+- bonus: 22
+  misc: null
+  name: 'Diplomacy '
+- bonus: 22
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 182
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 50
+  type: swim
+spell_lists:
+- dc: 29
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 6
+    spells:
+    - frequency: <a style="text-decoration:underline" href="MonsterFamilies.aspx?ID=45">water
+        elementals</a> only
+      name: summon elemental
+      requirement: null
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: null
+      name: control water
+      requirement: null
+    - frequency: ×3, water only 4th suggestion
+      name: elemental form
+      requirement: null
+  to_hit: null
+traits:
+- CN
+- Medium
+- Aquatic
+- Fey
+- Water
+type: Creature
+weaknesses: null

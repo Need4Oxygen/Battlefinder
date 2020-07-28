@@ -1,0 +1,269 @@
+ability_mods:
+  cha_mod: -5
+  con_mod: 3
+  dex_mod: 4
+  int_mod: -5
+  str_mod: 6
+  wis_mod: 0
+ac: 27
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 'An alchemical golem''s body contains six alchemical chambers filled
+    with different substances. When an alchemical golem ability calls upon a randomly
+    determined alchemical effect, roll 1d6 and consult the following (if you roll
+    the result of a chamber that was shattered, there is no alchemical effect):
+
+
+    **1** acid damage; **2** cold damage; **3** electricity damage; **4** fire damage;
+    **5** poison damage; **6** sickness: DC 26 Fortitude save or sickened 1 (sickened
+    2 on a critical failure)'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Alchemical Chambers
+  range: null
+  raw_description: '**Alchemical Chambers** An alchemical golem''s body contains six
+    alchemical chambers filled with different substances. When an alchemical golem
+    ability calls upon a randomly determined alchemical effect, roll 1d6 and consult
+    the following (if you roll the result of a chamber that was shattered, there is
+    no alchemical effect):
+
+
+    **1** acid damage; **2** cold damage; **3** electricity damage; **4** fire damage;
+    **5** poison damage; **6** sickness: DC 26 Fortitude save or sickened 1 (sickened
+    2 on a critical failure)'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When an alchemical golem takes physical damage from a critical hit
+    or is affected by a shatter spell, one glass chamber within its body shatters,
+    spewing alchemical liquid in a 5-foot emanation. Roll on the alchemical chambers
+    list (see above) to determine which one shatters—on a roll of 1-5, creatures in
+    the area take 10d6 damage of the appropriate type (DC 28 basic Reflex). On a roll
+    of 6, creatures must instead save against the sickness effect.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Alchemical Rupture
+  range: null
+  raw_description: '**Alchemical Rupture** When an alchemical golem takes physical
+    damage from a critical hit or is affected by a shatter spell, one glass chamber
+    within its body shatters, spewing alchemical liquid in a 5-foot emanation. Roll
+    on the alchemical chambers list (see above) to determine which one shatters—on
+    a roll of 1-5, creatures in the area take 10d6 damage of the appropriate type
+    (DC 28 basic Reflex). On a roll of 6, creatures must instead save against the
+    sickness effect.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: harmed by sonic (5d8, 2d6 from areas or persistent damage); healed
+    by acid (area 2d4 HP); slowed by cold
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Golem Antimagic
+  range: null
+  raw_description: '**Golem Antimagic** harmed by sonic (5d8, 2d6 from areas or persistent
+    damage); healed by acid (area 2d4 HP); slowed by cold'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Casting a shatter spell on an alchemical golem affects the golem normally,
+    but also causes an alchemical rupture (see above).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Vulnerable to Shatter
+  range: null
+  raw_description: '**Vulnerable to Shatter** Casting a shatter spell on an alchemical
+    golem affects the golem normally, but also causes an alchemical rupture (see above).'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'This golem is a walking alchemical nightmare capable of inflicting all
+  manner of painful wounds. Its ability to follow orders is granted by the otherwise
+  mindless humanoid brain that floats in its dome-like head. In exceptionally rare
+  cases, the brain used in its creation might retain fragments of memories or even
+  actual intellect, resulting in an alchemical golem with a personality and agenda
+  of its own.
+
+
+
+
+  **__Recall Knowledge - Construct__ (__Arcana__, __Crafting__)**: DC 28'
+hp: 150
+hp_misc: null
+immunities:
+- acid
+- bleed
+- death effects
+- disease
+- doomed
+- drained
+- fatigued
+- healing
+- magic (see below)
+- mental
+- necromancy
+- nonlethal attacks
+- paralyzed
+- poison
+- sickened
+- unconscious
+items: null
+languages: null
+level: 9
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d10+6
+    type: piercing
+  name: syringe
+  plus_damage:
+  - formula: null
+    type: alchemical injection
+  to_hit: 22
+  traits:
+  - magical
+  - reach 10 feet
+name: Alchemical Golem
+perception: 15
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When an alchemical golem hits a creature with a syringe Strike, roll
+    1d6 on the alchemical chambers list to determine the additional effect of the
+    attack. The syringe deals an additional 2d6 damage of the appropriate type (or
+    exposes the target to the sickness effect, as appropriate).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Alchemical Injection
+  range: null
+  raw_description: '**Alchemical Injection** When an alchemical golem hits a creature
+    with a syringe Strike, roll 1d6 on the alchemical chambers list to determine the
+    additional effect of the attack. The syringe deals an additional 2d6 damage of
+    the appropriate type (or exposes the target to the sickness effect, as appropriate).'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: 'The golem fills an empty vial from one of its alchemical chambers
+    to create a bomb and then makes a bomb Strike. Determine the type of bomb created
+    by rolling 1d6 on the alchemical chambers list above. On a roll of 1-4, it creates
+    the corresponding greater alchemical bomb: an __acid flask__ from chamber 1, a
+    __frost vial__ from chamber 2, __bottled lightning__ from chamber 3, or __alchemist''s
+    fire__ from chamber 4. On a roll of 5, it creates a poisonous bomb that deals
+    3d10 poison damage and 3 poison splash damage with no other effects. On a roll
+    of 6, it creates a sickness bomb, which exposes the target and all creatures in
+    the splash radius to the sickness effect; creatures hit by only the splash receive
+    a +2 circumstance bonus to their Fortitude saves.'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Generate Bomb
+  range: null
+  raw_description: '**Generate Bomb**   (__manipulate__) The golem fills an empty
+    vial from one of its alchemical chambers to create a bomb and then makes a bomb
+    Strike. Determine the type of bomb created by rolling 1d6 on the alchemical chambers
+    list above. On a roll of 1-4, it creates the corresponding greater alchemical
+    bomb: an __acid flask__ from chamber 1, a __frost vial__ from chamber 2, __bottled
+    lightning__ from chamber 3, or __alchemist''s fire__ from chamber 4. On a roll
+    of 5, it creates a poisonous bomb that deals 3d10 poison damage and 3 poison splash
+    damage with no other effects. On a roll of 6, it creates a sickness bomb, which
+    exposes the target and all creatures in the splash radius to the sickness effect;
+    creatures hit by only the splash receive a +2 circumstance bonus to their Fortitude
+    saves.'
+  requirements: null
+  success: null
+  traits:
+  - manipulate
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage: null
+  name: bomb
+  plus_damage: null
+  to_hit: 20
+  traits:
+  - magical
+  - thrown 20 feet
+rarity: Uncommon
+resistances:
+- amount: 12
+  type: physical (except adamantine or bludgeoning)
+ritual_lists: null
+saves:
+  fort: 20
+  fort_misc: null
+  misc: null
+  ref: 19
+  ref_misc: null
+  will: 15
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +15
+- darkvision
+size: Large
+skills:
+- bonus: 22
+  misc: null
+  name: 'Athletics '
+source:
+- abbr: Bestiary
+  page_start: 185
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists: null
+traits:
+- Uncommon
+- N
+- Large
+- Alchemical
+- Construct
+- Golem
+- Mindless
+type: Creature
+weaknesses: null

@@ -1,0 +1,183 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 4
+  dex_mod: 2
+  int_mod: 0
+  str_mod: 6
+  wis_mod: 1
+ac: 27
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Catch Rock
+  range: null
+  raw_description: '**Catch Rock** [Reaction]'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Stone giants are stoic, reclusive herders and artists who have a rich
+  history and collection of traditions. They dwell in caves in tall mountains and
+  craggy ranges, where their grayish skin allows them to blend in with their surroundings
+  and go unnoticed by imperceptive adventurers. Those benign travelers who come across
+  a tribe of stone giants need not worry much, however, for stone giants do not actively
+  invite confrontation or strife. They are, by and large, a peaceful people who seek
+  wisdom through exploration of nature and long meditations on the elements of the
+  natural world. Their elders are the wisest of stone giants, and use their charisma
+  and druidic magic to lead their tribes to prosperity and harmony with nature.
+
+
+
+
+  A typical stone giant stands 12 feet in height and weighs about 1,500 pounds.
+
+
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 24'
+hp: 150
+hp_misc: null
+immunities: null
+items:
+- +1 striking greatclub
+- sack with 5 rocks
+languages:
+- Common
+- Jotun
+level: 8
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d10+12
+    type: bludgeoning
+  name: greatclub
+  plus_damage: null
+  to_hit: 21
+  traits:
+  - backswing
+  - magical
+  - reach 10 feet
+  - shove
+- action_cost: One Action
+  damage:
+    formula: 2d6+14
+    type: bludgeoning
+  name: fist
+  plus_damage: null
+  to_hit: 20
+  traits:
+  - agile
+  - reach 10 feet
+name: Stone Giant
+perception: 16
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The stone giant makes a greatclub Strike. The target is Pushed up to
+    10 feet on a hit or up to 20 feet on a critical hit. If the target collides with
+    a solid object or lands on the ground, it takes bludgeoning damage as though it
+    had fallen the distance it moved.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Big Swing
+  range: null
+  raw_description: '**Big Swing** [Two Actions]  The stone giant makes a greatclub
+    Strike. The target is Pushed up to 10 feet on a hit or up to 20 feet on a critical
+    hit. If the target collides with a solid object or lands on the ground, it takes
+    bludgeoning damage as though it had fallen the distance it moved.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: ''
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Throw Rock
+  range: null
+  raw_description: '**Throw Rock**  '
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 2d6+12
+    type: bludgeoning
+  name: rock
+  plus_damage: null
+  to_hit: 18
+  traits:
+  - brutal
+  - range increment 120 feet
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 18
+  fort_misc: null
+  misc: null
+  ref: 14
+  ref_misc: null
+  will: 14
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +16
+- darkvision
+size: Large
+skills:
+- bonus: 14
+  misc: null
+  name: 'Acrobatics '
+- bonus: 20
+  misc: null
+  name: 'Athletics '
+- bonus: 14
+  misc: null
+  name: 'Intimidation '
+- bonus: 14
+  misc: +18 in rocky terrain
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 170
+  page_stop: null
+speed:
+- amount: 35
+  type: Land
+spell_lists: null
+traits:
+- N
+- Large
+- Earth
+- Giant
+- Humanoid
+type: Creature
+weaknesses: null

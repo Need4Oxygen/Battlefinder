@@ -1,0 +1,306 @@
+ability_mods:
+  cha_mod: 6
+  con_mod: 5
+  dex_mod: 9
+  int_mod: 5
+  str_mod: 7
+  wis_mod: 3
+ac: 39
+ac_special: null
+alignment: CN
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 30 feet, DC 33. Swirling winds of noxious, flammable gas surround a
+    muurfeli. An open flame, spark, or similar fire effect in the area causes an explosion
+    that deals 20d6 fire damage to all creatures in the aura (including the muurfeli)
+    and temporarily disables the aura for 1 minute. When the muurfeli takes damage
+    from an ability with the __water__ trait or fails a saving throw against a water
+    effect, their firedamp winds aura is disabled for 1 minute. A creature that enters
+    or begins its turn in the aura must attempt a Fortitude save.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Firedamp Winds
+  range: null
+  raw_description: '**Firedamp Winds** (__air__, __aura__) 30 feet, DC 33. Swirling
+    winds of noxious, flammable gas surround a muurfeli. An open flame, spark, or
+    similar fire effect in the area causes an explosion that deals 20d6 fire damage
+    to all creatures in the aura (including the muurfeli) and temporarily disables
+    the aura for 1 minute. When the muurfeli takes damage from an ability with the
+    __water__ trait or fails a saving throw against a water effect, their firedamp
+    winds aura is disabled for 1 minute. A creature that enters or begins its turn
+    in the aura must attempt a Fortitude save.'
+  requirements: null
+  success: null
+  traits:
+  - air
+  - aura
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The creature is unaffected.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Critical Success
+  range: null
+  raw_description: '**Critical Success** The creature is unaffected.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The creature is __sickened 1__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Success
+  range: null
+  raw_description: '**Success** The creature is __sickened 1__.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The creature is sickened 2.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Failure
+  range: null
+  raw_description: '**Failure** The creature is sickened 2.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The creature is sickened 2 and __fatigued__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Critical Failure
+  range: null
+  raw_description: '**Critical Failure** The creature is sickened 2 and __fatigued__.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Whereas typical __djinn__ can cleanse or clear areas with their arcane
+  winds, the air magic of muurfeli is tainted by the Black Desert''s noxious radiation
+  and mixed with the realm''s ambient fetid winds.
+
+
+
+
+  **__Recall Knowledge - Elemental__ (__Arcana__, __Nature__)**: DC 40'
+hp: 300
+hp_misc: null
+immunities: null
+items:
+- +2 greater striking scimitar
+languages:
+- Auran
+- Undercommon
+level: 16
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d10+15
+    type: bludgeoning
+  name: fist
+  plus_damage:
+  - formula: 2d6
+    type: poison
+  to_hit: 29
+  traits:
+  - agile
+  - finesse
+  - magical
+  - nonlethal
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 3d6+17
+    type: slashing
+  name: scimitar
+  plus_damage:
+  - formula: 2d6
+    type: poison
+  to_hit: 31
+  traits:
+  - forceful
+  - magical
+  - reach 10 feet
+  - sweep
+name: Muurfeli
+perception: 30
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The muurfeli can take on the form of an owl. The owl form always looks
+    the same, but the muurfeli can choose to become either Tiny or Small in this form.
+    This transformation doesn't change their Speed or the attack and damage bonuses
+    of their Strikes, but might change the damage type their Strikes deal (typically
+    to slashing).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Change Shape
+  range: null
+  raw_description: '**__Change Shape__**   (__arcane__, __concentrate__, __polymorph__,
+    __transmutation__) The muurfeli can take on the form of an owl. The owl form always
+    looks the same, but the muurfeli can choose to become either Tiny or Small in
+    this form. This transformation doesn''t change their Speed or the attack and damage
+    bonuses of their Strikes, but might change the damage type their Strikes deal
+    (typically to slashing).'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - concentrate
+  - polymorph
+  - transmutation
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 2d8+7
+    type: bludgeoning
+  name: fetid winds
+  plus_damage:
+  - formula: 2d8+5
+    type: poison
+  to_hit: 31
+  traits:
+  - air
+  - evocation
+  - magical
+  - poison
+  - range increment 20 feet
+rarity: Rare
+resistances:
+- amount: 15
+  type: fire
+- amount: 15
+  type: poison
+ritual_lists: null
+saves:
+  fort: 25
+  fort_misc: null
+  misc: null
+  ref: 31
+  ref_misc: null
+  will: 27
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +30
+- darkvision
+- detect magic
+size: Large
+skills:
+- bonus: 33
+  misc: null
+  name: 'Acrobatics '
+- bonus: 27
+  misc: null
+  name: 'Arcana '
+- bonus: 31
+  misc: null
+  name: 'Athletics '
+- bonus: 28
+  misc: null
+  name: 'Deception '
+- bonus: 31
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: 'Pathfinder #155: Lord of the Black Sands'
+  page_start: 78
+  page_stop: null
+speed:
+- amount: 35
+  type: Land
+- amount: 50
+  type: fly
+spell_lists:
+- dc: 36
+  misc: null
+  name: Arcane Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 7
+    spells:
+    - frequency: null
+      name: cloudkill
+      requirement: null
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: null
+      name: illusory creature
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: at will
+      name: burning hands
+      requirement: null
+    - frequency: null
+      name: gaseous form
+      requirement: null
+    - frequency: at will, self only
+      name: invisibility
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: at will
+      name: enhance victuals
+      requirement: null
+  - heightened_level: 4
+    level: -1
+    spells:
+    - frequency: null
+      name: detect magic
+      requirement: null
+  to_hit: null
+traits:
+- Rare
+- CN
+- Large
+- Air
+- Elemental
+- Genie
+type: Creature
+weaknesses:
+- amount: 10
+  type: cold

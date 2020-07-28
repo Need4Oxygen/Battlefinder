@@ -1,0 +1,263 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 3
+  dex_mod: 0
+  int_mod: -1
+  str_mod: 6
+  wis_mod: 1
+ac: 22
+ac_special:
+- descr: 24 with shield raised
+alignment: LN
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The doorwarden can Raise its Shield and gain its shield's benefit to AC
+    against the triggering attack.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Reactive Shield
+  range: null
+  raw_description: '**Reactive Shield** [Reaction] **Trigger** An enemy hits the doorwarden
+    with a melee Strike. **Effect** The doorwarden can Raise its Shield and gain its
+    shield''s benefit to AC against the triggering attack.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: An enemy hits the doorwarden with a melee Strike.
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: When the doorwarden uses Shield Block against a melee attack from a
+    creature within 5 feet, it can also push the creature 5 feet.
+  effect: You snap your shield in place to ward off a blow. Your shield prevents you
+    from taking an amount of damage up to the shield's Hardness. You and the shield
+    each take any remaining damage, possibly breaking or destroying the shield.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Shield Block
+  range: null
+  raw_description: '**Shield Block** [Reaction] **Trigger** While you have your shield
+    raised, you would take damage from a physical attack. **Effect** You snap your
+    shield in place to ward off a blow. Your shield prevents you from taking an amount
+    of damage up to the shield''s Hardness. You and the shield each take any remaining
+    damage, possibly breaking or destroying the shield.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: While you have your shield raised, you would take damage from a physical
+    attack.
+description: 'Doorwardens are constructs originally invented by elves. Upon first
+  glance, these guardians resemble ornate doors made entirely of steel or even mithral,
+  but when trespassers try to force their way past, the doorwarden transforms into
+  a skilled and sturdy soldier bearing its "door" like a towering shield.
+
+
+
+
+  Perceptive travelers can sometimes spot a door warden before its magic becomes obvious.
+  The door often bears a round disk or similar embossment that resembles a shield
+  boss designed for bashing, and the bar that can be lowered to block entry resembles
+  an arm clasping a longsword by the hilt. The original doorwardens crafted by the
+  elves included a motif of elven armor and a metal mask in the style of Alseta''s
+  own, though other cultures embellish their own doorwardens with their own themes
+  and sometimes even their own ancestral weapons, such as axes for dwarven doorwardens.
+
+
+
+
+  Doorwardens sometimes know about the chambers they guard, and they have been known
+  to speak to trespassers, especially elves. But a doorwarden cannot be persuaded
+  to stand aside; it is bound to the portal where it has been placed and will defend
+  it until destroyed.
+
+
+
+
+  **__Recall Knowledge - Construct__ (__Arcana__, __Crafting__)**: DC 22'
+hp: 60
+hp_misc: null
+immunities:
+- bleed
+- death effects
+- disease
+- doomed
+- drained
+- fatigued
+- healing
+- necromancy
+- nonlethal attacks
+- paralyzed
+- poison
+- sickened
+- unconscious
+items:
+- longsword
+- steel shield (Hardness 5, HP 20, BT 10) with shield boss
+languages:
+- Common
+level: 5
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d8+9
+    type: slashing
+  name: longsword
+  plus_damage: null
+  to_hit: 15
+  traits:
+  - reach 10 feet
+  - versatile P
+- action_cost: One Action
+  damage:
+    formula: 1d6+9
+    type: bludgeoning
+  name: shield boss
+  plus_damage: null
+  to_hit: 15
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 1d4+8
+    type: bludgeoning
+  name: door
+  plus_damage: null
+  to_hit: 13
+  traits: null
+name: Doorwarden
+perception: 13
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: Until the next time it acts, the doorwarden appears to be a door. It
+    has an automatic result of 31 on __Deception__ checks and DCs to pass as a door.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Imitate Door
+  range: null
+  raw_description: '**Imitate Door**   (__concentrate__) Until the next time it acts,
+    the doorwarden appears to be a door. It has an automatic result of 31 on __Deception__
+    checks and DCs to pass as a door.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The door opens and slams its doors, making two door Strikes against
+    one creature. If both hit, the creature is __grabbed__—stuck between the doors.
+    The doorwarden's multiple attack penalty doesn't increase until it has finished
+    both attacks.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Slam Doors
+  range: null
+  raw_description: '**Slam Doors** [Two Actions]  (__concentrate__) The door opens
+    and slams its doors, making two door Strikes against one creature. If both hit,
+    the creature is __grabbed__—stuck between the doors. The doorwarden''s multiple
+    attack penalty doesn''t increase until it has finished both attacks.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances:
+- amount: 5
+  type: physical (except bludgeoning)
+ritual_lists: null
+saves:
+  fort: 12
+  fort_misc: null
+  misc: null
+  ref: 7
+  ref_misc: null
+  will: 10
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +13
+- low-light vision
+- see invisibility
+size: Large
+skills:
+- bonus: 13
+  misc: null
+  name: 'Athletics '
+- bonus: 11
+  misc: null
+  name: 'Intimidation '
+source:
+- abbr: 'Pathfinder #145: Hellknight Hill'
+  page_start: 86
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+spell_lists:
+- dc: 19
+  misc: null
+  name: Arcane Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: null
+      name: see invisibility
+      requirement: null
+  to_hit: null
+traits:
+- Uncommon
+- LN
+- Large
+- Construct
+type: Creature
+weaknesses: null

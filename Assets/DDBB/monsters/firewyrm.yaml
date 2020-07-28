@@ -1,0 +1,177 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 4
+  dex_mod: 5
+  int_mod: -1
+  str_mod: 5
+  wis_mod: 3
+ac: 28
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When the firewyrm dies, it explodes, dealing 6d6 fire damage to each
+    creature in a 10-foot emanation (DC 28 basic Reflex save).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Explosion
+  range: null
+  raw_description: '**Explosion** (__fire__) When the firewyrm dies, it explodes,
+    dealing 6d6 fire damage to each creature in a 10-foot emanation (DC 28 basic Reflex
+    save).'
+  requirements: null
+  success: null
+  traits:
+  - fire
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 10 feet, 4d6 fire, DC 25 basic Reflex.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Intense Heat
+  range: null
+  raw_description: '**Intense Heat** (__aura__, __fire__) 10 feet, 4d6 fire, DC 25
+    basic Reflex.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - fire
+  trigger: null
+description: 'Firewyrms live in tubes of molten lava found throughout the Plane of
+  Fire.
+
+
+
+
+  **__Recall Knowledge - Elemental__ (__Arcana__, __Nature__)**: DC 26'
+hp: 165
+hp_misc: explosion
+immunities:
+- bleed
+- fire
+- paralyzed
+- poison
+- sleep
+items: null
+languages:
+- Ignan
+level: 9
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+11
+    type: fire
+  name: tail
+  plus_damage:
+  - formula: 2d8
+    type: persistent fire
+  to_hit: 20
+  traits:
+  - reach 15 feet
+name: Firewyrm
+perception: 16
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The firewyrm breathes a 30-foot cone of fire dealing 7d6 fire and 2d8
+    persistent fire damage to every creature within the cone (DC 28 basic Reflex save).
+    The firewyrm can't use Breath Weapon again for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Breath Weapon
+  range: null
+  raw_description: '**Breath Weapon** [Two Actions]  (__evocation__, __fire__, __primal__)
+    The firewyrm breathes a 30-foot cone of fire dealing 7d6 fire and 2d8 persistent
+    fire damage to every creature within the cone (DC 28 basic Reflex save). The firewyrm
+    can''t use Breath Weapon again for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - evocation
+  - fire
+  - primal
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 2d8+6
+    type: fire
+  name: fire mote
+  plus_damage: null
+  to_hit: 20
+  traits:
+  - range increment 60 feet
+rarity: Common
+resistances:
+- amount: 10
+  type: cold
+ritual_lists: null
+saves:
+  fort: 18
+  fort_misc: null
+  misc: null
+  ref: 20
+  ref_misc: null
+  will: 15
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The firewyrm ignores the concealed condition from smoke.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Smoke Vision
+  range: null
+  raw_description: '**Smoke Vision** The firewyrm ignores the concealed condition
+    from smoke.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +16
+- darkvision
+- smoke vision
+size: Huge
+skills:
+- bonus: 20
+  misc: null
+  name: 'Acrobatics '
+source:
+- abbr: Bestiary
+  page_start: 149
+  page_stop: null
+speed:
+- amount: 60
+  type: Land
+spell_lists: null
+traits:
+- N
+- Huge
+- Elemental
+- Fire
+type: Creature
+weaknesses: null

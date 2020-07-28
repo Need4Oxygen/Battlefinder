@@ -1,0 +1,234 @@
+ability_mods:
+  cha_mod: -1
+  con_mod: 2
+  dex_mod: 4
+  int_mod: 1
+  str_mod: 2
+  wis_mod: 0
+ac: 18
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 30 feet. A creature that enters the area must attempt a DC 16 Fortitude
+    save. On a failure, the creature is __sickened 1__, and on a critical failure,
+    the creature also takes a -5-foot status penalty to its Speeds for 1 round. While
+    within the aura, the creature takes a -2 circumstance penalty to saves to recover
+    from the sickened condition. A creature that succeeds at its save is temporarily
+    immune to all xulgaths' stenches for 1 minute. A xulgath bilebearer can activate
+    or deactivate its stench aura as a free action.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Stench
+  range: null
+  raw_description: '**Stench** (__aura__, __olfactory__) 30 feet. A creature that
+    enters the area must attempt a DC 16 Fortitude save. On a failure, the creature
+    is __sickened 1__, and on a critical failure, the creature also takes a -5-foot
+    status penalty to its Speeds for 1 round. While within the aura, the creature
+    takes a -2 circumstance penalty to saves to recover from the sickened condition.
+    A creature that succeeds at its save is temporarily immune to all xulgaths'' stenches
+    for 1 minute. A xulgath bilebearer can activate or deactivate its stench aura
+    as a free action.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - olfactory
+  trigger: null
+description: 'While many xulgaths impose their will by strength or sheer numbers,
+  some resort to more nefarious—and grotesque—means to take care of matters. The bilebearer
+  takes its name from its eponymous bile, a putrid substance that oozes from gill-like
+  folds in its colorful, bulging neck. Bilebearers coat their weapons with the viscous
+  substance or secrete a concentrated dose that suffuses the air around them and disables
+  foes.
+
+
+
+
+  A bilebearer''s neck bulges with folds of scaled flesh that extend almost to the
+  creature''s shoulders, containing its namesake bile productions glands inside. These
+  folds expand and contract with each breath, and each fold has a vertical line of
+  muscled pores that gradually exudes the thick substance, providing a perpetual supply
+  for coating weapons. Bilebearers'' necks also contain inflatable bladders, which
+  they can quickly pressurize to expel a blast of vaporized bile in a noxious, overwhelming
+  cloud.
+
+
+
+
+  Bilebearers serve their clutches by kidnapping or slaying specific enemies. They
+  frequently accompany their kin, particularly xulgath skulkers, to raid rival clutches
+  or intercept foes. A bilebearer''s mode of attack typically involves sneaking in,
+  overwhelming any guards with a noxious blast of bile, and then turning their attention
+  to the primary target. The xulgath either shreds the rapidly weakening victim on
+  the spot or drags them away for future violence.
+
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 16'
+hp: 30
+hp_misc: null
+immunities: null
+items:
+- dagger (2)
+languages:
+- Draconic
+- Undercommon
+level: 2
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d4+4
+    type: piercing
+  name: dagger
+  plus_damage:
+  - formula: null
+    type: xulgath bile
+  to_hit: 12
+  traits:
+  - agile
+  - finesse
+  - versatile S
+- action_cost: One Action
+  damage:
+    formula: 2d4+4
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: null
+    type: xulgath bile
+  to_hit: 10
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 1d6+4
+    type: slashing
+  name: claw
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 10
+  traits:
+  - agile
+name: Xulgath Bilebearer
+perception: 6
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: All adjacent creatures must attempt a DC 18 Fortitude save. On a failure,
+    the creature is __slowed 1__ (slowed 2 on a critical failure) until the end of
+    its next turn and takes a -2 circumstance penalty to Fortitude saves against xulgath
+    bile for 1 minute.
+  effects: null
+  failure: null
+  frequency: once per minute
+  full_description: null
+  generic_description: null
+  name: Putrid Blast
+  range: null
+  raw_description: '**Putrid Blast** [Two Actions]  (__olfactory__, __poison__) **Frequency**
+    once per minute; **Effect** All adjacent creatures must attempt a DC 18 Fortitude
+    save. On a failure, the creature is __slowed 1__ (slowed 2 on a critical failure)
+    until the end of its next turn and takes a -2 circumstance penalty to Fortitude
+    saves against xulgath bile for 1 minute.'
+  requirements: null
+  success: null
+  traits:
+  - olfactory
+  - poison
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw** Fortitude DC 16; **Maximum Duration** 1 hour; **Stage
+    1** __fatigued__ (1 minute); **Stage 2** fatigued and __unconscious__ (1 minute).'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Xulgath Bile
+  range: null
+  raw_description: '**Xulgath Bile** (__poison__) **Saving Throw** Fortitude DC 16;
+    **Maximum Duration** 1 hour; **Stage 1** __fatigued__ (1 minute); **Stage 2**
+    fatigued and __unconscious__ (1 minute).'
+  requirements: null
+  success: null
+  traits:
+  - poison
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d4+4
+    type: piercing
+  name: dagger
+  plus_damage:
+  - formula: null
+    type: xulgath bile
+  to_hit: 12
+  traits:
+  - agile
+  - finesse
+  - thrown 10 feet
+  - versatile s
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 8
+  fort_misc: null
+  misc: null
+  ref: 10
+  ref_misc: null
+  will: 4
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +6
+- darkvision
+size: Medium
+skills:
+- bonus: 8
+  misc: null
+  name: 'Acrobatics '
+- bonus: 6
+  misc: null
+  name: 'Athletics '
+- bonus: 5
+  misc: null
+  name: 'Deception '
+- bonus: 8
+  misc: null
+  name: 'Stealth '
+- bonus: 8
+  misc: null
+  name: 'Thievery '
+source:
+- abbr: 'Pathfinder #151: The Show Must Go On'
+  page_start: 87
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists: null
+traits:
+- CE
+- Medium
+- Humanoid
+- Xulgath
+type: Creature
+weaknesses: null

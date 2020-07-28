@@ -1,0 +1,202 @@
+ability_mods:
+  cha_mod: -2
+  con_mod: 6
+  dex_mod: 3
+  int_mod: -4
+  str_mod: 7
+  wis_mod: 3
+ac: 25
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The DC of the Escape check is increased by 2.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Tighten Coils
+  range: null
+  raw_description: '**Tighten Coils** [Reaction] **Trigger** A creature grabbed or
+    restrained by the giant anaconda attempts to Escape. **Effect** The DC of the
+    Escape check is increased by 2.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature grabbed or restrained by the giant anaconda attempts to Escape.
+description: 'The monstrous giant anaconda is capable of swallowing whole creatures
+  as big as horses—to say nothing of their riders. Although novice bushwhackers watch
+  out for snakes that might drop on them from the jungle canopy above, giant anacondas
+  are most commonly encountered in ponds and rivers, where they feed on prey including
+  manatees and capybaras.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 24'
+hp: 175
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 8
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d10+7
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 21
+  traits:
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 2d8+7
+    type: bludgeoning
+  name: tail
+  plus_damage:
+  - formula: null
+    type: Push 10 feet
+  to_hit: 21
+  traits:
+  - agile
+  - reach 15 feet
+name: Giant Anaconda
+perception: 17
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: 1d10+7 bludgeoning, DC 26
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Greater Constrict
+  range: null
+  raw_description: '**Greater Constrict**   1d10+7 bludgeoning, DC 26'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The giant anaconda Strides, Climbs, or Swims up to half its Speed,
+    pulling any creatures it has grabbed with it.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Slither
+  range: null
+  raw_description: '**Slither**   The giant anaconda Strides, Climbs, or Swims up
+    to half its Speed, pulling any creatures it has grabbed with it.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: Large, 1d10+7 bludgeoning, Rupture 21
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Swallow Whole
+  range: null
+  raw_description: '**Swallow Whole**   (__attack__) Large, 1d10+7 bludgeoning, Rupture
+    21'
+  requirements: null
+  success: null
+  traits:
+  - attack
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: A Large or smaller creature is grabbed or restrained in the giant anaconda's
+    jaws.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Wrap in Coils
+  range: null
+  raw_description: '**Wrap in Coils**   (__attack__) **Requirement** A Large or smaller
+    creature is grabbed or restrained in the giant anaconda''s jaws. **Effect** The
+    giant anaconda moves the creature into its coils, freeing its jaws to make attacks,
+    then uses Greater Constrict against the creature. The giant anaconda''s coils
+    can hold as many creatures as will fit in its space.'
+  requirements: null
+  success: null
+  traits:
+  - attack
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 20
+  fort_misc: null
+  misc: null
+  ref: 17
+  ref_misc: null
+  will: 15
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +17
+- low-light vision
+- scent (imprecise) 60 feet
+size: Huge
+skills:
+- bonus: 15
+  misc: null
+  name: 'Acrobatics '
+- bonus: 21
+  misc: null
+  name: 'Athletics '
+- bonus: 15
+  misc: null
+  name: 'Stealth '
+- bonus: 15
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 303
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+- amount: 30
+  type: climb
+- amount: 30
+  type: swim
+spell_lists: null
+traits:
+- N
+- Huge
+- Animal
+type: Creature
+weaknesses: null

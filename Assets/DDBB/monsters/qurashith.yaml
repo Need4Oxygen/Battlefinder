@@ -1,0 +1,267 @@
+ability_mods:
+  cha_mod: 6
+  con_mod: 6
+  dex_mod: 7
+  int_mod: -1
+  str_mod: 9
+  wis_mod: 5
+ac: 40
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 'Any creature that Strikes the qurashith with a melee weapon must attempt
+    a DC 37 Reflex save. On a failure, the creature is disarmed of its weapon, which
+    becomes stuck to the qurashith''s body; if the Strike was an unarmed attack, the
+    creature''s limb sticks to the qurashith''s body and the creature becomes __immobilized__.
+    A creature must succeed at a DC 31 Athletics check to retrieve a stuck weapon.
+    On a failure, the creature takes 2d6 acid damage and the weapon remains stuck,
+    and on a critical failure, the creature also becomes stuck to the qurashith and
+    becomes immobilized. A stuck creature takes 2d6 acid damage each round it remains
+    stuck to the qurashith and can use an __Escape__ action to try to free itself
+    from the monster (DC 31).
+
+
+    __**Frightful Presence**__ (__aura__, __emotion__, __fear__, __mental__) 90 feet,
+    DC 33'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Adhesive Body
+  range: null
+  raw_description: '**Adhesive Body** Any creature that Strikes the qurashith with
+    a melee weapon must attempt a DC 37 Reflex save. On a failure, the creature is
+    disarmed of its weapon, which becomes stuck to the qurashith''s body; if the Strike
+    was an unarmed attack, the creature''s limb sticks to the qurashith''s body and
+    the creature becomes __immobilized__. A creature must succeed at a DC 31 Athletics
+    check to retrieve a stuck weapon. On a failure, the creature takes 2d6 acid damage
+    and the weapon remains stuck, and on a critical failure, the creature also becomes
+    stuck to the qurashith and becomes immobilized. A stuck creature takes 2d6 acid
+    damage each round it remains stuck to the qurashith and can use an __Escape__
+    action to try to free itself from the monster (DC 31).
+
+
+    __**Frightful Presence**__ (__aura__, __emotion__, __fear__, __mental__) 90 feet,
+    DC 33'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Qurashith—or "gluttonwings" in the Common tongue—are fearsome, bat-like
+  predators that haunt the upper reaches of Gluttondark''s cavern-worlds. These monstrosities
+  are no mere beasts. A qurashith does not simply devour its victims; once it kills
+  its prey, it physically subsumes the creature into its own body, metabolizing the
+  prey''s spiritual essence. Close inspection of a qurashith reveals that its body
+  is an amalgamation of the fiend and its extraplanar and mortal victims, bound together
+  by webs of demonic scar tissue and sticky acidic pus. While the individual personalities
+  of a qurashith''s victims gradually metabolize and diffuse into its very substance
+  over time, a particularly charismatic or magically powerful victim might exert some
+  influence over the qurashith''s mind for a short time.
+
+
+
+
+  **__Recall Knowledge - Aberration__ (__Occultism__)**: DC 41
+
+
+  **__Recall Knowledge - Fiend__ (__Religion__)**: DC 41'
+hp: 340
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Abyssal
+- telepathy 120 feet
+- tongues
+level: 17
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d12+17
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: null
+    type: paralytic spittle
+  to_hit: 34
+  traits:
+  - chaotic
+  - evil
+  - magical
+  - reach 15 feet
+- action_cost: One Action
+  damage:
+    formula: 3d10+15
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 32
+  traits:
+  - agile
+  - chaotic
+  - evil
+  - magical
+  - reach 15 feet
+name: Qurashith
+perception: 33
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A creature that takes damage from a qurashith's jaws or spittle must
+    succeed at a DC 39 Fortitude save or be __slowed 1__ for 1d4 rounds (slowed 2
+    on a critical failure). If a creature is already slowed when it fails its save,
+    it becomes __paralyzed__ for 1 round.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Paralytic Spittle
+  range: null
+  raw_description: '**Paralytic Spittle** A creature that takes damage from a qurashith''s
+    jaws or spittle must succeed at a DC 39 Fortitude save or be __slowed 1__ for
+    1d4 rounds (slowed 2 on a critical failure). If a creature is already slowed when
+    it fails its save, it becomes __paralyzed__ for 1 round.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The qurashith unleashes a debilitating psionic scream. Creatures in
+    a 60-foot cone must succeed at a DC 35 Will save or become __stupefied__ 2 (stupefied
+    4 on a critical failure) for 1 minute. A creature that critically succeeds at
+    its Will save is immune to the qurashith's Psychic Howl for 24 hours. The qurashith
+    can't use Psychic Howl again for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Psychic Howl
+  range: null
+  raw_description: '**Psychic Howl** [Two Actions]  The qurashith unleashes a debilitating
+    psionic scream. Creatures in a 60-foot cone must succeed at a DC 35 Will save
+    or become __stupefied__ 2 (stupefied 4 on a critical failure) for 1 minute. A
+    creature that critically succeeds at its Will save is immune to the qurashith''s
+    Psychic Howl for 24 hours. The qurashith can''t use Psychic Howl again for 1d4
+    rounds.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: claw
+  effect: The monster automatically deals that Strike's damage again to the enemy.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Rend
+  range: null
+  raw_description: A Rend entry lists a Strike the monster has. **Requirements** The
+    monster hit the same enemy with two consecutive Strikes of the listed type in
+    the same round. **Effect** The monster automatically deals that Strike's damage
+    again to the enemy.
+  requirements: The monster hit the same enemy with two consecutive Strikes of the
+    listed type in the same round.
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 6d6
+    type: acid and paralytic saliva
+  name: spittle
+  plus_damage: null
+  to_hit: 30
+  traits:
+  - range 60 feet
+rarity: Rare
+resistances:
+- amount: 15
+  type: acid
+ritual_lists: null
+saves:
+  fort: 29
+  fort_misc: null
+  misc: null
+  ref: 30
+  ref_misc: null
+  will: 28
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +33
+- greater darkvision
+- scent (imprecise) 60 feet
+- true seeing
+size: Huge
+skills:
+- bonus: 30
+  misc: null
+  name: 'Acrobatics '
+- bonus: 32
+  misc: null
+  name: 'Athletics '
+- bonus: 29
+  misc: null
+  name: 'Deception '
+- bonus: 32
+  misc: null
+  name: 'Stealth '
+- bonus: 28
+  misc: null
+  name: 'Survival '
+source:
+- abbr: 'Pathfinder #154: Siege of the Dinosaurs'
+  page_start: 82
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 60
+  type: fly
+spell_lists:
+- dc: 35
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 6
+    spells:
+    - frequency: at will, self only
+      name: teleport
+      requirement: null
+  - heightened_level: 6
+    level: -1
+    spells:
+    - frequency: null
+      name: true seeing
+      requirement: null
+  to_hit: null
+traits:
+- Rare
+- CE
+- Huge
+- Aberration
+- Fiend
+type: Creature
+weaknesses:
+- amount: 15
+  type: good
+- amount: 15
+  type: lawful

@@ -1,0 +1,166 @@
+ability_mods:
+  cha_mod: -2
+  con_mod: 4
+  dex_mod: 3
+  int_mod: -4
+  str_mod: 7
+  wis_mod: 6
+ac: 28
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Dwelling deep within the oceans, this huge cephalopod grows up to 45
+  feet in length and can weigh up to 600 pounds. Its arms and tentacles are lined
+  with hundreds of hooks and suckers, allowing it to seize its prey with ease.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 26'
+hp: 155
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 9
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d12+11
+    type: piercing
+  name: beak
+  plus_damage: null
+  to_hit: 21
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 2d10+11
+    type: slashing
+  name: barbed tentacles
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 21
+  traits:
+  - agile
+  - reach 25 feet
+- action_cost: One Action
+  damage:
+    formula: 2d8+11
+    type: bludgeoning
+  name: arm
+  plus_damage:
+  - formula: null
+    type: Improved Grab
+  to_hit: 21
+  traits:
+  - agile
+  - reach 10 feet
+name: Giant Squid
+perception: 21
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: 1d10+10 bludgeoning, DC 25
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Constrict
+  range: null
+  raw_description: '**__Constrict__**   1d10+10 bludgeoning, DC 25'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The giant squid moves up to 200 feet in a straight line through the
+    water without triggering any reactions.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Jet
+  range: null
+  raw_description: '**Jet** [Two Actions]  (__move__) The giant squid moves up to
+    200 feet in a straight line through the water without triggering any reactions.'
+  requirements: null
+  success: null
+  traits:
+  - move
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The giant squid makes up to four arm Strikes, each with a different
+    arm and against a different target. The giant squid then makes a beak Strike against
+    one creature that it __grabbed__ during Ravenous Embrace. Each arm Strike counts
+    separately for the squid's multiple attack penalty, but the penalty doesn't increase
+    until the squid has made all of its arm Strikes; the beak Strike uses the multiple
+    attack penalty as normal.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Ravenous Embrace
+  range: null
+  raw_description: '**Ravenous Embrace** [Two Actions]  The giant squid makes up to
+    four arm Strikes, each with a different arm and against a different target. The
+    giant squid then makes a beak Strike against one creature that it __grabbed__
+    during Ravenous Embrace. Each arm Strike counts separately for the squid''s multiple
+    attack penalty, but the penalty doesn''t increase until the squid has made all
+    of its arm Strikes; the beak Strike uses the multiple attack penalty as normal.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 10
+  type: cold
+ritual_lists: null
+saves:
+  fort: 15
+  fort_misc: null
+  misc: null
+  ref: 18
+  ref_misc: null
+  will: 21
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +21
+- darkvision
+size: Huge
+skills:
+- bonus: 20
+  misc: null
+  name: 'Athletics '
+- bonus: 18
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 254
+  page_stop: null
+speed:
+- amount: 40
+  type: swim
+spell_lists: null
+traits:
+- N
+- Huge
+- Animal
+- Aquatic
+type: Creature
+weaknesses: null

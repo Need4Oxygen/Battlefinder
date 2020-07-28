@@ -1,0 +1,346 @@
+ability_mods:
+  cha_mod: 4
+  con_mod: 5
+  dex_mod: 2
+  int_mod: 2
+  str_mod: 7
+  wis_mod: 4
+ac: 30
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: The creature is frightened 4.
+  critical_success: The creature is unaffected by the presence.
+  description: 90 feet, DC 26
+  effect: null
+  effects: null
+  failure: The creature is frightened 2.
+  frequency: null
+  full_description: null
+  generic_description: A creature that first enters the area must attempt a Will save.
+    Regardless of the result of the saving throw, the creature is temporarily immune
+    to this monster's Frightful Presence for 1 minute.
+  name: Frightful Presence
+  range: null
+  raw_description: '**Frightful Presence** 90 feet, DC 26 A creature that first enters
+    the area must attempt a Will save. Regardless of the result of the saving throw,
+    the creature is temporarily immune to this monster''s Frightful Presence for 1
+    minute.
+
+    Critical Success The creature is unaffected by the presence.
+
+    Success The creature is frightened 1.
+
+    Failure The creature is frightened 2.
+
+    Critical Success The creature is frightened 4.'
+  requirements: null
+  success: The creature is frightened 1.
+  traits:
+  - aura
+  - emotion
+  - fear
+  - mental
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The dragon is aware of the attack and has a free wing
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Deflecting Cloud
+  range: null
+  raw_description: '**Deflecting Cloud [Reaction]** **Trigger **The dragon is the
+    target of a ranged attack; **Requirements **The dragon is aware of the attack
+    and has a free wing; **Effect **The cloud dragon flexes a wing and creates a billowing
+    cloud of mist. The dragon is treated as if they were __hidden__ for the purposes
+    of resolving the triggering attack, so normally the attacker must succeed at a
+    DC 11 flat check to target them. The dragon also gains a +4 circumstance bonus
+    to AC against the triggering attack.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: The dragon is the target of a ranged attack
+description: 'At heart, cloud dragons are wanderers, explorers, and travelers who
+  enjoy nothing more than seeing new lands and meeting unusual creatures. Cloud dragons
+  range in color from light blue to a pale, milky white and have thick, curling horns
+  and rather short snouts. They keep lairs among the extreme altitudes of the highest
+  mountain peaks but are away on their many journeys as often as they''re at home.
+  Cloud dragons spend long hours surveying the lands they fly over from great heights,
+  but they are creatures of whim, making it hard to predict what will pique their
+  curiosity and bring them winging down to converse or investigate something on the
+  ground. Cloud dragons seldom perform acts of outright malice, but they are not often
+  charitable either. A cloud dragon is as likely to simply pluck something they desire
+  off the ground and fly away with it as they are to bargain fairly.
+
+
+
+
+  A cloud dragon''s ever-changing interests never seem to stray toward the complicated
+  schemes and long-term plans of other dragons. These rovers are creatures of the
+  moment, and although they are as mentally gifted as other true dragons, their interests
+  remain in the here and now. Yet the cloud dragon''s penchant for living in the moment
+  is not a personality flaw—they''re more than capable of anticipating long-term results
+  of their actions and won''t make foolish choices simply to pursue a current interest.
+  At the same time, cloud dragons have little interest in worrying about the future
+  and are as confident in their ability to handle tomorrow''s problems as they are
+  today''s.
+
+
+
+
+  Cloud dragon hoards tend to be well-guarded or well-hidden, as a natural result
+  of their roving habits often taking them away from their lairs for extended periods.
+  Their treasuries include a wide variety of items—they are driven to gather a broad
+  range of prizes rather than collecting one type of item intensively. To a cloud
+  dragon, a diversified hoard is a perfect hoard.
+
+
+
+
+  **__Recall Knowledge - Dragon__ (__Arcana__)**: DC 29
+
+
+  **__Recall Knowledge - Elemental__ (__Arcana__, __Nature__)**: DC 29'
+hp: 175
+hp_misc: null
+immunities:
+- electricity
+- paralyzed
+- sleep
+items: null
+languages:
+- Auran
+- Common
+- Draconic
+level: 10
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d10+13
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 1d12
+    type: electricity
+  to_hit: 23
+  traits:
+  - electricity
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 2d8+13
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 23
+  traits:
+  - agile
+- action_cost: One Action
+  damage:
+    formula: 2d12+13
+    type: bludgeoning
+  name: tail
+  plus_damage: null
+  to_hit: 21
+  traits:
+  - reach 15 feet
+- action_cost: One Action
+  damage:
+    formula: 1d12+11
+    type: piercing
+  name: horn
+  plus_damage: null
+  to_hit: 21
+  traits:
+  - deadly d8
+  - reach 10 feet
+name: Young Cloud Dragon
+perception: 22
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The dragon breathes a thundercloud that deals 11d6 electricity damage
+    in a 40-foot cone (DC 29 basic Reflex save). They can't use Breath Weapon again
+    for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Breath Weapon
+  range: null
+  raw_description: '**Breath Weapon** [Two Actions]  (__electricity__, __evocation__,
+    __primal__) The dragon breathes a thundercloud that deals 11d6 electricity damage
+    in a 40-foot cone (DC 29 basic Reflex save). They can''t use Breath Weapon again
+    for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - electricity
+  - evocation
+  - primal
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The cloud dragon can tread on clouds or fog as though on solid ground.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Cloud Walk
+  range: null
+  raw_description: '**Cloud Walk** The cloud dragon can tread on clouds or fog as
+    though on solid ground.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The dragon makes two claw Strikes and one horn Strike in any order.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Draconic Frenzy
+  range: null
+  raw_description: '**Draconic Frenzy** [Two Actions]  The dragon makes two claw Strikes
+    and one horn Strike in any order.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The dragon recharges their Breath Weapon whenever they score a critical
+    hit with a Strike.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Draconic Momentum
+  range: null
+  raw_description: '**Draconic Momentum** The dragon recharges their Breath Weapon
+    whenever they score a critical hit with a Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances: null
+ritual_lists: null
+saves:
+  fort: 21
+  fort_misc: null
+  misc: null
+  ref: 18
+  ref_misc: null
+  will: 20
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Fog and mist don't impair a cloud dragon's vision; they ignore the
+    __concealed__ condition from fog and mist.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Mist Vision
+  range: null
+  raw_description: '**Mist Vision** Fog and mist don''t impair a cloud dragon''s vision;
+    they ignore the __concealed__ condition from fog and mist.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +22
+- darkvision
+- mist vision
+- scent (imprecise) 60 feet
+size: Large
+skills:
+- bonus: 20
+  misc: null
+  name: 'Acrobatics '
+- bonus: 21
+  misc: null
+  name: 'Athletics '
+- bonus: 20
+  misc: null
+  name: 'Deception '
+- bonus: 18
+  misc: null
+  name: 'Diplomacy '
+- bonus: 22
+  misc: null
+  name: 'Intimidation '
+- bonus: 18
+  misc: null
+  name: 'Nature '
+- bonus: 18
+  misc: null
+  name: 'Stealth '
+- bonus: 16
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 89
+  page_stop: null
+speed:
+- amount: 40
+  type: Land
+- amount: 140
+  type: fly
+- amount: null
+  type: cloud walk
+spell_lists:
+- dc: 29
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: null
+      name: obscuring mist
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: at will
+      name: gust of wind
+      requirement: null
+  to_hit: null
+traits:
+- Uncommon
+- N
+- Large
+- Air
+- Dragon
+- Elemental
+type: Creature
+weaknesses: null

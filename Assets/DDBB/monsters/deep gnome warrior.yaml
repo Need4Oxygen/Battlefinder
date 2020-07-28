@@ -1,0 +1,160 @@
+ability_mods:
+  cha_mod: -1
+  con_mod: 3
+  dex_mod: 2
+  int_mod: 0
+  str_mod: 4
+  wis_mod: 1
+ac: 18
+ac_special:
+- descr: 20 with shield raised
+alignment: N
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: You snap your shield in place to ward off a blow. Your shield prevents you
+    from taking an amount of damage up to the shield's Hardness. You and the shield
+    each take any remaining damage, possibly breaking or destroying the shield.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Shield Block
+  range: null
+  raw_description: '**Shield Block** [Reaction] **Trigger** While you have your shield
+    raised, you would take damage from a physical attack. **Effect** You snap your
+    shield in place to ward off a blow. Your shield prevents you from taking an amount
+    of damage up to the shield''s Hardness. You and the shield each take any remaining
+    damage, possibly breaking or destroying the shield.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: While you have your shield raised, you would take damage from a physical
+    attack.
+description: 'Deep gnome warriors are quick to charge into battle but focus on defending
+  their kin and their homes over more aggressive tactics when a choice is available.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 16'
+hp: 34
+hp_misc: null
+immunities: null
+items:
+- heavy crossbow (20 bolts)
+- spear
+- steel shield (Hardness 5, HP 20, BT 10)
+- studded leather armor
+languages:
+- Gnomish
+- Undercommon
+level: 2
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6+4
+    type: piercing
+  name: spear
+  plus_damage: null
+  to_hit: 10
+  traits: null
+name: Deep Gnome Warrior
+perception: 7
+proactive_abilities: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d10
+    type: piercing
+  name: heavy crossbow
+  plus_damage: null
+  to_hit: 8
+  traits:
+  - range increment 120 feet
+  - reload 2
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 9
+  fort_misc: null
+  misc: null
+  ref: 8
+  ref_misc: null
+  will: 5
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +7
+- darkvision
+size: Small
+skills:
+- bonus: 8
+  misc: null
+  name: 'Athletics '
+- bonus: 5
+  misc: null
+  name: 'Intimidation '
+- bonus: 5
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 75
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+spell_lists:
+- dc: 15
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: illusory disguise
+      requirement: null
+  to_hit: null
+traits:
+- N
+- Small
+- Gnome
+- Humanoid
+type: Creature
+weaknesses: null

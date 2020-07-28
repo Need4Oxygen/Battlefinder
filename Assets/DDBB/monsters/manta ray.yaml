@@ -1,0 +1,141 @@
+ability_mods:
+  cha_mod: -1
+  con_mod: 4
+  dex_mod: 3
+  int_mod: -4
+  str_mod: 3
+  wis_mod: 1
+ac: 16
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'While manta rays might appear daunting, they are generally docile. Manta
+  rays are found in temperate or tropical oceans, and they generally stay in the upper
+  reaches or at the surface of deeper waters. These rays are filter feeders that subsist
+  on plankton. They can also eat larger fish or aquatic creatures as the need arises,
+  but rarely attack anything Small or larger. Many underwater cultures, particularly
+  aquatic elves, raise and farm manta rays to serve as messengers, beasts of burden,
+  or even pets. Manta rays don''t make particularly good mounts, but some aquatic
+  civilizations use them to draw underwater carriages.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 15'
+hp: 24
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 1
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d8+3
+    type: bludgeoning
+  name: tail
+  plus_damage: null
+  to_hit: 8
+  traits:
+  - agile
+name: Manta Ray
+perception: 6
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The manta ray Swims, making one tail Strike at any point along the
+    way. The Strike deals half damage.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Strafing Rush
+  range: null
+  raw_description: '**Strafing Rush**   The manta ray Swims, making one tail Strike
+    at any point along the way. The Strike deals half damage.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The manta ray Swims twice. It has a +10-foot circumstance bonus to
+    its Speed during these actions.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Swift Swimmer
+  range: null
+  raw_description: '**Swift Swimmer** [Two Actions]  The manta ray Swims twice. It
+    has a +10-foot circumstance bonus to its Speed during these actions.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 6
+  fort_misc: null
+  misc: null
+  ref: 9
+  ref_misc: null
+  will: 6
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A manta ray in water can use its electrolocation as an imprecise sense
+    at the listed range to detect living creatures that are in the same body of water
+    as itself.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Electrolocation
+  range: null
+  raw_description: '**Electrolocation** A manta ray in water can use its electrolocation
+    as an imprecise sense at the listed range to detect living creatures that are
+    in the same body of water as itself.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +6
+- electrolocation (imprecise) 30 feet
+- low-light vision
+size: Large
+skills:
+- bonus: 8
+  misc: null
+  name: 'Athletics '
+source:
+- abbr: Bestiary 2
+  page_start: 226
+  page_stop: null
+speed:
+- amount: 40
+  type: swim
+spell_lists: null
+traits:
+- N
+- Large
+- Animal
+- Aquatic
+type: Creature
+weaknesses: null

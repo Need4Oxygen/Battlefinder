@@ -1,0 +1,272 @@
+ability_mods:
+  cha_mod: -5
+  con_mod: 9
+  dex_mod: -1
+  int_mod: -5
+  str_mod: 9
+  wis_mod: 0
+ac: 42
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: harmed by acid (9d10, 2d10 from areas or persistent damage); healed
+    by fire (area 2d10 HP); slowed by electricity
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Golem Antimagic
+  range: null
+  raw_description: '**Golem Antimagic** harmed by acid (9d10, 2d10 from areas or persistent
+    damage); healed by fire (area 2d10 HP); slowed by electricity'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When the adamantine golem is at 0 HP, it isn't destroyed. Instead,
+    it enters repair mode, during which it is slowed 1, can't take reactions, and
+    can take only the Self-Repair action. Once it has more than 30 HP, it can use
+    any type of action and can use reactions, though it remains slowed 1 and can't
+    take any reactions until the start of its next turn. If a critical hit with an
+    adamantine vorpal weapon reduces the golem to 0 HP, or if such a weapon hits it
+    while it's already at 0 HP, then the golem is destroyed.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Repair Mode
+  range: null
+  raw_description: '**Repair Mode** When the adamantine golem is at 0 HP, it isn''t
+    destroyed. Instead, it enters repair mode, during which it is slowed 1, can''t
+    take reactions, and can take only the Self-Repair action. Once it has more than
+    30 HP, it can use any type of action and can use reactions, though it remains
+    slowed 1 and can''t take any reactions until the start of its next turn. If a
+    critical hit with an adamantine vorpal weapon reduces the golem to 0 HP, or if
+    such a weapon hits it while it''s already at 0 HP, then the golem is destroyed.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The golem can be targeted by __disjunction__ and __dispel magic__.
+    If targeted by such a spell of 9th level or higher, the golem has its resistance
+    to physical damage lowered to 15 and is slowed 1 (or slowed 2 if in repair mode)
+    for 1d4 rounds. During this time, if the golem is reduced to 0 HP while already
+    in repair mode, it is destroyed.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Vulnerable to Dispelling
+  range: null
+  raw_description: '**Vulnerable to Dispelling** The golem can be targeted by __disjunction__
+    and __dispel magic__. If targeted by such a spell of 9th level or higher, the
+    golem has its resistance to physical damage lowered to 15 and is slowed 1 (or
+    slowed 2 if in repair mode) for 1d4 rounds. During this time, if the golem is
+    reduced to 0 HP while already in repair mode, it is destroyed.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Crafted from a nigh-indestructible metal of great rarity, adamantine
+  golems can''t be destroyed except by the most powerful foes. Crafting an adamantine
+  golem requires a quantity of adamantine so massive that collecting it usually requires
+  mounting a mining expedition to a distant planet, the Plane of Earth, or an Outer
+  Plane.
+
+
+
+
+  **__Recall Knowledge - Construct__ (__Arcana__, __Crafting__)**: DC 43'
+hp: 255
+hp_misc: repair mode
+immunities:
+- bleed
+- death effects
+- disease
+- doomed
+- drained
+- fatigued
+- fire
+- healing
+- magic (see below)
+- mental
+- necromancy
+- nonlethal attacks
+- paralyzed
+- poison
+- sickened
+- unconscious
+items: null
+languages: null
+level: 18
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d10+17
+    type: bludgeoning
+  name: fist
+  plus_damage:
+  - formula: null
+    type: destructive strike
+  to_hit: 35
+  traits:
+  - deadly 3d12
+  - magical
+  - reach 15 feet
+name: Adamantine Golem
+perception: 26
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: On a critical hit, the adamantine golem's fist Strike breaks the target's
+    armor, if any, in addition to dealing damage to the target. If the target has
+    a shield raised, the golem breaks the shield instead.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Destructive Strike
+  range: null
+  raw_description: '**Destructive Strike** On a critical hit, the adamantine golem''s
+    fist Strike breaks the target''s armor, if any, in addition to dealing damage
+    to the target. If the target has a shield raised, the golem breaks the shield
+    instead.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: The creature takes no damage and its armor takes no damage.
+  description: 'The adamantine golem Strides up to its Speed, pushing back each creature
+    whose space it moves into and damaging them if they try to stop its movement.
+    A creature can try to bar the way by attempting a DC 45 Fortitude save.
+
+
+    '
+  effect: null
+  effects: null
+  failure: The resisting creature is damaged and its armor takes damage as if hit
+    by the adamantine golem's fist.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Inexorable March
+  range: null
+  raw_description: '**Inexorable March**   The adamantine golem Strides up to its
+    Speed, pushing back each creature whose space it moves into and damaging them
+    if they try to stop its movement. A creature can try to bar the way by attempting
+    a DC 45 Fortitude save.
+
+
+    **Critical Success** The creature takes no damage and its armor takes no damage.
+
+
+    **Success** The golem halts its movement and cannot enter the creature''s square.
+
+
+    **Failure** The resisting creature is damaged and its armor takes damage as if
+    hit by the adamantine golem''s fist.'
+  requirements: null
+  success: The golem halts its movement and cannot enter the creature's square.
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The golem repairs itself, regaining 30 Hit Points.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Self-Repair
+  range: null
+  raw_description: '**Self-Repair**   (__manipulate__) The golem repairs itself, regaining
+    30 Hit Points.'
+  requirements: null
+  success: null
+  traits:
+  - manipulate
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The golem vents a 30-foot cone of superheated steam from its internal
+    forge. This deals 15d6 fire damage to all creatures in the cone (DC 40 basic Reflex).
+    The golem can't use Vent again for 1d6 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Vent
+  range: null
+  raw_description: '**Vent**   (__fire__) The golem vents a 30-foot cone of superheated
+    steam from its internal forge. This deals 15d6 fire damage to all creatures in
+    the cone (DC 40 basic Reflex). The golem can''t use Vent again for 1d6 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - fire
+  trigger: null
+ranged: null
+rarity: Rare
+resistances:
+- amount: 20
+  type: physical (except vorpal adamantine)
+ritual_lists: null
+saves:
+  fort: 33
+  fort_misc: null
+  misc: null
+  ref: 27
+  ref_misc: null
+  will: 29
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +26
+- darkvision
+size: Huge
+skills:
+- bonus: 38
+  misc: null
+  name: 'Athletics '
+source:
+- abbr: Bestiary
+  page_start: 189
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+spell_lists: null
+traits:
+- Rare
+- N
+- Huge
+- Construct
+- Golem
+- Mindless
+type: Creature
+weaknesses: null

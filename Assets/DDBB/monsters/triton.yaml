@@ -1,0 +1,193 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 1
+  dex_mod: 3
+  int_mod: 0
+  str_mod: 4
+  wis_mod: 2
+ac: 18
+ac_special: null
+alignment: NG
+automatic_abilities: null
+description: 'While sometimes understandably mistaken for __merfolk__—both species
+  live underwater and have a blend of features from both humans and fish—tritons have
+  two legs instead of a tail. This gives tritons the ability to operate on land, though
+  they are neither as comfortable nor as skilled above water as below.
+
+
+
+
+  The arms and legs of a triton feature fins that assist in swimming, and their entire
+  body is covered in fine scales that range in color from silver to cerulean blue
+  to seaweed green. Their amphibious nature shows in the webbing between the digits
+  of their feet and hands, as well as the fact that they have both gills and a human-shaped
+  nose and mouth. Triton hair grows in wide strands like seagrass, commonly green
+  in shade but in some cases blue or white. Their eyes range in color from sea blue
+  to golden.
+
+
+
+
+  Many tritons see themselves as defenders of the deep, dedicating their lives to
+  protecting the inhabitants of the seas from evil creatures and intruders—whether
+  they come from underwater or the surface world. Primary among triton foes are __sea
+  devils__ and __alghollthu__, both of whom have amphibious forces that tritons have
+  had to fight underwater and on land.
+
+
+
+
+  In their quest to fight underwater evil, tritons sometimes ally with __dolphins__
+  and sea turtles (both of which make excellent mounts), __water elemental__, and
+  sometimes even __sharks__ and __sea serpents__. Tritons can summon such allies using
+  a conch shell as a trumpet. When it comes to other intelligent undersea species,
+  however, tritons take pride in their self-sufficiency, rarely trading with other
+  underwater peoples such as merfolk, and even more rarely forming established alliances.
+
+
+
+
+  Tritons live in natural-grown villages on the sea floor, forging dwellings out of
+  colorful coral reefs, in rift valleys heated by volcanic activity, and even in underwater
+  canyons— though they avoid settling in extreme depths due to the risk of encountering
+  __krakens__ or worse. They like to decorate their homes with aquatic plants, bioluminescent
+  fish, and attractive trinkets recovered from shipwrecks.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 16'
+hp: 30
+hp_misc: null
+immunities: null
+items:
+- conch shell
+- shell armor
+- shell armor
+- trident
+languages:
+- Aquan
+- Common
+level: 2
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d8+6
+    type: piercing
+  name: trident
+  plus_damage: null
+  to_hit: 10
+  traits: null
+name: Triton
+perception: 8
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The triton Interacts to raise their trident, gaining a +1 circumstance
+    bonus to AC until the start of their next turn. During this time, any of their
+    allies also gains the bonus while adjacent to the triton.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Defender of the Seas
+  range: null
+  raw_description: '**Defender of the Seas**   The triton Interacts to raise their
+    trident, gaining a +1 circumstance bonus to AC until the start of their next turn.
+    During this time, any of their allies also gains the bonus while adjacent to the
+    triton.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The triton blows into a conch shell, casting a 2nd-level __summon animal__
+    spell. The triton can summon only an __aquatic__ creature, such as a __dolphin__,
+    __octopus__, __ray__, __sea snake__, or __electric eel__This creature remains
+    until it is slain, the triton Dismisses it, or the triton summons another ally.
+  effects: null
+  failure: null
+  frequency: once per day
+  full_description: null
+  generic_description: null
+  name: Summon Aquatic Ally
+  range: null
+  raw_description: '**Summon Aquatic Ally** [Three Actions]  (__conjuration__, __primal__)
+    **Frequency** once per day; **Effect** The triton blows into a conch shell, casting
+    a 2nd-level __summon animal__ spell. The triton can summon only an __aquatic__
+    creature, such as a __dolphin__, __octopus__, __ray__, __sea snake__, or __electric
+    eel__This creature remains until it is slain, the triton Dismisses it, or the
+    triton summons another ally.'
+  requirements: null
+  success: null
+  traits:
+  - conjuration
+  - primal
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d8+6
+    type: piercing
+  name: trident
+  plus_damage: null
+  to_hit: 9
+  traits:
+  - thrown 20 feet
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 5
+  fort_misc: null
+  misc: null
+  ref: 11
+  ref_misc: null
+  will: 8
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +8
+- darkvision
+size: Medium
+skills:
+- bonus: 8
+  misc: null
+  name: 'Athletics '
+- bonus: 4
+  misc: null
+  name: 'Crafting '
+- bonus: 6
+  misc: null
+  name: 'Diplomacy '
+- bonus: 6
+  misc: null
+  name: 'Nature '
+- bonus: 9
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 263
+  page_stop: null
+speed:
+- amount: 5
+  type: Land
+- amount: 35
+  type: swim
+spell_lists: null
+traits:
+- NG
+- Medium
+- Amphibious
+- Humanoid
+type: Creature
+weaknesses: null

@@ -1,0 +1,116 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 0
+  dex_mod: 4
+  int_mod: -5
+  str_mod: 2
+  wis_mod: 0
+ac: 16
+ac_special: null
+alignment: NE
+automatic_abilities: null
+description: 'The most common skeletal minions are mere guardians.
+
+
+
+
+  **__Recall Knowledge - Undead__ (__Religion__)**: DC 13'
+hp: 4
+hp_misc: negative healing
+immunities:
+- death effects
+- disease
+- mental
+- paralyzed
+- poison
+- unconscious
+items:
+- scimitar
+- shortbow (20 arrows)
+languages: null
+level: -1
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6+2
+    type: slashing
+  name: scimitar
+  plus_damage: null
+  to_hit: 6
+  traits:
+  - forceful
+  - sweep
+- action_cost: One Action
+  damage:
+    formula: 1d4+2
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 6
+  traits:
+  - agile
+  - finesse
+name: Skeleton Guard
+perception: 2
+proactive_abilities: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d6
+    type: piercing
+  name: shortbow
+  plus_damage: null
+  to_hit: 6
+  traits:
+  - deadly 1d10
+  - range increment 60 feet
+  - reload 0
+rarity: Common
+resistances:
+- amount: 5
+  type: cold
+- amount: 5
+  type: electricity
+- amount: 5
+  type: fire
+- amount: 5
+  type: piercing
+- amount: 5
+  type: slashing
+ritual_lists: null
+saves:
+  fort: 2
+  fort_misc: null
+  misc: null
+  ref: 8
+  ref_misc: null
+  will: 2
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +2
+- darkvision
+size: Medium
+skills:
+- bonus: 6
+  misc: null
+  name: 'Acrobatics '
+- bonus: 3
+  misc: null
+  name: 'Athletics '
+source:
+- abbr: Bestiary
+  page_start: 298
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists: null
+traits:
+- NE
+- Medium
+- Mindless
+- Skeleton
+- Undead
+type: Creature
+weaknesses: null

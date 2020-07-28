@@ -1,0 +1,222 @@
+ability_mods:
+  cha_mod: 3
+  con_mod: 2
+  dex_mod: 4
+  int_mod: -1
+  str_mod: 0
+  wis_mod: 1
+ac: 17
+ac_special: null
+alignment: CN
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The target ally can roll the save twice and take the better result.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Distracting Frolic
+  range: null
+  raw_description: '**Distracting Frolic** [Reaction] (__fortune__, __manipulate__)
+    **Trigger** An ally within 10 feet of the dancer rolls a saving throw against
+    a mental or illusion effect. **Effect** The target ally can roll the save twice
+    and take the better result.'
+  requirements: null
+  success: null
+  traits:
+  - fortune
+  - manipulate
+  trigger: An ally within 10 feet of the dancer rolls a saving throw against a mental
+    or illusion effect.
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When the dancer dies, their body combusts in a flare of white light.
+    All creatures in a 10-foot emanation must succeed at a DC 17 Fortitude save or
+    be dazzled for 1d4 rounds. Calignis that fail this save are also frightened 1.
+    The dancer's gear and treasure are left in a pile where they died. As this isn't
+    a magical effect, the light has no effect within magical darkness.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Death Flare
+  range: null
+  raw_description: '**Death Flare** (__light__) When the dancer dies, their body combusts
+    in a flare of white light. All creatures in a 10-foot emanation must succeed at
+    a DC 17 Fortitude save or be dazzled for 1d4 rounds. Calignis that fail this save
+    are also frightened 1. The dancer''s gear and treasure are left in a pile where
+    they died. As this isn''t a magical effect, the light has no effect within magical
+    darkness.'
+  requirements: null
+  success: null
+  traits:
+  - light
+  trigger: null
+description: 'Caligni dancers serve as intermediaries between caligni clans.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 15'
+hp: 18
+hp_misc: death flare
+immunities: null
+items:
+- baton (light mace)
+- dagger
+languages:
+- Caligni
+level: 1
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d4
+    type: bludgeoning
+  name: Baton
+  plus_damage: null
+  to_hit: 9
+  traits:
+  - agile
+  - finesse
+  - shove
+- action_cost: One Action
+  damage:
+    formula: 1d4
+    type: piercing
+  name: Dagger
+  plus_damage: null
+  to_hit: 9
+  traits:
+  - agile
+  - finesse
+  - versatile S
+name: Caligni Dancer
+perception: 6
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The caligni dancer touches a foe and curses it. If the target fails
+    a DC 18 Will save, it gains __clumsy 1__ and __stupefied 1__. The target is then
+    temporarily immune for 24 hours. These conditions persist until the curse is removed.
+    The victim can attempt a new DC 18 Will save once per hour to end the curse.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Dancer's Curse
+  range: null
+  raw_description: '**Dancer''s Curse**   (__curse__, __enchantment__, __occult__,
+    __mental__) The caligni dancer touches a foe and curses it. If the target fails
+    a DC 18 Will save, it gains __clumsy 1__ and __stupefied 1__. The target is then
+    temporarily immune for 24 hours. These conditions persist until the curse is removed.
+    The victim can attempt a new DC 18 Will save once per hour to end the curse. '
+  requirements: null
+  success: null
+  traits:
+  - curse
+  - enchantment
+  - occult
+  - mental
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The caligni dancer deals 1d6 extra __precision__ damage to __flat-footed__
+    creatures.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sneak Attack
+  range: null
+  raw_description: '**__Sneak Attack__** The caligni dancer deals 1d6 extra __precision__
+    damage to __flat-footed__ creatures.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d4
+    type: piercing
+  name: Dagger
+  plus_damage: null
+  to_hit: 9
+  traits:
+  - agile
+  - thrown 10 feet
+  - versatile S
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 7
+  fort_misc: null
+  misc: null
+  ref: 9
+  ref_misc: null
+  will: 4
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +6
+- greater darkvision
+- light blindness
+size: Small
+skills:
+- bonus: 7
+  misc: null
+  name: 'Acrobatics '
+- bonus: 6
+  misc: null
+  name: 'Performance '
+- bonus: 7
+  misc: null
+  name: 'Stealth '
+- bonus: 7
+  misc: null
+  name: 'Thievery '
+source:
+- abbr: Bestiary
+  page_start: 50
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists:
+- dc: 16
+  misc: null
+  name: Occult Innate Spells
+  spell_groups:
+  - heightened_level: 1
+    level: 0
+    spells:
+    - frequency: visual only
+      name: counter performance
+      requirement: null
+    - frequency: null
+      name: inspire courage
+      requirement: null
+  to_hit: null
+traits:
+- CN
+- Small
+- Caligni
+- Humanoid
+type: Creature
+weaknesses: null

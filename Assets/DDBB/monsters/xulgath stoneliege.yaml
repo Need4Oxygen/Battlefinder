@@ -1,0 +1,240 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 6
+  dex_mod: 2
+  int_mod: 1
+  str_mod: 5
+  wis_mod: 2
+ac: 26
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 30 feet. A creature that enters the area must attempt a DC 24 Fortitude
+    save. On a failure, the creature is __sickened 1__, and on a critical failure,
+    the creature also takes a -5-foot status penalty to its Speeds for 1 round. While
+    within the aura, the creature takes a -2 circumstance penalty to saves to recover
+    from the sickened condition. A creature that succeeds at its save is temporarily
+    immune to all xulgaths' stenches for 1 minute.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Stench
+  range: null
+  raw_description: '**Stench** (__aura__, __olfactory__) 30 feet. A creature that
+    enters the area must attempt a DC 24 Fortitude save. On a failure, the creature
+    is __sickened 1__, and on a critical failure, the creature also takes a -5-foot
+    status penalty to its Speeds for 1 round. While within the aura, the creature
+    takes a -2 circumstance penalty to saves to recover from the sickened condition.
+    A creature that succeeds at its save is temporarily immune to all xulgaths'' stenches
+    for 1 minute.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - olfactory
+  trigger: null
+description: 'Stonelieges are xulgaths magically infused with living earth—the very
+  bones of the world. They are created through a process xulgaths call stone-binding,
+  which can be performed with complex alchemy, powerful psychic magic, or Abyssal
+  rituals. Their scales are like stone slabs, and their bones are as dense as bedrock,
+  so they are among the hardiest and longest-lived xulgaths. To stonelieges, earth
+  is as mutable as water, and their innate power to shape the soil and stone beneath
+  their feet makes them integral members of xulgath society (as well as formidable
+  combatants).
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 26'
+hp: 135
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Draconic
+- Undercommon
+level: 8
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d10+9
+    type: piercing
+  name: digging bar
+  plus_damage: null
+  to_hit: 18
+  traits:
+  - fatal d12
+  - forceful
+  - versatile B
+- action_cost: One Action
+  damage:
+    formula: 2d8+9
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 21
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 2d6+9
+    type: slashing
+  name: claw
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 19
+  traits:
+  - agile
+name: Xulgath Stoneliege
+perception: 14
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The stoneliege commands nearby earth to attack a foe. The stoneliege makes
+    a claw Strike against a creature that is within 60 feet of the stoneliege and
+    10 feet of an earthen surface, such as dirt, mud, stone, or sand. The Strike originates
+    from the surface's square and has a reach of 10 feet. On a critical hit, the target
+    is also knocked __prone__.
+  effects: null
+  failure: null
+  frequency: once per round
+  full_description: null
+  generic_description: null
+  name: Earthen Blow
+  range: null
+  raw_description: '**Earthen Blow**   (__earth__, __transmutation__) **Frequency**
+    once per round; **Effect** The stoneliege commands nearby earth to attack a foe.
+    The stoneliege makes a claw Strike against a creature that is within 60 feet of
+    the stoneliege and 10 feet of an earthen surface, such as dirt, mud, stone, or
+    sand. The Strike originates from the surface''s square and has a reach of 10 feet.
+    On a critical hit, the target is also knocked __prone__.'
+  requirements: null
+  success: null
+  traits:
+  - earth
+  - transmutation
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The stoneliege is standing on or next to at least 10 cubic feet of dirt,
+    stone, or other earthen material
+  effects: null
+  failure: null
+  frequency: once per minute
+  full_description: null
+  generic_description: null
+  name: Earthen Torrent
+  range: null
+  raw_description: '**Earthen Torrent** [Two Actions]  (__earth__, __transmutation__)
+    **Frequency** once per minute; **Requirements** The stoneliege is standing on
+    or next to at least 10 cubic feet of dirt, stone, or other earthen material; **Effect**
+    The stoneliege creates a violent wave of roiling earth. Creatures in a 15-foot
+    cone take 7d8 bludgeoning damage (DC 26 basic Reflex save; on a critical failure,
+    creatures are also knocked __prone__).'
+  requirements: null
+  success: null
+  traits:
+  - earth
+  - transmutation
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The stoneliege turns their own body into solid stone like a statue
+    and immediately becomes __petrified__. Any creature grappled or restrained by
+    the stoneliege becomes __immobilized__; to get free, the creature must damage
+    the statue enough to break it or succeed at a DC 28 __Acrobatics__ check to __Escape__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Stone Throes
+  range: null
+  raw_description: '**Stone Throes**   (__earth__, __transmutation__) The stoneliege
+    turns their own body into solid stone like a statue and immediately becomes __petrified__.
+    Any creature grappled or restrained by the stoneliege becomes __immobilized__;
+    to get free, the creature must damage the statue enough to break it or succeed
+    at a DC 28 __Acrobatics__ check to __Escape__.'
+  requirements: null
+  success: null
+  traits:
+  - earth
+  - transmutation
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances:
+- amount: 8
+  type: physical
+ritual_lists: null
+saves:
+  fort: 20
+  fort_misc: null
+  misc: null
+  ref: 12
+  ref_misc: null
+  will: 14
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +14
+- darkvision
+- tremorsense (imprecise) 30 feet
+size: Medium
+skills:
+- bonus: 19
+  misc: null
+  name: 'Athletics '
+- bonus: 15
+  misc: null
+  name: 'Cave Lore '
+- bonus: 15
+  misc: null
+  name: 'Geology Lore '
+- bonus: 18
+  misc: null
+  name: 'Intimidation '
+- bonus: 18
+  misc: null
+  name: 'Survival '
+source:
+- abbr: 'Pathfinder #153: Life''s Long Shadow'
+  page_start: 84
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 10
+  type: burrow
+spell_lists:
+- dc: 26
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: x3
+      name: shape stone
+      requirement: null
+  to_hit: null
+traits:
+- Uncommon
+- CE
+- Medium
+- Humanoid
+- Xulgath
+type: Creature
+weaknesses: null

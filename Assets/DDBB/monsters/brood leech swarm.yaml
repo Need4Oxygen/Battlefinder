@@ -1,0 +1,130 @@
+ability_mods:
+  cha_mod: -5
+  con_mod: 4
+  dex_mod: 3
+  int_mod: -5
+  str_mod: 0
+  wis_mod: 1
+ac: 19
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Most smaller species of leeches do not tend to swarm, but brood leeches
+  are prone to gathering in seething, undulant mats of squirming gluttony. When they
+  gather in sufficient numbers to swarm, they eschew the stealth of a lone leech''s
+  feeding methods in favor of swift and merciless feeding. In these situations, their
+  mild venom can affect much larger creatures than their usual prey.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 19'
+hp: 40
+hp_misc: null
+immunities:
+- precision
+- swarm mind
+items: null
+languages: null
+level: 4
+melee: null
+name: Brood Leech Swarm
+perception: 9
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: Each enemy in the swarm's space takes 2d6 __bleed damage__ and is exposed
+    to brood leech swarm venom.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Blood Draining Bites
+  range: null
+  raw_description: '**Blood Draining Bites**   Each enemy in the swarm''s space takes
+    2d6 __bleed damage__ and is exposed to brood leech swarm venom.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw** DC 21 Fortitude; **Maximum Duration** 6 rounds; **Stage
+    1** __clumsy 1__, __sickened 1__, and -5-foot status penalty to Speed (1 round);
+    **Stage 2** clumsy 1, sickened 1, and -10-foot status penalty to Speed (1 round)'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Brood Leech Swarm Venom
+  range: null
+  raw_description: '**Brood Leech Swarm Venom** (__poison__) **Saving Throw** DC 21
+    Fortitude; **Maximum Duration** 6 rounds; **Stage 1** __clumsy 1__, __sickened
+    1__, and -5-foot status penalty to Speed (1 round); **Stage 2** clumsy 1, sickened
+    1, and -10-foot status penalty to Speed (1 round)'
+  requirements: null
+  success: null
+  traits:
+  - poison
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 2
+  type: bludgeoning
+- amount: 5
+  type: piercing
+- amount: 5
+  type: slashing
+ritual_lists: null
+saves:
+  fort: 12
+  fort_misc: null
+  misc: null
+  ref: 11
+  ref_misc: null
+  will: 9
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +9
+- tremorsense 30 feet
+size: Large
+skills:
+- bonus: 8
+  misc: null
+  name: 'Athletics '
+- bonus: 11
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 156
+  page_stop: null
+speed:
+- amount: 5
+  type: Land
+- amount: 20
+  type: swim
+spell_lists: null
+traits:
+- N
+- Large
+- Amphibious
+- Animal
+- Swarm
+type: Creature
+weaknesses:
+- amount: 5
+  type: area damage
+- amount: 5
+  type: salt
+- amount: 5
+  type: <a style="text-decoration:underline" href="Traits.aspx?ID=150">splash</a>
+    damage

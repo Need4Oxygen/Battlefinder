@@ -1,0 +1,211 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 3
+  dex_mod: -1
+  int_mod: -3
+  str_mod: 3
+  wis_mod: 1
+ac: 17
+ac_special:
+- descr: 19 while withdrawn into its shell
+alignment: N
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The graveshell reduces the damage from the attack by an amount equal to
+    its shell's Hardness. A graveshell's shell has a Hardness of 6, 10 Hit Points,
+    and a Broken Threshold of 5. If its shell is broken, the graveshell can't attack
+    with shell spikes, nor can it use Shell Game. If the shell is destroyed, the graveshell's
+    AC is reduced to 16. As long as a graveshell is alive, its shell naturally repairs
+    itself after a week.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Shell Block
+  range: null
+  raw_description: '**Shell Block** [Reaction] **Trigger** The graveshell takes damage
+    from a physical attack while withdrawn into its shell (see Shell Game below).
+    **Effect** The graveshell reduces the damage from the attack by an amount equal
+    to its shell''s Hardness. A graveshell''s shell has a Hardness of 6, 10 Hit Points,
+    and a Broken Threshold of 5. If its shell is broken, the graveshell can''t attack
+    with shell spikes, nor can it use Shell Game. If the shell is destroyed, the graveshell''s
+    AC is reduced to 16. As long as a graveshell is alive, its shell naturally repairs
+    itself after a week.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: The graveshell takes damage from a physical attack while withdrawn into
+    its shell (see Shell Game below).
+description: 'The graveshell is a dangerous predator that draws scavengers and explorers
+  into its grasp using a morbid lure: the corpse of a former victim impaled upon the
+  spikes that protrude from its large, turtle-like shell. Aside from its shell, the
+  monster resembles no known animal. Small but bright yellow eyes watch from the sagging
+  flesh of its head, the most prominent feature of which is a curiously shaped, toothy
+  maw twisted into a perpetual grin. Its stubby arms and legs are impractical for
+  both walking and swimming, though the algae-caked claws tipping each limb are deadly
+  weapons.
+
+
+
+
+  Graveshells are intelligent—a fact that surprises many who encounter them—and surrender
+  rather than fight to the death. These monsters have little to offer in exchange
+  for their lives, though the waterlogged treasures on their collection of corpses
+  may entice opportunists.
+
+
+
+
+  **__Recall Knowledge - Beast__ (__Arcana__, __Nature__)**: DC 17'
+hp: 20
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Common
+- Undercommon
+level: 1
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6+3
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 8
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 1d4+3
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 8
+  traits:
+  - agile
+- action_cost: One Action
+  damage:
+    formula: 1d4+3
+    type: piercing
+  name: shell spikes
+  plus_damage: null
+  to_hit: 8
+  traits: null
+name: Graveshell
+perception: 4
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The graveshell can hold its breath for 200 rounds (20 minutes).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Deep Breath
+  range: null
+  raw_description: '**Deep Breath** The graveshell can hold its breath for 200 rounds
+    (20 minutes).'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The graveshell withdraws into its shell, gaining a +2 circumstance
+    bonus to AC and allowing it to use Shell Block. This lasts until the graveshell
+    moves or attacks with any attack other than its shell spikes. The graveshell can't
+    take this action or get any benefit from it if its shell is broken.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Shell Game
+  range: null
+  raw_description: '**Shell Game**   The graveshell withdraws into its shell, gaining
+    a +2 circumstance bonus to AC and allowing it to use Shell Block. This lasts until
+    the graveshell moves or attacks with any attack other than its shell spikes. The
+    graveshell can''t take this action or get any benefit from it if its shell is
+    broken.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 8
+  fort_misc: null
+  misc: null
+  ref: 2
+  ref_misc: null
+  will: 4
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The graveshell conceals its true nature over the course of a few minutes
+    by impaling a corpse (typically humanoid) on its spiky shell before partially
+    submerging itself in water. It has an automatic result of 22 on Deception checks
+    and DCs to pass as a corpse floating in the water.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Corpse Disguise
+  range: null
+  raw_description: '**Corpse Disguise** (__exploration__) The graveshell conceals
+    its true nature over the course of a few minutes by impaling a corpse (typically
+    humanoid) on its spiky shell before partially submerging itself in water. It has
+    an automatic result of 22 on Deception checks and DCs to pass as a corpse floating
+    in the water.'
+  requirements: null
+  success: null
+  traits:
+  - exploration
+  trigger: null
+senses:
+- Perception +4
+- darkvision
+- wavesense (imprecise) 30 feet
+size: Large
+skills:
+- bonus: 6
+  misc: null
+  name: 'Athletics '
+- bonus: 4
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: 'Pathfinder #145: Hellknight Hill'
+  page_start: 89
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 20
+  type: swim
+spell_lists: null
+traits:
+- Uncommon
+- N
+- Large
+- Beast
+type: Creature
+weaknesses: null

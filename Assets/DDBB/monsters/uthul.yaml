@@ -1,0 +1,219 @@
+ability_mods:
+  cha_mod: 3
+  con_mod: 4
+  dex_mod: 7
+  int_mod: -1
+  str_mod: 7
+  wis_mod: -2
+ac: 36
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 40 feet. Air in the aura is difficult terrain for Flying creatures
+    without the air trait.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: High Winds
+  range: null
+  raw_description: '**High Winds** (__air__, __aura__) 40 feet. Air in the aura is
+    difficult terrain for Flying creatures without the air trait.'
+  requirements: null
+  success: null
+  traits:
+  - air
+  - aura
+  trigger: null
+description: 'An uthul most often appears to be a dark, swirling cloud filled with
+  flying debris and streaked with sudden flashes of lightning. Although they are clearly
+  elemental in nature, uthuls are nearly always found on the Material Plane, where
+  they hide among natural cloud formations, especially thunderstorms.
+
+
+
+
+  **__Recall Knowledge - Elemental__ (__Arcana__, __Nature__)**: DC 32'
+hp: 250
+hp_misc: null
+immunities:
+- electricity
+- paralyze
+- poison
+- sleep
+items: null
+languages:
+- Aquan
+level: 14
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d12+11
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 29
+  traits:
+  - agile
+name: Uthul
+perception: 20
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: The creature is stunned for 1d4 rounds.
+  critical_success: The creature is unaffected.Success The creature is stunned 1.Failure
+    The creature is stunned for 1 round.Critical Failure The creature is stunned for
+    1d4 rounds.
+  description: The uthul unleashes a powerful bolt of lightning and a stunning thunderclap.
+    The bolt deals 6d12 electricity damage to all creatures in a 30-foot line, with
+    a DC 34 basic Reflex save, and every creature in a 20-foot emanation must attempt
+    a DC 34 Fortitude save. The uthul can't use Lightning Crash again for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: The creature is stunned for 1 round.Critical Failure The creature is stunned
+    for 1d4 rounds.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Lightning Crash
+  range: null
+  raw_description: '**Lightning Crash**   (__electricity__, __incapacitation__, __sonic__)
+    The uthul unleashes a powerful bolt of lightning and a stunning thunderclap. The
+    bolt deals 6d12 electricity damage to all creatures in a 30-foot line, with a
+    DC 34 basic Reflex save, and every creature in a 20-foot emanation must attempt
+    a DC 34 Fortitude save. The uthul can''t use Lightning Crash again for 1d4 rounds.**Critical
+    Success** The creature is unaffected.**Success** The creature is stunned 1.**Failure**
+    The creature is stunned for 1 round.**Critical Failure** The creature is stunned
+    for 1d4 rounds.'
+  requirements: null
+  success: The creature is stunned 1.Failure The creature is stunned for 1 round.Critical
+    Failure The creature is stunned for 1d4 rounds.
+  traits:
+  - electricity
+  - incapacitation
+  - sonic
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: An uthul's movement doesn't trigger reactions.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Swiftness
+  range: null
+  raw_description: '**Swiftness** An uthul''s movement doesn''t trigger reactions.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The uthul transforms itself into a swirling vortex of storm and fury
+    10 feet wide and up to 40 feet tall. It stays in this form for 3 rounds or until
+    it Dismisses the effect. While in this form, the uthul gains resistance 10 to
+    physical damage and can move through other creatures. Its aura remains active,
+    but it can't make debris Strikes nor use Lightning Crash. Instead, any creature
+    the uthul moves through takes 4d6 bludgeoning damage and 2d12 electricity damage.
+    A creature can take this damage only once per round. A Large or smaller creature
+    must also succeed at a DC 32 Reflex save or be picked up and held suspended within
+    the vortex. Suspended creatures move with the uthul. A creature can attempt to
+    escape by spending an action to attempt a DC 32 Reflex save (or a DC 32 Acrobatics
+    check to maneuver in flight if it has a fly Speed). Upon escaping, or when the
+    uthul transforms back into its storm cloud form, a suspended creature is hurled
+    1d4 × 10 feet in a random direction, then falls unless it can fly or otherwise
+    remain aloft. After returning to its normal form, the uthul must wait 1 minute
+    before it can use Whirlwind Form again.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Whirlwind Form
+  range: null
+  raw_description: '**Whirlwind Form** [Two Actions]  (__concentrate__) The uthul
+    transforms itself into a swirling vortex of storm and fury 10 feet wide and up
+    to 40 feet tall. It stays in this form for 3 rounds or until it Dismisses the
+    effect. While in this form, the uthul gains resistance 10 to physical damage and
+    can move through other creatures. Its aura remains active, but it can''t make
+    debris Strikes nor use Lightning Crash. Instead, any creature the uthul moves
+    through takes 4d6 bludgeoning damage and 2d12 electricity damage. A creature can
+    take this damage only once per round. A Large or smaller creature must also succeed
+    at a DC 32 Reflex save or be picked up and held suspended within the vortex. Suspended
+    creatures move with the uthul. A creature can attempt to escape by spending an
+    action to attempt a DC 32 Reflex save (or a DC 32 Acrobatics check to maneuver
+    in flight if it has a fly Speed). Upon escaping, or when the uthul transforms
+    back into its storm cloud form, a suspended creature is hurled 1d4 × 10 feet in
+    a random direction, then falls unless it can fly or otherwise remain aloft. After
+    returning to its normal form, the uthul must wait 1 minute before it can use Whirlwind
+    Form again.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 5d8+15
+    type: bludgeoning
+  name: debris
+  plus_damage: null
+  to_hit: 29
+  traits:
+  - range increment 60 feet
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 28
+  fort_misc: null
+  misc: null
+  ref: 29
+  ref_misc: null
+  will: 22
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +20
+- darkvision
+size: Huge
+skills:
+- bonus: 29
+  misc: null
+  name: 'Acrobatics '
+- bonus: 27
+  misc: null
+  name: 'Athletics '
+- bonus: 23
+  misc: null
+  name: 'Intimidation '
+- bonus: 25
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 317
+  page_stop: null
+speed:
+- amount: 100
+  type: fly
+- amount: null
+  type: swiftness
+spell_lists: null
+traits:
+- CE
+- Huge
+- Air
+- Elemental
+type: Creature
+weaknesses: null

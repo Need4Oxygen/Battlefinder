@@ -1,0 +1,193 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 4
+  dex_mod: -1
+  int_mod: -2
+  str_mod: 6
+  wis_mod: 2
+ac: 21
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+description: 'Two heads aren''t always better than one. The slovenly, violent giants
+  known as ettins are proof enough of that.
+
+
+
+
+  The origin of these two-headed brutes is unknown, but few who encounter ettins ponder
+  their beginnings for long. Rather, the first priority for most creatures during
+  such a confrontation is escape, which is not easy to accomplish given the ettins''
+  notorious vigilance. In this way, two heads are better than one—ettins regularly
+  find employ in the ranks of giant or orc armies as sentries and guards. The benefits
+  of an ettin security detail are obvious: because it has a shared stomach, an ettin
+  requires only the same amount of food as one typical ogre, yet its two sets of eyes
+  make it twice as observant. An ettin never complains for lack of company, either.
+  The ettin''s two heads are uniquely content to squabble and converse between themselves,
+  and though they bicker incessantly, most couldn''t dream of life without the other.
+  Much like some twins, an ettin has two individual minds who nonetheless consider
+  the other as much a part of their life as their own self.
+
+
+
+
+  Ettins do not resemble a single giant heritage so much as an amalgamation of several.
+  Their tusks are thought to stem from orc ancestry, though their size and dimness
+  suggest hill giant blood. Though they tower over goblins and hobgoblins, ettins
+  are more than at home among tribes of these creatures and enjoy their comfortable
+  stations as camp lookouts or troop rearguards. Their exposure to a wide variety
+  of goblinoids and giants is evident in their language; ettins speak a pidgin tongue
+  of Goblin, Jotun, and Orcish, and their diction is mostly good enough to get across
+  the general meaning of their short sentences and bumbled sayings—although most interlocutors
+  simply nod their heads while conversing with an ettin anyway. The monsters are notoriously
+  short tempered and, despite their heightened visual perception, short sighted in
+  matters of keeping their allies alive.
+
+
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 22'
+hp: 110
+hp_misc: null
+immunities: null
+items:
+- flail (2)
+languages:
+- pidgin of Goblin
+- Jotun
+- and Orcish
+level: 6
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+10
+    type: bludgeoning
+  name: flail
+  plus_damage: null
+  to_hit: 16
+  traits:
+  - disarm
+  - reach 10 feet
+  - sweep
+  - trip
+- action_cost: One Action
+  damage:
+    formula: 1d6+10
+    type: bludgeoning
+  name: fist
+  plus_damage: null
+  to_hit: 16
+  traits:
+  - agile
+  - reach 10 feet
+name: Ettin
+perception: 16
+proactive_abilities: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 16
+  fort_misc: null
+  misc: null
+  ref: 11
+  ref_misc: null
+  will: 12
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 'Each of an ettin''s heads rolls its own initiative and has its own
+    turn. Neither head can Delay. At the start of a head''s turn, that head gets 2
+    actions and 1 reaction. Each brain controls one of the ettin''s arms, but both
+    can move the legs. Any ability that would sever an ettin''s head (such as the
+    __vorpal__ weapon property) doesn''t cause the ettin to die if it still has its
+    other head, but does cause it to lose the turns, actions, and reactions of the
+    severed head. Mental effects that target a single creature affect only one of
+    the ettin''s heads.
+
+
+    '
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Independent Brains
+  range: null
+  raw_description: '**Independent Brains** Each of an ettin''s heads rolls its own
+    initiative and has its own turn. Neither head can Delay. At the start of a head''s
+    turn, that head gets 2 actions and 1 reaction. Each brain controls one of the
+    ettin''s arms, but both can move the legs. Any ability that would sever an ettin''s
+    head (such as the __vorpal__ weapon property) doesn''t cause the ettin to die
+    if it still has its other head, but does cause it to lose the turns, actions,
+    and reactions of the severed head. Mental effects that target a single creature
+    affect only one of the ettin''s heads.
+
+
+    '
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +16
+- low-light vision
+size: Large
+skills:
+- bonus: 16
+  misc: null
+  name: 'Athletics '
+- bonus: 10
+  misc: null
+  name: 'Intimidation '
+source:
+- abbr: Bestiary
+  page_start: 156
+  page_stop: null
+speed:
+- amount: 35
+  type: Land
+spell_lists: null
+traits:
+- CE
+- Large
+- Giant
+- Humanoid
+type: Creature
+weaknesses: null

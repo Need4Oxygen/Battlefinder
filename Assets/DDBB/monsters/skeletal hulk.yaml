@@ -1,0 +1,134 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 4
+  dex_mod: 2
+  int_mod: -5
+  str_mod: 7
+  wis_mod: 2
+ac: 25
+ac_special: null
+alignment: NE
+automatic_abilities: null
+description: 'Huge giants and other enormous creatures make powerful skeletons.
+
+
+
+
+  **__Recall Knowledge - Undead__ (__Religion__)**: DC 23'
+hp: 105
+hp_misc: negative healing
+immunities:
+- death effects
+- disease
+- mental
+- paralyzed
+- poison
+- unconscious
+items: null
+languages: null
+level: 7
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+11
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 18
+  traits:
+  - agile
+  - reach 10 feet
+name: Skeletal Hulk
+perception: 16
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The hulk makes two Strikes with its claw against two adjacent foes,
+    both of whom are within its reach. The multiple attack penalty does not increase
+    until after both attacks are resolved.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Broad Swipe
+  range: null
+  raw_description: '**Broad Swipe** [Two Actions]  The hulk makes two Strikes with
+    its claw against two adjacent foes, both of whom are within its reach. The multiple
+    attack penalty does not increase until after both attacks are resolved.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The hulk Strides and makes a claw Strike with a +4 circumstance bonus
+    to damage. If the strike hits, the hulk automatically Shoves the target 10 feet.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Massive Rush
+  range: null
+  raw_description: '**Massive Rush** [Two Actions]  The hulk Strides and makes a claw
+    Strike with a +4 circumstance bonus to damage. If the strike hits, the hulk automatically
+    Shoves the target 10 feet.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 5
+  type: cold
+- amount: 5
+  type: electricity
+- amount: 5
+  type: fire
+- amount: 5
+  type: piercing
+- amount: 5
+  type: slashing
+ritual_lists: null
+saves:
+  fort: 15
+  fort_misc: null
+  misc: null
+  ref: 15
+  ref_misc: null
+  will: 13
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +16
+- darkvision
+size: Huge
+skills:
+- bonus: 20
+  misc: null
+  name: 'Athletics '
+- bonus: 15
+  misc: null
+  name: 'Intimidation '
+source:
+- abbr: Bestiary
+  page_start: 299
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+spell_lists: null
+traits:
+- NE
+- Huge
+- Mindless
+- Skeleton
+- Undead
+type: Creature
+weaknesses: null

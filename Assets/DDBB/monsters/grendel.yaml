@@ -1,0 +1,316 @@
+ability_mods:
+  cha_mod: 5
+  con_mod: 7
+  dex_mod: 5
+  int_mod: 0
+  str_mod: 10
+  wis_mod: 6
+ac: 44
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: The creature is frightened 4.
+  critical_success: The creature is unaffected by the presence.
+  description: 60 feet, DC 38.
+  effect: null
+  effects: null
+  failure: The creature is frightened 2.
+  frequency: null
+  full_description: null
+  generic_description: A creature that first enters the area must attempt a Will save.
+    Regardless of the result of the saving throw, the creature is temporarily immune
+    to this monster's Frightful Presence for 1 minute.
+  name: Frightful Presence
+  range: null
+  raw_description: '**Frightful Presence** 60 feet, DC 38. A creature that first enters
+    the area must attempt a Will save. Regardless of the result of the saving throw,
+    the creature is temporarily immune to this monster''s Frightful Presence for 1
+    minute.
+
+    Critical Success The creature is unaffected by the presence.
+
+    Success The creature is frightened 1.
+
+    Failure The creature is frightened 2.
+
+    Critical Success The creature is frightened 4.'
+  requirements: null
+  success: The creature is frightened 1.
+  traits:
+  - aura
+  - emotion
+  - fear
+  - mental
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: Grendel gains an extra reaction at the start of each of his turns that
+    he can use only to make an Attack of Opportunity with his claw. He can't use more
+    than one Attack of Opportunity triggered by the same action.
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The monster avoids being knocked out and remains at 1 HP, but its wounded
+    value increases by 1. When it is wounded 3, it can no longer use this ability.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Ferocity
+  range: null
+  raw_description: '**Ferocity** [Reaction] **Trigger** The monster is reduced to
+    0 HP. **Effect** The monster avoids being knocked out and remains at 1 HP, but
+    its wounded value increases by 1. When it is wounded 3, it can no longer use this
+    ability.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: The monster is reduced to 0 HP.
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The persistent damage or condition from the triggering effect doesn't affect
+    Grendel.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Unstoppable
+  range: null
+  raw_description: '**Unstoppable [Reaction]** **Trigger** Grendel would take __persistent
+    damage__ or gain one of the following conditions: __blinded__, __clumsy__, __confused__,
+    __controlled__, __dazzled__, __deafened__, __doomed__, __drained__, __enfeebled__,
+    __fascinated__, __fatigued__, __fleeing__, __frightened__, __paralyzed__, __petrified__,
+    __sickened__, __slowed__, __stunned__, or __stupefied__; **Effect** The persistent
+    damage or condition from the triggering effect doesn''t affect Grendel.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: 'Grendel would take __persistent damage__ or gain one of the following
+    conditions: __blinded__, __clumsy__, __confused__, __controlled__, __dazzled__,
+    __deafened__, __doomed__, __drained__, __enfeebled__, __fascinated__, __fatigued__,
+    __fleeing__, __frightened__, __paralyzed__, __petrified__, __sickened__, __slowed__,
+    __stunned__, or __stupefied__'
+description: 'This reaver of the cold marsh is not just a monster; he is a force of
+  nature. Where there is peace and prosperity in the world, Grendel strikes, eager
+  to prove that tranquility is transitory and death is the only constant. He stalks
+  the edge of his fens, seeking settlements where joy holds sway. He strikes under
+  cover of night, primarily targeting celebrations or festivals. The more happiness
+  or joy he can extinguish, the better.
+
+
+
+
+  Although Grendel is a unique creature, killing him won''t save the world from his
+  ravages for long. Once Grendel''s mother instinctively feels the pain of her violent
+  son''s death, she soon births a replacement. The new Grendel seems to avoid the
+  sites his elder brothers terrorized, as if he instinctively knows that such a place
+  hosts heroes powerful enough to defeat him.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 49'
+hp: 360
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Common
+level: 19
+melee:
+- action_cost: One Action
+  damage:
+    formula: 4d8+18
+    type: bludgeoning
+  name: fist
+  plus_damage:
+  - formula: null
+    type: Improved Grab
+  to_hit: 37
+  traits:
+  - agile
+  - magical
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 4d10+18
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 37
+  traits:
+  - magical
+  - reach 10 feet
+  - versatile B
+name: Grendel
+perception: 35
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Grendel's fist Strikes deal 18 bludgeoning damage on a failure (but
+    no damage on a critical failure).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Hands of the Murderer
+  range: null
+  raw_description: '**Hands of the Murderer** Grendel''s fist Strikes deal 18 bludgeoning
+    damage on a failure (but no damage on a critical failure).'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: Grendel is grabbing a creature
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Tooth Grind
+  range: null
+  raw_description: '**Tooth Grind**   **Requirements** Grendel is grabbing a creature;
+    **Effect** Grendel makes a bludgeoning jaws Strike against the creature he''s
+    grabbing. On a hit, the creature also takes 2d6 __persistent bleed damage__ and
+    becomes __wounded 1__, or increases its wounded value by 1 if already wounded.
+    On a critical hit, the creature instead becomes wounded 2, or increases its wounded
+    value by 2 if already wounded. If a creature dies from Tooth Grind, Grendel regains
+    40 HP; this is a __healing__ effect.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: ''
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Throw Rock
+  range: null
+  raw_description: '**__Throw Rock__**   '
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 2d12+18
+    type: bludgeoning
+  name: rock
+  plus_damage: null
+  to_hit: 37
+  traits:
+  - brutal
+  - range increment 150 feet
+rarity: Rare
+resistances:
+- amount: 15
+  type: all (except unarmed attacks)
+ritual_lists: null
+saves:
+  fort: 36
+  fort_misc: null
+  misc: null
+  ref: 32
+  ref_misc: null
+  will: 31
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Grendel's hearing is a precise sense to a range of 120 feet.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Keen Hearing
+  range: null
+  raw_description: '**Keen Hearing** Grendel''s hearing is a precise sense to a range
+    of 120 feet.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +35
+- darkvision
+- keen hearing 120 feet
+size: Large
+skills:
+- bonus: 34
+  misc: null
+  name: 'Acrobatics '
+- bonus: 39
+  misc: null
+  name: 'Athletics '
+- bonus: 34
+  misc: null
+  name: 'Intimidation '
+- bonus: 34
+  misc: null
+  name: 'Stealth '
+- bonus: 33
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 136
+  page_stop: null
+speed:
+- amount: 40
+  type: Land
+spell_lists: null
+traits:
+- Rare
+- CE
+- Large
+- Humanoid
+type: Creature
+weaknesses: null

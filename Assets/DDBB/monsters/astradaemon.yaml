@@ -1,0 +1,310 @@
+ability_mods:
+  cha_mod: 7
+  con_mod: 7
+  dex_mod: 6
+  int_mod: 2
+  str_mod: 5
+  wis_mod: 4
+ac: 39
+ac_special: null
+alignment: NE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 30 feet. An astradaemon draws power from the souls of the recently
+    slain. If a Small or larger living creature dies within its aura, the astradaemon
+    gains 5 temporary Hit Points and a +1 status bonus to attack and damage rolls
+    for 1 round, unless the creature was slain by an astradaemon's Devour Soul ability.
+    Incorporeal undead and living spirits traveling outside the body take 1d8 force
+    damage each round within the daemon's aura from the spiritual pressure as the
+    astradaemon pulls in fragments of their soul.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Soul Siphon
+  range: null
+  raw_description: '**Soul Siphon** (__aura__, __divine__, __force__, __necromancy__)
+    30 feet. An astradaemon draws power from the souls of the recently slain. If a
+    Small or larger living creature dies within its aura, the astradaemon gains 5
+    temporary Hit Points and a +1 status bonus to attack and damage rolls for 1 round,
+    unless the creature was slain by an astradaemon''s Devour Soul ability. Incorporeal
+    undead and living spirits traveling outside the body take 1d8 force damage each
+    round within the daemon''s aura from the spiritual pressure as the astradaemon
+    pulls in fragments of their soul.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - divine
+  - force
+  - necromancy
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: An astradaemon bends light, appearing shifted from its true position,
+    though still in the same space. Creatures targeting the astradaemon must attempt
+    a DC 11 flat check, as if the astradaemon were hidden, even though it remains
+    observed. Effects such as the Blind-Fight feat and halfling's keen eyes that apply
+    on the flat check against hidden creatures also apply against a displaced astradaemon.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Displacement
+  range: null
+  raw_description: '**Displacement** (__divine__, __illusion__, __visual__) An astradaemon
+    bends light, appearing shifted from its true position, though still in the same
+    space. Creatures targeting the astradaemon must attempt a DC 11 flat check, as
+    if the astradaemon were hidden, even though it remains observed. Effects such
+    as the Blind-Fight feat and halfling''s keen eyes that apply on the flat check
+    against hidden creatures also apply against a displaced astradaemon.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - illusion
+  - visual
+  trigger: null
+description: 'These unnerving, almost reptilian daemons represent death by direct
+  assault against a soul or life-force—the same numbing death they bring with their
+  fell touch. Rarely seen on the Material Plane, astradaemons spend most of their
+  time hunting the pathways between the living world and the afterlife. There, they
+  capture migrating souls, snatching them from their rightful rewards or punishments
+  and dragging them to Abaddon as tribute to their undying masters. These horrifying
+  predators of the dead can also be found stalking the banks of the River of Souls
+  in the Astral Plane, where they constantly hunt for new victims. Psychopomps have
+  a particular hatred of astradaemons as a result, and clashes between them and these
+  eerie hunters of the recently departed are indeed the stuff of legend.
+
+
+
+
+  Not all astradaemons limit their hunt to souls. The most notorious of their kind
+  serve the Horsemen themselves as assassins.
+
+
+
+
+  **__Recall Knowledge - Fiend__ (__Religion__)**: DC 35'
+hp: 240
+hp_misc: null
+immunities:
+- death effects
+- negative
+items: null
+languages:
+- Common
+- Daemonic
+- telepathy 100 feet
+level: 16
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d8+9
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 1d6
+    type: evil
+  - formula: null
+    type: essence drain
+  - formula: null
+    type: Grab
+  to_hit: 32
+  traits:
+  - evil
+  - magical
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 3d6+9
+    type: slashing
+  name: claw
+  plus_damage:
+  - formula: 1d6
+    type: evil and Essence Drain
+  to_hit: 32
+  traits:
+  - agile
+  - evil
+  - magical
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 3d10+9
+    type: bludgeoning
+  name: tail
+  plus_damage:
+  - formula: 1d6
+    type: evil and Essence Drain
+  to_hit: 32
+  traits:
+  - evil
+  - magical
+  - reach 15 feet
+name: Astradaemon
+perception: 28
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The astradaemon hasn't used an action with the attack trait yet this turn.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Devour Soul
+  range: null
+  raw_description: '**Devour Soul**   (__divine__, __incapacitation__, __necromancy__)
+    **Requirements** The astradaemon hasn''t used an action with the attack trait
+    yet this turn. **Effect** The astradaemon draws out and consumes the soul of a
+    living creature it has grabbed. The creature must succeed at a DC 35 Fortitude
+    save or instantly die. If it dies, the astradaemon gains 10 temporary Hit Points
+    and a +2 status bonus to attack and damage rolls for 1 minute, or for 1 day if
+    the victim was 15th level or higher. A victim slain in this way can be returned
+    to life normally. A creature that survives is temporarily immune for 1 minute.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - incapacitation
+  - necromancy
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When an astradaemon hits with its claw, jaws, or tail, it drains the
+    target's spiritual and vital essences. The target takes 2d10 negative energy damage
+    and the astradaemon regains an equal number of Hit Points. The target must succeed
+    at a DC 37 Fortitude save or become __doomed 1__ and __drained 1__. If the target
+    was already drained or doomed, it instead increases both conditions' value by
+    1, to a maximum of 4.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Essence Drain
+  range: null
+  raw_description: '**Essence Drain** (__divine__, __necromancy__, __negative__) When
+    an astradaemon hits with its claw, jaws, or tail, it drains the target''s spiritual
+    and vital essences. The target takes 2d10 negative energy damage and the astradaemon
+    regains an equal number of Hit Points. The target must succeed at a DC 37 Fortitude
+    save or become __doomed 1__ and __drained 1__. If the target was already drained
+    or doomed, it instead increases both conditions'' value by 1, to a maximum of
+    4.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - necromancy
+  - negative
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 15
+  type: good
+ritual_lists: null
+saves:
+  fort: 27
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 30
+  ref_misc: null
+  will: 26
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +28
+- darkvision
+- lifesense 30 feet
+- true seeing
+size: Large
+skills:
+- bonus: 28
+  misc: null
+  name: 'Acrobatics '
+- bonus: 33
+  misc: null
+  name: 'Intimidation '
+- bonus: 26
+  misc: null
+  name: 'Religion '
+- bonus: 28
+  misc: null
+  name: 'Stealth '
+- bonus: 26
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 73
+  page_stop: null
+speed:
+- amount: 60
+  type: Land
+- amount: 60
+  type: fly
+spell_lists:
+- dc: 37
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 8
+    spells:
+    - frequency: null
+      name: discern location
+      requirement: null
+    - frequency: null
+      name: finger of death
+      requirement: null
+  - heightened_level: null
+    level: 7
+    spells:
+    - frequency: x2
+      name: plane shift
+      requirement: null
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: null
+      name: dimension door
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: at will
+      name: dimension door
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: at will, good only
+      name: detect alignment
+      requirement: null
+  - heightened_level: 6
+    level: -1
+    spells:
+    - frequency: null
+      name: true seeing
+      requirement: null
+  to_hit: null
+traits:
+- NE
+- Large
+- Daemon
+- Fiend
+type: Creature
+weaknesses: null

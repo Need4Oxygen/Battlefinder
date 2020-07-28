@@ -1,0 +1,350 @@
+ability_mods:
+  cha_mod: 3
+  con_mod: 5
+  dex_mod: 3
+  int_mod: 0
+  str_mod: 5
+  wis_mod: 3
+ac: 24
+ac_special: null
+alignment: CN
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 'A naunet''s vital organs shift and change shape and position constantly.
+    Immediately after the naunet takes acid, electricity, or sonic damage, it gains
+    the listed amount of resistance to that damage type. This lasts for 1 hour or
+    until the next time the protean takes damage of one of the other types (in which
+    case its resistance changes to match that type), whichever comes first.
+
+
+    The naunet is immune to polymorph effects unless it is a willing target. If blinded
+    or deafened, the naunet automatically recovers at the end of its next turn as
+    new sensory organs grow to replace the compromised ones.'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Protean Anatomy
+  range: null
+  raw_description: '**Protean Anatomy** (__divine__, __transmutation__) A naunet''s
+    vital organs shift and change shape and position constantly. Immediately after
+    the naunet takes acid, electricity, or sonic damage, it gains the listed amount
+    of resistance to that damage type. This lasts for 1 hour or until the next time
+    the protean takes damage of one of the other types (in which case its resistance
+    changes to match that type), whichever comes first.
+
+
+    The naunet is immune to polymorph effects unless it is a willing target. If blinded
+    or deafened, the naunet automatically recovers at the end of its next turn as
+    new sensory organs grow to replace the compromised ones.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - transmutation
+  trigger: null
+description: 'Pugnacious and powerfully muscled, naunets serve as scouts and rank-and-file
+  troops of protean armies. Resembling a thick salamander with a wide head, a powerful
+  tail, and tentacles tipped with snapping jaws in place of rear legs, naunets are
+  the most bestial of the proteans and occupy one of their lowest castes. Naunets
+  are 12 feet long and weigh 900 pounds.
+
+
+
+
+  All proteans are prone to unpredictable fits and unexpected action, but compared
+  to most others, naunets are much more bestial. Always ready for a fight, naunets
+  pride themselves in acting swiftly and striking before unpleasant distractions like
+  diplomacy can blunt a combat''s beginning.
+
+
+
+
+  **__Recall Knowledge - Monitor__ (__Religion__)**: DC 23'
+hp: 120
+hp_misc: fast healing 2
+immunities: null
+items: null
+languages:
+- Abyssal
+- Celestial
+- Protean
+level: 7
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d10+8
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 1d6
+    type: chaotic
+  to_hit: 18
+  traits:
+  - chaotic
+  - magical
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 2d8+8
+    type: bludgeoning
+  name: tail
+  plus_damage:
+  - formula: 1d6
+    type: chaotic and Grab
+  to_hit: 18
+  traits:
+  - chaotic
+  - magical
+  - reach 15 feet
+- action_cost: One Action
+  damage:
+    formula: 2d8+6
+    type: piercing
+  name: tentacle
+  plus_damage:
+  - formula: 1d6
+    type: chaotic and confounding slam
+  to_hit: 18
+  traits:
+  - agile
+  - chaotic
+  - magical
+  - reach 10 feet
+name: Naunet
+perception: 14
+proactive_abilities:
+- action_cost: Free Action
+  critical_failure: null
+  critical_success: null
+  description: The naunet chooses adamantine, cold iron, or silver; its melee Strikes
+    count as that type for 1 minute or until it uses Adaptive Strike again.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Adaptive Strike
+  range: null
+  raw_description: '**Adaptive Strike** [Free Action]  (__divine__, __polymorph__,
+    __transmutation__) The naunet chooses adamantine, cold iron, or silver; its melee
+    Strikes count as that type for 1 minute or until it uses Adaptive Strike again.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - polymorph
+  - transmutation
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The naunet can take the appearance of any Small, Medium, or Large animal,
+    beast, or humanoid. This doesn't change its Speed or its attack and damage bonuses
+    with its Strikes but might change the damage type its Strikes deal.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Change Shape
+  range: null
+  raw_description: '**Change Shape**   (__concentrate__, __divine__, __polymorph__,
+    __transmutation__) The naunet can take the appearance of any Small, Medium, or
+    Large animal, beast, or humanoid. This doesn''t change its Speed or its attack
+    and damage bonuses with its Strikes but might change the damage type its Strikes
+    deal.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - divine
+  - polymorph
+  - transmutation
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A creature hit by the naunet's tentacle Strike is __stupefied 2__ for
+    1d4 rounds (DC 24 Will negates). If the creature was already stupefied in this
+    way, the duration extends by 1 round instead. A chaotic creature is only __stupefied
+    1__ instead.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Confounding Slam
+  range: null
+  raw_description: '**Confounding Slam** (__divine__, __emotion__, __enchantment__,
+    __mental__) A creature hit by the naunet''s tentacle Strike is __stupefied 2__
+    for 1d4 rounds (DC 24 Will negates). If the creature was already stupefied in
+    this way, the duration extends by 1 round instead. A chaotic creature is only
+    __stupefied 1__ instead.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - emotion
+  - enchantment
+  - mental
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: 1d8+8 bludgeoning, DC 26
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Constrict
+  range: null
+  raw_description: '**__Constrict__**   1d8+8 bludgeoning, DC 26'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 5
+  type: precision
+- amount: 10
+  type: protean anatomy
+ritual_lists: null
+saves:
+  fort: 18
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 14
+  ref_misc: null
+  will: 12
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A naunet can anticipate the most likely presence of a creature through
+    a supernatural insight into chaotic probabilities and chance. This grants it the
+    ability to sense creatures within the listed range. A creature under the effects
+    of __nondetection__ or that is otherwise shielded from divinations and predictions
+    cannot be noticed via entropy sense.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Entropy Sense
+  range: null
+  raw_description: '**Entropy Sense** (__divination__, __divine__, __prediction__)
+    A naunet can anticipate the most likely presence of a creature through a supernatural
+    insight into chaotic probabilities and chance. This grants it the ability to sense
+    creatures within the listed range. A creature under the effects of __nondetection__
+    or that is otherwise shielded from divinations and predictions cannot be noticed
+    via entropy sense.'
+  requirements: null
+  success: null
+  traits:
+  - divination
+  - divine
+  - prediction
+  trigger: null
+senses:
+- Perception +14
+- entropy sense (imprecise) 30 feet
+- darkvision
+size: Large
+skills:
+- bonus: 14
+  misc: null
+  name: 'Acrobatics '
+- bonus: 16
+  misc: null
+  name: 'Athletics '
+- bonus: 16
+  misc: null
+  name: 'Intimidation '
+- bonus: 14
+  misc: null
+  name: 'Stealth '
+- bonus: 12
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 267
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 30
+  type: fly
+- amount: 25
+  type: swim
+- amount: 128
+  type: <a style="text-decoration:underline" href="Spells.aspx?ID="><i>freedom of
+    movement</i></a>
+spell_lists:
+- dc: 26
+  misc: ''
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: null
+      name: dimension door
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: acid arrow
+      requirement: null
+    - frequency: null
+      name: solid fog
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: at will
+      name: shatter
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: at will
+      name: obscuring mist
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: at will, lawful only
+      name: detect alignment
+      requirement: null
+  - heightened_level: 4
+    level: -1
+    spells:
+    - frequency: null
+      name: freedom of movement
+      requirement: null
+  to_hit: 16
+traits:
+- CN
+- Large
+- Monitor
+- Protean
+type: Creature
+weaknesses:
+- amount: 5
+  type: lawful

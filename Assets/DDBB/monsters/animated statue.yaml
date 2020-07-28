@@ -1,0 +1,120 @@
+ability_mods:
+  cha_mod: -5
+  con_mod: 5
+  dex_mod: -2
+  int_mod: -5
+  str_mod: 4
+  wis_mod: 0
+ac: 19
+ac_special:
+- descr: 15 when broken
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Like normal objects, an animated statue has Hardness. This Hardness
+    reduces any damage it takes by an amount equal to the Hardness. Once an animated
+    statue is reduced to less than half its Hit Points, or immediately upon being
+    damaged by a critical hit, its construct armor breaks and its Armor Class is reduced
+    to 15.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Construct Armor
+  range: null
+  raw_description: '**Construct Armor** Like normal objects, an animated statue has
+    Hardness. This Hardness reduces any damage it takes by an amount equal to the
+    Hardness. Once an animated statue is reduced to less than half its Hit Points,
+    or immediately upon being damaged by a critical hit, its construct armor breaks
+    and its Armor Class is reduced to 15.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Animated statues are often used to guard crypts, small shrines, or areas
+  in government buildings where they can be positioned amid normal statues to hide
+  their true nature until an intruder arouses their ire. Adventurers'' suspicions
+  regarding statues suddenly animating and attacking has led many less scrupulous
+  adventurers to automatically attack any statues they encounter, ruining harmless,
+  ancient relics.
+
+
+
+
+  **__Recall Knowledge - Construct__ (__Arcana__, __Crafting__)**: DC 18'
+hp: 35
+hp_misc: null
+immunities:
+- bleed
+- death effects
+- disease
+- doomed
+- drained
+- fatigued
+- healing
+- mental
+- necromancy
+- nonlethal attacks
+- paralyzed
+- poison
+- sickened
+- unconscious
+items: null
+languages: null
+level: 3
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d8+6
+    type: bludgeoning
+  name: fist
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 11
+  traits:
+  - magical
+name: Animated Statue
+perception: 9
+proactive_abilities: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 12
+  fort_misc: null
+  misc: null
+  ref: 5
+  ref_misc: null
+  will: 5
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +9
+- darkvision
+size: Medium
+skills:
+- bonus: 11
+  misc: null
+  name: 'Athletics '
+source:
+- abbr: Bestiary
+  page_start: 21
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+spell_lists: null
+traits:
+- N
+- Medium
+- Construct
+- Earth
+- Mindless
+type: Creature
+weaknesses: null

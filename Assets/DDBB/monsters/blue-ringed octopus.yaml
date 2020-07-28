@@ -1,0 +1,167 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 1
+  dex_mod: 3
+  int_mod: -4
+  str_mod: 0
+  wis_mod: 3
+ac: 16
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'While relatively small, the blue-ringed octopus is particularly venomous
+  for its size.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 14'
+hp: 15
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 0
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6
+    type: piercing
+  name: beak
+  plus_damage:
+  - formula: null
+    type: blue-ringed octopus venom
+  to_hit: 7
+  traits:
+  - finesse
+- action_cost: One Action
+  damage: null
+  name: arms
+  plus_damage: null
+  to_hit: 6
+  traits: null
+name: Blue-Ringed Octopus
+perception: 6
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw** DC 17 Fortitude; **Maximum Duration** 6 rounds; **Stage
+    1** 1d4 poison damage (1 round); **Stage 2** 1d6 poison damage (1 round); **Stage
+    3** 1d6 poison damage and __paralyzed__ (1 round)'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Blue-Ringed Octopus Venom
+  range: null
+  raw_description: '**Blue-Ringed Octopus Venom** (__poison__) **Saving Throw** DC
+    17 Fortitude; **Maximum Duration** 6 rounds; **Stage 1** 1d4 poison damage (1
+    round); **Stage 2** 1d6 poison damage (1 round); **Stage 3** 1d6 poison damage
+    and __paralyzed__ (1 round)'
+  requirements: null
+  success: null
+  traits:
+  - poison
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The blue-ringed octopus can change the color of its skin to __Hide__
+    even if it doesn't have cover.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Camouflage
+  range: null
+  raw_description: '**Camouflage** The blue-ringed octopus can change the color of
+    its skin to __Hide__ even if it doesn''t have cover.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The blue-ringed octopus moves up to 60 feet in a straight line through
+    the water without triggering reactions.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Jet
+  range: null
+  raw_description: '**Jet** [Two Actions]  The blue-ringed octopus moves up to 60
+    feet in a straight line through the water without triggering reactions.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The blue-ringed octopus has a creature __grabbed__
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Toxic Bite
+  range: null
+  raw_description: '**Toxic Bite**   **Requirements** The blue-ringed octopus has
+    a creature __grabbed__; **Effect** The blue-ringed octopus makes a beak Strike
+    against the grabbed creature. If it hits, it injects additional poison, causing
+    its venom to gain the __virulent__ trait.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 2
+  type: cold
+ritual_lists: null
+saves:
+  fort: 3
+  fort_misc: null
+  misc: null
+  ref: 9
+  ref_misc: null
+  will: 6
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +6
+- low-light vision
+size: Tiny
+skills:
+- bonus: 6
+  misc: null
+  name: 'Athletics '
+- bonus: 7
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 187
+  page_stop: null
+speed:
+- amount: 25
+  type: swim
+spell_lists: null
+traits:
+- N
+- Tiny
+- Animal
+- Aquatic
+type: Creature
+weaknesses: null

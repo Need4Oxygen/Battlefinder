@@ -1,0 +1,422 @@
+ability_mods:
+  cha_mod: 8
+  con_mod: 10
+  dex_mod: 7
+  int_mod: 4
+  str_mod: 11
+  wis_mod: 9
+ac: 49
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: The creature is frightened 4.
+  critical_success: The creature is unaffected by the presence.
+  description: 100 feet, DC 43
+  effect: null
+  effects: null
+  failure: The creature is frightened 2.
+  frequency: null
+  full_description: null
+  generic_description: A creature that first enters the area must attempt a Will save.
+    Regardless of the result of the saving throw, the creature is temporarily immune
+    to this monster's Frightful Presence for 1 minute.
+  name: Frightful Presence
+  range: null
+  raw_description: '**Frightful Presence** 100 feet, DC 43 A creature that first enters
+    the area must attempt a Will save. Regardless of the result of the saving throw,
+    the creature is temporarily immune to this monster''s Frightful Presence for 1
+    minute.
+
+    Critical Success The creature is unaffected by the presence.
+
+    Success The creature is frightened 1.
+
+    Failure The creature is frightened 2.
+
+    Critical Success The creature is frightened 4.'
+  requirements: null
+  success: The creature is frightened 1.
+  traits:
+  - aura
+  - emotion
+  - fear
+  - mental
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A jabberwock damaged by a vorpal weapon becomes __frightened 2__ (or
+    frightened 4 on a critical hit).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Vorpal Fear
+  range: null
+  raw_description: '**Vorpal Fear** A jabberwock damaged by a vorpal weapon becomes
+    __frightened 2__ (or frightened 4 on a critical hit).'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The jabberwock makes a claw Strike against the triggering creature. If the
+    Strike hits, the jabberwock disrupts the triggering action.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Claws That Catch
+  range: null
+  raw_description: '**Claws That Catch [Reaction]** **Trigger **A creature within
+    the jabberwock''s reach uses a __manipulate__ action or a __move__ action, leaves
+    a square during a move action, makes a ranged attack, or uses a __concentrate__
+    action; **Effect **The jabberwock makes a claw Strike against the triggering creature.
+    If the Strike hits, the jabberwock disrupts the triggering action.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within the jabberwock's reach uses a __manipulate__ action or
+    a __move__ action, leaves a square during a move action, makes a ranged attack,
+    or uses a __concentrate__ action
+description: "Few beasts have inspired as many legends, poems, songs, and myths in\
+  \ as many cultures, as this bizarre draconic creature. The jabberwock hails from\
+  \ the fey realm of the First World and is part of a group of powerful __First World__\
+  \ creatures known collectively as the Tane.\n\n\n\nLike all members of the Tane,\
+  \ jabberwocks are living creatures that age, eat, drink, and sleep, but do not reproduce\
+  \ normally. Instead, they are created directly by the godlike Eldest who rule the\
+  \ First World, and they serve at the pleasure (or frustration) of these capricious\
+  \ and mysterious entities. Believed to be the most powerful of all the Tane, jabberwocks\
+  \ are typically only ever created with one purpose: to wreak destruction and havoc\
+  \ upon the Material Plane. One of the Eldest might send a jabberwock to devastate\
+  \ a country, continent, or even entire world in order to get revenge for some slight\
+  \ made against them by a single mortal. Sometimes, no specific insult or injury\
+  \ is required, as some of the Eldest resent the very existence of the Material Plane\
+  \ and periodically create jabberwocks simply to express the wrath of the First World\
+  \ against its younger and less chaotic sibling.\n\n\n\nOnce a jabberwock arrives\
+  \ on the Material Plane, its first order of business is to seek out a lair. It prefers\
+  \ dwelling in remote forest locations about a day's flight from civilization—the\
+  \ more dangerous the woodland is to those who might eventually come hunting it,\
+  \ the better! \n\n\n\nThe relationship between jabberwocks and __vorpal__ weapons\
+  \ is the subject of much debate and speculation among scholars, and the various\
+  \ poems, songs, and legends about the jabberwock do little to clarify the issue,\
+  \ conflicting and diverging on this point. Some believe that vorpal weapons were\
+  \ first created specifically to combat jabberwocks, but others take the story one\
+  \ step further. They cite evidence in certain ancient myths that there may once\
+  \ have been only a single, unique jabberwock, so powerful that nothing could so\
+  \ much as scratch it—nothing, that is, except for the first vorpal sword, crafted\
+  \ for that very purpose. So epic was the resulting battle that it created strange\
+  \ echoes throughout reality, and as a result, these echoes, in the form of vorpal\
+  \ weapons, can now be found on many worlds. Those who subscribe to this belief claim\
+  \ that the jabberwocks seen today are but pale imitations of this proto-jabberwock,\
+  \ and they speculate that only the combined efforts of several Eldest would be sufficient\
+  \ to create such a creature again.\n\n\n\n\n\n## Variant Jabberwocks\n\nThe Eldest\
+  \ have sometimes altered certain aspects of the jabberwocks they create. Some of\
+  \ the more notorious or legendary variant jabberwocks include the following.\n\n\
+  \n\n**Frumious Jabberwock**: Frumious jabberwocks have two heads. They are level\
+  \ 24 and gain an extra action on each of their turns they can use only to make a\
+  \ jaws Strike.\n\n\n\n**Mimsy Jabberwock**: Typically hailing from wintry regions\
+  \ of the First World, mimsy jabberwocks have glowing blue-white scales, resist cold\
+  \ instead of fire, and have eyes that burn with blue flames that deal cold damage\
+  \ instead of fire damage.\n\n\n\n**Slithy Jabberwock**: Wreaking destruction beneath\
+  \ the waves, these sinuous and slimy jabberwocks are amphibious, have a swim Speed\
+  \ of 80 feet instead of the normal fly Speed, and do not have a wing Strike. A slithy\
+  \ jabberwock's whiffling aura is activated whenever it swims, makes a tail Strike,\
+  \ or Burbles.\n\n\n\n**__Recall Knowledge - Dragon__ (__Arcana__)**: DC 51"
+hp: 500
+hp_misc: regeneration 25 (deactivated by vorpal weapons
+immunities:
+- paralyzed
+- sleep
+items: null
+languages:
+- Aklo
+- Common
+- Draconic
+- Gnomish
+- Sylvan
+level: 23
+melee:
+- action_cost: One Action
+  damage:
+    formula: 4d12+19
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 42
+  traits:
+  - deadly 2d12
+  - magical
+  - reach 15 feet
+- action_cost: One Action
+  damage:
+    formula: 4d8+19
+    type: slashing
+  name: claw
+  plus_damage:
+  - formula: null
+    type: Improved Grab
+  to_hit: 42
+  traits:
+  - agile
+  - magical
+  - reach 15 feet
+- action_cost: One Action
+  damage:
+    formula: 4d10+19
+    type: bludgeoning
+  name: tail
+  plus_damage:
+  - formula: null
+    type: Improved Knockdown
+  to_hit: 42
+  traits:
+  - magical
+  - reach 15 feet
+- action_cost: One Action
+  damage:
+    formula: 4d8+19
+    type: bludgeoning
+  name: wing
+  plus_damage: null
+  to_hit: 40
+  traits:
+  - magical
+  - agile
+  - reach 15 feet
+name: Jabberwock
+perception: 40
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The jabberwock creates a blast of strange noises and shouted nonsense
+    in the various languages it knows (and invariably some languages it doesn't know),
+    creating one of two effects. The jabberwock can't Burble again for 1d4 rounds.
+  effect: null
+  effects:
+  - action_cost: None
+    critical_failure: null
+    critical_success: null
+    description: 60 feet. Each creature in the emanation must succeed at a DC 46 Will
+      save or become __confused__ for 1d4 rounds.
+    effect: null
+    effects: null
+    failure: null
+    frequency: null
+    full_description: null
+    generic_description: null
+    name: Confusion
+    range: null
+    raw_description: '**Confusion **(__aura__, __emotion__, __enchantment__, __mental__,
+      __primal__) 60 feet. Each creature in the emanation must succeed at a DC 46
+      Will save or become __confused__ for 1d4 rounds.'
+    requirements: null
+    success: null
+    traits:
+    - aura
+    - emotion
+    - enchantment
+    - mental
+    - primal
+    trigger: null
+  - action_cost: None
+    critical_failure: null
+    critical_success: null
+    description: The jabberwock focuses its Burbling into a 60.foot line of sonic
+      energy that deals 24d6 sonic damage to creatures in the area (DC 46 basic Reflex
+      save).
+    effect: null
+    effects: null
+    failure: null
+    frequency: null
+    full_description: null
+    generic_description: null
+    name: Sonic Beam
+    range: null
+    raw_description: '**Sonic Beam **(__evocation__, __primal__, __sonic__) The jabberwock
+      focuses its Burbling into a 60.foot line of sonic energy that deals 24d6 sonic
+      damage to creatures in the area (DC 46 basic Reflex save).'
+    requirements: null
+    success: null
+    traits:
+    - evocation
+    - primal
+    - sonic
+    trigger: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Burble
+  range: null
+  raw_description: "**Burble** [Two Actions]  The jabberwock creates a blast of strange\
+    \ noises and shouted nonsense in the various languages it knows (and invariably\
+    \ some languages it doesn't know), creating one of two effects. The jabberwock\
+    \ can't Burble again for 1d4 rounds.\n\n  * **Confusion **(__aura__, __emotion__,\
+    \ __enchantment__, __mental__, __primal__) 60 feet. Each creature in the emanation\
+    \ must succeed at a DC 46 Will save or become __confused__ for 1d4 rounds.\n\n\
+    \  * **Sonic Beam **(__evocation__, __primal__, __sonic__) The jabberwock focuses\
+    \ its Burbling into a 60.foot line of sonic energy that deals 24d6 sonic damage\
+    \ to creatures in the area (DC 46 basic Reflex save). "
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: If the jabberwock makes a jaws attack and rolls a natural 19 on the
+    d20 roll, the attack is a critical hit. This has no effect if the 19 would be
+    a failure.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Jaws That Bite
+  range: null
+  raw_description: '**Jaws That Bite** If the jabberwock makes a jaws attack and rolls
+    a natural 19 on the d20 roll, the attack is a critical hit. This has no effect
+    if the 19 would be a failure.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The jabberwock's wings whiffle, creating __severe winds__ within a 30-foot
+    emanation. These winds move outward from the jabberwock, and they persist until
+    the start of the jabberwock's next turn. During this time, flight of any kind
+    in the emanation requires a successful DC 43 __Acrobatics__ check to __Maneuver
+    in Flight__, and creatures flying toward the jabberwock are moving through greater
+    difficult terrain. Creatures on the ground in the emanation must succeed at a
+    DC 43 __Athletics__ check to approach the jabberwock.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Whiffling
+  range: null
+  raw_description: '**Whiffling** [Reaction]  (__aura__) **Trigger **The jabberwock
+    Flies or makes a wing Strike; **Effect **The jabberwock''s wings whiffle, creating
+    __severe winds__ within a 30-foot emanation. These winds move outward from the
+    jabberwock, and they persist until the start of the jabberwock''s next turn. During
+    this time, flight of any kind in the emanation requires a successful DC 43 __Acrobatics__
+    check to __Maneuver in Flight__, and creatures flying toward the jabberwock are
+    moving through greater difficult terrain. Creatures on the ground in the emanation
+    must succeed at a DC 43 __Athletics__ check to approach the jabberwock.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  trigger: The jabberwock Flies or makes a wing Strike
+ranged:
+- action_cost: One Action
+  damage: null
+  name: eyes of flame
+  plus_damage: null
+  to_hit: 42
+  traits:
+  - fire
+  - magical
+  - range increment 60 feet
+rarity: Rare
+resistances:
+- amount: 20
+  type: fire
+ritual_lists: null
+saves:
+  fort: 39
+  fort_misc: null
+  misc: null
+  ref: 37
+  ref_misc: null
+  will: 40
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The jabberwock always treats the plane it is currently located on as
+    its home plane.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Planar Acclimation
+  range: null
+  raw_description: '**Planar Acclimation** The jabberwock always treats the plane
+    it is currently located on as its home plane.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +40
+- darkvision
+- scent 120 feet
+- true seeing
+size: Huge
+skills:
+- bonus: 40
+  misc: null
+  name: 'Acrobatics '
+- bonus: 44
+  misc: null
+  name: 'Athletics '
+- bonus: 41
+  misc: null
+  name: 'Intimidation '
+- bonus: 38
+  misc: null
+  name: 'Nature '
+- bonus: 40
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 150
+  page_stop: null
+speed:
+- amount: 35
+  type: Land
+- amount: 60
+  type: fly
+spell_lists:
+- dc: 43
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: 10
+    level: -1
+    spells:
+    - frequency: null
+      name: true seeing
+      requirement: null
+  to_hit: null
+traits:
+- Rare
+- CE
+- Huge
+- Dragon
+- Tane
+type: Creature
+weaknesses:
+- amount: 20
+  type: <i>vorpal</i> weapons
+- amount: null
+  type: vorpal fear</b>

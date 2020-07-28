@@ -1,0 +1,198 @@
+ability_mods:
+  cha_mod: 1
+  con_mod: 6
+  dex_mod: 4
+  int_mod: -3
+  str_mod: 7
+  wis_mod: 4
+ac: 33
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Scourges of the upper Darklands, these enormous, mole-like monstrosities
+  slice and burrow through solid stone with massive forearms and adamantine-strong
+  claws. Shulns grow to about 20 feet long and have four tiny, nearly imperceptible
+  eyes; a long, pale snout; four thick-muscled legs that end in long, serrated claws;
+  and a stubby pink tail. As a young shuln matures, its unique metabolism produces
+  adamantine that becomes infused throughout its skeletal system. In addition to making
+  their claws and fangs nearly unbreakable, this unique physiological trait makes
+  shulns unparalleled burrowers and highly sought by monster hunters who hope to harvest
+  the precious material from their corpses.
+
+
+
+
+  Shulns have a ravenous appetite and eat nearly anything they can catch, but their
+  preferred diet consists almost entirely of large invertebrates, especially cave
+  worms. They rely on tiny sensory whiskers that cover their snoutfland allow them
+  to detect subtle movements in the air and ground without the use of vision. When
+  it detects suitable prey, a shuln bites the target at the first opportunity, injecting
+  it with a potent paralytic toxin present in its saliva. So strong is this poison
+  that it is capable of subduing even the near-unstoppable purple worm, making the
+  shuln a valuable (if dangerous) companion to have for anyone making excursions into
+  worm-infested regions of the Darklands. Shulns'' notoriously ill-tempered dispositions
+  and their knack for digging into areas of an underground settlement where digging
+  ought not occur makes them frustrating creatures to keep around, but when the alternative
+  is an unpredictable but deadly visit from an enormous, hungry cave worm, the annoyances
+  are well worth the trouble.
+
+
+
+
+  Encounters with much larger shuln-like entities on the Plane of Earth suggest that
+  these creatures may have originated from that place. The larger shulns still retain
+  their elemental qualities, are quite a bit smarter, and have their own suite of
+  earth-themed innate primal spells—but for all that, they still love the taste of
+  cave worm.
+
+
+
+
+  **__Recall Knowledge - Beast__ (__Arcana__, __Nature__)**: DC 35'
+hp: 195
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 12
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d8+10
+    type: slashing
+  name: adamantine claw
+  plus_damage: null
+  to_hit: 25
+  traits:
+  - agile
+  - reach 15 feet
+- action_cost: One Action
+  damage:
+    formula: 3d10+10
+    type: piercing
+  name: adamantine fangs
+  plus_damage:
+  - formula: null
+    type: shuln saliva
+  to_hit: 25
+  traits:
+  - reach 15 feet
+name: Shuln
+perception: 20
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Any time the shuln scores a critical hit with a melee Strike, it also
+    deals the same amount of damage to the target's armor, bypassing any Hardness
+    lower than 10, like __adamantine__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Armor-Rending
+  range: null
+  raw_description: '**Armor-Rending** Any time the shuln scores a critical hit with
+    a melee Strike, it also deals the same amount of damage to the target''s armor,
+    bypassing any Hardness lower than 10, like __adamantine__.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw** DC 32 Fortitude; **Maximum Duration** 6 rounds; **Stage
+    1** 2d6 poison damage and __slowed 1__ (1 round); **Stage 2** 3d6 poison damage,
+    and __slowed 1__ (1 round); **Stage 3** 4d6 poison damage and __paralyzed__ for
+    2d6 hours. Shuln saliva overcomes the inexorable ability.'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Shuln Saliva
+  range: null
+  raw_description: '**Shuln Saliva** (__incapacitation__, __poison__) **Saving Throw**
+    DC 32 Fortitude; **Maximum Duration** 6 rounds; **Stage 1** 2d6 poison damage
+    and __slowed 1__ (1 round); **Stage 2** 3d6 poison damage, and __slowed 1__ (1
+    round); **Stage 3** 4d6 poison damage and __paralyzed__ for 2d6 hours. Shuln saliva
+    overcomes the inexorable ability.'
+  requirements: null
+  success: null
+  traits:
+  - incapacitation
+  - poison
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Shulns can burrow into solid rock and any metal with a hardness less
+    than that of __adamantine__ like it is soil or loose rubble, leaving a tunnel
+    10 feet in diameter.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Unstoppable Burrow
+  range: null
+  raw_description: '**Unstoppable Burrow** Shulns can burrow into solid rock and any
+    metal with a hardness less than that of __adamantine__ like it is soil or loose
+    rubble, leaving a tunnel 10 feet in diameter.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Rare
+resistances:
+- amount: 10
+  type: physical (except adamantine or bludgeoning)
+- amount: 15
+  type: poison
+ritual_lists: null
+saves:
+  fort: 25
+  fort_misc: null
+  misc: null
+  ref: 19
+  ref_misc: null
+  will: 21
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +20
+- scent 30 feet
+- tremorsense (imprecise) 60 feet
+size: Huge
+skills:
+- bonus: 25
+  misc: null
+  name: 'Athletics '
+- bonus: 22
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 294
+  page_stop: null
+speed:
+- amount: 40
+  type: Land
+- amount: 20
+  type: burrow
+- amount: null
+  type: unstoppable burrow
+spell_lists: null
+traits:
+- Rare
+- N
+- Huge
+- Beast
+type: Creature
+weaknesses: null

@@ -1,0 +1,339 @@
+ability_mods:
+  cha_mod: 5
+  con_mod: 5
+  dex_mod: 7
+  int_mod: 7
+  str_mod: 6
+  wis_mod: 5
+ac: 34
+ac_special: null
+alignment: CE
+automatic_abilities: null
+description: 'The monstrous, bloated spiders from the windswept realm of Leng build
+  eerie, dangerous lairs with the aid of magically compelled slaves. Leng spiders
+  have anywhere from five to 13 legs, but never an even number.
+
+
+
+
+  **__Recall Knowledge - Aberration__ (__Occultism__)**: DC 33
+
+
+  '
+hp: 235
+hp_misc: fast healing 10
+immunities:
+- cold
+- confused
+items: null
+languages:
+- Aklo
+- tongues
+level: 13
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d10+14
+    type: bludgeoning
+  name: web war flail
+  plus_damage: null
+  to_hit: 27
+  traits:
+  - disarm
+  - magical
+  - reach 15 feet
+  - sweep
+  - trip
+- action_cost: One Action
+  damage:
+    formula: 3d12+14
+    type: piercing
+  name: fangs
+  plus_damage:
+  - formula: null
+    type: Leng spider venom
+  to_hit: 27
+  traits:
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 3d8+14
+    type: slashing
+  name: leg
+  plus_damage: null
+  to_hit: 27
+  traits:
+  - agile
+  - reach 10 feet
+name: Leng Spider
+perception: 24
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The Leng spider creates a weapon by applying a cord of webbing to heavy
+    objects, such as rocks or chunks of metal, either attaching two heavy objects
+    together to create a web __bola__ or fastening one to its leg to create a web
+    __war flail__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Create Web Weaponry
+  range: null
+  raw_description: '**Create Web Weaponry**   (__manipulate__) The Leng spider creates
+    a weapon by applying a cord of webbing to heavy objects, such as rocks or chunks
+    of metal, either attaching two heavy objects together to create a web __bola__
+    or fastening one to its leg to create a web __war flail__.'
+  requirements: null
+  success: null
+  traits:
+  - manipulate
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The Leng spider moves straight down up to 120 feet, suspended by a
+    web line. It can hang from the web or drop off. The distance it Descends on a
+    Web doesn't count when calculating falling damage. The web can be severed by a
+    Strike that deals slashing damage (AC 30, Hardness 15, 25 HP), causing the Leng
+    spider to fall.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Descend on a Web
+  range: null
+  raw_description: '**Descend on a Web**   (__move__) The Leng spider moves straight
+    down up to 120 feet, suspended by a web line. It can hang from the web or drop
+    off. The distance it Descends on a Web doesn''t count when calculating falling
+    damage. The web can be severed by a Strike that deals slashing damage (AC 30,
+    Hardness 15, 25 HP), causing the Leng spider to fall.'
+  requirements: null
+  success: null
+  traits:
+  - move
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The Leng spider spins a web within 20 feet of itself to create a __grasping
+    snare__, __stunning snare__, or __warning snare__. The Leng spider's web provides
+    all the raw materials it needs. All save and __Escape__ DCs associated with web
+    traps use the Leng spider's __Crafting__ DC for traps (DC 36). A web trap decays
+    after 24 hours.
+  effects: null
+  failure: null
+  frequency: three times per day
+  full_description: null
+  generic_description: null
+  name: Lay Web Trap
+  range: null
+  raw_description: '**Lay Web Trap**   (__manipulate__) **Frequency** three times
+    per day; **Effect** The Leng spider spins a web within 20 feet of itself to create
+    a __grasping snare__, __stunning snare__, or __warning snare__. The Leng spider''s
+    web provides all the raw materials it needs. All save and __Escape__ DCs associated
+    with web traps use the Leng spider''s __Crafting__ DC for traps (DC 36). A web
+    trap decays after 24 hours.'
+  requirements: null
+  success: null
+  traits:
+  - manipulate
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw** DC 33 Fortitude; **Maximum Duration** 6 rounds; **Stage
+    1** 2d6 poison damage and __drained 1__ (1 round); **Stage 2** 2d6 poison damage,
+    __confused__, and drained 2 (1 round); the confused effect has the __emotion__
+    and __mental__ traits.'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Leng Spider Venom
+  range: null
+  raw_description: '**Leng Spider Venom** (__poison__) **Saving Throw** DC 33 Fortitude;
+    **Maximum Duration** 6 rounds; **Stage 1** 2d6 poison damage and __drained 1__
+    (1 round); **Stage 2** 2d6 poison damage, __confused__, and drained 2 (1 round);
+    the confused effect has the __emotion__ and __mental__ traits.'
+  requirements: null
+  success: null
+  traits:
+  - poison
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A Leng spider can use a web bola to __Trip__ a target with the __Athletics__
+    skill. The skill check takes a -2 circumstance penalty. A web bola deals no damage
+    when used to Trip.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Ranged Trip
+  range: null
+  raw_description: '**Ranged Trip** A Leng spider can use a web bola to __Trip__ a
+    target with the __Athletics__ skill. The skill check takes a -2 circumstance penalty.
+    A web bola deals no damage when used to Trip.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 2d6+14
+    type: bludgeoning
+  name: web bola
+  plus_damage: null
+  to_hit: 28
+  traits:
+  - magical
+  - nonlethal
+  - ranged trip
+  - thrown 20 feet
+rarity: Uncommon
+resistances:
+- amount: 15
+  type: poison
+- amount: 15
+  type: sonic
+ritual_lists: null
+saves:
+  fort: 22
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 26
+  ref_misc: null
+  will: 24
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: While touching its webs, the Leng spider has precise __tremorsense__
+    to detect the vibrations of creatures touching its web.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Greater Web Sense
+  range: null
+  raw_description: '**Greater Web Sense** While touching its webs, the Leng spider
+    has precise __tremorsense__ to detect the vibrations of creatures touching its
+    web.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +24
+- darkvision
+- detect magic
+- greater web sense
+size: Huge
+skills:
+- bonus: 24
+  misc: null
+  name: 'Acrobatics '
+- bonus: 27
+  misc: null
+  name: 'Athletics '
+- bonus: 22
+  misc: +26 to make traps
+  name: 'Crafting '
+- bonus: 22
+  misc: null
+  name: 'Deception '
+- bonus: 26
+  misc: null
+  name: 'Occultism '
+- bonus: 24
+  misc: null
+  name: 'Religion '
+- bonus: 26
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 157
+  page_stop: null
+speed:
+- amount: 40
+  type: Land
+- amount: 40
+  type: climb
+- amount: 6
+  type: <a style="text-decoration:underline" href="Spells.aspx?ID="><i>air walk</i></a>
+spell_lists:
+- dc: 33
+  misc: null
+  name: Occult Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 7
+    spells:
+    - frequency: null
+      name: dispel magic
+      requirement: null
+    - frequency: null
+      name: veil
+      requirement: null
+    - frequency: null
+      name: warp mind
+      requirement: null
+  - heightened_level: null
+    level: 6
+    spells:
+    - frequency: null
+      name: illusory scene
+      requirement: null
+    - frequency: null
+      name: mislead
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: ×3
+      name: charm
+      requirement: null
+    - frequency: null
+      name: freedom of movement
+      requirement: null
+  - heightened_level: 7
+    level: 0
+    spells:
+    - frequency: null
+      name: detect magic
+      requirement: null
+  - heightened_level: 7
+    level: -1
+    spells:
+    - frequency: null
+      name: air walk
+      requirement: null
+    - frequency: null
+      name: tongues
+      requirement: null
+  to_hit: null
+traits:
+- Uncommon
+- CE
+- Huge
+- Aberration
+- Dream
+type: Creature
+weaknesses: null

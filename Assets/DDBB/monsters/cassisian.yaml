@@ -1,0 +1,272 @@
+ability_mods:
+  cha_mod: 1
+  con_mod: 2
+  dex_mod: 1
+  int_mod: -1
+  str_mod: -1
+  wis_mod: 1
+ac: 18
+ac_special: null
+alignment: NG
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A non-evil creature can wear a willing cassisian as a helmet. While
+    it does, the cassisian can take no actions, but the cassisian extends its +1 status
+    bonus to AC and saves against evil creatures to its wearer. At any time, the cassisian
+    can detach itself from its wearer as an action.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Transfer Protection
+  range: null
+  raw_description: '**Transfer Protection** A non-evil creature can wear a willing
+    cassisian as a helmet. While it does, the cassisian can take no actions, but the
+    cassisian extends its +1 status bonus to AC and saves against evil creatures to
+    its wearer. At any time, the cassisian can detach itself from its wearer as an
+    action.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'The weakest of angels, cassisians usually serve as lackey messengers
+  for more powerful angels or as spiritual guides for mortals. Despite their limited
+  intellect, cassisians have a knack for precise recollection, particularly with scripture.
+  Most cassisians are formed from the souls of trustworthy mortals, but some arise
+  from fragments of greater angels destroyed in service to the celestial realms.
+
+
+
+
+  **__Recall Knowledge - Celestial__ (__Religion__)**: DC 15'
+hp: 20
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Celestial
+- Common
+- Draconic
+- Infernal
+level: 1
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6-1
+    type: bludgeoning
+  name: headbutt
+  plus_damage:
+  - formula: 1d4
+    type: good
+  to_hit: 6
+  traits:
+  - agile
+  - finesse
+  - good
+  - magical
+name: Cassisian
+perception: 6
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: A cassisian can take the appearance of a dove, a winged humanoid, a
+    dog, or a fish. Normally, this doesn't change its Speed or the attack and damage
+    bonuses for its Strikes, but it might change the damage type Strikes deal (typically
+    to bludgeoning). Any further changes for specific forms are noted below.
+  effect: null
+  effects:
+  - action_cost: None
+    critical_failure: null
+    critical_success: null
+    description: size Small; scent (imprecise) 30 feet, Speed 40 feet; **Melee** jaws
+      +7, Damage 1d6+2 piercing plus __Knockdown__
+    effect: null
+    effects: null
+    failure: null
+    frequency: null
+    full_description: null
+    generic_description: null
+    name: Dog
+    range: null
+    raw_description: '**Dog** size Small; scent (imprecise) 30 feet, Speed 40 feet;
+      **Melee** jaws +7, Damage 1d6+2 piercing plus __Knockdown__'
+    requirements: null
+    success: null
+    traits: null
+    trigger: null
+  - action_cost: None
+    critical_failure: null
+    critical_success: null
+    description: swim Speed 30 feet
+    effect: null
+    effects: null
+    failure: null
+    frequency: null
+    full_description: null
+    generic_description: null
+    name: Fish
+    range: null
+    raw_description: '**Fish** swim Speed 30 feet'
+    requirements: null
+    success: null
+    traits: null
+    trigger: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Change Shape
+  range: null
+  raw_description: "**Change Shape**   (__concentrate__, __divine__, __polymorph__,\
+    \ __transmutation__) A cassisian can take the appearance of a dove, a winged humanoid,\
+    \ a dog, or a fish. Normally, this doesn't change its Speed or the attack and\
+    \ damage bonuses for its Strikes, but it might change the damage type Strikes\
+    \ deal (typically to bludgeoning). Any further changes for specific forms are\
+    \ noted below. \n\n  * **Dog** size Small; scent (imprecise) 30 feet, Speed 40\
+    \ feet; **Melee** jaws +7, Damage 1d6+2 piercing plus __Knockdown__\n\n  * **Fish**\
+    \ swim Speed 30 feet"
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - divine
+  - polymorph
+  - transmutation
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The cassisian releases beams of heat or cold from its eyes, dealing
+    2d6 cold or fire damage (DC 17 basic Reflex save) to all creatures in a 15-foot
+    line. It can't use Eye Beams again for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Eye Beams
+  range: null
+  raw_description: '**Eye Beams** [Two Actions]  (__concentrate__, __divine__, __evocation__)
+    The cassisian releases beams of heat or cold from its eyes, dealing 2d6 cold or
+    fire damage (DC 17 basic Reflex save) to all creatures in a 15-foot line. It can''t
+    use Eye Beams again for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - divine
+  - evocation
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: While the cassisian isn't particularly intelligent, it has perfect
+    memory and can remember everything it sees or hears. This allows it to attempt
+    __Lore__ checks on any topic, provided (at the GM's discretion) the cassisian
+    has encountered the topic in question before. The cassisian's limited intellect
+    often prevents it from acting upon its knowledge, making it a better resource
+    than agent in matters of information use.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Repository of Lore
+  range: null
+  raw_description: '**Repository of Lore** While the cassisian isn''t particularly
+    intelligent, it has perfect memory and can remember everything it sees or hears.
+    This allows it to attempt __Lore__ checks on any topic, provided (at the GM''s
+    discretion) the cassisian has encountered the topic in question before. The cassisian''s
+    limited intellect often prevents it from acting upon its knowledge, making it
+    a better resource than agent in matters of information use.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 3
+  type: cold
+- amount: 3
+  type: fire
+ritual_lists: null
+saves:
+  fort: 7
+  fort_misc: null
+  misc: +1 status to all saves vs. evil creatures
+  ref: 6
+  ref_misc: null
+  will: 4
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +6
+- darkvision
+size: Tiny
+skills:
+- bonus: 6
+  misc: null
+  name: 'Acrobatics '
+- bonus: 6
+  misc: null
+  name: 'Diplomacy '
+- bonus: 6
+  misc: null
+  name: 'Religion '
+- bonus: 6
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 16
+  page_stop: null
+speed:
+- amount: 40
+  type: Fly
+spell_lists:
+- dc: 16
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: read omens
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: at will, evil only
+      name: detect alignment
+      requirement: null
+    - frequency: null
+      name: heal
+      requirement: null
+  - heightened_level: 1
+    level: 0
+    spells:
+    - frequency: null
+      name: know direction
+      requirement: null
+    - frequency: null
+      name: light
+      requirement: null
+  to_hit: null
+traits:
+- NG
+- Tiny
+- Angel
+- Celestial
+type: Creature
+weaknesses:
+- amount: 3
+  type: evil

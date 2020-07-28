@@ -1,0 +1,176 @@
+ability_mods:
+  cha_mod: -2
+  con_mod: 2
+  dex_mod: 4
+  int_mod: -3
+  str_mod: 5
+  wis_mod: 1
+ac: 24
+ac_special: null
+alignment: CE
+automatic_abilities: null
+description: 'Asanbosams are monstrous, hairy humanoids with cold iron fangs and muscular
+  limbs that end in powerful, hooked claws. They hide in treetops and grab prey from
+  above, latching onto their unfortunate victims'' necks to drain their blood. Locals
+  in nearby communities tell horror stories of these "bloodsucking tree-folk," and
+  experienced jungle explorers keep a close watch on the treetops in asanbosam territory.
+
+
+
+
+  An asanbosam''s diet calls for a large amount of iron (typically in the form of
+  blood) to maintain the integrity of its oversized cold iron teeth. When not hunting
+  or mating, an asanbosam spends its waking hours chewing on certain types of rocks
+  to sharpen its teeth.
+
+
+
+
+  Some folk tales claim that asanbosams are as old as time and are the original source
+  of cold iron, and that veins of the metal found in the ground are the buried graveyards
+  of ancient asanbosams. Brave (or foolish) poachers often infiltrate asanbosam territory
+  to hunt these monsters in the hope of collecting sacks of their valuable teeth.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 22'
+hp: 95
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Mwangi
+level: 6
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+7
+    type: piercing
+  name: cold iron jaws
+  plus_damage: null
+  to_hit: 17
+  traits:
+  - deadly 1d8
+- action_cost: One Action
+  damage:
+    formula: 2d6+7
+    type: slashing
+  name: claw
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 17
+  traits:
+  - agile
+  - reach 10 feet
+name: Asanbosam
+perception: 17
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: If an asanbosam is positioned above a target (usually by using its
+    Climb speed), it can make a claw Strike with its reach increased to 15 feet. This
+    Strike deals an additional 1d6 slashing damage, and if it hits, the asanbosam
+    Grabs the target and pulls it to a space adjacent to the asanbosam. This counts
+    as two attacks when calculating the asanbosam's multiple attack penalty.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack from Above
+  range: null
+  raw_description: '**Attack from Above** [Two Actions]  If an asanbosam is positioned
+    above a target (usually by using its Climb speed), it can make a claw Strike with
+    its reach increased to 15 feet. This Strike deals an additional 1d6 slashing damage,
+    and if it hits, the asanbosam Grabs the target and pulls it to a space adjacent
+    to the asanbosam. This counts as two attacks when calculating the asanbosam''s
+    multiple attack penalty.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: A __grabbed__, __paralyzed__, __restrained__, __unconscious__, or willing
+    creature is within reach of the asanbosam's jaws.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Drink Blood
+  range: null
+  raw_description: '**Drink Blood**   **Requirements** A __grabbed__, __paralyzed__,
+    __restrained__, __unconscious__, or willing creature is within reach of the asanbosam''s
+    jaws. **Effect** The asanbosam sinks its teeth into the creature to drink its
+    blood. If the victim is grabbed, this is automatic; otherwise, the asanbosam must
+    succeed at an __Athletics__ check against the victim''s Fortitude DC. The victim
+    becomes __drained 1__ and the asanbosam regains 10 HP, gaining any excess HP as
+    temporary Hit Points. Drinking Blood from a creature that''s already drained increases
+    the victim''s drained value by 1, but doesn''t restore any HP to the asanbosam.
+
+
+    A victim''s drained condition decreases by 1 each week. A blood transfusion, which
+    requires a successful DC 20 Medicine check and a blood donor or sufficient blood,
+    reduces the drained value by 1 after 10 minutes.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 15
+  fort_misc: null
+  misc: null
+  ref: 17
+  ref_misc: null
+  will: 10
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +17
+- darkvision
+size: Large
+skills:
+- bonus: 14
+  misc: null
+  name: 'Acrobatics '
+- bonus: 16
+  misc: null
+  name: 'Athletics '
+- bonus: 15
+  misc: null
+  name: 'Intimidation '
+- bonus: 16
+  misc: null
+  name: 'Stealth '
+- bonus: 14
+  misc: null
+  name: 'Survival '
+source:
+- abbr: 'Pathfinder #146: Cult of Cinders'
+  page_start: 80
+  page_stop: null
+speed:
+- amount: 35
+  type: Land
+- amount: 20
+  type: climb
+spell_lists: null
+traits:
+- CE
+- Large
+- Humanoid
+type: Creature
+weaknesses: null

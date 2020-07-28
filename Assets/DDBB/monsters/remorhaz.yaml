@@ -1,0 +1,237 @@
+ability_mods:
+  cha_mod: -2
+  con_mod: 5
+  dex_mod: 2
+  int_mod: -3
+  str_mod: 7
+  wis_mod: 1
+ac: 25
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 5 feet. A creature that starts its turn in the aura takes 1d6 fire
+    damage. Whenever the remorhaz takes damage from an enemy, this damage increases
+    to 2d6 until the start of its next turn. Any creature that hits a remorhaz with
+    an unarmed Strike takes 2d6 fire damage, and a weapon that hits a remorhaz takes
+    2d6 fire damage.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Heat
+  range: null
+  raw_description: '**Heat** (__aura__, __evocation__, __fire__, __primal__) 5 feet.
+    A creature that starts its turn in the aura takes 1d6 fire damage. Whenever the
+    remorhaz takes damage from an enemy, this damage increases to 2d6 until the start
+    of its next turn. Any creature that hits a remorhaz with an unarmed Strike takes
+    2d6 fire damage, and a weapon that hits a remorhaz takes 2d6 fire damage.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - evocation
+  - fire
+  - primal
+  trigger: null
+description: 'A remorhaz is an enormous arctic predator that resembles a multilegged
+  insect with draconic features. This monster has chitinous plates and more than a
+  score segmented legs, a multipartite maw, and winglike growths fianking its head.
+  The most unusual aspect of the creature, however, is its internal heat, which burns
+  with such intensity that it causes the armored plates on the creature''s back to
+  become superheated whenever the beast is agitated.
+
+
+
+
+  Remorhazes are carnivores. Their diet includes arctic animals such as elk, but a
+  hungry remorhaz readily devours anything it can catch and kill. It commonly lurks
+  beneath ice or snow and ambushes prey with a sudden upward strike. Many victims
+  die before even knowing what attacked them.
+
+
+
+
+  Those who survive the worm''s initial onslaught must face not only its deadly jaws,
+  but also its hideously hot body. This heat can melt weapons, scorch armor, and burn
+  flesh—all tactics the remorhaz uses to disable and defeat its foes. A remorhaz''s
+  internal fire allows it to burrow through ice and snow with ease. It leaves smooth
+  tunnels in its wake as melted ice refreezes to leave the telltale signs of its passage.
+  Most people underestimate a remorhaz''s intelligence, assuming it to be a mere animal.
+  However, remorhazes are capable of learning languages. Frost giants in particular
+  use this trait to form alliances with them. The giants provide food, protection,
+  and shelter for the worm, and in return the remorhaz acts as a guard beast and helps
+  the giants build fortresses and forge metal weapons. The giants also employ the
+  worms as war beasts, using them to undermine enemy positions.
+
+
+
+
+  **__Recall Knowledge - Beast__ (__Arcana__, __Nature__)**: DC 25'
+hp: 120
+hp_misc: null
+immunities:
+- cold
+- fire
+items: null
+languages:
+- Jotun
+- (can't speak any language)
+level: 7
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d10+9
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 18
+  traits:
+  - reach 15 feet
+- action_cost: One Action
+  damage:
+    formula: 1d10+3
+    type: bludgeoning
+  name: tail
+  plus_damage:
+  - formula: 2d6
+    type: fire
+  to_hit: 18
+  traits:
+  - fire
+  - reach 15 feet
+name: Remorhaz
+perception: 14
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The remorhaz unleashes a gout of flame that deals 8d6 fire damage in
+    a 30-foot cone (DC 26 basic Reflex save). It can't use Breath Weapon again for
+    1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Breath Weapon
+  range: null
+  raw_description: '**Breath Weapon** [Two Actions]  (__evocation__, __fire__, __primal__)
+    The remorhaz unleashes a gout of flame that deals 8d6 fire damage in a 30-foot
+    cone (DC 26 basic Reflex save). It can''t use Breath Weapon again for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - evocation
+  - fire
+  - primal
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A remorhaz can leave a tunnel when it burrows through ice or snow,
+    and it usually does.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Ice Tunneler
+  range: null
+  raw_description: '**Ice Tunneler** A remorhaz can leave a tunnel when it burrows
+    through ice or snow, and it usually does.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: Large, 2d8+5 bludgeoning plus 2d6 fire, Rupture 12
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Swallow Whole
+  range: null
+  raw_description: '**Swallow Whole**   Large, 2d8+5 bludgeoning plus 2d6 fire, Rupture
+    12'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The remorhaz Strikes once with its jaws and once with its tail, each
+    targeting a different creature. Each attack counts toward the remorhaz's multiple
+    attack penalty, but the multiple attack penalty doesn't increase until after all
+    the attacks have been made.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Thrash
+  range: null
+  raw_description: '**Thrash** [Two Actions]  The remorhaz Strikes once with its jaws
+    and once with its tail, each targeting a different creature. Each attack counts
+    toward the remorhaz''s multiple attack penalty, but the multiple attack penalty
+    doesn''t increase until after all the attacks have been made.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances: null
+ritual_lists: null
+saves:
+  fort: 18
+  fort_misc: null
+  misc: null
+  ref: 15
+  ref_misc: null
+  will: 10
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +14
+- darkvision
+- tremorsense (imprecise) 60 feet
+size: Huge
+skills:
+- bonus: 18
+  misc: null
+  name: 'Athletics '
+- bonus: 13
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 280
+  page_stop: null
+speed:
+- amount: 35
+  type: Land
+- amount: 30
+  type: burrow
+spell_lists: null
+traits:
+- Uncommon
+- N
+- Huge
+- Beast
+type: Creature
+weaknesses: null

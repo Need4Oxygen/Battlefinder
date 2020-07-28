@@ -1,0 +1,184 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 2
+  dex_mod: 4
+  int_mod: 1
+  str_mod: 4
+  wis_mod: 5
+ac: 20
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'The tentacled mist stalker shrouds itself in a cloak of mist through
+  which its single, never-blinking eye can see with clarity, allowing it an advantage
+  when stalking its prey.
+
+
+
+
+  **__Recall Knowledge - Elemental__ (__Arcana__, __Nature__)**: DC 19'
+hp: 58
+hp_misc: null
+immunities:
+- bleed
+- paralyzed
+- poison
+- sleep
+items: null
+languages:
+- Aquan
+level: 4
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+4
+    type: bludgeoning
+  name: tentacle
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 14
+  traits:
+  - finesse
+  - sweep
+  - reach 10 feet
+name: Mist Stalker
+perception: 13
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: 1d8+4 bludgeoning, DC 21
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Constrict
+  range: null
+  raw_description: '**Constrict**   1d8+4 bludgeoning, DC 21'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The mist stalker makes its mist cloud congeal, causing the aura to
+    be difficult terrain until the start of the mist stalker's next turn. In addition,
+    the mist stalker can make the mist even thicker around a single Medium or smaller
+    creature within the cloud. The creature must succeed at a DC 20 Reflex save or
+    become __immobilized__ until it __Escapes__ or it is no longer in the mist cloud's
+    emanation.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Solidify Mist
+  range: null
+  raw_description: '**Solidify Mist**   (__primal__, __transmutation__, __water__)
+    The mist stalker makes its mist cloud congeal, causing the aura to be difficult
+    terrain until the start of the mist stalker''s next turn. In addition, the mist
+    stalker can make the mist even thicker around a single Medium or smaller creature
+    within the cloud. The creature must succeed at a DC 20 Reflex save or become __immobilized__
+    until it __Escapes__ or it is no longer in the mist cloud''s emanation.'
+  requirements: null
+  success: null
+  traits:
+  - primal
+  - transmutation
+  - water
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 10
+  fort_misc: null
+  misc: null
+  ref: 12
+  ref_misc: null
+  will: 11
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 15 feet. The mist stalker is surrounded by mist. Creatures in the aura
+    are __concealed__. If wind disperses the aura, it returns automatically at the
+    start of the mist stalker's turn. This cloud is suppressed in water.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Mist Cloud
+  range: null
+  raw_description: '**Mist Cloud** (__aura__, __conjuration__, __primal__, __water__)
+    15 feet. The mist stalker is surrounded by mist. Creatures in the aura are __concealed__.
+    If wind disperses the aura, it returns automatically at the start of the mist
+    stalker''s turn. This cloud is suppressed in water.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - conjuration
+  - primal
+  - water
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The mist stalker ignores the __concealed__ condition from mist and
+    fog.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Mist Vision
+  range: null
+  raw_description: '**Mist Vision** The mist stalker ignores the __concealed__ condition
+    from mist and fog.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +13
+- darkvision
+- mist vision
+size: Medium
+skills:
+- bonus: 11
+  misc: null
+  name: 'Athletics '
+- bonus: 12
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 114
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 20
+  type: climb
+- amount: 30
+  type: swim
+spell_lists: null
+traits:
+- N
+- Medium
+- Amphibious
+- Elemental
+- Water
+type: Creature
+weaknesses: null

@@ -1,0 +1,160 @@
+ability_mods:
+  cha_mod: -2
+  con_mod: 3
+  dex_mod: 3
+  int_mod: -4
+  str_mod: 2
+  wis_mod: 1
+ac: 18
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Inhabitants of damp, subterranean caves, blindheims resemble stubby
+  humanoids with oversized, frog-like heads and bulbous eyes. Their eyes emit a soft
+  glow at all times, but a blindheim can draw back the heavy membrane that normally
+  covers them to emit an intense light as bright as day. These simple creatures use
+  their lights to draw in or disorient prey, mostly small animals like lizards, rodents,
+  or fish. However, they might go after larger prey if trying to feed their young.
+  When they encounter creatures their own size or larger they retreat, flashing their
+  eyes to facilitate their escape if necessary. They often hunt in pairs or small
+  packs. Using their lights to coordinate from a distance, they slowly close in on
+  the creatures they hunt. One common hunting pattern involves one blindheim diving
+  deep and using its light to chase fish to the surface, while another up above snatches
+  them up and tosses them onto the land to eat later.
+
+
+
+
+  Blindheims make their nests in damp caverns, especially grottoes next to underground
+  lakes or bogs. An ideal nest rests in a cozy cavern with plenty of fungus to eat,
+  a few fish swimming in a lake, and the comforting drip of water from the ceiling.
+  Blindheims prefer to lead quiet and serene lives, and even when first born they
+  emit only the meekest of vocalizations. A blindheim is born shining, and its parents
+  cuddle over it to dim the light so as to avoid attracting predators.
+
+
+
+
+  It''s not just animals that endanger blindheims. Underground peoples find the creatures
+  useful and attempt to capture them for specialized purposes. __Duergars__ use them
+  as "raid frogs," placing heavy hoods over blindheims'' heads and revealing them
+  suddenly during raids to blind their foes. They sometimes send the creatures along
+  with their slaves that lack darkvision into the mines as a source of light. __Drow__
+  use them for some of these same purposes, and some nobles have been known to treat
+  the creatures as mere lanterns, having them hoisted to the ceilings of their halls.
+  Neither duergars nor drow take good care of the captive creatures, so blindheims
+  rarely last long in captivity.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 16'
+hp: 27
+hp_misc: null
+immunities:
+- blinded
+- light
+items: null
+languages: null
+level: 2
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d12+2
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 10
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 1d8+2
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 11
+  traits:
+  - agile
+  - finesse
+name: Blindheim
+perception: 9
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: "Bright light shines from the blindheim's eyes in a 30-foot emanation\
+    \ (also creating dim light to 60 feet). Each creature in the bright light when\
+    \ the blindheim uses this action, or who enters it while the light continues,\
+    \ must attempt a DC 18 Fortitude save. It is then temporarily immune for 1 hour.\
+    \ This light remains until the blindheim dims its eyes by using this action again.\
+    \ \n\n**Critical Success **The creature is unaffected. \n\n**Success **The creature\
+    \ is __dazzled__ for 1 round. \n\n**Failure **The creature is __blinded__ for\
+    \ 1d4 rounds. \n\n**Critical Failure **The creature is blinded for 1 hour."
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Spotlight
+  range: null
+  raw_description: "**Spotlight**   (__concentrate__, __light__) Bright light shines\
+    \ from the blindheim's eyes in a 30-foot emanation (also creating dim light to\
+    \ 60 feet). Each creature in the bright light when the blindheim uses this action,\
+    \ or who enters it while the light continues, must attempt a DC 18 Fortitude save.\
+    \ It is then temporarily immune for 1 hour. This light remains until the blindheim\
+    \ dims its eyes by using this action again. \n\n**Critical Success **The creature\
+    \ is unaffected. \n\n**Success **The creature is __dazzled__ for 1 round. \n\n\
+    **Failure **The creature is __blinded__ for 1d4 rounds. \n\n**Critical Failure\
+    \ **The creature is blinded for 1 hour."
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - light
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 9
+  fort_misc: null
+  misc: null
+  ref: 9
+  ref_misc: null
+  will: 5
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +9
+- darkvision
+size: Small
+skills:
+- bonus: 7
+  misc: null
+  name: 'Acrobatics '
+- bonus: 6
+  misc: +9 to Leap or Swim
+  name: 'Athletics '
+- bonus: 7
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 39
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 15
+  type: climb
+- amount: 15
+  type: swim
+spell_lists: null
+traits:
+- N
+- Small
+- Animal
+type: Creature
+weaknesses: null

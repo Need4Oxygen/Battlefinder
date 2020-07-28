@@ -1,0 +1,279 @@
+ability_mods:
+  cha_mod: 5
+  con_mod: 2
+  dex_mod: 3
+  int_mod: 1
+  str_mod: 4
+  wis_mod: 2
+ac: 21
+ac_special: null
+alignment: CN
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 5 feet. The korred's long, animated hair reaches out and interferes
+    with creatures in the area. The korred can select which targets are affected by
+    their animated hair. An affected creature that ends its turn in the emanation
+    must succeed at a DC 18 Reflex save or become __clumsy 1__(clumsy 2 on a critical
+    failure) as long as it remains in the aura.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Animated Hair
+  range: null
+  raw_description: '**Animated Hair** (__aura__, __primal__, __transmutation__) 5
+    feet. The korred''s long, animated hair reaches out and interferes with creatures
+    in the area. The korred can select which targets are affected by their animated
+    hair. An affected creature that ends its turn in the emanation must succeed at
+    a DC 18 Reflex save or become __clumsy 1__(clumsy 2 on a critical failure) as
+    long as it remains in the aura.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - primal
+  - transmutation
+  trigger: null
+description: 'Korreds are reclusive fey in the form of small, hirsute individuals
+  with long, animated manes of hair. While korreds have a natural affinity and admiration
+  for stones and boulders, they prefer to dwell aboveground in areas of rocky forest
+  or wooded hills rather than in caves. Korreds are a private people who don''t take
+  kindly to intruders, and they invariably work to drive off or kill any non-fey who
+  stumble into their territory. Staunchly proud of their hair, korreds choose their
+  minimal attire so as to allow their body hair to flow freely, often wearing only
+  a belt with a pouch for throwing rocks and trimming shears—though this belt and
+  pouch are rarely visible under their wild manes.
+
+
+
+
+  **__Recall Knowledge - Fey__ (__Nature__)**: DC 21'
+hp: 65
+hp_misc: null
+immunities: null
+items:
+- club
+- pouch with 5 rocks
+languages:
+- Common
+- Sylvan
+level: 4
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+7
+    type: bludgeoning
+  name: club
+  plus_damage: null
+  to_hit: 14
+  traits: null
+name: Korred
+perception: 12
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: The creature is immobilized until it Escapes (DC 21) or the korred
+    uses Hair Snare again.
+  critical_success: null
+  description: "The korred causes a long, tangled length of their hair to detach from\
+    \ their body and snake out to coil around an adjacent creature. The creature must\
+    \ attempt a DC 21 Reflex save. The korred cannot use Hair Snare again for 1d4\
+    \ rounds. \n\n"
+  effect: null
+  effects: null
+  failure: The hair wraps around the creature. The creature takes a -10-foot circumstance
+    penalty to all of its Speeds until it Escapes (DC 21) or until the korred uses
+    Hair Snare again (at which point the previous snare drops to the ground, no longer
+    animated).
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Hair Snare
+  range: null
+  raw_description: "**Hair Snare**   (__incapacitation__, __primal__, __transmutation__)\
+    \ The korred causes a long, tangled length of their hair to detach from their\
+    \ body and snake out to coil around an adjacent creature. The creature must attempt\
+    \ a DC 21 Reflex save. The korred cannot use Hair Snare again for 1d4 rounds.\
+    \ \n\n**Success** The creature is unaffected. \n\n**Failure** The hair wraps around\
+    \ the creature. The creature takes a -10-foot circumstance penalty to all of its\
+    \ Speeds until it Escapes (DC 21) or until the korred uses Hair Snare again (at\
+    \ which point the previous snare drops to the ground, no longer animated). \n\n\
+    **Critical Failure** The creature is __immobilized__ until it Escapes (DC 21)\
+    \ or the korred uses Hair Snare again."
+  requirements: null
+  success: The creature is unaffected.
+  traits:
+  - incapacitation
+  - primal
+  - transmutation
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The korred unleashes an otherworldly laugh. Each non-__fey__ creature within
+    a 30-foot burst must attempt a DC 21 Fortitude save. On a failure, the creature
+    is __slowed 1__ for 1 round (or __stunned 1__ on a critical failure).
+  effects: null
+  failure: null
+  frequency: three times per day
+  full_description: null
+  generic_description: null
+  name: Otherworldly Laugh
+  range: null
+  raw_description: '**Otherworldly Laugh** [Two Actions]  (__auditory__, __evocation__,
+    __incapacitation__, __primal__, __sonic__) **Frequency** three times per day;
+    **Effect** The korred unleashes an otherworldly laugh. Each non-__fey__ creature
+    within a 30-foot burst must attempt a DC 21 Fortitude save. On a failure, the
+    creature is __slowed 1__ for 1 round (or __stunned 1__ on a critical failure).'
+  requirements: null
+  success: null
+  traits:
+  - auditory
+  - evocation
+  - incapacitation
+  - primal
+  - sonic
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The korred steps into a block of stone large enough for them to fit
+    inside and instantly teleports to any other stone within 30 feet that has the
+    same minimum size. Once the korred enters the stone, they instantly know the rough
+    locations of other sufficiently large stones within 30 feet. They can exit from
+    the original stone, if they prefer. They can't carry extradimensional spaces with
+    them when they Stone Stride; if the korred attempts to do so, Stone Stride fails.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Stone Stride
+  range: null
+  raw_description: '**Stone Stride** [Two Actions]  (__conjuration__, __earth__, __primal__,
+    __teleportation__) The korred steps into a block of stone large enough for them
+    to fit inside and instantly teleports to any other stone within 30 feet that has
+    the same minimum size. Once the korred enters the stone, they instantly know the
+    rough locations of other sufficiently large stones within 30 feet. They can exit
+    from the original stone, if they prefer. They can''t carry extradimensional spaces
+    with them when they Stone Stride; if the korred attempts to do so, Stone Stride
+    fails.'
+  requirements: null
+  success: null
+  traits:
+  - conjuration
+  - earth
+  - primal
+  - teleportation
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: ''
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Throw Rock
+  range: null
+  raw_description: '**__Throw Rock__**   '
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d6+7
+    type: bludgeoning
+  name: rock
+  plus_damage: null
+  to_hit: 14
+  traits:
+  - brutal
+  - range increment 20 feet
+- action_cost: One Action
+  damage:
+    formula: 2d6+7
+    type: bludgeoning
+  name: club
+  plus_damage: null
+  to_hit: 14
+  traits:
+  - thrown 10 feet
+rarity: Uncommon
+resistances: null
+ritual_lists: null
+saves:
+  fort: 10
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 13
+  ref_misc: null
+  will: 10
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +12
+- low-light vision
+size: Small
+skills:
+- bonus: 11
+  misc: null
+  name: 'Acrobatics '
+- bonus: 11
+  misc: null
+  name: 'Crafting '
+- bonus: 13
+  misc: null
+  name: 'Deception '
+- bonus: 13
+  misc: null
+  name: 'Performance '
+- bonus: 11
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 155
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists:
+- dc: 21
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 6
+    spells:
+    - frequency: null
+      name: stone tell
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: at will
+      name: shape stone
+      requirement: null
+    - frequency: at will
+      name: shatter
+      requirement: null
+  to_hit: null
+traits:
+- Uncommon
+- CN
+- Small
+- Fey
+type: Creature
+weaknesses:
+- amount: 5
+  type: cold iron

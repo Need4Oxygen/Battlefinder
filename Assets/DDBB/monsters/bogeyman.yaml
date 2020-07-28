@@ -1,0 +1,299 @@
+ability_mods:
+  cha_mod: 6
+  con_mod: 4
+  dex_mod: 7
+  int_mod: 0
+  str_mod: 5
+  wis_mod: 3
+ac: 30
+ac_special: null
+alignment: NE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 60 feet. A bogeyman's aura of terror manifests as a shifting haze of
+    images that reflect the viewers' deepest fears. Whenever a creature ends its turn
+    within the aura, it must succeed at a DC 28 Will save or become __frightened 1__.
+    A creature's frightened condition (including from striking fear) does not reduce
+    as long as the creature remains in the aura. If the creature succeeds at its saving
+    throw, it becomes temporarily immune to the aura for 24 hours.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Deepest Fear
+  range: null
+  raw_description: '**Deepest Fear** (__aura__, __emotion__, __fear__, __illusion__,
+    __mental__, __visual__) 60 feet. A bogeyman''s aura of terror manifests as a shifting
+    haze of images that reflect the viewers'' deepest fears. Whenever a creature ends
+    its turn within the aura, it must succeed at a DC 28 Will save or become __frightened
+    1__. A creature''s frightened condition (including from striking fear) does not
+    reduce as long as the creature remains in the aura. If the creature succeeds at
+    its saving throw, it becomes temporarily immune to the aura for 24 hours.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - emotion
+  - fear
+  - illusion
+  - mental
+  - visual
+  trigger: null
+description: 'These nocturnal stalkers tail their chosen quarry for days, even weeks
+  at a time, ominously showing up in back alleys, shadowy street corners, and even
+  in victims'' own homes before going in for the kill. For unfathomable reasons, a
+  bogeyman may spare a victim''s life and instead kidnap them, absconding to a far-off
+  location before returning years later with a fresh bogey in tow.
+
+
+
+
+  **__Recall Knowledge - Fey__ (__Nature__)**: DC 29'
+hp: 175
+hp_misc: fast healing 10
+immunities:
+- fear
+items: null
+languages:
+- Aklo
+- Common
+- Sylvan
+- tongues
+level: 10
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d12+9
+    type: slashing
+  name: claw
+  plus_damage:
+  - formula: null
+    type: striking fear
+  to_hit: 21
+  traits:
+  - agile
+  - finesse
+  - magical
+name: Bogeyman
+perception: 19
+proactive_abilities:
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The bogeyman has killed a creature within the last round and is adjacent
+    to the creature
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Devour Soul
+  range: null
+  raw_description: '**Devour Soul** [Three Actions]  (__necromancy__, __occult__)
+    **Requirements** The bogeyman has killed a creature within the last round and
+    is adjacent to the creature; **Effect** The bogeyman consumes the creature''s
+    soul. The soul is utterly destroyed—nothing short of wish or a similar effect
+    can restore it to life, and only after the bogeyman has been slain. The bogeyman
+    regains Hit Points equal to double the level of the consumed creature. Each time
+    the bogeyman consumes 10 souls, it increases its level by 1, and its statistics
+    improve accordingly.'
+  requirements: null
+  success: null
+  traits:
+  - necromancy
+  - occult
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When the bogeyman uses a Stride action to move half their Speed or
+    less, that movement does not trigger reactions.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Mobility
+  range: null
+  raw_description: '**Mobility** When the bogeyman uses a Stride action to move half
+    their Speed or less, that movement does not trigger reactions.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The bogeyman deals 1d6 extra precision damage to __flat-footed__ creatures.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sneak Attack
+  range: null
+  raw_description: '**__Sneak Attack__** The bogeyman deals 1d6 extra precision damage
+    to __flat-footed__ creatures.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: The target is frightened 3 and fleeing for 1 round.
+  critical_success: The target is unaffected.
+  description: "If a bogeyman scores a critical hit with a claw Strike, the target\
+    \ must attempt a DC 29 Will save. \n\n"
+  effect: null
+  effects: null
+  failure: The target is frightened 2.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Striking Fear
+  range: null
+  raw_description: "**Striking Fear** (__emotion__, __fear__, __mental__) If a bogeyman\
+    \ scores a critical hit with a claw Strike, the target must attempt a DC 29 Will\
+    \ save. \n\n**Critical Success** The target is unaffected.\n\n**Success** The\
+    \ target is __frightened 1__.\n\n**Failure** The target is frightened 2.\n\n**Critical\
+    \ Failure** The target is frightened 3 and __fleeing__ for 1 round."
+  requirements: null
+  success: The target is frightened 1.
+  traits:
+  - emotion
+  - fear
+  - mental
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: On the first round of combat, creatures that haven't acted yet are
+    flat-footed to the bogeyman.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Surprise Attack
+  range: null
+  raw_description: '**Surprise Attack** On the first round of combat, creatures that
+    haven''t acted yet are flat-footed to the bogeyman.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances:
+- amount: 10
+  type: cold iron
+ritual_lists: null
+saves:
+  fort: 16
+  fort_misc: null
+  misc: null
+  ref: 23
+  ref_misc: null
+  will: 19
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +19
+- low-light vision
+size: Medium
+skills:
+- bonus: 23
+  misc: null
+  name: 'Acrobatics '
+- bonus: 19
+  misc: null
+  name: 'Athletics '
+- bonus: 22
+  misc: null
+  name: 'Deception '
+- bonus: 22
+  misc: null
+  name: 'Intimidation '
+- bonus: 16
+  misc: null
+  name: 'Society '
+- bonus: 23
+  misc: null
+  name: 'Stealth '
+- bonus: 21
+  misc: null
+  name: 'Thievery '
+source:
+- abbr: 'Pathfinder #152: Legacy of the Lost God'
+  page_start: 79
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+- amount: null
+  type: mobility
+spell_lists:
+- dc: 27
+  misc: null
+  name: Occult Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: gaseous form
+      requirement: null
+    - frequency: null
+      name: invisibility
+      requirement: null
+    - frequency: null
+      name: nightmare
+      requirement: null
+    - frequency: null
+      name: phantasmal killer
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: null
+      name: fear
+      requirement: null
+    - frequency: null
+      name: mind reading
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: at will
+      name: knock
+      requirement: null
+  - heightened_level: 4
+    level: 0
+    spells:
+    - frequency: null
+      name: ghost sound
+      requirement: null
+    - frequency: null
+      name: message
+      requirement: null
+  - heightened_level: 4
+    level: -1
+    spells:
+    - frequency: null
+      name: tongues
+      requirement: null
+  to_hit: null
+traits:
+- Uncommon
+- NE
+- Medium
+- Fey
+type: Creature
+weaknesses: null

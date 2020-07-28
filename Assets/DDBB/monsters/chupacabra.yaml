@@ -1,0 +1,168 @@
+ability_mods:
+  cha_mod: -2
+  con_mod: 2
+  dex_mod: 4
+  int_mod: -3
+  str_mod: 3
+  wis_mod: 2
+ac: 20
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'These notorious predators have an undeniable thirst for blood. Chupacabras
+  prefer to prey upon the weak and slow, often hiding in wait and watching potential
+  prey for long periods before attacking. Spry and stealthy, they most often make
+  their homes in areas of high grass and protective rock, their slightly reflective
+  scales allowing them to blend in well with such surroundings.
+
+
+
+
+  Chupacabras prefer to eat lone travelers and farm animals (particularly goats),
+  and leave little evidence of their presence apart from the grisly, blood-drained
+  husks of their meals. Their tendency to stay out of sight combined with their naturally
+  nocturnal activity often leads superstitious locals to conclude the worst, imagining
+  that a particularly reckless vampire lives in the area.
+
+
+
+
+  A typical chupacabra measures nearly 5-1/2 feet from its muzzle to the tip of its
+  spiny tail, and it stands just under 4 feet tall. With their slight build and lightweight
+  bones, most weigh close to 100 pounds. They mate rarely and only during the hottest
+  months, with the females each producing a single egg that hatches into a tiny, dehydrated
+  creature. The mother typically leaves helpless prey in her cave so the hatchling
+  can immediately feed.
+
+
+
+
+  Although chupacabras are typically solitary creatures, they have been known to form
+  small gangs in bountiful areas. Members of these groups work well together, growing
+  bold enough to attack larger animals, small herds, and otherwise more dangerous
+  prey. Stories of chupacabras attacking travelers or laying siege to farmhouses typically
+  stem from the hunting practices of such gangs. Regions where chupacabra activity
+  like this is more common often have complex and colorful myths and tall tales about
+  chupacabra capabilities or motive —- and a few of the claims, such as that some
+  chupacabras can fly, are all too true.
+
+
+
+
+  **__Recall Knowledge - Beast__ (__Arcana__, __Nature__)**: DC 18'
+hp: 45
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Aklo
+- can't speak any language
+level: 3
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d10+5
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 11
+  traits:
+  - finesse
+- action_cost: One Action
+  damage:
+    formula: 1d6+5
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 11
+  traits:
+  - agile
+  - finesse
+name: Chupacabra
+perception: 9
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The chupacabra has a creature __grabbed__
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Chupar
+  range: null
+  raw_description: '**Chupar**   **Requirements **The chupacabra has a creature __grabbed__;
+    **Effect **The chupacabra sucks blood from the grabbed creature. The chupacabra
+    gains the __quickened__ condition for 1 minute and can use the extra action only
+    for Strike and Stride actions. A chupacabra can''t use Chupar again while it is
+    quickened in this way. A creature that has its blood drained by a chupacabra is
+    __drained 1__ until it receives healing (of any kind or amount).'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The chupacabra Strides and makes a Strike at the end of that movement.
+    If the chupacabra began this action __hidden__, it remains hidden until after
+    this ability's Strike.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Pounce
+  range: null
+  raw_description: '**Pounce**   The chupacabra Strides and makes a Strike at the
+    end of that movement. If the chupacabra began this action __hidden__, it remains
+    hidden until after this ability''s Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 9
+  fort_misc: null
+  misc: null
+  ref: 11
+  ref_misc: null
+  will: 7
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +9
+- darkvision
+size: Small
+skills:
+- bonus: 9
+  misc: +11 to Leap
+  name: 'Acrobatics '
+- bonus: 9
+  misc: +11 in undergrowth or rocky areas
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 52
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists: null
+traits:
+- N
+- Small
+- Beast
+type: Creature
+weaknesses: null

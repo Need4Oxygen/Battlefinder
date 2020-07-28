@@ -1,0 +1,203 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 5
+  dex_mod: 4
+  int_mod: 1
+  str_mod: 7
+  wis_mod: 4
+ac: 34
+ac_special: null
+alignment: LN
+automatic_abilities: null
+description: 'Kolyarut inevitables are enforcers of bargains and punishers of those
+  who fail to uphold them. Their humanoid shape, ability to disguise themselves among
+  a humanoid population, and diplomatic leanings make them the most approachable inevitables,
+  and thus more likely to ally themselves with others. They are among the most talkative
+  of all inevitables, naturally possessing a courtly grace and an encyclopedic knowledge
+  of social customs, which they use to assist their efforts in gathering information
+  on their targets or issuing challenges in a legal manner.
+
+
+
+
+  **__Recall Knowledge - Monitor__ (__Religion__)**: DC 30'
+hp: 215
+hp_misc: regeneration 15 (deactivated by chaotic
+immunities:
+- death effects
+- disease
+- emotion
+- poison
+- unconscious
+items:
+- +1 striking bastard sword
+languages:
+- Celestial
+- Infernal
+- Utopian
+- truespeech
+level: 12
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+13
+    type: slashing
+  name: bastard sword
+  plus_damage:
+  - formula: 1d6
+    type: lawful
+  to_hit: 26
+  traits:
+  - lawful
+  - magical
+  - two-hand d12
+- action_cost: One Action
+  damage:
+    formula: 1d10+11
+    type: bludgeoning
+  name: fist
+  plus_damage:
+  - formula: 1d6
+    type: lawful
+  to_hit: 23
+  traits:
+  - agile
+  - lawful
+  - magical
+name: Kolyarut
+perception: 23
+proactive_abilities: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 15
+  type: chaotic
+ritual_lists:
+- dc: 32
+  misc: null
+  name: Divine Rituals
+  spell_groups:
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: null
+      name: geas
+      requirement: null
+  to_hit: null
+saves:
+  fort: 23
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 24
+  ref_misc: null
+  will: 22
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 'A kolyarut can speak with and understand any creature that has a language.
+
+
+    '
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Truespeech
+  range: null
+  raw_description: '**Truespeech** A kolyarut can speak with and understand any creature
+    that has a language.
+
+
+    '
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +23
+- (+27 to detect lies)
+- darkvision
+size: Medium
+skills:
+- bonus: 22
+  misc: null
+  name: 'Acrobatics '
+- bonus: 27
+  misc: null
+  name: 'Athletics '
+- bonus: 22
+  misc: null
+  name: 'Axis Lore '
+- bonus: 20
+  misc: null
+  name: 'Deception '
+- bonus: 20
+  misc: null
+  name: 'Diplomacy '
+- bonus: 22
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 10
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists:
+- dc: 32
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 8
+    spells:
+    - frequency: null
+      name: discern location
+      requirement: null
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: null
+      name: command
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: at will
+      name: illusory disguise
+      requirement: null
+    - frequency: x2
+      name: suggestion
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: x2
+      name: paralyze
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: self only
+      name: invisibility
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: at will
+      name: command
+      requirement: null
+  to_hit: null
+traits:
+- LN
+- Medium
+- Aeon
+- Inevitable
+- Monitor
+type: Creature
+weaknesses: null

@@ -1,0 +1,306 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 4
+  dex_mod: 3
+  int_mod: 0
+  str_mod: 5
+  wis_mod: 3
+ac: 23
+ac_special: null
+alignment: LN
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: If a revenant sees their own reflection or any object that was important
+    to them in life, they must attempt a DC 25 Will save.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Self-Loathing
+  range: null
+  raw_description: '**Self-Loathing** (__emotion__, __mental__, __visual__) If a revenant
+    sees their own reflection or any object that was important to them in life, they
+    must attempt a DC 25 Will save.'
+  requirements: null
+  success: null
+  traits:
+  - emotion
+  - mental
+  - visual
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The revenant is unaffected and can no longer be affected by that reflection
+    or object in this way.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Critical Success
+  range: null
+  raw_description: '**Critical Success** The revenant is unaffected and can no longer
+    be affected by that reflection or object in this way.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The revenant is distracted by self-loathing and becomes __slowed 1__
+    for 1 round.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Success
+  range: null
+  raw_description: '**Success** The revenant is distracted by self-loathing and becomes
+    __slowed 1__ for 1 round.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The revenant becomes __fascinated__ by the source that triggered their
+    self-loathing and does everything they can to destroy it until the end of the
+    revenant's next turn.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Failure
+  range: null
+  raw_description: '**Failure** The revenant becomes __fascinated__ by the source
+    that triggered their self-loathing and does everything they can to destroy it
+    until the end of the revenant''s next turn.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The revenant becomes __immobilized__ as long as the source of their
+    self-loathing is apparent, until they're attacked, or until they see their murderer.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Critical Failure
+  range: null
+  raw_description: '**Critical Failure** The revenant becomes __immobilized__ as long
+    as the source of their self-loathing is apparent, until they''re attacked, or
+    until they see their murderer.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: If the revenant's murderer dies, the revenant is immediately destroyed.
+    A revenant that can't sense their murderer must attempt a DC 11 flat check once
+    every 24 hours to avoid becoming __immobilized__ and __prone__; they immediately
+    rise again once they can sense their murderer. A murderer who becomes undead does
+    not trigger the revenant's destruction until the murderer is finally destroyed.
+    The revenant gains a +2 status bonus to checks and DCs against their murderer.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Undying Vendetta
+  range: null
+  raw_description: '**Undying Vendetta** (__emotion__, __necromancy__, __occult__)
+    If the revenant''s murderer dies, the revenant is immediately destroyed. A revenant
+    that can''t sense their murderer must attempt a DC 11 flat check once every 24
+    hours to avoid becoming __immobilized__ and __prone__; they immediately rise again
+    once they can sense their murderer. A murderer who becomes undead does not trigger
+    the revenant''s destruction until the murderer is finally destroyed. The revenant
+    gains a +2 status bonus to checks and DCs against their murderer.'
+  requirements: null
+  success: null
+  traits:
+  - emotion
+  - necromancy
+  - occult
+  trigger: null
+description: 'Revenants are obsessed, undead stalkers who arise from their own murders
+  and are driven by only one thing: revenge against their killers. The common wisdom
+  is that revenants arise only from individuals who have been utterly betrayed or
+  abandoned to die a grueling death, but even then such victims might not rise from
+  their graves. In other cases, revenants might even rise from what might legitimately
+  be considered an accident if the revenant doesn''t understand the full circumstances
+  of their demise. In such cases, it doesn''t matter that the "murderer" may not have
+  intended to kill, for revenants understands no pity and can never forgive. Revenants
+  have little memory of their lives other than anything they might need to recall
+  in order to achieve their goal of vengeance.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 22
+
+
+  **__Recall Knowledge - Undead__ (__Religion__)**: DC 22'
+hp: 115
+hp_misc: null
+immunities:
+- death effects
+- disease
+- paralyzed
+- poison
+- sleep
+items: null
+languages:
+- any one spoken in life by their murderer (typically Common)
+level: 6
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+5
+    type: slashing
+  name: claw
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 17
+  traits:
+  - agile
+name: Revenant
+perception: 14
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: The creature is frightened 3 and paralyzed for 1d4 rounds.
+  critical_success: The creature is unaffected.
+  description: "The revenant wails horribly. Each creature within a 60-foot burst\
+    \ must attempt a DC 23 Will save. Regardless of the outcome of their saving throw,\
+    \ affected creatures are then immune to Baleful Shriek for 1 hour. The revenant's\
+    \ murderer never improves their degree of success due to this ability's incapacitation\
+    \ trait. The revenant can't use Baleful Shriek again for 1d4 rounds. \n\n"
+  effect: null
+  effects: null
+  failure: The creature is frightened 2 and paralyzed for 1 round.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Baleful Shriek
+  range: null
+  raw_description: "**Baleful Shriek** [Two Actions]  (__auditory__, __emotion__,\
+    \ __fear__, __incapacitation__, __mental__) The revenant wails horribly. Each\
+    \ creature within a 60-foot burst must attempt a DC 23 Will save. Regardless of\
+    \ the outcome of their saving throw, affected creatures are then immune to Baleful\
+    \ Shriek for 1 hour. The revenant's murderer never improves their degree of success\
+    \ due to this ability's incapacitation trait. The revenant can't use Baleful Shriek\
+    \ again for 1d4 rounds. \n\n**Critical Success** The creature is unaffected. \n\
+    \n**Success** The creature is __frightened 2__. \n\n**Failure** The creature is\
+    \ frightened 2 and __paralyzed__ for 1 round. \n\n**Critical Failure** The creature\
+    \ is frightened 3 and paralyzed for 1d4 rounds."
+  requirements: null
+  success: The creature is frightened 2.
+  traits:
+  - auditory
+  - emotion
+  - fear
+  - incapacitation
+  - mental
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: 2d6+5 bludgeoning, DC 24
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Constrict
+  range: null
+  raw_description: '**__Constrict__**   2d6+5 bludgeoning, DC 24'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 5
+  type: physical (except slashing)
+ritual_lists: null
+saves:
+  fort: 14
+  fort_misc: null
+  misc: null
+  ref: 13
+  ref_misc: null
+  will: 17
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A revenant knows the direction of their murderer (as long as both are
+    on the same plane), but not the distance.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sense Murderer
+  range: null
+  raw_description: '**Sense Murderer** (__divination__, __occult__, __scrying__) A
+    revenant knows the direction of their murderer (as long as both are on the same
+    plane), but not the distance.'
+  requirements: null
+  success: null
+  traits:
+  - divination
+  - occult
+  - scrying
+  trigger: null
+senses:
+- Perception +14
+- darkvision
+- sense murderer
+size: Medium
+skills:
+- bonus: 15
+  misc: null
+  name: 'Athletics '
+- bonus: 14
+  misc: null
+  name: 'Intimidation '
+source:
+- abbr: Bestiary 2
+  page_start: 227
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists: null
+traits:
+- LN
+- Medium
+- Animal
+- Undead
+type: Creature
+weaknesses: null

@@ -1,0 +1,227 @@
+ability_mods:
+  cha_mod: -5
+  con_mod: 6
+  dex_mod: -3
+  int_mod: -5
+  str_mod: 8
+  wis_mod: 0
+ac: 20
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When a carniverous blob that has 10 or more HP is hit by an attack
+    that would deal piercing or slashing damage, it splits into two identical oozes,
+    each with half the original's HP. One ooze is in the same space as the original,
+    and the other is in an adjacent, unoccupied space. If no adjacent space is unoccupied,
+    it automatically pushes creatures and objects out of the way to fill a space (the
+    GM decides if an object or creature is too big or heavy to push).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Split
+  range: null
+  raw_description: '**Split** When a carniverous blob that has 10 or more HP is hit
+    by an attack that would deal piercing or slashing damage, it splits into two identical
+    oozes, each with half the original''s HP. One ooze is in the same space as the
+    original, and the other is in an adjacent, unoccupied space. If no adjacent space
+    is unoccupied, it automatically pushes creatures and objects out of the way to
+    fill a space (the GM decides if an object or creature is too big or heavy to push).'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The blob makes a pseudopod Strike against an adjacent target. If an adjacent
+    creature dealt the triggering damage, that creature is the target of this Reactive
+    Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Reactive Strikes
+  range: null
+  raw_description: '**Reactive Strikes [Reaction]** **Trigger** The carnivorous blob
+    takes damage from any source; **Effect** The blob makes a pseudopod Strike against
+    an adjacent target. If an adjacent creature dealt the triggering damage, that
+    creature is the target of this Reactive Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: The carnivorous blob takes damage from any source
+description: 'Carnivorous blobs are the ravenous spawn of shattered worlds far beyond
+  the stars, born across the galaxy in inert form until they fall like meteorites
+  onto unsuspecting worlds. These massive beings can lie dormant for years in desolate
+  caverns or barren wastelands. When a carnivorous blob perceives living creatures
+  nearby, it lurches to gelatinous life, seeking out and consuming every creature
+  it can catch until it is destroyed or until it has been unable to locate food for
+  24 hours, at which point it returns to hibernation. Often, keeping food away from
+  a carnivorous blob is the safest way to defeat it. The blob''s ability to split
+  into smaller oozes that might stay hidden after a fight means it can be hard to
+  fully eradicate these mindless predators.
+
+
+
+
+  **__Recall Knowledge - Ooze__ (__Occultism__)**: DC 31'
+hp: 300
+hp_misc: null
+immunities:
+- acid
+- critical hits
+- mental
+- piercing
+- precision
+- slashing
+- sonic
+- unconscious
+- visual
+items: null
+languages: null
+level: 13
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d12+12
+    type: bludgeoning
+  name: pseudopod
+  plus_damage:
+  - formula: 2d6
+    type: acid and Grab
+  to_hit: 26
+  traits:
+  - reach 30 feet
+name: Carnivorous Blob
+perception: 23
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A carnivorous blob's acid damages only flesh—not bone, stone, wood,
+    or other materials— but is nonetheless devastating. Whenever a creature takes
+    damage from this acid, it must succeed at a DC 33 Fortitude save or become __drained
+    1__ (drained 2 on a critical failure). On each subsequent failure, the drained
+    condition value increases by 1 (or by 2 on a critical failure), to a maximum of
+    drained 4.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Carnivorous Blob Acid
+  range: null
+  raw_description: '**Carnivorous Blob Acid** A carnivorous blob''s acid damages only
+    flesh—not bone, stone, wood, or other materials— but is nonetheless devastating.
+    Whenever a creature takes damage from this acid, it must succeed at a DC 33 Fortitude
+    save or become __drained 1__ (drained 2 on a critical failure). On each subsequent
+    failure, the drained condition value increases by 1 (or by 2 on a critical failure),
+    to a maximum of drained 4.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: 2d12 bludgeoning plus 2d6 acid, DC 33
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Constrict
+  range: null
+  raw_description: '**__Constrict__**   2d12 bludgeoning plus 2d6 acid, DC 33'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: DC 33, 4d10 acid, Escape DC 33, Rupture 20
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Engulf
+  range: null
+  raw_description: '**__Engulf__** [Two Actions]  DC 33, 4d10 acid, Escape DC 33,
+    Rupture 20'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 25
+  fort_misc: null
+  misc: null
+  ref: 14
+  ref_misc: null
+  will: 19
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A carnivorous blob can sense nearby creatures through vibration and
+    air or water movement.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Motion Sense
+  range: null
+  raw_description: '**Motion Sense** A carnivorous blob can sense nearby creatures
+    through vibration and air or water movement.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +23
+- motion sense 240 feet
+- no vision
+size: Gargantuan
+skills:
+- bonus: 27
+  misc: null
+  name: 'Athletics '
+source:
+- abbr: Bestiary 2
+  page_start: 195
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 20
+  type: climb
+- amount: 20
+  type: swim
+spell_lists: null
+traits:
+- N
+- Gargantuan
+- Mindless
+- Ooze
+type: Creature
+weaknesses: null

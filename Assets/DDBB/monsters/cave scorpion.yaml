@@ -1,0 +1,121 @@
+ability_mods:
+  cha_mod: -4
+  con_mod: 3
+  dex_mod: 4
+  int_mod: -5
+  str_mod: 2
+  wis_mod: 2
+ac: 16
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Cave scorpions prefer to reside in underground lairs. Most have lost
+  nearly all of their pigmentation, making them appear ghostly when they lurk at the
+  edge of the light. While they prefer to eat large insects, cave scorpions can and
+  will attack humanoids. Some Darklands societies have developed techniques to herd
+  or lure scorpions into pest-infested tunnels and warrens at the edge of their settlements,
+  where the scorpions thrive in a dual role of exterminators and guardians.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 15'
+hp: 20
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 1
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d8+2
+    type: slashing
+  name: pincer
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 9
+  traits:
+  - agile
+  - finesse
+- action_cost: One Action
+  damage:
+    formula: 1d6+2
+    type: piercing
+  name: stinger
+  plus_damage:
+  - formula: null
+    type: cave scorpion venom
+  to_hit: 9
+  traits:
+  - finesse
+name: Cave Scorpion
+perception: 7
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw** DC 17 Fortitude; **Maximum Duration** 6 rounds; **Stage
+    1** 1d4 poison damage (1 round); **Stage 2** 1d6 poison damage and __enfeebled
+    1__ (1 round); **Stage 3** 1d8 poison damage and enfeebled 2 (1 round)'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Cave Scorpion Venom
+  range: null
+  raw_description: '**Cave Scorpion Venom** (__poison__) **Saving Throw** DC 17 Fortitude;
+    **Maximum Duration** 6 rounds; **Stage 1** 1d4 poison damage (1 round); **Stage
+    2** 1d6 poison damage and __enfeebled 1__ (1 round); **Stage 3** 1d8 poison damage
+    and enfeebled 2 (1 round)'
+  requirements: null
+  success: null
+  traits:
+  - poison
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 6
+  fort_misc: null
+  misc: null
+  ref: 9
+  ref_misc: null
+  will: 5
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +7
+- darkvision
+- tremorsense (imprecise) 30 feet
+size: Medium
+skills:
+- bonus: 7
+  misc: null
+  name: 'Athletics '
+- bonus: 7
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 234
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+- amount: 15
+  type: climb
+spell_lists: null
+traits:
+- N
+- Medium
+- Animal
+type: Creature
+weaknesses: null

@@ -1,0 +1,348 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 4
+  dex_mod: 2
+  int_mod: -3
+  str_mod: 6
+  wis_mod: 2
+ac: 27
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Any ability that would sever a chimera's head (such as a critical hit
+    with a __vorpal__ weapon) severs one head at random. Losing a head doesn't kill
+    a chimera (as long as it has one head left), but it does prevent it from making
+    Strikes with the lost head or using the head's Breath Weapon.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Three Headed
+  range: null
+  raw_description: '**Three Headed** Any ability that would sever a chimera''s head
+    (such as a critical hit with a __vorpal__ weapon) severs one head at random. Losing
+    a head doesn''t kill a chimera (as long as it has one head left), but it does
+    prevent it from making Strikes with the lost head or using the head''s Breath
+    Weapon.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A chimera gains 2 extra reactions each round that it can use only to
+    make Attacks of Opportunity. It must use a different head for each reaction, and
+    it can't use more than one on the same triggering action. If it loses one of its
+    heads, it also loses one of these extra reactions.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Triple Opportunity
+  range: null
+  raw_description: '**Triple Opportunity** A chimera gains 2 extra reactions each
+    round that it can use only to make Attacks of Opportunity. It must use a different
+    head for each reaction, and it can''t use more than one on the same triggering
+    action. If it loses one of its heads, it also loses one of these extra reactions.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+description: 'The chimera is the archetypal example of an unnatural monster made up
+  of a monstrous mix of wildly different component creatures: in this case, a lion,
+  a dragon, and a goat. Wild, hateful, and hungry, it tries to eat any creature it
+  sees, but sometimes a strong-willed master is able to compel a chimera to serve
+  as a guardian or even a mount.
+
+
+
+
+  **__Recall Knowledge - Beast__ (__Arcana__, __Nature__)**: DC 26'
+hp: 135
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Draconic
+level: 8
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+9
+    type: piercing
+  name: dragon jaws
+  plus_damage:
+  - formula: 2d6
+    type: energy damage (see draconic bite)
+  to_hit: 20
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 2d10+9
+    type: piercing
+  name: lion jaws
+  plus_damage: null
+  to_hit: 20
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 2d10+9
+    type: piercing
+  name: goat horns
+  plus_damage: null
+  to_hit: 20
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 2d6+9
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 20
+  traits:
+  - agile
+name: Chimera
+perception: 16
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The chimera breathes a cone or line that deals 9d6 damage to all creatures
+    in the area (DC 26 basic save of a type indicated below). The color of the chimera's
+    dragon head determines the area of the Breath Weapon, the type of damage it deals,
+    and the type of save to avoid it. The chimera can't use Breath Weapon again for
+    1d4 rounds.
+  effect: null
+  effects:
+  - action_cost: None
+    critical_failure: null
+    critical_success: null
+    description: 60-foot line of acid (Reflex)
+    effect: null
+    effects: null
+    failure: null
+    frequency: null
+    full_description: null
+    generic_description: null
+    name: Black
+    range: null
+    raw_description: '**Black** 60-foot line of acid (Reflex)'
+    requirements: null
+    success: null
+    traits: null
+    trigger: null
+  - action_cost: None
+    critical_failure: null
+    critical_success: null
+    description: 60-foot line of electricity (Reflex)
+    effect: null
+    effects: null
+    failure: null
+    frequency: null
+    full_description: null
+    generic_description: null
+    name: Blue
+    range: null
+    raw_description: '**Blue** 60-foot line of electricity (Reflex)'
+    requirements: null
+    success: null
+    traits: null
+    trigger: null
+  - action_cost: None
+    critical_failure: null
+    critical_success: null
+    description: 30-foot cone of poison (Fortitude)
+    effect: null
+    effects: null
+    failure: null
+    frequency: null
+    full_description: null
+    generic_description: null
+    name: Green
+    range: null
+    raw_description: '**Green** 30-foot cone of poison (Fortitude)'
+    requirements: null
+    success: null
+    traits: null
+    trigger: null
+  - action_cost: None
+    critical_failure: null
+    critical_success: null
+    description: 30-foot cone of fire (Reflex)
+    effect: null
+    effects: null
+    failure: null
+    frequency: null
+    full_description: null
+    generic_description: null
+    name: Red
+    range: null
+    raw_description: '**Red** 30-foot cone of fire (Reflex)'
+    requirements: null
+    success: null
+    traits: null
+    trigger: null
+  - action_cost: None
+    critical_failure: null
+    critical_success: null
+    description: 30-foot cone of cold (Reflex)
+    effect: null
+    effects: null
+    failure: null
+    frequency: null
+    full_description: null
+    generic_description: null
+    name: White
+    range: null
+    raw_description: '**White** 30-foot cone of cold (Reflex)'
+    requirements: null
+    success: null
+    traits: null
+    trigger: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Breath Weapon
+  range: null
+  raw_description: "**Breath Weapon** [Two Actions]  (__arcane__, __evocation__) The\
+    \ chimera breathes a cone or line that deals 9d6 damage to all creatures in the\
+    \ area (DC 26 basic save of a type indicated below). The color of the chimera's\
+    \ dragon head determines the area of the Breath Weapon, the type of damage it\
+    \ deals, and the type of save to avoid it. The chimera can't use Breath Weapon\
+    \ again for 1d4 rounds.\n\n  * **Black** 60-foot line of acid (Reflex)\n\n  *\
+    \ **Blue** 60-foot line of electricity (Reflex)\n\n  * **Green** 30-foot cone\
+    \ of poison (Fortitude)\n\n  * **Red** 30-foot cone of fire (Reflex)\n\n  * **White**\
+    \ 30-foot cone of cold (Reflex)"
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - evocation
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A chimera's dragon head deals an extra 2d6 damage of a type matching
+    the dragon's color (see Breath Weapon).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Draconic Bite
+  range: null
+  raw_description: '**Draconic Bite** A chimera''s dragon head deals an extra 2d6
+    damage of a type matching the dragon''s color (see Breath Weapon).'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The chimera makes a Strike with its dragon jaws, lion jaws, and goat
+    horns, each at a -2 penalty and targeting a different creature. These Strikes
+    count as only one attack for the chimera's multiple attack penalty, and the penalty
+    doesn't increase until after it has made all three attacks.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Three-Headed Strike
+  range: null
+  raw_description: '**Three-Headed Strike** [Two Actions]  The chimera makes a Strike
+    with its dragon jaws, lion jaws, and goat horns, each at a -2 penalty and targeting
+    a different creature. These Strikes count as only one attack for the chimera''s
+    multiple attack penalty, and the penalty doesn''t increase until after it has
+    made all three attacks.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 18
+  fort_misc: null
+  misc: null
+  ref: 16
+  ref_misc: null
+  will: 14
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +16
+- darkvision
+- scent (imprecise) 30 feet
+size: Large
+skills:
+- bonus: 14
+  misc: null
+  name: 'Acrobatics '
+- bonus: 18
+  misc: null
+  name: 'Athletics '
+- bonus: 18
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 63
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 40
+  type: fly
+spell_lists: null
+traits:
+- Uncommon
+- CE
+- Large
+- Beast
+type: Creature
+weaknesses: null

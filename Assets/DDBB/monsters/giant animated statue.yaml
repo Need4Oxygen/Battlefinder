@@ -1,0 +1,182 @@
+ability_mods:
+  cha_mod: -5
+  con_mod: 6
+  dex_mod: -1
+  int_mod: -5
+  str_mod: 6
+  wis_mod: 0
+ac: 26
+ac_special:
+- descr: 22 when broken
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Like normal objects, an giant animated statue has Hardness. This Hardness
+    reduces any damage it takes by an amount equal to the Hardness. Once an giant
+    animated statue is reduced to less than half its Hit Points, or immediately upon
+    being damaged by a critical hit, its construct armor breaks and its Armor Class
+    is reduced to 22.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Construct Armor
+  range: null
+  raw_description: '**Construct Armor** Like normal objects, an giant animated statue
+    has Hardness. This Hardness reduces any damage it takes by an amount equal to
+    the Hardness. Once an giant animated statue is reduced to less than half its Hit
+    Points, or immediately upon being damaged by a critical hit, its construct armor
+    breaks and its Armor Class is reduced to 22.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'As with any humanoid animated statues of Medium size, giant animated
+  statues are used to guard locations of importance, but their increased size and
+  power make them most useful in large vaults, spacious chambers, or outdoor locations.
+  Animated objects of this strength and size are ideal for tasks and responsibilities
+  usually performed by golems, and more powerful animated objects are thus all but
+  unheard of.
+
+
+
+
+  **__Recall Knowledge - Construct__ (__Arcana__, __Crafting__)**: DC 23'
+hp: 100
+hp_misc: null
+immunities:
+- bleed
+- death effects
+- disease
+- doomed
+- drained
+- fatigued
+- healing
+- mental
+- necromancy
+- nonlethal attacks
+- paralyzed
+- poison
+- sickened
+- unconscious
+items: null
+languages: null
+level: 7
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d12+6
+    type: bludgeoning
+  name: stone fist
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 19
+  traits:
+  - magical
+name: Giant Animated Statue
+perception: 13
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The statue carries a wide brazier full of hot coals. To make flaming
+    coal Strikes or use Burn Alive, the statue must have the brazier held in one hand
+    or otherwise have it within reach. Instead of targeting the statue with an attack,
+    a creature can target the brazier directly. The brazier has the same AC and saves
+    as the statue. Dealing 15 cold damage to the brazier or dousing it with at least
+    2 gallons of water extinguishes the coals. This prevents the statue from using
+    Burn Alive and causes its ranged attacks to no longer deal 2d8 fire damage.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Brazier
+  range: null
+  raw_description: '**Brazier** The statue carries a wide brazier full of hot coals.
+    To make flaming coal Strikes or use Burn Alive, the statue must have the brazier
+    held in one hand or otherwise have it within reach. Instead of targeting the statue
+    with an attack, a creature can target the brazier directly. The brazier has the
+    same AC and saves as the statue. Dealing 15 cold damage to the brazier or dousing
+    it with at least 2 gallons of water extinguishes the coals. This prevents the
+    statue from using Burn Alive and causes its ranged attacks to no longer deal 2d8
+    fire damage.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The statue grinds a creature it has grabbed into the red-hot coals
+    of its brazier. The target takes 3d8 fire damage and 1d8 persistent fire damage.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Burn Alive
+  range: null
+  raw_description: '**Burn Alive**   (__fire__) The statue grinds a creature it has
+    grabbed into the red-hot coals of its brazier. The target takes 3d8 fire damage
+    and 1d8 persistent fire damage.'
+  requirements: null
+  success: null
+  traits:
+  - fire
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 2d6+6
+    type: bludgeoning and 2d8 fire
+  name: flaming coal
+  plus_damage: null
+  to_hit: 12
+  traits:
+  - fire
+  - magical
+  - range increment 80 feet
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 17
+  fort_misc: null
+  misc: null
+  ref: 10
+  ref_misc: null
+  will: 9
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +13
+- darkvision
+size: Huge
+skills:
+- bonus: 17
+  misc: null
+  name: 'Athletics '
+source:
+- abbr: Bestiary
+  page_start: 21
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+spell_lists: null
+traits:
+- N
+- Huge
+- Construct
+- Earth
+- Mindless
+type: Creature
+weaknesses: null

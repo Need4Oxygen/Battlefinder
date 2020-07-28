@@ -1,0 +1,139 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 4
+  dex_mod: 7
+  int_mod: -1
+  str_mod: 4
+  wis_mod: 3
+ac: 30
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The storm lord takes damage from a hostile action.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: High Winds
+  range: null
+  raw_description: "**High Winds** (__air__, __aura__) 20 feet. Air within the emanation\
+    \ is difficult terrain for Flying creatures that do not have the air trait.\n\n\
+    \ **Disperse** [Reaction] **Trigger** The storm lord takes damage from a hostile\
+    \ action. **Effect** The storm lord disperses. Until the end of the current turn,\
+    \ it can't be attacked or targeted, doesn't take up space, and any auras or emanations\
+    \ it has are suppressed. At the end of the turn, the storm lord reforms in any\
+    \ space in which it can fit within 50 feet of where it dispersed and any auras\
+    \ or emanations it has are restored as long as their duration didn't run out while\
+    \ it was dispersed."
+  requirements: null
+  success: null
+  traits:
+  - air
+  - aura
+  trigger: '[Reaction]'
+description: 'Storm lords wage battles to claim important territory within the Plane
+  of Air.
+
+
+
+
+  **__Recall Knowledge - Elemental__ (__Arcana__, __Nature__)**: DC 26'
+hp: 120
+hp_misc: null
+immunities:
+- bleed
+- paralyzed
+- poison
+- sleep
+items: null
+languages:
+- Auran
+level: 9
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d12+10
+    type: bludgeoning
+  name: gust
+  plus_damage:
+  - formula: null
+    type: Push 5 feet
+  to_hit: 20
+  traits:
+  - finesse
+  - reach 15 feet
+name: Storm Lord
+perception: 18
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The storm lord's movement doesn't trigger reactions.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Swiftness
+  range: null
+  raw_description: '**Swiftness** The storm lord''s movement doesn''t trigger reactions.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 2d12+4
+    type: electricity
+  name: lightning lash
+  plus_damage: null
+  to_hit: 20
+  traits:
+  - range increment 50 feet
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 15
+  fort_misc: null
+  misc: null
+  ref: 20
+  ref_misc: null
+  will: 16
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +18
+- darkvision
+size: Large
+skills:
+- bonus: 20
+  misc: null
+  name: 'Acrobatics '
+- bonus: 18
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 145
+  page_stop: null
+speed:
+- amount: 75
+  type: fly
+- amount: null
+  type: swiftness
+spell_lists: null
+traits:
+- N
+- Large
+- Air
+- Elemental
+type: Creature
+weaknesses: null

@@ -1,0 +1,273 @@
+ability_mods:
+  cha_mod: 3
+  con_mod: 5
+  dex_mod: 4
+  int_mod: 0
+  str_mod: 6
+  wis_mod: 4
+ac: 27
+ac_special: null
+alignment: NE
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: '** Hoof only.'
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+description: 'While some creatures have been fused to create a new entity that''s
+  graceful and beautiful, the Sandpoint Devil is the opposite. It has the hooves and
+  body of a powerful horse, but it walks on its hind legs in a perverse parody of
+  a humanoid gait. Its equine face has been distorted and elongated with skeletal,
+  yellowed fangs and milky eyes. The pox-spotted hide along the creature''s back bears
+  a draconic tail with dark, spiny plates and two torn, bat-like wings.
+
+
+
+
+  The legendary Sandpoint Devil appears only on moonless nights when mists gather
+  around the coast. Most encounters end with missing livestock or children, with little
+  left behind other than oddly placed hoofprints that reek of brimstone.
+
+
+
+
+  **__Recall Knowledge - Beast__ (__Arcana__, __Nature__)**: DC 34
+
+
+  **__Recall Knowledge - Fiend__ (__Religion__)**: DC 34'
+hp: 165
+hp_misc: null
+immunities:
+- fire
+- fear
+items: null
+languages:
+- Abyssal
+- Varisian
+level: 8
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d10+12
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 20
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 2d6+12
+    type: bludgeoning
+  name: hoof
+  plus_damage: null
+  to_hit: 20
+  traits:
+  - agile
+  - versatile S
+name: Sandpoint Devil
+perception: 16
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: "The Sandpoint Devil breathes a 30-foot cone of flame that deals 6d10\
+    \ fire damage. Each creature in the area must attempt a DC 26 Reflex save. The\
+    \ Sandpoint Devil can't use Accursed Breath for 1d4 rounds. \n\nCritical Success\
+    \ The creature is unaffected. \n\nSuccess The creature takes half damage. \n\n\
+    Failure The creature takes full damage and is __sickened 2__ by the agonizing\
+    \ pain of its burns. \n\nCritical Failure The creature takes full damage and is\
+    \ cursed. The victim's flesh appears charred and burned, and the pain of being\
+    \ burned alive never fully vanishes. The cursed creature takes a -2 status penalty\
+    \ to all checks from the constant pain. Healing doesn't alter the appearance of\
+    \ the burns or lessen the penalty, but removing the curse does."
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Accursed Breath
+  range: null
+  raw_description: "**Accursed Breath** [Two Actions]  (__curse__, __evocation__,\
+    \ __fire__, __occult__) The Sandpoint Devil breathes a 30-foot cone of flame that\
+    \ deals 6d10 fire damage. Each creature in the area must attempt a DC 26 Reflex\
+    \ save. The Sandpoint Devil can't use Accursed Breath for 1d4 rounds. \n\nCritical\
+    \ Success The creature is unaffected. \n\nSuccess The creature takes half damage.\
+    \ \n\nFailure The creature takes full damage and is __sickened 2__ by the agonizing\
+    \ pain of its burns. \n\nCritical Failure The creature takes full damage and is\
+    \ cursed. The victim's flesh appears charred and burned, and the pain of being\
+    \ burned alive never fully vanishes. The cursed creature takes a -2 status penalty\
+    \ to all checks from the constant pain. Healing doesn't alter the appearance of\
+    \ the burns or lessen the penalty, but removing the curse does."
+  requirements: null
+  success: null
+  traits:
+  - curse
+  - evocation
+  - fire
+  - occult
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The Sandpoint Devil unleashes a bloodcurdling howl that can be heard
+    for miles. Each creature within a 100-foot emanation must succeed at a DC 26 Will
+    save or become __frightened 2__ (frightened 3 and __fleeing__ as long as it remains
+    frightened on a critical failure). Creatures that attempt this Will save are then
+    immune to Devil's Howl for 24 hours.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Devil's Howl
+  range: null
+  raw_description: '**Devil''s Howl** [Two Actions]  (__auditory__, __emotion__, __enchantment__,
+    __fear__, __mental__, __occult__) The Sandpoint Devil unleashes a bloodcurdling
+    howl that can be heard for miles. Each creature within a 100-foot emanation must
+    succeed at a DC 26 Will save or become __frightened 2__ (frightened 3 and __fleeing__
+    as long as it remains frightened on a critical failure). Creatures that attempt
+    this Will save are then immune to Devil''s Howl for 24 hours.'
+  requirements: null
+  success: null
+  traits:
+  - auditory
+  - emotion
+  - enchantment
+  - fear
+  - mental
+  - occult
+  trigger: null
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: Medium or smaller, hoof, DC 23
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Trample
+  range: null
+  raw_description: '**__Trample__** [Three Actions]  Medium or smaller, hoof, DC 23'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Rare
+resistances:
+- amount: 5
+  type: cold iron
+ritual_lists: null
+saves:
+  fort: 19
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 14
+  ref_misc: null
+  will: 16
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +16
+- greater darkvision
+- scent (imprecise) 30 feet
+size: Large
+skills:
+- bonus: 16
+  misc: null
+  name: 'Acrobatics '
+- bonus: 18
+  misc: null
+  name: 'Athletics '
+- bonus: 18
+  misc: null
+  name: 'Intimidation '
+- bonus: 18
+  misc: null
+  name: 'Stealth '
+- bonus: 16
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 230
+  page_stop: null
+speed:
+- amount: 35
+  type: Land
+- amount: 50
+  type: fly
+spell_lists:
+- dc: 23
+  misc: ''
+  name: Occult Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: dimension door
+      requirement: null
+    - frequency: null
+      name: phantasmal killer
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: null
+      name: stinking cloud
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: null
+      name: obscuring mist
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: at will
+      name: gust of wind
+      requirement: null
+  - heightened_level: 4
+    level: 0
+    spells:
+    - frequency: null
+      name: produce flame
+      requirement: null
+  to_hit: 15
+traits:
+- Rare
+- NE
+- Large
+- Beast
+- Fiend
+type: Creature
+weaknesses: null

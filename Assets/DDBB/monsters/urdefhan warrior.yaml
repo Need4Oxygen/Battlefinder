@@ -1,0 +1,285 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 2
+  dex_mod: 1
+  int_mod: 0
+  str_mod: 3
+  wis_mod: 2
+ac: 18
+ac_special: null
+alignment: NE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When an urdefhan dies, its invisible flesh quickly rots away and sublimates
+    into a foul-smelling gas that fills a 5-foot emanation around the body. This gas
+    deals 3d6 negative damage to creatures in this area as their flesh curdles and
+    rots as well (DC 17 basic Fortitude save).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Necrotic Decay
+  range: null
+  raw_description: '**Necrotic Decay** (__divine__, __necromancy__, __negative__)
+    When an urdefhan dies, its invisible flesh quickly rots away and sublimates into
+    a foul-smelling gas that fills a 5-foot emanation around the body. This gas deals
+    3d6 negative damage to creatures in this area as their flesh curdles and rots
+    as well (DC 17 basic Fortitude save).'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - necromancy
+  - negative
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+description: 'From the moment they are born, urdefhans are prepared for war. Urdefhan
+  warriors are among the least powerful urdefhans one might encounter outside of their
+  eerie underground cities.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 18'
+hp: 55
+hp_misc: negative healing negative healing negative healing
+immunities:
+- death effects
+- disease
+- fear
+items:
+- composite longbow (20 arrows)
+- rhoka sword
+- studded leather armor
+languages:
+- Aklo
+- Daemonic
+- Undercommon
+level: 3
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d8+6
+    type: slashing
+  name: rhoka sword
+  plus_damage: null
+  to_hit: 12
+  traits:
+  - deadly 1d8
+  - two-hand 1d10
+- action_cost: One Action
+  damage:
+    formula: 1d6+6
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: null
+    type: Wicked Bite
+  to_hit: 12
+  traits: null
+name: Urdefhan Warrior
+perception: 9
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The urdefhan makes one rhoka sword Strike and one jaws Strike against
+    a single creature. Its multiple attack penalty doesn't increase until after both
+    attacks.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Ravenous Attack
+  range: null
+  raw_description: '**Ravenous Attack** [Two Actions]  The urdefhan makes one rhoka
+    sword Strike and one jaws Strike against a single creature. Its multiple attack
+    penalty doesn''t increase until after both attacks.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The urdefhan damaged a creature with a jaws Strike on its last action
+  effects:
+  - action_cost: None
+    critical_failure: null
+    critical_success: null
+    description: The urdefhan drinks some of the creature's blood. On a failed save,
+      the creature is __drained 1__ and the urdefhan regains 5 HP (or, on a critical
+      failure, it's drained 2 and the urdefhan regains 10 HP).
+    effect: null
+    effects: null
+    failure: null
+    frequency: null
+    full_description: null
+    generic_description: null
+    name: Drain Blood
+    range: null
+    raw_description: '**Drain Blood** The urdefhan drinks some of the creature''s
+      blood. On a failed save, the creature is __drained 1__ and the urdefhan regains
+      5 HP (or, on a critical failure, it''s drained 2 and the urdefhan regains 10
+      HP).'
+    requirements: null
+    success: null
+    traits: null
+    trigger: null
+  - action_cost: None
+    critical_failure: null
+    critical_success: null
+    description: The urdefhan draws out some of the creature's vital essence. The
+      creature becomes __enfeebled 1__ for 1 hour on a failed save (or enfeebled 2
+      for 1 hour on a critical failure).
+    effect: null
+    effects: null
+    failure: null
+    frequency: null
+    full_description: null
+    generic_description: null
+    name: Drain Vitality
+    range: null
+    raw_description: '**Drain Vitality** (__necromancy__) The urdefhan draws out some
+      of the creature''s vital essence. The creature becomes __enfeebled 1__ for 1
+      hour on a failed save (or enfeebled 2 for 1 hour on a critical failure).'
+    requirements: null
+    success: null
+    traits:
+    - necromancy
+    trigger: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Wicked Bite
+  range: null
+  raw_description: "**Wicked Bite**   **Requirements** The urdefhan damaged a creature\
+    \ with a jaws Strike on its last action; **Effect** The urdefhan maintains contact,\
+    \ turning the creature's flesh translucent around the site of the injury. The\
+    \ urdefhan chooses one of two options, each of which requires a DC 20 Fortitude\
+    \ save. If the jaws Strike was a critical hit, the creature suffers both effects,\
+    \ using the same save result for both. \n\n  * **Drain Blood** The urdefhan drinks\
+    \ some of the creature's blood. On a failed save, the creature is __drained 1__\
+    \ and the urdefhan regains 5 HP (or, on a critical failure, it's drained 2 and\
+    \ the urdefhan regains 10 HP).\n\n  * **Drain Vitality** (__necromancy__) The\
+    \ urdefhan draws out some of the creature's vital essence. The creature becomes\
+    \ __enfeebled 1__ for 1 hour on a failed save (or enfeebled 2 for 1 hour on a\
+    \ critical failure)."
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d8+4
+    type: piercing
+  name: composite longbow
+  plus_damage: null
+  to_hit: 10
+  traits:
+  - deadly 1d10
+  - propulsive
+  - range increment 100 feet
+  - volley 30 feet
+rarity: Common
+resistances:
+- amount: 5
+  type: positive
+ritual_lists: null
+saves:
+  fort: 9
+  fort_misc: null
+  misc: null
+  ref: 8
+  ref_misc: null
+  will: 9
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +9
+- greater darkvision
+size: Medium
+skills:
+- bonus: 10
+  misc: null
+  name: 'Athletics '
+- bonus: 9
+  misc: null
+  name: 'Intimidation '
+- bonus: 7
+  misc: null
+  name: 'Religion '
+- bonus: 7
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 272
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists:
+- dc: 17
+  misc: ''
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: null
+      name: death knell
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: at will, self only
+      name: feather fall
+      requirement: null
+    - frequency: null
+      name: ray of enfeeblement
+      requirement: null
+  to_hit: 9
+traits:
+- NE
+- Medium
+- Humanoid
+- Urdefhan
+type: Creature
+weaknesses: null

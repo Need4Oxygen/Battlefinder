@@ -1,0 +1,299 @@
+ability_mods:
+  cha_mod: 6
+  con_mod: 6
+  dex_mod: 3
+  int_mod: 5
+  str_mod: 8
+  wis_mod: 6
+ac: 39
+ac_special: null
+alignment: NG
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 20 feet. Allies in the planetar's aura gain a +2 status bonus to AC
+    against evil creatures and a +2 status bonus to damage rolls against evil creatures.
+    The area in the aura is difficult terrain for evil creatures.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Aura of Righteousness
+  range: null
+  raw_description: '**Aura of Righteousness** (__aura__, __divine__, __evocation__)
+    20 feet. Allies in the planetar''s aura gain a +2 status bonus to AC against evil
+    creatures and a +2 status bonus to damage rolls against evil creatures. The area
+    in the aura is difficult terrain for evil creatures.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - divine
+  - evocation
+  trigger: null
+description: 'The beings of righteous fury known as planetars are known to be the
+  least patient of angels. They exist to destroy evil that cannot be redeemed, and
+  they often leave prolonged dialogue to other angels. Of course, no planetar ignores
+  the importance of diplomacy, but they know that others among the angelic hosts are
+  better suited to that task, while they focus on the larger picture. In angelic armies,
+  planetars serve as commanders or generals. They stand at least 9 feet tall and weigh
+  over 500 pounds.
+
+
+
+
+  **__Recall Knowledge - Celestial__ (__Religion__)**: DC 37'
+hp: 300
+hp_misc: regeneration 15 (deactivated by evil
+immunities: null
+items:
+- +2 greater striking greatsword
+languages:
+- Celestial
+- Draconic
+- Infernal
+- tongues
+level: 16
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d12+16
+    type: slashing
+  name: holy greatsword
+  plus_damage:
+  - formula: 1d6
+    type: good
+  to_hit: 32
+  traits:
+  - good
+  - magical
+  - versatile P
+name: Planetar
+perception: 28
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The planetar makes a greatsword Strike against a target it detects
+    as evil. If the target is evil, the Strike deals three extra weapon damage dice
+    and deals 1d6 __persistent__ good damage to the target. The planetar can convert
+    all the physical damage from the attack into good damage.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Blade of Justice
+  range: null
+  raw_description: '**Blade of Justice** [Two Actions]  The planetar makes a greatsword
+    Strike against a target it detects as evil. If the target is evil, the Strike
+    deals three extra weapon damage dice and deals 1d6 __persistent__ good damage
+    to the target. The planetar can convert all the physical damage from the attack
+    into good damage.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The planetar can take on the appearance of any Small or Medium humanoid.
+    This doesn't change their Speed or Strikes.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Change Shape
+  range: null
+  raw_description: '**Change Shape**   (__concentrate__, __divine__, __polymorph__,
+    __transmutation__) The planetar can take on the appearance of any Small or Medium
+    humanoid. This doesn''t change their Speed or Strikes.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - divine
+  - polymorph
+  - transmutation
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Any weapon gains the effect of a __holy__ property rune while a planetar
+    wields it.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Holy Armaments
+  range: null
+  raw_description: '**Holy Armaments** (__divine__, __evocation__) Any weapon gains
+    the effect of a __holy__ property rune while a planetar wields it.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - evocation
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances: null
+ritual_lists:
+- dc: 37
+  misc: null
+  name: Rituals
+  spell_groups:
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: null
+      name: call spirit
+      requirement: null
+    - frequency: null
+      name: resurrect
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: angelic messenger
+      requirement: null
+  to_hit: null
+saves:
+  fort: 28
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 25
+  ref_misc: null
+  will: 28
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +28
+- (32 to detect illusions) darkvision
+- true seeing
+size: Large
+skills:
+- bonus: 32
+  misc: null
+  name: 'Athletics '
+- bonus: 32
+  misc: null
+  name: 'Intimidation '
+- bonus: 32
+  misc: null
+  name: 'Religion '
+source:
+- abbr: Bestiary 2
+  page_start: 15
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 60
+  type: fly
+spell_lists:
+- dc: 37
+  misc: ''
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 8
+    spells:
+    - frequency: null
+      name: dispel magic
+      requirement: null
+    - frequency: null
+      name: divine wrath
+      requirement: null
+    - frequency: null
+      name: earthquake
+      requirement: null
+    - frequency: null
+      name: heal
+      requirement: null
+    - frequency: null
+      name: power word stun
+      requirement: null
+    - frequency: null
+      name: sunburst
+      requirement: null
+  - heightened_level: null
+    level: 7
+    spells:
+    - frequency: null
+      name: charm
+      requirement: null
+    - frequency: null
+      name: plane shift
+      requirement: null
+    - frequency: null
+      name: power word blind
+      requirement: null
+    - frequency: at will
+      name: remove fear
+      requirement: null
+  - heightened_level: null
+    level: 6
+    spells:
+    - frequency: null
+      name: blade barrier
+      requirement: null
+    - frequency: at will
+      name: dispel magic
+      requirement: null
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: null
+      name: breath of life
+      requirement: null
+    - frequency: null
+      name: death ward
+      requirement: null
+    - frequency: null
+      name: freedom of movement
+      requirement: null
+    - frequency: ×3
+      name: restoration
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: at will, self only
+      name: invisibility
+      requirement: null
+    - frequency: null
+      name: remove paralysis
+      requirement: null
+  - heightened_level: 5
+    level: -1
+    spells:
+    - frequency: evil only
+      name: detect alignment
+      requirement: null
+    - frequency: null
+      name: tongues
+      requirement: null
+    - frequency: null
+      name: true seeing
+      requirement: null
+  to_hit: 29
+traits:
+- Uncommon
+- NG
+- Large
+- Angel
+- Celestial
+type: Creature
+weaknesses:
+- amount: 15
+  type: evil

@@ -1,0 +1,218 @@
+ability_mods:
+  cha_mod: 0
+  con_mod: 3
+  dex_mod: 1
+  int_mod: -1
+  str_mod: 5
+  wis_mod: 3
+ac: 22
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: Fangs only.
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+description: 'The distant kin of red dragons, flame drakes thankfully lack the intelligence
+  and ambition of their larger cousins, but are no less territorial or violent. Flame
+  drakes dwell near volcanoes and magma, but it''s not unheard of for one to drift
+  into nearby areas like forests or wooded hills. Their scales are usually some shade
+  of red, occasionally fading to smoky blacks and grays along the edges of their wings
+  and the tips of their tails.
+
+
+
+
+  **__Recall Knowledge - Dragon__ (__Arcana__)**: DC 20'
+hp: 75
+hp_misc: null
+immunities:
+- fire
+- paralyzed
+- unconscious
+items: null
+languages:
+- Draconic
+level: 5
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+5
+    type: piercing
+  name: Fangs
+  plus_damage:
+  - formula: 1d6
+    type: fire
+  to_hit: 14
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 2d6+5
+    type: bludgeoning
+  name: Tail
+  plus_damage: null
+  to_hit: 14
+  traits:
+  - reach 10 feet
+name: Flame Drake
+perception: 12
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The flame drake makes two Fangs Strikes and one Tail Strike in any
+    order.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Draconic Frenzy
+  range: null
+  raw_description: '**Draconic Frenzy** [Two Actions]  The flame drake makes two Fangs
+    Strikes and one Tail Strike in any order.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The flame drake expels a ball of flame to a range of 180 feet that
+    explodes in a 20-foot __burst__. Creatures in the burst take 6d6 fire damage (DC
+    22 basic Reflex save). The flame drake can't use Fireball Breath again for 1d6
+    rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Fireball Breath
+  range: null
+  raw_description: '**Fireball Breath** [Two Actions]  (__arcane__, __evocation__,
+    __fire__) The flame drake expels a ball of flame to a range of 180 feet that explodes
+    in a 20-foot __burst__. Creatures in the burst take 6d6 fire damage (DC 22 basic
+    Reflex save). The flame drake can''t use Fireball Breath again for 1d6 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - evocation
+  - fire
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The fire drake moves up to twice its Speed. It can do this three times
+    per day.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Speed Surge
+  range: null
+  raw_description: '**Speed Surge**   (__move__) The fire drake moves up to twice
+    its Speed. It can do this three times per day.'
+  requirements: null
+  success: null
+  traits:
+  - move
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 10
+  type: cold
+ritual_lists: null
+saves:
+  fort: 12
+  fort_misc: null
+  misc: null
+  ref: 10
+  ref_misc: null
+  will: 10
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Smoke doesn't impair a flame drake's vision; it ignores concealment
+    from smoke.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Smoke Vision
+  range: null
+  raw_description: '**Smoke Vision** Smoke doesn''t impair a flame drake''s vision;
+    it ignores concealment from smoke.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +12
+- darkvision
+- scent (imprecise) 30 feet
+- smoke vision
+size: Large
+skills:
+- bonus: 10
+  misc: null
+  name: 'Acrobatics '
+- bonus: 12
+  misc: null
+  name: 'Athletics '
+- bonus: 9
+  misc: null
+  name: 'Stealth '
+- bonus: 10
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 131
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 50
+  type: fly
+spell_lists: null
+traits:
+- CE
+- Large
+- Dragon
+- Fire
+type: Creature
+weaknesses: null

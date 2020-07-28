@@ -1,0 +1,355 @@
+ability_mods:
+  cha_mod: 5
+  con_mod: 4
+  dex_mod: 5
+  int_mod: 2
+  str_mod: 0
+  wis_mod: 4
+ac: 22
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '30 feet. A
+
+
+    creature that begins its turn within the area must attempt a DC 18 Will save.'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Calming Presence
+  range: null
+  raw_description: '**Calming Presence** (__aura__, __divine__, __emotion__, __enchantment__,
+    __incapacitation__) 30 feet. A
+
+
+    creature that begins its turn within the area must attempt a DC 18 Will save.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - divine
+  - emotion
+  - enchantment
+  - incapacitation
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The creature is unaffected and is temporarily immune to calming presence
+    for 24 hours.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Critical Success
+  range: null
+  raw_description: '**Critical Success** The creature is unaffected and is temporarily
+    immune to calming presence for 24 hours.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The creature's attack rolls take a -1 status penalty for 1 round.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Success
+  range: null
+  raw_description: '**Success** The creature''s attack rolls take a -1 status penalty
+    for 1 round.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Any __emotion__ effects that would affect the creature are suppressed
+    and the creature can't use hostile actions. If the creature is subjected to hostility
+    from any other creature, it ceases to be affected by calming presence and is temporarily
+    immune to calming presence for 24 hours.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Failure
+  range: null
+  raw_description: '**Failure** Any __emotion__ effects that would affect the creature
+    are suppressed and the creature can''t use hostile actions. If the creature is
+    subjected to hostility from any other creature, it ceases to be affected by calming
+    presence and is temporarily immune to calming presence for 24 hours.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: As failure, but hostility doesn't end the effect.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Critical Failure
+  range: null
+  raw_description: '**Critical Failure** As failure, but hostility doesn''t end the
+    effect.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Not all spirits who enter the __Boneyard__ realize they have died. Catrinas
+  meet these souls, helping to convince them of the finality of their fate to ease
+  a spirit''s passing. Catrinas are more likely to intervene when a mortal can''t
+  accept their death. They perform their task to keep the afterlife calm, rather than
+  out of true compassion for a mortal''s grief. Catrinas only rarely visit the Material
+  Plane, typically to help an extremely important mortal pass on.
+
+
+
+
+  Catrinas resemble skeletons dressed in bright flowers and colorful dresses, giving
+  them a simultaneously festive and macabre appearance. Though most catrinas present
+  as feminine, masculine catrinas still dress in bright colors and carry garlands
+  of flowers.
+
+
+
+
+  **__Recall Knowledge - Monitor__ (__Religion__)**: DC 20'
+hp: 75
+hp_misc: null
+immunities:
+- death effects
+- disease
+items: null
+languages:
+- Abyssal
+- Celestial
+- Infernal
+- Requian
+- telepathy 120 feet
+- tongues
+level: 5
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+2
+    type: bludgeoning
+  name: fist
+  plus_damage:
+  - formula: null
+    type: spirit touch
+  to_hit: 14
+  traits:
+  - agile
+  - finesse
+name: Catrina
+perception: 13
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: As failure, but damage does not end the effect.
+  critical_success: null
+  description: "The catrina telepathically compels a creature within 30 feet to approach\
+    \ and allow the catrina to kiss them, in preparation for using Kiss of Death.\
+    \ The target must attempt a DC 22 Will save. \n\n"
+  effect: null
+  effects: null
+  failure: The creature must spend each of its actions to move closer to the catrina
+    as quickly as possible, while avoiding obvious dangers. If the compelled creature
+    is adjacent to the catrina, it stays still and doesn't act. If the creature takes
+    any damage, the effect ends and the creature is temporarily immune to Compel Condemned
+    for 24 hours. This effect lasts for 1 round, but if the catrina uses this ability
+    again on subsequent rounds, it extend the duration by 1 round for all affected
+    creatures.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Compel Condemned
+  range: null
+  raw_description: "**Compel Condemned**   (__divine__, __enchantment__, __incapacitation__,\
+    \ __mental__) The catrina telepathically compels a creature within 30 feet to\
+    \ approach and allow the catrina to kiss them, in preparation for using Kiss of\
+    \ Death. The target must attempt a DC 22 Will save. \n\n**Success** The creature\
+    \ is unaffected and is temporarily immune to Compel Condemned for 24 hours. \n\
+    \n**Failure** The creature must spend each of its actions to move closer to the\
+    \ catrina as quickly as possible, while avoiding obvious dangers. If the compelled\
+    \ creature is adjacent to the catrina, it stays still and doesn't act. If the\
+    \ creature takes any damage, the effect ends and the creature is temporarily immune\
+    \ to Compel Condemned for 24 hours. This effect lasts for 1 round, but if the\
+    \ catrina uses this ability again on subsequent rounds, it extend the duration\
+    \ by 1 round for all affected creatures. \n\n**Critical Failure** As failure,\
+    \ but damage does not end the effect."
+  requirements: null
+  success: The creature is unaffected and is temporarily immune to Compel Condemned
+    for 24 hours.
+  traits:
+  - divine
+  - enchantment
+  - incapacitation
+  - mental
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The catrina gives a long, passionate kiss to an __unconscious__ or
+    willing creature, dealing 3d6 negative damage. Any creature damaged by the same
+    catrina's Kiss of Death for 3 consecutive rounds becomes unconscious and is __dying
+    1__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Kiss of Death
+  range: null
+  raw_description: '**Kiss of Death** [Two Actions]  (__death__, __divine__, __manipulate__,
+    __necromancy__) The catrina gives a long, passionate kiss to an __unconscious__
+    or willing creature, dealing 3d6 negative damage. Any creature damaged by the
+    same catrina''s Kiss of Death for 3 consecutive rounds becomes unconscious and
+    is __dying 1__.'
+  requirements: null
+  success: null
+  traits:
+  - death
+  - divine
+  - manipulate
+  - necromancy
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: An catrina's Strikes affect __incorporeal__ creatures with the effects
+    of a __ghost touch__ property rune and deal 1d6 negative damage to living creatures
+    and 1d6 positive damage to undead.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Spirit Touch
+  range: null
+  raw_description: '**Spirit Touch** An catrina''s Strikes affect __incorporeal__
+    creatures with the effects of a __ghost touch__ property rune and deal 1d6 negative
+    damage to living creatures and 1d6 positive damage to undead.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 5
+  type: negative
+- amount: 5
+  type: poison
+ritual_lists: null
+saves:
+  fort: 11
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 12
+  ref_misc: null
+  will: 13
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +13
+- darkvision
+- lifesense 60 feet
+size: Medium
+skills:
+- bonus: 14
+  misc: null
+  name: 'Acrobatics '
+- bonus: 11
+  misc: null
+  name: 'Boneyard Lore '
+- bonus: 14
+  misc: null
+  name: 'Diplomacy '
+- bonus: 14
+  misc: null
+  name: 'Intimidation '
+- bonus: 12
+  misc: null
+  name: 'Medicine '
+- bonus: 11
+  misc: null
+  name: 'Occultism '
+- bonus: 12
+  misc: null
+  name: 'Religion '
+source:
+- abbr: Bestiary 2
+  page_start: 209
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists:
+- dc: 22
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: dimension door
+      requirement: null
+    - frequency: at will
+      name: talking corpse
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: null
+      name: illusory disguise
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: at will, self only
+      name: invisibility
+      requirement: null
+  - heightened_level: 3
+    level: 0
+    spells:
+    - frequency: null
+      name: dancing lights
+      requirement: null
+  - heightened_level: 5
+    level: -1
+    spells:
+    - frequency: null
+      name: tongues
+      requirement: null
+  to_hit: null
+traits:
+- N
+- Medium
+- Monitor
+- Psychopomp
+type: Creature
+weaknesses: null

@@ -1,0 +1,203 @@
+ability_mods:
+  cha_mod: 1
+  con_mod: 2
+  dex_mod: 2
+  int_mod: 2
+  str_mod: 4
+  wis_mod: 3
+ac: 20
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A janni can survive on any Elemental Plane for up to 48 hours, after
+    which it takes 1 damage per hour until it leaves or dies.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Elemental Endurance
+  range: null
+  raw_description: '**Elemental Endurance** A janni can survive on any Elemental Plane
+    for up to 48 hours, after which it takes 1 damage per hour until it leaves or
+    dies.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Jann are genies composed of all four elements, meaning they are not
+  quite home on any of the Elemental Planes. Instead, jann reside on the Material
+  Plane, making only brief forays to the other parts of the Inner Sphere. Although
+  they are human in size and appearance, jann are not at all related to humans and
+  bristle at any claims to this effect. They are a proud people and take great care
+  to maintain their honor—restoring that honor with the edge of a sword, if necessary.
+
+
+
+
+  **__Recall Knowledge - Elemental__ (__Arcana__, __Nature__)**: DC 19'
+hp: 60
+hp_misc: null
+immunities: null
+items:
+- composite shortbow (20 arrows)
+- scimitar
+languages:
+- Common
+- one elemental language (Aquan
+- Auran
+- Ignan
+- or Terran)
+- one planar language (Abyssal
+- Celestial
+- or Infernal)
+- telepathy 100 feet
+level: 4
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6+10
+    type: slashing
+  name: scimitar
+  plus_damage: null
+  to_hit: 14
+  traits:
+  - forceful +1
+  - sweep
+- action_cost: One Action
+  damage:
+    formula: 1d4+10
+    type: bludgeoning
+  name: fist
+  plus_damage: null
+  to_hit: 14
+  traits:
+  - agile
+  - magical
+  - nonlethal
+name: Janni
+perception: 11
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The janni changes a creature's size. This works as a 4th-level __enlarge__
+    or __shrink__ spell but can target an unwilling creature (DC 21 Fortitude save
+    negates).
+  effects: null
+  failure: null
+  frequency: Once per day.
+  full_description: null
+  generic_description: null
+  name: Change Size
+  range: null
+  raw_description: '**Change Size** [Two Actions]  (__arcane__, __concentrate__, __polymorph__,
+    __transmutation__) **Frequency** Once per day. **Effect** The janni changes a
+    creature''s size. This works as a 4th-level __enlarge__ or __shrink__ spell but
+    can target an unwilling creature (DC 21 Fortitude save negates).'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - concentrate
+  - polymorph
+  - transmutation
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d6+5
+    type: piercing
+  name: composite shortbow
+  plus_damage: null
+  to_hit: 12
+  traits:
+  - deadly 1d10
+  - propulsive
+  - range increment 60 feet
+  - reload 0
+rarity: Common
+resistances:
+- amount: 5
+  type: fire
+ritual_lists: null
+saves:
+  fort: 12
+  fort_misc: null
+  misc: null
+  ref: 10
+  ref_misc: null
+  will: 11
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +11
+- darkvision
+size: Medium
+skills:
+- bonus: 8
+  misc: null
+  name: 'Acrobatics '
+- bonus: 10
+  misc: null
+  name: 'Arcana '
+- bonus: 8
+  misc: null
+  name: 'Crafting '
+- bonus: 7
+  misc: null
+  name: 'Deception '
+- bonus: 11
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 162
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 15
+  type: fly
+spell_lists:
+- dc: 21
+  misc: null
+  name: Arcane Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 7
+    spells:
+    - frequency: to Astral Plane, Elemental Planes, or Material Plane only
+      name: plane shift
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: null
+      name: create food
+      requirement: null
+    - frequency: x3
+      name: invisibility
+      requirement: null
+    - frequency: null
+      name: speak with animals
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: create water
+      requirement: null
+  to_hit: null
+traits:
+- N
+- Medium
+- Elemental
+- Genie
+type: Creature
+weaknesses: null

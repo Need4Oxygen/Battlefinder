@@ -1,0 +1,292 @@
+ability_mods:
+  cha_mod: 5
+  con_mod: 4
+  dex_mod: 2
+  int_mod: 1
+  str_mod: 5
+  wis_mod: 6
+ac: 26
+ac_special: null
+alignment: NG
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 20 feet. Creatures in the balisse's aura are subject to __zone of truth__
+    (DC 23). Additionally, if these creatures choose to honestly express their own
+    conflicted feelings, the aura makes it easier for them to put words to those feelings.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Confessor's Aura
+  range: null
+  raw_description: '**Confessor''s Aura** (__aura__, __divine__, __enchantment__,
+    __mental__) 20 feet. Creatures in the balisse''s aura are subject to __zone of
+    truth__ (DC 23). Additionally, if these creatures choose to honestly express their
+    own conflicted feelings, the aura makes it easier for them to put words to those
+    feelings.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - divine
+  - enchantment
+  - mental
+  trigger: null
+description: 'Balisses, or confessor angels, seek to assist mortals ensnared by moral
+  dilemmas or crises of faith. Balisses prefer to guide people to their own decisions
+  rather than demand obedience to a higher cause, as intrinsic belief is even more
+  powerful than blind obedience. While most balisses are fundamentally honest, they
+  use their guardian angel ability to seem less intimidating and decrease the chance
+  the mortal will simply acquiesce to the opinion of an obviously divine being. Balisses
+  often form from souls of those who performed evil acts but were redeemed. Many serve
+  the goddess Sarenrae, but they can serve other good deities and empyreal lords as
+  well.
+
+
+
+
+  **__Recall Knowledge - Celestial__ (__Religion__)**: DC 24'
+hp: 145
+hp_misc: null
+immunities: null
+items:
+- +1 striking scimitar
+languages:
+- Celestial
+- Draconic
+- Infernal
+- tongues
+level: 8
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+8
+    type: slashing
+  name: flaming scimitar
+  plus_damage:
+  - formula: 1d6
+    type: fire and 1d6 good
+  to_hit: 20
+  traits:
+  - fire
+  - forceful
+  - good
+  - magical
+  - sweep
+name: Balisse
+perception: 18
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: The duration is permanent.
+  critical_success: The creature is unaffected.
+  description: null
+  effect: 'The balisse marks an evil creature within its confessor''s aura as irredeemable.
+    It can only do so after a failed attempt to convince the creature to repent. The
+    touched creature takes a -1 status penalty to AC and saves, reduces its resistances
+    by 2, and gains weakness 2 to good damage. The duration depends on the target''s
+    DC 26 Will save.
+
+
+    '
+  effects: null
+  failure: The duration is 1 day.
+  frequency: once per day
+  full_description: null
+  generic_description: null
+  name: Brand of the Impenitent
+  range: null
+  raw_description: '**Brand of the Impenitent** [Two Actions]  (__curse__, __divine__,
+    __evocation__) **Frequency** once per day; **Effect** The balisse marks an evil
+    creature within its confessor''s aura as irredeemable. It can only do so after
+    a failed attempt to convince the creature to repent. The touched creature takes
+    a -1 status penalty to AC and saves, reduces its resistances by 2, and gains weakness
+    2 to good damage. The duration depends on the target''s DC 26 Will save.
+
+
+    **Critical Success** The creature is unaffected.
+
+
+    **Success** The duration is 1 round.
+
+
+    **Failure** The duration is 1 day.
+
+
+    **Critical Failure** The duration is permanent.'
+  requirements: null
+  success: The duration is 1 round.
+  traits:
+  - curse
+  - divine
+  - evocation
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Any weapon gains the effect of a __flaming__ property rune while a
+    balisse wields it.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Flaming Armament
+  range: null
+  raw_description: '**Flaming Armament** (__divine__, __evocation__) Any weapon gains
+    the effect of a __flaming__ property rune while a balisse wields it.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - evocation
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: While invisible, a balisse can spiritually attach itself to a non-evil
+    mortal. When it does so, it merges with the mortal's body and is unable to use
+    any of its spells and abilities other than to interact with the mortal. It must
+    use Guiding Angel again to leave the mortal. While merged with the mortal, the
+    balisse can take a form of its choice that only the mortal can see, such as a
+    small angel on the mortal's shoulder. Alternatively, it can communicate with the
+    mortal using a bodiless voice only the mortal can hear.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Guiding Angel
+  range: null
+  raw_description: '**Guiding Angel**   (__divine__, __transmutation__) While invisible,
+    a balisse can spiritually attach itself to a non-evil mortal. When it does so,
+    it merges with the mortal''s body and is unable to use any of its spells and abilities
+    other than to interact with the mortal. It must use Guiding Angel again to leave
+    the mortal. While merged with the mortal, the balisse can take a form of its choice
+    that only the mortal can see, such as a small angel on the mortal''s shoulder.
+    Alternatively, it can communicate with the mortal using a bodiless voice only
+    the mortal can hear.'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - transmutation
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 15
+  type: fire
+ritual_lists:
+- dc: 26
+  misc: null
+  name: Divine Rituals
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: atone
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: null
+      name: geas
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: angelic messenger
+      requirement: null
+  to_hit: null
+saves:
+  fort: 16
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 12
+  ref_misc: null
+  will: 18
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +18
+- (+20 to detect lies and illusions)
+- darkvision
+size: Medium
+skills:
+- bonus: 14
+  misc: null
+  name: 'Acrobatics '
+- bonus: 17
+  misc: null
+  name: 'Diplomacy '
+- bonus: 18
+  misc: null
+  name: 'Religion '
+source:
+- abbr: Bestiary
+  page_start: 18
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+- amount: 40
+  type: fly
+spell_lists:
+- dc: 26
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: divine wrath
+      requirement: null
+    - frequency: null
+      name: heal
+      requirement: null
+    - frequency: null
+      name: paralyze
+      requirement: null
+    - frequency: null
+      name: remove curse
+      requirement: null
+    - frequency: null
+      name: remove disease
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: at will
+      name: remove fear
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: at will, self only
+      name: invisibility
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: at will, evil only
+      name: detect alignment
+      requirement: null
+  to_hit: null
+traits:
+- NG
+- Medium
+- Angel
+- Celestial
+type: Creature
+weaknesses:
+- amount: 10
+  type: evil

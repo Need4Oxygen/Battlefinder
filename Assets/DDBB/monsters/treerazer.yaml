@@ -1,0 +1,396 @@
+ability_mods:
+  cha_mod: 8
+  con_mod: 11
+  dex_mod: 9
+  int_mod: 7
+  str_mod: 12
+  wis_mod: 8
+ac: 54
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 120 feet. Plants near Treerazer twist, deform, and transform into thorny
+    or fungoid parodies of their natural shapes. A living creature in this area must
+    succeed at a DC 47 Fortitude save each round or become partially transformed into
+    plantlike matter. Those who fail this saving throw are treated as if they were
+    plants for the purposes of any effect that particularly harms or inconveniences
+    plant creatures more than other creatures, but do not gain any benefits of being
+    plant creatures. This effect lasts as long as the creature remains within the
+    area of corruption and for 1 minute thereafter.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Aura of Corruption
+  range: null
+  raw_description: '**Aura of Corruption** (__aura__, __plant__, __primal__, __transmutation__)
+    120 feet. Plants near Treerazer twist, deform, and transform into thorny or fungoid
+    parodies of their natural shapes. A living creature in this area must succeed
+    at a DC 47 Fortitude save each round or become partially transformed into plantlike
+    matter. Those who fail this saving throw are treated as if they were plants for
+    the purposes of any effect that particularly harms or inconveniences plant creatures
+    more than other creatures, but do not gain any benefits of being plant creatures.
+    This effect lasts as long as the creature remains within the area of corruption
+    and for 1 minute thereafter.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - plant
+  - primal
+  - transmutation
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+description: 'Treerazer, the self-styled Lord of the Blasted Tarn, is a powerful demon
+  on the cusp of ascending to the true power of one of the rulers of the Abyss itself—a
+  demon lord. For now, even as a nascent demon lord, Treerazer is a dangerous foe.
+
+
+
+
+  Treerazer rarely leaves his swampy realm of Tanglebriar—a large thicket of tainted
+  foliage and rotting detritus just south of Kyonin''s Fierani Forest—but can be encountered
+  anywhere within that toxic mire, often accompanied by a small legion of demons,
+  corrupted fey, and other deadly allies. Certain occult rituals have the power to
+  call him forth from Tanglebriar, granting him the opportunity to directly work his
+  evils beyond the realm to which he has been exiled. Some believe that no eldritch
+  force contains Treerazer and that, were he willing, he could travel Golarion with
+  impunity, spreading the twisted blessings of his touch and the corruption of his
+  presence, yet the Lord of the Blasted Tarn is as cunning and canny as he is deadly,
+  and prefers to work his evils on the world from the safety of his nightmare realm.
+
+
+
+
+  **__Recall Knowledge - Fiend__ (__Religion__)**: DC 60'
+hp: 550
+hp_misc: regeneration 50 (deactivated by good
+immunities:
+- death effects
+- disease
+- mental
+- poison
+items:
+- blackaxe
+languages:
+- Abyssal
+- Common
+- Elven
+- Sylvan
+- telepathy 300 ft.
+level: 25
+melee:
+- action_cost: One Action
+  damage:
+    formula: 4d12+15
+    type: slashing
+  name: Blackaxe
+  plus_damage:
+  - formula: 1d6
+    type: acid
+  - formula: 1d6
+    type: chaotic
+  - formula: 1d6
+    type: evil
+  - formula: 2d6
+    type: slashing vs. plants
+  to_hit: 47
+  traits:
+  - acid
+  - chaotic
+  - evil
+  - magical
+  - reach 15 feet
+  - sweep
+- action_cost: One Action
+  damage:
+    formula: 4d10+18
+    type: slashing
+  name: jaws
+  plus_damage:
+  - formula: 2d6
+    type: chaotic and 2d6 evil
+  to_hit: 45
+  traits:
+  - agile
+  - chaotic
+  - evil
+  - magical
+  - reach 15 feet
+name: Treerazer
+perception: 46
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: Treerazer exudes a pulse of sickly green light in a 30-foot-radius
+    emanation. All plants in the area (including creatures under the effect of his
+    aura of corruption) blacken and wither. Non-creature plants immediately wither
+    and die. Plant creatures take 20d8 negative damage with a DC 49 basic Fortitude
+    save. A creature that fails its save is doomed 1 for 1 minute and sickened 3.
+    Treerazer can choose to exclude any number of plants in the area from this effect,
+    and generally does so to preserve twisted and corrupted plants or fungi, or plant
+    creatures that are allied to his cause. Treerazer can't use Defoliation for 1d4
+    rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Defoliation
+  range: null
+  raw_description: '**Defoliation** [Two Actions]  (__primal__, __necromancy__, __plant__)
+    Treerazer exudes a pulse of sickly green light in a 30-foot-radius emanation.
+    All plants in the area (including creatures under the effect of his aura of corruption)
+    blacken and wither. Non-creature plants immediately wither and die. Plant creatures
+    take 20d8 negative damage with a DC 49 basic Fortitude save. A creature that fails
+    its save is doomed 1 for 1 minute and sickened 3. Treerazer can choose to exclude
+    any number of plants in the area from this effect, and generally does so to preserve
+    twisted and corrupted plants or fungi, or plant creatures that are allied to his
+    cause. Treerazer can''t use Defoliation for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - primal
+  - necromancy
+  - plant
+  trigger: null
+- action_cost: Free Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: Treerazer casts his innate dispel magic, targeting the creature he hit with
+    his Strike or one spell affecting that creature.
+  effects: null
+  failure: null
+  frequency: once per round
+  full_description: null
+  generic_description: null
+  name: Dispelling Strike
+  range: null
+  raw_description: '**Dispelling Strike** [Free Action]  (__abjuration__, __primal__)
+    **Frequency** once per round; **Trigger** Treerazer hits a creature, object, or
+    spell effect with a weapon Strike or a defoliation attack. **Effect** Treerazer
+    casts his innate dispel magic, targeting the creature he hit with his Strike or
+    one spell affecting that creature.'
+  requirements: null
+  success: null
+  traits:
+  - abjuration
+  - primal
+  trigger: Treerazer hits a creature, object, or spell effect with a weapon Strike
+    or a defoliation attack.
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When Treerazer scores a critical hit with a melee attack, the target
+    is stunned 2.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Staggering Strike
+  range: null
+  raw_description: '**Staggering Strike** When Treerazer scores a critical hit with
+    a melee attack, the target is stunned 2.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Rare
+resistances:
+- amount: 20
+  type: acid
+- amount: 15
+  type: cold
+- amount: 15
+  type: fire
+- amount: 20
+  type: physical (except cold iron)
+ritual_lists:
+- dc: 49
+  misc: null
+  name: Primal Rituals
+  spell_groups:
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: null
+      name: planar ally
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: abyssal pact
+      requirement: null
+  to_hit: null
+saves:
+  fort: 42
+  fort_misc: null
+  misc: +2 status to all saves vs. magic
+  ref: 40
+  ref_misc: null
+  will: 43
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +46
+- darkvision
+- true seeing
+size: Huge
+skills:
+- bonus: 40
+  misc: null
+  name: 'Acrobatics '
+- bonus: 38
+  misc: null
+  name: 'Arcana '
+- bonus: 45
+  misc: null
+  name: 'Athletics '
+- bonus: 46
+  misc: null
+  name: 'Intimidation '
+- bonus: 49
+  misc: null
+  name: 'Nature '
+- bonus: 38
+  misc: null
+  name: 'Occultism '
+- bonus: 45
+  misc: null
+  name: 'Religion '
+- bonus: 40
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 312
+  page_stop: null
+speed:
+- amount: 60
+  type: Land
+- amount: 60
+  type: fly
+- amount: 40
+  type: swim
+- amount: 128
+  type: <a style="text-decoration:underline" href="Spells.aspx?ID="><i>freedom of
+    movement</i></a>
+spell_lists:
+- dc: 49
+  misc: ''
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 10
+    spells:
+    - frequency: null
+      name: horrid wilting
+      requirement: null
+    - frequency: null
+      name: time stop
+      requirement: null
+    - frequency: null
+      name: wall of thorns
+      requirement: null
+  - heightened_level: null
+    level: 9
+    spells:
+    - frequency: at will
+      name: abyssal wrath
+      requirement: null
+    - frequency: at will
+      name: dispel magic
+      requirement: null
+  - heightened_level: null
+    level: 6
+    spells:
+    - frequency: at will
+      name: tangling creepers
+      requirement: null
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: at will
+      name: abyssal plague
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: at will
+      name: earthbind
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: at will
+      name: telekinetic maneuver
+      requirement: null
+  - heightened_level: 9
+    level: 0
+    spells:
+    - frequency: null
+      name: telekinetic projectile
+      requirement: null
+  - heightened_level: 8
+    level: -1
+    spells:
+    - frequency: null
+      name: true seeing
+      requirement: null
+  - heightened_level: 4
+    level: -1
+    spells:
+    - frequency: null
+      name: freedom of movement
+      requirement: null
+  to_hit: 43
+traits:
+- Rare
+- CE
+- Huge
+- Amphibious
+- Demon
+- Fiend
+type: Creature
+weaknesses:
+- amount: 20
+  type: good

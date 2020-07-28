@@ -1,0 +1,257 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 1
+  dex_mod: 2
+  int_mod: 0
+  str_mod: 4
+  wis_mod: 3
+ac: 20
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: '
+
+
+    Verdant Burst (healing) When a flytrap leshy dies, a burst of primal energy explodes
+    from its body, restoring 3d6 Hit Points to each __plant__ creature in a 30-foot
+    emanation. This area immediately fills with flytraps, becoming difficult terrain.
+    If the terrain is not a viable environment for these flytraps, they wither after
+    24 hours.'
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+description: 'While often seen as unfriendly by non-leshys, flytrap leshys get along
+  well with other leshys. Nonetheless, they''re among the most aggressive leshys,
+  often guarding the most vulnerable places in the natural world with their flytrap
+  mouths and hands.
+
+
+
+
+  When a large threat emerges, pairs of flytrap leshys band together to create amalgams
+  capable of driving back powerful foes. This unusual form of communal defense suffuses
+  flytrap leshy society, and they often form relationships between multiple individuals
+  that would confuse or even scandalize more uptight humanoids—to a flytrap leshy,
+  though, there''s nothing strange about sharing your innermost secrets with people
+  you literally merged together with to defend your home from an enemy.
+
+
+
+
+  **__Recall Knowledge - Plant__ (__Nature__)**: DC 19'
+hp: 72
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Common
+- Druidic
+- Sylvan
+- speak with plants (carnivorous plants only)
+level: 4
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d8+6
+    type: piercing
+  name: flytrap mouth
+  plus_damage:
+  - formula: 1d6
+    type: acid and flytrap toxin
+  to_hit: 13
+  traits:
+  - versatile S
+- action_cost: One Action
+  damage:
+    formula: 1d6+6
+    type: piercing
+  name: flytrap hand
+  plus_damage:
+  - formula: 1d6
+    type: acid and flytrap toxin
+  to_hit: 13
+  traits:
+  - agile
+  - versatile S
+name: Flytrap Leshy
+perception: 11
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: A flytrap leshy can combine itself with an adjacent and willing flytrap
+    leshy that is not currently affected by Amalgam. The leshy using Amalgam physically
+    merges with the target, restoring 3d8 Hit Points to the target. The leshy can
+    Sustain a Spell to continue Amalgam, but once they stop, the target leshy takes
+    3d8 damage. If the target leshy dies, Amalgam ends at once and the original leshy
+    gains the __dying__ condition or increases their dying condition value by 1 if
+    they were already dying. As long as Amalgam is sustained, the target leshy gains
+    a +1 status bonus to attack rolls and saving throws, its AC increases to 21, and
+    it gains an additional reaction at the start of each turn.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Amalgam
+  range: null
+  raw_description: '**Amalgam**   (__polymorph__, __primal__, __transmutation__) A
+    flytrap leshy can combine itself with an adjacent and willing flytrap leshy that
+    is not currently affected by Amalgam. The leshy using Amalgam physically merges
+    with the target, restoring 3d8 Hit Points to the target. The leshy can Sustain
+    a Spell to continue Amalgam, but once they stop, the target leshy takes 3d8 damage.
+    If the target leshy dies, Amalgam ends at once and the original leshy gains the
+    __dying__ condition or increases their dying condition value by 1 if they were
+    already dying. As long as Amalgam is sustained, the target leshy gains a +1 status
+    bonus to attack rolls and saving throws, its AC increases to 21, and it gains
+    an additional reaction at the start of each turn.'
+  requirements: null
+  success: null
+  traits:
+  - polymorph
+  - primal
+  - transmutation
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The flytrap leshy transforms into a Small flytrap. This ability otherwise
+    uses the effects of __tree shape__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Change Shape
+  range: null
+  raw_description: '**__Change Shape__**   (__concentrate__, __polymorph__, __primal__,
+    __transmutation__) The flytrap leshy transforms into a Small flytrap. This ability
+    otherwise uses the effects of __tree shape__.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - polymorph
+  - primal
+  - transmutation
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw** DC 19 Fortitude; **Maximum Duration** 6 rounds; **Stage
+    1** __sickened 1__ (1 round), **Stage 2** sickened 2 (1 round)'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Flytrap Toxin
+  range: null
+  raw_description: '**Flytrap Toxin** (__poison__) **Saving Throw** DC 19 Fortitude;
+    **Maximum Duration** 6 rounds; **Stage 1** __sickened 1__ (1 round), **Stage 2**
+    sickened 2 (1 round)'
+  requirements: null
+  success: null
+  traits:
+  - poison
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d6+6
+    type: acid
+  name: spittle
+  plus_damage:
+  - formula: null
+    type: flytrap toxin
+  to_hit: 11
+  traits:
+  - acid
+  - range increment 10 feet
+rarity: Common
+resistances:
+- amount: 5
+  type: acid
+ritual_lists: null
+saves:
+  fort: 9
+  fort_misc: null
+  misc: null
+  ref: 12
+  ref_misc: null
+  will: 13
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +11
+- darkvision
+size: Small
+skills:
+- bonus: 12
+  misc: null
+  name: 'Athletics '
+- bonus: 10
+  misc: null
+  name: 'Nature '
+- bonus: 12
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 161
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists:
+- dc: 21
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: speak with plants
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: null
+      name: pass without trace
+      requirement: null
+  to_hit: null
+traits:
+- N
+- Small
+- Leshy
+- Plant
+type: Creature
+weaknesses: null

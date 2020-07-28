@@ -1,0 +1,242 @@
+ability_mods:
+  cha_mod: -1
+  con_mod: 1
+  dex_mod: 3
+  int_mod: 2
+  str_mod: -1
+  wis_mod: 1
+ac: 17
+ac_special: null
+alignment: LE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 30 feet. When a creature ends its turn in the aura, it feels the sharp
+    barbs of the augur's blades on its skin. The creature must succeed at a DC 17
+    Will save or become __frightened 1__ (frightened 2 on a critical failure).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Feel the Blades
+  range: null
+  raw_description: '**Feel the Blades** (__aura__, __divine__, __enchantment__, __fear__,
+    __mental__, __visual__) 30 feet. When a creature ends its turn in the aura, it
+    feels the sharp barbs of the augur''s blades on its skin. The creature must succeed
+    at a DC 17 Will save or become __frightened 1__ (frightened 2 on a critical failure).'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - divine
+  - enchantment
+  - fear
+  - mental
+  - visual
+  trigger: null
+description: 'These spherical knots of sinewy muscle, serrated blades, and bloody
+  metal are the most common velstracs on the __Shadow Plane__. Each augur has only
+  a single eye, from which they can see the horrors inflicted by other velstracs,
+  who train the augur to expect and appreciate pain. Augurs are 1 foot in diameter
+  and weigh 30 pounds.
+
+
+
+
+  **__Recall Knowledge - Fiend__ (__Religion__)**: DC 15'
+hp: 14
+hp_misc: regeneration 2 (deactivated by good or silver
+immunities:
+- cold
+items: null
+languages:
+- Common
+- Infernal
+- Shadowtongue
+- (can't speak any language)
+level: 1
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d4-1
+    type: slashing
+  name: blade
+  plus_damage:
+  - formula: 1d4
+    type: persistent bleed
+  to_hit: 8
+  traits:
+  - agile
+  - evil
+  - finesse
+  - magical
+  - versatile P
+name: Augur
+perception: 8
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The augur stares at a creature they can see within 30 feet. The target
+    must immediately attempt a Will save against Feel the Blades. After attempting
+    this save, the creature is then temporarily immune until the start of the augur's
+    next turn.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Focus Gaze
+  range: null
+  raw_description: '**Focus Gaze**   (__concentrate__, __divine__, __enchantment__,
+    __fear__, __mental__, __visual__) The augur stares at a creature they can see
+    within 30 feet. The target must immediately attempt a Will save against Feel the
+    Blades. After attempting this save, the creature is then temporarily immune until
+    the start of the augur''s next turn.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - divine
+  - enchantment
+  - fear
+  - mental
+  - visual
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The augur Flies or Strides, whirling as they move. The augur deals
+    the damage of their blade Strike to each creature whose space they enter (DC 16
+    basic Reflex save). Each creature is affected only once, even if the augur moves
+    through its space multiple times.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Whirling Slice
+  range: null
+  raw_description: '**Whirling Slice** [Two Actions]  The augur Flies or Strides,
+    whirling as they move. The augur deals the damage of their blade Strike to each
+    creature whose space they enter (DC 16 basic Reflex save). Each creature is affected
+    only once, even if the augur moves through its space multiple times.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 5
+  type: good
+- amount: 5
+  type: silver
+ritual_lists: null
+saves:
+  fort: 4
+  fort_misc: null
+  misc: null
+  ref: 10
+  ref_misc: null
+  will: 7
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A velstrac automatically knows whether a creature it sees has any of
+    the __doomed__, __dying__, and __wounded__ conditions, as well as the value of
+    those conditions.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Painsight
+  range: null
+  raw_description: '**Painsight** (__divination__, __divine__) A velstrac automatically
+    knows whether a creature it sees has any of the __doomed__, __dying__, and __wounded__
+    conditions, as well as the value of those conditions.'
+  requirements: null
+  success: null
+  traits:
+  - divination
+  - divine
+  trigger: null
+senses:
+- Perception +8
+- greater darkvision
+- painsight
+size: Tiny
+skills:
+- bonus: 8
+  misc: null
+  name: 'Acrobatics '
+- bonus: 6
+  misc: null
+  name: 'Deception '
+- bonus: 7
+  misc: null
+  name: 'Intimidation '
+- bonus: 4
+  misc: null
+  name: 'Religion '
+- bonus: 8
+  misc: null
+  name: 'Stealth '
+- bonus: 7
+  misc: null
+  name: 'Torture Lore '
+source:
+- abbr: Bestiary 2
+  page_start: 280
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 40
+  type: fly
+spell_lists:
+- dc: 17
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: once per week
+      name: read omens
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: ×2
+      name: augury
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: ×3
+      name: harm
+      requirement: null
+  - heightened_level: 1
+    level: 0
+    spells:
+    - frequency: null
+      name: mage hand
+      requirement: null
+  to_hit: null
+traits:
+- LE
+- Tiny
+- Fiend
+- Velstrac
+type: Creature
+weaknesses: null

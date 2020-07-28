@@ -1,0 +1,374 @@
+ability_mods:
+  cha_mod: 4
+  con_mod: 4
+  dex_mod: 4
+  int_mod: 4
+  str_mod: 2
+  wis_mod: 2
+ac: 22
+ac_special: null
+alignment: CN
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 'An azuretzi''s vital organs shift and change shape and position constantly.
+    Immediately after the azuretzi takes acid, electricity, or sonic damage, it gains
+    the listed amount of resistance to that damage type. This lasts for 1 hour or
+    until the next time the protean takes damage of one of the other types (in which
+    case its resistance changes to match that type), whichever comes first.
+
+
+    The azuretzi is immune to __polymorph__ effects unless it is a willing target.
+    If __blinded__ or __deafened__, the azuretzi automatically recovers at the end
+    of its next turn as new sensory organs grow to replace the compromised ones..'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Protean Anatomy
+  range: null
+  raw_description: '**Protean Anatomy** (__divine__, __transmutation__) An azuretzi''s
+    vital organs shift and change shape and position constantly. Immediately after
+    the azuretzi takes acid, electricity, or sonic damage, it gains the listed amount
+    of resistance to that damage type. This lasts for 1 hour or until the next time
+    the protean takes damage of one of the other types (in which case its resistance
+    changes to match that type), whichever comes first.
+
+
+    The azuretzi is immune to __polymorph__ effects unless it is a willing target.
+    If __blinded__ or __deafened__, the azuretzi automatically recovers at the end
+    of its next turn as new sensory organs grow to replace the compromised ones..'
+  requirements: null
+  success: null
+  traits:
+  - divine
+  - transmutation
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The azuretzi attempts to __counteract__ one ongoing spell effect on the
+    target creature with a __Thievery__ check. If it is successful, it transfers the
+    ongoing spell effect to itself. The creature then becomes temporarily immune to
+    Spell Pilfer for 24 hours.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Spell Pilfer
+  range: null
+  raw_description: '**Spell Pilfer [Reaction]** **Trigger** A creature with an active
+    spell effect within 30 feet of the azuretzi fails to resist another azuretzi''s
+    Mocking Touch; **Effect** The azuretzi attempts to __counteract__ one ongoing
+    spell effect on the target creature with a __Thievery__ check. If it is successful,
+    it transfers the ongoing spell effect to itself. The creature then becomes temporarily
+    immune to Spell Pilfer for 24 hours.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature with an active spell effect within 30 feet of the azuretzi fails
+    to resist another azuretzi's Mocking Touch
+description: 'Azuretzis are sinuous, serpentine creatures with dagger-sharp teeth,
+  covered in brilliant blue scales with mottled purple and pink highlights that shimmer
+  in a pareidolic approximation of leering, laughing faces. The __Maelstrom''s__ chaotic
+  forces spawn these small proteans from a variety of sources: physical mating between
+  older azuretzis, the paradoxical promotion of bestial __naunets__, and possibly
+  from mortal __petitioners__, though azuretzis may just be confusing putative mortal
+  memories with experiences gained from games of mimicry. Never expect azuretzis to
+  operate by any rational, self-consistent rules.
+
+
+
+
+  Azuretzis represent the humor of chaos, particularly in the form of mockery and
+  parody via exaggerated mimicry, twisting a target''s features into a laughingstock.
+
+
+
+
+  **__Recall Knowledge - Monitor__ (__Religion__)**: DC 20'
+hp: 75
+hp_misc: fast healing 2
+immunities: null
+items: null
+languages:
+- Abyssal
+- Celestial
+- Protean
+level: 5
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d10+4
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 1d6
+    type: chaotic
+  to_hit: 15
+  traits:
+  - chaotic
+  - finesse
+  - magical
+- action_cost: One Action
+  damage:
+    formula: 2d8+4
+    type: slashing
+  name: claw
+  plus_damage:
+  - formula: 1d6
+    type: chaotic
+  to_hit: 15
+  traits:
+  - agile
+  - chaotic
+  - finesse
+  - magical
+- action_cost: One Action
+  damage:
+    formula: 2d12+4
+    type: bludgeoning
+  name: tail
+  plus_damage:
+  - formula: 1d6
+    type: chaotic and Grab
+  to_hit: 13
+  traits:
+  - chaotic
+  - magical
+  - reach 15 feet
+name: Azuretzi
+perception: 11
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: 1d12+4 bludgeoning, DC 22
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Constrict
+  range: null
+  raw_description: '**__Constrict__**   1d12+4 bludgeoning, DC 22'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: As __Change Shape__ but an azuretzi can assume the specific form of
+    a Medium or smaller creature it Seeks with a successful DC 25 Perception check.
+    It can return to its true form as a free action. It can retain access to only
+    one exact appearance at a time.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Mimic Form
+  range: null
+  raw_description: '**Mimic Form** [Two Actions]  (__concentrate__, __divine__, __polymorph__,
+    __transmutation__) As __Change Shape__ but an azuretzi can assume the specific
+    form of a Medium or smaller creature it Seeks with a successful DC 25 Perception
+    check. It can return to its true form as a free action. It can retain access to
+    only one exact appearance at a time.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - divine
+  - polymorph
+  - transmutation
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: Mocking Touch has no effect.
+  critical_success: The azuretzi chooses one spell of up to 3rd level that the target
+    creature has available to cast. The azuretzi gains that spell as a mock divine
+    innate spell, and it can cast that spell once as an innate divine spell using
+    its own DC and spell attack. It must do so before 24 hours pass or the mock spell
+    is lost. The creature touched cannot cast the mock spell until the azuretzi casts
+    it first or the 24 hour period passes, whichever comes first.
+  description: null
+  effect: The azuretzi is not currently using Mocking Touch on a spell
+  effects: null
+  failure: As critical success, but the azuretzi must cast the mock spell before the
+    end of its next turn or it is lost, and the creature touched can cast the spell
+    normally.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Mocking Touch
+  range: null
+  raw_description: "**Mocking Touch** [Two Actions]  (__abjuration__, __divine__)\
+    \ **Requirement** The azuretzi is not currently using Mocking Touch on a spell;\
+    \ **Effect** The azuretzi mocks a creature's magical ability with a touch. The\
+    \ azuretzi must attempt a __Thievery__ check against the target's Will DC. \n\n\
+    **Critical Success** The azuretzi chooses one spell of up to 3rd level that the\
+    \ target creature has available to cast. The azuretzi gains that spell as a mock\
+    \ divine innate spell, and it can cast that spell once as an innate divine spell\
+    \ using its own DC and spell attack. It must do so before 24 hours pass or the\
+    \ mock spell is lost. The creature touched cannot cast the mock spell until the\
+    \ azuretzi casts it first or the 24 hour period passes, whichever comes first.\
+    \ \n\n**Success** As critical success, but the azuretzi has 1 hour to cast the\
+    \ mock spell before it is lost, and the creature touched can cast the spell normally.\
+    \ \n\n**Failure** As critical success, but the azuretzi must cast the mock spell\
+    \ before the end of its next turn or it is lost, and the creature touched can\
+    \ cast the spell normally. \n\n**Critical Failure** Mocking Touch has no effect."
+  requirements: null
+  success: As critical success, but the azuretzi has 1 hour to cast the mock spell
+    before it is lost, and the creature touched can cast the spell normally.
+  traits:
+  - abjuration
+  - divine
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 5
+  type: precision
+- amount: 8
+  type: protean anatomy
+ritual_lists: null
+saves:
+  fort: 11
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 15
+  ref_misc: null
+  will: 11
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: An azuretzi can anticipate the most likely location of a creature through
+    their supernatural insight into the forces of chaotic probabilities and chance.
+    This grants the azuretzi the ability to sense creatures within the listed range.
+    A creature under the effects of __nondetection__ or that is otherwise shielded
+    from __divinations__ and __predictions__ cannot be noticed via entropy sense.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Entropy Sense
+  range: null
+  raw_description: '**Entropy Sense** (__divination__, __divine__, __prediction__)
+    An azuretzi can anticipate the most likely location of a creature through their
+    supernatural insight into the forces of chaotic probabilities and chance. This
+    grants the azuretzi the ability to sense creatures within the listed range. A
+    creature under the effects of __nondetection__ or that is otherwise shielded from
+    __divinations__ and __predictions__ cannot be noticed via entropy sense.'
+  requirements: null
+  success: null
+  traits:
+  - divination
+  - divine
+  - prediction
+  trigger: null
+senses:
+- Perception +11
+- darkvision
+- entropy sense (imprecise) 30 feet
+size: Small
+skills:
+- bonus: 11
+  misc: null
+  name: 'Acrobatics '
+- bonus: 11
+  misc: null
+  name: 'Arcana '
+- bonus: 9
+  misc: null
+  name: 'Athletics '
+- bonus: 13
+  misc: null
+  name: 'Deception '
+- bonus: 13
+  misc: null
+  name: 'Performance '
+- bonus: 13
+  misc: null
+  name: 'Stealth '
+- bonus: 11
+  misc: null
+  name: 'Survival '
+- bonus: 13
+  misc: null
+  name: 'Thievery '
+source:
+- abbr: Bestiary 2
+  page_start: 205
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 25
+  type: fly
+- amount: 25
+  type: swim
+- amount: 128
+  type: <a style="text-decoration:underline" href="Spells.aspx?ID="><i>freedom of
+    movement</i></a>
+spell_lists:
+- dc: 22
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: dimension door
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: null
+      name: crisis of faith
+      requirement: null
+    - frequency: null
+      name: dispel magic
+      requirement: null
+    - frequency: null
+      name: shatter
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: null
+      name: hideous laughter
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: at will, lawful only
+      name: detect alignment
+      requirement: null
+  - heightened_level: 4
+    level: -1
+    spells:
+    - frequency: null
+      name: freedom of movement
+      requirement: null
+  to_hit: null
+traits:
+- CN
+- Small
+- Monitor
+- Protean
+type: Creature
+weaknesses:
+- amount: 5
+  type: lawful

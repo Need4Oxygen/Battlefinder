@@ -1,0 +1,190 @@
+ability_mods:
+  cha_mod: -1
+  con_mod: 3
+  dex_mod: 2
+  int_mod: -3
+  str_mod: 4
+  wis_mod: 1
+ac: 18
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+description: 'Aapophs possess greater strength and stronger venom than their zyss
+  kin, but they lack zyss'' intelligence and innate magic. Unlike their selfish superiors,
+  aapophs are communal and group together to hunt, wrestle, and sleep curled together
+  in pits. Though they''re looked down upon and insulted by zyss, most aapophs lack
+  the higher brain functions to recognize when they''re being insulted, much less
+  plan or execute a rebellion. Aapophs often have unusual physical mutations—horns,
+  vestigial tails, or spines protruding from their scales—yet these variations have
+  little impact on their overall combat prowess— and combat prowess is the measure
+  by which zyss judge them.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 20'
+hp: 60
+hp_misc: null
+immunities: null
+items:
+- scimitar
+languages:
+- Aklo
+- Undercommon
+- telepathy 100 feet
+level: 3
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6+6
+    type: slashing
+  name: scimitar
+  plus_damage: null
+  to_hit: 11
+  traits:
+  - forceful
+  - sweep
+- action_cost: One Action
+  damage:
+    formula: 1d8+6
+    type: piercing
+  name: fangs
+  plus_damage:
+  - formula: null
+    type: serpentfolk venom
+  to_hit: 11
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 1d6+6
+    type: bludgeoning
+  name: tail
+  plus_damage:
+  - formula: null
+    type: Knockdown
+  to_hit: 11
+  traits:
+  - agile
+name: Aapoph Serpentfolk
+perception: 8
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw** DC 20 Fortitude; **Maximum Duration** 6 rounds; **Stage
+    1** 1d4 poison damage and __enfeebled 1__ (1 round); **Stage 2** 2d4 poison damage
+    and enfeebled 1 (1 round)'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Serpentfolk Venom
+  range: null
+  raw_description: '**Serpentfolk Venom** (__poison__) **Saving Throw** DC 20 Fortitude;
+    **Maximum Duration** 6 rounds; **Stage 1** 1d4 poison damage and __enfeebled 1__
+    (1 round); **Stage 2** 2d4 poison damage and enfeebled 1 (1 round)'
+  requirements: null
+  success: null
+  traits:
+  - poison
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The aapoph serpentfolk makes one scimitar or fangs Strike and one tail
+    Strike, each targeting a different creature. These attacks both count toward the
+    aapoph's multiple attack penalty, but the penalty doesn't increase until after
+    the aapoph makes both attacks.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Slithering Attack
+  range: null
+  raw_description: '**Slithering Attack**   The aapoph serpentfolk makes one scimitar
+    or fangs Strike and one tail Strike, each targeting a different creature. These
+    attacks both count toward the aapoph''s multiple attack penalty, but the penalty
+    doesn''t increase until after the aapoph makes both attacks.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances:
+- amount: 5
+  type: poison
+ritual_lists: null
+saves:
+  fort: 10
+  fort_misc: null
+  misc: null
+  ref: 7
+  ref_misc: null
+  will: 6
+  will_misc: +2 status vs. mental
+sense_abilities: null
+senses:
+- Perception +8
+- darkvision
+- scent (imprecise) 30 feet
+size: Medium
+skills:
+- bonus: 7
+  misc: null
+  name: 'Acrobatics '
+- bonus: 11
+  misc: null
+  name: 'Athletics '
+- bonus: 6
+  misc: null
+  name: 'Intimidation '
+source:
+- abbr: Bestiary 2
+  page_start: 238
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists: null
+traits:
+- Uncommon
+- CE
+- Medium
+- Humanoid
+- Mutant
+- Serpentfolk
+type: Creature
+weaknesses: null

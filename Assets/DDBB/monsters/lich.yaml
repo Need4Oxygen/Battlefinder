@@ -1,0 +1,331 @@
+ability_mods:
+  cha_mod: 3
+  con_mod: 0
+  dex_mod: 4
+  int_mod: 6
+  str_mod: 0
+  wis_mod: 4
+ac: 31
+ac_special: null
+alignment: NE
+automatic_abilities:
+- action_cost: None
+  critical_failure: The creature is frightened 4.
+  critical_success: The creature is unaffected by the presence.
+  description: 60 feet, DC 29
+  effect: null
+  effects: null
+  failure: The creature is frightened 2.
+  frequency: null
+  full_description: null
+  generic_description: A creature that first enters the area must attempt a Will save.
+    Regardless of the result of the saving throw, the creature is temporarily immune
+    to this monster's Frightful Presence for 1 minute.
+  name: Frightful Presence
+  range: null
+  raw_description: '**Frightful Presence** 60 feet, DC 29 A creature that first enters
+    the area must attempt a Will save. Regardless of the result of the saving throw,
+    the creature is temporarily immune to this monster''s Frightful Presence for 1
+    minute.
+
+    Critical Success The creature is unaffected by the presence.
+
+    Success The creature is frightened 1.
+
+    Failure The creature is frightened 2.
+
+    Critical Success The creature is frightened 4.'
+  requirements: null
+  success: The creature is frightened 1.
+  traits:
+  - aura
+  - emotion
+  - fear
+  - mental
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The lich expends a prepared spell to counter the triggering creature's casting
+    of that same spell. The lich loses its spell slot as if it had cast the triggering
+    spell. The lich then attempts to counteract the triggering spell.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Counterspell
+  range: null
+  raw_description: '**Counterspell** [Reaction] **Trigger** A creature casts a spell
+    the lich has prepared. **Effect** The lich expends a prepared spell to counter
+    the triggering creature''s casting of that same spell. The lich loses its spell
+    slot as if it had cast the triggering spell. The lich then attempts to counteract
+    the triggering spell.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature casts a spell the lich has prepared.
+description: 'A wizard whose insatiable desire for arcane power eclipsed their mortal
+  life, the lich is a truly devious and versatile spellcaster.
+
+
+
+
+  **__Recall Knowledge - Undead__ (__Religion__)**: DC 35'
+hp: 190
+hp_misc: negative healing, rejuvenation
+immunities:
+- death effects
+- disease
+- paralyzed
+- poison
+- unconscious
+items:
+- potion of invisibility
+- scroll of teleport
+- staff of fire (greater)
+languages:
+- Abyssal
+- Aklo
+- Common
+- Draconic
+- Elven
+- Infernal
+- Necril
+- Undercommon
+level: 12
+melee:
+- action_cost: One Action
+  damage:
+    formula: 4d8
+    type: negative
+  name: hand
+  plus_damage:
+  - formula: null
+    type: paralyzing touch
+  to_hit: 24
+  traits:
+  - finesse
+  - magical
+name: Lich
+perception: 20
+proactive_abilities:
+- action_cost: Free Action
+  critical_failure: null
+  critical_success: null
+  description: 6th level
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Drain Phylactery
+  range: null
+  raw_description: '**Drain Phylactery** [Free Action]  6th level'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: DC 32
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Paralyzing Touch
+  range: null
+  raw_description: '**Paralyzing Touch** (__arcane__, __curse__, __incapacitation__,
+    __necromancy__) DC 32'
+  requirements: null
+  success: null
+  traits:
+  - arcane
+  - curse
+  - incapacitation
+  - necromancy
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: If a reaction would disrupt the lich's spellcasting action, the lich
+    attempts a DC 15 flat check. On a success, the action isn't disrupted.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Steady Spellcasting
+  range: null
+  raw_description: '**Steady Spellcasting** If a reaction would disrupt the lich''s
+    spellcasting action, the lich attempts a DC 15 flat check. On a success, the action
+    isn''t disrupted.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Rare
+resistances:
+- amount: 10
+  type: cold
+- amount: 10
+  type: physical (except magic bludgeoning)
+ritual_lists: null
+saves:
+  fort: 17
+  fort_misc: null
+  misc: +1 status to all saves vs. positive
+  ref: 21
+  ref_misc: null
+  will: 23
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +20
+- darkvision
+size: Medium
+skills:
+- bonus: 28
+  misc: null
+  name: 'Arcana '
+- bonus: 24
+  misc: can craft magic items
+  name: 'Crafting '
+- bonus: 17
+  misc: null
+  name: 'Deception '
+- bonus: 19
+  misc: null
+  name: 'Diplomacy '
+- bonus: 22
+  misc: null
+  name: 'Religion '
+- bonus: 20
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 221
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists:
+- dc: 36
+  misc: ''
+  name: Arcane Prepared Spells
+  spell_groups:
+  - heightened_level: null
+    level: 6
+    spells:
+    - frequency: null
+      name: chain lightning
+      requirement: null
+    - frequency: null
+      name: dominate
+      requirement: null
+    - frequency: null
+      name: vampiric exsanguination
+      requirement: null
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: null
+      name: cloudkill
+      requirement: null
+    - frequency: x2
+      name: cone of cold
+      requirement: null
+    - frequency: null
+      name: wall of ice
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: null
+      name: dimension door
+      requirement: null
+    - frequency: null
+      name: dispel magic
+      requirement: null
+    - frequency: null
+      name: fire shield
+      requirement: null
+    - frequency: null
+      name: fly
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: null
+      name: blindness
+      requirement: null
+    - frequency: null
+      name: locate
+      requirement: null
+    - frequency: null
+      name: magic missile
+      requirement: null
+    - frequency: null
+      name: vampiric touch
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: null
+      name: false life
+      requirement: null
+    - frequency: null
+      name: mirror image
+      requirement: null
+    - frequency: null
+      name: resist energy
+      requirement: null
+    - frequency: null
+      name: see invisibility
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: fleet step
+      requirement: null
+    - frequency: x2
+      name: ray of enfeeblement
+      requirement: null
+    - frequency: null
+      name: true strike
+      requirement: null
+  - heightened_level: 6
+    level: 0
+    spells:
+    - frequency: null
+      name: detect magic
+      requirement: null
+    - frequency: null
+      name: mage hand
+      requirement: null
+    - frequency: null
+      name: message
+      requirement: null
+    - frequency: null
+      name: ray of frost
+      requirement: null
+    - frequency: null
+      name: shield
+      requirement: null
+  to_hit: 26
+traits:
+- Rare
+- NE
+- Medium
+- Undead
+type: Creature
+weaknesses: null

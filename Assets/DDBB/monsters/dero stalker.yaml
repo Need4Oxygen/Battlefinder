@@ -1,0 +1,183 @@
+ability_mods:
+  cha_mod: 1
+  con_mod: 3
+  dex_mod: 4
+  int_mod: 0
+  str_mod: 2
+  wis_mod: -1
+ac: 19
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A dero stalker takes 4 damage for every hour they're exposed to sunlight.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Vulnerable to Sunlight
+  range: null
+  raw_description: '**Vulnerable to Sunlight** A dero stalker takes 4 damage for every
+    hour they''re exposed to sunlight.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: A creature targets the dero with an attack and the dero can see the attacker.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Nimble Dodge
+  range: null
+  raw_description: '**Nimble Dodge** [Reaction] **Requirements** The dero stalker
+    is not encumbered. **Trigger** A creature targets the dero with an attack and
+    the dero can see the attacker. **Effect** The dero dodges out of the way, gaining
+    a +2 circumstance bonus to AC against the triggering attack.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: The dero stalker is not encumbered.
+description: 'Dero stalkers are those charged with exploring the surface world by
+  night and seeking out new victims to abduct.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 16'
+hp: 30
+hp_misc: null
+immunities: null
+items:
+- aklys
+- giant centipede venom (4 doses)
+- hand crossbow (20 bolts)
+languages:
+- Aklo
+- Undercommon
+level: 2
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6+2
+    type: bludgeoning
+  name: aklys
+  plus_damage: null
+  to_hit: 8
+  traits:
+  - trip
+name: Dero Stalker
+perception: 5
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A dero stalker deals 1d6 extra precision damage to __flat-footed__
+    creatures.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sneak Attack
+  range: null
+  raw_description: '**__Sneak Attack__** A dero stalker deals 1d6 extra precision
+    damage to __flat-footed__ creatures.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d6+2
+    type: bludgeoning
+  name: aklys
+  plus_damage: null
+  to_hit: 10
+  traits:
+  - ranged trip
+  - tethered
+  - thrown 20 feet
+- action_cost: One Action
+  damage:
+    formula: 1d6
+    type: piercing
+  name: hand crossbow
+  plus_damage:
+  - formula: null
+    type: giant centipede venom
+  to_hit: 10
+  traits:
+  - range increment 60 feet
+  - reload 1
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 7
+  fort_misc: null
+  misc: null
+  ref: 10
+  ref_misc: null
+  will: 3
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +5
+- darkvision
+size: Small
+skills:
+- bonus: 8
+  misc: null
+  name: 'Acrobatics '
+- bonus: 3
+  misc: null
+  name: 'Medicine '
+- bonus: 8
+  misc: null
+  name: 'Stealth '
+- bonus: 8
+  misc: null
+  name: 'Thievery '
+source:
+- abbr: Bestiary
+  page_start: 84
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+spell_lists:
+- dc: 17
+  misc: null
+  name: Occult Innate Spells
+  spell_groups:
+  - heightened_level: 1
+    level: 0
+    spells:
+    - frequency: null
+      name: daze
+      requirement: null
+    - frequency: null
+      name: ghost sound
+      requirement: null
+  to_hit: null
+traits:
+- CE
+- Small
+- Dero
+- Humanoid
+type: Creature
+weaknesses:
+- amount: null
+  type: vulnerable to sunlight

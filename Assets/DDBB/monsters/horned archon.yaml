@@ -1,0 +1,260 @@
+ability_mods:
+  cha_mod: 1
+  con_mod: 3
+  dex_mod: 4
+  int_mod: 1
+  str_mod: 3
+  wis_mod: 3
+ac: 22
+ac_special: null
+alignment: LG
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 30 feet. Enemies that start their turn in the area or enter it must
+    attempt a DC 19 Will save. On a failure, they take a -1 status penalty to attack
+    rolls, spell rolls, and damage rolls against any other target while in the aura
+    for 24 hours or until they damage the archon, whichever comes first. On a critical
+    failure, they can't use hostile actions against any other target while in the
+    area for 24 hours or until they damage the archon, whichever comes first. Regardless
+    of the result, a creature is then temporarily immune to further menacing guardian
+    auras for 24 hours.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Menacing Guardian
+  range: null
+  raw_description: '**Menacing Guardian** (__aura__, __divine__, __enchantment__)
+    30 feet. Enemies that start their turn in the area or enter it must attempt a
+    DC 19 Will save. On a failure, they take a -1 status penalty to attack rolls,
+    spell rolls, and damage rolls against any other target while in the aura for 24
+    hours or until they damage the archon, whichever comes first. On a critical failure,
+    they can''t use hostile actions against any other target while in the area for
+    24 hours or until they damage the archon, whichever comes first. Regardless of
+    the result, a creature is then temporarily immune to further menacing guardian
+    auras for 24 hours.'
+  requirements: null
+  success: null
+  traits:
+  - aura
+  - divine
+  - enchantment
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: A horned archon can also make a Retributive Strike with its composite
+    longbow.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Retributive Strike
+  range: null
+  raw_description: '**Retributive Strike** [Reaction] A horned archon can also make
+    a Retributive Strike with its composite longbow.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Horned archons are secretive and tireless sentinels and scouts, patrolling
+  the Outer Sphere''s untamed wilds for evil to eliminate and keeping small communities
+  safe from demons, devils, and worse. They resemble muscular humans with the head,
+  horns, and legs of a stag. When requested to do so by their patrons, especially
+  Erastil, they journey to the Material Plane and patrol dangerous frontier areas,
+  secretly performing acts of kindness such as leading hunters to food, helping lost
+  children, and driving off evil creatures. Because they roam the wilds of Nirvana
+  and Elysium, horned archons are among the best at understanding the perspectives
+  of other celestials.
+
+
+
+
+  **__Recall Knowledge - Celestial__ (__Religion__)**: DC 19'
+hp: 65
+hp_misc: null
+immunities: null
+items:
+- composite longbow (20 arrows)
+languages:
+- Celestial
+- Draconic
+- Infernal
+- tongues
+level: 4
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d8+3
+    type: piercing
+  name: horn
+  plus_damage:
+  - formula: 1d6
+    type: good and Push
+  to_hit: 11
+  traits:
+  - magical
+name: Horned Archon
+perception: 11
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Once per day, if an archon sees another creature cast __dimension door__,
+    it can cast an innate __dimension door__ (heightened to 5th level) within 1 round
+    to attempt to follow that creature to the maximum distance of the archon's __dimension
+    door__. If the archon's __dimension door__ has enough distance, the archon appears
+    the same distance and direction from the creature as before either used __dimension
+    door__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Archon's Door
+  range: null
+  raw_description: '**Archon''s Door** Once per day, if an archon sees another creature
+    cast __dimension door__, it can cast an innate __dimension door__ (heightened
+    to 5th level) within 1 round to attempt to follow that creature to the maximum
+    distance of the archon''s __dimension door__. If the archon''s __dimension door__
+    has enough distance, the archon appears the same distance and direction from the
+    creature as before either used __dimension door__.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: A horned archon can touch another creature to take on that creature's
+    wounds, transferring up to 30 of the horned archon's HP to the touched creature.
+    The horned archon can't transfer more HP than it currently has.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Touch of Charity
+  range: null
+  raw_description: '**Touch of Charity**   (__healing__, __manipulate__, __necromancy__)
+    A horned archon can touch another creature to take on that creature''s wounds,
+    transferring up to 30 of the horned archon''s HP to the touched creature. The
+    horned archon can''t transfer more HP than it currently has.'
+  requirements: null
+  success: null
+  traits:
+  - healing
+  - manipulate
+  - necromancy
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d8+4
+    type: piercing
+  name: composite longbow
+  plus_damage:
+  - formula: 1d6
+    type: good
+  to_hit: 14
+  traits:
+  - deadly 1d10
+  - magical
+  - range increment 100 feet
+  - reload 0
+  - volley
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 11
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 10
+  ref_misc: null
+  will: 11
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +11
+- darkvision
+size: Medium
+skills:
+- bonus: 12
+  misc: null
+  name: 'Acrobatics '
+- bonus: 11
+  misc: null
+  name: 'Nature '
+- bonus: 9
+  misc: null
+  name: 'Religion '
+- bonus: 10
+  misc: null
+  name: 'Stealth '
+- bonus: 11
+  misc: +15 to Track
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 27
+  page_stop: null
+speed:
+- amount: 35
+  type: Land
+spell_lists:
+- dc: 21
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: x3
+      name: dimension door
+      requirement: null
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: x3
+      name: animal messenger
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: animals only, x3
+      name: charm
+      requirement: null
+    - frequency: x3
+      name: true strike
+      requirement: null
+  - heightened_level: 2
+    level: 0
+    spells:
+    - frequency: null
+      name: dancing lights
+      requirement: null
+  - heightened_level: 5
+    level: -1
+    spells:
+    - frequency: null
+      name: tongues
+      requirement: null
+  to_hit: null
+traits:
+- LG
+- Medium
+- Archon
+- Celestial
+type: Creature
+weaknesses:
+- amount: 5
+  type: evil

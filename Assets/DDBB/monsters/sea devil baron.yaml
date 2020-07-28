@@ -1,0 +1,215 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 4
+  dex_mod: 2
+  int_mod: 0
+  str_mod: 5
+  wis_mod: 3
+ac: 24
+ac_special: null
+alignment: LE
+automatic_abilities: null
+description: 'Unlike in many cultures, the highest-ranking sea devils are expected
+  not just to wade into battle alongside their brethren, but to actively lead the
+  campaign.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 22'
+hp: 95
+hp_misc: null
+immunities: null
+items:
+- longspear
+- spear (2)
+languages:
+- Aquan
+- shark commune 150 feet
+level: 6
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d8+11
+    type: piercing
+  name: longspear
+  plus_damage: null
+  to_hit: 17
+  traits:
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 1d6+8
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 17
+  traits:
+  - agile
+- action_cost: One Action
+  damage:
+    formula: 1d6+8
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 17
+  traits: null
+name: Sea Devil Baron
+perception: 13
+proactive_abilities:
+- action_cost: Free Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The sea devil deals bleed damage to a living creature.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Blood Frenzy
+  range: null
+  raw_description: '**Blood Frenzy** [Free Action]  (__rage__) **Requirements** The
+    sea devil is not __fatigued__ or already in a frenzy. **Trigger** The sea devil
+    deals bleed damage to a living creature. **Effect** The sea devil flies into a
+    frenzy that lasts 1 minute. While frenzied, the sea devil gains a +1 status bonus
+    to attack rolls with its claws and jaws, gains a +4 status bonus to damage rolls
+    with its claws and jaws, gains 15 temporary HP until the end of the frenzy, and
+    takes a -2 status penalty to AC. The sea devil can''t voluntarily stop its frenzy.
+    After its frenzy, the sea devil is __fatigued__.'
+  requirements: null
+  success: null
+  traits:
+  - rage
+  trigger: The sea devil is not __fatigued__ or already in a frenzy.
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When the sea devil deals piercing or slashing damage, it also deals
+    1d4 persistent bleed damage if the target was __flat-footed__ or if the attack
+    was a critical hit.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Bloodletting
+  range: null
+  raw_description: '**Bloodletting** When the sea devil deals piercing or slashing
+    damage, it also deals 1d4 persistent bleed damage if the target was __flat-footed__
+    or if the attack was a critical hit.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The sea devil baron is in a blood frenzy.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Hateful Tide
+  range: null
+  raw_description: '**Hateful Tide** [Two Actions]  (__rage__) **Requirement** The
+    sea devil baron is in a blood frenzy. **Effect** The sea devil baron unleashes
+    a whirlwind of attacks against its foes, making a single melee Strike with its
+    claws or jaws against each opponent within reach.'
+  requirements: null
+  success: null
+  traits:
+  - rage
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d8+11
+    type: piercing
+  name: spear
+  plus_damage: null
+  to_hit: 17
+  traits:
+  - thrown 20 feet
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 16
+  fort_misc: null
+  misc: null
+  ref: 14
+  ref_misc: null
+  will: 13
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: 'The sea devil can communicate telepathically with sharks within range.
+    It can communicate only simple concepts like "come," "guard," or "attack."
+
+
+    '
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Shark Commune
+  range: null
+  raw_description: '**Shark Commune** (__mental__, __telepathy__) The sea devil can
+    communicate telepathically with sharks within range. It can communicate only simple
+    concepts like "come," "guard," or "attack."
+
+
+    '
+  requirements: null
+  success: null
+  traits:
+  - mental
+  - telepathy
+  trigger: null
+senses:
+- Perception +13
+- darkvision
+- wavesense 30 feet
+size: Medium
+skills:
+- bonus: 15
+  misc: +18 to Swim
+  name: 'Athletics '
+- bonus: 12
+  misc: null
+  name: 'Intimidation '
+- bonus: 12
+  misc: null
+  name: 'Stealth '
+- bonus: 11
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 287
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 35
+  type: swim
+spell_lists: null
+traits:
+- LE
+- Medium
+- Amphibious
+- Humanoid
+- Mutant
+- Sea Devil
+type: Creature
+weaknesses: null

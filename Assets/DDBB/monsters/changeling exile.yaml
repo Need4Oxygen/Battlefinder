@@ -1,0 +1,155 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 0
+  dex_mod: 1
+  int_mod: 0
+  str_mod: 4
+  wis_mod: 4
+ac: 19
+ac_special: null
+alignment: CN
+automatic_abilities: null
+description: 'This changeling exile is the child of a night hag or dreamthief hag.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 18'
+hp: 45
+hp_misc: null
+immunities: null
+items:
+- leather armor
+- staff
+languages:
+- Common
+- Druidic
+level: 3
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d4+4
+    type: slashing
+  name: claws
+  plus_damage: null
+  to_hit: 11
+  traits:
+  - agile
+- action_cost: One Action
+  damage:
+    formula: 1d4+4
+    type: bludgeoning
+  name: staff
+  plus_damage: null
+  to_hit: 11
+  traits:
+  - two-hand d8
+name: Changeling Exile
+perception: 11
+proactive_abilities: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 7
+  fort_misc: null
+  misc: +2 circumstance to all saves vs. dream and sleep
+  ref: 8
+  ref_misc: null
+  will: 11
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +11
+- darkvision
+size: Medium
+skills:
+- bonus: 9
+  misc: null
+  name: 'Deception '
+- bonus: 9
+  misc: null
+  name: 'Medicine '
+- bonus: 11
+  misc: null
+  name: 'Nature '
+- bonus: 8
+  misc: null
+  name: 'Stealth '
+- bonus: 9
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 62
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists:
+- dc: 21
+  misc: ''
+  name: Primal Prepared Spells
+  spell_groups:
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: null
+      name: darkness
+      requirement: null
+    - frequency: null
+      name: humanoid form
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: burning hands
+      requirement: null
+    - frequency: null
+      name: shillelagh
+      requirement: null
+    - frequency: null
+      name: ventriloquism
+      requirement: null
+  - heightened_level: 2
+    level: 0
+    spells:
+    - frequency: null
+      name: dancing lights
+      requirement: null
+    - frequency: null
+      name: produce flame
+      requirement: null
+    - frequency: null
+      name: read aura
+      requirement: null
+    - frequency: null
+      name: tanglefoot
+      requirement: null
+  to_hit: 11
+- dc: 21
+  misc: null
+  name: Druid Order Spells
+  spell_groups:
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: null
+      name: wild morph
+      requirement: null
+    - frequency: 1 Focus Point
+      name: wild shape
+      requirement: null
+  to_hit: null
+traits:
+- CN
+- Medium
+- Changeling
+- Human
+- Humanoid
+type: Creature
+weaknesses: null

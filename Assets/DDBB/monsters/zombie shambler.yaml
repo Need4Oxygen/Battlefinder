@@ -1,0 +1,122 @@
+ability_mods:
+  cha_mod: -2
+  con_mod: 2
+  dex_mod: -2
+  int_mod: -5
+  str_mod: 3
+  wis_mod: 0
+ac: 12
+ac_special: null
+alignment: NE
+automatic_abilities: null
+description: 'A zombie shambler is a slow-moving horror dangerous in larger groups.
+
+
+
+
+  **__Recall Knowledge - Undead__ (__Religion__)**: DC 13'
+hp: 20
+hp_misc: negative healing
+immunities:
+- death effects
+- disease
+- mental
+- paralyzed
+- poison
+- unconscious
+items: null
+languages: null
+level: -1
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6+3
+    type: bludgeoning
+  name: fist
+  plus_damage:
+  - formula: null
+    type: Grab
+  to_hit: 7
+  traits: null
+name: Zombie Shambler
+perception: 0
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The zombie has a creature grabbed or restrained.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Jaws
+  range: null
+  raw_description: '**Jaws**   (__attack__) **Requirement** The zombie has a creature
+    grabbed or restrained. **Effect** The zombie makes a jaws unarmed melee Strike
+    against the grabbed or restrained creature with an attack modifier of +7 that
+    deals 1d8+3 piercing damage.'
+  requirements: null
+  success: null
+  traits:
+  - attack
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 5
+  type: positive
+- amount: 5
+  type: slashing
+ritual_lists: null
+saves:
+  fort: 6
+  fort_misc: null
+  misc: null
+  ref: 0
+  ref_misc: null
+  will: 2
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A zombie is permanently slowed 1 and can't use reactions.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Slow
+  range: null
+  raw_description: '**Slow** A zombie is permanently slowed 1 and can''t use reactions.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +0
+- darkvision
+size: Medium
+skills:
+- bonus: 5
+  misc: null
+  name: 'Athletics '
+source:
+- abbr: Bestiary
+  page_start: 340
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists: null
+traits:
+- NE
+- Medium
+- Mindless
+- Undead
+- Zombie
+type: Creature
+weaknesses: null

@@ -1,0 +1,303 @@
+ability_mods:
+  cha_mod: -1
+  con_mod: 3
+  dex_mod: 3
+  int_mod: 0
+  str_mod: 4
+  wis_mod: 3
+ac: 21
+ac_special: null
+alignment: NE
+automatic_abilities:
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+description: 'These ferocious werecreatures stalk prey with the cunning and skill
+  of a true apex predator. Weretigers typically view all life as a potential meal.
+  Powerful nocturnal hunters with excellent senses that help them ambush prey, weretigers
+  are adaptable to an extreme range of environments. However, weretigers living in
+  densely populated cities (potentially as courtesans, assassins, or guild leaders)
+  often struggle to suppress their killer instincts, becoming overwhelmed by the urge
+  to hunt. They prefer to wear loose-fitting clothing and rely on their claws and
+  jaws in a fight.
+
+
+
+
+  **__Recall Knowledge - Beast__ (__Arcana__, __Nature__)**: DC 19
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 19'
+hp: 75
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Common
+- tiger empathy
+level: 4
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+7
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: null
+    type: curse of the weretiger and Grab
+  to_hit: 14
+  traits: null
+- action_cost: One Action
+  damage:
+    formula: 2d4+7
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 14
+  traits:
+  - agile
+name: Weretiger
+perception: 11
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: 'The werecreature changes into their humanoid, hybrid, or animal shape.
+    Each shape has a specific, persistent appearance. A true werecreature''s natural
+    form is their hybrid shape. In humanoid shape, the werecreature uses their original
+    humanoid size, loses their jaws and claw Strikes, and gains a melee fist Strike
+    that deals bludgeoning damage equal to the slashing damage dealt by their claw.
+    In animal shape, their Speed and size change to that of the animal, they gain
+    any special Strike effects of the animal that they didn''t already have (such
+    as __Grab__), and they lose their weapon Strikes.
+
+
+    Human with fist +14 for 1d4+7 bludgeoning, or __tiger__ with Speed 30 feet and
+    Wrestle.'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Change Shape
+  range: null
+  raw_description: '**Change Shape**   (__concentrate__, __polymorph__, __primal__,
+    __transmutation__) The werecreature changes into their humanoid, hybrid, or animal
+    shape. Each shape has a specific, persistent appearance. A true werecreature''s
+    natural form is their hybrid shape. In humanoid shape, the werecreature uses their
+    original humanoid size, loses their jaws and claw Strikes, and gains a melee fist
+    Strike that deals bludgeoning damage equal to the slashing damage dealt by their
+    claw. In animal shape, their Speed and size change to that of the animal, they
+    gain any special Strike effects of the animal that they didn''t already have (such
+    as __Grab__), and they lose their weapon Strikes.
+
+
+    Human with fist +14 for 1d4+7 bludgeoning, or __tiger__ with Speed 30 feet and
+    Wrestle.'
+  requirements: null
+  success: null
+  traits:
+  - concentrate
+  - polymorph
+  - primal
+  - transmutation
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: This curse affects only __humanoids__; **Saving Throw** DC 21 Fortitude.
+    On each full moon, the cursed creature must succeed at another Fortitude save
+    or turn into the same kind of werecreature until dawn. The creature is under the
+    GM's control and goes on a rampage for half the night before falling unconscious
+    until dawn.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Curse of the Weretiger
+  range: null
+  raw_description: '**Curse of the Weretiger** (__curse__, __necromancy__, __primal__)
+    This curse affects only __humanoids__; **Saving Throw** DC 21 Fortitude. On each
+    full moon, the cursed creature must succeed at another Fortitude save or turn
+    into the same kind of werecreature until dawn. The creature is under the GM''s
+    control and goes on a rampage for half the night before falling unconscious until
+    dawn.'
+  requirements: null
+  success: null
+  traits:
+  - curse
+  - necromancy
+  - primal
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When a full moon appears in the night sky, the werecreature must enter
+    hybrid form, can't Change Shape thereafter, becomes one size larger, increases
+    their reach by 5 feet, and increases the damage of their jaws Strike by 2. When
+    the moon sets or the sun rises, the werecreature returns to humanoid form and
+    is __fatigued__ for 2d4 hours.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Moon Frenzy
+  range: null
+  raw_description: '**Moon Frenzy** (__polymorph__, __primal__, __transmutation__)
+    When a full moon appears in the night sky, the werecreature must enter hybrid
+    form, can''t Change Shape thereafter, becomes one size larger, increases their
+    reach by 5 feet, and increases the damage of their jaws Strike by 2. When the
+    moon sets or the sun rises, the werecreature returns to humanoid form and is __fatigued__
+    for 2d4 hours.'
+  requirements: null
+  success: null
+  traits:
+  - polymorph
+  - primal
+  - transmutation
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The weretiger Strides and makes a Strike at the end of that movement.
+    If the weretiger began this action __hidden__, they remain hidden until after
+    this ability's Strike.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Pounce
+  range: null
+  raw_description: '**Pounce**   The weretiger Strides and makes a Strike at the end
+    of that movement. If the weretiger began this action __hidden__, they remain hidden
+    until after this ability''s Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: claw
+  effect: The monster automatically deals that Strike's damage again to the enemy.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Rend
+  range: null
+  raw_description: A Rend entry lists a Strike the monster has. **Requirements** The
+    monster hit the same enemy with two consecutive Strikes of the listed type in
+    the same round. **Effect** The monster automatically deals that Strike's damage
+    again to the enemy.
+  requirements: The monster hit the same enemy with two consecutive Strikes of the
+    listed type in the same round.
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 11
+  fort_misc: null
+  misc: null
+  ref: 13
+  ref_misc: null
+  will: 9
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The weretiger can communicate with felines.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Tiger Empathy
+  range: null
+  raw_description: '**Tiger Empathy** (__divination__, __primal__) The weretiger can
+    communicate with felines.'
+  requirements: null
+  success: null
+  traits:
+  - divination
+  - primal
+  trigger: null
+senses:
+- Perception +11
+- low-light vision
+- scent (imprecise) 30 feet
+size: Medium
+skills:
+- bonus: 11
+  misc: null
+  name: 'Acrobatics '
+- bonus: 12
+  misc: null
+  name: 'Athletics '
+- bonus: 7
+  misc: null
+  name: 'Deception '
+- bonus: 10
+  misc: null
+  name: 'Society '
+- bonus: 11
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 291
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists: null
+traits:
+- NE
+- Medium
+- Beast
+- Human
+- Humanoid
+- Werecreature
+type: Creature
+weaknesses:
+- amount: 5
+  type: silver

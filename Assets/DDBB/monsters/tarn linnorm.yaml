@@ -1,0 +1,314 @@
+ability_mods:
+  cha_mod: 8
+  con_mod: 8
+  dex_mod: 6
+  int_mod: -1
+  str_mod: 10
+  wis_mod: 7
+ac: 46
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When a creature slays a tarn linnorm, it must succeed at a DC 46 Will
+    save or it can no longer recover Hit Points via any means, such as healing spells,
+    the Medicine skill, or natural healing from rest.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Curse of Death
+  range: null
+  raw_description: '**Curse of Death** (__curse__, __death__, __primal__) When a creature
+    slays a tarn linnorm, it must succeed at a DC 46 Will save or it can no longer
+    recover Hit Points via any means, such as healing spells, the Medicine skill,
+    or natural healing from rest.'
+  requirements: null
+  success: null
+  traits:
+  - curse
+  - death
+  - primal
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: Tail only.
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+description: 'Although more powerful linnorms exist, the multi-headed tarn linnorm
+  can wreak an awe-inspiring amount of devastation.
+
+
+
+
+  **__Recall Knowledge - Dragon__ (__Arcana__)**: DC 42'
+hp: 400
+hp_misc: regeneration 15 (deactivated by cold iron)
+immunities:
+- acid
+- curse
+- paralyzed
+- sleep
+items: null
+languages:
+- Aklo
+- Draconic
+- Sylvan
+level: 20
+melee:
+- action_cost: One Action
+  damage:
+    formula: 4d12+18
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: null
+    type: tarn linnorm venom
+  to_hit: 38
+  traits:
+  - reach 30 feet
+  - magical
+- action_cost: One Action
+  damage:
+    formula: 4d8+18
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 38
+  traits:
+  - reach 30 feet
+  - agile
+  - magical
+- action_cost: One Action
+  damage:
+    formula: 4d6+18
+    type: bludgeoning
+  name: tail
+  plus_damage:
+  - formula: null
+    type: Improved Grab
+  to_hit: 38
+  traits:
+  - reach 30 feet
+  - agile
+  - magical
+name: Tarn Linnorm
+perception: 35
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The tarn linnorm can expel either a 120-foot line or a 60-foot cone
+    of acid dealing 20d6 acid damage to creatures within the area (DC 44 basic Reflex
+    save). The acid creates toxic fumes. At the beginning of the linnorm's next turn,
+    those who failed the breath weapon's Reflex save must succeed at a DC 42 Fortitude
+    save or gain __sickened 4__ from the poisonous fumes. A tarn linnorm can't use
+    Breath Weapon or Overwhelming Breath again for 1d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Breath Weapon
+  range: null
+  raw_description: '**Breath Weapon** [Two Actions]  (__acid__, __evocation__, __poison__,
+    __primal__) The tarn linnorm can expel either a 120-foot line or a 60-foot cone
+    of acid dealing 20d6 acid damage to creatures within the area (DC 44 basic Reflex
+    save). The acid creates toxic fumes. At the beginning of the linnorm''s next turn,
+    those who failed the breath weapon''s Reflex save must succeed at a DC 42 Fortitude
+    save or gain __sickened 4__ from the poisonous fumes. A tarn linnorm can''t use
+    Breath Weapon or Overwhelming Breath again for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - acid
+  - evocation
+  - poison
+  - primal
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: 3d6+18 bludgeoning, DC 44
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Constrict
+  range: null
+  raw_description: '**__Constrict__**   3d6+18 bludgeoning, DC 44'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: The tarn linnorm Strides and then makes a jaws Strike with each of
+    its heads, each against a different target. These attacks count toward the tarn
+    linnorm's multiple attack penalty, and the multiple attack penalty doesn't increase
+    until after the tarn linnorm makes all of these attacks.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Double Bite
+  range: null
+  raw_description: '**Double Bite**   The tarn linnorm Strides and then makes a jaws
+    Strike with each of its heads, each against a different target. These attacks
+    count toward the tarn linnorm''s multiple attack penalty, and the multiple attack
+    penalty doesn''t increase until after the tarn linnorm makes all of these attacks.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Three Actions
+  critical_failure: null
+  critical_success: null
+  description: A tarn linnorm uses its Breath Weapon twice. A creature attempts only
+    one save and can take damage only once. The tarn linnorm can't use Breath Weapon
+    or Overwhelming Breath again for 2d4 rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Overwhelming Breath
+  range: null
+  raw_description: '**Overwhelming Breath** [Three Actions]  A tarn linnorm uses its
+    Breath Weapon twice. A creature attempts only one save and can take damage only
+    once. The tarn linnorm can''t use Breath Weapon or Overwhelming Breath again for
+    2d4 rounds.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw** DC 44 Fortitude; **Maximum Duration** 10 rounds;
+    **Stage 1** 7d6 acid damage and __drained 1__; **Stage 2** 11d6 acid damage and
+    __drained 2__.'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Tarn Linnorm Venom
+  range: null
+  raw_description: '**Tarn Linnorm Venom** (__acid__, __injury__, __poison__) **Saving
+    Throw** DC 44 Fortitude; **Maximum Duration** 10 rounds; **Stage 1** 7d6 acid
+    damage and __drained 1__; **Stage 2** 11d6 acid damage and __drained 2__.'
+  requirements: null
+  success: null
+  traits:
+  - acid
+  - injury
+  - poison
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances:
+- amount: 15
+  type: cold iron
+ritual_lists: null
+saves:
+  fort: 36
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 32
+  ref_misc: null
+  will: 31
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +35
+- darkvision
+- scent (imprecise) 60 feet
+- true seeing
+size: Gargantuan
+skills:
+- bonus: 32
+  misc: null
+  name: 'Acrobatics '
+- bonus: 38
+  misc: null
+  name: 'Athletics '
+- bonus: 34
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 226
+  page_stop: null
+speed:
+- amount: 35
+  type: Land
+- amount: 100
+  type: fly
+- amount: 80
+  type: swim
+- amount: 128
+  type: <a style="text-decoration:underline" href="Spells.aspx?ID="><i>freedom of
+    movement</i></a>
+spell_lists:
+- dc: 42
+  misc: null
+  name: Primal Innate Spells
+  spell_groups:
+  - heightened_level: 9
+    level: -1
+    spells:
+    - frequency: null
+      name: freedom of movement
+      requirement: null
+  - heightened_level: 8
+    level: -1
+    spells:
+    - frequency: null
+      name: true seeing
+      requirement: null
+  to_hit: null
+traits:
+- Uncommon
+- CE
+- Gargantuan
+- Acid
+- Amphibious
+- Dragon
+type: Creature
+weaknesses: null

@@ -1,0 +1,283 @@
+ability_mods:
+  cha_mod: 3
+  con_mod: 5
+  dex_mod: 1
+  int_mod: 2
+  str_mod: 7
+  wis_mod: 3
+ac: 30
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The first time each round that a creature escapes from the slaver demon's
+    Enslave Soul or the slaver demon witnesses a creature being freed from captivity
+    or mental enslavement, the demon takes 3d6 mental damage.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Liberation Vulnerability
+  range: null
+  raw_description: '**Liberation Vulnerability** The first time each round that a
+    creature escapes from the slaver demon''s Enslave Soul or the slaver demon witnesses
+    a creature being freed from captivity or mental enslavement, the demon takes 3d6
+    mental damage.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: The slaver demon attempts to __Disarm__ the weapon used in the triggering
+    Strike with a -2 penalty. If it rolls a success, it gets a critical success instead.
+    The demon doesn't need a free hand to use this ability.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Horn Snare
+  range: null
+  raw_description: '**Horn Snare** [Reaction] **Trigger** A creature misses the slaver
+    demon with a melee weapon Strike. **Effect** The slaver demon attempts to __Disarm__
+    the weapon used in the triggering Strike with a -2 penalty. If it rolls a success,
+    it gets a critical success instead. The demon doesn''t need a free hand to use
+    this ability.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature misses the slaver demon with a melee weapon Strike.
+description: 'Kalavakuses work as slavers in the Abyss, earning them the alternate
+  moniker of "slaver demons"; these fiends round up captured victims and sell them
+  to other fiends or unscrupulous mortals. Pleas for freedom or clemency fall on deaf
+  ears, as slaver demons consider anyone they can catch and hold to be their rightful
+  property and theirs to sell. Kalavakuses know more than just physical means of restraining
+  slaves; they also know how to fetter a victim''s soul. The most successful slaver
+  demons have vast slave-pits in the Abyss where they keep stables of imprisoned souls.
+
+
+
+
+  **__Recall Knowledge - Fiend__ (__Religion__)**: DC 27'
+hp: 200
+hp_misc: null
+immunities: null
+items: null
+languages:
+- Abyssal
+- Celestial
+- Draconic
+- telepathy 100 feet
+level: 10
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d10+13
+    type: piercing
+  name: horns
+  plus_damage: null
+  to_hit: 23
+  traits:
+  - deadly 1d8
+- action_cost: One Action
+  damage:
+    formula: 2d8+13
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 23
+  traits:
+  - agile
+- action_cost: One Action
+  damage:
+    formula: 2d6+13
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 23
+  traits: null
+name: Kalavakus
+perception: 19
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: As failure, and the target also suffers the effects of a failed
+    saving throw against dominate.
+  critical_success: null
+  description: 'The demon enslaves the soul of a living creature within 60 feet. The
+    target can attempt to resist this enslavement with a DC 29 Will save. A slaver
+    demon can have only one living soul enslaved with this ability at a time, and
+    no more than one slaver demon can enslave the same soul. If a slaver demon kills
+    a creature whose soul it has enslaved, the demon regains 20 HP and the soul is
+    consigned to an eternity of toil in the Abyss, adding to the slaver demon''s tally
+    of souls and allowing the demon to enslave another.
+
+
+    '
+  effect: null
+  effects: null
+  failure: The target is enslaved and is enfeebled 2 for 24 hours or until the slaver
+    demon is slain, whichever comes first.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Enslave Soul
+  range: null
+  raw_description: '**Enslave Soul** [Two Actions]  (__arcane__, __enchantment__,
+    __mental__) The demon enslaves the soul of a living creature within 60 feet. The
+    target can attempt to resist this enslavement with a DC 29 Will save. A slaver
+    demon can have only one living soul enslaved with this ability at a time, and
+    no more than one slaver demon can enslave the same soul. If a slaver demon kills
+    a creature whose soul it has enslaved, the demon regains 20 HP and the soul is
+    consigned to an eternity of toil in the Abyss, adding to the slaver demon''s tally
+    of souls and allowing the demon to enslave another.
+
+
+    **Success** The target avoids being enslaved and is temporarily immune for 24
+    hours.
+
+
+    **Failure** The target is enslaved and is __enfeebled 2__ for 24 hours or until
+    the slaver demon is slain, whichever comes first.
+
+
+    **Critical Failure** As failure, and the target also suffers the effects of a
+    failed saving throw against __dominate__.'
+  requirements: null
+  success: The target avoids being enslaved and is temporarily immune for 24 hours.
+  traits:
+  - arcane
+  - enchantment
+  - mental
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists:
+- dc: 27
+  misc: null
+  name: Divine Rituals
+  spell_groups:
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: null
+      name: abyssal pact
+      requirement: null
+  to_hit: null
+saves:
+  fort: 21
+  fort_misc: null
+  misc: +1 status to all saves vs. magic
+  ref: 17
+  ref_misc: null
+  will: 19
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +19
+- darkvision
+size: Medium
+skills:
+- bonus: 15
+  misc: null
+  name: 'Acrobatics '
+- bonus: 23
+  misc: null
+  name: 'Athletics '
+- bonus: 22
+  misc: null
+  name: 'Intimidation '
+- bonus: 17
+  misc: null
+  name: 'Religion '
+- bonus: 19
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: 'Pathfinder #147: Tomorrow Must Burn'
+  page_start: 77
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists:
+- dc: 27
+  misc: null
+  name: Divine Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 5
+    spells:
+    - frequency: null
+      name: dimension door
+      requirement: null
+  - heightened_level: null
+    level: 4
+    spells:
+    - frequency: x2
+      name: air walk
+      requirement: null
+    - frequency: at will
+      name: dimension door
+      requirement: null
+  - heightened_level: null
+    level: 3
+    spells:
+    - frequency: null
+      name: haste
+      requirement: null
+  - heightened_level: null
+    level: 1
+    spells:
+    - frequency: at will
+      name: command
+      requirement: null
+  to_hit: null
+traits:
+- CE
+- Medium
+- Demon
+- Fiend
+type: Creature
+weaknesses:
+- amount: 10
+  type: cold iron
+- amount: 10
+  type: good
+- amount: null
+  type: liberation vulnerability

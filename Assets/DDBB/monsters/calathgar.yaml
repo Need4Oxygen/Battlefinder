@@ -1,0 +1,198 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 2
+  dex_mod: 5
+  int_mod: -2
+  str_mod: 2
+  wis_mod: 2
+ac: 21
+ac_special: null
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Calathgars are healed by cold. Anytime a calathgar would take cold
+    damage, it instead regains 1d6 Hit Points (regardless of the amount of damage
+    the cold effect would have caused). In __severe cold or colder environments__,
+    calathgars gain __fast healing 1__.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Cold Healing
+  range: null
+  raw_description: '**Cold Healing** Calathgars are healed by cold. Anytime a calathgar
+    would take cold damage, it instead regains 1d6 Hit Points (regardless of the amount
+    of damage the cold effect would have caused). In __severe cold or colder environments__,
+    calathgars gain __fast healing 1__.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When a calathgar is reduced to 0 Hit Points, it immediately decays
+    and dies, transforming into a 5-foot patch of mold (or a 10-foot patch of mold
+    if it was killed by fire damage). This patch of mold persists for 1 minute, during
+    which time it deals 3d6 cold damage to any creature that begins its turn in this
+    area, or 1d6 cold damage to any creature that begins its turn in an adjacent square.
+    The mold patch decays away after an hour, but it can be destroyed before then
+    (treat each 5-foot square as an object with Hardness 0, 10 Hit Points, BT 5, immunity
+    to cold, piercing, and slashing damage; the mold deals half its regular cold damage
+    once it's broken).
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Mold Mulch
+  range: null
+  raw_description: '**Mold Mulch** When a calathgar is reduced to 0 Hit Points, it
+    immediately decays and dies, transforming into a 5-foot patch of mold (or a 10-foot
+    patch of mold if it was killed by fire damage). This patch of mold persists for
+    1 minute, during which time it deals 3d6 cold damage to any creature that begins
+    its turn in this area, or 1d6 cold damage to any creature that begins its turn
+    in an adjacent square. The mold patch decays away after an hour, but it can be
+    destroyed before then (treat each 5-foot square as an object with Hardness 0,
+    10 Hit Points, BT 5, immunity to cold, piercing, and slashing damage; the mold
+    deals half its regular cold damage once it''s broken).'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Calathgars are mysterious predatory plants that grow in the depths of
+  the densest frozen forests, realms where icicles rarely melt from snow-cloaked trees.
+  A calathgar''s blue flowers grow from 3 to 5 feet across (with specimens as wide
+  as 10 feet reported), while the plant itself stands just under 4 feet in height
+  and weighs up to 50 pounds when heavy with seeds.
+
+
+
+
+  Calathgars'' psyches are alien to most sapient creatures. They have little interest
+  in emotion, culture, or ambition, yet they have nearly flawless memories and can
+  share experiences with other calathgars by scent (perceptible to other creatures
+  as a vinegary odor that may reveal their presence) as easily as humanoids can pass
+  on information by speech. While calathgars themselves can''t speak, they can typically
+  be reasoned with—though like most protective parents, an incensed calathgar defending
+  its young is rarely in a mood to listen.
+
+
+
+
+  **__Recall Knowledge - Plant__ (__Nature__)**: DC 19'
+hp: 75
+hp_misc: null
+immunities:
+- cold
+items: null
+languages:
+- Sylvan
+- can't speak
+level: 4
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+4
+    type: bludgeoning
+  name: flower
+  plus_damage:
+  - formula: 1d6
+    type: cold
+  to_hit: 13
+  traits:
+  - finesse
+- action_cost: One Action
+  damage:
+    formula: 2d4+4
+    type: slashing
+  name: tendril
+  plus_damage:
+  - formula: 1d4
+    type: cold
+  to_hit: 13
+  traits:
+  - agile
+  - finesse
+name: Calathgar
+perception: 10
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The calathgar expels thorny, frozen seeds in a 15-foot cone, dealing
+    1d6 piercing and 4d6 cold damage (DC 20 basic Reflex save). In __mild cold or
+    colder environments__, these seeds cling to living creatures they strike, dealing
+    1d4 __persistent cold damage__. The calathgar can't use Seed Spray again for 1d4
+    rounds.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Seed Spray
+  range: null
+  raw_description: '**Seed Spray** [Two Actions]  (__cold__, __evocation__, __primal__)
+    The calathgar expels thorny, frozen seeds in a 15-foot cone, dealing 1d6 piercing
+    and 4d6 cold damage (DC 20 basic Reflex save). In __mild cold or colder environments__,
+    these seeds cling to living creatures they strike, dealing 1d4 __persistent cold
+    damage__. The calathgar can''t use Seed Spray again for 1d4 rounds.'
+  requirements: null
+  success: null
+  traits:
+  - cold
+  - evocation
+  - primal
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: 5
+  type: fire
+- amount: 5
+  type: slashing
+ritual_lists: null
+saves:
+  fort: 10
+  fort_misc: null
+  misc: null
+  ref: 13
+  ref_misc: null
+  will: 10
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +10
+- darkvision
+- scent 30 feet
+size: Small
+skills:
+- bonus: 13
+  misc: null
+  name: 'Stealth '
+- bonus: 10
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary 2
+  page_start: 45
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+- amount: 20
+  type: climb
+spell_lists: null
+traits:
+- N
+- Small
+- Cold
+- Plant
+type: Creature
+weaknesses: null

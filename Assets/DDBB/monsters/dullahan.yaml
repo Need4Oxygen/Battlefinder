@@ -1,0 +1,288 @@
+ability_mods:
+  cha_mod: 4
+  con_mod: 2
+  dex_mod: 2
+  int_mod: 2
+  str_mod: 6
+  wis_mod: 3
+ac: 28
+ac_special: null
+alignment: LE
+automatic_abilities:
+- action_cost: None
+  critical_failure: The creature is frightened 4.
+  critical_success: The creature is unaffected by the presence.
+  description: 30 feet, DC 23
+  effect: null
+  effects: null
+  failure: The creature is frightened 2.
+  frequency: null
+  full_description: null
+  generic_description: A creature that first enters the area must attempt a Will save.
+    Regardless of the result of the saving throw, the creature is temporarily immune
+    to this monster's Frightful Presence for 1 minute.
+  name: Frightful Presence
+  range: null
+  raw_description: '**Frightful Presence** 30 feet, DC 23 A creature that first enters
+    the area must attempt a Will save. Regardless of the result of the saving throw,
+    the creature is temporarily immune to this monster''s Frightful Presence for 1
+    minute.
+
+    Critical Success The creature is unaffected by the presence.
+
+    Success The creature is frightened 1.
+
+    Failure The creature is frightened 2.
+
+    Critical Success The creature is frightened 4.'
+  requirements: null
+  success: The creature is frightened 1.
+  traits:
+  - aura
+  - emotion
+  - fear
+  - mental
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+description: 'Riding on a horse as black as night, the headless hunter known as the
+  dullahan tracks down and takes the heads of those it deems unfit to continue living.
+  When closing in for the kill, the dullahan first whispers its victim''s name, then
+  swiftly collects its prize, casting a pall of dread upon all who witness the grim
+  execution.
+
+
+
+
+  A dullahan manifests when a particularly violent warrior is beheaded and the warrior''s
+  soul stubbornly clings to material existence (or is refused entry to the afterlife).
+  Most dullahans return to their former homelands, where they can exact vengeance
+  those they feel wronged them in life (or their living descendants). A dullahan''s
+  concept of justice is swift and merciless, and once it has selected a target, it
+  is unwavering in its cause.
+
+
+
+
+  Perhaps even more than revenge on the living, a dullahan desires its own rotted
+  head. An individual who wields the head of a dullahan is powerful indeed, for a
+  dullahan will grudgingly serve such a master in the hopes of reclaiming its missing
+  skull. Mighty fiends such as devils command dullahans to harvest souls or lead armies
+  for them, while a mortal might use such an undead warrior to fulfill a personal
+  vendetta. No matter its master''s rank or station, however, a dullahan won''t hesitate
+  to kill its liege and reclaim its head when the opportunity presents itself.
+
+
+
+
+  Most dullahan lairs are abandoned, overgrown ruins or other dilapidated places where
+  severed heads and other trophies line the walls. Some dullahans, on the other hand,
+  are content to simply commit their foul deeds and leave the remains of their decapitated
+  victims in the streets, strewn among a copse of dead trees, or unceremoniously tossed
+  in a bog hole.
+
+
+
+
+  **__Recall Knowledge - Undead__ (__Religion__)**: DC 25'
+hp: 95
+hp_misc: fast healing 5
+immunities:
+- fear
+- death effects
+- disease
+- poison
+- paralyzed
+- unconscious
+items:
+- +1 hatchet
+- +1 longsword
+- full plate
+languages:
+- Common
+- Necril
+level: 7
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d8+10
+    type: slashing
+  name: keen longsword
+  plus_damage: null
+  to_hit: 18
+  traits:
+  - magical
+  - versatile P
+- action_cost: One Action
+  damage:
+    formula: 1d6+10
+    type: slashing
+  name: keen returning hatchet
+  plus_damage: null
+  to_hit: 17
+  traits:
+  - agile
+  - sweep
+- action_cost: One Action
+  damage:
+    formula: 1d4+10
+    type: bludgeoning
+  name: fist
+  plus_damage: null
+  to_hit: 18
+  traits:
+  - agile
+  - nonlethal
+name: Dullahan
+perception: 14
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Any slashing weapon a dullahan wields becomes __keen__, and any hatchet
+    it wields becomes __returning__. If the dullahan kills a creature with a critical
+    hit using a slashing weapon, the target is decapitated as though the dullahan
+    had used Reap on the target. These effects remain only while the dullahan holds
+    the weapon.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Head Hunter
+  range: null
+  raw_description: '**Head Hunter** Any slashing weapon a dullahan wields becomes
+    __keen__, and any hatchet it wields becomes __returning__. If the dullahan kills
+    a creature with a critical hit using a slashing weapon, the target is decapitated
+    as though the dullahan had used Reap on the target. These effects remain only
+    while the dullahan holds the weapon.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The dullahan removes the head of a dead creature within reach. Each
+    creature within the area of the dullahan's frightful presence must attempt a new
+    save, even if they are temporarily immune.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Reap
+  range: null
+  raw_description: '**Reap** [Two Actions]  The dullahan removes the head of a dead
+    creature within reach. Each creature within the area of the dullahan''s frightful
+    presence must attempt a new save, even if they are temporarily immune.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: The dullahan summons a __warhorse__ with elite adjustments and the
+    fiend trait. This steed remains until it is slain, the dullahan Dismisses it,
+    or the dullahan summons another steed.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Summon Steed
+  range: null
+  raw_description: '**Summon Steed** [Two Actions]  The dullahan summons a __warhorse__
+    with elite adjustments and the fiend trait. This steed remains until it is slain,
+    the dullahan Dismisses it, or the dullahan summons another steed.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 2d8+10
+    type: slashing
+  name: keen returning hatchet
+  plus_damage: null
+  to_hit: 14
+  traits:
+  - agile
+  - thrown 10 feet
+rarity: Uncommon
+resistances:
+- amount: 5
+  type: good
+ritual_lists: null
+saves:
+  fort: 13
+  fort_misc: null
+  misc: null
+  ref: 15
+  ref_misc: null
+  will: 17
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +14
+- lifesense 60 feet
+size: Medium
+skills:
+- bonus: 15
+  misc: null
+  name: 'Athletics '
+- bonus: 17
+  misc: null
+  name: 'Intimidation '
+- bonus: 13
+  misc: null
+  name: 'Stealth '
+- bonus: 15
+  misc: null
+  name: 'Survival '
+source:
+- abbr: Bestiary
+  page_start: 140
+  page_stop: null
+speed:
+- amount: 20
+  type: Land
+spell_lists: null
+traits:
+- Uncommon
+- LE
+- Medium
+- Undead
+type: Creature
+weaknesses: null

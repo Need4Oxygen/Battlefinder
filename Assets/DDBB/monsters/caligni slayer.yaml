@@ -1,0 +1,339 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 1
+  dex_mod: 4
+  int_mod: 2
+  str_mod: 1
+  wis_mod: 0
+ac: 19
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: When the caligni slayer dies, their body implodes violently into nothingness,
+    dealing 3d10 sonic damage to creatures in a 10-foot burst. Each creature in the
+    area must attempt a DC 20 Fortitude save. The slayer's gear and treasure are unaffected
+    by the implosion and are left in a pile where they died.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Death Implosion
+  range: null
+  raw_description: '**Death Implosion** (__sonic__) When the caligni slayer dies,
+    their body implodes violently into nothingness, dealing 3d10 sonic damage to creatures
+    in a 10-foot burst. Each creature in the area must attempt a DC 20 Fortitude save.
+    The slayer''s gear and treasure are unaffected by the implosion and are left in
+    a pile where they died.'
+  requirements: null
+  success: null
+  traits:
+  - sonic
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The creature is unaffected.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Critical Success
+  range: null
+  raw_description: '**Critical Success **The creature is unaffected.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The creature takes half damage.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Success
+  range: null
+  raw_description: '**Success **The creature takes half damage.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The creature takes full damage and is __deafened__ for 1 minute.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Failure
+  range: null
+  raw_description: '**Failure **The creature takes full damage and is __deafened__
+    for 1 minute.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The creature takes double damage and is deafened for 24 hours.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Critical Failure
+  range: null
+  raw_description: '**Critical Failure **The creature takes double damage and is deafened
+    for 24 hours.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Caligni slayers possess greater occult talents than others of their
+  kind. In most other calignis, the power bartered from the long-lost demigods known
+  as the Forsaken merely burns within. But in caligni slayers, this power is a deep
+  and terrible hunger. Slayers embrace their evil impulses as a result, and they seek
+  to feed on others with their soul harvest ability to keep this supernatural hunger
+  sated. Slayers denied the opportunity to feed descend into paranoia and, eventually,
+  murderous rage.
+
+
+
+
+  Delayed feeding improves but never fully restores their composure and patience.
+  Perhaps the greatest manifestation of a slayer''s hunger appears at the moment of
+  their death. Upon its last breath, a slayer collapses into itself in a violent,
+  lightless implosion, rather than the blinding eruption of other calignis'' deaths,
+  consuming the body itself in a final attempt at satiation.
+
+
+
+
+  Slayers view themselves as the cleverest and most gifted of the calignis. They seethe
+  with ill-concealed envy at the position of power __caligni stalkers__ occupy, ever
+  scheming to displace them and claim that power for their own. For their part, stalkers
+  tolerate these machinations as an acceptable price for the talents slayers contribute
+  to an enclave. If necessary, any slayer who grows too ambitious can become a brave
+  sacrifice in battle, for the good of the enclave. In physical stature, slayers fall
+  between the willowy __caligni dancers__ and the diminutive __creepers__. Stalkers
+  tower above most slayers—yet another source of slayers'' envy and resentment.
+
+
+
+
+  **__Recall Knowledge - Humanoid__ (__Society__)**: DC 20'
+hp: 45
+hp_misc: death implosion
+immunities: null
+items:
+- black smear poison (2 doses, see below)
+- kukri
+languages:
+- Caligni
+- Undercommon
+level: 3
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d6+3
+    type: slashing
+  name: kukri
+  plus_damage:
+  - formula: null
+    type: black smear poison
+  to_hit: 11
+  traits:
+  - agile
+  - finesse
+  - trip
+name: Caligni Slayer
+perception: 8
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '**Saving Throw **DC 16 Fortitude; **Maximum Duration **6 rounds; **Stage
+    1 **1d6 poison damage and __enfeebled 1__ (1 round); **Stage 2 **As stage 1; **Stage
+    3 **1d6 poison damage and enfeebled 2 (1 round). See __here__ for full details
+    on this alchemical poison.'
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Black Smear Poison
+  range: null
+  raw_description: '**Black Smear Poison** (__poison__) **Saving Throw **DC 16 Fortitude;
+    **Maximum Duration **6 rounds; **Stage 1 **1d6 poison damage and __enfeebled 1__
+    (1 round); **Stage 2 **As stage 1; **Stage 3 **1d6 poison damage and enfeebled
+    2 (1 round). See __here__ for full details on this alchemical poison.'
+  requirements: null
+  success: null
+  traits:
+  - poison
+  trigger: null
+- action_cost: Two Actions
+  critical_failure: null
+  critical_success: null
+  description: Each caligni within 30 feet gains a +2 status bonus to attack rolls
+    against __flat-footed__ creatures. This bonus lasts for 1 minute.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Call to Blood
+  range: null
+  raw_description: '**Call to Blood** [Two Actions]  (__enchantment__, __mental__,
+    __occult__) Each caligni within 30 feet gains a +2 status bonus to attack rolls
+    against __flat-footed__ creatures. This bonus lasts for 1 minute.'
+  requirements: null
+  success: null
+  traits:
+  - enchantment
+  - mental
+  - occult
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: The caligni slayer deals an additional 2d6 negative damage to __flat-footed__
+    creatures.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Soul Harvest
+  range: null
+  raw_description: '**Soul Harvest** (__necromancy__) The caligni slayer deals an
+    additional 2d6 negative damage to __flat-footed__ creatures.'
+  requirements: null
+  success: null
+  traits:
+  - necromancy
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 9
+  fort_misc: null
+  misc: null
+  ref: 12
+  ref_misc: null
+  will: 6
+  will_misc: null
+sense_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: '
+
+
+    '
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Light Blindness
+  range: null
+  raw_description: "**__Light Blindness__** \n\n"
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+senses:
+- Perception +8
+- greater darkvision
+size: Small
+skills:
+- bonus: 9
+  misc: null
+  name: 'Acrobatics '
+- bonus: 10
+  misc: null
+  name: 'Arcana '
+- bonus: 7
+  misc: null
+  name: 'Athletics '
+- bonus: 10
+  misc: null
+  name: 'Occultism '
+- bonus: 10
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 46
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+spell_lists:
+- dc: 20
+  misc: ''
+  name: Occult Innate Spells
+  spell_groups:
+  - heightened_level: null
+    level: 2
+    spells:
+    - frequency: at will
+      name: darkness
+      requirement: null
+    - frequency: null
+      name: death knell
+      requirement: null
+    - frequency: null
+      name: phantom pain
+      requirement: null
+    - frequency: null
+      name: spectral hand
+      requirement: null
+  - heightened_level: 2
+    level: 0
+    spells:
+    - frequency: null
+      name: chill touch
+      requirement: null
+    - frequency: null
+      name: daze
+      requirement: null
+    - frequency: null
+      name: detect magic
+      requirement: null
+    - frequency: null
+      name: shield
+      requirement: null
+  to_hit: 12
+traits:
+- Uncommon
+- CE
+- Small
+- Caligni
+- Humanoid
+type: Creature
+weaknesses: null

@@ -1,0 +1,135 @@
+ability_mods:
+  cha_mod: -2
+  con_mod: 3
+  dex_mod: 2
+  int_mod: -4
+  str_mod: 4
+  wis_mod: 1
+ac: 19
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Gorillas can be territorial creatures, particularly if provoked by hunters
+  or the presence of more dangerous monsters. A gorilla uses its fangs and powerful
+  arms to bite and pummel trespassers with wild abandon.
+
+
+
+
+  **__Recall Knowledge - Animal__ (__Nature__)**: DC 18'
+hp: 45
+hp_misc: null
+immunities: null
+items: null
+languages: null
+level: 3
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d6+4
+    type: bludgeoning
+  name: fist
+  plus_damage: null
+  to_hit: 11
+  traits:
+  - agile
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 1d8+4
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 11
+  traits:
+  - reach 5 feet
+name: Gorilla
+perception: 8
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: The creature is frightened 2.
+  critical_success: No effect and temporarily immune for 1 minute.
+  description: 'The gorilla beats its chest in a terrifying display. Creatures within
+    30 feet must attempt a DC 20 Will save. While a creature is __frightened__ by
+    this ability, it is __flat-footed__ to the gorilla.
+
+
+    '
+  effect: null
+  effects: null
+  failure: The creature is frightened 1.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Frightening Display
+  range: null
+  raw_description: '**Frightening Display** [Two Actions]  (__auditory__, __emotion__,
+    __fear__, __mental__) The gorilla beats its chest in a terrifying display. Creatures
+    within 30 feet must attempt a DC 20 Will save. While a creature is __frightened__
+    by this ability, it is __flat-footed__ to the gorilla.
+
+
+    **Critical Success** No effect and temporarily immune for 1 minute.
+
+
+    **Success** The creature is unaffected.
+
+
+    **Failure** The creature is __frightened 1__.
+
+
+    **Critical Failure** The creature is __frightened 2__.'
+  requirements: null
+  success: The creature is unaffected.
+  traits:
+  - auditory
+  - emotion
+  - fear
+  - mental
+  trigger: null
+ranged: null
+rarity: Common
+resistances:
+- amount: null
+  type: '>'
+ritual_lists: null
+saves:
+  fort: 12
+  fort_misc: null
+  misc: null
+  ref: 9
+  ref_misc: null
+  will: 6
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +8
+- low-light vision
+- scent (imprecise) 30 feet
+size: Large
+skills:
+- bonus: 9
+  misc: null
+  name: 'Acrobatics '
+- bonus: 11
+  misc: null
+  name: 'Athletics '
+- bonus: 7
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary
+  page_start: 23
+  page_stop: null
+speed:
+- amount: 30
+  type: Land
+- amount: 30
+  type: climb
+spell_lists: null
+traits:
+- N
+- Large
+- Animal
+type: Creature
+weaknesses: null

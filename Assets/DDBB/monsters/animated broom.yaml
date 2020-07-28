@@ -1,0 +1,141 @@
+ability_mods:
+  cha_mod: -5
+  con_mod: 0
+  dex_mod: 1
+  int_mod: -5
+  str_mod: 0
+  wis_mod: 0
+ac: 16
+ac_special:
+- descr: 14 when broken
+alignment: N
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: Like normal objects, an animated broom has Hardness. This Hardness
+    reduces any damage it takes by an amount equal to the Hardness. Once an animated
+    broom is reduced to less than half its Hit Points, or immediately upon being damaged
+    by a critical hit, its construct armor breaks and its Armor Class is reduced to
+    14.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Construct Armor
+  range: null
+  raw_description: '**Construct Armor** Like normal objects, an animated broom has
+    Hardness. This Hardness reduces any damage it takes by an amount equal to the
+    Hardness. Once an animated broom is reduced to less than half its Hit Points,
+    or immediately upon being damaged by a critical hit, its construct armor breaks
+    and its Armor Class is reduced to 14.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Animated brooms perform menial tasks of cleaning and upkeep, but they
+  can step in to defend a room from intrusion if needed. These simple animated objects
+  can be found with greater frequency than more complicated and costly objects.
+
+
+
+
+  **__Recall Knowledge - Construct__ (__Arcana__, __Crafting__)**: DC 13'
+hp: 6
+hp_misc: null
+immunities:
+- bleed
+- death effects
+- disease
+- doomed
+- drained
+- fatigued
+- healing
+- mental
+- necromancy
+- nonlethal attacks
+- paralyzed
+- poison
+- sickened
+- unconscious
+items: null
+languages: null
+level: -1
+melee:
+- action_cost: One Action
+  damage:
+    formula: 1d4
+    type: bludgeoning
+  name: bristles
+  plus_damage:
+  - formula: null
+    type: dust
+  to_hit: 6
+  traits:
+  - agile
+  - magical
+  - finesse
+name: Animated Broom
+perception: 3
+proactive_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A creature hit by an animated broom's bristles must succeed at a DC
+    15 Fortitude save or spend its next action coughing. Even if hit by multiple dust
+    attacks, the creature has to spend only 1 action coughing to clear the dust out.
+    A creature that doesn't breathe is immune to this effect.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Dust
+  range: null
+  raw_description: '**Dust** A creature hit by an animated broom''s bristles must
+    succeed at a DC 15 Fortitude save or spend its next action coughing. Even if hit
+    by multiple dust attacks, the creature has to spend only 1 action coughing to
+    clear the dust out. A creature that doesn''t breathe is immune to this effect.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Common
+resistances: null
+ritual_lists: null
+saves:
+  fort: 3
+  fort_misc: null
+  misc: null
+  ref: 6
+  ref_misc: null
+  will: 3
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +3
+- darkvision
+size: Small
+skills:
+- bonus: 5
+  misc: null
+  name: 'Athletics '
+source:
+- abbr: Bestiary
+  page_start: 20
+  page_stop: null
+speed:
+- amount: 15
+  type: Land
+spell_lists: null
+traits:
+- N
+- Small
+- Construct
+- Mindless
+type: Creature
+weaknesses: null

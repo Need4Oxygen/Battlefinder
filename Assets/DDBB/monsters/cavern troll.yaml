@@ -1,0 +1,244 @@
+ability_mods:
+  cha_mod: 2
+  con_mod: 6
+  dex_mod: 2
+  int_mod: -2
+  str_mod: 6
+  wis_mod: 2
+ac: 22
+ac_special: null
+alignment: CE
+automatic_abilities:
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: If exposed to direct sunlight, a cavern troll immediately becomes __slowed
+    1__ and can't use reactions or Trample. The slowed value increases by 1 each time
+    the cavern troll ends its turn in sunlight. If the cavern troll's actions are
+    reduced to 0 in this way, they become __petrified__ until they spends at least
+    1 minute in darkness. Spells like __sunburst__ that create magical sunlight cannot
+    petrify a cavern troll, but the troll is slowed 1 for 1d4 rounds after being exposed
+    to such an effect.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Sunlight Petrification
+  range: null
+  raw_description: '**Sunlight Petrification** If exposed to direct sunlight, a cavern
+    troll immediately becomes __slowed 1__ and can''t use reactions or Trample. The
+    slowed value increases by 1 each time the cavern troll ends its turn in sunlight.
+    If the cavern troll''s actions are reduced to 0 in this way, they become __petrified__
+    until they spends at least 1 minute in darkness. Spells like __sunburst__ that
+    create magical sunlight cannot petrify a cavern troll, but the troll is slowed
+    1 for 1d4 rounds after being exposed to such an effect.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: You lash out at a foe that leaves an opening. Make a melee Strike against
+    the triggering creature. If your attack is a critical hit and the trigger was
+    a manipulate action, you disrupt that action. This Strike doesn't count toward
+    your multiple attack penalty, and your multiple attack penalty doesn't apply to
+    this Strike.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Attack of Opportunity
+  range: null
+  raw_description: '**Attack of Opportunity** [Reaction] **Trigger** A creature within
+    your reach uses a manipulate action or a move action, makes a ranged attack, or
+    leaves a square during a move action it''s using. **Effect** You lash out at a
+    foe that leaves an opening. Make a melee Strike against the triggering creature.
+    If your attack is a critical hit and the trigger was a manipulate action, you
+    disrupt that action. This Strike doesn''t count toward your multiple attack penalty,
+    and your multiple attack penalty doesn''t apply to this Strike.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: A creature within your reach uses a manipulate action or a move action,
+    makes a ranged attack, or leaves a square during a move action it's using.
+- action_cost: Reaction
+  critical_failure: null
+  critical_success: null
+  description: null
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Catch Rock
+  range: null
+  raw_description: '**__Catch Rock__ [Reaction]**'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+description: 'Insatiable scavengers stalking the eternal gloom of the Darklands, cavern
+  trolls consume all in their path—even rocks and minerals when more nourishing sustenance
+  is scarce. These rocky goliaths can tunnel through stone with their iron-sharp claws.
+
+
+  Cavern trolls rarely venture to the surface world, for they have a debilitating
+  vulnerability to sunlight that petrifies them on sustained contact. Unlike common
+  trolls, cavern trolls can regenerate wounds dealt by fire. The crystalline nature
+  of their skin, however, permits sonic attacks to neutralize their signature regeneration.
+
+
+  As cavern trolls age, their flinty skin becomes studded with small crystals and
+  stones of various composition. Paragons of their kind have toothy maws replete with
+  large, crystalline fangs. A typical cavern troll stands 14 feet in height and weighs
+  about 2,000 pounds.'
+hp: 135
+hp_misc: regeneration 20 (deactivated by acid or sonic
+immunities:
+- bleed
+items: null
+languages:
+- Jotun
+- Undercommon
+level: 6
+melee:
+- action_cost: One Action
+  damage:
+    formula: 2d10+8
+    type: piercing
+  name: jaws
+  plus_damage: null
+  to_hit: 16
+  traits:
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 2d6+8
+    type: slashing
+  name: claw
+  plus_damage: null
+  to_hit: 16
+  traits:
+  - agile
+  - reach 10 feet
+name: Cavern Troll
+perception: 14
+proactive_abilities:
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: claw
+  effect: The monster automatically deals that Strike's damage again to the enemy.
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Rend
+  range: null
+  raw_description: A Rend entry lists a Strike the monster has. **Requirements** The
+    monster hit the same enemy with two consecutive Strikes of the listed type in
+    the same round. **Effect** The monster automatically deals that Strike's damage
+    again to the enemy.
+  requirements: The monster hit the same enemy with two consecutive Strikes of the
+    listed type in the same round.
+  success: null
+  traits: null
+  trigger: null
+- action_cost: None
+  critical_failure: null
+  critical_success: null
+  description: A cavern troll can burrow through solid stone at a Speed of 10 feet.
+    It can leave a tunnel if it desires.
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Rock Tunneler
+  range: null
+  raw_description: '**Rock Tunneler** A cavern troll can burrow through solid stone
+    at a Speed of 10 feet. It can leave a tunnel if it desires.'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: ''
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Throw Rock
+  range: null
+  raw_description: '**__Throw Rock__**   '
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged:
+- action_cost: One Action
+  damage:
+    formula: 1d12+8
+    type: bludgeoning
+  name: rock
+  plus_damage: null
+  to_hit: 16
+  traits:
+  - brutal
+  - range increment 120 feet
+rarity: Uncommon
+resistances: null
+ritual_lists: null
+saves:
+  fort: 18
+  fort_misc: null
+  misc: null
+  ref: 13
+  ref_misc: null
+  will: 8
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +14
+- darkvision
+size: Large
+skills:
+- bonus: 16
+  misc: null
+  name: 'Athletics '
+- bonus: 14
+  misc: null
+  name: 'Intimidation '
+source:
+- abbr: Bestiary 2
+  page_start: 265
+  page_stop: null
+speed:
+- amount: 25
+  type: Land
+- amount: 20
+  type: burrow
+- amount: 20
+  type: climb
+spell_lists: null
+traits:
+- Uncommon
+- CE
+- Large
+- Earth
+- Giant
+- Troll
+type: Creature
+weaknesses: null

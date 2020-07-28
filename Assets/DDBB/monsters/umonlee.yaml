@@ -1,0 +1,187 @@
+ability_mods:
+  cha_mod: 3
+  con_mod: 7
+  dex_mod: 3
+  int_mod: -3
+  str_mod: 8
+  wis_mod: 2
+ac: 39
+ac_special: null
+alignment: N
+automatic_abilities: null
+description: 'Those who dwell in the coldest climates of Golarion tell of a brutal
+  beast that swims through the ice and snow and can devastate entire villages in minutes.
+  Ancient Erutaki who made their homes in the frozen polar expanse called the Crown
+  of the World named this monster the umonlee.
+
+
+
+
+  Umonlees are bestial predators who constantly hunt, rarely resting in service of
+  a hunger that is never fully sated. Despite this animalistic drive, umonlees are
+  semi-intelligent creatures who often select and stalk their prey. However, they
+  are not terribly bright and often keep their hunting grounds in sparsely-trafficked
+  areas. It is rare for an umonlee to attack a village, but one might attack a sparse
+  group, such as a hunting or scouting party. Many caravans traversing the Path of
+  Aganhei—the trade route between the continents of Avistan and Tian Xia that crosses
+  the Crown of the World—have had their expeditions abruptly ended by an encounter
+  with one of these monstrosities.
+
+
+
+
+  Those who study monsters posit that umonlees are related to __chuuls__, as the creatures
+  exhibit some similarities. Both are semi-intelligent, crustacean predators that
+  use ambush tactics to kill and eat their prey. Even though they can talk, umonlees
+  typically only speak __Aklo__, which also gives credence to this theory. This would
+  also lend to the theory that chuuls are products of __alghollthu__ manipulation,
+  meaning that umonlees are also the results of these alien designs. However, the
+  fact that these creatures aren''t evil argues well against such a theory.
+
+
+
+
+  **__Recall Knowledge - Beast__ (__Arcana__, __Nature__)**: DC 36'
+hp: 320
+hp_misc: null
+immunities:
+- cold
+items: null
+languages:
+- Aklo
+level: 15
+melee:
+- action_cost: One Action
+  damage:
+    formula: 3d6+16
+    type: piercing
+  name: jaws
+  plus_damage:
+  - formula: 3d6
+    type: cold
+  to_hit: 31
+  traits:
+  - reach 10 feet
+- action_cost: One Action
+  damage:
+    formula: 3d8+16
+    type: slashing
+  name: pincers
+  plus_damage:
+  - formula: null
+    type: Improved Grab
+  to_hit: 31
+  traits:
+  - agile
+  - reach 15 feet
+name: Umonlee
+perception: 25
+proactive_abilities:
+- action_cost: Two Actions
+  critical_failure: As failure, except the creature takes double damage and the ice
+    holding it in place requires 60 damage to break.
+  critical_success: The creature is unaffected.
+  description: "The umonlee breathes a cone of extremely cold air that damages its\
+    \ prey and can freeze them to the ground. Its breath deals 12d8 cold damage to\
+    \ creatures in the 50-foot cone (DC 38 Reflex save). The umonlee can't use Freezing\
+    \ Breath again for 1d4 rounds. \n\n"
+  effect: null
+  effects: null
+  failure: The creature takes full damage and is slowed 1 for 1 round. If the creature
+    is standing on the ground, it's immobilized as thick ice forms around it, and
+    it can't recover from being slowed. The creature remains immobilized and slowed
+    1 until it manages to Escape (DC 36) or deal 30 damage to the ice, which has weakness
+    10 to fire.
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Freezing Breath
+  range: null
+  raw_description: "**Freezing Breath** [Two Actions]  (__cold__, __evocation__, __incapacitation__,\
+    \ __primal__) The umonlee breathes a cone of extremely cold air that damages its\
+    \ prey and can freeze them to the ground. Its breath deals 12d8 cold damage to\
+    \ creatures in the 50-foot cone (DC 38 Reflex save). The umonlee can't use Freezing\
+    \ Breath again for 1d4 rounds. \n\n**Critical Success** The creature is unaffected.\
+    \ \n\n**Success** The creature takes half damage and is __slowed 1__ for 1 round.\
+    \ \n\n**Failure** The creature takes full damage and is slowed 1 for 1 round.\
+    \ If the creature is standing on the ground, it's __immobilized__ as thick ice\
+    \ forms around it, and it can't recover from being slowed. The creature remains\
+    \ immobilized and slowed 1 until it manages to __Escape__ (DC 36) or deal 30 damage\
+    \ to the ice, which has weakness 10 to fire. \n\n**Critical Failure** As failure,\
+    \ except the creature takes double damage and the ice holding it in place requires\
+    \ 60 damage to break."
+  requirements: null
+  success: The creature takes half damage and is slowed 1 for 1 round.
+  traits:
+  - cold
+  - evocation
+  - incapacitation
+  - primal
+  trigger: null
+- action_cost: One Action
+  critical_failure: null
+  critical_success: null
+  description: 2d10+8 bludgeoning, DC 36
+  effect: null
+  effects: null
+  failure: null
+  frequency: null
+  full_description: null
+  generic_description: null
+  name: Greater Constrict
+  range: null
+  raw_description: '**__Greater Constrict__**   2d10+8 bludgeoning, DC 36'
+  requirements: null
+  success: null
+  traits: null
+  trigger: null
+ranged: null
+rarity: Uncommon
+resistances:
+- amount: 10
+  type: mental
+ritual_lists: null
+saves:
+  fort: 28
+  fort_misc: null
+  misc: +1 status vs. mental
+  ref: 26
+  ref_misc: null
+  will: 23
+  will_misc: null
+sense_abilities: null
+senses:
+- Perception +25
+- darkvision
+- tremorsense (imprecise) 80 feet
+size: Huge
+skills:
+- bonus: 31
+  misc: null
+  name: 'Athletics '
+- bonus: 24
+  misc: null
+  name: 'Stealth '
+source:
+- abbr: Bestiary 2
+  page_start: 271
+  page_stop: null
+speed:
+- amount: 50
+  type: Land
+- amount: 25
+  type: burrow
+- amount: 40
+  type: swim
+spell_lists: null
+traits:
+- Uncommon
+- N
+- Huge
+- Amphibious
+- Beast
+- Cold
+type: Creature
+weaknesses:
+- amount: 15
+  type: fire
