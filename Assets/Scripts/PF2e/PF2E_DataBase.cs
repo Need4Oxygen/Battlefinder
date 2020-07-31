@@ -5,6 +5,11 @@ using Newtonsoft.Json;
 using System.IO;
 using System;
 
+using YamlDotNet.Core;
+using YamlDotNet.Core.Events;
+using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
+
 public class PF2E_DataBase : MonoBehaviour
 {
     public static PF2E_DataBase Instance;
@@ -29,7 +34,6 @@ public class PF2E_DataBase : MonoBehaviour
     // [SerializeField] private TextAsset generalFeats = null;
     // [SerializeField] private TextAsset skillFeats = null;
 
-
     public static Dictionary<string, PF2E_Action> Actions = new Dictionary<string, PF2E_Action>();
 
     public static Dictionary<string, PF2E_Ancestry> Ancestries = new Dictionary<string, PF2E_Ancestry>();
@@ -41,8 +45,9 @@ public class PF2E_DataBase : MonoBehaviour
 
     public static Dictionary<string, PF2E_Class> Classes = new Dictionary<string, PF2E_Class>();
 
-    public static Dictionary<string, PF2E_Armor> Armors = new Dictionary<string, PF2E_Armor>();
+    public static Dictionary<string, PF2E_Armor> ArmorsSets = new Dictionary<string, PF2E_Armor>();
     public static Dictionary<string, PF2E_ArmorGroup> ArmorGroups = new Dictionary<string, PF2E_ArmorGroup>();
+    public static List<string> ArmorCategories = new List<string>();
 
     void Awake()
     {
@@ -53,7 +58,6 @@ public class PF2E_DataBase : MonoBehaviour
         }
         else
             Destroy(gameObject);
-
 
         Initialize();
     }
@@ -70,6 +74,23 @@ public class PF2E_DataBase : MonoBehaviour
         Backgrounds = JsonConvert.DeserializeObject<Dictionary<string, PF2E_Background>>(backgrounds.text);
 
         Classes = JsonConvert.DeserializeObject<Dictionary<string, PF2E_Class>>(classes.text);
+
+        // ArmorData = armor (Armor sets), armorcategory, armorgroup
+        // var deserializer = new DeserializerBuilder().WithNamingConvention(new UnderscoredNamingConvention()).Build();
+        // var input = new StringReader(armors.text);
+        // var ArmorData = deserializer.Deserialize<PF2E_ArmorData>(input);
+
+        // foreach (var item in ArmorData.armor)
+        //     ArmorsSets.Add(item.name, item);
+        // foreach (var item in ArmorData.armorgroup)
+        //     ArmorGroups.Add(item.name, item);
+        // foreach (var item in ArmorData.armorcategory)
+        //     ArmorCategories.Add(item);
+        // ArmorData = null;
+        // input.Close();
+
+
+
     }
 
     public void Clear()
@@ -209,15 +230,15 @@ public class PF2E_DataBase : MonoBehaviour
 
         if (lectures != null)
         {
-            foreach (var item in lectures)
-                if (item.proficiency == "T")
-                    maxProf = E_PF2E_Proficiency.Trained;
-                else if (item.proficiency == "E")
-                    maxProf = E_PF2E_Proficiency.Expert;
-                else if (item.proficiency == "M")
-                    maxProf = E_PF2E_Proficiency.Master;
-                else if (item.proficiency == "L")
-                    maxProf = E_PF2E_Proficiency.Lengend;
+            // foreach (var item in lectures)
+            //     if (item.proficiency == "T")
+            //         maxProf = E_PF2E_Proficiency.Trained;
+            //     else if (item.proficiency == "E")
+            //         maxProf = E_PF2E_Proficiency.Expert;
+            //     else if (item.proficiency == "M")
+            //         maxProf = E_PF2E_Proficiency.Master;
+            //     else if (item.proficiency == "L")
+            //         maxProf = E_PF2E_Proficiency.Lengend;
         }
 
         return maxProf;
@@ -229,15 +250,15 @@ public class PF2E_DataBase : MonoBehaviour
 
         if (lectures != null)
         {
-            foreach (var item in lectures)
-                if (item.proficiency == "T")
-                    maxProf = "<color=#" + ColorUtility.ToHtmlStringRGBA(Globals.Theme["trained"]) + ">T</color>";
-                else if (item.proficiency == "E")
-                    maxProf = "<color=#" + ColorUtility.ToHtmlStringRGBA(Globals.Theme["expert"]) + ">E</color>";
-                else if (item.proficiency == "M")
-                    maxProf = "<color=#" + ColorUtility.ToHtmlStringRGBA(Globals.Theme["master"]) + ">M</color>";
-                else if (item.proficiency == "L")
-                    maxProf = "<color=#" + ColorUtility.ToHtmlStringRGBA(Globals.Theme["leyend"]) + ">L</color>";
+            // foreach (var item in lectures)
+            //     if (item.proficiency == "T")
+            //         maxProf = "<color=#" + ColorUtility.ToHtmlStringRGBA(Globals.Theme["trained"]) + ">T</color>";
+            //     else if (item.proficiency == "E")
+            //         maxProf = "<color=#" + ColorUtility.ToHtmlStringRGBA(Globals.Theme["expert"]) + ">E</color>";
+            //     else if (item.proficiency == "M")
+            //         maxProf = "<color=#" + ColorUtility.ToHtmlStringRGBA(Globals.Theme["master"]) + ">M</color>";
+            //     else if (item.proficiency == "L")
+            //         maxProf = "<color=#" + ColorUtility.ToHtmlStringRGBA(Globals.Theme["leyend"]) + ">L</color>";
         }
 
         return maxProf;
