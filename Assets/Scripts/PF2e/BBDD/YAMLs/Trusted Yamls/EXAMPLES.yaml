@@ -1,0 +1,22 @@
+- name: Elven Weapon Expertise
+  descr: Your elven affinity blends with your class training, granting you great skill with elven weapons. Whenever you gain a class feature that grants you expert or greater proficiency in certain weapons, you also gain that proficiency in longbows, composite longbows, longswords, rapiers, shortbows, composite shortbows, and all elf weapons in which you are trained.
+  type: ancestry heritage
+  level: 13
+  cost: string
+  actioncost: 1 2 3 F R V 1m 10m 1h
+  trigger: string
+  frequency: once per X
+  prerequisites:
+    - type: ancestry feat
+      descr: Elven Weapon Familiarity
+  requirement: string
+  traits:
+    - Elf
+  lectures:
+    - target: simple weapons
+      prof: trained
+  source:
+    - abbr: CRB
+      page_start: 41
+      page_stop: 41
+  has_been_manually_proofread: true

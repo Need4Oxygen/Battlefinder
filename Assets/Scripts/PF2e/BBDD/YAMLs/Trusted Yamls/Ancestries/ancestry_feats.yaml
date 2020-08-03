@@ -1,0 +1,549 @@
+dwarf:
+  - name: Dwarven Lore
+    descr: You eagerly absorbed the old stories and traditions of your ancestors, your gods, and your people, studying in subjects and techniques passed down for generation upon generation. You gain the trained proficiency rank in Crafting and Religion. If you would automatically become trained in one of those skills (from your background or class, for example), you instead become trained in a skill of your choice. You also become trained in Dwarven Lore.
+    type: ancestry feat
+    level: 1
+    cost: null
+    actioncost: null
+    trigger: null
+    frequency: null
+    prerequisites: null
+    requirement: null
+    traits:
+      - Dwarf
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 36
+        page_stop: 36
+    has_been_manually_proofread: true
+
+  - name: Dwarven Weapon Familiarity
+    descr: Your kin have instilled in you an affinity for hard-hitting weapons, and you prefer these to more elegant arms. You are trained with the battle axe, pick, and warhammer. You also gain access to all uncommon dwarf weapons. For the purpose of determining your proficiency, martial dwarf weapons are simple weapons and advanced dwarf weapons are martial weapons.
+    type: ancestry feat
+    level: 1
+    cost: null
+    actioncost: null
+    trigger: null
+    frequency: null
+    prerequisites: null
+    requirement: null
+    traits:
+      - Dwarf
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 36
+        page_stop: 36
+    has_been_manually_proofread: true
+
+  - name: Rock Runner
+    descr: Your innate connection to stone makes you adept at moving across uneven surfaces. You can ignore difficult terrain caused by rubble and uneven ground made of stone and earth. In addition, when you use the Acrobatics skill to Balance on narrow surfaces or uneven ground made of stone or earth, you aren’t flat-footed, and when you roll a success at one of these Acrobatics checks, you get a critical success instead.
+    type: ancestry feat
+    level: 1
+    cost: null
+    actioncost: null
+    trigger: null
+    frequency: null
+    prerequisites: null
+    requirement: null
+    traits:
+      - Dwarf
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 36
+        page_stop: 36
+    has_been_manually_proofread: true
+
+  - name: Stonecunning
+    descr: You have a knack for noticing even small inconsistencies and craftsmanship techniques in the stonework around you. You gain a +2 circumstance bonus to Perception checks to notice unusual stonework. This bonus applies to checks to discover mechanical traps made of stone or hidden within stone. If you aren’t using the Seek action or searching, the GM automatically rolls a secret check for you to notice unusual stonework anyway. This check doesn’t gain the circumstance bonus, and it takes a –2 circumstance penalty.
+    type: ancestry feat
+    level: 1
+    cost: null
+    actioncost: null
+    trigger: null
+    frequency: null
+    prerequisites: null
+    requirement: null
+    traits:
+      - Dwarf
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 36
+        page_stop: 36
+    has_been_manually_proofread: true
+
+  - name: Unburdened Iron
+    descr: You’ve learned techniques first devised by your ancestors during their ancient wars, allowing you to comfortably wear massive suits of armor. Ignore the reduction to your Speed from any armor you wear. In addition, any time you’re taking a penalty to your Speed from some other reason (such as from the encumbered condition or from a spell), deduct 5 feet from the penalty. For example, the encumbered condition normally gives a –10-foot penalty to Speed, but it gives you only a –5-foot penalty. If your Speed is taking multiple penalties, pick only one penalty to reduce.
+    type: ancestry feat
+    level: 1
+    cost: null
+    actioncost: null
+    trigger: null
+    frequency: null
+    prerequisites: null
+    requirement: null
+    traits:
+      - Dwarf
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 36
+        page_stop: 36
+    has_been_manually_proofread: true
+
+  - name: Vengeful Hatred
+    descr: "You heart aches for vengeance against those who have wronged your people. Choose one of the following dwarven ancestral foes when you gain Vengeful Hatred: drow, duergar, giant, or orc. You gain a +1 circumstance bonus to damage with weapons and unarmed attacks against creatures with that trait. If your attack would deal more than one weapon die of damage (as is common at higher levels than 1st), the bonus is equal to the number of weapon dice or unarmed attack dice. In addition, if a creature critically succeeds at an attack against you and deals damage to you, you gain your bonus to damage against that creature for 1 minute regardless of whether it has the chosen trait. Special Your GM can add appropriate creature traits to the ancestral foes list if your character is from a community that commonly fights other types of enemies."
+    type: ancestry feat
+    level: 1
+    cost: null
+    actioncost: null
+    trigger: null
+    frequency: null
+    prerequisites: null
+    requirement: null
+    traits:
+      - Dwarf
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 36
+        page_stop: 36
+    has_been_manually_proofread: true
+
+  - name: Boulder Roll
+    descr: Your dwarven build allows you to push foes around, just like a mighty boulder tumbles through a subterranean cavern. Take a Step into the square of a foe that is your size or smaller, and the foe must move into the empty space directly behind it. The foe must move even if doing so places it in harm’s way. The foe can attempt a Fortitude saving throw against your Athletics DC to block your Step. If the foe attempts this saving throw, unless it critically succeeds, it takes bludgeoning damage equal to your level plus your Strength modifier. If the foe can’t move into an empty space (if it is surrounded by solid objects or other creatures, for example), your Boulder Roll has no effect.
+    type: ancestry feat
+    level: 5
+    cost: null
+    actioncost: 2
+    trigger: null
+    frequency: null
+    prerequisites:
+      - type: ancestry feat
+      - descr: Rock Runner
+    requirement: null
+    traits:
+      - Dwarf
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 36
+        page_stop: 36
+    has_been_manually_proofread: true
+
+  - name: Dwarven Weapon Cunning
+    descr: You’ve learned cunning techniques to get the best effects out of your dwarven weapons. Whenever you critically hit using a battle axe, pick, warhammer, or a dwarf weapon, you apply the weapon’s critical specialization effect.
+    type: ancestry feat
+    level: 5
+    cost: null
+    actioncost: null
+    trigger: null
+    frequency: null
+    prerequisites:
+      - type: ancestry feat
+      - descr: Dwarven Weapon Familiarity
+    requirement: null
+    traits:
+      - Dwarf
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 37
+        page_stop: 37
+    has_been_manually_proofread: true
+
+  - name: Mountain's Stoutness
+    descr: Your hardiness lets you withstand more punishment than most before going down. Increase your maximum Hit Points by your level. You also decrease the DC of recovery checks when you have the dying condition by 1. If you also have the Toughness feat, the Hit Points gained from it and this feat are cumulative, and you decrease the DC of recovery checks by 4.
+    type: ancestry feat
+    level: 9
+    cost: null
+    actioncost: null
+    trigger: null
+    frequency: null
+    prerequisites: null
+    requirement: null
+    traits:
+      - Dwarf
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 37
+        page_stop: 37
+    has_been_manually_proofread: true
+
+  - name: Stonewalker
+    descr: You have a deep reverence for and connection to stone. You gain meld into stone as a 3rd‑level divine innate spell that you can cast once per day. If you have the Stonecunning dwarf ancestry feat, you can attempt to find unusual stonework and stonework traps that require legendary proficiency in Perception. If you have both Stonecunning and legendary proficiency in Perception, when you’re not Seeking and the GM rolls a secret check for you to notice unusual stonework, you keep the bonus from Stonecunning and don’t take the –2 circumstance penalty.
+    type: ancestry feat
+    level: 9
+    cost: null
+    actioncost: null
+    trigger: null
+    frequency: null
+    prerequisites: null
+    requirement: null
+    traits:
+      - Dwarf
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 37
+        page_stop: 37
+    has_been_manually_proofread: true
+
+  - name: Dwarven Weapon Expertise
+    descr: Your dwarven affinity blends with your training, granting you great skill with dwarven weapons. Whenever you gain a class feature that grants you expert or greater proficiency in certain weapons, you also gain that proficiency for battle axes, picks, warhammers, and all dwarven weapons in which you are trained.
+    type: ancestry feat
+    level: 13
+    cost: null
+    actioncost: null
+    trigger: null
+    frequency: null
+    prerequisites:
+      - type: ancestry feat
+        descr: Dwarven Weapon Familiarity
+    requirement: null
+    traits:
+      - Dwarf
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 37
+        page_stop: 37
+    has_been_manually_proofread: true
+
+elf:
+  - name: Ancestral Longevity
+    descr: You have accumulated a vast array of lived knowledge over the years. During your daily preparations, you can reflect upon your life experiences to gain the trained proficiency rank in one skill of your choice. This proficiency lasts until you prepare again. Since this proficiency is temporary, you can’t use it as a prerequisite for a skill increase or a permanent character option like a feat.
+    type: ancestry heritage
+    level: 1
+    cost: null
+    actioncost: null
+    trigger: null
+    frequency: null
+    prerequisites:
+      - type: null
+        descr: at least 100 years old
+    requirement: null
+    traits:
+      - Elf
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 40
+        page_stop: 40
+    has_been_manually_proofread: true
+
+  - name: Elven Lore
+    descr: You’ve studied in traditional FEAT 1 elven arts, learning about arcane magic and the world around you. You gain the trained proficiency rank in Arcana and Nature. If you would automatically become trained in one of those skills (from your background or class, for example), you instead become trained in a skill of your choice. You also become trained in Elven Lore.
+    type: ancestry heritage
+    level: 1
+    cost: null
+    actioncost: null
+    trigger: null
+    frequency: null
+    prerequisites: null
+    requirement: null
+    traits:
+      - Elf
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 40
+        page_stop: 40
+    has_been_manually_proofread: true
+
+  - name: Elven Weapon Familiarity
+    descr: You favor bows and other elegant weapons. You are trained with longbows, composite longbows, longswords, rapiers, shortbows, and composite shortbows. In addition, you gain access to all uncommon elf weapons. For the purpose of determining your proficiency, martial elf weapons are simple weapons and advanced elf weapons are martial weapons.
+    type: ancestry heritage
+    level: 1
+    cost: null
+    actioncost: null
+    trigger: null
+    frequency: null
+    prerequisites: null
+    requirement: null
+    traits:
+      - Elf
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 40
+        page_stop: 40
+    has_been_manually_proofread: true
+
+  - name: Forlorn
+    descr: Watching your friends age and die fills you with moroseness that protects you against harmful emotions. You gain a +1 circumstance bonus to saving throws against emotion effects. If you roll a success on a saving throw against an emotion effect, you get a critical success instead.
+    type: ancestry heritage
+    level: 1
+    cost: null
+    actioncost: null
+    trigger: null
+    frequency: null
+    prerequisites: null
+    requirement: null
+    traits:
+      - Elf
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 40
+        page_stop: 40
+    has_been_manually_proofread: true
+
+  - name: Nimble Elf
+    descr: Your muscles are tightly honed. Your Speed increases by 5 feet.
+    type: ancestry heritage
+    level: 1
+    cost: null
+    actioncost: null
+    trigger: null
+    frequency: null
+    prerequisites: null
+    requirement: null
+    traits:
+      - Elf
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 40
+        page_stop: 40
+    has_been_manually_proofread: true
+
+  - name: Otherworldly Magic
+    descr: Your elven magic manifests as a simple arcane spell, even if you aren’t formally trained in magic. Choose one cantrip from the arcane spell list (page 307). You can cast this cantrip as an arcane innate spell at will. A cantrip is heightened to a spell level equal to half your level rounded up.
+    type: ancestry heritage
+    level: 1
+    cost: null
+    actioncost: null
+    trigger: null
+    frequency: null
+    prerequisites: null
+    requirement: null
+    traits:
+      - Elf
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 40
+        page_stop: 40
+    has_been_manually_proofread: true
+
+  - name: Unwavering Mien
+    descr: Your mystic control and meditations allow you to resist external influences upon your consciousness. Whenever you are affected by a mental effect that lasts at least 2 rounds, you can reduce the duration by 1 round. You still require natural sleep, but you treat your saving throws against effects that would cause you to fall asleep as one degree of success better. This protects only against sleep effects, not against other forms of falling unconscious.
+    type: ancestry heritage
+    level: 1
+    cost: null
+    actioncost: null
+    trigger: null
+    frequency: null
+    prerequisites: null
+    requirement: null
+    traits:
+      - Elf
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 40
+        page_stop: 40
+    has_been_manually_proofread: true
+
+  - name: Ageless Patience
+    descr: You work at a pace born from longevity that enhances your thoroughness. You can voluntarily spend twice as much time as normal on a Perception check or skill check to gain a +2 circumstance bonus to that check. You also don’t treat a natural 1 as worse than usual on these checks; you get a critical failure only if your result is 10 lower than the DC. For example, you could get these benefits if you spent 2 actions to Seek, which normally takes 1 action. You can get these benefits during exploration by taking twice as long exploring as normal, or in downtime by spending twice as much downtime. The GM might determine a situation doesn’t grant you a benefit if a delay would be directly counterproductive to your success, such as a tense negotiation with an impatient creature.
+    type: ancestry heritage
+    level: 5
+    cost: null
+    actioncost: null
+    trigger: null
+    frequency: null
+    prerequisites: null
+    requirement: null
+    traits:
+      - Elf
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 40
+        page_stop: 41
+    has_been_manually_proofread: true
+
+  - name: Elven Weapon Elegance
+    descr: You are attuned to the weapons of your elven ancestors and are particularly deadly when using them. Whenever you critically hit using an elf weapon or one of the weapons listed in Elven Weapon Familiarity, you apply the weapon’s critical specialization effect.
+    type: ancestry heritage
+    level: 5
+    cost: null
+    actioncost: null
+    trigger: null
+    frequency: null
+    prerequisites:
+      - type: ancestry feat
+        descr: Elven Weapon Familiarity
+    requirement: null
+    traits:
+      - Elf
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 41
+        page_stop: 41
+    has_been_manually_proofread: true
+
+  - name: Elf Step
+    descr: You move in a graceful dance, and even your steps are broad. You Step 5 feet twice.
+    type: ancestry heritage
+    level: 9
+    cost: null
+    actioncost: 1
+    trigger: null
+    frequency: null
+    prerequisites: null
+    requirement: null
+    traits:
+      - Elf
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 41
+        page_stop: 41
+    has_been_manually_proofread: true
+
+  - name: Expert Longevity
+    descr: You’ve continued to refine the knowledge and skills you’ve gained through your life. When you choose a skill in which to become trained with Ancestral Longevity, you can also choose a skill in which you are already trained and become an expert in that skill. This lasts until your Ancestral Longevity expires. When the effects of Ancestral Longevity and Expert Longevity expire, you can retrain one of your skill increases. The skill increase you gain from this retraining must either make you trained in the skill you chose with Ancestral Longevity or make you an expert in the skill you chose with Expert Longevity.
+    type: ancestry heritage
+    level: 9
+    cost: null
+    actioncost: null
+    trigger: null
+    frequency: null
+    prerequisites:
+      - type: ancestry feat
+        descr: Ancestral Longevity
+    requirement: null
+    traits:
+      - Elf
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 41
+        page_stop: 41
+    has_been_manually_proofread: true
+
+  - name: Universal Longevity
+    descr: You’ve perfected your ability to keep up with all the skills you’ve learned over your long life, so you’re almost never truly untrained at a skill. You reflect on your life experiences, changing the skills you selected with Elven Longevity and Expert Longevity.
+    type: ancestry heritage
+    level: 13
+    cost: null
+    actioncost: 1
+    trigger: null
+    frequency: once per day
+    prerequisites:
+      - type: ancestry feat
+        descr: Expert Longevity
+    requirement: null
+    traits:
+      - Elf
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 41
+        page_stop: 41
+    has_been_manually_proofread: true
+
+  - name: Elven Weapon Expertise
+    descr: Your elven affinity blends with your class training, granting you great skill with elven weapons. Whenever you gain a class feature that grants you expert or greater proficiency in certain weapons, you also gain that proficiency in longbows, composite longbows, longswords, rapiers, shortbows, composite shortbows, and all elf weapons in which you are trained.
+    type: ancestry heritage
+    level: 13
+    cost: null
+    actioncost: null
+    trigger: null
+    frequency: null
+    prerequisites:
+      - type: ancestry feat
+        descr: Elven Weapon Familiarity
+    requirement: null
+    traits:
+      - Elf
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 41
+        page_stop: 41
+    has_been_manually_proofread: true
+
+gnome:
+  - name: Chameleon Gnome
+    descr: The color of your hair and skin is mutable, possibly due to latent magic. You can slowly change the vibrancy and the exact color, and the coloration can be different across your body, allowing you to create patterns or other colorful designs. It takes a single action for minor localized shifts and up to an hour for dramatic shifts throughout your body. While you’re asleep, the colors shift on their own in tune with your dreams, giving you an unusual coloration each morning. When you’re in an area where your coloration is roughly similar to the environment (for instance, forest green in a forest), you can use the single action to make minor localized shifts designed to help you blend into your surroundings. This grants you a +2 circumstance bonus to Stealth checks until your surroundings shift in coloration or pattern.
+    type: ancestry heritage
+    level: null
+    cost: null
+    actioncost: null
+    trigger: null
+    frequency: null
+    prerequisites: null
+    requirement: null
+    traits: null
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 43
+        page_stop: 43
+    has_been_manually_proofread: true
+
+goblin:
+  - name: Charhide Goblin
+    descr: Your ancestors have always had a connection to fire and a thicker skin, which allows you to resist burning. You gain fire resistance equal to half your level (minimum 1). You can also recover from being on fire more easily. Your flat check to remove persistent fire damage is DC 10 instead of DC 15, which is reduced to DC 5 if another creature uses a particularly appropriate action to help.
+    type: ancestry heritage
+    level: null
+    cost: null
+    actioncost: null
+    trigger: null
+    frequency: null
+    prerequisites: null
+    requirement: null
+    traits: null
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 47
+        page_stop: 47
+    has_been_manually_proofread: true
+
+halfling:
+  - name: Gutsy Halfling
+    descr: Your family line is known for keeping a level head and staving off fear when the chips were down, making them wise leaders and sometimes even heroes. When you roll a success on a saving throw against an emotion effect, you get a critical success instead.
+    type: ancestry heritage
+    level: null
+    cost: null
+    actioncost: null
+    trigger: null
+    frequency: null
+    prerequisites: null
+    requirement: null
+    traits: null
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 51
+        page_stop: 51
+    has_been_manually_proofread: true
+
+human:
+  - name: Half-Elf
+    descr: Either one of your parents was an elf, or one or both were half-elves. You have pointed ears and other telltale signs of elf heritage. You gain the elf trait and low‑light vision. In addition, you can select elf, half-elf, and human feats whenever you gain an ancestry feat.
+    type: ancestry heritage
+    level: null
+    cost: null
+    actioncost: null
+    trigger: null
+    frequency: null
+    prerequisites: null
+    requirement: null
+    traits: null
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 56
+        page_stop: 56
+    has_been_manually_proofread: true
