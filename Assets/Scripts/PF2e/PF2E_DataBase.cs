@@ -88,9 +88,6 @@ public class PF2E_DataBase : MonoBehaviour
         //     ArmorCategories.Add(item);
         // ArmorData = null;
         // input.Close();
-
-
-
     }
 
     public void Clear()
