@@ -147,7 +147,7 @@ public class PF2E_DataBase : MonoBehaviour
                 return "free";
 
             default:
-                Debug.LogWarning("[PF2E_DataBase] Error: ability abreviation (" + abilityFullName + ") not recognized!");
+                Debug.LogWarning($"[PF2E_DataBase] Ability abreviation \"{abilityFullName}\" not recognized!");
                 return "";
         }
     }
@@ -303,6 +303,29 @@ public class PF2E_DataBase : MonoBehaviour
 
             default:
                 Debug.LogWarning("[PF2E_DataBase] Error: size abreviation (" + full + ") not recognized!");
+                return "";
+        }
+    }
+
+    public static string ActionCost_Full2Abbr(string full)
+    {
+        switch (full)
+        {
+            case "Free Action":
+                return "F";
+            case "Reaction":
+                return "R";
+            case "Single Action":
+                return "1";
+            case "Two Actions":
+                return "2";
+            case "Three Actions":
+                return "3";
+            case "Varies":
+                return "V";
+
+            default:
+                Debug.LogWarning($"[PF2E_DataBase] Action Cost abreviation \"{full}\" not recognized!");
                 return "";
         }
     }
