@@ -10,6 +10,8 @@ using YamlDotNet.Serialization.NamingConventions;
 public class EditorTools : MonoBehaviour
 {
 
+    const string path = "C:/Repos/Battlefinder/Assets/Scripts/PF2e/BBDD/YAMLs/";
+
     public class Background_Wrapper
     {
         public string name { get; set; }
@@ -23,8 +25,8 @@ public class EditorTools : MonoBehaviour
     [MenuItem("Tools/Update Backgrounds")]
     public static void UpdateBackgrounds()
     {
-        string bgBad = "C:/Repos/Battlefinder/Assets/Scripts/PF2e/BBDD/YAMLs/backgrounds.yaml";
-        string bgGood = "C:/Repos/Battlefinder/Assets/Scripts/PF2e/BBDD/YAMLs/Trusted Yamls/Background/backgrounds.yaml";
+        string bgBad = $"{path}Pathfinder 2 Sqlite/backgrounds.yaml";
+        string bgGood = $"{path}Trusted Yamls/Background/backgrounds.yaml";
 
         var deserializer = new DeserializerBuilder().WithNamingConvention(new UnderscoredNamingConvention()).Build();
         var input = new StringReader(File.ReadAllText(bgBad));
@@ -47,14 +49,8 @@ public class EditorTools : MonoBehaviour
 
             newString += $"  community_licenced: {bg.is_comty_use}{"\n"}";
             newString += $"  is_specific_to_adv: {bg.is_specific_to_adv}{"\n"}";
-            newString += $"  source:{"\n"}";
 
-            foreach (var scr in bg.source)
-            {
-                newString += $"    - abbr: {scr.abbr}{"\n"}";
-                newString += $"      page_start: { scr.page_start}{"\n"}";
-                newString += $"      page_stop: { scr.page_stop}{"\n"}";
-            }
+            WriteSources(ref newString, bg.source);
 
             newString += "\n";
         }
@@ -90,9 +86,9 @@ public class EditorTools : MonoBehaviour
     [MenuItem("Tools/Update Actions")]
     public static void UpdateActions()
     {
-        string aBad = "C:/Repos/Battlefinder/Assets/Scripts/PF2e/BBDD/YAMLs/actions.yaml";
-        string aGood = "C:/Repos/Battlefinder/Assets/Scripts/PF2e/BBDD/YAMLs/Trusted Yamls/Actions/actions.yaml";
-        string cGood = "C:/Repos/Battlefinder/Assets/Scripts/PF2e/BBDD/YAMLs/Trusted Yamls/Actions/action_categories.yaml";
+        string aBad = $"{path}Pathfinder 2 Sqlite/actions.yaml";
+        string aGood = $"{path}Trusted Yamls/Actions/actions.yaml";
+        string cGood = $"{path}Trusted Yamls/Actions/action_categories.yaml";
 
         var deserializer = new DeserializerBuilder().WithNamingConvention(new UnderscoredNamingConvention()).Build();
         var input = new StringReader(File.ReadAllText(aBad));
@@ -117,17 +113,9 @@ public class EditorTools : MonoBehaviour
             newActions += $"  traits:{"\n"}";
             if (a.trait != null)
                 foreach (var trait in a.trait)
-                {
                     newActions += $"    - {trait}{"\n"}";
-                }
 
-            newActions += $"  source:{"\n"}";
-            foreach (var scr in a.source)
-            {
-                newActions += $"    - abbr: {scr.abbr}{"\n"}";
-                newActions += $"      page_start: { scr.page_start}{"\n"}";
-                newActions += $"      page_stop: { scr.page_stop}{"\n"}";
-            }
+            WriteSources(ref newActions, a.source);
 
             newActions += "\n";
         }
@@ -138,14 +126,8 @@ public class EditorTools : MonoBehaviour
         {
             newCategories += $"- name: {c.name}{"\n"}";
             newCategories += $"  descr: {"\""}{c.descr}{"\""}{"\n"}";
-            newCategories += $"  source:{"\n"}";
 
-            foreach (var scr in c.source)
-            {
-                newCategories += $"    - abbr: {scr.abbr}{"\n"}";
-                newCategories += $"      page_start: { scr.page_start}{"\n"}";
-                newCategories += $"      page_stop: { scr.page_stop}{"\n"}";
-            }
+            WriteSources(ref newCategories, c.source);
 
             newCategories += "\n";
         }
@@ -165,8 +147,8 @@ public class EditorTools : MonoBehaviour
     [MenuItem("Tools/Update Languages")]
     public static void UpdateLanguages()
     {
-        string lBad = "C:/Repos/Battlefinder/Assets/Scripts/PF2e/BBDD/YAMLs/langs.yaml";
-        string lGood = "C:/Repos/Battlefinder/Assets/Scripts/PF2e/BBDD/YAMLs/Trusted Yamls/General/languages.yaml";
+        string lBad = $"{path}Pathfinder 2 Sqlite/langs.yaml";
+        string lGood = $"{path}Trusted Yamls/General/languages.yaml";
 
         var deserializer = new DeserializerBuilder().WithNamingConvention(new UnderscoredNamingConvention()).Build();
         var input = new StringReader(File.ReadAllText(lBad));
@@ -182,13 +164,7 @@ public class EditorTools : MonoBehaviour
             newString += $"  rarity: {l.rarity}{"\n"}";
             newString += $"  speakers: {l.speakers}{"\n"}";
 
-            newString += $"  source:{"\n"}";
-            foreach (var scr in l.source)
-            {
-                newString += $"    - abbr: {scr.abbr}{"\n"}";
-                newString += $"      page_start: { scr.page_start}{"\n"}";
-                newString += $"      page_stop: { scr.page_stop}{"\n"}";
-            }
+            WriteSources(ref newString, l.source);
 
             newString += "\n";
         }
@@ -196,5 +172,106 @@ public class EditorTools : MonoBehaviour
         File.WriteAllText(lGood, newString);
     }
 
+    public class Senses_Wrapper
+    {
+        public string name { get; set; }
+        public string descr { get; set; }
+        public List<PF2E_Source> source { get; set; }
+    }
+
+    [MenuItem("Tools/Update Senses")]
+    public static void UpdateSenses()
+    {
+        string sBad = $"{path}Pathfinder 2 Sqlite/senses.yaml";
+        string sGood = $"{path}Trusted Yamls/General/senses.yaml";
+
+        var deserializer = new DeserializerBuilder().WithNamingConvention(new UnderscoredNamingConvention()).Build();
+        var input = new StringReader(File.ReadAllText(sBad));
+        var senses = deserializer.Deserialize<List<Senses_Wrapper>>(input);
+
+        Debug.Log($"[EditorTools] Updating Senses with size: {senses.Count}{"\n"}");
+
+        string newString = "";
+
+        foreach (var s in senses)
+        {
+            newString += $"- name: {s.name}{"\n"}";
+            newString += $"  descr: {"\""}{s.descr}{"\""}{"\n"}";
+
+            WriteSources(ref newString, s.source);
+
+            newString += "\n";
+        }
+
+        File.WriteAllText(sGood, newString);
+    }
+
+    public class TraitsFile_Wrapper
+    {
+        public List<Traits_Wrapper> trait { get; set; }
+        public List<string> traittype { get; set; }
+    }
+
+    public class Traits_Wrapper
+    {
+        public string name { get; set; }
+        public string descr { get; set; }
+        public string type { get; set; }
+    }
+
+    [MenuItem("Tools/Update Traits")]
+    public static void UpdateTraits()
+    {
+        string tBad = $"{path}Pathfinder 2 Sqlite/traits.yaml";
+        string tGood = $"{path}Trusted Yamls/General/traits.yaml";
+        string cGood = $"{path}Trusted Yamls/General/traits_categories.yaml";
+
+        var deserializer = new DeserializerBuilder().WithNamingConvention(new UnderscoredNamingConvention()).Build();
+        var input = new StringReader(File.ReadAllText(tBad));
+        var yaml = deserializer.Deserialize<TraitsFile_Wrapper>(input);
+        List<Traits_Wrapper> traits = yaml.trait;
+        List<string> categories = yaml.traittype;
+
+        Debug.Log($"[EditorTools] Updating Traits with size: {traits.Count}{"\n"}");
+        Debug.Log($"[EditorTools] Updating Traits Categories with size: {categories.Count}{"\n"}");
+
+        string newTraits = "";
+
+        foreach (var t in traits)
+        {
+            newTraits += $"- name: {t.name}{"\n"}";
+            newTraits += $"  descr: {"\""}{t.descr}{"\""}{"\n"}";
+            newTraits += $"  type: {t.type}{"\n"}";
+
+            newTraits += "\n";
+        }
+
+        string newCategories = "";
+
+        foreach (var c in categories)
+        {
+            newCategories += $"- {c}{"\n"}";
+        }
+
+        File.WriteAllText(tGood, newTraits);
+        File.WriteAllText(cGood, newCategories);
+    }
+
+    static void WriteSources(ref string mainString, List<PF2E_Source> source)
+    { WriteSources(ref mainString, 0, source); }
+    static void WriteSources(ref string mainString, int indent, List<PF2E_Source> source)
+    {
+        string i = "";
+        for (int j = 0; j < indent; j++)
+            i += "  ";
+
+        mainString += $"{i}  source:{"\n"}";
+        foreach (var scr in source)
+        {
+            mainString += $"{i}    - abbr: {scr.abbr}{"\n"}";
+            mainString += $"{i}      page_start: { scr.page_start}{"\n"}";
+            mainString += $"{i}      page_stop: { scr.page_stop}{"\n"}";
+        }
+    }
 
 }
