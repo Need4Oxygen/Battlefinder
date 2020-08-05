@@ -10,7 +10,7 @@ using YamlDotNet.Serialization.NamingConventions;
 public class EditorTools : MonoBehaviour
 {
 
-    public class YamlBackground_Wrapper
+    public class Background_Wrapper
     {
         public string name { get; set; }
         public string descr { get; set; }
@@ -28,7 +28,7 @@ public class EditorTools : MonoBehaviour
 
         var deserializer = new DeserializerBuilder().WithNamingConvention(new UnderscoredNamingConvention()).Build();
         var input = new StringReader(File.ReadAllText(bgBad));
-        var backgrounds = deserializer.Deserialize<List<YamlBackground_Wrapper>>(input);
+        var backgrounds = deserializer.Deserialize<List<Background_Wrapper>>(input);
 
         Debug.Log($"[EditorTools] Updating Backgrounds with size: {backgrounds.Count}{"\n"}");
 
@@ -62,7 +62,7 @@ public class EditorTools : MonoBehaviour
         File.WriteAllText(bgGood, newString);
     }
 
-    public class YamlAction_Wrapper
+    public class ActionFile_Wrapper
     {
         public List<Actions_Wrapper> action { get; set; }
         public List<ActionCategory_Wrapper> actioncategory { get; set; }
@@ -96,7 +96,7 @@ public class EditorTools : MonoBehaviour
 
         var deserializer = new DeserializerBuilder().WithNamingConvention(new UnderscoredNamingConvention()).Build();
         var input = new StringReader(File.ReadAllText(aBad));
-        var yaml = deserializer.Deserialize<YamlAction_Wrapper>(input);
+        var yaml = deserializer.Deserialize<ActionFile_Wrapper>(input);
         List<Actions_Wrapper> actions = yaml.action;
         List<ActionCategory_Wrapper> categories = yaml.actioncategory;
 
@@ -153,5 +153,48 @@ public class EditorTools : MonoBehaviour
         File.WriteAllText(aGood, newActions);
         File.WriteAllText(cGood, newCategories);
     }
+
+    public class Language_Wrapper
+    {
+        public string name { get; set; }
+        public string rarity { get; set; }
+        public string speakers { get; set; }
+        public List<PF2E_Source> source { get; set; }
+    }
+
+    [MenuItem("Tools/Update Languages")]
+    public static void UpdateLanguages()
+    {
+        string lBad = "C:/Repos/Battlefinder/Assets/Scripts/PF2e/BBDD/YAMLs/langs.yaml";
+        string lGood = "C:/Repos/Battlefinder/Assets/Scripts/PF2e/BBDD/YAMLs/Trusted Yamls/General/languages.yaml";
+
+        var deserializer = new DeserializerBuilder().WithNamingConvention(new UnderscoredNamingConvention()).Build();
+        var input = new StringReader(File.ReadAllText(lBad));
+        var languages = deserializer.Deserialize<List<Language_Wrapper>>(input);
+
+        Debug.Log($"[EditorTools] Updating Languages with size: {languages.Count}{"\n"}");
+
+        string newString = "";
+
+        foreach (var l in languages)
+        {
+            newString += $"- name: {l.name}{"\n"}";
+            newString += $"  rarity: {l.rarity}{"\n"}";
+            newString += $"  speakers: {l.speakers}{"\n"}";
+
+            newString += $"  source:{"\n"}";
+            foreach (var scr in l.source)
+            {
+                newString += $"    - abbr: {scr.abbr}{"\n"}";
+                newString += $"      page_start: { scr.page_start}{"\n"}";
+                newString += $"      page_stop: { scr.page_stop}{"\n"}";
+            }
+
+            newString += "\n";
+        }
+
+        File.WriteAllText(lGood, newString);
+    }
+
 
 }
