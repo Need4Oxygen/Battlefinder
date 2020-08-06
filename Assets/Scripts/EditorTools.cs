@@ -257,20 +257,102 @@ public class EditorTools : MonoBehaviour
         File.WriteAllText(cGood, newCategories);
     }
 
+    public class ClassesFile_Wrapper
+    {
+        public List<Lecture_Wrapper> attacks { get; set; }
+        public List<Lecture_Wrapper> class_dc_and_spells { get; set; }
+        public List<Lecture_Wrapper> defenses { get; set; }
+        public int hp { get; set; }
+        public List<string> key_ability_choices { get; set; }
+        public string name { get; set; }
+        public string perception { get; set; }
+        public List<Lecture_Wrapper> saving_throws { get; set; }
+        public List<Lecture_Wrapper> skills { get; set; }
+    }
+
+    [MenuItem("Tools/Update Classes")]
+    public static void UpdateClassess()
+    {
+        string tBad = $"{path}Pathfinder 2 Sqlite/classes.yaml";
+        string cGood = $"{path}Trusted Yamls/Classes/classes.yaml";
+
+        var deserializer = new DeserializerBuilder().WithNamingConvention(new UnderscoredNamingConvention()).IgnoreUnmatchedProperties().Build();
+        var input = new StringReader(File.ReadAllText(tBad));
+        var classes = deserializer.Deserialize<List<ClassesFile_Wrapper>>(input);
+
+        Debug.Log($"[EditorTools] Updating Classes with size: {classes.Count}{"\n"}");
+
+        string newString = "";
+
+        foreach (var c in classes)
+        {
+            newString += $"- name: {c.name}{"\n"}";
+            newString += $"  descr: null{"\n"}";
+            newString += $"  hp: {c.hp}{"\n"}";
+            newString += $"  key_ability_choices:{"\n"}";
+            foreach (var abl in c.key_ability_choices)
+                newString += $"    - {abl}{"\n"}";
+
+            Lecture_Wrapper perception = new Lecture_Wrapper();
+            perception.degree = c.perception;
+            perception.type = "perception";
+            List<Lecture_Wrapper> perceptionList = new List<Lecture_Wrapper> { perception };
+            WriteLectures(ref newString, "perception", perceptionList);
+            WriteLectures(ref newString, "saves", c.saving_throws);
+            WriteLectures(ref newString, "attacks", c.attacks);
+            WriteLectures(ref newString, "defenses", c.defenses);
+            WriteLectures(ref newString, "skills", c.skills);
+            WriteLectures(ref newString, "class_dc_and_spells", c.class_dc_and_spells);
+
+            PF2E_Source source = new PF2E_Source();
+            source.abbr = "CRB";
+            source.page_start = 0;
+            source.page_stop = 0;
+            List<PF2E_Source> sourceList = new List<PF2E_Source> { source };
+            WriteSources(ref newString, sourceList);
+
+            newString += "\n";
+        }
+
+        File.WriteAllText(cGood, newString);
+    }
+
     static void WriteSources(ref string mainString, List<PF2E_Source> source)
     { WriteSources(ref mainString, 0, source); }
     static void WriteSources(ref string mainString, int indent, List<PF2E_Source> source)
     {
-        string i = "";
+        string i = "  ";
         for (int j = 0; j < indent; j++)
             i += "  ";
 
-        mainString += $"{i}  source:{"\n"}";
+        mainString += $"{i}source:{"\n"}";
         foreach (var scr in source)
         {
-            mainString += $"{i}    - abbr: {scr.abbr}{"\n"}";
-            mainString += $"{i}      page_start: { scr.page_start}{"\n"}";
-            mainString += $"{i}      page_stop: { scr.page_stop}{"\n"}";
+            mainString += $"{i}  - abbr: {scr.abbr}{"\n"}";
+            mainString += $"{i}    page_start: { scr.page_start}{"\n"}";
+            mainString += $"{i}    page_stop: { scr.page_stop}{"\n"}";
+        }
+    }
+
+    public class Lecture_Wrapper
+    {
+        public string degree { get; set; }
+        public string type { get; set; }
+    }
+
+    static void WriteLectures(ref string mainString, string propertyName, List<Lecture_Wrapper> lecture)
+    { WriteLectures(ref mainString, propertyName, 0, lecture); }
+    static void WriteLectures(ref string mainString, string propertyName, int indent, List<Lecture_Wrapper> lecture)
+    {
+        string i = "  ";
+        for (int j = 0; j < indent; j++)
+            i += "  ";
+
+        mainString += $"{i}{propertyName}:{"\n"}";
+        foreach (var l in lecture)
+        {
+            mainString += $"{i}  - target: {l.type.ToLowerInvariant()}{"\n"}";
+            mainString += $"{i}    prof: {l.degree.ToLowerInvariant()}{"\n"}";
         }
     }
 
