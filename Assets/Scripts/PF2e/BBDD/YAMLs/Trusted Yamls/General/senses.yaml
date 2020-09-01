@@ -5,12 +5,39 @@
       page_start: 465
       page_stop: 465
 
+- name: Greater Darkvision
+  descr: "A creature with darkvision or greater darkvision can see perfectly well in areas of darkness and dim light, though such vision is in black and white only. Some forms of magical darkness, such as a 4th-level *darkness* spell, block normal darkvision. A creature with greater darkvision, however, can see through even these forms of magical darkness."
+  source:
+    - abbr: CRB
+      page_start: 465
+      page_stop: 465
+
 - name: Low-Light Vision
   descr: "You can see in dim light as though it were bright light, and you ignore the concealed condition due to dim light."
   source:
     - abbr: CRB
       page_start: 465
       page_stop: 465
+
+- name: Scent
+  descr: "Scent involves sensing creatures or objects by smell, and is usually a vague sense. The range is listed in the ability, and it functions only if the creature or object being detected emits an aroma (for instance, incorporeal creatures usually do not exude an aroma). If a creature emits a heavy aroma or is upwind, the GM can double or even triple the range of scent abilities used to detect that creature, and the GM can reduce the range if a creature is downwind."
+  source:
+    - abbr: CRB
+      page_start: 465
+      page_stop: 465
+    - abbr: BST1
+      page_start: 344
+      page_stop: 344
+
+- name: Tremorsense
+  descr: "Tremorsense allows a monster to feel the vibrations through a solid surface caused by movement. It is an imprecise sense with a limited range (listed in the ability). Tremorsense functions only if the monster is on the same surface as the subject, and only if the subject is moving along (or burrowing through) the surface."
+  source:
+    - abbr: CRB
+      page_start: 465
+      page_stop: 465
+    - abbr: BST1
+      page_start: 344
+      page_stop: 344
 
 - name: Keen Eyes
   descr: "Your eyes are sharp, allowing you to make out small details about concealed or even invisible creatures that others might miss. You gain a +2 circumstance bonus when using the Seek action to find hidden or undetected creatures within 30 feet of you. When you target an opponent that is concealed from you or hidden from you, reduce the DC of the flat check to 3 for a concealed target or 9 for a hidden one."
@@ -54,39 +81,12 @@
       page_start: 195
       page_stop: 195
 
-- name: Greater Darkvision
-  descr: "A creature with darkvision or greater darkvision can see perfectly well in areas of darkness and dim light, though such vision is in black and white only. Some forms of magical darkness, such as a 4th-level *darkness* spell, block normal darkvision. A creature with greater darkvision, however, can see through even these forms of magical darkness."
-  source:
-    - abbr: CRB
-      page_start: 465
-      page_stop: 465
-
-- name: Scent
-  descr: "Scent involves sensing creatures or objects by smell, and is usually a vague sense. The range is listed in the ability, and it functions only if the creature or object being detected emits an aroma (for instance, incorporeal creatures usually do not exude an aroma). If a creature emits a heavy aroma or is upwind, the GM can double or even triple the range of scent abilities used to detect that creature, and the GM can reduce the range if a creature is downwind."
-  source:
-    - abbr: CRB
-      page_start: 465
-      page_stop: 465
-    - abbr: BST1
-      page_start: 344
-      page_stop: 344
-
 - name: Echolocation
   descr: "The creature can use its hearing as a precise sense at the listed range."
   source:
     - abbr: BST1
       page_start: 39
       page_stop: 39
-
-- name: Tremorsense
-  descr: "Tremorsense allows a monster to feel the vibrations through a solid surface caused by movement. It is an imprecise sense with a limited range (listed in the ability). Tremorsense functions only if the monster is on the same surface as the subject, and only if the subject is moving along (or burrowing through) the surface."
-  source:
-    - abbr: CRB
-      page_start: 465
-      page_stop: 465
-    - abbr: BST1
-      page_start: 344
-      page_stop: 344
 
 - name: Light Blindness
   descr: "When first exposed to bright light, the monster is blinded until the end of its next turn. After this exposure, light doesn’t blind the monster again until after it spends 1 hour in darkness. However, as long as the monster is in an area of bright light, it’s dazzled."
