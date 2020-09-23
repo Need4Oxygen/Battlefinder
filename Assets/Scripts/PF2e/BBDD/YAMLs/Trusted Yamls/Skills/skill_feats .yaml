@@ -1,0 +1,689 @@
+general:
+  - name: Adopted Ancestry
+    descr: "You’re fully immersed in another ancestry’s culture and traditions, whether born into them, earned through rite of passage, or bonded through a deep friendship or romance. Choose a common ancestry. You can select ancestry feats from the ancestry you chose, in addition to your character’s own ancestry, as long as the ancestry feats don’t require any physiological feature that you lack, as determined by the GM."
+    type: skill feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - General
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 258
+        page_stop: 258
+    has_been_manually_proofread: true
+
+  - name: Armor Proficiency
+    descr: "You become trained in light armor. If you already were trained in light armor, you gain training in medium armor. If you were trained in both, you become trained in heavy armor.\n Special You can select this feat more than once. Each time, you become trained in the next type of armor above."
+    type: skill feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - General
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 258
+        page_stop: 258
+    has_been_manually_proofread: true
+
+  - name: Breath Control
+    descr: "You have incredible breath control, which grants you advantages when air is hazardous or sparse. You can hold your breath for 25 times as long as usual before suffocating. You gain a +1 circumstance bonus to saving throws against inhaled threats, such as inhaled poisons, and if you roll a success on such a saving throw, you get a critical success instead."
+    type: skill feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - General
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 259
+        page_stop: 259
+    has_been_manually_proofread: true
+
+  - name: Canny Acumen
+    descr: "Your avoidance or observation is beyond the ken of most in your profession. Choose Fortitude saves, Reflex saves, Will saves, or Perception. You become an expert in your choice. At 17th level, you become a master in your choice."
+    type: skill feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - General
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 259
+        page_stop: 259
+    has_been_manually_proofread: true
+
+  - name: Diehard
+    descr: "It takes more to kill you than most. You die from the dying condition at dying 5, rather than dying 4."
+    type: skill feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - General
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 260
+        page_stop: 260
+    has_been_manually_proofread: true
+
+  - name: Fast Recovery
+    descr: "Your body quickly bounces back from afflictions. You regain twice as many Hit Points from resting. Each time you succeed at a Fortitude save against an ongoing disease or poison, you reduce its stage by 2, or by 1 against a virulent disease or poison. Each critical success you achieve against an ongoing disease or poison reduces its stage by 3, or by 2 against a virulent disease or poison. In addition, you reduce the severity of your drained condition by 2 when you rest for a night instead of by 1."
+    type: skill feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: ability
+        descr: Constitution 14
+    requirement: null
+    traits:
+      - General
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 261
+        page_stop: 261
+    has_been_manually_proofread: true
+
+  - name: Feather Step
+    descr: "You step carefully and quickly. You can Step into difficult terrain."
+    type: skill feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: ability
+        descr: Dexterity 14
+    requirement: null
+    traits:
+      - General
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 261
+        page_stop: 261
+    has_been_manually_proofread: true
+
+  - name: Fleet
+    descr: "You move more quickly on foot. Your Speed increases by 5 feet."
+    type: skill feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - General
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 261
+        page_stop: 261
+    has_been_manually_proofread: true
+
+  - name: Incredible Initiative
+    descr: "You react more quickly than others can. You gain a +2 circumstance bonus to initiative rolls."
+    type: skill feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - General
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 262
+        page_stop: 262
+    has_been_manually_proofread: true
+
+  - name: Ride
+    descr: "When you Command an Animal you’re mounted on to take a move action (such as Stride), you automatically succeed instead of needing to attempt a check. Any animal you’re mounted on acts on your turn, like a minion. If you Mount an animal in the middle of an encounter, it skips its next turn and then acts on your next turn. Page 249 has more on Command an Animal."
+    type: skill feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - General
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 266
+        page_stop: 266
+    has_been_manually_proofread: true
+
+  - name: Shield Block
+    descr: "You snap your shield in place to ward off a blow. Your shield prevents you from taking an amount of damage up to the shield’s Hardness. You and the shield each take any remaining damage, possibly breaking or destroying the shield."
+    type: skill feat
+    level: 1
+    actioncost: R
+    frequency: null
+    cost: null
+    trigger: While you have your shield raised, you would take damage from a physical attack.
+    prereqs: null
+    requirement: null
+    traits:
+      - General
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 266
+        page_stop: 266
+    has_been_manually_proofread: true
+
+  - name: Toughness
+    descr: "You can withstand more punishment than most before succumbing. Increase your maximum Hit Points by your level. You reduce the DC of recovery checks by 1 (page 459)."
+    type: skill feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - General
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 268
+        page_stop: 268
+    has_been_manually_proofread: true
+
+  - name: Weapon Proficiency
+    descr: "You become trained in all simple weapons. If you were already trained in all simple weapons, you become trained in all martial weapons. If you were already trained in all martial weapons, you become trained in one advanced weapon of your choice.\n Special You can select this feat more than once. Each time you do, you become trained in additional weapons as appropriate, following the above progression."
+    type: skill feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - General
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 269
+        page_stop: 269
+    has_been_manually_proofread: true
+
+  - name: Ancestral Paragon
+    descr: "Whether through instinct, study, or magic, you feel a deeper connection to your ancestry. You gain a 1st-level ancestry feat."
+    type: skill feat
+    level: 3
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - General
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 258
+        page_stop: 258
+    has_been_manually_proofread: true
+
+  - name: Untrained Improvisation
+    descr: "You’ve learned how to handle situations when you’re out of your depth. Your proficiency bonus to untrained skill checks is equal to half your level instead of +0. If you’re 7th level or higher, the bonus increases to your full level instead. This doesn’t allow you to use the skill’s trained actions."
+    type: skill feat
+    level: 3
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - General
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 268
+        page_stop: 268
+    has_been_manually_proofread: true
+
+  - name: Expeditious Search
+    descr: "You have a system that lets you search at great speed, finding details and secrets twice as quickly as others can. When Searching, you take half as long as usual to Search a given area. This means that while exploring, you double the Speed you can move while ensuring you’ve Searched an area before walking into it (up to half your Speed). If you’re legendary in Perception, you instead Search areas four times as quickly."
+    type: skill feat
+    level: 7
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: master in Perception
+    requirement: null
+    traits:
+      - General
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 260
+        page_stop: 260
+    has_been_manually_proofread: true
+
+  - name: Incredible Investiture
+    descr: "You have an incredible ability to invest more magic items. Increase your limit on invested items from 10 to 12."
+    type: skill feat
+    level: 11
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: ability
+        descr: Charisma 16
+    requirement: null
+    traits:
+      - General
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 262
+        page_stop: 262
+    has_been_manually_proofread: true
+
+varying:
+  - name: Assurance
+    descr: "Even in the worst circumstances, you can perform basic tasks. Choose a skill you’re trained in. You can forgo rolling a skill check for that skill to instead receive a result of 10 + your proficiency bonus (do not apply any other bonuses, penalties, or modifiers).\n Special You can select this feat multiple times. Each time, choose a different skill and gain the benefits for that skill."
+    type: skill feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in at least one skill
+    requirement: null
+    traits:
+      - Fortune
+      - General
+      - Skill
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 258
+        page_stop: 258
+    has_been_manually_proofread: true
+
+  - name: Dubious Knowledge
+    descr: "You’re a treasure trove of information, but not all of it comes from reputable sources. When you fail a Recall Knowledge check using any skill, you learn a bit of true knowledge and a bit of erroneous knowledge, but you don’t have any way to differentiate which is which."
+    type: skill feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in a skill with the Recall Knowledge action
+    requirement: null
+    traits:
+      - General
+      - Skill
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 260
+        page_stop: 260
+    has_been_manually_proofread: true
+
+  - name: Quick Identification
+    descr: "You can Identify Magic swiftly. You take only 1 minute when using Identify Magic to determine the properties of an item, ongoing effect, or location, rather than 10 minutes. If you’re a master, it takes a 3-action activity, and if you’re legendary, it takes 1 action."
+    type: skill feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Arcana, Nature, Occultism or Religion
+    requirement: null
+    traits:
+      - General
+      - Skill
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 264
+        page_stop: 264
+    has_been_manually_proofread: true
+
+  - name: Recognize Spell
+    descr: "If you are trained in the appropriate skill for the spell’s tradition and it’s a common spell of 2nd level or lower, you automatically identify it (you still roll to attempt to get a critical success, but can’t get a worse result than success). The highest level of spell you automatically identify increases to 4 if you’re an expert, 6 if you’re a master, and 10 if you’re legendary. The GM rolls a secret Arcana, Nature, Occultism, or Religion check, whichever corresponds to the tradition of the spell being cast. If you’re not trained in the skill, you can’t get a result better than failure.\n Critical Success You correctly recognize the spell and gain a +1 circumstance bonus to your saving throw or your AC against it.\n Success You correctly recognize the spell.\n Failure You fail to recognize the spell.\n Critical Failure You misidentify the spell as another spell entirely, of the GM’s choice."
+    type: skill feat
+    level: 1
+    actioncost: R
+    frequency: null
+    cost: null
+    trigger: A creature within line of sight casts a spell that you don’t have prepared or in your spell repertoire, or a trap or similar object casts such a spell. You must be aware of the casting.
+    prereqs:
+      - type: proficiency
+        descr: trained in Arcana, Nature, Occultism, or Religion
+    requirement: null
+    traits:
+      - General
+      - Secret
+      - Skill
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 265
+        page_stop: 265
+    has_been_manually_proofread: true
+
+  - name: Skill Training
+    descr: "You become trained in the skill of your choice.\n Special You can select this feat multiple times, choosing a new skill to become trained in each time."
+    type: skill feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: ability
+        descr: Intelligence 12
+    requirement: null
+    traits:
+      - General
+      - Skill
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 266
+        page_stop: 266
+    has_been_manually_proofread: true
+
+  - name: Trick Magic Item
+    descr: "You examine a magic item you normally couldn’t use in an effort to fool it and activate it temporarily. For example, this might allow a fighter to cast a spell from a wand or allow a wizard to cast a spell that’s not on the arcane list using a scroll. You must know what activating the item does, or you can’t attempt to trick it. Attempt a check using the skill matching the item’s magic tradition, or matching a tradition that has the spell on its list, if you’re trying to cast a spell from the item. The relevant skills are Arcana for arcane, Nature for primal, Occultism for occult, Religion for divine, or any of the four for an item that has the magical trait and not a tradition trait. The GM determines the DC based on the item’s level (possibly adjusted depending on the item or situation). If you activate a magic item that requires a spell attack roll or spell DC and you don’t have the ability to cast spells of the relevant tradition, use your level as your proficiency bonus and the highest of your Intelligence, Wisdom, or Charisma modifiers. If you’re a master in the appropriate skill for the item’s tradition, you instead use the trained proficiency bonus, and if you’re legendary, you instead use the expert proficiency bonus.\n Success For the rest of the current turn, you can spend actions to activate the item as if you could normally use it.\n Failure You can’t use the item or try to trick it again this turn, but you can try again on subsequent turns.\n Critical Failure You can’t use the item, and you can’t try to trick it again until your next daily preparations."
+    type: skill feat
+    level: 1
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Arcana, Nature, Occultism, or Religion
+    requirement: null
+    traits:
+      - General
+      - Manipulate
+      - Skill
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 268
+        page_stop: 268
+    has_been_manually_proofread: true
+
+  - name: Automatic Knowledge
+    descr: "You know basic facts off the top of your head. Choose a skill you’re an expert in that has the Recall Knowledge action and for which you have the Assurance feat. You can use the Recall Knowledge action with that skill as a free action once per round. If you do, you must use Assurance on the skill check.\n Special You can select this feat multiple times, choosing a different skill each time. You can use Automatic Knowledge with any skills you have chosen, but you can still use Automatic Knowledge only once per round."
+    type: skill feat
+    level: 2
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: expert in a skill with the Recall Knowledge action, Assurance in that skill
+    requirement: null
+    traits:
+      - General
+      - Skill
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 258
+        page_stop: 258
+    has_been_manually_proofread: true
+
+  - name: Magical Shorthand
+    descr: "Learning spells comes easily to you. If you’re an expert in a tradition’s associated skill, you take 10 minutes per spell level to learn a spell of that tradition, rather than 1 hour per spell level. If you fail to learn the spell, you can try again after 1 week or after you gain a level, whichever comes first. If you’re a master in the tradition’s associated skill, learning a spell takes 5 minutes per spell level, and if you’re legendary, it takes 1 minute per spell level. You can use downtime to learn and inscribe new spells. This works as if you were using Earn Income with the tradition’s associated skill, but instead of gaining money, you choose a spell available to you to learn and gain a discount on learning it, learning it for free if your earned income equals or exceeds its cost."
+    type: skill feat
+    level: 2
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Arcana, Nature, Occultism, or Religion
+    requirement: null
+    traits:
+      - General
+      - Skill
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 264
+        page_stop: 264
+    has_been_manually_proofread: true
+
+  - name: Quick Recognition
+    descr: "You Recognize Spells swiftly. Once per round, you can Recognize a Spell using a skill in which you’re a master as a free action."
+    type: skill feat
+    level: 7
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: master in Arcana, Nature, Occultism, or Religion
+    requirement: null
+    traits:
+      - General
+      - Skill
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 265
+        page_stop: 265
+    has_been_manually_proofread: true
+
+acrobatics:
+  - name: Cat Fall
+    descr: "Your catlike aerial acrobatics allow you to cushion your falls. Treat falls as 10 feet shorter. If you’re an expert in Acrobatics, treat falls as 25 feet shorter. If you’re a master in Acrobatics, treat them as 50 feet shorter. If you’re legendary in Acrobatics, you always land on your feet and don’t take damage, regardless of the distance of the fall."
+    type: skill feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Acrobatics
+    requirement: null
+    traits:
+      - General
+      - Skill
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 259
+        page_stop: 259
+    has_been_manually_proofread: true
+
+  - name: Quick Squeeze
+    descr: "You Squeeze 5 feet per round (10 feet on a critical success). If you’re legendary in Acrobatics, you Squeeze at full Speed."
+    type: skill feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Acrobatics
+    requirement: null
+    traits:
+      - General
+      - Skill
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 265
+        page_stop: 265
+    has_been_manually_proofread: true
+
+  - name: Steady Balance
+    descr: "You can keep your balance easily, even in adverse conditions. Whenever you roll a success using the Balance action, you get a critical success instead. You’re not flat-footed while attempting to Balance on narrow surfaces and uneven ground. Thanks to your incredible balance, you can attempt an Acrobatics check instead of a Reflex save to Grab an Edge."
+    type: skill feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Acrobatics
+    requirement: null
+    traits:
+      - General
+      - Skill
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 267
+        page_stop: 267
+    has_been_manually_proofread: true
+
+  - name: Nimble Crawl
+    descr: "You can Crawl incredibly swiftly—up to half your Speed, rather than 5 feet. If you’re a master in Acrobatics, you can Crawl at full Speed, and if you’re legendary, you aren’t flat-footed while prone."
+    type: skill feat
+    level: 2
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: expert in Acrobatics
+    requirement: null
+    traits:
+      - General
+      - Skill
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 264
+        page_stop: 264
+    has_been_manually_proofread: true
+
+  - name: Kin Up
+    descr: "You stand up. This movement doesn’t trigger reactions."
+    type: skill feat
+    level: 7
+    actioncost: F
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: master in Acrobatics
+    requirement: null
+    traits:
+      - General
+      - Skill
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 262
+        page_stop: 262
+    has_been_manually_proofread: true
+
+Arcana:
+  - name: Arcane Sense
+    descr: "Your study of magic allows you to instinctively sense its presence. You can cast 1st-level detect magic at will as an arcane innate spell. If you’re a master in Arcana, the spell is heightened to 3rd level; if you’re legendary, it is heightened to 4th level."
+    type: skill feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Arcana
+    requirement: null
+    traits:
+      - General
+      - Skill
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 258
+        page_stop: 258
+    has_been_manually_proofread: true
+
+  - name: Unified Theory
+    descr: "You’ve started to make a meaningful connection about the common underpinnings of the four traditions of magic and magical essences, allowing you to understand them all through an arcane lens. Whenever you use an action or a skill feat that requires a Nature, Occultism, or Religion check, depending on the magic tradition, you can use Arcana instead. If you would normally take a penalty or have a higher DC for using Arcana on other magic (such as when using Identify Magic), you no longer do so."
+    type: skill feat
+    level: 15
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: legendary in Arcana
+    requirement: null
+    traits:
+      - General
+      - Skill
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 268
+        page_stop: 268
+    has_been_manually_proofread: true
