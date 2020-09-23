@@ -5038,7 +5038,7 @@ druid:
     trigger: null
     prereqs:
       - type: spell
-        descr: Wild Shpe
+        descr: Wild Shape
     requirement: null
     traits:
       - Druid
@@ -6633,4 +6633,5260 @@ fighter:
       - abbr: CRB
         page_start: 151
         page_stop: 151
+    has_been_manually_proofread: true
+
+  - name: Improved Dueling Riposte
+    descr: "Your weapon whirls and darts, striking foes whenever the opportunity presents itself. At the start of each of your turns, you gain an additional reaction that you can use only to make a Dueling Riposte. You can use this extra reaction even if you are not benefiting from Dueling Parry."
+    type: class feat
+    level: 12
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Dueling Riposte
+    requirement: null
+    traits:
+      - Fighter
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 151
+        page_stop: 151
+    has_been_manually_proofread: true
+
+  - name: Incredible Ricochet
+    descr: "After your first shot singles out your opponent’s position, you direct another that ricochets around obstacles and strikes unerringly. Make a ranged weapon Strike. You ignore the target’s concealed condition and all cover."
+    type: class feat
+    level: 12
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Incredible Aim
+    requirement: null
+    traits:
+      - Concentrate
+      - Fighter
+      - Press
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 151
+        page_stop: 151
+    has_been_manually_proofread: true
+
+  - name: Lunging Stance
+    descr: "Your body coiled to strike, you can lash out at distant enemies. While you are in this stance, you can use Attack of Opportunity against a creature that is outside your reach but within the reach you would have with a Lunge. If you do, you increase your range with the Strike by 5 feet."
+    type: class feat
+    level: 12
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feature
+        descr: Attack of Opportunity
+      - type: class feat
+        descr: Lunge
+    requirement: You are wielding a melee weapon.
+    traits:
+      - Fighter
+      - Stance
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 151
+        page_stop: 151
+    has_been_manually_proofread: true
+
+  - name: Paragon's Guard
+    descr: "Once you’ve had a moment to set your stance, you always have your shield ready without a thought. While you are in this stance, you constantly have your shield raised as if you’d used the Raise a Shield action, as long as you meet that action’s requirements."
+    type: class feat
+    level: 12
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You are wielding a shield.
+    traits:
+      - Fighter
+      - Stance
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 151
+        page_stop: 151
+    has_been_manually_proofread: true
+
+  - name: Spring Attack
+    descr: "Springing away from one foe, you Strike at another. Stride up to your Speed, but you must end that movement within melee reach of a different enemy. At the end of your movement, make a melee Strike against an enemy now within reach. You can use Spring Attack while Burrowing, Climbing, Flying, or Swimming instead of Striding if you have the corresponding movement type."
+    type: class feat
+    level: 12
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You are adjacent to an enemy.
+    traits:
+      - Fighter
+      - Press
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 152
+        page_stop: 152
+    has_been_manually_proofread: true
+
+  - name: Spring Attack
+    descr: "You throw everything into one last press. Use a single action that you know with the press trait as part of Desperate Finisher. You forgo the ability to use reactions until the start of your next turn."
+    type: class feat
+    level: 14
+    actioncost: R
+    frequency: null
+    cost: null
+    trigger: You complete the last action on your turn, and your turn has not ended yet.
+    prereqs: null
+    requirement: You meet the requirements to use an action with the press trait.
+    traits:
+      - Fighter
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 152
+        page_stop: 152
+    has_been_manually_proofread: true
+
+  - name: Spring Attack
+    descr: "Your training allows you to shrug off your foes’ spells and conditions when the need is dire. Choose a single nonpermanent spell or condition that is affecting you. If you chose a condition, its effect on you ends. If you chose a spell, attempt to counteract the spell (your level is your counteract level, and you attempt a Will save as your counteract check). This doesn’t remove any Hit Point damage normally dealt by the spell or condition, and it doesn’t prevent the spell or debilitating effect from affecting other allies or the environment around you. It can’t remove an ongoing affliction or prevent such an affliction from inflicting conditions on you later. It can’t remove conditions from the situation (such as prone or flanked). If the effect comes from a creature, hazard, or item of 20th level or higher, Determination can’t remove its effect on you."
+    type: class feat
+    level: 14
+    actioncost: 1
+    frequency: once per day
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Concentrate
+      - Fighter
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 152
+        page_stop: 152
+    has_been_manually_proofread: true
+
+  - name: Guiding Finish
+    descr: "Using your weapon as a lever, you force your opponent to end up right where you want them. Make a Strike with the required weapon. If the Strike hits, you can move the target up to 10 feet into a space in your reach. You can move the target through your space during this movement. This follows the forced movement rules found on page 475. Your Strike gains the following failure effect.\n Failure You can force the creature to move as you would on a success, but you can move the target only 5 feet."
+    type: class feat
+    level: 14
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Fighter
+      - Press
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 152
+        page_stop: 152
+    has_been_manually_proofread: true
+
+  - name: Guiding Riposte
+    descr: "By shifting your weight and angling your weapon, you guide your opponent to a more favorable position. When you use Dueling Riposte to Strike and you hit, you can move the target up to 10 feet into a space in your reach. This follows the forced movement rules found on page 475."
+    type: class feat
+    level: 14
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Dueling Riposte
+    requirement: null
+    traits:
+      - Fighter
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 153
+        page_stop: 153
+    has_been_manually_proofread: true
+
+  - name: Improved Twin Riposte
+    descr: "Your weapons are a blur, blocking and biting at your foes. At the start of each of your turns, you gain an additional reaction that you can use only to perform a Twin Riposte. You can use this extra reaction even if you are not benefiting from Twin Parry."
+    type: class feat
+    level: 14
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Twin Riposte
+    requirement: null
+    traits:
+      - Fighter
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 153
+        page_stop: 153
+    has_been_manually_proofread: true
+
+  - name: Stance Savant
+    descr: "When there’s imminent danger, you drop into a stance with a mere thought. Use an action that has the stance trait."
+    type: class feat
+    level: 14
+    actioncost: F
+    frequency: null
+    cost: null
+    trigger: You roll initiative.
+    prereqs: null
+    requirement: null
+    traits:
+      - Fighter
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 153
+        page_stop: 153
+    has_been_manually_proofread: true
+
+  - name: Two-Weapon Flurry
+    descr: "You lash out with both your weapons in a sudden frenzy. Strike twice, once with each weapon."
+    type: class feat
+    level: 14
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: You roll initiative.
+    prereqs: null
+    requirement: You are wielding two weapons, each in a different hand.
+    traits:
+      - Fighter
+      - Flourish
+      - Press
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 153
+        page_stop: 153
+    has_been_manually_proofread: true
+
+  - name: Whirlwind Strike
+    descr: "You attack all nearby adversaries. Make a melee Strike against each enemy within your melee reach. Each attack counts toward your multiple attack penalty, but do not increase your penalty until you have made all your attacks."
+    type: class feat
+    level: 14
+    actioncost: 3
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Fighter
+      - Flourish
+      - Open
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 153
+        page_stop: 153
+    has_been_manually_proofread: true
+
+  - name: Graceful Poise
+    descr: "With the right positioning, your off-hand weapon can strike like a scorpion’s stinger. While you are in this stance, if you make your second Strike from Double Slice with an agile weapon, Double Slice counts as one attack when calculating your multiple attack penalty."
+    type: class feat
+    level: 16
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Double Slice
+    requirement: null
+    traits:
+      - Fighter
+      - Stance
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 153
+        page_stop: 153
+    has_been_manually_proofread: true
+
+  - name: Improved Reflexive Shield
+    descr: "Your shield can help save nearby allies. When you use Shield Block against damage resulting from a Reflex save, adjacent allies who would take damage due to Reflex saves against the same effect also benefit from the damage reduction."
+    type: class feat
+    level: 16
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Reflexive Shield
+    requirement: null
+    traits:
+      - Fighter
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 153
+        page_stop: 153
+    has_been_manually_proofread: true
+
+  - name: Multishot Stance
+    descr: "Your shield can help save nearby allies. When you use Shield Block against damage resulting from a Reflex save, adjacent allies who would take damage due to Reflex saves against the same effect also benefit from the damage reduction."
+    type: class feat
+    level: 16
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Triple Shot
+    requirement: You are wielding a ranged weapon with reload 0.
+    traits:
+      - Fighter
+      - Stance
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 153
+        page_stop: 153
+    has_been_manually_proofread: true
+
+  - name: Twinned Defense
+    descr: "You’re always ready to use your off-hand weapon to interfere with attacks against you. While you are in this stance, you constantly gain the benefits of the Twin Parry action."
+    type: class feat
+    level: 16
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Twin Parry
+    requirement: You are wielding two melee weapons, one in each hand.
+    traits:
+      - Fighter
+      - Stance
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 153
+        page_stop: 153
+    has_been_manually_proofread: true
+
+  - name: Imposible Volley
+    descr: "You fire a volley at all foes in an area. Make one Strike with a –2 penalty against each enemy within a 10-foot-radius burst centered at or beyond your weapon’s volley range. Roll the damage only once for all targets. Each attack counts toward your multiple attack penalty, but do not increase your penalty until you have made all your attacks."
+    type: class feat
+    level: 18
+    actioncost: 3
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You are wielding a ranged weapon with the volley trait and reload 0.
+    traits:
+      - Fighter
+      - Flourish
+      - Open
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 153
+        page_stop: 153
+    has_been_manually_proofread: true
+
+  - name: Savage Critical
+    descr: "The wounds you inflict are grievous. When you Strike with a weapon or unarmed attack for which you have legendary proficiency, you critically succeed if you roll a 19 on the die as long as that result is a success. This has no effect on a 19 if the result would be a failure."
+    type: class feat
+    level: 18
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Fighter
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 153
+        page_stop: 153
+    has_been_manually_proofread: true
+
+  - name: Weapon Supremacy
+    descr: "Your skill with weapons lets you attack swiftly at all times. You’re permanently quickened. You can use your extra action only to Strike."
+    type: class feat
+    level: 20
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Fighter
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 153
+        page_stop: 153
+    has_been_manually_proofread: true
+
+monk:
+  - name: Crane Stance
+    descr: "You enter the stance of a crane, holding your arms in an imitation of a crane’s wings and using flowing, defensive motions. You gain a +1 circumstance bonus to AC, but the only Strikes you can make are crane wing attacks. These deal 1d6 bludgeoning damage; are in the brawling group; and have the agile, finesse, nonlethal, and unarmed traits. While in Crane Stance, reduce the DC for High Jump and Long Jump by 5, and when you Leap, you can move an additional 5 feet horizontally or 2 feet vertically."
+    type: class feat
+    level: 1
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You are unarmored.
+    traits:
+      - Monk
+      - Stance
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 158
+        page_stop: 158
+    has_been_manually_proofread: true
+
+  - name: Dragon Stance
+    descr: "You enter the stance of a dragon and make powerful leg strikes like a lashing dragon’s tail. You can make dragon tail attacks that deal 1d10 bludgeoning damage. They are in the brawling group and have the backswing, nonlethal, and unarmed traits. While in Dragon Stance, you can ignore the first square of difficult terrain while Striding."
+    type: class feat
+    level: 1
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You are unarmored.
+    traits:
+      - Monk
+      - Stance
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 158
+        page_stop: 158
+    has_been_manually_proofread: true
+
+  - name: Dragon Stance
+    descr: "You enter the stance of a dragon and make powerful leg strikes like a lashing dragon’s tail. You can make dragon tail attacks that deal 1d10 bludgeoning damage. They are in the brawling group and have the backswing, nonlethal, and unarmed traits. While in Dragon Stance, you can ignore the first square of difficult terrain while Striding."
+    type: class feat
+    level: 1
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You are unarmored.
+    traits:
+      - Monk
+      - Stance
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 158
+        page_stop: 158
+    has_been_manually_proofread: true
+
+  - name: Ki Rush
+    descr: "You can use ki to move with extraordinary speed and make yourself harder to hit. You gain the ki rush ki spell and a focus pool of 1 Focus Point. The rules for ki spells are summarized in the sidebar on page 157, and the full rules for focus spells appear on page 300."
+    type: class feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 158
+        page_stop: 158
+    has_been_manually_proofread: true
+
+  - name: Ki Strike
+    descr: "Your study of the flow of mystical energy allows you to harness it into your physical strikes. You gain the ki strike ki spell and a focus pool of 1 Focus Point. The rules for ki spells are summarized in the sidebar on page 157, and the full rules for focus spells appear on page 300."
+    type: class feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 158
+        page_stop: 158
+    has_been_manually_proofread: true
+
+  - name: Monastic Weaponry
+    descr: "You have trained with the traditional weaponry of your monastery or school. You gain access to uncommon weapons that have the monk trait and become trained in simple and martial monk weapons. When your proficiency rank for unarmed attacks increases to expert or master, your proficiency rank for these weapons increases to expert or master as well. You can use melee monk weapons with any of your monk feats or monk abilities that normally require unarmed attacks, though not if the feat or ability requires you to use a single specific type of attack, such as Crane Stance."
+    type: class feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 158
+        page_stop: 159
+    has_been_manually_proofread: true
+
+  - name: Mountain Stance
+    descr: "You enter the stance of an implacable mountain—a technique first discovered by dwarven monks—allowing you to strike with the weight of an avalanche. The only Strikes you can make are falling stone unarmed attacks. These deal 1d8 bludgeoning damage; are in the brawling group; and have the forceful, nonlethal, and unarmed traits. While in Mountain Stance, you gain a +4 status bonus to AC and a +2 circumstance bonus to any defenses against being Shoved or Tripped. However, you have a Dexterity modifier cap to your AC of +0, meaning you don’t add your Dexterity to your AC, and your Speeds are all reduced by 5 feet."
+    type: class feat
+    level: 1
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You are unarmored and touching the ground.
+    traits:
+      - Monk
+      - Stance
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 159
+        page_stop: 159
+    has_been_manually_proofread: true
+
+  - name: Tiger Stance
+    descr: "You enter the stance of a tiger and can make tiger claw attacks. These deal 1d8 slashing damage; are in the brawling group; and have the agile, finesse, nonlethal, and unarmed traits. On a critical success with your tiger claws, if you deal damage, the target takes 1d4 persistent bleed damage. As long as your Speed is at least 20 feet while in Tiger Stance, you can Step 10 feet."
+    type: class feat
+    level: 1
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You are unarmored.
+    traits:
+      - Monk
+      - Stance
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 159
+        page_stop: 159
+    has_been_manually_proofread: true
+
+  - name: Tiger Stance
+    descr: "You enter the stance of a wolf, low to the ground with your hands held like fanged teeth. You can make wolf jaw unarmed attacks. These deal 1d8 piercing damage; are in the brawling group; and have the agile, backstabber, finesse, nonlethal, and unarmed traits. If you’re flanking a target while in Wolf Stance, your wolf jaw unarmed attacks also gain the trip trait."
+    type: class feat
+    level: 1
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You are unarmored.
+    traits:
+      - Monk
+      - Stance
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 159
+        page_stop: 160
+    has_been_manually_proofread: true
+
+  - name: Brawling Focus
+    descr: "You know how to make the most of your attacks when fighting hand-to-hand. You gain access to the critical specialization effects of unarmed strikes in the brawling group and weapons in the brawling group. If you have Monastic Weaponry, you also gain the critical specialization effects of all monk weapons in which you are trained."
+    type: class feat
+    level: 2
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 160
+        page_stop: 160
+    has_been_manually_proofread: true
+
+  - name: Crushing Grab
+    descr: "Like a powerful constrictor, you crush targets in your unyielding grasp. When you successfully Grapple a creature, you can deal bludgeoning damage to that creature equal to your Strength modifier. You can make this attack nonlethal with no penalty."
+    type: class feat
+    level: 2
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 160
+        page_stop: 160
+    has_been_manually_proofread: true
+
+  - name: Dancing Leaf
+    descr: "You are as light as a leaf whirling in the breeze. When you Leap or succeed at a High Jump or Long Jump, increase the distance you jump by 5 feet. When calculating the damage you take from falling, don’t count any distance fallen while you are adjacent to a wall."
+    type: class feat
+    level: 2
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 160
+        page_stop: 160
+    has_been_manually_proofread: true
+
+  - name: Elemental Fist
+    descr: "You call upon the power of the elements, infusing your ki with elemental energy and allowing your attacks to deal energy damage. When you cast ki strike, in addition to the damage types normally available, you can deliver the extra damage in the form of a gust of storm-tossed wind (dealing electricity damage and gaining the air trait), a chunk of stone (dealing bludgeoning damage and gaining the earth trait), a flickering flame (dealing fire damage), or a crashing wave of frigid water (dealing cold damage and gaining the water trait)."
+    type: class feat
+    level: 2
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Ki Strike
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 160
+        page_stop: 160
+    has_been_manually_proofread: true
+
+  - name: Stunning Fist
+    descr: "The focused power of your flurry threatens to overwhelm your opponent. When you target the same creature with two Strikes from your Flurry of Blows, you can try to stun the creature. If either Strike hits and deals damage, the target must succeed at a Fortitude save against your class DC or be stunned 1 (or stunned 3 on a critical failure). This is an incapacitation effect."
+    type: class feat
+    level: 2
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Flurry of Blows
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 160
+        page_stop: 160
+    has_been_manually_proofread: true
+
+  - name: Deflect Arrow
+    descr: "You gain a +4 circumstance bonus to AC against the triggering attack. If the attack misses, you have deflected it. You cannot use this feat to deflect unusually massive ranged projectiles (such as boulders or ballista bolts)."
+    type: class feat
+    level: 4
+    actioncost: R
+    frequency: null
+    cost: null
+    trigger: You are the target of a physical ranged attack.
+    prereqs: null
+    requirement: You’re aware of the attack, are not flat-footed against it, and have a hand free.
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 160
+        page_stop: 160
+    has_been_manually_proofread: true
+
+  - name: Flurry of Maneuvers
+    descr: "You flurry is a combination of maneuvers. You can replace one or both of your attacks during a Flurry of Blows with Grapples, Shoves, or Trips."
+    type: class feat
+    level: 4
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: expert in Athletics
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 160
+        page_stop: 160
+    has_been_manually_proofread: true
+
+  - name: Flying Kick
+    descr: "You launch yourself at a foe. Make a Leap or attempt a High Jump or Long Jump. At the end of the jump, if you’re adjacent to a foe, you can immediately Strike that foe with an unarmed attack, even if the foe is in mid-air. You fall to the ground after the Strike. If the distance you fall is no more than the height of your jump, you land upright and take no damage."
+    type: class feat
+    level: 4
+    actioncost: 2
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 160
+        page_stop: 160
+    has_been_manually_proofread: true
+
+  - name: Guarded Movement
+    descr: "Your guard is up, even while moving. You gain a +4 circumstance bonus to AC against reactions triggered by your movement."
+    type: class feat
+    level: 4
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 160
+        page_stop: 160
+    has_been_manually_proofread: true
+
+  - name: Stand Still
+    descr: "You strike out when your foe tries to flee. Make a melee Strike against the triggering creature. If the attack is a critical hit and the trigger was a move action, you disrupt that action."
+    type: class feat
+    level: 4
+    actioncost: R
+    frequency: null
+    cost: null
+    trigger: A creature within your reach uses a move action or leaves a square during a move action it’s using.
+    prereqs: null
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 160
+        page_stop: 160
+    has_been_manually_proofread: true
+
+  - name: Wholeness of Body
+    descr: "You can restore your health by tapping into your ki. You gain the wholeness of body ki spell (page 402). Increase the number of Focus Points in your focus pool by 1."
+    type: class feat
+    level: 4
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: special
+        descr: ki spells
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 160
+        page_stop: 160
+    has_been_manually_proofread: true
+
+  - name: Abundant Step
+    descr: "You can teleport yourself a short distance. You gain the abundant step ki spell (page 401). Increase the number of Focus Points in your focus pool by 1."
+    type: class feat
+    level: 6
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: special
+        descr: Incredible Movement
+      - type: special
+        descr: ki spells
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 160
+        page_stop: 160
+    has_been_manually_proofread: true
+
+  - name: Crane Flutter
+    descr: "You interpose your arm between yourself and your opponent. Your circumstance bonus to AC from Crane Stance increases to +3 against the triggering attack. If the attack misses you, you can immediately make a crane wing Strike against the attacker at a –2 penalty, even if the attacker isn’t within your reach."
+    type: class feat
+    level: 6
+    actioncost: R
+    frequency: null
+    cost: null
+    trigger: You are targeted with a melee attack by an attacker you can see.
+    prereqs:
+      - type: class feat
+        descr: Crane Stance
+    requirement: You are in Crane Stance.
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 161
+        page_stop: 161
+    has_been_manually_proofread: true
+
+  - name: Dragon Roar
+    descr: "You bellow, instilling fear in your enemies. Enemies within a 15-foot emanation must succeed at a Will save against your Intimidation DC or be frightened 1 (frightened 2 on a critical failure). When a creature frightened by the roar begins its turn adjacent to you, it can’t reduce its frightened value below 1 on that turn. Your first attack that hits a frightened creature after you roar and before the end of your next turn gains a +4 circumstance bonus to damage. After you use Dragon Roar, you can’t use it again for 1d4 rounds. Its effects end immediately if you leave Dragon Stance. Creatures in the area of your roar are then temporarily immune for 1 minute."
+    type: class feat
+    level: 6
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Dragon Stance
+    requirement: You are in Dragon Stance.
+    traits:
+      - Auditory
+      - Emotion
+      - Fear
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 161
+        page_stop: 161
+    has_been_manually_proofread: true
+
+  - name: Ki Blast
+    descr: "You can unleash an impactful cone of force by channeling your ki. You gain the ki blast ki spell (page 401). Increase the number of Focus Points in your focus pool by 1."
+    type: class feat
+    level: 6
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: special
+        descr: ki spells
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 161
+        page_stop: 161
+    has_been_manually_proofread: true
+
+  - name: Mountain Stronghold
+    descr: "You focus on your connection to the earth and call upon the mountain to block attacks against you. You gain a +2 circumstance bonus to AC until the beginning of your next turn.\n Special If you have this feat, the Dexterity modifier cap to your AC while you’re in Mountain Stance increases from +0 to +1."
+    type: class feat
+    level: 6
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Mountain Stance
+    requirement: You are in Mountain Stance.
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 161
+        page_stop: 161
+    has_been_manually_proofread: true
+
+  - name: Tiger Slash
+    descr: "You make a fierce swipe with both hands. Make a tiger claw Strike. It deals two extra weapon damage dice (three extra dice if you’re 14th level or higher), and you can push the target 5 feet away as if you had successfully Shoved them. If the attack is a critical success and deals damage, add your Strength modifier to the persistent bleed damage from your tiger claw."
+    type: class feat
+    level: 6
+    actioncost: 2
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Tiger Stance
+    requirement: You are in Mountain Stance.
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 161
+        page_stop: 162
+    has_been_manually_proofread: true
+
+  - name: Water Step
+    descr: "You can Stride across liquid and surfaces that don’t support your weight. This benefit lasts only during your movement. If you end your movement on a surface that can’t support you, you fall in or it collapses as normal."
+    type: class feat
+    level: 6
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 162
+        page_stop: 162
+    has_been_manually_proofread: true
+
+  - name: Whirling Throw
+    descr: "You propel your grabbed or restrained foe a great distance. You can throw the creature any distance up to 10 feet, plus 5 feet × your Strength modifier. If you successfully throw the creature, it takes bludgeoning damage equal to your Strength modifier plus 1d6 per 10 feet you threw it. Attempt an Athletics check against the foe’s Fortitude DC. You take a –2 circumstance penalty to your check if the target is one size larger than you and a –4 circumstance penalty if it’s larger than that. You gain a +2 circumstance bonus to your check if the target is one size smaller than you and a +4 circumstance bonus if it’s smaller than that.\n Critical Success You throw the creature the desired distance and it lands prone.\n Success You throw the creature the desired distance.\n Failure You don’t throw the creature.\n Critical Failure You don’t throw the creature, and it’s no longer grabbed or restrained by you."
+    type: class feat
+    level: 6
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You have a creature grabbed or restrained.
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 162
+        page_stop: 162
+    has_been_manually_proofread: true
+
+  - name: Wolf Drag
+    descr: "You rip your enemy off their feet. Make a wolf jaw Strike. Your wolf jaw gains the fatal d12 trait for this Strike, and if the attack succeeds, you knock the target prone."
+    type: class feat
+    level: 6
+    actioncost: 2
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Wolf Stance
+    requirement: You are in Wolf Stance.
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 162
+        page_stop: 162
+    has_been_manually_proofread: true
+
+  - name: Arrow Snatching
+    descr: "You pluck missiles from the air and hurl them back at their source. When you successfully deflect an attack with Deflect Arrow, as part of that reaction, you can immediately make a ranged Strike against the attacker using the projectile you deflected. This is a thrown weapon with the same range increment and effect on a hit as the triggering attack."
+    type: class feat
+    level: 8
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Deflect Arrow
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 162
+        page_stop: 162
+    has_been_manually_proofread: true
+
+  - name: Ironblood Stance
+    descr: "You enter the stance of impenetrable iron, refusing to yield to any blow. You can make iron sweep unarmed attacks. These deal 1d8 bludgeoning damage; are in the brawling group; and have the nonlethal, parry, sweep, and unarmed traits. While in Ironblood Stance, you gain resistance 2 to all damage. The resistance increases to 3 at 12th level, to 4 at 16th level, and to 5 at 20th level."
+    type: class feat
+    level: 8
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You are unarmored.
+    traits:
+      - Monk
+      - Stance
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 163
+        page_stop: 163
+    has_been_manually_proofread: true
+
+  - name: Mixed Maneuver
+    descr: "You combine two different maneuvers together into a single flowing whole. Choose any two of Grapple, Shove, and Trip. Attempt both of the attacks you chose against the same or different creatures, but don’t apply the multiple attack penalty until after resolving both attacks."
+    type: class feat
+    level: 8
+    actioncost: 2
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: master in Athletics
+    requirement: null
+    traits:
+      - Monk
+      - Stance
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 163
+        page_stop: 163
+    has_been_manually_proofread: true
+
+  - name: Tangled Fores Stance
+    descr: "You extend your arms like gnarled branches to interfere with your foes’ movements. You can make lashing branch unarmed attacks. These deal 1d8 slashing damage; are in the brawling group; and have the agile, finesse, nonlethal, and unarmed traits. While you’re in Tangled Forest Stance and can act, every enemy in your reach that tries to move away from you must succeed at a Reflex save, Acrobatics check, or Athletics check against your class DC or be immobilized for that action. If you prefer, you can allow the enemy to move."
+    type: class feat
+    level: 8
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: You are unarmored.
+    prereqs: null
+    requirement: null
+    traits:
+      - Monk
+      - Stance
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 163
+        page_stop: 163
+    has_been_manually_proofread: true
+
+  - name: Wall Run
+    descr: "You defy gravity, traversing vertical planes as easily as the ground. Stride up to your Speed. You must start your movement on a horizontal surface. During this movement, you can run up vertical surfaces, like walls, at your full Speed. If you end the Stride off the ground, you fall after taking your next action or when your turn ends, whichever comes first (though you can Grab an Edge, if applicable). If you have Water Step or a similar ability, Wall Run lets you run along flimsy vertical surfaces, as well as vertical liquids, such as a waterfall."
+    type: class feat
+    level: 8
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 163
+        page_stop: 163
+    has_been_manually_proofread: true
+
+  - name: Wild Winds Initiate
+    descr: "You learn a mystical stance that lets you attack from a distance. You gain the wild winds stance ki spell (page 402). Increase the number of Focus Points in your focus pool by 1. While entering the stance is a ki spell, the wind crash Strikes the stance grants are not, so you can use them as often as you like while in the stance."
+    type: class feat
+    level: 8
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: special
+        descr: ki spells
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 163
+        page_stop: 163
+    has_been_manually_proofread: true
+
+  - name: Knockback Strike
+    descr: "You focus your strength into a blow powerful enough to push an enemy away from you. Make an unarmed Strike. If you hit, attempt an Athletics check to Shove the target. This attack uses the same multiple attack penalty as your Strike, and doesn’t count toward your multiple attack penalty."
+    type: class feat
+    level: 10
+    actioncost: 2
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Concentrate
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 163
+        page_stop: 163
+    has_been_manually_proofread: true
+
+  - name: Knockback Strike
+    descr: "You pinch crucial points of your target’s nervous system, impeding its ability to function. Attempt an Athletics check to Grapple the creature, with the following success and critical success effects instead of the usual effects.\n Critical Success The target falls unconscious for 1 minute, though it remains standing and doesn’t drop what it holds.\n Success The target is clumsy 1 until the end of its next turn."
+    type: class feat
+    level: 10
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You have a creature grabbed or restrained.
+    traits:
+      - Attack
+      - Incapacitation
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 163
+        page_stop: 163
+    has_been_manually_proofread: true
+
+  - name: Wind Jump
+    descr: "You gather the wind beneath you, allowing you to soar as you jump. You gain the wind jump ki spell (page 402). Increase the number of Focus Points in your focus pool by 1."
+    type: class feat
+    level: 10
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: special
+        descr: ki spells
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 163
+        page_stop: 163
+    has_been_manually_proofread: true
+
+  - name: Windin Flow
+    descr: "Any journey consists of more than simply reaching your destination. You use two of the following actions in any order: Stand, Step, and Stride. You can’t use the same action twice."
+    type: class feat
+    level: 10
+    actioncost: 1
+    frequency: once per round
+    cost: null
+    trigger: null
+    prereqs:
+      - type: special
+        descr: ki spells
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 163
+        page_stop: 163
+    has_been_manually_proofread: true
+
+  - name: Diamond Soul
+    descr: "You have fortified your body and mind against eldritch effects. You gain a +1 status bonus to saving throws against magic."
+    type: class feat
+    level: 12
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 163
+        page_stop: 163
+    has_been_manually_proofread: true
+
+  - name: Disrupt Ki
+    descr: "Make an unarmed Strike. If it deals damage to a living creature, you block that creature’s inner life force. The creature takes 2d6 persistent negative damage and is enfeebled 1 until the persistent damage ends. If you’re 18th level or higher, this deals 3d6 persistent negative damage instead."
+    type: class feat
+    level: 12
+    actioncost: 2
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Monk
+      - Negative
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 163
+        page_stop: 163
+    has_been_manually_proofread: true
+
+  - name: Improved Knockback
+    descr: "When you successfully Shove a creature, increase both the distance you can push the creature and the distance you can move to follow along with the target by 5 feet on a success or 10 feet on a critical success. If you push the target into an obstacle, it takes bludgeoning damage equal to 6 plus your Strength modifier, or 8 plus your Strength modifier if you have legendary proficiency in Athletics."
+    type: class feat
+    level: 12
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: master in Athletics
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 163
+        page_stop: 164
+    has_been_manually_proofread: true
+
+  - name: Meditative Focus
+    descr: "Your meditation is so effective that you can achieve a deep focus. If you have spent at least 2 Focus Points since the last time you Refocused, you recover 2 Focus Points when you Refocus instead of 1."
+    type: class feat
+    level: 12
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: special
+        descr: ki spells
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 164
+        page_stop: 164
+    has_been_manually_proofread: true
+
+  - name: Stance Savant
+    descr: "You enter a stance without a thought. Use an action that has the stance trait."
+    type: class feat
+    level: 12
+    actioncost: R
+    frequency: null
+    cost: null
+    trigger: You roll initiative.
+    prereqs: null
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 164
+        page_stop: 164
+    has_been_manually_proofread: true
+
+  - name: Iroblood Surge
+    descr: "You steel yourself, preparing to resist oncoming attacks and using your muscles to absorb the impact. You gain the benefits of your iron sweep’s parry trait (a +1 circumstance bonus to AC until the start of your next turn) and your resistance from Ironblood Stance increases to your Strength modifier (if it’s higher) for the same duration."
+    type: class feat
+    level: 14
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Ironblood Stance
+    requirement: You are in Ironblood Stance.
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 164
+        page_stop: 164
+    has_been_manually_proofread: true
+
+  - name: Mountain Quake
+    descr: "You stomp, shaking the earth beneath you. Creatures on the ground within a 20-foot emanation take damage equal to your Strength modifier (minimum 0), which they can resist with a basic Fortitude save. On a failure, they also fall prone. After you use this action, you can’t use it again for 1d4 rounds.\n Special If you have this feat, the Dexterity modifier cap to your AC while using Mountain Stance increases from +1 to +2."
+    type: class feat
+    level: 14
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Mountain Stronghold
+    requirement: You are in Mountain Stance.
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 164
+        page_stop: 164
+    has_been_manually_proofread: true
+
+  - name: Tangled Forest Rake
+    descr: "You reposition foes with raking attacks. Make a lashing branch Strike. If you hit and deal damage, you force the target to move 5 feet into a space within your reach. This follows the forced movement rules found on page 475."
+    type: class feat
+    level: 14
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Tangled Forest Stance
+    requirement: You are in Tangled Forest Stance.
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 164
+        page_stop: 164
+    has_been_manually_proofread: true
+
+  - name: Timeless Body
+    descr: "You cease aging. In addition, you gain a +2 status bonus to FEAT 14 FEAT 14CLASSES saving throws against poisons and diseases, and you gain resistance to poison damage equal to half your level."
+    type: class feat
+    level: 14
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 164
+        page_stop: 165
+    has_been_manually_proofread: true
+
+  - name: Tongue of Sun and Moon
+    descr: "You have transcended the barriers between words and meaning. You can speak and understand all spoken languages."
+    type: class feat
+    level: 14
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 165
+        page_stop: 165
+    has_been_manually_proofread: true
+
+  - name: Wild Wind Gust
+    descr: "You store up energy and release it in an enormous gust of rushing wind. Make a wind crash Strike against each creature in your choice of a 30-foot cone or a 60 foot line. These attacks all count toward your multiple attack penalty, but the penalty doesn’t increase until after you make all the attacks."
+    type: class feat
+    level: 14
+    actioncost: 2
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Wild Winds Initiate
+    requirement: You are in wild winds stance.
+    traits:
+      - Air
+      - Concentrate
+      - Evocation
+      - Manipulate
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 165
+        page_stop: 165
+    has_been_manually_proofread: true
+
+  - name: Enlightened Presence
+    descr: "You exude an aura of resolve. You and allies within 15 feet of you gain a +2 status bonus to Will saving throws against mental effects."
+    type: class feat
+    level: 16
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Emotion
+      - Mental
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 165
+        page_stop: 165
+    has_been_manually_proofread: true
+
+  - name: Master of Many Styles
+    descr: "You move between stances in an unceasing dance. You use an action with the stance trait."
+    type: class feat
+    level: 16
+    actioncost: F
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Stance Savant
+    requirement: This is the first action of your turn.
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 165
+        page_stop: 165
+    has_been_manually_proofread: true
+
+  - name: Quivering Palm
+    descr: "Your strikes can kill foes. You gain the quivering palm ki spell (page 401). Increase the number of Focus Points in your focus pool by 1."
+    type: class feat
+    level: 16
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: special
+        descr: ki spells
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 165
+        page_stop: 165
+    has_been_manually_proofread: true
+
+  - name: Shattering Strike
+    descr: "The force of your considered blow shatters objects and defenses alike. Make an unarmed Strike. It bypasses the target’s resistances. If the target has Hardness, the Strike treats the Hardness as if it were half its value."
+    type: class feat
+    level: 16
+    actioncost: 2
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 165
+        page_stop: 165
+    has_been_manually_proofread: true
+
+  - name: Diamond Fists
+    descr: "Your body hardens as you combine your attacks, making your finishing blows more damaging. Your unarmed attacks gain the forceful trait. Any that already had this trait instead increase their weapon damage dice by one step."
+    type: class feat
+    level: 18
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 165
+        page_stop: 165
+    has_been_manually_proofread: true
+
+  - name: Empty Body
+    descr: "You transmute your body into an ethereal form. You gain the empty body ki spell (page 401). Increase the number of Focus Points in your focus pool by 1."
+    type: class feat
+    level: 18
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: special
+        descr: ki spells
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 165
+        page_stop: 165
+    has_been_manually_proofread: true
+
+  - name: Mediative Wellspring
+    descr: "When you clear your mind, your focus comes flowing back in a powerful rush. If you have spent at least 3 Focus Points since the last time you Refocused, you recover 3 Focus Points when you Refocus instead of 1."
+    type: class feat
+    level: 18
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Meditative Focus
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 165
+        page_stop: 165
+    has_been_manually_proofread: true
+
+  - name: Swift River
+    descr: "You flow like water, avoiding all restraints. End one status penalty to your speed, or end one immobilized or slowed condition affecting you."
+    type: class feat
+    level: 18
+    actioncost: F
+    frequency: null
+    cost: null
+    trigger: Your turn ends and you have a status penalty to your Speed or are immobilized or slowed.
+    prereqs: null
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 165
+        page_stop: 165
+    has_been_manually_proofread: true
+
+  - name: Enduring Quickness
+    descr: "You move as fast and as high as the wind itself. You’re permanently quickened. You can use your extra action to Stride or Leap, or to provide one of the actions needed for a High Jump or Long Jump."
+    type: class feat
+    level: 20
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 165
+        page_stop: 165
+    has_been_manually_proofread: true
+
+  - name: Fuse Stance
+    descr: "You have combined two stances into a single stance all your own. When you take this feat, choose two stances you know and combine them into a single fused stance. Give your new fused stance a unique name. When you enter your fused stance, you gain all the effects of both stances, including the requirements and restrictions. You can’t fuse stances with fundamentally incompatible requirements or restrictions (such as Ironblood Stance and Crane Stance, which both require using only one type of Strike)."
+    type: class feat
+    level: 20
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: special
+        descr: at least two stances
+    requirement: null
+    traits:
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 165
+        page_stop: 165
+    has_been_manually_proofread: true
+
+  - name: Impossible Technique
+    descr: "You execute a maneuver that defies possibility. If the triggering effect was an enemy’s attack hitting you, the enemy rerolls the attack roll and uses the lower result. If the triggering effect was you failing a saving throw, you reroll the saving throw and use the higher result."
+    type: class feat
+    level: 20
+    actioncost: R
+    frequency: null
+    cost: null
+    trigger: An enemy’s attack hits you or you fail a saving throw against an enemy’s ability.
+    prereqs: null
+    requirement: You are not armored or fatigued.
+    traits:
+      - Fortune
+      - Monk
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 165
+        page_stop: 165
+    has_been_manually_proofread: true
+
+ranger:
+  - name: Animal Companion
+    descr: "You gain the service of a young animal companion that travels with you and obeys simple commands as best as it can. See Animal Companions on page 214. When you Hunt Prey, your animal companion gains the action’s benefits and your hunter’s edge benefit if you have one."
+    type: class feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 170
+        page_stop: 170
+    has_been_manually_proofread: true
+
+  - name: Crossbow Ace
+    descr: "You have a deep understanding of the crossbow. When you’re wielding a crossbow and use Hunt Prey or use Interact to reload your crossbow, you gain a +2 circumstance bonus to the damage roll on your next Strike with that crossbow. If the crossbow is a simple crossbow, also increase the damage die size for that attack by one step (page 279). You must make the attack before the end of your next turn or these benefits are lost."
+    type: class feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 171
+        page_stop: 171
+    has_been_manually_proofread: true
+
+  - name: Hunted Shot
+    descr: "You take two quick shots against the one you hunt. Make two Strikes against your prey with the required weapon. If both hit the same creature, combine their damage for the purpose of resistances and weaknesses. Apply your multiple attack penalty to each Strike normally."
+    type: class feat
+    level: 1
+    actioncost: 1
+    frequency: once per round
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You are wielding a ranged weapon with reload 0.
+    traits:
+      - Flourish
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 171
+        page_stop: 171
+    has_been_manually_proofread: true
+
+  - name: Monster Hunter
+    descr: "You swiftly assess your prey and apply what you know. As part of the action used to Hunt your Prey, you can attempt a check to Recall Knowledge about your prey. When you critically succeed at identifying your hunted prey with Recall Knowledge, you note a weakness in the creature’s defenses. You and allies you tell gain a +1 circumstance bonus to your next attack roll against that prey. You can give bonuses from Monster Hunter only once per day against a particular creature."
+    type: class feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 171
+        page_stop: 171
+    has_been_manually_proofread: true
+
+  - name: Twin Takedown
+    descr: "You swiftly attack your hunted prey with both weapons. Make two Strikes against your hunted prey, one with each of the required weapons. If both hit the same hunted prey, combine their damage for the purpose of its resistances and weaknesses. Apply your multiple attack penalty to each Strike normally."
+    type: class feat
+    level: 1
+    actioncost: 1
+    frequency: once per round
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You are wielding two melee weapons, each in a different hand.
+    traits:
+      - Flourish
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 171
+        page_stop: 171
+    has_been_manually_proofread: true
+
+  - name: Favored Terrain
+    descr: "You have studied a specific terrain to overcome its challenges. Choose aquatic, arctic, desert, forest, mountain, plains, sky, swamp, or underground as your favored terrain. When in that terrain, you can ignore the effects of non-magical difficult terrain. If you have the wild stride class feature, you gain a second benefit while in your favored terrain, depending on your choice.\n • Aquatic You gain a swim Speed equal to your Speed. If you already had a swim Speed, you gain a +10-foot status bonus to your swim Speed.\n • Arctic You need to eat and drink only one-tenth as much as usual, you aren’t affected by severe or extreme cold, and you can walk across ice and snow at full Speed without needing to Balance.\n • Desert You need to eat and drink only one-tenth as much as usual, you aren’t affected by severe or extreme heat, and you can walk along sand at full Speed without needing to Balance.\n • Forest, Mountain, or Underground You gain a climb Speed equal to your Speed. If you already had a climb Speed, you gain a +10-foot status bonus to your climb Speed.\n • Plains You gain a +10-foot status bonus to your land Speed.\n • Sky You gain a +10-foot status bonus to your fly Speed, if you have one.\n • Swamp You can move across bogs at full Speed, even if they are deep enough to be greater difficult terrain or to normally require you to Swim."
+    type: class feat
+    level: 2
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 171
+        page_stop: 172
+    has_been_manually_proofread: true
+
+  - name: Hunter's Aim
+    descr: "When you focus on aiming, your attack becomes particularly accurate. Make a ranged weapon Strike against your hunted prey. On this Strike, you gain a +2 circumstance bonus to the attack roll and ignore your prey’s concealed condition."
+    type: class feat
+    level: 2
+    actioncost: 2
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Concentrate
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 172
+        page_stop: 172
+    has_been_manually_proofread: true
+
+  - name: Monster Warden
+    descr: "You understand how to defend yourself and others against your prey. When you grant bonuses from Monster Hunter, you and your allies also each gain a +1 circumstance bonus to your next saving throw against that particular creature and to your AC against that creature’s next attack against you."
+    type: class feat
+    level: 2
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Monster Hunter
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 172
+        page_stop: 172
+    has_been_manually_proofread: true
+
+  - name: Quick Draw
+    descr: "You draw your weapon and attack with the same motion. You Interact to draw a weapon, then Strike with that weapon."
+    type: class feat
+    level: 2
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 172
+        page_stop: 172
+    has_been_manually_proofread: true
+
+  - name: Wild Empathy
+    descr: "You have a connection to the creatures of the natural world that allows you to communicate with them on a rudimentary level. You can use Diplomacy to Make an Impression on animals and to make very simple Requests of them. In most cases, wild animals will give you time to make your case."
+    type: class feat
+    level: 2
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 172
+        page_stop: 172
+    has_been_manually_proofread: true
+
+  - name: Companion's Cry
+    descr: "You can urge your companion to do its utmost. You can spend 2 actions to Command an Animal instead of 1 when commanding your animal companion. If you do, your animal companion uses an additional action."
+    type: class feat
+    level: 4
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: special
+        descr: an animal companion
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 172
+        page_stop: 172
+    has_been_manually_proofread: true
+
+  - name: Disrupt Prey
+    descr: "Make a melee Strike against your prey. If the attack is a critical hit, you disrupt the triggering action."
+    type: class feat
+    level: 4
+    actioncost: F
+    frequency: null
+    cost: null
+    trigger: Your hunted prey is within your reach, and it uses a manipulate action, uses a move action, or leaves a square during a move action it’s using.
+    prereqs: null
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 172
+        page_stop: 172
+    has_been_manually_proofread: true
+
+  - name: Far Shot
+    descr: "Your experience in the field has taught you how to focus your aim at a distance, increasing your accuracy. Double your weapons’ range increments."
+    type: class feat
+    level: 4
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 172
+        page_stop: 172
+    has_been_manually_proofread: true
+
+  - name: Favored Enemy
+    descr: "You have studied a specific type of wild creature and can hunt it more easily. When you gain this feat, choose animals, beasts, dragons, or both fungi and plants as your favored enemy. When you roll initiative and can see an enemy that belongs to the chosen category, you can Hunt Prey as a free action, designating that enemy. You can use this free action even if you haven’t identified the creature yet with Recall Knowledge. The benefit doesn’t apply against favored enemies disguised as other creatures, and the GM determines whether it applies against a creature disguised as a favored enemy."
+    type: class feat
+    level: 4
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 172
+        page_stop: 172
+    has_been_manually_proofread: true
+
+  - name: Running Reload
+    descr: "You can reload your weapon on the move. You Stride, Step, or Sneak, then Interact to reload."
+    type: class feat
+    level: 4
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 172
+        page_stop: 172
+    has_been_manually_proofread: true
+
+  - name: Scout's Warning
+    descr: "You visually or audibly warn your allies of danger, granting them each a +1 circumstance bonus to their initiative rolls. Depending on whether you use gestures or call out, this action gains either the visual or the auditory trait, respectively."
+    type: class feat
+    level: 4
+    actioncost: F
+    frequency: null
+    cost: null
+    trigger: You are about to roll a Perception or Survival check for initiative.
+    prereqs: null
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 172
+        page_stop: 172
+    has_been_manually_proofread: true
+
+  - name: Scout's Warning
+    descr: "You specialize in creating quick traps to obstruct your enemies on the battlefield. If your proficiency rank in Crafting is expert, you gain the formulas for three common or uncommon snares (page 589). If your rank is master, you gain 6. If your rank is legendary, you gain 9. Each day during your daily preparations, you can prepare four snares from your formula book for quick deployment; if they normally take 1 minute to Craft, you can Craft them with 3 Interact actions. The number of snares increases to six if you have master proficiency in Crafting and eight if you have legendary proficiency in Crafting. Snares prepared in this way don’t cost you any resources to Craft."
+    type: class feat
+    level: 4
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: expert in Crafting
+      - type: skill feat
+        descr: Snare Crafting
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 172
+        page_stop: 172
+    has_been_manually_proofread: true
+
+  - name: Twin Parry
+    descr: "You can use two weapons to deflect attacks. You gain a +1 circumstance bonus to AC until the start of your next turn, or a +2 circumstance bonus if either weapon has the parry trait. You lose this circumstance bonus if you no longer meet this feat’s requirement."
+    type: class feat
+    level: 4
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You are wielding two melee weapons, one in each hand.
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 172
+        page_stop: 172
+    has_been_manually_proofread: true
+
+  - name: Mature Animal Companion
+    descr: "Your animal companion grows up, becoming a mature animal companion and gaining additional capabilities (page 214). If you have the Hunt Prey action, your animal companion assaults the prey even without your orders. During an encounter, even if you don’t use the Command an Animal action, your animal companion can still use 1 action that round on your turn to Stride toward or Strike your prey."
+    type: class feat
+    level: 6
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Animal Companion
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 173
+        page_stop: 173
+    has_been_manually_proofread: true
+
+  - name: Quick Snares
+    descr: "You can rig a snare in only moments. You can Craft snares that normally take 1 minute to Craft with 3 Interact actions, even if you haven’t prepared them."
+    type: class feat
+    level: 6
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: expert in Crafting
+      - type: skill feat
+        descr: Snare Crafting
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 173
+        page_stop: 173
+    has_been_manually_proofread: true
+
+  - name: Skirmish Strike
+    descr: "Your feet and weapon move in tandem. Either Step and then Strike, or Strike and then Step."
+    type: class feat
+    level: 6
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Flourish
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 173
+        page_stop: 173
+    has_been_manually_proofread: true
+
+  - name: Snap Shot
+    descr: "You’ve learned to react with ranged weapons when a creature is in close quarters. You can use a reaction that normally allows you to make a melee weapon Strike to instead make a ranged weapon Strike. You must be Striking an adjacent target. If necessary for the reaction’s trigger, you treat your ranged weapon as if it had a reach of 5 feet. If the reaction has other requirements, such as wielding a specific kind of weapon, Snap Shot doesn’t allow you to ignore them; it allows you only to replace a melee weapon Strike with a ranged weapon Strike."
+    type: class feat
+    level: 6
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 173
+        page_stop: 173
+    has_been_manually_proofread: true
+
+  - name: Swift Tracker
+    descr: "Your keen eyes catch signs of passage even when you’re moving. You can move at your full Speed while you Track. If you have master proficiency in Survival, you don’t need to attempt a new Survival check every hour while Tracking. If you have legendary proficiency in Survival, you can use another exploration activity while Tracking. If you roll Survival for initiative while tracking your hunted prey, when you start your first turn of the encounter, you can Stride toward your hunted prey as a free action."
+    type: class feat
+    level: 6
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: expert in Survival
+      - type: class feat
+        descr: Experienced Tracker
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 173
+        page_stop: 173
+    has_been_manually_proofread: true
+
+  - name: Blind-Fight
+    descr: "Your battle instincts make you more aware of concealed and invisible opponents. You don’t need to succeed at a flat check to target concealed creatures. You’re not flat-footed to creatures that are hidden from you (unless you’re flat-footed to them for reasons other than the hidden condition), and you need only a successful DC 5 flat check to target a hidden creature. While you’re adjacent to an undetected creature of your level or lower, it is instead only hidden from you."
+    type: class feat
+    level: 8
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: master in Preception
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 173
+        page_stop: 174
+    has_been_manually_proofread: true
+
+  - name: Deadly Aim
+    descr: "You aim for your prey’s weak spots, making your shot more challenging but dealing more damage if you hit. Make a ranged Strike against your hunted prey at a –2 penalty. You gain a +4 circumstance bonus to damage on that Strike. This bonus increases to +6 at 11th level and +8 at 15th level."
+    type: class feat
+    level: 8
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feature
+        descr: Weapon Specialization
+    requirement: null
+    traits:
+      - Open
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 174
+        page_stop: 174
+    has_been_manually_proofread: true
+
+  - name: Hazard Finder
+    descr: "You have an intuitive ability to sense hazards. You gain a +1 circumstance bonus to Perception checks to find traps and hazards, to AC against their attacks, and to saves against their effects. You can find hazards that would normally require you to Search even if you aren’t Searching."
+    type: class feat
+    level: 8
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 174
+        page_stop: 174
+    has_been_manually_proofread: true
+
+  - name: Powerful Snares
+    descr: "Your snares are particularly difficult for enemies to avoid. When you set a snare, the saving throw DC for that snare is equal to its normal DC or your class DC, whichever is higher."
+    type: class feat
+    level: 8
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: master in Crafting
+      - type: class feat
+        descr: Snare Specialist
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 174
+        page_stop: 174
+    has_been_manually_proofread: true
+
+  - name: Terrain Master
+    descr: "You adapt to your surroundings in any natural terrain. You can spend 1 hour practicing in your current terrain in order to make it your favored terrain, replacing your current favored terrain temporarily. If you spend a full day out of the new favored terrain, your favored terrain reverts back to your original choice when you took the Favored Terrain feat."
+    type: class feat
+    level: 8
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feature
+        descr: Wild Stride
+      - type: proficiency
+        descr: master in Survival
+      - type: class feat
+        descr: Favored Terrain
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 174
+        page_stop: 174
+    has_been_manually_proofread: true
+
+  - name: Warden's Boon
+    descr: "By pointing out vulnerabilities, you grant the benefits listed in Hunt Prey and your hunter’s edge benefit to an ally until the end of their next turn. Depending on whether you call out or use gestures, this action gains either the auditory or visual trait."
+    type: class feat
+    level: 8
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 174
+        page_stop: 174
+    has_been_manually_proofread: true
+
+  - name: Camouflage
+    descr: "You alter your appearance to blend in to the wilderness. In natural terrain, you can Sneak even if you’re observed."
+    type: class feat
+    level: 10
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: master in Stealth
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 174
+        page_stop: 174
+    has_been_manually_proofread: true
+
+  - name: Incredible Companion
+    descr: "Your animal companion continues to grow and develop. It becomes a nimble or savage animal companion (your choice), gaining additional capabilities determined by the type of companion (page 214)."
+    type: class feat
+    level: 10
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Mature Animal Companion
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 175
+        page_stop: 175
+    has_been_manually_proofread: true
+
+  - name: Master Monster Hunter
+    descr: "You have a nearly encyclopedic knowledge of all creatures of the world. You can use Nature to Recall Knowledge to identify any creature. In addition, you gain the benefits of Monster Hunter (and Monster Warden, if you have it) on a success as well as a critical success."
+    type: class feat
+    level: 10
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: master in Nature
+      - type: class feat
+        descr: Monster Hunter
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 175
+        page_stop: 175
+    has_been_manually_proofread: true
+
+  - name: Penetrating Shot
+    descr: "You shoot clear through an intervening creature to hit your prey. Choose a target that is giving lesser cover to your hunted prey. Make a single ranged Strike with the required weapon against the chosen target and your hunted prey. This attack ignores any lesser cover the chosen target provides your hunted prey. Roll damage only once, and apply it to each creature you hit. A Penetrating Shot counts as two attacks for your multiple attack penalty."
+    type: class feat
+    level: 10
+    actioncost: 2
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You are wielding a ranged weapon.
+    traits:
+      - Open
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 175
+        page_stop: 175
+    has_been_manually_proofread: true
+
+  - name: Twin Riposte
+    descr: "A clever parry with one weapon leaves your opponent open to an attack with the other weapon. Make a melee Strike or use a Disarm action against the triggering opponent."
+    type: class feat
+    level: 10
+    actioncost: R
+    frequency: null
+    cost: null
+    trigger: A creature within your reach critically fails a Strike against you.
+    prereqs: null
+    requirement: You are benefiting from Twin Parry.
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 175
+        page_stop: 175
+    has_been_manually_proofread: true
+
+  - name: Warden's Step
+    descr: "You can guide your allies to move quietly through the wilderness. When you Sneak during exploration in natural terrain, you can designate any number of your allies to gain the benefits as if they were using that activity during that exploration. This requires no action on their part."
+    type: class feat
+    level: 10
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: master in Stealth
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 175
+        page_stop: 175
+    has_been_manually_proofread: true
+
+  - name: Distracting Shot
+    descr: "The sheer power of your attacks, or the overwhelming number of them, leaves an enemy flustered. If you critically hit your hunted prey with a ranged weapon, or hit it at least twice on the same turn with a ranged weapon, it’s flat-footed until the start of your next turn."
+    type: class feat
+    level: 12
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 175
+        page_stop: 175
+    has_been_manually_proofread: true
+
+  - name: Double Prey
+    descr: "You can focus on two foes at once, hunting both of them down. When you use the Hunt Prey action, you can pick two creatures as your prey."
+    type: class feat
+    level: 12
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 175
+        page_stop: 175
+    has_been_manually_proofread: true
+
+  - name: Lightning Snares
+    descr: "You can rig a trap with incredible speed. When you create a snare that normally takes 1 minute to Craft, you can Craft it using a single Interact action instead."
+    type: class feat
+    level: 12
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: master in Crafting
+      - type: class feat
+        descr: Snare Specialist
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 175
+        page_stop: 175
+    has_been_manually_proofread: true
+
+  - name: Second Sting
+    descr: "You read your prey’s movements and transform them into openings, so failures with one weapon set up glancing blows with the other. Make a melee Strike with one of the required weapons against your hunted prey. The Strike gains the following failure effect.\n Failure You deal the damage the other required weapon would have dealt on a hit, excluding all damage dice. (This removes dice from weapon runes, spells, and special abilities, not just weapon damage dice.)"
+    type: class feat
+    level: 12
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You are wielding two melee weapons, each in a different hand.
+    traits:
+      - Press
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 175
+        page_stop: 175
+    has_been_manually_proofread: true
+
+  - name: Side by Side
+    descr: "You and your animal companion fight in tandem, distracting your foes and keeping them off balance. Whenever you and your animal companion are adjacent to the same foe, you are both flanking that foe with each other, regardless of your actual positions."
+    type: class feat
+    level: 12
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: special
+        descr: an animal companion
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 175
+        page_stop: 175
+    has_been_manually_proofread: true
+
+  - name: Sense the Unseen
+    descr: "When you look for foes, you can catch even the slightest cues, such as their minute movements or the shifting of air currents on your skin. Even though you failed at the triggering check, you automatically sense any undetected creatures in the area where you’re Seeking, making them merely hidden to you."
+    type: class feat
+    level: 14
+    actioncost: R
+    frequency: null
+    cost: null
+    trigger: You fail a check to Seek.
+    prereqs: null
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 175
+        page_stop: 175
+    has_been_manually_proofread: true
+
+  - name: Shared Prey
+    descr: "Hunting as a duo, you and your ally both single out your prey. When you use Hunt Prey and select only one prey, you can grant your Hunt Prey benefits and hunter’s edge to an ally in addition to gaining them yourself. The ally retains these benefits until you use Hunt Prey again."
+    type: class feat
+    level: 14
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Double Prey
+      - type: class feat
+        descr: Warden’s Boon
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 175
+        page_stop: 175
+    has_been_manually_proofread: true
+
+  - name: Stealthy Companion
+    descr: "You’ve trained your animal companion to blend in to its surroundings. Your animal companion gains the benefit of the Camouflage feat. If your companion is a specialized ambusher, its proficiency rank for Stealth increases to master (or legendary if it was already master)."
+    type: class feat
+    level: 14
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Camouflage
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 176
+        page_stop: 176
+    has_been_manually_proofread: true
+
+  - name: Targeting Shot
+    descr: "You carefully track your prey’s position and defenses, allowing you to follow up around obstacles that block your shot. Make a ranged weapon Strike against your hunted prey. You ignore the target’s concealed condition and all cover."
+    type: class feat
+    level: 14
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Hunter’s Aim
+    requirement: null
+    traits:
+      - Concentrate
+      - Press
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 176
+        page_stop: 176
+    has_been_manually_proofread: true
+
+  - name: Warden's Guidance
+    descr: "You can convey your prey’s location to your allies, no matter how well hidden it is. As long as your hunted prey is observed by you, all your allies who roll failures and critical failures when Seeking it get a success instead. Your allies need to be able to see or hear you to gain this benefit. You have to be able to call out or use gestures for your allies to get this benefit."
+    type: class feat
+    level: 14
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 176
+        page_stop: 176
+    has_been_manually_proofread: true
+
+  - name: Greater Distracting Shot
+    descr: "Even a single missile can throw off your enemy’s balance, and more powerful attacks leave it flustered for longer. If you hit your hunted prey with a ranged weapon, it’s flat-footed until the start of your next turn. If you critically hit your prey or hit it twice on the same turn with a ranged weapon, it’s flat‑footed until the end of your next turn instead."
+    type: class feat
+    level: 16
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Distracting Shot
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 176
+        page_stop: 176
+    has_been_manually_proofread: true
+
+  - name: Improved Twin Riposte
+    descr: "At the start of each of your turns, you gain an additional reaction that you can use only to perform a Twin Riposte against your hunted prey. You can use this extra reaction even if you are not benefiting from Twin Parry."
+    type: class feat
+    level: 16
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 176
+        page_stop: 176
+    has_been_manually_proofread: true
+
+  - name: Legendary Monster Hunter
+    descr: "Your knowledge of monsters is so incredible that it reveals glaring flaws in your prey. Your bonus from Monster Hunter (and the bonus from Monster Warden if you have it) increases from +1 to +2 for you and any allies who benefit."
+    type: class feat
+    level: 16
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: legendary in Nature
+      - type: class feat
+        descr: Master Monster Hunter
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 176
+        page_stop: 176
+    has_been_manually_proofread: true
+
+  - name: Specialized Companion
+    descr: "Your animal companion has become cunning enough to become specialized. Your animal companion gains one specialization of your choice. (See the Animal Companion section on page 214.)"
+    type: class feat
+    level: 16
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Incredible Companion
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 176
+        page_stop: 177
+    has_been_manually_proofread: true
+
+  - name: Ubiquitous Snares
+    descr: "You can prepare a seemingly impossible number of snares in advance, and you’re ready to spring them on unsuspecting foes. Double the number of prepared snares from Snare Specialist."
+    type: class feat
+    level: 16
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Snare Specialist
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 177
+        page_stop: 177
+    has_been_manually_proofread: true
+
+  - name: Impossible Flurry
+    descr: "You forgo precision to attack at an impossible speed. Make three melee Strikes with each of the required weapons. All of these Strikes take the maximum multiple attack penalty, as if you had already made two or more attacks this turn."
+    type: class feat
+    level: 18
+    actioncost: 3
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You are wielding two melee weapons, each in a different hand.
+    traits:
+      - Flourish
+      - Open
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 177
+        page_stop: 177
+    has_been_manually_proofread: true
+
+  - name: Impossible Volley
+    descr: "You fire a volley at all foes in an area. Make one Strike with a –2 penalty against each enemy within a 10-foot-radius burst centered at or beyond your weapon’s volley range. Roll the damage only once for all targets. Each attack counts toward your multiple attack penalty, but do not increase your penalty until you have made all your attacks."
+    type: class feat
+    level: 18
+    actioncost: 3
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You are wielding a ranged weapon with the volley trait and reload 0.
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 177
+        page_stop: 177
+    has_been_manually_proofread: true
+
+  - name: Manifold Edge
+    descr: "You’ve learned every possible edge to use against your foes. When you use Hunt Prey, you can gain a hunter’s edge benefit other than the one you selected at 1st level. If you do, you don’t gain the additional benefit from masterful hunter."
+    type: class feat
+    level: 18
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feature
+        descr: Hunter’s Edge
+      - type: class feature
+        descr: Masterful Hunter
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 177
+        page_stop: 177
+    has_been_manually_proofread: true
+
+  - name: Masterful Companion
+    descr: "Your animal companion shares your incredible hunting skills, allowing it to take down your shared prey with ease. When you Hunt Prey, your animal companion gains the masterful hunter benefit associated with your hunter’s edge, rather than just your original hunter’s edge benefit."
+    type: class feat
+    level: 18
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feature
+        descr: Masterful Hunter
+      - type: class feat
+        descr: Animal Companion
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 177
+        page_stop: 177
+    has_been_manually_proofread: true
+
+  - name: Perfect Shot
+    descr: "After watching the motions of combat with incredible intensity and precision, you fire at your prey at the perfect moment to deliver maximum pain. Make a ranged Strike with the required weapon against your hunted prey. If you hit, the Strike deals maximum damage. After the Strike, your turn ends."
+    type: class feat
+    level: 18
+    actioncost: 3
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You are wielding a loaded ranged weapon with reload 1 or more, and you have not reloaded your weapon since your last turn.
+    traits:
+      - Flourish
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 177
+        page_stop: 177
+    has_been_manually_proofread: true
+
+  - name: Shadow hunter
+    descr: "You blend in to your surroundings so well that others have trouble telling you apart from the terrain. While in natural terrain, you’re always concealed from all foes if you choose to be, except for your hunted prey."
+    type: class feat
+    level: 18
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Camouflage
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 177
+        page_stop: 177
+    has_been_manually_proofread: true
+
+  - name: Legendary Shot
+    descr: "You focus on your hunted prey, perceiving angles, air resistance, and every variable that would affect your ranged attack. If you have master proficiency with your ranged weapon, you can ignore the penalty for attacking up to five range increments away when attacking your hunted prey."
+    type: class feat
+    level: 20
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feature
+        descr: Masterful Hunter
+      - type: proficiency
+        descr: legendary in Perception
+      - type: class feat
+        descr: Far Shot
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 177
+        page_stop: 177
+    has_been_manually_proofread: true
+
+  - name: To the Ends of the Earth
+    descr: "Your ability to track your prey has surpassed explanation, allowing you to trace your prey’s movements and predict its location with ease. When you use Hunt Prey on a creature within 100 feet, you can follow that creature’s movements, allowing you to know the creature’s exact location no matter how far away it becomes, as long as it remains your prey. You must be legendary in Nature to track your prey’s location across teleportation or planar travel. This feat gains the detection, divination, and primal traits if you’re legendary in Nature."
+    type: class feat
+    level: 20
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: legendary in Survival
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 177
+        page_stop: 177
+    has_been_manually_proofread: true
+
+  - name: Triple Threat
+    descr: "You can divide your attention three ways when hunting. When you use Hunt Prey, you can designate three creatures as prey, designate two creatures as prey and share the effect with one ally (as Shared Prey), or designate one creature as prey and share the effect with two allies."
+    type: class feat
+    level: 20
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: clas feat
+        descr: Shared Prey
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 177
+        page_stop: 177
+    has_been_manually_proofread: true
+
+  - name: Ultimate Skirmisher
+    descr: "You are so skilled at navigating the wild, your movement is completely unaffected by terrain. You ignore the effects of all difficult terrain, greater difficult terrain, and hazardous terrain, and you don’t trigger traps and hazards that are triggered by moving into an area (such as trip wires and pressure plates), unless you want to."
+    type: class feat
+    level: 20
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: clas feature
+        descr: Wild Stride
+    requirement: null
+    traits:
+      - Ranger
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 177
+        page_stop: 177
+    has_been_manually_proofread: true
+
+rogue:
+  - name: Nimble Dodge
+    descr: "You deftly dodge out of the way, gaining a +2 circumstance bonus to AC against the triggering attack."
+    type: class feat
+    level: 1
+    actioncost: R
+    frequency: null
+    cost: null
+    trigger: A creature targets you with an attack and you can see the attacker.
+    prereqs: null
+    requirement: You are not encumbered.
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 183
+        page_stop: 183
+    has_been_manually_proofread: true
+
+  - name: Trap Finder
+    descr: "You have an intuitive sense that alerts you to the dangers and presence of traps. You gain a +1 circumstance bonus to Perception checks to find traps, to AC against attacks made by traps, and to saves against traps. Even if you aren’t Searching, you get a check to find traps that normally require you to be Searching. You still need to meet any other requirements to find the trap. You can disable traps that require a proficiency rank of master in Thievery. If you have master proficiency in Thievery, you can disable traps that require a proficiency rank of legendary instead, and your circumstance bonuses against traps increase to +2."
+    type: class feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 183
+        page_stop: 183
+    has_been_manually_proofread: true
+
+  - name: Twin Feint
+    descr: "You make a dazzling series of attacks with both weapons, using the first attack to throw your foe off guard against a second attack at a different angle. Make one Strike with each of your two melee weapons, both against the same target. The target is automatically flat‑footed against the second attack. Apply your multiple attack penalty to the Strikes normally."
+    type: class feat
+    level: 1
+    actioncost: 2
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You are wielding two melee weapons, each in a different hand.
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 183
+        page_stop: 183
+    has_been_manually_proofread: true
+
+  - name: You're Next
+    descr: "After downing a foe, you menacingly remind another foe that you’re coming after them next. Attempt an Intimidation check with a +2 circumstance bonus to Demoralize a single creature that you can see and that can see you. If you have legendary proficiency in Intimidation, you can use this as a free action with the same trigger."
+    type: class feat
+    level: 1
+    actioncost: R
+    frequency: null
+    cost: null
+    trigger: You reduce an enemy to 0 hit points.
+    prereqs:
+      - type: proficiency
+        descr: trained in Intimidation
+    requirement: null
+    traits:
+      - Emotion
+      - Fear
+      - Mental
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 183
+        page_stop: 183
+    has_been_manually_proofread: true
+
+  - name: Brutal Beating
+    descr: "The brutality of your critical hits shakes your foes’ confidence. Whenever your Strike is a critical hit and deals damage, the target is frightened 1."
+    type: class feat
+    level: 2
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: You reduce an enemy to 0 hit points.
+    prereqs:
+      - type: rogue’s racket
+        descr: ruffian racket
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 183
+        page_stop: 183
+    has_been_manually_proofread: true
+
+  - name: Distracting Feint
+    descr: "Your Feints are far more distracting than normal, drawing your foes’ attention and allowing you and your allies to take greater advantage. While a creature is flat-footed by your Feint, it also takes a –2 circumstance penalty to Perception checks and Reflex saves."
+    type: class feat
+    level: 2
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: rogue’s racket
+        descr: scoundrel racket
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 183
+        page_stop: 183
+    has_been_manually_proofread: true
+
+  - name: Minor Magic
+    descr: "You’ve dabbled in a variety of tricks, gaining minor magical abilities from a particular tradition. Choose arcane, divine, occult, or primal magic, and gain two cantrips from the common cantrips available to that tradition."
+    type: class feat
+    level: 2
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 184
+        page_stop: 184
+    has_been_manually_proofread: true
+
+  - name: Mobility
+    descr: "You move in a way that denies your enemies the opportunity to retaliate. When you take a Stride action to move half your Speed or less, that movement does not trigger reactions. You can use Mobility when Climbing, Flying, or Swimming instead of Striding if you have the corresponding movement type."
+    type: class feat
+    level: 2
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 184
+        page_stop: 184
+    has_been_manually_proofread: true
+
+  - name: Quick Draw
+    descr: "You draw your weapon and attack with the same motion. You Interact to draw a weapon, then Strike with that weapon."
+    type: class feat
+    level: 2
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 184
+        page_stop: 184
+    has_been_manually_proofread: true
+
+  - name: Unbalancing Blow
+    descr: "Interweaving your most powerful attacks in a graceful flow, you temporarily unbalance your foes. Whenever your Strike is a critical hit and deals damage, the target is flat‑footed against your attacks until the end of your next turn."
+    type: class feat
+    level: 2
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: rogue’s racket
+        descr: thief racket
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 184
+        page_stop: 184
+    has_been_manually_proofread: true
+
+  - name: Battle Assessment
+    descr: "With careful observation during battle, you identify an enemy’s strengths and weaknesses. The GM rolls a secret Perception check for you against the Deception or Stealth DC (whichever is higher) of an enemy of your choice who is not concealed from you, hidden from you, or undetected by you, and who is engaged in combat. The GM might apply a penalty for the distance between you and the enemy. The enemy is then temporarily immune to your Battle Assessment for 1 day.\n  Critical Success The GM chooses two of the following pieces of information about the enemy to tell you: which of the enemy’s weaknesses is highest, which of the enemy’s saving throws has the lowest modifier, one immunity the enemy has, or which of the enemy’s resistances is highest. If the event of a tie, the GM should pick one at random.\n Success The GM chooses one piece of information from the above list to tell you about the enemy.\n  Critical Failure The GM gives you false information (the GM makes up the information)."
+    type: class feat
+    level: 4
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Rogue
+      - Secret
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 184
+        page_stop: 184
+    has_been_manually_proofread: true
+
+  - name: Dread Striker
+    descr: "You capitalize on your enemies’ fear to slip past their defenses. Any creature that has the frightened condition is also flat-footed against your attacks."
+    type: class feat
+    level: 4
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 184
+        page_stop: 184
+    has_been_manually_proofread: true
+
+  - name: Magical Trickster
+    descr: "Whether you’re using magic items, wielding innate magic, or dabbling in spellcasting, you can sneak spells past your foes’ defenses as easily as any blade. When you succeed at a spell attack roll against a flat-footed foe’s AC and the spell deals damage, you can add your sneak attack damage to the damage roll. If your single spell leads to multiple separate damage rolls, apply your sneak attack damage only once per target."
+    type: class feat
+    level: 4
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 185
+        page_stop: 185
+    has_been_manually_proofread: true
+
+  - name: Poison Weapon
+    descr: "You apply a poison to the required weapon. If your next attack with that weapon before the end of your next turn hits and deals damage, it applies the effects of the poison, provided that poison can be delivered by contact or injury. If you critically fail the attack roll, the poison is wasted as normal.\n Special During your daily preparations, you can prepare a number of simple injury poisons equal to your rogue level. These poisons deal 1d4 poison damage. Only you can apply these poisons properly, and they expire the next time you prepare."
+    type: class feat
+    level: 4
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You are wielding a piercing or slashing weapon and have a free hand.
+    traits:
+      - Manipulate
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 185
+        page_stop: 185
+    has_been_manually_proofread: true
+
+  - name: Reactive Pursuit
+    descr: "You keep pace with a retreating foe. You Stride, but you must end your movement adjacent to the triggering enemy. Your move does not trigger reactions from the triggering enemy. You can use Reactive Pursuit to Burrow, Climb, Fly, or Swim instead of Stride if you have the corresponding movement type."
+    type: class feat
+    level: 4
+    actioncost: R
+    frequency: null
+    cost: null
+    trigger: An adjacent foe moves away from you, and you can reach at least one space adjacent to the foe with a Stride action.
+    prereqs: null
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 185
+        page_stop: 185
+    has_been_manually_proofread: true
+
+  - name: Sabotage
+    descr: "You subtly damage others’ equipment. Choose one item that a creature within your reach wields or carries. The item must have moving parts that you could possibly sabotage (a shortbow could be sabotaged, but a longsword could not). Attempt a Thievery check against the Reflex DC of the creature. Damage dealt by Sabotage can’t take the item below its Break Threshold.\n Critical Success You deal damage equal to four times your Thievery proficiency bonus.\n Success You deal damage equal to double your Thievery proficiency bonus.\n Critical Failure Temporarily immune to your Sabotage for 1 day."
+    type: class feat
+    level: 4
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You have a free hand.
+    traits:
+      - Incapacitation
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 185
+        page_stop: 185
+    has_been_manually_proofread: true
+
+  - name: Scout's Warning
+    descr: "You visually or audibly warn your allies of danger, granting them each a +1 circumstance bonus to their initiative rolls. Depending on whether you use gestures or call out, this action gains either the visual or auditory trait, respectively."
+    type: class feat
+    level: 4
+    actioncost: F
+    frequency: null
+    cost: null
+    trigger: You are about to roll a Perception or Survival check for initiative.
+    prereqs: null
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 186
+        page_stop: 186
+    has_been_manually_proofread: true
+
+  - name: Gang Up
+    descr: "You and your allies harry an opponent in concert. Any enemy is flat-footed against your melee attacks due to flanking as long as the enemy is within both your reach and your ally’s. Your allies must still flank an enemy for it to be flat-footed to them."
+    type: class feat
+    level: 6
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 186
+        page_stop: 186
+    has_been_manually_proofread: true
+
+  - name: Light Step
+    descr: "You aren’t bothered by tricky footing. When you Stride or Step, you can ignore difficult terrain."
+    type: class feat
+    level: 6
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 186
+        page_stop: 186
+    has_been_manually_proofread: true
+
+  - name: Skirmish Strike
+    descr: "Your feet and weapon move in tandem. Either Step and then Strike, or Strike and then Step."
+    type: class feat
+    level: 6
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Flourish
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 186
+        page_stop: 186
+    has_been_manually_proofread: true
+
+  - name: Twist the Knife
+    descr: "After stabbing your opponent in a weak spot, you tear the wound open. You deal persistent bleed damage to the target equal to your number of sneak attack damage dice."
+    type: class feat
+    level: 6
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: Your last action was a melee Strike that dealt sneak attack damage to a flat-footed target.
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 186
+        page_stop: 186
+    has_been_manually_proofread: true
+
+  - name: Blind-Fight
+    descr: "Your battle instincts make you more aware of concealed and invisible opponents. You don’t need to succeed at a flat check to target concealed creatures. You’re not flat-footed to creatures that are hidden from you (unless you’re flat-footed to them for reasons other than the hidden condition), and you need only a successful DC 5 flat check to target a hidden creature. While you’re adjacent to an undetected creature of your level or lower, it is instead only hidden from you."
+    type: class feat
+    level: 8
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: master in Perception
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 186
+        page_stop: 186
+    has_been_manually_proofread: true
+
+  - name: Delay Trap
+    descr: "You can jam the workings of a trap to delay its effects. Attempt a Thievery check to Disable a Device on the trap; the DC to do so is increased by 5, and the effects are as follows.\n Critical Success You prevent the trap from being triggered, or you delay the activation until the start or end of your next turn (your choice).\n Success You prevent the trap from being triggered, or you delay the activation until the end of your next turn (whichever is worse for you; GM’s choice).\n Failure No effect.\n Critical Failure You’re flat-footed until the start of your next turn."
+    type: class feat
+    level: 8
+    actioncost: R
+    frequency: null
+    cost: null
+    trigger: A trap within your reach is triggered.
+    prereqs: null
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 186
+        page_stop: 187
+    has_been_manually_proofread: true
+
+  - name: Improved Poison Weapon
+    descr: "You deliver poisons in ways that maximize their harmful effects. When you apply a simple poison with Poison Weapon, the poison deals 2d4 poison damage instead of 1d4 poison damage. You don’t waste a poison you apply with Poison Weapon on a critically failed attack roll."
+    type: class feat
+    level: 8
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: clas feat
+        descr: Poison Weapon
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 187
+        page_stop: 187
+    has_been_manually_proofread: true
+
+  - name: Nimble Roll
+    descr: "You throw yourself into a roll to escape imminent danger. You can use Nimble Dodge before attempting a Reflex save in addition to its original trigger. If you do, the circumstance bonus applies to your Reflex save against the triggering effect. When you use Nimble Dodge and the triggering attack fails or critically fails, or when you succeed or critically succeed at the saving throw, you can also Stride up to 10 feet as part of the reaction. If you do, the reaction gains the move trait. You can use Nimble Roll while Flying or Swimming instead of Striding if you have the corresponding movement type."
+    type: class feat
+    level: 8
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: clas feat
+        descr: Nimble Dodge
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 187
+        page_stop: 187
+    has_been_manually_proofread: true
+
+  - name: Opportune Backstab
+    descr: "When your enemy is hit by your ally, you capitalize upon the distraction. Make a Strike against the triggering creature."
+    type: class feat
+    level: 8
+    actioncost: R
+    frequency: null
+    cost: null
+    trigger: A creature within your melee reach is hit by a melee attack from one of your allies.
+    prereqs: null
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 187
+        page_stop: 187
+    has_been_manually_proofread: true
+
+  - name: Sidestep
+    descr: "You deftly step out of the way of an attack, letting the blow continue to the creature next to you. You redirect the attack to a creature of your choice that is adjacent to you and within the reach of the triggering attack. The attacker rerolls the Strike’s attack roll against the new target."
+    type: class feat
+    level: 8
+    actioncost: R
+    frequency: null
+    cost: null
+    trigger: The attack roll for a Strike targeting you fails or critically fails.
+    prereqs: null
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 187
+        page_stop: 187
+    has_been_manually_proofread: true
+
+  - name: Sky Striker
+    descr: "Your attacks deal more damage, even against creatures that aren’t flat-footed. When you succeed or critically succeed at a Strike against a creature that isn’t flat-footed, you also deal 1d6 precision damage. This applies only if you’re using a weapon or unarmed attack you could deal sneak attack damage with. At 14th level, if you would normally deal 3d6 or more sneak attack damage to flat-footed creatures, you deal 2d6 precision damage to creatures that aren’t flat‑footed."
+    type: class feat
+    level: 8
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: clas feature
+        descr: Sneak Attack
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 187
+        page_stop: 187
+    has_been_manually_proofread: true
+
+  - name: Precise Debilitations
+    descr: "You carefully aim and gracefully deliver your debilitations. Add the following debilitations to the list you can choose from when you use Debilitating Strike.\n •  Debilitation The target takes an additional 2d6 precision damage from your attacks.\n •  Debilitation The target becomes flat-footed."
+    type: class feat
+    level: 10
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: rogue’s racket
+        descr: thief racket
+      - type: class feat
+        descr: Debilitating Strike
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 187
+        page_stop: 187
+    has_been_manually_proofread: true
+
+  - name: Sneak Savant
+    descr: "It is almost impossible to spot you without taking effort to look. When you roll a failure on a Sneak action, you get a success instead. You can still critically fail."
+    type: class feat
+    level: 10
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: master in Stealth
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 187
+        page_stop: 187
+    has_been_manually_proofread: true
+
+  - name: Tactical Debilitations
+    descr: "You learn new debilitations that grant you tactical advantages against your foes. Add the following debilitations to the list you can choose from when you use Debilitating Strike.\n •  Debilitation The target can’t use reactions.\n •  Debilitation The target can’t flank or contribute to allies’ flanking."
+    type: class feat
+    level: 10
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: rogue’s racket
+        descr: scoundrel racket
+      - type: clas feat
+        descr: Debilitating Strike
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 187
+        page_stop: 187
+    has_been_manually_proofread: true
+
+  - name: Vicious Debilitations
+    descr: "The debilitations you dish out seriously impair your foes. Add the following debilitations to the list you can choose from when you use Debilitating Strike.\n •  Debilitation The target gains weakness 5 to your choice of bludgeoning, piercing, or slashing damage.\n •  Debilitation The target becomes clumsy 1."
+    type: class feat
+    level: 10
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: rogue’s racket
+        descr: ruffian racket
+      - type: clas feat
+        descr: Debilitating Strike
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 187
+        page_stop: 187
+    has_been_manually_proofread: true
+
+  - name: Critical Debilitation
+    descr: "Your debilitations are especially effective on your most powerful attacks. Whenever you critically succeed at an attack roll against an enemy and use Debilitating Strike, add the following debilitation to the list you can choose from.\n •  Debilitation The target attempts a Fortitude save against your class DC with the following effects.\n Critical Success The target is unaffected.\n Success The target is slowed 1 until the end of your next turn.\n Failure The target is slowed 2 until the end of your next turn.\n Critical Failure The target is paralyzed until the end of your next turn."
+    type: class feat
+    level: 12
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: clas feat
+        descr: Debilitating Strike
+    requirement: null
+    traits:
+      - Incapacitation
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 187
+        page_stop: 188
+    has_been_manually_proofread: true
+
+  - name: Fantastic Leap
+    descr: "You launch yourself through the air at a foe. Attempt a High Jump or Long Jump. If you attempt a High Jump, determine the distance you can travel using the scale of a Long Jump. At the end of your jump, you can make a melee Strike. After your Strike, you fall to the ground if you’re in the air. If the distance of your fall is no more than the height of your jump, you take no damage and land upright."
+    type: class feat
+    level: 12
+    actioncost: 2
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 188
+        page_stop: 188
+    has_been_manually_proofread: true
+
+  - name: Felling Shot
+    descr: "Your ranged attacks can shoot an unprepared foe right out of the air. Make a Strike with a ranged weapon or a thrown weapon against a flat-footed creature. If the Strike is a success and deals damage, the target must attempt a Reflex save against your class DC with the following effects.\n Success The target is unaffected.\n Failure The target falls up to 120 feet. If it hits the ground, it takes no damage from the fall.\n Critical Failure As failure, and the target can’t fly, jump, levitate, or otherwise leave the ground until the end of your next turn."
+    type: class feat
+    level: 12
+    actioncost: 2
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 188
+        page_stop: 188
+    has_been_manually_proofread: true
+
+  - name: Reactive Interference
+    descr: "Grabbing a sleeve, swiping with your weapon, or creating another obstruction, you reflexively foil an enemy's response. If the triggering creature’s level is equal to or lower than yours, you disrupt the triggering reaction. If the triggering creature’s level is higher than yours, you must make an attack roll against its AC. On a success, you disrupt the reaction."
+    type: class feat
+    level: 12
+    actioncost: R
+    frequency: null
+    cost: null
+    trigger: An adjacent enemy begins to use a reaction.
+    prereqs: null
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 188
+        page_stop: 188
+    has_been_manually_proofread: true
+
+  - name: Spring From the Shadows
+    descr: "Leaping out from hiding, you assail your target when they least expect it. You Stride up to your Speed, but you must end your movement next to an enemy you’re hidden from or undetected by. You then Strike that enemy; you remain hidden from or undetected by that creature until after you Strike. You can use Spring from the Shadows while Burrowing, Climbing, Flying, or Swimming instead of Striding if you have the corresponding movement type."
+    type: class feat
+    level: 12
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Flourish
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 188
+        page_stop: 188
+    has_been_manually_proofread: true
+
+  - name: Defensive Roll
+    descr: "Dropping into a roll to disperse the force of the blow, you can partially evade a lethal attack and stay conscious. You take half damage from the triggering attack."
+    type: class feat
+    level: 14
+    actioncost: F
+    frequency: once per 10 minutes
+    cost: null
+    trigger: A physical attack would reduce you to 0 Hit Points.
+    prereqs: null
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 188
+        page_stop: 188
+    has_been_manually_proofread: true
+
+  - name: Instant Opening
+    descr: "You distract your opponent with a few choice words or a rude gesture. Choose a target within 30 feet. It’s flat-footed against your attacks until the end of your next turn. Depending on the way you describe your distraction, this action gains either the auditory or visual trait."
+    type: class feat
+    level: 14
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Concentrate
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 188
+        page_stop: 188
+    has_been_manually_proofread: true
+
+  - name: Leaving an Opening
+    descr: "When you hit hard enough, you leave an opening so your ally can jump in on the action. Whenever you critically hit a flat‑footed opponent with a melee attack and deal damage, the target triggers an Attack of Opportunity reaction from one ally of your choice who has that reaction, as if the enemy had used a manipulate action."
+    type: class feat
+    level: 14
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 188
+        page_stop: 188
+    has_been_manually_proofread: true
+
+  - name: Sense the Unseen
+    descr: "When you look for foes, you catch the slightest of cues. Even though you failed at the triggering check, you automatically sense any undetected creatures in the area where you’re Seeking, making them merely hidden to you."
+    type: class feat
+    level: 14
+    actioncost: R
+    frequency: null
+    cost: null
+    trigger: You fail a check to Seek.
+    prereqs: null
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 188
+        page_stop: 188
+    has_been_manually_proofread: true
+
+  - name: Blank Slate
+    descr: "Your deceptions confound even the most powerful mortal divinations. Detection, revelation, and scrying effects pass right over you, your possessions, and your auras, detecting nothing unless the detecting effect has a counteract level of 20 or higher. For example, detect magic would still detect other magic in the area but not any magic on you, true seeing wouldn’t reveal you, locate or scrying wouldn’t find you, and so on."
+    type: class feat
+    level: 16
+    actioncost: R
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: legendary in Deception
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 188
+        page_stop: 188
+    has_been_manually_proofread: true
+
+  - name: Cloud Step
+    descr: "Using fantastic acrobatic skill, you can walk for brief stretches across insubstantial surfaces. When you Stride, you can move across water, air, and solid surfaces that can hold only limited weight as if they were normal ground. If you Stride over a trap with a weight-sensitive pressure plate, you don’t trigger it. At the end of your turn, you sink, fall, break fragile surfaces, or trigger traps as normal for your current location."
+    type: class feat
+    level: 16
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: legendary in Acrobatics
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 188
+        page_stop: 188
+    has_been_manually_proofread: true
+
+  - name: Cognitive Loophole
+    descr: "You can find a loophole in a mental effect to temporarily overcome it. Until the end of your next turn, you ignore a single mental effect that meets the requirement. You can suppress a particular effect using Cognitive Loophole only once.\n Special You can use this reaction even if the mental effect is preventing you from using reactions."
+    type: class feat
+    level: 16
+    actioncost: R
+    frequency: null
+    cost: null
+    trigger: Your turn ends.
+    prereqs:
+      - type: proficiency
+        descr: legendary in Acrobatics
+    requirement: You are currently affected by a mental effect that you gained by failing, but not critically failing, a saving throw.
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 188
+        page_stop: 189
+    has_been_manually_proofread: true
+
+  - name: Dispelling Slice
+    descr: "Your sneak attack slices through the threads binding magic to a target. Make a Strike against a flat-footed creature (your choice). If your Strike deals sneak attack damage, you attempt to counteract a single spell active on the target. Your counteract level is equal to your rogue level, and your counteract check modifier is equal to your class DC – 10."
+    type: class feat
+    level: 16
+    actioncost: 2
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 189
+        page_stop: 189
+    has_been_manually_proofread: true
+
+  - name: Perfect Distraction
+    descr: "You use clever tactics to mislead your foes as you sneak away. You Sneak while leaving a decoy behind. The decoy acts as the spell mislead, though you aren’t invisible, just undetected. You can continue to concentrate to move your decoy, as with the spell, whether or not you remain hidden throughout the duration. Once you use Perfect Distraction, you need to spend 10 minutes to set up another decoy before you can use it again."
+    type: class feat
+    level: 16
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: legendary in Deception
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 189
+        page_stop: 189
+    has_been_manually_proofread: true
+
+  - name: Implausible Infiltration
+    descr: "You find tiny holes or imperfections that no one else could see and try to somehow fit yourself through them, possibly moving directly through the wall or floor from one side to the other. Your movement attempt fails if the wall or floor is made of something other than wood, plaster, or stone; is thicker than 10 feet; or contains even a thin layer of metal. If you have a climb Speed, you can use this ability to attempt to move through a ceiling."
+    type: class feat
+    level: 18
+    actioncost: 2
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: legendary in Acrobatics
+      - type: class feat
+        descr: Quick Squeeze
+    requirement: You are adjacent to a floor or vertical wall.
+    traits:
+      - Magical
+      - Move
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 189
+        page_stop: 189
+    has_been_manually_proofread: true
+
+  - name: Powerful Sneak
+    descr: "You have learned to exploit your enemies’ lowered defenses. When you succeed or critically succeed at a Strike using your Strength modifier on the attack roll and you would deal sneak attack damage, you can change the additional damage from sneak attack into ordinary damage of the same type as your Strike, rather than precision damage."
+    type: class feat
+    level: 18
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 189
+        page_stop: 189
+    has_been_manually_proofread: true
+
+  - name: Trickster's Ace
+    descr: "Whether from jury-rigged magic items, stolen magical essence, or other means, you have a contingency in your back pocket for desperate situations. When the trigger occurs, you cause the spell to come into effect. The spell targets only you, no matter how many creatures it would affect normally. If you define particularly complicated conditions, as determined by the GM, the trigger might fail. Once the contingency is triggered, the spell is expended until your next daily preparations."
+    type: class feat
+    level: 18
+    actioncost: R
+    frequency: null
+    cost: null
+    trigger: You specify the trigger when you make your daily preparations (see Requirements below).
+    prereqs: null
+    requirement: When you make your daily preparations, you must specify a trigger for this reaction using the same restrictions as the triggers for the Ready action. You also choose a single spell from the arcane, divine, occult, or primal list of 4th level or lower. The spell can’t have a cost, nor can its casting time be more than 10 minutes. The spell must be able to target a single creature, and you must be a valid target for it.
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 189
+        page_stop: 189
+    has_been_manually_proofread: true
+
+  - name: Hidden Paragon
+    descr: "When you put your mind to slipping out of sight, you disappear completely. You become invisible for 1 minute, even if you use a hostile action. Not even glitterdust, see invisibility, or similar effects can reveal you, though creatures can still use the Seek action to locate you as normal."
+    type: class feat
+    level: 20
+    actioncost: R
+    frequency: once per hour
+    cost: null
+    trigger: You successfully use Stealth to Hide and become hidden from all of your current foes, or use Stealth to Sneak and become undetected to all your current foes.
+    prereqs:
+      - type: proficiency
+        descr: legendary in Stealth
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 189
+        page_stop: 189
+    has_been_manually_proofread: true
+
+  - name: Impossible Striker
+    descr: "Your attacks are swift and deadly beyond explanation. Nothing can prevent you from making a sneak attack, even if your opponent can see every blow coming. Instead of dealing the damage from Sly Striker, you can deal your full sneak attack damage to a target even if the target isn’t flat-footed."
+    type: class feat
+    level: 20
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Sly Striker
+    requirement: null
+    traits:
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 189
+        page_stop: 189
+    has_been_manually_proofread: true
+
+  - name: Reactive Distraction
+    descr: "You reactively switch with your decoy to foil your foe. You use Perfection Distraction, even if you were observed, as long as you end the movement of your Sneak while concealed or in a location with cover or greater cover. Your decoy is targeted by the attack or effect instead of you. In the case of an area effect, if your Sneak doesn’t move you out of the area, both you and the decoy are targeted by the effect."
+    type: class feat
+    level: 20
+    actioncost: R
+    frequency: null
+    cost: null
+    trigger: You would be hit by an attack or targeted by an effect, or you are within an effect’s area.
+    prereqs:
+      - type: proficiency
+        descr: legendary in Deception
+      - type: class feat
+        descr: Perfect Distraction
+    requirement: You have Perfect Distraction ready to use.
+    traits:
+      - Concentrate
+      - Manipulate
+      - Rogue
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 189
+        page_stop: 189
+    has_been_manually_proofread: true
+
+sorcerer:
+  - name: Counterspell
+    descr: "When a foe Casts a Spell you know and you can see its manifestations, you can use your own magic to disrupt it. You expend one of your spell slots to counter the triggering creature’s casting of a spell that you have in your repertoire. You lose your spell slot as if you had cast the triggering spell. You then attempt to counteract the triggering spell (page 458).\n Special This feat has the trait corresponding to the tradition of spells you cast (arcane, divine, natural, or occult)."
+    type: class feat
+    level: 1
+    actioncost: R
+    frequency: null
+    cost: null
+    trigger: A creature casts a spell that you have in your repertoire.
+    prereqs: null
+    requirement: You have an unexpended spell slot you could use to cast the triggering spell.
+    traits:
+      - Abjuration
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 198
+        page_stop: 198
+    has_been_manually_proofread: true
+
+  - name: Dangerous Sorcery
+    descr: "Your legacy grants you great destructive power. When you Cast a Spell from your spell slots, if the spell deals damage and doesn’t have a duration, you gain a status bonus to that spell’s damage equal to the spell’s level."
+    type: class feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 198
+        page_stop: 198
+    has_been_manually_proofread: true
+
+  - name: Familiar
+    descr: "An animal serves you and assists your spellcasting. You gain a familiar (rules for familiars are found on page 217)."
+    type: class feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 198
+        page_stop: 198
+    has_been_manually_proofread: true
+
+  - name: Reach Spell
+    descr: "You can extend the range of your spells. If the next action you use is to Cast a Spell that has a range, increase that spell’s range by 30 feet. As is standard for increasing spell ranges, if the spell normally has a range of touch, you extend its range to 30 feet."
+    type: class feat
+    level: 1
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Concentrate
+      - Metamagic
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 198
+        page_stop: 198
+    has_been_manually_proofread: true
+
+  - name: Widen Spell
+    descr: "You manipulate the energy of your spell, causing it to affect a wider area. If the next action you use is to Cast a Spell that has an area of a burst, cone, or line and does not have a duration, increase the area of that spell. Add 5 feet to the radius of a burst that normally has a radius of at least 10 feet (a burst with a smaller radius is not affected). Add 5 feet to the length of a cone or line that is normally 15 feet long or smaller, and add 10 feet to the length of a larger cone or line."
+    type: class feat
+    level: 1
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Manipulate
+      - Metamagic
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 198
+        page_stop: 198
+    has_been_manually_proofread: true
+
+  - name: Cantrip Expansion
+    descr: "You better understand the basic power of your bloodline. Add two additional cantrips from your spell list to your repertoire."
+    type: class feat
+    level: 2
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 198
+        page_stop: 198
+    has_been_manually_proofread: true
+
+  - name: Enhanced Familiar
+    descr: "You infuse your familiar with additional magical energy. You can select four familiar or master abilities each day, instead of two."
+    type: class feat
+    level: 2
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: familiar
+        descr: a familiar
+    requirement: null
+    traits:
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 198
+        page_stop: 199
+    has_been_manually_proofread: true
+
+  - name: Arcane Evolution
+    descr: "Your arcane legacy grants you an exceptional aptitude for intellectual and academic pursuits. You become trained in one skill of your choice. Additionally, you keep a book of arcane spells similar to a wizard’s spellbook. You add all the spells in your spell repertoire to this book for free, and you can add additional arcane spells to the book by paying the appropriate cost and using your Arcana skill, similarly to how a wizard can Learn Spells to add those spells to his spellbook. During your daily preparations, choose any one spell from your book of arcane spells. If it isn’t in your spell repertoire, add it to your spell repertoire until the next time you prepare. If it’s already in your spell repertoire, add it as an additional signature spell for that day."
+    type: class feat
+    level: 4
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: bloodline
+        descr: bloodline that grants arcane spells
+    requirement: null
+    traits:
+      - Arcane
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 199
+        page_stop: 199
+    has_been_manually_proofread: true
+
+  - name: Bespell Weapon
+    descr: "You siphon the residual energy from the last spell you cast into one weapon you’re wielding. Until the end of your turn, the weapon deals an extra 1d6 damage of a type depending on the school of the spell you just cast.\n •  Abjuration force damage\n •  Conjuration or Transmutation the same type as the weapon\n •  Divination, Enchantment, or Illusion mental damage\n •  Evocation a type the spell dealt, or force damage if the spell didn’t deal damage\n •  Necromancy negative damage"
+    type: class feat
+    level: 4
+    actioncost: F
+    frequency: once per turn
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: Your most recent action was to cast a non-cantrip spell.
+    traits:
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 199
+        page_stop: 199
+    has_been_manually_proofread: true
+
+  - name: Divine Evolution
+    descr: "The divine might provided by your bloodline flows through you. You gain an additional spell slot of your highest level, which you can use only to cast your choice of heal or harm. You can cast either of these spells using that spell slot, even if they aren’t in your spell repertoire."
+    type: class feat
+    level: 4
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: bloodline
+        descr: bloodline that grants divine spells
+    requirement: null
+    traits:
+      - Divine
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 199
+        page_stop: 199
+    has_been_manually_proofread: true
+
+  - name: Occult Evolution
+    descr: "Glimpses of the obscure secrets of the universe loan you power. You become trained in one skill of your choice. Additionally, once per day, you can spend 1 minute to choose one mental occult spell you don’t know and add it to your spell repertoire. You lose this temporary spell the next time you make your daily preparations (though you can use this ability to add it again later)."
+    type: class feat
+    level: 4
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: bloodline
+        descr: bloodline that grants occult spells
+    requirement: null
+    traits:
+      - Occult
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 199
+        page_stop: 199
+    has_been_manually_proofread: true
+
+  - name: Primal Evolution
+    descr: "You can call upon the creatures of the wild for aid. You gain an additional spell slot of your highest level, which you can use only to cast summon animal or summon plants and fungi. You can cast either of these spells using that spell slot, even if it they aren’t in your spell repertoire."
+    type: class feat
+    level: 4
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: bloodline
+        descr: bloodline that grants primal spells
+    requirement: null
+    traits:
+      - Primal
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 199
+        page_stop: 199
+    has_been_manually_proofread: true
+
+  - name: Advanced Bloodline
+    descr: "You have studied your bloodline to learn the secrets of its magic. You gain the advanced bloodline spell associated with your bloodline. Increase the number of Focus Points in your focus pool by 1."
+    type: class feat
+    level: 6
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: bloodline
+        descr: bloodline spell
+    requirement: null
+    traits:
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 200
+        page_stop: 200
+    has_been_manually_proofread: true
+
+  - name: Steady Spellcasting
+    descr: "You are confident in your spellcasting technique, and you are more easily able to retain your concentration when you Cast a Spell. If a reaction would disrupt your spellcasting action, attempt a DC 15 flat check. If you succeed, your action isn’t disrupted."
+    type: class feat
+    level: 6
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 200
+        page_stop: 200
+    has_been_manually_proofread: true
+
+  - name: Bloodline Resistance
+    descr: "Your magical blood makes you more resistant to magic. You gain a +1 status bonus to saving throws against spells and magical effects."
+    type: class feat
+    level: 8
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 200
+        page_stop: 200
+    has_been_manually_proofread: true
+
+  - name: Crossblooded Evolution
+    descr: "Odd interactions in your bloodline provide you with unexpected spells. You can have one spell in your spell repertoire from a tradition other than the one that matches your bloodline. You cast that spell as a spell from your bloodline’s tradition. You can swap which spell you add and from which tradition as you could any other sorcerer spell, but you can’t have more than one spell from another tradition in your spell repertoire at the same time using this feat."
+    type: class feat
+    level: 8
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 200
+        page_stop: 200
+    has_been_manually_proofread: true
+
+  - name: Greater Bloodline
+    descr: "Further communion with the legacy of your bloodline has uncovered greater secrets. You gain the greater bloodline spell associated with your bloodline. Increase the number of Focus Points in your focus pool by 1."
+    type: class feat
+    level: 10
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: bloodline
+        descr: bloodline spell
+    requirement: null
+    traits:
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 200
+        page_stop: 200
+    has_been_manually_proofread: true
+
+  - name: Overwhelming Energy
+    descr: "You alter your spells to overcome resistances. If the next action you use is to Cast a Spell, the spell ignores an amount of the target’s resistance to acid, cold, electricity, fire, or sonic damage equal to your level. This applies to all damage the spell deals, including persistent damage and damage caused by an ongoing effect of the spell, such as the wall created by wall of fire. A creature’s immunities are unaffected."
+    type: class feat
+    level: 10
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: bloodline
+        descr: bloodline spell
+    requirement: null
+    traits:
+      - Manipulate
+      - Metamagic
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 200
+        page_stop: 200
+    has_been_manually_proofread: true
+
+  - name: Quickened Casting
+    descr: "In a mentally strenuous process, you modify your casting of a spell to take less time. If your next action is to cast a sorcerer cantrip or a sorcerer spell that is at least 2 levels lower than the highest level sorcerer spell you can cast, reduce the number of actions to cast it by 1 (minimum 1 action)."
+    type: class feat
+    level: 10
+    actioncost: F
+    frequency: once per day
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Concentrate
+      - Metamagic
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 201
+        page_stop: 201
+    has_been_manually_proofread: true
+
+  - name: Bloodline Focus
+    descr: "Your focus recovers faster. If you have spent at least 2 Focus Points since the last time you Refocused, you recover 2 Focus Points when you Refocus instead of 1."
+    type: class feat
+    level: 12
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: bloodline
+        descr: bloodline spell
+    requirement: null
+    traits:
+      - Concentrate
+      - Metamagic
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 201
+        page_stop: 201
+    has_been_manually_proofread: true
+
+  - name: Magic Sense
+    descr: "You have a literal sixth sense for magic. You can sense the presence of magic auras as though you were always using a 1st-level detect magic spell. This detects magic in your field of vision only. When you Seek, you gain the benefits of a 3rd-level detect magic spell on things you see (in addition to the normal benefits of Seeking). You can turn this sense off and on with a free action at the start or the end of your turn."
+    type: class feat
+    level: 12
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Detection
+      - Divination
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 201
+        page_stop: 201
+    has_been_manually_proofread: true
+
+  - name: Interweave Dispel
+    descr: "You weave dispelling energy into a spell, sending both effects at a foe. If your next action is to cast a single-target spell against a creature, and you either hit the foe with the spell attack roll or the foe fails its saving throw, you can cast dispel magic on the foe as a free action, expending a spell slot as normal and targeting one spell effect affecting the foe."
+    type: class feat
+    level: 14
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: spell
+        descr: Dispel Magic in your spell repertoire
+    requirement: null
+    traits:
+      - Metamagic
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 201
+        page_stop: 201
+    has_been_manually_proofread: true
+
+  - name: Reflect Spell
+    descr: "When you successfully use Counterspell to counteract a spell that affects targeted creatures or an area, you can turn that spell’s effect back on its caster. When reflected, the spell affects only the original caster, even if it’s an area spell or it would normally affect more than one creature. The original caster can attempt a save and use other defenses against the reflected spell as normal."
+    type: class feat
+    level: 14
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Counterspell
+    requirement: null
+    traits:
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 201
+        page_stop: 201
+    has_been_manually_proofread: true
+
+  - name: Effortless Concentration
+    descr: "You maintain a spell with hardly a thought. You immediately gain the effects of the Sustain a Spell action, allowing you to extend the duration of one of your active sorcerer spells."
+    type: class feat
+    level: 16
+    actioncost: F
+    frequency: null
+    cost: null
+    trigger: Your turn begins.
+    prereqs: null
+    requirement: null
+    traits:
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 201
+        page_stop: 201
+    has_been_manually_proofread: true
+
+  - name: Greater Mental Evolution
+    descr: "Your bloodline’s deep connection to mental essence greatly enhances your spell repertoire. Add one spell to your spell repertoire for each spell level you can cast."
+    type: class feat
+    level: 16
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: special
+        descr: Arcane Evolution or Occult Evolution
+    requirement: null
+    traits:
+      - Arcane
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 201
+        page_stop: 201
+    has_been_manually_proofread: true
+
+  - name: Greater Vital Evolution
+    descr: "Vital power surges through you like a font of energy. Twice per day, you can cast a spell after you’ve run out of spell slots of the appropriate spell level; the two spells you cast with this feat must be of different spell levels."
+    type: class feat
+    level: 16
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: special
+        descr: Divine Evolution or Primal Evolution
+    requirement: null
+    traits:
+      - Divine
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 201
+        page_stop: 201
+    has_been_manually_proofread: true
+
+  - name: Bloodline Wellspring
+    descr: "Your blood’s power replenishes your focus. If you have spent at least 3 Focus Points since the last time you Refocused, you recover 3 Focus Points when you Refocus instead of 1."
+    type: class feat
+    level: 18
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Bloodline Focus
+    requirement: null
+    traits:
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 201
+        page_stop: 201
+    has_been_manually_proofread: true
+
+  - name: Great Crossblooded Evolution
+    descr: "Your bloodline is extraordinarily complex. You can have up to three spells from other traditions in your spell repertoire, rather than just one. These spells must each be of a different spell level, but they don’t need to be from the same tradition."
+    type: class feat
+    level: 18
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Crossblooded Evolution
+    requirement: null
+    traits:
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 201
+        page_stop: 201
+    has_been_manually_proofread: true
+
+  - name: Bloodline Conduit
+    descr: "Your inborn magical nature lets you redirect ambient energies to fuel your spells. If your next action is to Cast a Spell of 5th level or lower that has no duration, you don’t expend the spell’s slot when you cast it."
+    type: class feat
+    level: 20
+    actioncost: 1
+    frequency: once per minute
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Metamagic
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 201
+        page_stop: 201
+    has_been_manually_proofread: true
+
+  - name: Bloodline Perfection
+    descr: "You command the ultimate powers of your bloodline and tradition. You gain an additional 10th-level spell slot."
+    type: class feat
+    level: 20
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feature
+        descr: Bloodline Paragon
+    requirement: null
+    traits:
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 201
+        page_stop: 201
+    has_been_manually_proofread: true
+
+  - name: Metamagic Mastery
+    descr: "Altering your spells doesn’t take any longer than casting them normally. You can use metamagic single actions as free actions."
+    type: class feat
+    level: 20
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Sorcerer
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 201
+        page_stop: 201
+    has_been_manually_proofread: true
+
+wizard:
+  - name: Counterspell
+    descr: "When a foe Casts a Spell and you can see its manifestations, you can use your own magic to disrupt it. You expend a prepared spell to counter the triggering creature’s casting of that same spell. You lose your spell slot as if you had cast the triggering spell. You then attempt to counteract the triggering spell (page 458)."
+    type: class feat
+    level: 1
+    actioncost: R
+    frequency: null
+    cost: null
+    trigger: A creature Casts a Spell that you have prepared.
+    prereqs: null
+    requirement: null
+    traits:
+      - Abjuration
+      - Arcane
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 209
+        page_stop: 209
+    has_been_manually_proofread: true
+
+  - name: Eschew Materials
+    descr: "You can use clever workarounds to replicate the arcane essence of certain materials. When Casting a Spell that requires material components, you can provide these material components without a spell component pouch by drawing intricate replacement sigils in the air. Unlike when providing somatic components, you still must have a hand completely free. This doesn’t remove the need for any materials listed in the spell’s cost entry."
+    type: class feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 209
+        page_stop: 209
+    has_been_manually_proofread: true
+
+  - name: Familiar
+    descr: "You make a pact with creature that serves you and assists your spellcasting. You gain a familiar (page 217)."
+    type: class feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 209
+        page_stop: 209
+    has_been_manually_proofread: true
+
+  - name: Hand of the Apprentice
+    descr: "You can magically hurl your weapon at your foe. You gain the hand of the apprentice universalist spell. Universalist spells are a type of focus spell, much like school spells. You start with a focus pool of 1 Focus Point. See Arcane Schools on page 207 for more information about focus spells."
+    type: class feat
+    level: 1
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: arcane school
+        descr: universalist wizard
+    requirement: null
+    traits:
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 209
+        page_stop: 209
+    has_been_manually_proofread: true
+
+  - name: Reach Spell
+    descr: "You can extend the range of your spells. If the next action you use is to Cast a Spell that has a range, increase that spell’s range by 30 feet. As is standard for increasing spell ranges, if the spell normally has a range of touch, you extend its range to 30 feet."
+    type: class feat
+    level: 1
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Concentrate
+      - Metamagic
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 210
+        page_stop: 210
+    has_been_manually_proofread: true
+
+  - name: Widen Spell
+    descr: "You manipulate the energy of your spell, causing it to affect a wider area. If the next action you use is to Cast a Spell that has an area of a burst, cone, or line and does not have a duration, increase the area of that spell. Add 5 feet to the radius of a burst that normally has a radius of at least 10 feet (a burst with a smaller radius is not affected). Add 5 feet to the length of a cone or line that is normally 15 feet long or smaller, and add 10 feet to the length of a larger cone or line."
+    type: class feat
+    level: 1
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Manipulate
+      - Metamagic
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 210
+        page_stop: 210
+    has_been_manually_proofread: true
+
+  - name: Cantrip Expansion
+    descr: "Dedicated study allows you to prepare a wider range of simple spells. You can prepare two additional cantrips each day."
+    type: class feat
+    level: 2
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 210
+        page_stop: 210
+    has_been_manually_proofread: true
+
+  - name: Conceal Spell
+    descr: "Hiding your gestures and incantations within other speech and movement, you attempt to conceal the fact that you are Casting a Spell. If the next action you use is to Cast a Spell, attempt a Stealth check against one or more observers’ Perception DCs; if the spell has verbal components, you must also attempt a Deception check against the observers’ Perception DC. If you succeed at your check (or checks) against an observer’s DC, that observer doesn’t notice you’re casting a spell, even though material, somatic, and verbal components are usually noticeable and spells normally have sensory manifestations that would make spellcasting obvious to those nearby. This ability hides only the spell’s spellcasting actions and manifestations, not its effects, so an observer might still see a ray streak out from you or see you vanish into thin air."
+    type: class feat
+    level: 2
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Concentrate
+      - Manipulate
+      - Metamagic
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 210
+        page_stop: 210
+    has_been_manually_proofread: true
+
+  - name: Enhanced Familiar
+    descr: "You infuse your familiar with additional magical energy. You can select four familiar or master abilities each day, instead of two.\n Special If your arcane thesis is improved familiar attunement, your familiar’s base number of familiar abilities, before adding any extra abilities from the arcane thesis, is four."
+    type: class feat
+    level: 2
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: familiar
+        descr: a familiar
+    requirement: null
+    traits:
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 210
+        page_stop: 210
+    has_been_manually_proofread: true
+
+  - name: Bespell Weapon
+    descr: "You siphon the residual energy from the last spell you cast into one weapon you’re wielding. Until the end of your turn, the weapon deals an extra 1d6 damage of a type depending on the school of the spell you just cast.\n •  Abjuration force damage\n •  Conjuration or Transmutation the same type as the weapon\n •  Divination, Enchantment, or Illusion mental damage\n •  Evocation a type the spell dealt, or force damage if the spell didn’t deal damage\n •  Necromancy negative damage"
+    type: class feat
+    level: 4
+    actioncost: F
+    frequency: once per turn
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: Your most recent action was to cast a non-cantrip spell.
+    traits:
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 210
+        page_stop: 210
+    has_been_manually_proofread: true
+
+  - name: Linked Focus
+    descr: "You have linked your bonded item to the well of energy that powers your school spells. When you Drain your Bonded Item to cast a spell of your arcane school, you also regain 1 Focus Point."
+    type: class feat
+    level: 4
+    actioncost: null
+    frequency: once per day
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feature
+        descr: Arcane Bond
+      - type: class feature
+        descr: Arcane school
+    requirement: null
+    traits:
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 210
+        page_stop: 210
+    has_been_manually_proofread: true
+
+  - name: Silent Spell
+    descr: "You’ve learned how to cast many of your spells without speaking the words of power you would normally need to provide. If the next action you use is Casting a Spell that has a verbal component and at least one other component, you can remove the verbal component. This makes the spell quieter and allows you to cast it in areas where sound can’t carry. However, the spell still has visual manifestations, so this doesn’t make the spell any less obvious to someone who sees you casting it. When you use Silent Spell, you can choose to gain the benefits of Conceal Spell, and you don’t need to attempt a Deception check because the spell has no verbal components."
+    type: class feat
+    level: 4
+    actioncost: 1
+    frequency: once per day
+    cost: null
+    trigger: null
+    prereqs:
+      - type: spell
+        descr: Conceal Spell
+    requirement: null
+    traits:
+      - Concentrate
+      - Metamagic
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 210
+        page_stop: 210
+    has_been_manually_proofread: true
+
+  - name: Spell Penetration
+    descr: "You’ve studied ways of overcoming the innate magical resistance that dragons, otherworldly beings, and certain other powerful creatures have. Any creature that has a status bonus to saving throws against magic reduces that bonus by 1 against your spells."
+    type: class feat
+    level: 6
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 210
+        page_stop: 211
+    has_been_manually_proofread: true
+
+  - name: Steady Spellcasting
+    descr: "Confident in your technique, you don’t easily lose your concentration when you Cast a Spell. If a reaction would disrupt your spellcasting action, attempt a DC 15 flat check. If you succeed, your action isn’t disrupted."
+    type: class feat
+    level: 6
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 211
+        page_stop: 211
+    has_been_manually_proofread: true
+
+  - name: Advanced School Spell
+    descr: "You gain access to a powerful new school spell depending on your arcane school. If you’re an abjurer, you gain energy absorption; if you’re a conjurer, you gain dimensional steps; if you’re a diviner, you gain vigilant eye; if you’re an enchanter, you gain dread aura; if you’re an evoker, you gain elemental tempest; if you’re an illusionist, you gain invisibility cloak; if you’re a necromancer, you gain life siphon; and if you’re a transmuter, you gain shifting form. The descriptions of these spells are on pages 406–407. Increase the number of Focus Points in your focus pool by 1."
+    type: class feat
+    level: 8
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feature
+        descr: Arcane school
+    requirement: null
+    traits:
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 211
+        page_stop: 211
+    has_been_manually_proofread: true
+
+  - name: Bond Conservation
+    descr: "By carefully manipulating the arcane energies stored in your bonded item as you drain it, you can conserve just enough power to cast another, slightly weaker spell. If the next action you use is to Cast a Spell using the energy from Drain Bonded Item, you gain an extra use of Drain Bonded Item. You must use this extra use of Drain Bonded Item before the end of your next turn or you lose it, and you can use this additional use only to cast a spell 2 or more levels lower than the first spell cast with Drain Bonded Item."
+    type: class feat
+    level: 8
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feature
+        descr: Arcane Bond
+    requirement: The last action you used was Drain Bonded Item.
+    traits:
+      - Manipulate
+      - Metamagic
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 211
+        page_stop: 211
+    has_been_manually_proofread: true
+
+  - name: Universal Versatility
+    descr: "You can access the fundamental abilities of any school of magic. During your daily preparations, choose one of the eight school spells gained by 1st-level specialist wizards. You can use that school spell until your next daily preparations. When you Refocus, you can choose a different school spell from among those eight school spells, replacing the previous one. Increase the number of Focus Points in your focus pool by 1."
+    type: class feat
+    level: 8
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: arcane school
+        descr: universalist wizard
+      - type: class feature
+        descr: Hand of the Apprentice
+    requirement: null
+    traits:
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 211
+        page_stop: 211
+    has_been_manually_proofread: true
+
+  - name: Overwhelming Energy
+    descr: "With a complex gesture, you alter the energy of your spell to overcome resistances. If the next action you use is to Cast a Spell, the spell ignores an amount of the target’s resistance to acid, cold, electricity, fire, or sonic damage equal to your level. This applies to all damage the spell deals, including persistent damage and damage caused by an ongoing effect of the spell, such as the wall created by wall of fire. A creature’s immunities are unaffected."
+    type: class feat
+    level: 10
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Manipulate
+      - Metamagic
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 211
+        page_stop: 211
+    has_been_manually_proofread: true
+
+  - name: Quickened Casting
+    descr: "In a mentally strenuous process, you modify your casting of a spell to take less time. If your next action is to cast a wizard cantrip or a wizard spell that is at least 2 levels lower than the highest-level wizard spell you can cast, reduce the number of actions to cast it by 1 (minimum 1 action)."
+    type: class feat
+    level: 10
+    actioncost: F
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Concentrate
+      - Metamagic
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 211
+        page_stop: 212
+    has_been_manually_proofread: true
+
+  - name: Scroll Savant
+    descr: "During your daily preparations, you can create two temporary scrolls containing arcane spells from your spellbook. These scrolls follow the normal rules for scrolls (page 564), with some additional restrictions. Each scroll must be of a different spell level, and both spell levels must be 2 or more levels lower than your highest-level spell. Any scrolls you create this way become non‑magical the next time you make your daily preparations. A temporary scroll has no value. If you have master proficiency in arcane spell DCs, you can create three temporary scrolls during your daily preparations, and if you have legendary proficiency, you can create four temporary scrolls."
+    type: class feat
+    level: 10
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: expert in Crafting
+    requirement: null
+    traits:
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 212
+        page_stop: 212
+    has_been_manually_proofread: true
+
+  - name: Clever Counterspell
+    descr: "You creatively apply your prepared spells to Counterspell a much wider variety of your opponents’ magic. Instead of being able to counter a foe’s spell with Counterspell only if you have that same spell prepared, you can use Counterspell as long as you have the spell the foe is casting in your spellbook. When you use Counterspell in this way, the prepared spell you expend must share a trait other than its tradition with the triggering spell. At the GM’s discretion, you can instead use a spell that has an opposing trait or that otherwise logically would counter the triggering spell (such as using a cold or water spell to counter fireball or using remove fear to counter a fear spell). Regardless of what spell you expend, you take a –2 penalty to your counteract check, though the GM can waive this penalty if the expended spell is especially appropriate."
+    type: class feat
+    level: 12
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Counterspell
+      - type: skill feat
+        descr: Quick Recognize
+    requirement: null
+    traits:
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 212
+        page_stop: 212
+    has_been_manually_proofread: true
+
+  - name: Magic Sense
+    descr: "You have a literal sixth sense for ambient magic in your vicinity. You can sense the presence of magic auras as though you were always using a 1st-level detect magic spell. This detects magic in your field of vision only. When you Seek, you gain the benefits of a 3rd-level detect magic spell on things you see (in addition to the normal benefits of Seeking). You can turn this sense off and on with a free action at the start or the end of your turn."
+    type: class feat
+    level: 12
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Arcane
+      - Detection
+      - Divination
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 212
+        page_stop: 212
+    has_been_manually_proofread: true
+
+  - name: Magic Sense
+    descr: "Your connection to your bonded item increases your focus pool. If you have spent at least 2 Focus Points since the last time you Refocused and your bonded item is in your possession, you recover 2 Focus Points when you Refocus instead of 1."
+    type: class feat
+    level: 14
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feature
+        descr: Arcane Bond
+    requirement: null
+    traits:
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 212
+        page_stop: 213
+    has_been_manually_proofread: true
+
+  - name: Reflect Spell
+    descr: "When you successfully use Counterspell to counteract a spell that affects targeted creatures or an area, you can turn that spell’s effect back on its caster. When reflected, the spell affects only the original caster, even if it’s an area spell or it would normally affect more than one creature. The original caster can attempt a save and use other defenses against the reflected spell as normal."
+    type: class feat
+    level: 14
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feat
+        descr: Counterspell
+    requirement: null
+    traits:
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 213
+        page_stop: 213
+    has_been_manually_proofread: true
+
+  - name: Superior Bond
+    descr: "When you draw upon your bonded item, you can leave a bit of energy within it for later use. You can use Drain Bonded Item one additional time per day, but only to cast a spell 2 or more levels lower than your highest-level spell."
+    type: class feat
+    level: 14
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feature
+        descr: Arcane Bond
+    requirement: null
+    traits:
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 213
+        page_stop: 213
+    has_been_manually_proofread: true
+
+  - name: Effortless Concentration
+    descr: "You maintain a spell with hardly a thought. You immediately gain the effects of the Sustain a Spell action, allowing you to extend the duration of one of your active wizard spells."
+    type: class feat
+    level: 16
+    actioncost: F
+    frequency: null
+    cost: null
+    trigger: Your turn begins.
+    prereqs: null
+    requirement: null
+    traits:
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 213
+        page_stop: 213
+    has_been_manually_proofread: true
+
+  - name: Spell Tinker
+    descr: "You’ve learned to alter choices you make when casting spells on yourself. After casting a spell on only yourself that offers several choices of effect (such as resist energy, spell immunity, or a polymorph spell that offers several potential forms), you can alter the choice you made when Casting the Spell (for instance, choosing a different type of damage for resist energy). However, your tinkering weakens the spell’s integrity, reducing its remaining duration by half. You can’t use this feat if the benefits of the spell have already been used up or if the effects of the first choice would persist in any way after switching (for instance, if one of the choices was to create a consumable item you already used, or to heal you), or if the feat would create an effect more powerful than that offered by the base spell. The GM is the final arbiter of what Spell Tinker can be applied to."
+    type: class feat
+    level: 16
+    actioncost: 2
+    frequency: null
+    cost: null
+    trigger: Your turn begins.
+    prereqs: null
+    requirement: null
+    traits:
+      - Concentrate
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 213
+        page_stop: 213
+    has_been_manually_proofread: true
+
+  - name: Infinite Possibilities
+    descr: "You’ve found a way to prepare a spell slot that exists in your mind as many different possibilities at once. Once during your daily preparations, you can use a spell slot to hold that infinite potential, rather than using it to prepare a spell. You can use this spell slot to cast any spell from your spellbook that’s at least 2 levels lower than the slot you designate; the spell acts in all ways as a spell of 2 levels lower. You don’t have any particular spell prepared in that slot until you cast it."
+    type: class feat
+    level: 18
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 213
+        page_stop: 213
+    has_been_manually_proofread: true
+
+  - name: Reprepare Spell
+    descr: "You’ve discovered how to reuse some of your spell slots over and over. You can spend 10 minutes to prepare a spell that you already cast today, regaining access to that spell slot. The spell must be of 4th level or lower and one that does not have a duration. You can reprepare a spell in this way even if you’ve already reprepared that spell previously in the same day. If you have the spell substitution arcane thesis, you can instead prepare a different spell in an expended slot, as long as the new spell doesn’t have a duration. Once you’ve reprepared a spell in that slot even once, you can use your arcane thesis to substitute only spells without durations into that spell slot."
+    type: class feat
+    level: 18
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 213
+        page_stop: 213
+    has_been_manually_proofread: true
+
+  - name: Archwizard's Might
+    descr: "You have mastered the greatest secrets of arcane magic. You gain an additional 10th-level spell slot."
+    type: class feat
+    level: 20
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: class feature
+        descr: Archwizard’s Spellcraft
+    requirement: null
+    traits:
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 213
+        page_stop: 213
+    has_been_manually_proofread: true
+
+  - name: Metamagic Mastery
+    descr: "Altering your spells doesn’t take any longer than casting them normally. You can use metamagic single actions as free actions."
+    type: class feat
+    level: 20
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 213
+        page_stop: 213
+    has_been_manually_proofread: true
+
+  - name: Spell Combination
+    descr: "You can merge spells, producing multiple effects with a single casting. One slot of each level of spell you can cast, except 2nd level and 1st level, becomes a spell combination slot (this doesn’t apply to cantrips). When you prepare your spells, you can fill a combination slot with a combination of two spells. Each spell in the combination must be 2 or more spell levels below the slot’s level, and both must target only one creature or object or have the option to target only one creature or object. Each spell in the combination must also have the same means of determining whether it has an effect—both spells must require a ranged spell attack roll, require the same type of saving throw, or automatically affect the target. When you cast a combined spell, it affects only one target, even if the component spells normally affect more than one. If any spell in the combination has further restrictions (such as targeting only living creatures), you must abide by all restrictions. The combined spell uses the shorter of the component spells’ ranges. Resolve a combined spell as if were a single spell, but apply the effects of both component spells. For example, if the spell’s target succeeded at the save against a combined spell, it would apply the success effect of each spell, and if it critically failed, it would apply the critical failure effect of both spells."
+    type: class feat
+    level: 20
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Wizard
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 213
+        page_stop: 213
     has_been_manually_proofread: true
