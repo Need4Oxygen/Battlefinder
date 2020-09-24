@@ -317,6 +317,53 @@ public class EditorTools : MonoBehaviour
         File.WriteAllText(cGood, newString);
     }
 
+    public class ConditionsFile_Wrapper
+    {
+        public string name { get; set; }
+        public string descr { get; set; }
+        public string short_descr { get; set; }
+        public List<PF2E_Source> source { get; set; }
+    }
+
+    [MenuItem("Tools/Update Conditions")]
+    public static void UpdateConditions()
+    {
+        string tBad = $"{path}Pathfinder 2 Sqlite/conditions.yaml";
+        string cGood = $"{path}Trusted Yamls/General/conditions.yaml";
+
+        var deserializer = new DeserializerBuilder().WithNamingConvention(new UnderscoredNamingConvention()).IgnoreUnmatchedProperties().Build();
+        var input = new StringReader(File.ReadAllText(tBad));
+        var conditions = deserializer.Deserialize<List<ConditionsFile_Wrapper>>(input);
+
+        Debug.Log($"[EditorTools] Updating Conditions with size: {conditions.Count}{"\n"}");
+
+        string newString = "";
+
+        foreach (var c in conditions)
+        {
+            newString += $"- name: {c.name}{"\n"}";
+            newString += $"  descr: { "\""}{c.descr}{ "\""}{"\n"}";
+            newString += $"  short_descr: { "\""}{c.short_descr}{ "\""}{"\n"}";
+
+            PF2E_Source source = new PF2E_Source();
+            source.abbr = "CRB";
+            source.page_start = 0;
+            source.page_stop = 0;
+            List<PF2E_Source> sourceList = new List<PF2E_Source> { source };
+            WriteSources(ref newString, sourceList);
+
+            newString += "\n";
+        }
+
+        File.WriteAllText(cGood, newString);
+    }
+
+
+
+
+
+    // General Stuff
+
     static void WriteSources(ref string mainString, List<PF2E_Source> source)
     { WriteSources(ref mainString, 0, source); }
     static void WriteSources(ref string mainString, int indent, List<PF2E_Source> source)
