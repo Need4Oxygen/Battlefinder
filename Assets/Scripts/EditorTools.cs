@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using UnityEditor;
 using UnityEngine;
 
@@ -106,7 +107,7 @@ public class EditorTools : MonoBehaviour
             newActions += $"- name: {a.name}{"\n"}";
             newActions += $"  descr: {"\""}{a.descr}{"\""}{"\n"}";
             newActions += $"  action_category: {a.actioncategory}{"\n"}";
-            newActions += $"  actioncost: {PF2E_DataBase.ActionCost_Full2Abbr(a.actioncost_name)}{"\n"}";
+            newActions += $"  action_cost: {PF2E_DataBase.ActionCost_Full2Abbr(a.actioncost_name)}{"\n"}";
             newActions += $"  trigger: {a.trigger}{"\n"}";
             newActions += $"  requirement: {a.req}{"\n"}";
 
@@ -345,12 +346,7 @@ public class EditorTools : MonoBehaviour
             newString += $"  descr: { "\""}{c.descr}{ "\""}{"\n"}";
             newString += $"  short_descr: { "\""}{c.short_descr}{ "\""}{"\n"}";
 
-            PF2E_Source source = new PF2E_Source();
-            source.abbr = "CRB";
-            source.page_start = 0;
-            source.page_stop = 0;
-            List<PF2E_Source> sourceList = new List<PF2E_Source> { source };
-            WriteSources(ref newString, sourceList);
+            WriteSources(ref newString, c.source);
 
             newString += "\n";
         }
@@ -358,11 +354,132 @@ public class EditorTools : MonoBehaviour
         File.WriteAllText(cGood, newString);
     }
 
+    public class SpellFile_Wrapper
+    {
+        public List<Spell_Wrapper> spell { get; set; }
+        public List<Senses_Wrapper> spellschool { get; set; }
+        public List<string> spellcomponent { get; set; }
+        public List<string> spelltradition { get; set; }
+        public List<string> spelltype { get; set; }
+    }
+
+    public class Spell_Wrapper
+    {
+        public string name { get; set; }
+        public string descr { get; set; }
+        public string type { get; set; }
+        public int level { get; set; }
+
+        public string action_abbr { get; set; }
+        public string trigger { get; set; }
+        public string req { get; set; }
+        public List<string> traits { get; set; }
+        public List<string> traditions { get; set; }
+        public string cast { get; set; }
+        public string range { get; set; }
+        public string area { get; set; }
+        public string targets { get; set; }
+        public string saving_throw { get; set; }
+        public string duration { get; set; }
+        public List<string> components { get; set; }
+
+        public List<PF2E_Source> source { get; set; }
+        public string has_been_manually_proofread { get; set; }
+    }
+
+    [MenuItem("Tools/Update Spells")]
+    public static void UpdateSpells()
+    {
+        string tBad = $"{path}Pathfinder 2 Sqlite/spells.yaml";
+        string cGood1 = $"{path}Trusted Yamls/Spells/spells.yaml";
+        string cGood2 = $"{path}Trusted Yamls/Spells/spell_schools.yaml";
+        string cGood3 = $"{path}Trusted Yamls/Spells/spell_components.yaml";
+        string cGood4 = $"{path}Trusted Yamls/Spells/spell_traditions.yaml";
+        string cGood5 = $"{path}Trusted Yamls/Spells/spell_types.yaml";
+
+        var deserializer = new DeserializerBuilder().WithNamingConvention(new UnderscoredNamingConvention()).IgnoreUnmatchedProperties().Build();
+        var input = new StringReader(File.ReadAllText(tBad));
+        var spellstuff = deserializer.Deserialize<SpellFile_Wrapper>(input);
+
+        Debug.Log($"[EditorTools] Updating Spells with size: {spellstuff.spell.Count}{"\n"}");
+
+        string spellsSTR = "spells:\n";
+        string shoolSTR = "";
+        string componentsSTR = "";
+        string traditionSTR = "";
+        string typesSTR = "";
+
+        foreach (var s in spellstuff.spell)
+        {
+            spellsSTR += $"- name: {s.name}{"\n"}";
+            spellsSTR += $"  descr: {"\""}{s.descr}{ "\""}{"\n"}";
+            spellsSTR += $"  type: {s.type}{"\n"}";
+            spellsSTR += $"  level: {s.level}{"\n"}";
+
+            spellsSTR += $"  action_cost: {s.action_abbr}{"\n"}";
+            spellsSTR += $"  trigger: {s.trigger}{"\n"}";
+            spellsSTR += $"  requirement: {s.req}{"\n"}";
+            spellsSTR += $"  traits:{"\n"}";
+            if (s.traits != null)
+                foreach (var trait in s.traits)
+                    spellsSTR += $"    - {trait}{"\n"}";
+            spellsSTR += $"  traditions:{"\n"}";
+            if (s.traditions != null)
+                foreach (var traditions in s.traditions)
+                    spellsSTR += $"    - {traditions}{"\n"}";
+            spellsSTR += $"  cast: {s.req}{"\n"}";
+            spellsSTR += $"  range: {s.req}{"\n"}";
+            spellsSTR += $"  area: {s.req}{"\n"}";
+            spellsSTR += $"  targets: {s.req}{"\n"}";
+            spellsSTR += $"  saving_throw: {s.req}{"\n"}";
+            spellsSTR += $"  duration: {s.req}{"\n"}";
+            spellsSTR += $"  components:{"\n"}";
+            if (s.components != null)
+                foreach (var components in s.components)
+                    spellsSTR += $"    - {components}{"\n"}";
+
+            WriteSources(ref spellsSTR, 0, s.source);
+
+            spellsSTR += "\n";
+        }
+
+        foreach (var s in spellstuff.spellschool)
+        {
+            shoolSTR += $"- name: {s.name}{"\n"}";
+            shoolSTR += $"  descr: {"\""}{s.descr}{ "\""}{"\n"}";
+            WriteSources(ref shoolSTR, 0, s.source);
+            shoolSTR += "\n";
+        }
+
+        foreach (var s in spellstuff.spellcomponent)
+            componentsSTR += $"- {s}{"\n"}";
+
+        foreach (var s in spellstuff.spelltradition)
+            traditionSTR += $"- {s}{"\n"}";
+
+        foreach (var s in spellstuff.spelltype)
+            typesSTR += $"- {s}{"\n"}";
+
+        File.WriteAllText(cGood1, spellsSTR, Encoding.UTF8);
+        File.WriteAllText(cGood2, shoolSTR);
+        File.WriteAllText(cGood3, componentsSTR);
+        File.WriteAllText(cGood4, traditionSTR);
+        File.WriteAllText(cGood5, typesSTR);
+    }
 
 
 
 
-    // General Stuff
+
+    ///--------------------General Stuff--------------------
+
+    static string DescriptionCleaner(string descr)
+    {
+
+
+
+        return "";
+    }
 
     static void WriteSources(ref string mainString, List<PF2E_Source> source)
     { WriteSources(ref mainString, 0, source); }
@@ -372,12 +489,22 @@ public class EditorTools : MonoBehaviour
         for (int j = 0; j < indent; j++)
             i += "  ";
 
-        mainString += $"{i}source:{"\n"}";
-        foreach (var scr in source)
+        if (source == null)
+            mainString += $"{i}source: null{"\n"}";
+
+        if (source.Count < 1)
         {
-            mainString += $"{i}  - abbr: {scr.abbr}{"\n"}";
-            mainString += $"{i}    page_start: { scr.page_start}{"\n"}";
-            mainString += $"{i}    page_stop: { scr.page_stop}{"\n"}";
+            mainString += $"{i}source: null{"\n"}";
+        }
+        else
+        {
+            mainString += $"{i}source:{"\n"}";
+            foreach (var scr in source)
+            {
+                mainString += $"{i}  - abbr: {scr.abbr}{"\n"}";
+                mainString += $"{i}    page_start: { scr.page_start}{"\n"}";
+                mainString += $"{i}    page_stop: { scr.page_stop}{"\n"}";
+            }
         }
     }
 
