@@ -1,10 +1,15 @@
 - name: Aid
   descr: "You try to help your ally with a task. To use this reaction, you must first prepare to help, usually by using an action during your turn. You must explain to the GM exactly how you’re trying to help, and they determine whether you can Aid your ally.\n\nWhen you use your Aid reaction, attempt a skill check or attack roll of a type decided by the GM. The typical DC is 20, but the GM might adjust this DC for particularly hard or easy tasks. The GM can add any relevant traits to your preparatory action or to your Aid reaction depending on the situation, or even allow you to Aid checks other than skill checks and attack rolls.\n\n**Critical Success** You grant your ally a +2 circumstance bonus to,the triggering check. If you’re a master with the check you,attempted, the bonus is +3, and if you’re legendary, it’s +4.\n**Success** You grant your ally a +1 circumstance bonus to the triggering check.\n**Critical Failure** Your ally takes a 1 circumstance penalty to the triggering check."
-  action_category: Basic
+  type: basic action
+  level: null
   actioncost: R
+  frequency: null
+  cost: null
   trigger: An ally is about to use an action that requires a skill check or attack roll.
+  prereqs: null
   requirement: The ally is willing to accept your aid, and you have prepared to help (see description).
   traits: null
+  lectures: null
   source:
     - abbr: CRB
       page_start: 470
@@ -12,12 +17,17 @@
 
 - name: Crawl
   descr: "You move 5 feet by crawling and continue to stay prone."
-  action_category: Basic
+  type: basic action
+  level: null
   actioncost: 1
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: You are prone and your Speed is at least 10 feet.
   traits:
     - Move
+  lectures: null
   source:
     - abbr: CRB
       page_start: 470
@@ -25,11 +35,16 @@
 
 - name: Delay
   descr: "You wait for the right moment to act. The rest of your turn doesn’t happen yet. Instead, you’re removed from the initiative order. You can return to the initiative order as a free action triggered by the end of any other creature’s turn. This permanently changes your initiative to the new position. You can’t use reactions until you return to the initiative order. If you Delay an entire round without returning to the initiative order, the actions from the Delayed turn are lost, your initiative doesn’t change, and your next turn occurs at your original position in the initiative order.\n\nWhen you Delay, any persistent damage or other negative effects that normally occur at the start or end of your turn occur immediately when you use the Delay action. Any beneficial effects that would end at any point during your turn also end. The GM might determine that other effects end when you Delay as well. Essentially, you can’t Delay to avoid negative consequences that would happen on your turn or to extend beneficial effects that would end on your turn."
-  action_category: Basic
+  type: basic action
+  level: null
   actioncost: F
+  frequency: null
+  cost: null
   trigger: Your turn begins.
+  prereqs: null
   requirement: null
   traits: null
+  lectures: null
   source:
     - abbr: CRB
       page_start: 470
@@ -37,12 +52,17 @@
 
 - name: Drop Prone
   descr: "You fall prone."
-  action_category: Basic
+  type: basic action
+  level: null
   actioncost: 1
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: null
   traits:
     - Move
+  lectures: null
   source:
     - abbr: CRB
       page_start: 470
@@ -50,12 +70,17 @@
 
 - name: Escape
   descr: "You attempt to escape from being grabbed, immobilized, or restrained. Choose one creature, object, spell effect, hazard, or other impediment imposing any of those conditions on you. Attempt a check using your unarmed attack modifier against the DC of the effect. This is typically the Athletics DC of a creature grabbing you, the Thievery DC of a creature who tied you up, the spell DC for a spell effect, or the listed Escape DC of an object, hazard, or other impediment. You can attempt an Acrobatics or Athletics check instead of using your attack modifier if you choose (but this action still has the attack trait).\n\n**Critical Success** You get free and remove the grabbed, immobilized, and restrained conditions imposed by your chosen target. You can then Stride up to 5 feet.\n**Success** You get free and remove the grabbed, immobilized, and restrained conditions imposed by your chosen target.\n**Critical Failure** You don’t get free, and you can’t attempt to Escape again until your next turn."
-  action_category: Basic
+  type: basic action
+  level: null
   actioncost: 1
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: null
   traits:
     - Attack
+  lectures: null
   source:
     - abbr: CRB
       page_start: 470
@@ -63,12 +88,17 @@
 
 - name: Interact
   descr: "You use your hand or hands to manipulate an object or the terrain. You can grab an unattended or stored object, open a door, or produce some similar effect. You might have to attempt a skill check to determine if your Interact action was successful."
-  action_category: Basic
+  type: basic action
+  level: null
   actioncost: 1
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: null
   traits:
     - Manipulate
+  lectures: null
   source:
     - abbr: CRB
       page_start: 470
@@ -76,12 +106,17 @@
 
 - name: Leap
   descr: "You take a careful, short jump. You can Leap up to 10 feet horizontally if your Speed is at least 15 feet, or up to 15 feet horizontally if your Speed is at least 30 feet. You land in the space where your Leap ends (meaning you can typically clear a 5-foot gap, or a 10-foot gap if your Speed is 30 feet or more).\n\nIf you Leap vertically, you can move up to 3 feet vertically and 5 feet horizontally onto an elevated surface.\n\nJumping a greater distance requires using the Athletics skill."
-  action_category: Basic
+  type: basic action
+  level: null
   actioncost: 1
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: null
   traits:
     - Move
+  lectures: null
   source:
     - abbr: CRB
       page_start: 470
@@ -89,12 +124,17 @@
 
 - name: Ready
   descr: "You prepare to use an action that will occur outside your turn. Choose a single action or free action you can use, and designate a trigger. Your turn then ends. If the trigger you designated occurs before the start of your next turn, you can use the chosen action as a reaction (provided you still meet the requirements to use it). You can’t Ready a free action that already has a trigger.\n\nIf you have a multiple attack penalty and your readied action is an attack action, your readied attack takes the multiple attack penalty you had at the time you used Ready. This is one of the few times the multiple attack penalty applies when it’s not your turn."
-  action_category: Basic
+  type: basic action
+  level: null
   actioncost: 2
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: null
   traits:
     - Concentrate
+  lectures: null
   source:
     - abbr: CRB
       page_start: 470
@@ -102,12 +142,17 @@
 
 - name: Release
   descr: "You release something you’re holding in your hand or hands. This might mean dropping an item, removing one hand from your weapon while continuing to hold it in another hand, releasing a rope suspending a chandelier, or performing a similar action. Unlike most manipulate actions, Release does not trigger reactions that can be triggered by actions with the manipulate trait (such as Attack of Opportunity).\n\nIf you want to prepare to Release something outside of your turn, use the Ready activity."
-  action_category: Basic
+  type: basic action
+  level: null
   actioncost: F
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: null
   traits:
     - Manipulate
+  lectures: null
   source:
     - abbr: CRB
       page_start: 470
@@ -115,13 +160,18 @@
 
 - name: Seek
   descr: "You scan an area for signs of creatures or objects. If you’re looking for creatures, choose an area you’re scanning. If precision is necessary, the GM can have you select a 30-foot cone or a 15-foot burst within line of sight. You might take a penalty if you choose an area that’s far away.\n\nIf you’re using Seek to search for objects (including secret doors and hazards), you search up to a 10-foot square adjacent to you. The GM might determine you need to Seek as an activity, taking more actions or even minutes or hours if you’re searching a particularly cluttered area.\n\nThe GM attempts a single secret Perception check for you and compares the result to the Stealth DCs of any undetected or hidden creatures in the area or the DC to detect each object in the area (as determined by the GM or by someone Concealing the Object). A creature you detect might remain hidden, rather than becoming observed, if you’re using an imprecise sense or if an effect (such as invisibility) prevents the subject from being observed.\n\n**Critical Success** If you were searching for creatures, any undetected or hidden creature you critically succeeded against becomes observed by you. If you were searching for an object, you learn its location.\n**Success** If you were searching for creatures, any undetected creature you succeeded against becomes hidden from you instead of undetected, and any hidden creature you succeeded against becomes observed by you. If you were searching for an object, you learn its location or get a clue to its whereabouts, as determined by the GM."
-  action_category: Basic
+  type: basic action
+  level: null
   actioncost: 1
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: null
   traits:
     - Concentrate
     - Secret
+  lectures: null
   source:
     - abbr: CRB
       page_start: 471
@@ -129,13 +179,18 @@
 
 - name: Sense Motive
   descr: "You try to tell whether a creature’s behavior is abnormal. Choose one creature, and assess it for odd body language, signs of nervousness, and other indicators that it might be trying to deceive someone. The GM attempts a single secret Perception check for you and compares the result to the Deception DC of the creature, the DC of a spell af ecting the creature’s mental state, or another appropriate DC determined by the GM. You typically can’t try to Sense the Motive of the same creature again until the situation changes significantly.\n\n**Critical Success** You determine the creature’s true intentions and get a solid idea of any mental magic affecting it.\n**Success** You can tell whether the creature is behaving normally, but you don’t know its exact intentions or what magic might be affecting it.\n**Failure** You detect what a deceptive creature wants you to believe. If they’re not being deceptive, you believe they’re behaving normally.\n**Critical Failure** You get a false sense of the creature’s intentions."
-  action_category: Basic
+  type: basic action
+  level: null
   actioncost: 1
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: null
   traits:
     - Concentrate
     - Secret
+  lectures: null
   source:
     - abbr: CRB
       page_start: 471
@@ -143,12 +198,17 @@
 
 - name: Stand
   descr: "You stand up from prone."
-  action_category: Basic
+  type: basic action
+  level: null
   actioncost: 1
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: null
   traits:
     - Move
+  lectures: null
   source:
     - abbr: CRB
       page_start: 471
@@ -156,12 +216,17 @@
 
 - name: Step
   descr: "You carefully move 5 feet. Unlike most types of movement, Stepping doesn’t trigger reactions, such as Attacks of Opportunity, that can be triggered by move actions or upon leaving or entering a square.\n\nYou can’t Step into difficult terrain (page 475 CRB), and you can’t Step using a Speed other than your land Speed."
-  action_category: Basic
+  type: basic action
+  level: null
   actioncost: 1
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: Your Speed is at least 10 feet.
   traits:
     - Move
+  lectures: null
   source:
     - abbr: CRB
       page_start: 471
@@ -169,12 +234,17 @@
 
 - name: Stride
   descr: "You move up to your Speed (page 463 CRB)"
-  action_category: Basic
+  type: basic action
+  level: null
   actioncost: 1
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: null
   traits:
     - Move
+  lectures: null
   source:
     - abbr: CRB
       page_start: 471
@@ -182,12 +252,17 @@
 
 - name: Strike
   descr: "You attack with a weapon you’re wielding or with an unarmed attack, targeting one creature within your reach (for a melee attack) or within range (for a ranged attack). Roll the attack roll for the weapon or unarmed attack you are using, and compare the result to the target creature’s AC to determine the effect. See Attack Rolls on page 446 CRB and Damage on page 450 CRB for details on calculating your attack and damage rolls."
-  action_category: Basic
+  type: basic action
+  level: null
   actioncost: 1
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: null
   traits:
     - Attack
+  lectures: null
   source:
     - abbr: CRB
       page_start: 471
@@ -195,11 +270,16 @@
 
 - name: Take Cover
   descr: "You press yourself against a wall or duck behind an obstacle to take better advantage of cover (page 477 CRB). If you would have standard cover, you instead gain greater cover, which provides a +4 circumstance bonus to AC; to Reflex saves against area effects; and to Stealth checks to Hide, Sneak, or otherwise avoid detection. Otherwise, you gain the benefits of standard cover (a +2 circumstance bonus instead). This lasts until you move from your current space, use an attack action, become unconscious, or end this effect as a free action."
-  action_category: Basic
+  type: basic action
+  level: null
   actioncost: 1
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: You are benfitting from cover, are near a feature that allows you to take cover, or you are prone.
   traits: null
+  lectures: null
   source:
     - abbr: CRB
       page_start: 471
@@ -207,11 +287,16 @@
 
 - name: Arrest a Fall
   descr: "You attempt an Acrobatics check to slow your fall. The DC is typically 15, but it might be higher due to air turbulence or other circumstances.\n\nSuccess You fall gently, taking no damage from the fall."
-  action_category: Specialty Basic
+  type: specialty action
+  level: null
   actioncost: R
+  frequency: null
+  cost: null
   trigger: You fall.
+  prereqs: null
   requirement: You have a fly Speed.
   traits: null
+  lectures: null
   source:
     - abbr: CRB
       page_start: 472
@@ -219,11 +304,16 @@
 
 - name: Avert Gaze
   descr: "You avert your gaze from danger. You gain a +2 circumstance bonus to saves against visual abilities that require you to look at a creature or object, such as a medusa’s petrifying gaze. Your gaze remains averted until the start of your next turn."
-  action_category: Specialty Basic
+  type: specialty action
+  level: null
   actioncost: 1
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: null
   traits: null
+  lectures: null
   source:
     - abbr: CRB
       page_start: 472
@@ -231,12 +321,17 @@
 
 - name: Burrow
   descr: "You dig your way through dirt, sand, or a similar loose material at a rate up to your burrow Speed. You can’t burrow through rock or other substances denser than dirt unless you have an ability that allows you to do so."
-  action_category: Specialty Basic
+  type: specialty action
+  level: null
   actioncost: 1
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: You have a burrow Speed.
   traits:
     - Move
+  lectures: null
   source:
     - abbr: CRB
       page_start: 472
@@ -244,12 +339,17 @@
 
 - name: Fly
   descr: "You move through the air up to your fly Speed. Moving upward (straight up or diagonally) uses the rules for moving through difficult terrain. You can move straight down 10 feet for every 5 feet of movement you spend. If you Fly to the ground, you don’t take falling damage. You can use an action to Fly 0 feet to hover in place. If you’re airborne at the end of your turn and didn’t use a Fly action this round, you fall."
-  action_category: Specialty Basic
+  type: specialty action
+  level: null
   actioncost: 1
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: You have a fly Speed.
   traits:
     - Move
+  lectures: null
   source:
     - abbr: CRB
       page_start: 472
@@ -257,12 +357,17 @@
 
 - name: Grab an Edge
   descr: "When you fall off or past an edge or other handhold, you can try to grab it, potentially stopping your fall. You must succeed at a Reflex save, usually at the Climb DC. If you grab the edge or handhold, you can then Climb up using Athletics.\n\n**Critical Success** You grab the edge or handhold, whether or not you have a hand free, typically by using a suitable held item to catch yourself (catching a battle axe on a ledge, for example). You still take damage from the distance fallen so far, but you treat the fall as though it were 30 feet shorter.\n**Success** If you have at least one hand free, you grab the edge or handhold, stopping your fall. You still take damage from the distance fallen so far, but you treat the fall as though it were 20 feet shorter. If you have no hands free, you continue to fall as if you had failed the check.\n**Critical Failure** You continue to fall, and if you’ve fallen 20 feet or more before you use this reaction, you take 10 bludgeoning damage from the impact for every 20 feet fallen."
-  action_category: Specialty Basic
+  type: specialty action
+  level: null
   actioncost: R
+  frequency: null
+  cost: null
   trigger: You fall from or past an edge or handhold.
+  prereqs: null
   requirement: Your hands are not tied behind your back or otherwise restrained.
   traits:
     - Manipulate
+  lectures: null
   source:
     - abbr: CRB
       page_start: 472
@@ -270,12 +375,17 @@
 
 - name: Mount
   descr: "You move onto the creature and ride it. If you’re already mounted, you can instead use this action to dismount, moving of the mount into a space adjacent to it."
-  action_category: Specialty Basic
+  type: specialty action
+  level: null
   actioncost: 1
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: You are adjacent to a creature that is at least one size larger than you and is willing to be your mount.
   traits:
     - Move
+  lectures: null
   source:
     - abbr: CRB
       page_start: 472
@@ -283,14 +393,19 @@
 
 - name: Point Out
   descr: "You indicate a creature that you can see to one or more allies, gesturing in a direction and describing the distance verbally. That creature is hidden to your allies, rather than undetected (page 466 CRB). This works only for allies who can see you and are in a position where they could potentially detect the target. If your allies can’t hear or understand you, they must succeed at a Perception check against the creature’s Stealth DC or they misunderstand and believe the target is in a different location."
-  action_category: Specialty Basic
+  type: specialty action
+  level: null
   actioncost: 1
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: A creature is undetected by one or more of your allies but isn't undetected by you.
   traits:
     - Auditory
     - Manipulate
     - Visual
+  lectures: null
   source:
     - abbr: CRB
       page_start: 472
@@ -298,11 +413,16 @@
 
 - name: Raise a Shield
   descr: "You position your shield to protect yourself. When you have Raised a Shield, you gain its listed circumstance bonus to AC. Your shield remains raised until the start of your next turn."
-  action_category: Specialty Basic
+  type: specialty action
+  level: null
   actioncost: 1
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: You are wielding a shield.
   traits: null
+  lectures: null
   source:
     - abbr: CRB
       page_start: 472
@@ -310,11 +430,16 @@
 
 - name: Cast a Spell
   descr: "You cast a spell you have prepared or in your repertoire. Casting a Spell is a special activity that takes a variable number of actions depending on the spell, as listed in each spell’s stat block. As soon as the spellcasting actions are complete, the spell effect occurs.\n\n Some spells are cast as a reaction or free action. In those cases, you Cast the Spell as a reaction or free action (as appropriate) instead of as an activity. Such cases will be noted in the spell’s stat block - for example, \"[reaction] verbal.\"\n\n **Long Casting Times** Some spells take minutes or hours to cast. The Cast a Spell activity for these spells includes a mix of the listed spell components, but it’s not necessary to break down which one you’re providing at a given time. You can’t use other actions or reactions while casting such a spell, though at the GM’s discretion, you might be able to speak a few sentences. As with other activities that take a long time, these spells have the exploration trait, and you can’t cast them in an encounter. If combat breaks out while you’re casting one, your spell is disrupted (see Disrupted and Lost Spells on page 303 CRB).\n\n **Spell Components** Each spell lists the spell components required to cast it after the action icons or text, such as \"[three-actions] material, somatic, verbal.\" The spell components, described in detail below, add traits and requirements to the Cast a Spell activity. If you can’t provide the components, you fail to Cast the Spell.\n - Material (manipulate)\n - Somatic (manipulate)\n - Verbal (concentrate)\n - Focus (manipulate)\n **Disrupted and Lost Spells** Some abilities and spells can disrupt a spell, causing it to have no effect and be lost. When you lose a spell, you’ve already expended the spell slot, spent the spell’s costs and actions, and used the Cast a Spell activity. If a spell is disrupted during a Sustain a Spell action, the spell immediately ends. The full rules for disrupting actions appear on page 462 CRB."
-  action_category: Specialty Basic
+  type: specialty action
+  level: null
   actioncost: V
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: null
   traits: null
+  lectures: null
   source:
     - abbr: CRB
       page_start: 302
@@ -322,12 +447,17 @@
 
 - name: Sustain a Spell
   descr: "Choose one spell with a sustained duration you have in effect. The duration of that spell continues until the end of your next turn. Some spells might have slightly different or expanded effects if you sustain them. Sustaining a Spell for more than 10 minutes (100 rounds) ends the spell and makes you fatigued unless the spell lists a different maximum duration (such as “sustained up to 1 minute” or “sustained up to 1 hour”).\n\nIf your Sustain a Spell action is disrupted, the spell immediately ends."
-  action_category: Specialty Basic
+  type: specialty action
+  level: null
   actioncost: 1
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: You have at least one spell active with a sustained duration, and you are not fatigued.
   traits:
     - Concentrate
+  lectures: null
   source:
     - abbr: CRB
       page_start: 304
@@ -335,12 +465,17 @@
 
 - name: Dismiss
   descr: "You end one spell effect or magic item effect. This must be an effect you are allowed to dismiss, as defined by the spell or item. Dismissal might end the effect entirely or might end it just for a certain target or targets, depending on the spell or item."
-  action_category: Specialty Basic
+  type: specialty action
+  level: null
   actioncost: 1
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: null
   traits:
     - Concentrate
+  lectures: null
   source:
     - abbr: CRB
       page_start: 305
@@ -348,11 +483,16 @@
 
 - name: Invest an Item
   descr: "You invest your energy in an item with the invested trait as you don it. This process requires 1 or more Interact actions, usually taking the same amount of time it takes to don the item. Once you’ve Invested the Item, you benefit from its constant magical abilities as long as you meet its other requirements (for most invested items, the only other requirement is that you must be wearing the item). This investiture lasts until you remove the item.\n\n You can invest no more than 10 items per day. If you remove an invested item, it loses its investiture. The item still counts against your daily limit after it loses its investiture. You reset the limit during your daily preparations, at which point you Invest your Items anew. If you’re still wearing items you had invested the previous day, you can typically keep them invested on the new day, but they still count against your limit."
-  action_category: Basic
-  actioncost: V
+  type: basic action
+  level: null
+  actioncost: null
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: null
   traits: null
+  lectures: null
   source:
     - abbr: CRB
       page_start: 531
@@ -360,11 +500,16 @@
 
 - name: Activate an Item
   descr: "You call forth the effect of an item by properly activating it. This is a special activity that takes a variable number of actions, as listed in the item’s stat block.\n\nSome items can be activated as a reaction or free action. In this case, you Activate the Item as a reaction or free action (as appropriate) instead of as an activity. Such cases are noted in the item’s Activate entry in its stat blockfor example, “Activate Reaction command.”\n\n**Long Activation Times** Some items take minutes or hours to activate. The Activate an Item activity for these items includes a mix of the listed activation components, but it’s not necessary to break down which one you’re providing at a given time. You can’t use other actions or reactions while activating such an item, though at the GM’s discretion, you might be able to speak a few sentences. As with other activities that take a long time, these activations have the exploration trait, and you can’t activate them in an encounter. If combat breaks out while you’re activating one, your activation is disrupted (see the Disrupting Activations sidebar).\n\n**Activation Components** Each activation entry lists any components involved in the activation after the action icons or text, such as “Single Action command.” The activation components, described below, add traits (listed in parentheses) and requirements to the activation. If you can’t provide the components, you fail to Activate the Item.\n\n- Command (auditory, concentrate)\n- Envision (concentrate)\n- Interact (manipulate)\n- Cast a Spell\n\n#### Activation Components\n\nAn item’s activate entry lists the components required to activate its abilities. Each component adds certain traits to the Activate an Item activity, and some components have special requirements. The components that appear in this book are listed below.\n\n#####Command\n\nThis component is a specific utterance you must make in a loud and strong voice. Activate an Item gains the auditory and concentrate traits. You must be able to speak to provide this component.\n\n##### Envision\n\nThis component is a specific image or phenomenon you need to imagine. Activate an Item gains the concentrate trait.\n\n##### Interact\n\nThis component works like the Interact basic action. Activate an Item gains the manipulate trait and requires you to use your hands, just like with any Interact action.\n\n##### Cast a Spell\n\nIf an item lists “Cast a Spell” after “Activate,” the activation requires you to use the Cast a Spell activity to Activate the Item. This happens when the item replicates a spell. You must have a spellcasting class feature to Activate an Item with this activation component. If the item can be used for a specific spell, the action icon for that spell is provided. If it’s an item like a staff, which can be used for many spells, the icon is omitted, and you must refer to each spell to determine which actions you must spend to Activate the Item to cast it.\n\n In this case, Activate an Item gains all the traits from the relevant components of the Cast a Spell activity."
-  action_category: Specialty Basic
+  type: specialty action
+  level: null
   actioncost: V
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: You can Activate an Item with the invested trait only if it’s invested by you. If the item requires you to Interact with it, you must be wielding it (if it’s a held item) or touching it with a free hand (if it’s another type of item).
   traits: null
+  lectures: null
   source:
     - abbr: CRB
       page_start: 532
@@ -372,12 +517,17 @@
 
 - name: Sustain an Activation
   descr: "Choose one magic item activation with a sustained duration you have in effect. The duration of that activation continues until the end of your next turn. Some activations may have slightly different or expanded effects if you sustain them. Sustaining an Activation for more than 10 minutes (100 rounds) ends the activation and makes you fatigued unless the item’s description states a different maximum duration (such as “up to 1 minute” or “up to 1 hour”).\n\nIf your Sustain an Activation action is disrupted, the item’s effect immediately ends."
-  action_category: Specialty Basic
+  type: specialty action
+  level: null
   actioncost: 1
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: You have at least one magic item activation that you can sustain and you are not fatigued.
   traits:
     - Concentrate
+  lectures: null
   source:
     - abbr: CRB
       page_start: 534
@@ -385,12 +535,17 @@
 
 - name: Speaking
   descr: "As long as you can act, you can also speak. You don’t need to spend any type of action to speak, but because a round represents 6 seconds of time, you can usually speak at most a single sentence or so per round. Special uses of speech, such as attempting a Deception skill check to Lie, require spending actions and follow their own rules. All speech has the auditory trait. If you communicate in some way other than speech, other rules might apply. For instance, using sign language is visual instead of auditory"
-  action_category: Basic
-  actioncost: V
+  type: basic action
+  level: null
+  actioncost: null
+  frequency: null
+  cost: null
   trigger: null
+  prereqs: null
   requirement: null
   traits:
     - Auditory
+  lectures: null
   source:
     - abbr: CRB
       page_start: 471

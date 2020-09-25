@@ -1,0 +1,1367 @@
+acrobatics:
+  - name: Balance
+    descr: "You move across a narrow surface or uneven ground, attempting an Acrobatics check against its Balance DC. You are flat-footed while on a narrow surface or uneven ground.\n<b>Critical Success</b> You move up to your Speed.\n<b>Success</b> You move up to your Speed, treating it as difficult terrain (every 5 feet costs 10 feet of movement).\n<b>Failure</b> You must remain stationary to keep your balance (wasting the action) or you fall. If you fall, your turn ends.\n<b>Critical Failure</b> You fall and your turn ends."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You are in a square that contains a narrow surface, uneven ground, or another similar feature.
+    traits:
+      - Move
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 240
+        page_stop: 240
+
+  - name: Tumble Through
+    descr: "You Stride up to your Speed. During this movement, you can try to move through the space of one enemy. Attempt an Acrobatics check against the enemy’s Reflex DC as soon as you try to enter its space. You can Tumble Through using Climb, Fly, Swim, or another action instead of Stride in the appropriate environment.\n<b>Success</b> You move through the enemy’s space, treating the squares in its space as difficult terrain (every 5 feet costs 10 feet of movement). If you don’t have enough Speed to move all the way through its space, you get the same effect as a failure.\n<b>Failure</b> Your movement ends, and you trigger reactions as if you had moved out of the square you started in."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Move
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 240
+        page_stop: 240
+
+  - name: Maneuver In Flight
+    descr: "You try a difficult maneuver while flying. Attempt an Acrobatics check. The GM determines what maneuvers are possible, but they rarely allow you to move farther than your fly Speed.\n<b>Success</b> You succeed at the maneuver.\n<b>Failure</b> Your maneuver fails. The GM chooses if you simply can’t move or if some other detrimental effect happens. The outcome should be appropriate for the maneuver you attempted (for instance, being blown off course if you were trying to fly against a strong wind).\n<b>Critical Failure</b> As failure, but the consequence is more dire."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Acrobatics
+    requirement: You have a fly Speed.
+    traits:
+      - Move
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 240
+        page_stop: 240
+
+  - name: Squeeze
+    descr: "You contort yourself to squeeze through a space so small you can barely fit through. This action is for exceptionally small spaces; many tight spaces are difficult terrain (page 475) that you can move through more quickly and without a check.\n<b>Critical Success</b> You squeeze through the tight space in 1 minute per 10 feet of squeezing.\n<b>Success</b> You squeeze through in 1 minute per 5 feet.\n<b>Critical Failure</b> You become stuck in the tight space. While you’re stuck, you can spend 1 minute attempting another Acrobatics check at the same DC. Any result on that check other than a critical failure causes you to become unstuck."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Acrobatics
+    requirement: null
+    traits:
+      - Exploration
+      - Move
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 241
+        page_stop: 241
+
+arcana:
+  - name: Recall Knowledge
+    descr: "You attempt a skill check to try to remember a bit of knowledge regarding a topic related to that skill. The GM determines the DCs for such checks and which skills apply.\n<b>Critical Success</b> You recall the knowledge accurately and gain additional information or context.\n<b>Success</b> You recall the knowledge accurately or gain a useful clue about your current situation.\n<b>Critical Failure</b> You recall incorrect information or gain an erroneous or misleading clue.\nThe following skills can be used to Recall Knowledge, getting information about the listed topics. In some cases, you can get the GM’s permission to use a different but related skill, usually against a higher DC than normal. Some topics might appear on multiple lists, but the skills could give different information. For example, Arcana might tell you about the magical defenses of a golem, whereas Crafting could tell you about its sturdy resistance to physical attacks.\n<b>Arcana:</b> arcane theories, magical traditions, creatures of arcane significance, and arcane planes.\n<b>Crafting:</b> Alchemical reactions and creatures, item value, engineering, unusual materials, and constructs.\n<b>Lore:</b> The subject of the Lore skill’s subcategory.\n<b>Medicine:</b> Diseases, poisons, wounds, and forensics.\n<b>Nature:</b> The environment, flora, geography, weather, creatures of natural origin, and natural planes.\n<b>Occultism:</b> Ancient mysteries, obscure philosophy, creatures of occult significance, and esoteric planes.\n<b>Religion:</b> divine agents, divine planes, theology, obscure myths, and creatures of religious significance.\n<b>Society:</b> Local history, key personalities, legal institutions, societal structure, and humanoid culture.\nThe GM might allow checks to Recall Knowledge using other skills. For example, you might assess the skill of an acrobat using Acrobatics. If you’re using a physical skill (like in this example), the GM will most likely have you use a mental ability score — typically Intelligence — instead of the skill’s normal physical ability score."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Concentrate
+      - Secret
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 239
+        page_stop: 239
+
+  - name: Borrow an Arcane Spell
+    descr: "If you’re an arcane spellcaster who prepares from a spellbook, you can attempt to prepare a spell from someone else’s spellbook. The GM sets the DC for the check based on the spell’s level and rarity; it’s typically a bit easier than Learning the Spell.\n<b>Success</b> You prepare the borrowed spell as part of your normal spell preparation.\n<b>Failure</b> You fail to prepare the spell, but the spell slot remains available for you to prepare a different spell. You can’t try to prepare this spell until the next time you prepare spells."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Arcana
+    requirement: null
+    traits:
+      - Concentrate
+      - Exploration
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 241
+        page_stop: 241
+
+  - name: Decipher Writing
+    descr: "You attempt to decipher complicated writing or literature on an obscure topic. This usually takes 1 minute per page of text, but might take longer (typically an hour per page for decrypting ciphers or the like). The text must be in a language you can read, though the GM might allow you to attempt to decipher text written in an unfamiliar language using Society instead.\n<b>Arcana:</b> writings about magic or science, like arcane theory.\n<b>Occultism:</b> esoteric texts about mysteries and philosophy, occult topics, including complex metaphysical systems, syncretic principles, weird philosophies, and incoherent ramblings.\n<b>Religion:</b> scriptures of a religious nature, including allegories, homilies, and proverbs.\n<b>Society:</b> a coded message, text written in an incomplete or archaic form, or in some cases, text in a language you don’t know. The DC is determined by the GM based on the state or complexity of the document. The GM might have you roll one check for a short text or a check for each section of a larger text.\n<b>Critical Success</b> You understand the true meaning of the text.\n<b>Success</b> You understand the true meaning of the text. If it was a coded document, you know the general meaning but might not have a word-for-word translation.\n<b>Failure</b> You can’t understand the text and take a –2 circumstance penalty to further checks to decipher it.\n<b>Critical Failure</b> You believe you understand the text on that page, but you have in fact misconstrued its message."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Arcana
+    requirement: null
+    traits:
+      - Concentrate
+      - Exploration
+      - Secret
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 234
+        page_stop: 234
+
+  - name: Identify Magic
+    descr: "Once you discover that an item, location, or ongoing effect is magical, you can spend 10 minutes to try to identify the particulars of its magic. If your attempt is interrupted, you must start over. The GM sets the DC for your check. Cursed or esoteric subjects usually have higher DCs or might even be impossible to identify using this activity alone. Heightening a spell doesn’t increase the DC to identify it.\n<b>Critical Success</b> You learn all the attributes of the magic, including its name (for an effect), what it does, any means of activating it (for an item or location), and whether it is cursed.\n<b>Success</b> For an item or location, you get a sense of what it does and learn any means of activating it. For an ongoing effect (such as a spell with a duration), you learn the effect’s name and what it does. You can’t try again in hopes of getting a critical success.\n<b>Failure</b> You fail to identify the magic and can’t try again for 1 day.\n<b>Critical Failure</b> You misidentify the magic as something else of the GM’s choice."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Arcana
+    requirement: null
+    traits:
+      - Concentrate
+      - Exploration
+      - Secret
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 238
+        page_stop: 238
+
+  - name: Learn a Spell
+    descr: "You can gain access to a new spell of your tradition from someone who knows that spell or from magical writing like a spellbook or scroll. If you can cast spells of multiple traditions, you can Learn a Spell of any of those traditions, but you must use the corresponding skill to do so. For example, if you were a cleric with the bard multiclass archetype, you couldn’t use Religion to add an occult spell to your bardic spell repertoire.\n<b>To learn the spell, you must do the following:</b>\n• Spend 1 hour per level of the spell, during which you must remain in conversation with a person who knows the spell or have the magical writing in your possession.\n• Have materials with the Price indicated in Table 4–3.\n• Attempt a skill check for the skill corresponding to your tradition (DC determined by the GM, often close to the DC on Table 4–3). Uncommon or rare spells have higher DCs; full guidelines for the GM appear on page 503.\nIf you have a spellbook, Learning a Spell lets you add the spell to your spellbook; if you prepare spells from a list, it’s added to your list; if you have a spell repertoire, you can select it when you add or swap spells.\n<b>Critical Success</b> You expend half the materials and learn the spell.\n<b>Success</b> You expend the materials and learn the spell.\n<b>Failure</b> You fail to learn the spell but can try again after you gain a level. The materials aren’t expended.\n<b>Critical Failure</b> As failure, plus you expend half the materials."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Arcana
+    requirement: null
+    traits:
+      - Concentrate
+      - Exploration
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 238
+        page_stop: 238
+
+athletics:
+  - name: Climb
+    descr: "You move up, down, or across an incline. Unless it’s particularly easy, you must attempt an Athletics check. The GM determines the DC based on the nature of the incline and environmental circumstances. You’re flat-footed unless you have a climb Speed.\n<b>Critical Success</b> You move up, across, or safely down the incline for 5 feet plus 5 feet per 20 feet of your land Speed (a total of 10 feet for most PCs).\n<b>Success</b> You move up, across, or safely down the incline for 5 feet per 20 feet of your land Speed (a total of 5 feet for most PCs, minimum 5 feet if your Speed is below 20 feet).\n<b>Critical Failure</b> You fall. If you began the climb on stable ground, you fall and land prone."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You have both hands free.
+    traits:
+      - Move
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 241
+        page_stop: 242
+
+  - name: Force Open
+    descr: "Using your body, a lever, or some other tool, you attempt to forcefully open a door, window, container or heavy gate. With a high enough result, you can even smash through walls. Without a crowbar, prying something open takes a –2 item penalty to the Athletics check to Force Open.\n<b>Critical Success</b> You open the door, window, container, or gate and can avoid damaging it in the process.\n<b>Success</b> You break the door, window, container, or gate open, and the door, window, container, or gate gains the broken condition. If it’s especially sturdy, the GM might have it take damage but not be broken.\n<b>Critical Failure</b> Your attempt jams the door, window, container, or gate shut, imposing a –2 circumstance penalty on future attempts to Force it Open."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Attack
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 242
+        page_stop: 242
+
+  - name: Grapple
+    descr: "You attempt to grab an opponent with your free hand. Attempt an Athletics check against their Fortitude DC. You can also Grapple to keep your hold on a creature you already grabbed.\n<b>Critical Success</b> Your opponent is restrained until the end of your next turn unless you move or your opponent Escapes (page 470).\n<b>Success</b> Your opponent is grabbed until the end of your next turn unless you move or your opponent Escapes.\n<b>Failure</b> You fail to grab your opponent. If you already had the opponent grabbed or restrained using a Grapple, those conditions on that creature end.\n<b>Critical Failure</b> If you already had the opponent grabbed or restrained, it breaks free. Your target can either grab you, as if it succeeded at using the Grapple action against you, or force you to fall and land prone."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You have at least one free hand. Your target cannot be more than one size larger than you.
+    traits:
+      - Attack
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 242
+        page_stop: 242
+
+  - name: High Jump
+    descr: "You Stride, then make a vertical Leap and attempt a DC 30 Athletics check to increase the height of your jump. If you didn’t Stride at least 10 feet, you automatically fail your check. This DC might be increased or decreased due to the situation, as determined by the GM.\n<b>Critical Success</b> Increase the maximum vertical distance to 8 feet, or increase the maximum vertical distance to 5 feet and maximum horizontal distance to 10 feet.\n<b>Success</b> Increase the maximum vertical distance to 5 feet.\n<b>Failure</b> You Leap normally.\n<b>Critical Failure</b> You don’t Leap at all, and instead you fall prone in your space."
+    type: skill action
+    level: null
+    actioncost: 2
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits: null
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 242
+        page_stop: 242
+
+  - name: Long Jump
+    descr: "You Stride, then make a horizontal Leap and attempt an Athletics check to increase the length of your jump. The DC of the Athletics check is equal to the total distance in feet you’re attempting to move during your Leap (so you’d need to succeed at a DC 20 check to Leap 20 feet). You can’t Leap farther than your Speed.\nIf you didn’t Stride at least 10 feet, or if you attempt to jump in a different direction than your Stride, you automatically fail your check. This DC might be increased or decreased due to the situation, as determined by the GM.\n<b>Success</b> Increase the maximum horizontal distance you Leap to the desired distance.\n<b>Failure</b> You Leap normally.\n<b>Critical Failure</b> You Leap normally, but then fall and land prone."
+    type: skill action
+    level: null
+    actioncost: 2
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits: null
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 242
+        page_stop: 243
+
+  - name: Shove
+    descr: "You push an opponent away from you. Attempt an Athletics check against your opponent’s Fortitude DC.\n<b>Critical Success</b> You push your opponent up to 10 feet away from you. You can Stride after it, but you must move the same distance and in the same direction.\n<b>Success</b> You push your opponent back 5 feet. You can Stride after it, but you must move the same distance and in the same direction.\n<b>Critical Failure</b> You lose your balance, fall, and land prone."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You have at least one hand free. The target can’t be more than one size larger than you.
+    traits:
+      - Attack
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 243
+        page_stop: 243
+
+  - name: Swim
+    descr: "You propel yourself through water. In most calm water, you succeed at the action without needing to attempt a check. If you must breathe air and you’re submerged in water, you must hold your breath each round. If you fail to hold your breath, you begin to drown (as described on page 478). If the water you are swimming in is turbulent or otherwise dangerous, you might have to attempt an Athletics check to Swim.\nIf you end your turn in water and haven’t succeeded at a Swim action that turn, you sink 10 feet or get moved by the current, as determined by the GM. However, if your last action on your turn was to enter the water, you don’t sink or move with the current that turn.\n<b>Critical Success</b> You move through the water 10 feet, plus 5 feet per 20 feet of your land Speed (a total of 15 feet for most PCs).\n<b>Success</b> You move through the water 5 feet, plus 5 feet per 20 feet of your land Speed (a total of 10 feet for most PCs).\n<b>Critical Failure</b> You make no progress, and if you’re holding your breath, you lose 1 round of air."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Move
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 243
+        page_stop: 243
+
+  - name: Trip
+    descr: "You try to knock an opponent to the ground. Attempt an Athletics check against the target’s Reflex DC.\n<b>Critical Success</b> The target falls and lands prone and takes 1d6 bludgeoning damage.\n<b>Success</b> The target falls and lands prone.\n<b>Critical Failure</b> You lose your balance and fall and land prone."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You have at least one hand free. Your target can’t be more than one size larger than you.
+    traits:
+      - Attack
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 243
+        page_stop: 243
+
+  - name: Disarm
+    descr: "You try to knock something out of an opponent’s grasp. Attempt an Athletics check against the opponent’s Reflex DC.\n<b>Critical Success</b> You knock the item out of the opponent’s grasp. It falls to the ground in the opponent’s space.\n<b>Success</b> You weaken your opponent’s grasp on the item. Until the start of that creature’s turn, attempts to Disarm the opponent of that item gain a +2 circumstance bonus, and the target takes a –2 circumstance penalty to attacks with the item or other checks requiring a firm grasp on the item.\n<b>Critical Failure</b> You lose your balance and become flat-footed until the start of your next turn."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Athletics
+    requirement: You have at least one hand free. The target can’t be more than one size larger than you.
+    traits:
+      - Attack
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 243
+        page_stop: 243
+
+crafting:
+  - name: Recall Knowledge
+    descr: "You attempt a skill check to try to remember a bit of knowledge regarding a topic related to that skill. The GM determines the DCs for such checks and which skills apply.\n<b>Critical Success</b> You recall the knowledge accurately and gain additional information or context.\n<b>Success</b> You recall the knowledge accurately or gain a useful clue about your current situation.\n<b>Critical Failure</b> You recall incorrect information or gain an erroneous or misleading clue.\nThe following skills can be used to Recall Knowledge, getting information about the listed topics. In some cases, you can get the GM’s permission to use a different but related skill, usually against a higher DC than normal. Some topics might appear on multiple lists, but the skills could give different information. For example, Arcana might tell you about the magical defenses of a golem, whereas Crafting could tell you about its sturdy resistance to physical attacks.\n<b>Arcana:</b> arcane theories, magical traditions, creatures of arcane significance, and arcane planes.\n<b>Crafting:</b> Alchemical reactions and creatures, item value, engineering, unusual materials, and constructs.\n<b>Lore:</b> The subject of the Lore skill’s subcategory.\n<b>Medicine:</b> Diseases, poisons, wounds, and forensics.\n<b>Nature:</b> The environment, flora, geography, weather, creatures of natural origin, and natural planes.\n<b>Occultism:</b> Ancient mysteries, obscure philosophy, creatures of occult significance, and esoteric planes.\n<b>Religion:</b> divine agents, divine planes, theology, obscure myths, and creatures of religious significance.\n<b>Society:</b> Local history, key personalities, legal institutions, societal structure, and humanoid culture.\nThe GM might allow checks to Recall Knowledge using other skills. For example, you might assess the skill of an acrobat using Acrobatics. If you’re using a physical skill (like in this example), the GM will most likely have you use a mental ability score — typically Intelligence — instead of the skill’s normal physical ability score."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Concentrate
+      - Secret
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 239
+        page_stop: 239
+
+  - name: Repair
+    descr: "You spend 10 minutes attempting to fix a damaged item, placing the item on a stable surface and using the repair kit with both hands. The GM sets the DC, but it’s usually about the same DC to Repair a given item as it is to Craft it in the first place. You can’t Repair a destroyed item.\n<b>Critical Success</b> You restore 10 Hit Points to the item, plus an additional 10 Hit Points per proficiency rank you have in Crafting (a total of 20 HP if you’re trained, 30 HP if you’re an expert, 40 HP if you’re a master, or 50 HP if you’re legendary).\n<b>Success</b> You restore 5 Hit Points to the item, plus an additional 5 per proficiency rank you have in Crafting (for a total of 10 HP if you are trained, 15 HP if you’re an expert, 20 HP if you’re a master, or 25 HP if you’re legendary).\n<b>Critical Failure</b> You deal 2d6 damage to the item. Apply the item’s Hardness to this damage."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You have a repair kit (page 291).
+    traits:
+      - Exploration
+      - Manipulate
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 243
+        page_stop: 244
+
+  - name: Craft
+    descr: "You can make an item from raw materials. You need the Alchemical Crafting skill feat to create alchemical items, the Magical Crafting skill feat to create magic items, and the Snare Crafting feat to create snares.\nTo Craft an item, you must meet the following requirements:\n• The item is your level or lower. An item that doesn’t list a level is level 0. If the item is 9th level or higher, you must be a master in Crafting, and if it’s 16th or higher, you must be legendary.\n• You have the formula for the item; see Getting Formulas below for more information.\n• You have an appropriate set of tools and, in many cases, a workshop. For example, you need access to a smithy to forge a metal shield.\n• You must supply raw materials worth at least half the item’s Price. You always expend at least that amount of raw materials when you Craft successfully. If you’re in a settlement, you can usually spend currency to get the amount of raw materials you need, except in the case of rarer precious materials.\n\nYou must spend 4 days at work, at which point you attempt a Crafting check. The GM determines the DC to Craft the item based on its level, rarity, and other circumstances.\nIf your attempt to create the item is successful, you expend the raw materials you supplied. You can pay the remaining portion of the item’s Price in materials to complete the item immediately, or you can spend additional downtime days working on it. For each additional day you spend, reduce the value of the materials you need to expend to complete the item. This amount is determined using Table 4–2: Income Earned (page 236), based on your proficiency rank in Crafting and using your own level instead of a task level. After any of these downtime days, you can complete the item by spending the remaining portion of its Price in materials. If the downtime days you spend are interrupted, you can return to finish the item later, continuing where you left off. An example of Crafting appears in the sidebar."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Crafting
+    requirement: null
+    traits:
+      - Downtime
+      - Manipulate
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 244
+        page_stop: 245
+
+  - name: Earn Income
+    descr: "You use one of your skills to make money during downtime. The GM assigns a task level representing the most lucrative job available. You can search for lower-level tasks, with the GM determining whether you find any. Sometimes you can attempt to find better work than the initial offerings, though this takes time and requires using the Diplomacy skill to Gather Information, doing some research, or socializing.\nWhen you take on a job, the GM secretly sets the DC of your skill check. After your first day of work, you roll to determine your earnings. You gain an amount of income based on your result, the task’s level, and your proficiency rank (as listed on Table 4–2: Income Earned).\nYou can continue working at the task on subsequent days without needing to roll again. For each day you spend after the first, you earn the same amount as the first day, up until the task’s completion. The GM determines how long you can  work at the task. Most tasks last a week or two, though some can take months or even years.\n<b>Critical Success</b> You do outstanding work. Gain the amount of currency listed for the task level + 1 and your proficiency rank.\n<b>Success</b> You do competent work. Gain the amount of currency listed for the task level and your proficiency rank.\n<b>Failure</b> You do shoddy work and get paid the bare minimum for your time. Gain the amount of currency listed in the failure column for the task level. The GM will likely reduce how long you can continue at the task.\n<b>Critical Failure</b> You earn nothing for your work and are fired immediately. You can’t continue at the task. Your reputation suffers, potentially making it difficult for you to find rewarding jobs in that community in the future."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Crafting
+    requirement: null
+    traits:
+      - Downtime
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 236
+        page_stop: 237
+
+  - name: Identify Alchemy
+    descr: "You can identify the nature of an alchemical item with 10 minutes of testing using alchemist’s tools. If your attempt is interrupted in any way, you must start over.\n<b>Success</b> You identify the item and the means of activating it.\n<b>Failure</b> You fail to identify the item but can try again.\n<b>Critical Failure</b> You misidentify the item as another item of the GM’s choice."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Crafting
+    requirement: You have alchemist’s tools (page 287).
+    traits:
+      - Concentrate
+      - Exploration
+      - Secret
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 245
+        page_stop: 245
+
+deception:
+  - name: Create a Diversion
+    descr: "With a gesture, a trick, or some distracting words, you can create a diversion that draws creatures’ attention elsewhere. If you use a gesture or trick, this action gains the manipulate trait. If you use distracting words, it gains the auditory and linguistic traits.\nAttempt a single Deception check and compare it to the Perception DCs of the creatures whose attention you’re trying to divert. Whether or not you succeed, creatures you attempt to divert gain a +4 circumstance bonus to their Perception DCs against your attempts to Create a Diversion for 1 minute.\n<b>Success</b> You become hidden to each creature whose Perception DC is less than or equal to your result. (The hidden condition allows you to Sneak away, as described on page 252.) This lasts until the end of your turn or until you do anything except Step or use the Hide or the Sneak action of the Stealth skill (pages 251 and 252). If you Strike a creature, the creature remains flat‑footed against that attack, and you then become observed. If you do anything else, you become observed just before you act unless the GM determines otherwise.\n<b>Failure</b> You don’t divert the attention of any creatures whose Perception DC exceeds your result, and those creatures are aware you were trying to trick them."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Mental
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 245
+        page_stop: 245
+
+  - name: Impersonate
+    descr: "You create a disguise to pass yourself off as someone or something you are not. Assembling a convincing disguise takes 10 minutes and requires a disguise kit (found on page 290), but a simpler, quicker disguise might do the job if you’re not trying to imitate a specific individual, at the GM’s discretion.\nIn most cases, creatures have a chance to detect your deception only if they use the Seek action to attempt Perception checks against your Deception DC. If you attempt to directly interact with someone while disguised, the GM rolls a secret Deception check for you against that creature’s Perception DC instead. If you’re disguised as a specific individual, the GM might give creatures you interact with a circumstance bonus based on how well they know the person you’re imitating, or the GM might roll a secret Deception check even if you aren’t directly interacting with others.\n<b>Success</b> You trick the creature into thinking you’re the person you’re disguised as. You might have to attempt a new check if your behavior changes.\n<b>Failure</b> The creature can tell you’re not who you claim to be.\n<b>Critical Failure</b> The creature can tell you’re not who you claim to be, and it recognizes you if it would know you without a disguise."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Concentrate
+      - Exploration
+      - Manipulate
+      - Secret
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 245
+        page_stop: 246
+
+  - name: Lie
+    descr: "You try to fool someone with an untruth. Doing so takes at least 1 round, or longer if the lie is elaborate. You roll a single Deception check and compare it against the Perception DC of every creature you are trying to fool. The GM might give them a circumstance bonus based on the situation and the nature of the lie you are trying to tell. Elaborate or highly unbelievable lies are much harder to get a creature to believe than simpler and more believable lies, and some lies are so big that it’s impossible to get anyone to believe them.\nAt the GM’s discretion, if a creature initially believes your lie, it might attempt a Perception check later to Sense Motive against your Deception DC to realize it’s a lie. This usually happens if the creature discovers enough evidence to counter your statements.\n<b>Success</b> The target believes your lie.\n<b>Failure</b> The target doesn’t believe your lie and gains a +4 circumstance bonus against your attempts to Lie for the duration of your conversation. The target is also more likely to be suspicious of you in the future."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Auditory
+      - Concentrate
+      - Linguistic
+      - Mental
+      - Secret
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 246
+        page_stop: 246
+
+  - name: Feint
+    descr: "With a misleading flourish, you leave an opponent unprepared for your real attack. Attempt a Deception check against that opponent’s Perception DC.\n<b>Critical Success</b> You throw your enemy’s defenses against you entirely off. The target is flat-footed against melee attacks that you attempt against it until the end of your next turn.\n<b>Success</b> Your foe is fooled, but only momentarily. The target is flat-footed against the next melee attack that you attempt against it before the end of your current turn.\n<b>Critical Failure</b> Your feint backfires. You are flat-footed against melee attacks the target attempts against you until the end of your next turn."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Deception
+    requirement: You are within melee reach of the opponent you attempt to Feint.
+    traits:
+      - Mental
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 246
+        page_stop: 246
+
+diplomacy:
+  - name: Gather Information
+    descr: "You canvass local markets, taverns, and gathering places in an attempt to learn about a specific individual or topic. The GM determines the DC of the check and the amount of time it takes (typically 2 hours, but sometimes more), along with any benefit you might be able to gain by spending coin on bribes, drinks, or gifts.\n<b>Success</b> You collect information about the individual or topic. The GM determines the specifics.\n<b>Critical Failure</b> You collect incorrect information about the individual or topic."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Exploration
+      - Secret
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 246
+        page_stop: 246
+
+  - name: Make an Impression
+    descr: "With at least 1 minute of conversation, during which you engage in charismatic overtures, flattery, and other acts of goodwill, you seek to make a good impression on someone to make them temporarily agreeable. At the end of the conversation, attempt a Diplomacy check against the Will DC of one target, modified by any circumstances the GM sees fit. Good impressions (or bad impressions, on a critical failure) last for only the current social interaction unless the GM decides otherwise.\n<b>Critical Success</b> The target’s attitude toward you improves by two steps.\n<b>Success</b> The target’s attitude toward you improves by one step.\n<b>Critical Failure</b> The target’s attitude toward you decreases by one step."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Auditory
+      - Concentrate
+      - Exploration
+      - Linguistic
+      - Mental
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 246
+        page_stop: 247
+
+  - name: Request
+    descr: "You can make a request of a creature that’s friendly or helpful to you. You must couch the request in terms that the target would accept given their current attitude toward you. The GM sets the DC based on the difficulty of the request. Some requests are unsavory or impossible, and even a helpful NPC would never agree to them.\n<b>Critical Success</b> The target agrees to your request without qualifications.\n<b>Success</b> The target agrees to your request, but they might demand added provisions or alterations to the request.\n<b>Failure</b> The target refuses the request, though they might propose an alternative that is less extreme.\n<b>Critical Failure</b> Not only does the target refuse the request, but their attitude toward you decreases by one step due to the temerity of the request."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Auditory
+      - Concentrate
+      - Linguistic
+      - Mental
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 247
+        page_stop: 247
+
+intimidation:
+  - name: Coerce
+    descr: "With threats either veiled or overt, you attempt to bully a creature into doing what you want. You must spend at least 1 minute of conversation with a creature you can see and that can either see or sense you. At the end of the conversation, attempt an Intimidation check against the target’s Will DC, modified by any circumstances the GM determines. The attitudes referenced in the effects below are summarized in the Changing Attitudes sidebar on page 246 and described in full in the Conditions Appendix, starting on page 618.\n<b>Critical Success</b> The target gives you the information you seek or agrees to follow your directives so long as they aren’t likely to harm the target in any way. The target continues to comply for an amount of time determined by the GM but not exceeding 1 day, at which point the target becomes unfriendly (if they weren’t already unfriendly or hostile). However, the target is too scared of you to retaliate—at least in the short term.\n<b>Success</b> As critical success, but once the target becomes unfriendly, they might decide to act against you—for example, by reporting you to the authorities or assisting your enemies.\n<b>Failure</b> The target doesn’t do what you say, and if they were not already unfriendly or hostile, they become unfriendly.\n<b>Critical Failure</b> The target refuses to comply, becomes hostile if they weren’t already, and can’t be Coerced by you for at least 1 week."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Auditory
+      - Concentrate
+      - Emotion
+      - Exploration
+      - Linguistic
+      - Mental
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 247
+        page_stop: 247
+
+  - name: Demoralize
+    descr: "With a sudden shout, a well-timed taunt, or a cutting putdown, you can shake an enemy’s resolve. Choose a creature within 30 feet of you who you’re aware of. Attempt an Intimidation check against that target’s Will DC. If the target does not understand the language you are speaking, you’re not speaking a language, or they can’t hear you, you take a –4 circumstance penalty to the check. Regardless of your result, the target is temporarily immune to your attempts to Demoralize it for 10 minutes.\n<b>Critical Success</b> The target becomes frightened 2.\n<b>Success</b> The target becomes frightened 1."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Auditory
+      - Concentrate
+      - Emotion
+      - Mental
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 247
+        page_stop: 247
+
+lore:
+  - name: Recall Knowledge
+    descr: "You attempt a skill check to try to remember a bit of knowledge regarding a topic related to that skill. The GM determines the DCs for such checks and which skills apply.\n<b>Critical Success</b> You recall the knowledge accurately and gain additional information or context.\n<b>Success</b> You recall the knowledge accurately or gain a useful clue about your current situation.\n<b>Critical Failure</b> You recall incorrect information or gain an erroneous or misleading clue.\nThe following skills can be used to Recall Knowledge, getting information about the listed topics. In some cases, you can get the GM’s permission to use a different but related skill, usually against a higher DC than normal. Some topics might appear on multiple lists, but the skills could give different information. For example, Arcana might tell you about the magical defenses of a golem, whereas Crafting could tell you about its sturdy resistance to physical attacks.\n<b>Arcana:</b> arcane theories, magical traditions, creatures of arcane significance, and arcane planes.\n<b>Crafting:</b> Alchemical reactions and creatures, item value, engineering, unusual materials, and constructs.\n<b>Lore:</b> The subject of the Lore skill’s subcategory.\n<b>Medicine:</b> Diseases, poisons, wounds, and forensics.\n<b>Nature:</b> The environment, flora, geography, weather, creatures of natural origin, and natural planes.\n<b>Occultism:</b> Ancient mysteries, obscure philosophy, creatures of occult significance, and esoteric planes.\n<b>Religion:</b> divine agents, divine planes, theology, obscure myths, and creatures of religious significance.\n<b>Society:</b> Local history, key personalities, legal institutions, societal structure, and humanoid culture.\nThe GM might allow checks to Recall Knowledge using other skills. For example, you might assess the skill of an acrobat using Acrobatics. If you’re using a physical skill (like in this example), the GM will most likely have you use a mental ability score — typically Intelligence — instead of the skill’s normal physical ability score."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Concentrate
+      - Secret
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 239
+        page_stop: 239
+
+  - name: Earn Income
+    descr: "You use one of your skills to make money during downtime. The GM assigns a task level representing the most lucrative job available. You can search for lower-level tasks, with the GM determining whether you find any. Sometimes you can attempt to find better work than the initial offerings, though this takes time and requires using the Diplomacy skill to Gather Information, doing some research, or socializing.\nWhen you take on a job, the GM secretly sets the DC of your skill check. After your first day of work, you roll to determine your earnings. You gain an amount of income based on your result, the task’s level, and your proficiency rank (as listed on Table 4–2: Income Earned).\nYou can continue working at the task on subsequent days without needing to roll again. For each day you spend after the first, you earn the same amount as the first day, up until the task’s completion. The GM determines how long you can  work at the task. Most tasks last a week or two, though some can take months or even years.\n<b>Critical Success</b> You do outstanding work. Gain the amount of currency listed for the task level + 1 and your proficiency rank.\n<b>Success</b> You do competent work. Gain the amount of currency listed for the task level and your proficiency rank.\n<b>Failure</b> You do shoddy work and get paid the bare minimum for your time. Gain the amount of currency listed in the failure column for the task level. The GM will likely reduce how long you can continue at the task.\n<b>Critical Failure</b> You earn nothing for your work and are fired immediately. You can’t continue at the task. Your reputation suffers, potentially making it difficult for you to find rewarding jobs in that community in the future."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Lore
+    requirement: null
+    traits:
+      - Downtime
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 236
+        page_stop: 237
+
+medicine:
+  - name: Administer First Aid
+    descr: "You perform first aid on an adjacent creature that is dying or bleeding. If a creature is both dying and bleeding, choose which ailment you’re trying to treat before you roll. You can Administer First Aid again to attempt to remedy the other effect.\n<b>• Stabilize Attempt</b> a Medicine check on a creature that has 0 Hit Points and the dying condition. The DC is equal to 5 + that creature’s recovery roll DC (typically 15 + its dying value).\n<b>• Stop Bleeding</b> Attempt a Medicine check on a creature that is taking persistent bleed damage (page 452), giving them a chance to make another flat check to remove the persistent damage. The DC is usually the DC of the effect that caused the bleed.\n\n<b>Success</b> If you’re trying to stabilize, the creature loses the dying condition (but remains unconscious). If you’re trying to stop bleeding, the creature attempts a flat check to end the bleeding.\n<b>Critical Failure</b> If you were trying to stabilize, the creature’s dying value increases by 1. If you were trying to stop bleeding, it immediately takes an amount of damage equal to its persistent bleed damage."
+    type: skill action
+    level: null
+    actioncost: 2
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: You have healer’s tools (page 290).
+    traits:
+      - Manipulate
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 248
+        page_stop: 248
+
+  - name: Recall Knowledge
+    descr: "You attempt a skill check to try to remember a bit of knowledge regarding a topic related to that skill. The GM determines the DCs for such checks and which skills apply.\n<b>Critical Success</b> You recall the knowledge accurately and gain additional information or context.\n<b>Success</b> You recall the knowledge accurately or gain a useful clue about your current situation.\n<b>Critical Failure</b> You recall incorrect information or gain an erroneous or misleading clue.\nThe following skills can be used to Recall Knowledge, getting information about the listed topics. In some cases, you can get the GM’s permission to use a different but related skill, usually against a higher DC than normal. Some topics might appear on multiple lists, but the skills could give different information. For example, Arcana might tell you about the magical defenses of a golem, whereas Crafting could tell you about its sturdy resistance to physical attacks.\n<b>Arcana:</b> arcane theories, magical traditions, creatures of arcane significance, and arcane planes.\n<b>Crafting:</b> Alchemical reactions and creatures, item value, engineering, unusual materials, and constructs.\n<b>Lore:</b> The subject of the Lore skill’s subcategory.\n<b>Medicine:</b> Diseases, poisons, wounds, and forensics.\n<b>Nature:</b> The environment, flora, geography, weather, creatures of natural origin, and natural planes.\n<b>Occultism:</b> Ancient mysteries, obscure philosophy, creatures of occult significance, and esoteric planes.\n<b>Religion:</b> divine agents, divine planes, theology, obscure myths, and creatures of religious significance.\n<b>Society:</b> Local history, key personalities, legal institutions, societal structure, and humanoid culture.\nThe GM might allow checks to Recall Knowledge using other skills. For example, you might assess the skill of an acrobat using Acrobatics. If you’re using a physical skill (like in this example), the GM will most likely have you use a mental ability score — typically Intelligence — instead of the skill’s normal physical ability score."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Concentrate
+      - Secret
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 239
+        page_stop: 239
+
+  - name: Treat Disease
+    descr: "You spend at least 8 hours caring for a diseased creature. Attempt a Medicine check against the disease’s DC. After you attempt to Treat a Disease for a creature, you can’t try again until after that creature’s next save against the disease.\n<b>Critical Success</b> You grant the creature a +4 circumstance bonus to its next saving throw against the disease.\n<b>Success</b> You grant the creature a +2 circumstance bonus to its next saving throw against the disease.\n<b>Critical Failure</b> Your efforts cause the creature to take a –2 circumstance penalty to its next save against the disease."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Medicine
+    requirement: You have healer’s tools (page 290).
+    traits:
+      - Downtime
+      - Manipulate
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 248
+        page_stop: 248
+
+  - name: Treat Poison
+    descr: "You treat a patient to prevent the spread of poison. Attempt a Medicine check against the poison’s DC. After you attempt to Treat a Poison for a creature, you can’t try again until after the next time that creature attempts a save against the poison.\n<b>Critical Success</b> You grant the creature a +4 circumstance bonus to its next saving throw against the poison.\n<b>Success</b> You grant the creature a +2 circumstance bonus to its next saving throw against the poison.\n<b>Critical Failure</b> Your efforts cause the creature to take a –2 circumstance penalty to its next save against the poison."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Medicine
+    requirement: You have healer’s tools (page 290).
+    traits:
+      - Manipulate
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 248
+        page_stop: 249
+
+  - name: Treat Wounds
+    descr: "You spend 10 minutes treating one injured living creature (targeting yourself, if you so choose). The target is then temporarily immune to Treat Wounds actions for 1 hour, but this interval overlaps with the time you spent treating (so a patient can be treated once per hour, not once per 70 minutes).\nThe Medicine check DC is usually 15, though the GM might adjust it based on the circumstances, such as treating a patient outside in a storm, or treating magically cursed wounds. If you’re an expert in Medicine, you can instead attempt a DC 20 check to increase the Hit Points regained by 10; if you’re a master of Medicine, you can instead attempt a DC 30 check to increase the Hit Points regained by 30; and if you’re legendary, you can instead attempt a DC 40 check to increase the Hit Points regained by 50. The damage dealt on a critical failure remains the same.\nIf you succeed at your check, you can continue treating the target to grant additional healing. If you treat them for a total of 1 hour, double the Hit Points they regain from Treat Wounds.\nThe result of your Medicine check determines how many Hit Points the target regains.\n<b>Critical Success</b> The target regains 4d8 Hit Points, and its wounded condition is removed.\n<b>Success</b> The target regains 2d8 Hit Points, and its wounded condition is removed.\n<b>Critical Failure</b> The target takes 1d8 damage."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Medicine
+    requirement: You have healer’s tools (page 290).
+    traits:
+      - Exploration
+      - Healing
+      - Manipulate
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 249
+        page_stop: 249
+
+nature:
+  - name: Command an Animal
+    descr: "You issue an order to an animal. Attempt a Nature check against the animal’s Will DC. The GM might adjust the DC if the animal has a good attitude toward you, you suggest a course of action it was predisposed toward, or you offer it a treat.\nYou automatically fail if the animal is hostile or unfriendly to you. If the animal is helpful to you, increase your degree of success by one step. You might be able to Command an Animal more easily with a feat like Ride (page 266).\nMost animals know the Leap, Seek, Stand, Stride, and Strike basic actions. If an animal knows an activity, such as a horse’s Gallop, you can Command the Animal to perform the activity, but you must spend as many actions on Command an Animal as the activity’s number of actions. You can also spend multiple actions to Command the Animal to perform that number of basic actions on its next turn; for instance, you could spend 3 actions to Command an Animal to Stride three times or to Stride twice and then Strike.\n<b>Success</b> The animal does as you command on its next turn.\n<b>Failure</b> The animal is hesitant or resistant, and it does nothing.\n<b>Critical Failure</b> The animal misbehaves or misunderstands, and it takes some other action determined by the GM."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Auditory
+      - Concentrate
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 249
+        page_stop: 249
+
+  - name: Recall Knowledge
+    descr: "You attempt a skill check to try to remember a bit of knowledge regarding a topic related to that skill. The GM determines the DCs for such checks and which skills apply.\n<b>Critical Success</b> You recall the knowledge accurately and gain additional information or context.\n<b>Success</b> You recall the knowledge accurately or gain a useful clue about your current situation.\n<b>Critical Failure</b> You recall incorrect information or gain an erroneous or misleading clue.\nThe following skills can be used to Recall Knowledge, getting information about the listed topics. In some cases, you can get the GM’s permission to use a different but related skill, usually against a higher DC than normal. Some topics might appear on multiple lists, but the skills could give different information. For example, Arcana might tell you about the magical defenses of a golem, whereas Crafting could tell you about its sturdy resistance to physical attacks.\n<b>Arcana:</b> arcane theories, magical traditions, creatures of arcane significance, and arcane planes.\n<b>Crafting:</b> Alchemical reactions and creatures, item value, engineering, unusual materials, and constructs.\n<b>Lore:</b> The subject of the Lore skill’s subcategory.\n<b>Medicine:</b> Diseases, poisons, wounds, and forensics.\n<b>Nature:</b> The environment, flora, geography, weather, creatures of natural origin, and natural planes.\n<b>Occultism:</b> Ancient mysteries, obscure philosophy, creatures of occult significance, and esoteric planes.\n<b>Religion:</b> divine agents, divine planes, theology, obscure myths, and creatures of religious significance.\n<b>Society:</b> Local history, key personalities, legal institutions, societal structure, and humanoid culture.\nThe GM might allow checks to Recall Knowledge using other skills. For example, you might assess the skill of an acrobat using Acrobatics. If you’re using a physical skill (like in this example), the GM will most likely have you use a mental ability score — typically Intelligence — instead of the skill’s normal physical ability score."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Concentrate
+      - Secret
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 239
+        page_stop: 239
+
+  - name: Identify Magic
+    descr: "Once you discover that an item, location, or ongoing effect is magical, you can spend 10 minutes to try to identify the particulars of its magic. If your attempt is interrupted, you must start over. The GM sets the DC for your check. Cursed or esoteric subjects usually have higher DCs or might even be impossible to identify using this activity alone. Heightening a spell doesn’t increase the DC to identify it.\n<b>Critical Success</b> You learn all the attributes of the magic, including its name (for an effect), what it does, any means of activating it (for an item or location), and whether it is cursed.\n<b>Success</b> For an item or location, you get a sense of what it does and learn any means of activating it. For an ongoing effect (such as a spell with a duration), you learn the effect’s name and what it does. You can’t try again in hopes of getting a critical success.\n<b>Failure</b> You fail to identify the magic and can’t try again for 1 day.\n<b>Critical Failure</b> You misidentify the magic as something else of the GM’s choice."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Nature
+    requirement: null
+    traits:
+      - Concentrate
+      - Exploration
+      - Secret
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 238
+        page_stop: 238
+
+  - name: Learn a Spell
+    descr: "You can gain access to a new spell of your tradition from someone who knows that spell or from magical writing like a spellbook or scroll. If you can cast spells of multiple traditions, you can Learn a Spell of any of those traditions, but you must use the corresponding skill to do so. For example, if you were a cleric with the bard multiclass archetype, you couldn’t use Religion to add an occult spell to your bardic spell repertoire.\n<b>To learn the spell, you must do the following:</b>\n• Spend 1 hour per level of the spell, during which you must remain in conversation with a person who knows the spell or have the magical writing in your possession.\n• Have materials with the Price indicated in Table 4–3.\n• Attempt a skill check for the skill corresponding to your tradition (DC determined by the GM, often close to the DC on Table 4–3). Uncommon or rare spells have higher DCs; full guidelines for the GM appear on page 503.\nIf you have a spellbook, Learning a Spell lets you add the spell to your spellbook; if you prepare spells from a list, it’s added to your list; if you have a spell repertoire, you can select it when you add or swap spells.\n<b>Critical Success</b> You expend half the materials and learn the spell.\n<b>Success</b> You expend the materials and learn the spell.\n<b>Failure</b> You fail to learn the spell but can try again after you gain a level. The materials aren’t expended.\n<b>Critical Failure</b> As failure, plus you expend half the materials."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Nature
+    requirement: null
+    traits:
+      - Concentrate
+      - Exploration
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 238
+        page_stop: 238
+
+occultism:
+  - name: Recall Knowledge
+    descr: "You attempt a skill check to try to remember a bit of knowledge regarding a topic related to that skill. The GM determines the DCs for such checks and which skills apply.\n<b>Critical Success</b> You recall the knowledge accurately and gain additional information or context.\n<b>Success</b> You recall the knowledge accurately or gain a useful clue about your current situation.\n<b>Critical Failure</b> You recall incorrect information or gain an erroneous or misleading clue.\nThe following skills can be used to Recall Knowledge, getting information about the listed topics. In some cases, you can get the GM’s permission to use a different but related skill, usually against a higher DC than normal. Some topics might appear on multiple lists, but the skills could give different information. For example, Arcana might tell you about the magical defenses of a golem, whereas Crafting could tell you about its sturdy resistance to physical attacks.\n<b>Arcana:</b> arcane theories, magical traditions, creatures of arcane significance, and arcane planes.\n<b>Crafting:</b> Alchemical reactions and creatures, item value, engineering, unusual materials, and constructs.\n<b>Lore:</b> The subject of the Lore skill’s subcategory.\n<b>Medicine:</b> Diseases, poisons, wounds, and forensics.\n<b>Nature:</b> The environment, flora, geography, weather, creatures of natural origin, and natural planes.\n<b>Occultism:</b> Ancient mysteries, obscure philosophy, creatures of occult significance, and esoteric planes.\n<b>Religion:</b> divine agents, divine planes, theology, obscure myths, and creatures of religious significance.\n<b>Society:</b> Local history, key personalities, legal institutions, societal structure, and humanoid culture.\nThe GM might allow checks to Recall Knowledge using other skills. For example, you might assess the skill of an acrobat using Acrobatics. If you’re using a physical skill (like in this example), the GM will most likely have you use a mental ability score — typically Intelligence — instead of the skill’s normal physical ability score."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Concentrate
+      - Secret
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 239
+        page_stop: 239
+
+  - name: Decipher Writing
+    descr: "You attempt to decipher complicated writing or literature on an obscure topic. This usually takes 1 minute per page of text, but might take longer (typically an hour per page for decrypting ciphers or the like). The text must be in a language you can read, though the GM might allow you to attempt to decipher text written in an unfamiliar language using Society instead.\n<b>Arcana:</b> writings about magic or science, like arcane theory.\n<b>Occultism:</b> esoteric texts about mysteries and philosophy, occult topics, including complex metaphysical systems, syncretic principles, weird philosophies, and incoherent ramblings.\n<b>Religion:</b> scriptures of a religious nature, including allegories, homilies, and proverbs.\n<b>Society:</b> a coded message, text written in an incomplete or archaic form, or in some cases, text in a language you don’t know. The DC is determined by the GM based on the state or complexity of the document. The GM might have you roll one check for a short text or a check for each section of a larger text.\n<b>Critical Success</b> You understand the true meaning of the text.\n<b>Success</b> You understand the true meaning of the text. If it was a coded document, you know the general meaning but might not have a word-for-word translation.\n<b>Failure</b> You can’t understand the text and take a –2 circumstance penalty to further checks to decipher it.\n<b>Critical Failure</b> You believe you understand the text on that page, but you have in fact misconstrued its message."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Occultism
+    requirement: null
+    traits:
+      - Concentrate
+      - Exploration
+      - Secret
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 234
+        page_stop: 234
+
+  - name: Identify Magic
+    descr: "Once you discover that an item, location, or ongoing effect is magical, you can spend 10 minutes to try to identify the particulars of its magic. If your attempt is interrupted, you must start over. The GM sets the DC for your check. Cursed or esoteric subjects usually have higher DCs or might even be impossible to identify using this activity alone. Heightening a spell doesn’t increase the DC to identify it.\n<b>Critical Success</b> You learn all the attributes of the magic, including its name (for an effect), what it does, any means of activating it (for an item or location), and whether it is cursed.\n<b>Success</b> For an item or location, you get a sense of what it does and learn any means of activating it. For an ongoing effect (such as a spell with a duration), you learn the effect’s name and what it does. You can’t try again in hopes of getting a critical success.\n<b>Failure</b> You fail to identify the magic and can’t try again for 1 day.\n<b>Critical Failure</b> You misidentify the magic as something else of the GM’s choice."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Occultism
+    requirement: null
+    traits:
+      - Concentrate
+      - Exploration
+      - Secret
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 238
+        page_stop: 238
+
+  - name: Learn a Spell
+    descr: "You can gain access to a new spell of your tradition from someone who knows that spell or from magical writing like a spellbook or scroll. If you can cast spells of multiple traditions, you can Learn a Spell of any of those traditions, but you must use the corresponding skill to do so. For example, if you were a cleric with the bard multiclass archetype, you couldn’t use Religion to add an occult spell to your bardic spell repertoire.\n<b>To learn the spell, you must do the following:</b>\n• Spend 1 hour per level of the spell, during which you must remain in conversation with a person who knows the spell or have the magical writing in your possession.\n• Have materials with the Price indicated in Table 4–3.\n• Attempt a skill check for the skill corresponding to your tradition (DC determined by the GM, often close to the DC on Table 4–3). Uncommon or rare spells have higher DCs; full guidelines for the GM appear on page 503.\nIf you have a spellbook, Learning a Spell lets you add the spell to your spellbook; if you prepare spells from a list, it’s added to your list; if you have a spell repertoire, you can select it when you add or swap spells.\n<b>Critical Success</b> You expend half the materials and learn the spell.\n<b>Success</b> You expend the materials and learn the spell.\n<b>Failure</b> You fail to learn the spell but can try again after you gain a level. The materials aren’t expended.\n<b>Critical Failure</b> As failure, plus you expend half the materials."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Occultism
+    requirement: null
+    traits:
+      - Concentrate
+      - Exploration
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 238
+        page_stop: 238
+
+performance:
+  - name: Perform
+    descr: "When making a brief performance—one song, a quick dance, or a few jokes—you use the Perform action. This action is most useful when you want to prove your capability or impress someone quickly. Performing rarely has an impact on its own, but it might influence the DCs of subsequent Diplomacy checks against the observers—or even change their attitudes— if the GM sees fit.\n<b>Critical Success</b> Your performance impresses the observers, and they’re likely to share stories of your ability.\n<b>Success</b> You prove yourself, and observers appreciate the quality of your performance.\n<b>Failure</b> Your performance falls flat.\n<b>Critical Failure</b> You demonstrate only incompetence."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Concentrate
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 250
+        page_stop: 250
+
+  - name: Earn Income
+    descr: "You use one of your skills to make money during downtime. The GM assigns a task level representing the most lucrative job available. You can search for lower-level tasks, with the GM determining whether you find any. Sometimes you can attempt to find better work than the initial offerings, though this takes time and requires using the Diplomacy skill to Gather Information, doing some research, or socializing.\nWhen you take on a job, the GM secretly sets the DC of your skill check. After your first day of work, you roll to determine your earnings. You gain an amount of income based on your result, the task’s level, and your proficiency rank (as listed on Table 4–2: Income Earned).\nYou can continue working at the task on subsequent days without needing to roll again. For each day you spend after the first, you earn the same amount as the first day, up until the task’s completion. The GM determines how long you can  work at the task. Most tasks last a week or two, though some can take months or even years.\n<b>Critical Success</b> You do outstanding work. Gain the amount of currency listed for the task level + 1 and your proficiency rank.\n<b>Success</b> You do competent work. Gain the amount of currency listed for the task level and your proficiency rank.\n<b>Failure</b> You do shoddy work and get paid the bare minimum for your time. Gain the amount of currency listed in the failure column for the task level. The GM will likely reduce how long you can continue at the task.\n<b>Critical Failure</b> You earn nothing for your work and are fired immediately. You can’t continue at the task. Your reputation suffers, potentially making it difficult for you to find rewarding jobs in that community in the future."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Performance
+    requirement: null
+    traits:
+      - Downtime
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 236
+        page_stop: 237
+
+religion:
+  - name: Recall Knowledge
+    descr: "You attempt a skill check to try to remember a bit of knowledge regarding a topic related to that skill. The GM determines the DCs for such checks and which skills apply.\n<b>Critical Success</b> You recall the knowledge accurately and gain additional information or context.\n<b>Success</b> You recall the knowledge accurately or gain a useful clue about your current situation.\n<b>Critical Failure</b> You recall incorrect information or gain an erroneous or misleading clue.\nThe following skills can be used to Recall Knowledge, getting information about the listed topics. In some cases, you can get the GM’s permission to use a different but related skill, usually against a higher DC than normal. Some topics might appear on multiple lists, but the skills could give different information. For example, Arcana might tell you about the magical defenses of a golem, whereas Crafting could tell you about its sturdy resistance to physical attacks.\n<b>Arcana:</b> arcane theories, magical traditions, creatures of arcane significance, and arcane planes.\n<b>Crafting:</b> Alchemical reactions and creatures, item value, engineering, unusual materials, and constructs.\n<b>Lore:</b> The subject of the Lore skill’s subcategory.\n<b>Medicine:</b> Diseases, poisons, wounds, and forensics.\n<b>Nature:</b> The environment, flora, geography, weather, creatures of natural origin, and natural planes.\n<b>Occultism:</b> Ancient mysteries, obscure philosophy, creatures of occult significance, and esoteric planes.\n<b>Religion:</b> divine agents, divine planes, theology, obscure myths, and creatures of religious significance.\n<b>Society:</b> Local history, key personalities, legal institutions, societal structure, and humanoid culture.\nThe GM might allow checks to Recall Knowledge using other skills. For example, you might assess the skill of an acrobat using Acrobatics. If you’re using a physical skill (like in this example), the GM will most likely have you use a mental ability score — typically Intelligence — instead of the skill’s normal physical ability score."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Concentrate
+      - Secret
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 239
+        page_stop: 239
+
+  - name: Decipher Writing
+    descr: "You attempt to decipher complicated writing or literature on an obscure topic. This usually takes 1 minute per page of text, but might take longer (typically an hour per page for decrypting ciphers or the like). The text must be in a language you can read, though the GM might allow you to attempt to decipher text written in an unfamiliar language using Society instead.\n<b>Arcana:</b> writings about magic or science, like arcane theory.\n<b>Occultism:</b> esoteric texts about mysteries and philosophy, occult topics, including complex metaphysical systems, syncretic principles, weird philosophies, and incoherent ramblings.\n<b>Religion:</b> scriptures of a religious nature, including allegories, homilies, and proverbs.\n<b>Society:</b> a coded message, text written in an incomplete or archaic form, or in some cases, text in a language you don’t know. The DC is determined by the GM based on the state or complexity of the document. The GM might have you roll one check for a short text or a check for each section of a larger text.\n<b>Critical Success</b> You understand the true meaning of the text.\n<b>Success</b> You understand the true meaning of the text. If it was a coded document, you know the general meaning but might not have a word-for-word translation.\n<b>Failure</b> You can’t understand the text and take a –2 circumstance penalty to further checks to decipher it.\n<b>Critical Failure</b> You believe you understand the text on that page, but you have in fact misconstrued its message."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Religion
+    requirement: null
+    traits:
+      - Concentrate
+      - Exploration
+      - Secret
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 234
+        page_stop: 234
+
+  - name: Identify Magic
+    descr: "Once you discover that an item, location, or ongoing effect is magical, you can spend 10 minutes to try to identify the particulars of its magic. If your attempt is interrupted, you must start over. The GM sets the DC for your check. Cursed or esoteric subjects usually have higher DCs or might even be impossible to identify using this activity alone. Heightening a spell doesn’t increase the DC to identify it.\n<b>Critical Success</b> You learn all the attributes of the magic, including its name (for an effect), what it does, any means of activating it (for an item or location), and whether it is cursed.\n<b>Success</b> For an item or location, you get a sense of what it does and learn any means of activating it. For an ongoing effect (such as a spell with a duration), you learn the effect’s name and what it does. You can’t try again in hopes of getting a critical success.\n<b>Failure</b> You fail to identify the magic and can’t try again for 1 day.\n<b>Critical Failure</b> You misidentify the magic as something else of the GM’s choice."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Religion
+    requirement: null
+    traits:
+      - Concentrate
+      - Exploration
+      - Secret
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 238
+        page_stop: 238
+
+  - name: Learn a Spell
+    descr: "You can gain access to a new spell of your tradition from someone who knows that spell or from magical writing like a spellbook or scroll. If you can cast spells of multiple traditions, you can Learn a Spell of any of those traditions, but you must use the corresponding skill to do so. For example, if you were a cleric with the bard multiclass archetype, you couldn’t use Religion to add an occult spell to your bardic spell repertoire.\n<b>To learn the spell, you must do the following:</b>\n• Spend 1 hour per level of the spell, during which you must remain in conversation with a person who knows the spell or have the magical writing in your possession.\n• Have materials with the Price indicated in Table 4–3.\n• Attempt a skill check for the skill corresponding to your tradition (DC determined by the GM, often close to the DC on Table 4–3). Uncommon or rare spells have higher DCs; full guidelines for the GM appear on page 503.\nIf you have a spellbook, Learning a Spell lets you add the spell to your spellbook; if you prepare spells from a list, it’s added to your list; if you have a spell repertoire, you can select it when you add or swap spells.\n<b>Critical Success</b> You expend half the materials and learn the spell.\n<b>Success</b> You expend the materials and learn the spell.\n<b>Failure</b> You fail to learn the spell but can try again after you gain a level. The materials aren’t expended.\n<b>Critical Failure</b> As failure, plus you expend half the materials."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Religion
+    requirement: null
+    traits:
+      - Concentrate
+      - Exploration
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 238
+        page_stop: 238
+
+society:
+  - name: Recall Knowledge
+    descr: "You attempt a skill check to try to remember a bit of knowledge regarding a topic related to that skill. The GM determines the DCs for such checks and which skills apply.\n<b>Critical Success</b> You recall the knowledge accurately and gain additional information or context.\n<b>Success</b> You recall the knowledge accurately or gain a useful clue about your current situation.\n<b>Critical Failure</b> You recall incorrect information or gain an erroneous or misleading clue.\nThe following skills can be used to Recall Knowledge, getting information about the listed topics. In some cases, you can get the GM’s permission to use a different but related skill, usually against a higher DC than normal. Some topics might appear on multiple lists, but the skills could give different information. For example, Arcana might tell you about the magical defenses of a golem, whereas Crafting could tell you about its sturdy resistance to physical attacks.\n<b>Arcana:</b> arcane theories, magical traditions, creatures of arcane significance, and arcane planes.\n<b>Crafting:</b> Alchemical reactions and creatures, item value, engineering, unusual materials, and constructs.\n<b>Lore:</b> The subject of the Lore skill’s subcategory.\n<b>Medicine:</b> Diseases, poisons, wounds, and forensics.\n<b>Nature:</b> The environment, flora, geography, weather, creatures of natural origin, and natural planes.\n<b>Occultism:</b> Ancient mysteries, obscure philosophy, creatures of occult significance, and esoteric planes.\n<b>Religion:</b> divine agents, divine planes, theology, obscure myths, and creatures of religious significance.\n<b>Society:</b> Local history, key personalities, legal institutions, societal structure, and humanoid culture.\nThe GM might allow checks to Recall Knowledge using other skills. For example, you might assess the skill of an acrobat using Acrobatics. If you’re using a physical skill (like in this example), the GM will most likely have you use a mental ability score — typically Intelligence — instead of the skill’s normal physical ability score."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Concentrate
+      - Secret
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 239
+        page_stop: 239
+
+  - name: Subsist
+    descr: "You try to provide food and shelter for yourself, and possibly others as well, with a standard of living described on page 294. The GM determines the DC based on the nature of the place where you’re trying to Subsist. You might need a minimum proficiency rank to Subsist in particularly strange environments. Unlike most downtime activities, you can Subsist after 8 hours or less of exploration, but if you do, you take a –5 penalty.\n<b>Critical Success</b> You either provide a subsistence living for yourself and one additional creature, or you improve your own food and shelter, granting yourself a comfortable living.\n<b>Success</b> You find enough food and shelter with basic protection from the elements to provide you a subsistence living.\n<b>Failure</b> You’re exposed to the elements and don’t get enough food, becoming fatigued until you attain sufficient food and shelter.\n<b>Critical Failure</b> You attract trouble, eat something you shouldn’t, or otherwise worsen your situation. You take a –2 circumstance penalty to checks to Subsist for 1 week. You don’t find any food at all; if you don’t have any stored up, you’re in danger of starving or dying of thirst if you continue failing.\n\n<b>• Society:</b> in a settlement by finding shelter, scrounging, or begging for food.\n<b>• Survival:</b> in the wild by foraging for food and building shelter."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Downtime
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 240
+        page_stop: 240
+
+  - name: Create Forgery
+    descr: "You create a forged document, usually over the course of a day or a week. You must have the proper writing material to create a forgery. When you Create a Forgery, the GM rolls a secret DC 20 Society check. If you succeed, the forgery is of good enough quality that passive observers can’t notice the fake. Only those who carefully examine the document and attempt a Perception or Society check against your Society DC can do so.\nIf the document’s handwriting doesn’t need to be specific to a person, you need only to have seen a similar document before, and you gain up to a +4 circumstance bonus to your check, as well as to your DC (the GM determines the bonus). To forge a specific person’s handwriting, you need a sample of that person’s handwriting.\nIf your check result was below 20, the forgery has some obvious signs of being a fake, so the GM compares your result to each passive observer’s Perception DC or Society DC, whichever is higher, using the success or failure results below. Once the GM rolls your check for a document, that same result is used against all passive observers’ DCs no matter how many creatures passively observe that document.\nAn observer who was fooled on a passive glance can still choose to closely scrutinize the documents on the lookout for a forgery, using different techniques and analysis methods beyond the surface elements you successfully forged with your original check. In that case, the observer can attempt a Perception or Society check against your Society DC (if they succeed, they know your document is a forgery).\n<b>Success</b> The observer does not detect the forgery.\n<b>Failure</b> The observer knows your document is a forgery."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Society
+    requirement: null
+    traits:
+      - Downtime
+      - Secret
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 251
+        page_stop: 251
+
+  - name: Decipher Writing
+    descr: "You attempt to decipher complicated writing or literature on an obscure topic. This usually takes 1 minute per page of text, but might take longer (typically an hour per page for decrypting ciphers or the like). The text must be in a language you can read, though the GM might allow you to attempt to decipher text written in an unfamiliar language using Society instead.\n<b>Arcana:</b> writings about magic or science, like arcane theory.\n<b>Occultism:</b> esoteric texts about mysteries and philosophy, occult topics, including complex metaphysical systems, syncretic principles, weird philosophies, and incoherent ramblings.\n<b>Religion:</b> scriptures of a religious nature, including allegories, homilies, and proverbs.\n<b>Society:</b> a coded message, text written in an incomplete or archaic form, or in some cases, text in a language you don’t know. The DC is determined by the GM based on the state or complexity of the document. The GM might have you roll one check for a short text or a check for each section of a larger text.\n<b>Critical Success</b> You understand the true meaning of the text.\n<b>Success</b> You understand the true meaning of the text. If it was a coded document, you know the general meaning but might not have a word-for-word translation.\n<b>Failure</b> You can’t understand the text and take a –2 circumstance penalty to further checks to decipher it.\n<b>Critical Failure</b> You believe you understand the text on that page, but you have in fact misconstrued its message."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Society
+    requirement: null
+    traits:
+      - Concentrate
+      - Exploration
+      - Secret
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 234
+        page_stop: 234
+
+stealth:
+  - name: Conceal an Object
+    descr: "You hide a small object on your person (such as a weapon of light Bulk). When you try to sneak a concealed object past someone who might notice it, the GM rolls your Stealth check and compares it to this passive observer’s Perception DC. Once the GM rolls your check for a concealed object, that same result is used no matter how many passive observers you try to sneak it past. If a creature is specifically searching you for an item, it can attempt a Perception check against your Stealth DC (finding the object on success).\nYou can also conceal an object somewhere other than your person, such as among undergrowth or in a secret compartment within a piece of furniture. In this case, characters Seeking in an area compare their Perception check results to your Stealth DC to determine whether they find the object.\n<b>Success</b> The object remains undetected.\n<b>Failure</b> The searcher finds the object."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Manipulate
+      - Secret
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 251
+        page_stop: 251
+
+  - name: Hide
+    descr: "You huddle behind cover or greater cover or deeper into concealment to become hidden, rather than observed. The GM rolls your Stealth check in secret and compares the result to the Perception DC of each creature you’re observed by but that you have cover or greater cover against or are concealed from. You gain the circumstance bonus from cover or greater cover to your check.\n<b>Success</b> If the creature could see you, you’re now hidden from it instead of observed. If you were hidden from or undetected by the creature, you retain that condition.\nIf you successfully become hidden to a creature but then cease to have cover or greater cover against it or be concealed from it, you become observed again. You cease being hidden if you do anything except Hide, Sneak, or Step. If you attempt to Strike a creature, the creature remains flatfooted against that attack, and you then become observed. If you do anything else, you become observed just before you act unless the GM determines otherwise. The GM might allow you to perform a particularly unobtrusive action without being noticed, possibly requiring another Stealth check.\nIf a creature uses Seek to make you observed by it, you must successfully Hide to become hidden from it again."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Secret
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 251
+        page_stop: 252
+
+  - name: Sneak
+    descr: "You can attempt to move to another place while becoming or staying undetected. Stride up to half your Speed. (You can use Sneak while Burrowing, Climbing, Flying, or Swimming instead of Striding if you have the corresponding movement type; you must move at half that Speed.)\nIf you’re undetected by a creature and it’s impossible for that creature to observe you (for a typical creature, this includes when you’re invisible, the observer is blinded, or you’re in darkness and the creature can’t see in darkness), for any critical failure you roll on a check to Sneak, you get a failure instead. You also continue to be undetected if you lose cover or greater cover against or are no longer concealed from such a creature.\nAt the end of your movement, the GM rolls your Stealth check in secret and compares the result to the Perception DC of each creature you were hidden from or undetected by at the start of your movement. If you have cover or greater cover from the creature throughout your Stride, you gain the +2 circumstance bonus from cover (or +4 from greater cover) to your Stealth check. Because you’re moving, the bonus increase from Taking Cover doesn’t apply. You don’t get to roll against a creature if, at the end of your movement, you neither are concealed from it nor have cover or greater cover against it. You automatically become observed by such a creature.\n<b>Success</b> You’re undetected by the creature during your movement and remain undetected by the creature at the end of it.\nYou become observed as soon as you do anything other than Hide, Sneak, or Step. If you attempt to Strike a creature, the creature remains flat-footed against that attack, and you then become observed. If you do anything else, you become observed just before you act unless the GM determines otherwise. The GM might allow you to perform a particularly unobtrusive action without being noticed, possibly requiring another Stealth check. If you speak or make a deliberate loud noise, you become hidden instead of undetected.\nIf a creature uses Seek and you become hidden to it as a result, you must Sneak if you want to become undetected by that creature again.\n<b>Failure</b> A telltale sound or other sign gives your position away, though you still remain unseen. You’re hidden from the creature throughout your movement and remain so.\n<b>Critical Failure</b> You’re spotted! You’re observed by the creature throughout your movement and remain so. If you’re invisible and were hidden from the creature, instead of being observed you’re hidden throughout your movement and remain so."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Move
+      - Secret
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 252
+        page_stop: 252
+
+survival:
+  - name: Sense Direction
+    descr: "Using the stars, the position of the sun, traits of the geography or flora, or the behavior of fauna, you can stay oriented in the wild. Typically, you attempt a Survival check only once per day, but some environments or changes might necessitate rolling more often. The GM determines the DC and how long this activity takes (usually just a minute or so). More unusual locales or those you’re unfamiliar with might require you to have a minimum proficiency rank to Sense Direction. Without a compass, you take a –2 item penalty to checks to Sense Direction.\n<b>Critical Success</b> You get an excellent sense of where you are. If you are in an environment with cardinal directions, you know them exactly.\n<b>Success</b> You gain enough orientation to avoid becoming hopelessly lost. If you are in an environment with cardinal directions, you have a sense of those directions."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Exploration
+      - Secret
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 252
+        page_stop: 252
+
+  - name: Subsist
+    descr: "You try to provide food and shelter for yourself, and possibly others as well, with a standard of living described on page 294. The GM determines the DC based on the nature of the place where you’re trying to Subsist. You might need a minimum proficiency rank to Subsist in particularly strange environments. Unlike most downtime activities, you can Subsist after 8 hours or less of exploration, but if you do, you take a –5 penalty.\n<b>Critical Success</b> You either provide a subsistence living for yourself and one additional creature, or you improve your own food and shelter, granting yourself a comfortable living.\n<b>Success</b> You find enough food and shelter with basic protection from the elements to provide you a subsistence living.\n<b>Failure</b> You’re exposed to the elements and don’t get enough food, becoming fatigued until you attain sufficient food and shelter.\n<b>Critical Failure</b> You attract trouble, eat something you shouldn’t, or otherwise worsen your situation. You take a –2 circumstance penalty to checks to Subsist for 1 week. You don’t find any food at all; if you don’t have any stored up, you’re in danger of starving or dying of thirst if you continue failing.\n\n<b>• Society:</b> in a settlement by finding shelter, scrounging, or begging for food.\n<b>• Survival:</b> in the wild by foraging for food and building shelter."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Downtime
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 240
+        page_stop: 240
+
+  - name: Cover Tracks
+    descr: "You cover your tracks, moving up to half your travel Speed, using the rules on page 479). You don’t need to attempt a Survival check to cover your tracks, but anyone tracking you must succeed at a Survival check against your Survival DC if it is higher than the normal DC to Track.\nIn some cases, you might Cover Tracks in an encounter. In this case, Cover Tracks is a single action and doesn’t have the exploration trait."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Survival
+    requirement: null
+    traits:
+      - Concentrate
+      - Exploration
+      - Move
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 252
+        page_stop: 252
+
+  - name: Track
+    descr: "You follow tracks, moving at up to half your travel Speed, using the rules on page 479). After a successful check to Track, you can continue following the tracks at half your Speed without attempting additional checks for up to 1 hour. In some cases, you might Track in an encounter. In this case, Track is a single action and doesn’t have the exploration trait, but you might need to roll more often because you’re in a tense situation. The GM determines how often you must attempt this check.\nYou attempt your Survival check when you start Tracking, once every hour you continue tracking, and any time something significant changes in the trail. The GM determines the DCs for such checks, depending on the freshness of the trail, the weather, and the type of ground.\n<b>Success</b> You find the trail or continue to follow the one you’re already following.\n<b>Failure</b> You lose the trail but can try again after a 1-hour delay.\n<b>Critical Failure</b> You lose the trail and can’t try again for 24 hours."
+    type: skill action
+    level: null
+    actioncost: null
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Survival
+    requirement: null
+    traits:
+      - Concentrate
+      - Exploration
+      - Move
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 252
+        page_stop: 253
+
+thievery:
+  - name: Palm an Object
+    descr: "Palming a small, unattended object without being noticed requires you to roll a single Thievery check against the Perception DCs of all creatures who are currently observing you. You take the object whether or not you successfully conceal that you did so. You can typically only Palm Objects of negligible Bulk, though the GM might determine otherwise depending on the situation.\n<b>Success</b> The creature does not notice you Palming the Object.\n<b>Failure</b> The creature notices you Palming the Object, and the GM determines the creature’s response."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Manipulate
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 253
+        page_stop: 253
+
+  - name: Steal
+    descr: "You try to take a small object from another creature without being noticed. Typically, you can Steal only an object of negligible Bulk, and you automatically fail if the creature who has the object is in combat or on guard.\nAttempt a Thievery check to determine if you successfully Steal the object. The DC to Steal is usually the Perception DC of the creature wearing the object. This assumes the object is worn but not closely guarded (like a loosely carried pouch filled with coins, or an object within such a pouch). If the object is in a pocket or similarly protected, you take a –5 penalty to your Thievery check. The GM might increase the DC of your check if the nature of the object makes it harder to steal (such as a very small item in a large pack, or a sheet of parchment mixed in with other documents).\nYou might also need to compare your Thievery check result against the Perception DCs of observers other than the person wearing the object. The GM may increase the Perception DCs of these observers if they’re distracted.\n<b>Success</b> You steal the item without the bearer noticing, or an observer doesn’t see you take or attempt to take the item.\n<b>Failure</b> The item’s bearer notices your attempt before you can take the object, or an observer sees you take or attempt to take the item. The GM determines the response of any creature that notices your theft."
+    type: skill action
+    level: null
+    actioncost: 1
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs: null
+    requirement: null
+    traits:
+      - Manipulate
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 253
+        page_stop: 253
+
+  - name: Disable a Device
+    descr: "This action allows you to disarm a trap or another complex device. Often, a device requires numerous successes before becoming disabled, depending on its construction and complexity. Thieves’ tools are helpful and sometimes even required to Disable a Device, as determined by the GM, and sometimes a device requires a higher proficiency rank in Thievery to disable it.\nYour Thievery check result determines how much progress you make.\n<b>Critical Success</b> You disable the device, or you achieve two successes toward disabling a complex device. You leave no trace of your tampering, and you can rearm the device later, if that type of device can be rearmed.\n<b>Success</b> You disable the device, or you achieve one success toward disabling a complex device.\n<b>Critical Failure</b> You trigger the device."
+    type: skill action
+    level: null
+    actioncost: 2
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Thievery
+    requirement: Some devices require you to use thieves’ tools (page 291) when disabling them.
+    traits:
+      - Manipulate
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 253
+        page_stop: 253
+
+  - name: Pick a Lock
+    descr: "Opening a lock without a key is very similar to Disabling a Device, but the DC of the check is determined by the complexity and construction of the lock you are attempting to pick (locks and their DCs are found on page 290). Locks of higher qualities might require multiple successes to unlock, since otherwise even an unskilled burglar could easily crack the lock by attempting the check until they rolled a natural 20. If you lack the proper tools, the GM might let you used improvised picks, which are treated as shoddy tools, depending on the specifics of the lock.\n<b>Critical Success</b> You unlock the lock, or you achieve two successes toward opening a complex lock. You leave no trace of your tampering.\n<b>Success</b> You open the lock, or you achieve one success toward opening a complex lock.\n<b>Critical Failure</b> You break your tools. Fixing them requires using Crafting to Repair them or else swapping in replacement picks (costing 3 sp, or 3 gp for infiltrator thieves’ tools)."
+    type: skill action
+    level: null
+    actioncost: 2
+    frequency: null
+    cost: null
+    trigger: null
+    prereqs:
+      - type: proficiency
+        descr: trained in Thievery
+    requirement: You have thieves’ tools (page 291).
+    traits:
+      - Manipulate
+    lectures: null
+    source:
+      - abbr: CRB
+        page_start: 253
+        page_stop: 253
