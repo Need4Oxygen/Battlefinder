@@ -3,6 +3,13 @@
   ability_boost_choices:
     - int
     - wis
+  lectures:
+    - target: religion
+      prof: trained
+    - target: scribling lore
+      prof: trained
+  free_feats:
+    - Student of the Canon
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -15,6 +22,13 @@
   ability_boost_choices:
     - str
     - dex
+  lectures:
+    - target: acrobatics
+      prof: trained
+    - target: circus lore
+      prof: trained
+  free_feats:
+    - Steady Balance
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -27,6 +41,13 @@
   ability_boost_choices:
     - wis
     - cha
+  lectures:
+    - target: nature
+      prof: trained
+    - target: terrain lore
+      prof: trained
+  free_feats:
+    - Train Animal
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -39,6 +60,13 @@
   ability_boost_choices:
     - str
     - int
+  lectures:
+    - target: crafting
+      prof: trained
+    - target: guild lore
+      prof: trained
+  free_feats:
+    - Specialty Crafting
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -51,6 +79,13 @@
   ability_boost_choices:
     - dex
     - cha
+  lectures:
+    - target: crafting
+      prof: trained
+    - target: art lore
+      prof: trained
+  free_feats:
+    - Specialty Crafting
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -63,6 +98,13 @@
   ability_boost_choices:
     - con
     - cha
+  lectures:
+    - target: diplomacy
+      prof: trained
+    - target: alcohol lore
+      prof: trained
+  free_feats:
+    - Hobnobber
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -75,6 +117,13 @@
   ability_boost_choices:
     - int
     - cha
+  lectures:
+    - target: diplomacy
+      prof: trained
+    - target: legal lore
+      prof: trained
+  free_feats:
+    - Group Impression
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -87,6 +136,13 @@
   ability_boost_choices:
     - str
     - wis
+  lectures:
+    - target: survival
+      prof: trained
+    - target: legal lore
+      prof: trained
+  free_feats:
+    - Experienced Tracker
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -99,6 +155,13 @@
   ability_boost_choices:
     - int
     - cha
+  lectures:
+    - target: deception
+      prof: trained
+    - target: underworld lore
+      prof: trained
+  free_feats:
+    - Charming Liar
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -111,6 +174,13 @@
   ability_boost_choices:
     - dex
     - int
+  lectures:
+    - target: stealth
+      prof: trained
+    - target: underworld lore
+      prof: trained
+  free_feats:
+    - Experienced Smuggler
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -123,6 +193,13 @@
   ability_boost_choices:
     - int
     - wis
+  lectures:
+    - target: society
+      prof: trained
+    - target: underworld lore
+      prof: trained
+  free_feats:
+    - Streetwise
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -135,6 +212,13 @@
   ability_boost_choices:
     - int
     - cha
+  lectures:
+    - target: society
+      prof: trained
+    - target: city lore
+      prof: trained
+  free_feats:
+    - Multilingual
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -147,6 +231,13 @@
   ability_boost_choices:
     - dex
     - cha
+  lectures:
+    - target: performance
+      prof: trained
+    - target: theater lore
+      prof: trained
+  free_feats:
+    - Fascinating Performance
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -159,6 +250,13 @@
   ability_boost_choices:
     - con
     - wis
+  lectures:
+    - target: athletics
+      prof: trained
+    - target: farming lore
+      prof: trained
+  free_feats:
+    - Assurance with Athletics
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -171,6 +269,13 @@
   ability_boost_choices:
     - con
     - wis
+  lectures:
+    - target: medicine
+      prof: trained
+    - target: warfare lore
+      prof: trained
+  free_feats:
+    - Battle Medicine
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -183,6 +288,13 @@
   ability_boost_choices:
     - int
     - cha
+  lectures:
+    - target: occultism
+      prof: trained
+    - target: fortune-telling lore
+      prof: trained
+  free_feats:
+    - Oddity Identification
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -195,6 +307,13 @@
   ability_boost_choices:
     - dex
     - cha
+  lectures:
+    - target: deception
+      prof: trained
+    - target: game lore
+      prof: trained
+  free_feats:
+    - Lie to Me
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -207,6 +326,13 @@
   ability_boost_choices:
     - str
     - cha
+  lectures:
+    - target: performance
+      prof: trained
+    - target: gladiatorial lore
+      prof: trained
+  free_feats:
+    - Impressive Performance
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -219,6 +345,13 @@
   ability_boost_choices:
     - str
     - cha
+  lectures:
+    - target: intimidation
+      prof: trained
+    - target: legal lore
+      prof: trained
+  free_feats:
+    - Quick Coercion
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -231,6 +364,13 @@
   ability_boost_choices:
     - con
     - wis
+  lectures:
+    - target: nature
+      prof: trained
+    - target: herbalism lore
+      prof: trained
+  free_feats:
+    - Natural Medicine
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -238,11 +378,37 @@
       page_start: 62
       page_stop: 62
 
-- name: Hermit
+- name: Hermit (Nature)
   descr: "In an isolated place—like a cave, remote oasis, or secluded mansion—you lived a life of solitude. Adventuring might represent your first foray out among other people in some time. This might be a welcome reprieve from solitude or an unwanted change, but in either case, you’re likely still rough around the edges.\n\nChoose two ability boosts. One must be to Constitution or Intelligence, and one is a free ability boost.\n\nYou're trained in your choice of either the Nature or Occultism skill, as well as a Lore skill related to the terrain you lived in as a hermit (such as Cave Lore or Desert Lore). You gain the Dubious Knowledge skill feat."
   ability_boost_choices:
     - con
     - int
+  lectures:
+    - target: nature
+      prof: trained
+    - target: terrain lore
+      prof: trained
+  free_feats:
+    - Dubious Knowledge
+  community_licenced: false
+  is_specific_to_adv: false
+  source:
+    - abbr: CRB
+      page_start: 62
+      page_stop: 62
+
+- name: Hermit (Occultism)
+  descr: "In an isolated place—like a cave, remote oasis, or secluded mansion—you lived a life of solitude. Adventuring might represent your first foray out among other people in some time. This might be a welcome reprieve from solitude or an unwanted change, but in either case, you’re likely still rough around the edges.\n\nChoose two ability boosts. One must be to Constitution or Intelligence, and one is a free ability boost.\n\nYou're trained in your choice of either the Nature or Occultism skill, as well as a Lore skill related to the terrain you lived in as a hermit (such as Cave Lore or Desert Lore). You gain the Dubious Knowledge skill feat."
+  ability_boost_choices:
+    - con
+    - int
+  lectures:
+    - target: occultism
+      prof: trained
+    - target: terrain lore
+      prof: trained
+  free_feats:
+    - Dubious Knowledge
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -255,6 +421,13 @@
   ability_boost_choices:
     - dex
     - wis
+  lectures:
+    - target: survival
+      prof: trained
+    - target: tanning lore
+      prof: trained
+  free_feats:
+    - Survey Wildlife
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -267,6 +440,13 @@
   ability_boost_choices:
     - str
     - con
+  lectures:
+    - target: athletics
+      prof: trained
+    - target: labor lore
+      prof: trained
+  free_feats:
+    - Hefty Hauler
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -274,11 +454,37 @@
       page_start: 62
       page_stop: 63
 
-- name: Martial Disciple
+- name: Martial Disciple (Acrobatics)
   descr: "You dedicated yourself to intense training and rigorous study to become a great warrior. The school you attended might have been a traditionalist monastery, an elite military academy, or the local branch of a prestigious mercenary organization.\n\nChoose two ability boosts. One must be to Strength or Dexterity, and one is a free ability boost.\n\nYou're trained in your choice of either the Acrobatics or Athletics skill, as well as the Warfare Lore skill. You gain a skill feat: Cat Fall if you chose Acrobatics or Quick Jump if you chose Athletics."
   ability_boost_choices:
     - str
     - dex
+  lectures:
+    - target: acrobatics
+      prof: trained
+    - target: warfare lore
+      prof: trained
+  free_feats:
+    - Cat Fall
+  community_licenced: false
+  is_specific_to_adv: false
+  source:
+    - abbr: CRB
+      page_start: 63
+      page_stop: 63
+
+- name: Martial Disciple (Athletics)
+  descr: "You dedicated yourself to intense training and rigorous study to become a great warrior. The school you attended might have been a traditionalist monastery, an elite military academy, or the local branch of a prestigious mercenary organization.\n\nChoose two ability boosts. One must be to Strength or Dexterity, and one is a free ability boost.\n\nYou're trained in your choice of either the Acrobatics or Athletics skill, as well as the Warfare Lore skill. You gain a skill feat: Cat Fall if you chose Acrobatics or Quick Jump if you chose Athletics."
+  ability_boost_choices:
+    - str
+    - dex
+  lectures:
+    - target: athletics
+      prof: trained
+    - target: warfare lore
+      prof: trained
+  free_feats:
+    - Quick Jump
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -291,6 +497,13 @@
   ability_boost_choices:
     - int
     - cha
+  lectures:
+    - target: diplomacy
+      prof: trained
+    - target: mercantile lore
+      prof: trained
+  free_feats:
+    - Bargain Hunter
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -303,6 +516,13 @@
   ability_boost_choices:
     - str
     - wis
+  lectures:
+    - target: survival
+      prof: trained
+    - target: mining lore
+      prof: trained
+  free_feats:
+    - Terrain Expertise
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -310,11 +530,37 @@
       page_start: 63
       page_stop: 63
 
-- name: Noble
+- name: Noble (Genealogy)
   descr: "To the common folk, the life of a noble seems one of idyllic luxury, but growing up as a noble or member of the aspiring gentry, you know the reality: a noble’s lot is obligation and intrigue. Whether you seek to escape your duties by adventuring or to better your station, you have traded silks and pageantry for an adventurer’s life.\n\nChoose two ability boosts. One must be to Intelligence or Charisma, and one is a free ability boost.\n\nYou're trained in the Society skill and the Genealogy Lore skill or Heraldy Lore skill. You gain the Courtly Graces skill feat."
   ability_boost_choices:
     - int
     - cha
+  lectures:
+    - target: society
+      prof: trained
+    - target: genealogy lore
+      prof: trained
+  free_feats:
+    - Courtly Graces
+  community_licenced: false
+  is_specific_to_adv: false
+  source:
+    - abbr: CRB
+      page_start: 63
+      page_stop: 63
+
+- name: Noble (Heraldy)
+  descr: "To the common folk, the life of a noble seems one of idyllic luxury, but growing up as a noble or member of the aspiring gentry, you know the reality: a noble’s lot is obligation and intrigue. Whether you seek to escape your duties by adventuring or to better your station, you have traded silks and pageantry for an adventurer’s life.\n\nChoose two ability boosts. One must be to Intelligence or Charisma, and one is a free ability boost.\n\nYou're trained in the Society skill and the Genealogy Lore skill or Heraldy Lore skill. You gain the Courtly Graces skill feat."
+  ability_boost_choices:
+    - int
+    - cha
+  lectures:
+    - target: society
+      prof: trained
+    - target: heraldy lore
+      prof: trained
+  free_feats:
+    - Courtly Graces
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -327,6 +573,13 @@
   ability_boost_choices:
     - con
     - wis
+  lectures:
+    - target: survival
+      prof: trained
+    - target: terrain lore
+      prof: trained
+  free_feats:
+    - Assurance with Survival
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -339,6 +592,13 @@
   ability_boost_choices:
     - str
     - con
+  lectures:
+    - target: stealth
+      prof: trained
+    - target: underworld lore
+      prof: trained
+  free_feats:
+    - Experienced Smuggler
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -351,6 +611,13 @@
   ability_boost_choices:
     - str
     - dex
+  lectures:
+    - target: athletics
+      prof: trained
+    - target: sailing lore
+      prof: trained
+  free_feats:
+    - Underwater Marauder
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -358,11 +625,75 @@
       page_start: 63
       page_stop: 63
 
-- name: Scholar
-  descr: "You have a knack for learning, and sequestered yourself from the outside world to learn all you could. You read about so many wondrous places and things in your books, and always dreamed about one day seeing the real things. Eventually, that curiosity led you to leave your studies and become an adventurer.\n\nChoose two ability boosts. One must be to Intelligence or Wisdom, and one is a free ability boost.\n\nYou're trained in your choice of the Arcana, Nature, Occultism, or Religion skill, and the Academia Lore skill. You gain the Assurance skill feat."
+- name: Scholar (Arcana)
+  descr: "You have a knack for learning, and sequestered yourself from the outside world to learn all you could. You read about so many wondrous places and things in your books, and always dreamed about one day seeing the real things. Eventually, that curiosity led you to leave your studies and become an adventurer.\n\nChoose two ability boosts. One must be to Intelligence or Wisdom, and one is a free ability boost.\n\nYou’re trained in your choice of the Arcana, Nature, Occultism, or Religion skill, and gain the Assurance skill feat in your chosen skill. You’re also trained in the Academia Lore skill."
   ability_boost_choices:
     - int
     - wis
+  lectures:
+    - target: arcana
+      prof: trained
+    - target: academia lore
+      prof: trained
+  free_feats:
+    - Assurance with Arcana
+  community_licenced: false
+  is_specific_to_adv: false
+  source:
+    - abbr: CRB
+      page_start: 63
+      page_stop: 64
+
+- name: Scholar (Nature)
+  descr: "You have a knack for learning, and sequestered yourself from the outside world to learn all you could. You read about so many wondrous places and things in your books, and always dreamed about one day seeing the real things. Eventually, that curiosity led you to leave your studies and become an adventurer.\n\nChoose two ability boosts. One must be to Intelligence or Wisdom, and one is a free ability boost.\n\nYou’re trained in your choice of the Arcana, Nature, Occultism, or Religion skill, and gain the Assurance skill feat in your chosen skill. You’re also trained in the Academia Lore skill."
+  ability_boost_choices:
+    - int
+    - wis
+  lectures:
+    - target: nature
+      prof: trained
+    - target: academia lore
+      prof: trained
+  free_feats:
+    - Assurance with Nature
+  community_licenced: false
+  is_specific_to_adv: false
+  source:
+    - abbr: CRB
+      page_start: 63
+      page_stop: 64
+
+- name: Scholar (Occultism)
+  descr: "You have a knack for learning, and sequestered yourself from the outside world to learn all you could. You read about so many wondrous places and things in your books, and always dreamed about one day seeing the real things. Eventually, that curiosity led you to leave your studies and become an adventurer.\n\nChoose two ability boosts. One must be to Intelligence or Wisdom, and one is a free ability boost.\n\nYou’re trained in your choice of the Arcana, Nature, Occultism, or Religion skill, and gain the Assurance skill feat in your chosen skill. You’re also trained in the Academia Lore skill."
+  ability_boost_choices:
+    - int
+    - wis
+  lectures:
+    - target: occultism
+      prof: trained
+    - target: academia lore
+      prof: trained
+  free_feats:
+    - Assurance with Occultism
+  community_licenced: false
+  is_specific_to_adv: false
+  source:
+    - abbr: CRB
+      page_start: 63
+      page_stop: 64
+
+- name: Scholar (Religion)
+  descr: "You have a knack for learning, and sequestered yourself from the outside world to learn all you could. You read about so many wondrous places and things in your books, and always dreamed about one day seeing the real things. Eventually, that curiosity led you to leave your studies and become an adventurer.\n\nChoose two ability boosts. One must be to Intelligence or Wisdom, and one is a free ability boost.\n\nYou’re trained in your choice of the Arcana, Nature, Occultism, or Religion skill, and gain the Assurance skill feat in your chosen skill. You’re also trained in the Academia Lore skill."
+  ability_boost_choices:
+    - int
+    - wis
+  lectures:
+    - target: religion
+      prof: trained
+    - target: academia lore
+      prof: trained
+  free_feats:
+    - Assurance with Religion
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -375,6 +706,13 @@
   ability_boost_choices:
     - dex
     - wis
+  lectures:
+    - target: survival
+      prof: trained
+    - target: terrain lore
+      prof: trained
+  free_feats:
+    - Forager
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -387,6 +725,13 @@
   ability_boost_choices:
     - dex
     - con
+  lectures:
+    - target: thievery
+      prof: trained
+    - target: city lore
+      prof: trained
+  free_feats:
+    - Pickpocket
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -399,6 +744,13 @@
   ability_boost_choices:
     - dex
     - int
+  lectures:
+    - target: crafting
+      prof: trained
+    - target: engineering lore
+      prof: trained
+  free_feats:
+    - Specialty Crafting
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -411,6 +763,13 @@
   ability_boost_choices:
     - str
     - con
+  lectures:
+    - target: intimidation
+      prof: trained
+    - target: warfare lore
+      prof: trained
+  free_feats:
+    - Intimidating Glare
   community_licenced: false
   is_specific_to_adv: false
   source:
@@ -423,6 +782,13 @@
   ability_boost_choices:
     - dex
     - int
+  lectures:
+    - target: diplomacy
+      prof: trained
+    - target: heraldy lore
+      prof: trained
+  free_feats:
+    - Hobnobber
   community_licenced: false
   is_specific_to_adv: true
   source:
@@ -435,6 +801,13 @@
   ability_boost_choices:
     - str
     - cha
+  lectures:
+    - target: intimidation
+      prof: trained
+    - target: warfare lore
+      prof: trained
+  free_feats:
+    - Intimidating Glare
   community_licenced: false
   is_specific_to_adv: true
   source:
@@ -447,6 +820,13 @@
   ability_boost_choices:
     - con
     - wis
+  lectures:
+    - target: diplomacy
+      prof: trained
+    - target: scribling lore
+      prof: trained
+  free_feats:
+    - Group Impression
   community_licenced: false
   is_specific_to_adv: true
   source:
@@ -459,6 +839,13 @@
   ability_boost_choices:
     - con
     - int
+  lectures:
+    - target: survival
+      prof: trained
+    - target: hunting lore
+      prof: trained
+  free_feats:
+    - Forager
   community_licenced: false
   is_specific_to_adv: true
   source:
@@ -471,6 +858,13 @@
   ability_boost_choices:
     - str
     - wis
+  lectures:
+    - target: nature
+      prof: trained
+    - target: mercantile lore
+      prof: trained
+  free_feats:
+    - Train Animal
   community_licenced: false
   is_specific_to_adv: true
   source:
@@ -483,6 +877,13 @@
   ability_boost_choices:
     - str
     - cha
+  lectures:
+    - target: intimidation
+      prof: trained
+    - target: dragon lore
+      prof: trained
+  free_feats:
+    - Intimidating Glare
   community_licenced: false
   is_specific_to_adv: true
   source:
@@ -491,10 +892,17 @@
       page_stop: 4
 
 - name: Emancipated
-  descr: "Until recently, the nation of [PI] was part of the larger nation of [PI], where the church of Asmodeus is the law and slaves are traded freely in the open market. You had the poor fortune to be born into slavery, but the good luck to have grown up in the city of [PI]. When [PI] seceded from [PI], the leaders of this new nation freed all slaves, and you’ve wasted no time in exploring and establishing your new life. How and why you’ve come to [PI] is left to you to decide—but the fact that you feel empowered to determine your own destiny continues to drive you!\n\n The chance to become an adventurer has excited you for some time, as you hope to build a new life for yourself as a hero rewarded with fame and fortune. Joining the [PI] is a great opportunity to find a group to adventure with.\n\nChoose two ability boosts. One must be to Dexterity or Charisma, and one is a free ability boost.\n\nYou're trained in the Stealth skill and the [PI] Lore skill. You gain the Terrain Stalker skill feat."
+  descr: "Until recently, the nation of Ravounel was part of the larger nation of Cheliax, where the church of Asmodeus is the law and slaves are traded freely in the open market. You had the poor fortune to be born into slavery, but the good luck to have grown up in the city of Kintargo. When Ravounel seceded from Cheliax, the leaders of this new nation freed all slaves, and you’ve wasted no time in exploring and establishing your new life. How and why you’ve come to Breachill is left to you to decide—but the fact that you feel empowered to determine your own destiny continues to drive you\n\n The chance to become an adventurer has excited you for some time, as you hope to build a new life for yourself as a hero rewarded with fame and fortune. Joining the Call for Heroes is a great opportunity to find a group to adventure with.\n\n Choose two ability boosts. One must be Dexterity or Charisma, and one is a free ability boost.\n\n You’re trained in the Stealth skill and the Kintargo Lore skill. You gain the Terrain Stalker skill feat."
   ability_boost_choices:
     - dex
     - cha
+  lectures:
+    - target: stealth
+      prof: trained
+    - target: kintargo lore
+      prof: trained
+  free_feats:
+    - Terrain Stalker
   community_licenced: false
   is_specific_to_adv: true
   source:
@@ -503,10 +911,17 @@
       page_stop: 4
 
 - name: Haunting Vision
-  descr: "You’ve been haunted by frightening dreams of fires your whole life. This could be the result of a past, neardeath experience with fire or it might have no obvious source that you know of. Recently, you stumbled upon an image, story, or other omen featuring the dragon god of destruction, [PI], and you were struck with an unnerving sense of deja vu—you’ve come to think that the draconic deity might have something to do with your dreams, and as such have been studying all you can about the god. Your visions have bolstered your faith as well; even if you don’t worship a specific deity, you have a deep passion for matters of faith.\n\n Your latest dream, for the first time, had enough details to identify its setting—in this last dream, you saw the town of [PI] burning. You’ve decided to join the [PI] hoping to save the town you fear might burn to the ground soon.\n\nChoose two ability boosts. One must be to Constitution or Wisdom, and one is a free ability boost.\n\nYou're trained in the Religion skill and the [PI] Lore skill. You gain the Student of the Canon skill feat."
+  descr: "You’ve been haunted by frightening dreams of fires your whole life. This could be the result of a past, near-death experience with fire or it might have no obvious source that you know of. Recently, you stumbled upon an image, story, or other omen featuring the dragon god of destruction, Dahak, and you were struck with an unnerving sense of deja vu—you’ve come to think that the draconic deity might have something to do with your dreams, and as such have been studying all you can about the god. Your visions have bolstered your faith as well; even if you don’t worship a specific deity, you have a deep passion for matters of faith.\n\n Your latest dream, for the first time, had enough details to identify its setting—in this last dream, you saw the town of Breachill burning.\n\n You’ve decided to join the Call for Heroes hoping to save the town you fear might burn to the ground soon.\n\n Choose two ability boosts. One must be Constitution or Wisdom, and one is a free ability boost.\n\nYou’re trained in the Religion skill and the Dahak Lore skill. You gain the Student of the Canon skill feat."
   ability_boost_choices:
     - con
     - wis
+  lectures:
+    - target: religion
+      prof: trained
+    - target: dahak lore
+      prof: trained
+  free_feats:
+    - Student of the Canon
   community_licenced: false
   is_specific_to_adv: true
   source:
@@ -515,10 +930,17 @@
       page_stop: 5
 
 - name: Hellknight Historian
-  descr: "The various [PI] intrigue you, whether you seek to become one of their number yourself, wish to oppose their goals at every turn, or are merely inspired by or curious to learn more about them. You’ve heard that when the [PI] abandoned [PI], they left behind the deed to the castle so anyone brave enough to explore the ruins and the defenses no doubt left behind would be rewarded with ownership of the abandoned fortress.\n\n You decided to join the [PI] to hoping to gain an opportunity to explore [PI].\n\nChoose two ability boosts. One must be to Strength or Intelligence, and one is a free ability boost.\n\nYou're trained in the Society skill and the Architecture Lore skill. You gain the Courtly Graces skill feat."
+  descr: "The various Hellknight Orders intrigue you, whether you seek to become one of their number yourself, wish to oppose their goals at every turn, or are merely inspired by or curious to learn more about them. You’ve heard that when the Order of the Nail abandoned Citadel Altaerein, they left behind the deed to the castle so anyone brave enough to explore the ruins and the defenses no doubt left behind would be rewarded with ownership of the abandoned fortress.\n\n You decided to join the Call for Heroes to hoping to gain an opportunity to explore Citadel Altaerein.\n\n Choose two ability boosts. One must be Strength or Intelligence, and one is a free ability boost.\n\n You’re trained in the Society skill and the Architecture Lore skill. You gain the Courtly Graces skill feat."
   ability_boost_choices:
     - str
     - int
+  lectures:
+    - target: society
+      prof: trained
+    - target: architecture lore
+      prof: trained
+  free_feats:
+    - Courtly Graces
   community_licenced: false
   is_specific_to_adv: true
   source:
@@ -527,10 +949,17 @@
       page_stop: 5
 
 - name: Local Scion
-  descr: "You’re from [PI] and have lived there most, if not all, of your life. You might be the son or daughter of a wellknown local adventuring family, or a family with a storied tradition of military or other martial service. You likely also have some sort of skill with your hands, as the people of [PI] are very self-sufficient.\n\n The [PI] is one of your hometown’s most iconic traditions, and you want to attend so you can prove your own merits to the council—beyond simply those of your family’s name.\n\nChoose two ability boosts. One must be to Constitution or Charisma, and one is a free ability boost.\n\nYou're trained in the Crafting skill and the [PI] Lore skill. You gain the Specialty Crafting skill feat."
+  descr: "You’re from Breachill and have lived there most, if not all, of your life. You might be the son or daughter of a well-known local adventuring family, or a family with a storied tradition of military or other martial service. You likely also have some sort of skill with your hands, as the people of Breachill are very self-sufficient.\n\n The Call for Heroes is one of your hometown’s most iconic traditions, and you want to attend so you can prove your own merits to the council—beyond simply those of your family’s name.\n\n Choose two ability boosts. One must be Constitution or Charisma, and one is a free ability boost.\n\n You’re trained in the Crafting skill and the Breachill Lore skill. You gain the Specialty Crafting skill feat."
   ability_boost_choices:
     - con
     - cha
+  lectures:
+    - target: crafting
+      prof: trained
+    - target: breachill lore
+      prof: trained
+  free_feats:
+    - Specialty Crafting
   community_licenced: false
   is_specific_to_adv: true
   source:
@@ -539,10 +968,17 @@
       page_stop: 5
 
 - name: Out-of-Towner
-  descr: "You’ve never been to [PI], nor do you have roots in the town, but as chance has it you find yourself visiting. You might be here traveling with a friend, visiting an old acquaintance, or merely here to see a new part of the world. Before coming to town, though, you spent many years living with an ancestry other than your own, and your diverse childhood has left you with an open mind and a curious nature.\n\n You’re excited to meet new people and cultures, and answering the [PI] seems to be an interesting way to do so.\n\nChoose two ability boosts. One must be to Constitution or Intelligence, and one is a free ability boost.\n\nYou're trained in the Diplomacy skill and a Lore skill thematically associated with the members of the ancestry you grew up with: Dwarf, Elf, Gnome, Goblin, or Halfling. You gain the Hobnobber skill feat."
+  descr: "You’ve never been to Breachill, nor do you have roots in the town, but as chance has it you find yourself visiting. You might be here traveling with a friend, visiting an old acquaintance, or merely here to see a new part of the world. Before coming to town, though, you spent many years living with an ancestry other than your own, and your diverse childhood has left you with an open mind and a curious nature.\n\n You’re excited to meet new people and cultures, and answering the Call for Heroes seems to be an interesting way to do so.\n\n Choose two ability boosts. One must be Constitution or Intelligence, and one is a free ability boost.\n\n You’re trained in the Diplomacy skill and one of the following Lore skills thematically associated with the members of the ancestry you grew up with: Dwarf, Elf, Gnome, Goblin, or Halfling. You gain the Hobnobber skill feat."
   ability_boost_choices:
     - con
     - int
+  lectures:
+    - target: diplomacy
+      prof: trained
+    - target: ancestry lore
+      prof: trained
+  free_feats:
+    - Hobnobber
   community_licenced: false
   is_specific_to_adv: true
   source:
@@ -551,10 +987,17 @@
       page_stop: 5
 
 - name: Reputation Seeker
-  descr: "You’re likely from [PI], but unlike the Local Scion, your family has no notable legacy in the area. You might not even have much of a family at all to call your own, and could be an orphan. You’ve seen so many people make names for themselves that you set out on your own and spent some time abroad in the jungles or deserts of Garund or in the upper reaches of the [PI]—regions that proved too dangerous to remain in for long on your own. You returned home with more caution and knowledge of the world beyond [PI]’s borders, but still determined to win fame.\n\n You’ve decided that joining an adventuring group would be the best way to secure aid in your quest to build your own reputation, and are attending the [PI] to find such allies.\n\nChoose two ability boosts. One must be to Dexterity or Intelligence, and one is a free ability boost.\n\nYou're trained in the Survival skill and the [PI], Desert, or Jungle Lore skill. You gain the Terrain Expertise skill feat (underground if you have [PI] Lore, desert if you have Desert Lore, or forest if you have Jungle Lore)."
+  descr: "You’re likely from Breachill, but unlike the Local Scion, your family has no notable legacy in the area. You might not even have much of a family at all to call your own, and could be an orphan. You’ve seen so many people make names for themselves that you set out on your own and spent some time abroad in the jungles or deserts of Garund or in the upper reaches of the Darklands—regions that proved too dangerous to remain in for long on your own. You returned home with more caution and knowledge of the world beyond Breachill’s borders, but still determined to win fame.\n\n You’ve decided that joining an adventuring group would be the best way to secure aid in your quest to build your own reputation, and are attending the Call for Heroes to find such allies.\n\n Choose two ability boosts. One must be Dexterity or Intelligence, and one is a free ability boost.\n\n You’re trained in the Survival skill and the Darklands, Desert, or Jungle Lore skill. You gain the Terrain Expertise skill feat (underground if you have Darklands Lore, desert if you have Desert Lore, or forest if you have Jungle Lore)."
   ability_boost_choices:
     - dex
     - int
+  lectures:
+    - target: survival
+      prof: trained
+    - target: setting lore
+      prof: trained
+  free_feats:
+    - Terrain Expertise
   community_licenced: false
   is_specific_to_adv: true
   source:
@@ -563,10 +1006,17 @@
       page_stop: 5
 
 - name: Returning Descendant
-  descr: "You aren’t from [PI] yourself—you might not even be from [PI] or [PI] at all. You’ve lived a hard life, in any event. You have often had to make tough decisions, and have developed a knack for understanding how things work (and the best way to take them apart) that has helped you support yourself. Recently you discovered that an ancestor was from the town of [PI] and had a modest career as an adventurer. You can’t help but wonder if you would have had an easier life if you’d grown up there instead, and have decided to seek out this small town to learn more about it.\n\nYou’ve decided to respond to the [PI] to follow in your ancestor’s footsteps, either to honor their memory or accomplish the great deeds they did not.\n\nChoose two ability boosts. One must be to Dexterity or Wisdom, and one is a free ability boost.\n\nYou're trained in the Thievery skill and the Engineering Lore skill. You gain the Pickpocket skill feat."
+  descr: "You aren’t from Breachill yourself—you might not even be from Isger or Avistan at all. You’ve lived a hard life, in any event. You have often had to make tough decisions, and have developed a knack for understanding how things work (and the best way to take them apart) that has helped you support yourself. Recently you discovered that an ancestor was from the town of Breachill and had a modest career as an adventurer. You can’t help but wonder if you would have had an easier life if you’d grown up there instead, and have decided to seek out this small town to learn more about it.\n\n You’ve decided to respond to the Call for Heroes to follow in your ancestor’s footsteps, either to honor their memory or accomplish the great deeds they did not.\n\n Choose two ability boosts. One must be Dexterity or Wisdom, and one is a free ability boost.\n\n You’re trained in the Thievery skill and the Engineering Lore skill. You gain the Pickpocket skill feat."
   ability_boost_choices:
     - dex
     - wis
+  lectures:
+    - target: thievery
+      prof: trained
+    - target: engineering lore
+      prof: trained
+  free_feats:
+    - Pickpocket
   community_licenced: false
   is_specific_to_adv: true
   source:
@@ -575,10 +1025,17 @@
       page_stop: 6
 
 - name: Truth Seeker
-  descr: "Whether you are a local or from out of town, you’ve heard rumors that [PI]’s past contains a hidden secret. Perhaps you’ve heard strange rumors that the town’s founder, [PI], was not the hero everyone touts, or maybe your grandmother heard stories from her own grandmother that contradict the town’s accepted narrative of its establishment. In the pursuit of the truth, you’ve learned to navigate the tangles of politics, and to never take anyone’s word at face value.\n\n You plan to join the [PI] so that you can make yourself known to the council, or perhaps even ingratiating yourself to them, so you can seek the truth and eventually uncover [PI]’s secrets!\n\nChoose two ability boosts. One must be to Strength or Wisdom, and one is a free ability boost.\n\nYou're trained in the Deception skill and the Politics Lore skill. You gain the Lie to Me skill feat."
+  descr: "Whether you are a local or from out of town, you’ve heard rumors that Breachill’s past contains a hidden secret. Perhaps you’ve heard strange rumors that the town’s founder, Lamond Breachton, was not the hero everyone touts, or maybe your grandmother heard stories from her own grandmother that contradict the town’s accepted narrative of its establishment. In the pursuit of the truth, you’ve learned to navigate the tangles of politics, and to never take anyone’s word at face value.\n\n You plan to join the Call for Heroes so that you can make yourself known to the council, or perhaps even ingratiating yourself to them, so you can seek the truth and eventually uncover Breachill’s secrets!\n\n Choose two ability boosts. One must be Strength or Wisdom, and one is a free ability boost.\n\n You’re trained in the Deception skill and the Politics Lore skill. You gain the Lie to Me skill feat."
   ability_boost_choices:
     - str
     - wis
+  lectures:
+    - target: deception
+      prof: trained
+    - target: politics lore
+      prof: trained
+  free_feats:
+    - Lie to Me
   community_licenced: true
   is_specific_to_adv: true
   source:

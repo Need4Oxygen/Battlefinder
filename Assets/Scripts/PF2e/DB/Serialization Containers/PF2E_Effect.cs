@@ -3,12 +3,14 @@ using System.Collections.Generic;
 
 public class PF2E_Effect
 {
+
     public string id; // Inherited from effect
     public int value; // Inherited from effect, like Clumsy 2 for example
     public string duration;
     public string type; // Circumstance, Status, Item, Untyped
     public string target; // HP, AC, Perception...
     public string[] triggers;
+
 }
 
 // Type

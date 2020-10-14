@@ -31,12 +31,12 @@ public class PF2E_Armor
 
     public List<string> traits { get; set; }
 
-    public List<PF2E_Source> source { get; set; }
+    public List<Source> source { get; set; }
 }
 
 public class PF2E_ArmorGroup
 {
     public string name { get; set; }
     public string descr { get; set; }
-    public List<PF2E_Source> source { get; set; }
+    public List<Source> source { get; set; }
 }

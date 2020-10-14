@@ -135,16 +135,16 @@ public class PF2E_PlayerData
 
 
     //---------------------------------------------------CLASS DC--------------------------------------------------
-    private List<PF2E_Lecture> classDC_lectures = new List<PF2E_Lecture>();
+    private List<Lecture> classDC_lectures = new List<Lecture>();
 
-    public E_PF2E_Proficiency classDC { get { return PF2E_DataBase.Prof_FindMax(classDC_lectures); } }
+    public E_PF2E_Proficiency classDC { get { return DB.Prof_FindMax(classDC_lectures); } }
 
     public void ClassDC_ClearFrom(string from)
     {
         Lectures_ClearFrom(classDC_lectures, from);
     }
 
-    public bool ClassDC_Train(PF2E_Lecture lecture)
+    public bool ClassDC_Train(Lecture lecture)
     {
         if (lecture.target == "classDC")
         {
@@ -399,11 +399,11 @@ public class PF2E_PlayerData
 
     ///<summary> Train skill via lecture, saving a copy in an APIC object. </summary>
     ///<returns> True if it could be trained. False if it was already trained. </returns>
-    public bool Skills_Train(PF2E_Lecture lecture)
+    public bool Skills_Train(Lecture lecture)
     {
         if (skills_dic.ContainsKey(lecture.target))
         {
-            if (skills_dic[lecture.target].profEnum < PF2E_DataBase.Prof_Abbr2Enum(lecture.proficiency))
+            if (skills_dic[lecture.target].profEnum < DB.Prof_Abbr2Enum(lecture.proficiency))
             {
                 skills_dic[lecture.target].lectures.Add(lecture);
                 if (lecture.target == "lore 1")
@@ -427,7 +427,7 @@ public class PF2E_PlayerData
     // ---------------------------------------------------PERCEPTION--------------------------------------------------
     private PF2E_APIC perception;
 
-    public E_PF2E_Proficiency perception_prof { get { return PF2E_DataBase.Prof_FindMax(perception.lectures); } }
+    public E_PF2E_Proficiency perception_prof { get { return DB.Prof_FindMax(perception.lectures); } }
 
     public int perception_score { get { return perception.score; } }
 
@@ -441,7 +441,7 @@ public class PF2E_PlayerData
         Lectures_ClearFrom(perception.lectures, from);
     }
 
-    public bool Perception_Train(PF2E_Lecture lecture)
+    public bool Perception_Train(Lecture lecture)
     {
         if (lecture.target == "perception")
         {
@@ -495,11 +495,11 @@ public class PF2E_PlayerData
 
     ///<summary> Train save via lecture, saving a copy in an APIC object. </summary>
     ///<returns> True if it could be trained. False if it was already trained. </returns>
-    public bool Saves_Train(PF2E_Lecture lecture)
+    public bool Saves_Train(Lecture lecture)
     {
         if (saves_dic.ContainsKey(lecture.target))
         {
-            if (saves_dic[lecture.target].profEnum < PF2E_DataBase.Prof_Abbr2Enum(lecture.proficiency))
+            if (saves_dic[lecture.target].profEnum < DB.Prof_Abbr2Enum(lecture.proficiency))
             {
                 saves_dic[lecture.target].lectures.Add(lecture);
                 return true;
@@ -519,28 +519,28 @@ public class PF2E_PlayerData
 
 
     // ---------------------------------------------------WEAPONS/ARMOR PROFICIENCIES--------------------------------------------------
-    private Dictionary<string, List<PF2E_Lecture>> weaponArmor_lectures = new Dictionary<string, List<PF2E_Lecture>>
+    private Dictionary<string, List<Lecture>> weaponArmor_lectures = new Dictionary<string, List<Lecture>>
     {
-        {"unarmed", new List<PF2E_Lecture>() },
-        {"simpleWeapons", new List<PF2E_Lecture>() },
-        {"martialWeapons", new List<PF2E_Lecture>() },
-        {"advancedWeapons", new List<PF2E_Lecture>() },
+        {"unarmed", new List<Lecture>() },
+        {"simpleWeapons", new List<Lecture>() },
+        {"martialWeapons", new List<Lecture>() },
+        {"advancedWeapons", new List<Lecture>() },
 
-        {"unarmored", new List<PF2E_Lecture>() },
-        {"lightArmor", new List<PF2E_Lecture>() },
-        {"mediumArmor", new List<PF2E_Lecture>() },
-        {"heavyArmor", new List<PF2E_Lecture>() },
+        {"unarmored", new List<Lecture>() },
+        {"lightArmor", new List<Lecture>() },
+        {"mediumArmor", new List<Lecture>() },
+        {"heavyArmor", new List<Lecture>() },
     };
 
-    public E_PF2E_Proficiency unarmed { get { return PF2E_DataBase.Prof_FindMax(weaponArmor_lectures["unarmed"]); } }
-    public E_PF2E_Proficiency simpleWeapons { get { return PF2E_DataBase.Prof_FindMax(weaponArmor_lectures["simpleWeapons"]); } }
-    public E_PF2E_Proficiency martialWeapons { get { return PF2E_DataBase.Prof_FindMax(weaponArmor_lectures["martialWeapons"]); } }
-    public E_PF2E_Proficiency advancedWeapons { get { return PF2E_DataBase.Prof_FindMax(weaponArmor_lectures["advancedWeapons"]); } }
+    public E_PF2E_Proficiency unarmed { get { return DB.Prof_FindMax(weaponArmor_lectures["unarmed"]); } }
+    public E_PF2E_Proficiency simpleWeapons { get { return DB.Prof_FindMax(weaponArmor_lectures["simpleWeapons"]); } }
+    public E_PF2E_Proficiency martialWeapons { get { return DB.Prof_FindMax(weaponArmor_lectures["martialWeapons"]); } }
+    public E_PF2E_Proficiency advancedWeapons { get { return DB.Prof_FindMax(weaponArmor_lectures["advancedWeapons"]); } }
 
-    public E_PF2E_Proficiency unarmored { get { return PF2E_DataBase.Prof_FindMax(weaponArmor_lectures["unarmored"]); } }
-    public E_PF2E_Proficiency lightArmor { get { return PF2E_DataBase.Prof_FindMax(weaponArmor_lectures["lightArmor"]); } }
-    public E_PF2E_Proficiency mediumArmor { get { return PF2E_DataBase.Prof_FindMax(weaponArmor_lectures["mediumArmor"]); } }
-    public E_PF2E_Proficiency heavyArmor { get { return PF2E_DataBase.Prof_FindMax(weaponArmor_lectures["heavyArmor"]); } }
+    public E_PF2E_Proficiency unarmored { get { return DB.Prof_FindMax(weaponArmor_lectures["unarmored"]); } }
+    public E_PF2E_Proficiency lightArmor { get { return DB.Prof_FindMax(weaponArmor_lectures["lightArmor"]); } }
+    public E_PF2E_Proficiency mediumArmor { get { return DB.Prof_FindMax(weaponArmor_lectures["mediumArmor"]); } }
+    public E_PF2E_Proficiency heavyArmor { get { return DB.Prof_FindMax(weaponArmor_lectures["heavyArmor"]); } }
 
     public void WeaponArmor_ClearFrom(string from)
     {
@@ -548,7 +548,7 @@ public class PF2E_PlayerData
             Lectures_ClearFrom(item.Value, from);
     }
 
-    public bool WeaponArmor_Train(PF2E_Lecture lecture)
+    public bool WeaponArmor_Train(Lecture lecture)
     {
         if (weaponArmor_lectures.ContainsKey(lecture.target))
         {
@@ -569,9 +569,9 @@ public class PF2E_PlayerData
 
     private void SetAncestry(string newAncestry)
     {
-        if (PF2E_DataBase.Ancestries.ContainsKey(newAncestry))
+        if (DB.Ancestries.ContainsKey(newAncestry))
         {
-            PF2E_Ancestry ancestry = PF2E_DataBase.Ancestries[newAncestry];
+            PF2E_Ancestry ancestry = DB.Ancestries[newAncestry];
             _ancestry = newAncestry;
 
             hp_ancestry = ancestry.hitPoints;
@@ -597,9 +597,9 @@ public class PF2E_PlayerData
 
     private void SetBackground(string newBackground)
     {
-        if (PF2E_DataBase.Backgrounds.ContainsKey(newBackground))
+        if (DB.Backgrounds.ContainsKey(newBackground))
         {
-            PF2E_Background background = PF2E_DataBase.Backgrounds[newBackground];
+            Background background = DB.Backgrounds[newBackground];
             _background = newBackground;
 
             Skills_ClearFrom("background");
@@ -618,9 +618,9 @@ public class PF2E_PlayerData
 
     private void SetClass(string newClass)
     {
-        if (PF2E_DataBase.Classes.ContainsKey(newClass))
+        if (DB.Classes.ContainsKey(newClass))
         {
-            PF2E_Class classObj = PF2E_DataBase.Classes[newClass];
+            Class classObj = DB.Classes[newClass];
             _class = newClass;
 
             hp_class = classObj.hitPoints;
@@ -722,9 +722,9 @@ public class PF2E_PlayerData
 
 
     // ---------------------------------------------------LECTURES MANAGEMENT--------------------------------------------------
-    private List<PF2E_Lecture> lectures_unused = new List<PF2E_Lecture>();
+    private List<Lecture> lectures_unused = new List<Lecture>();
 
-    public bool Lectures_Allocate(PF2E_Lecture lecture)
+    public bool Lectures_Allocate(Lecture lecture)
     {
         bool trainSuccessful = false;
 
@@ -754,7 +754,7 @@ public class PF2E_PlayerData
         return trainSuccessful;
     }
 
-    public void Lectures_ClearFrom(List<PF2E_Lecture> lectures, string from)
+    public void Lectures_ClearFrom(List<Lecture> lectures, string from)
     {
         lectures.RemoveAll(item => item.from == from || item.from == "");
     }

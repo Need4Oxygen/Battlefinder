@@ -8,7 +8,7 @@ public class PF2E_APIC
     public PF2E_PlayerData playerData = null;
 
     private E_PF2E_Ability abilityEnum = E_PF2E_Ability.None;
-    public List<PF2E_Lecture> lectures = new List<PF2E_Lecture>();
+    public List<Lecture> lectures = new List<Lecture>();
     private List<PF2E_Effect> itemModifiers = new List<PF2E_Effect>();
     private List<PF2E_Effect> circModifiers = new List<PF2E_Effect>();
 
@@ -101,9 +101,9 @@ public class PF2E_APIC
         get { return 10 + profScore; }
     }
 
-    public E_PF2E_Proficiency profEnum { get { return PF2E_DataBase.Prof_FindMax(lectures); } }
+    public E_PF2E_Proficiency profEnum { get { return DB.Prof_FindMax(lectures); } }
 
-    public string profLetter { get { return PF2E_DataBase.Prof_FindMaxColoredAbbr(lectures); } }
+    public string profLetter { get { return DB.Prof_FindMaxColoredAbbr(lectures); } }
 
     public int itemScore = 0;
 
