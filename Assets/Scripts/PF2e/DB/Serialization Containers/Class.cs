@@ -52,7 +52,7 @@ namespace Pathfinder2e.Containers
 
     public sealed class ClassProgression
     {
-        public int name { get; set; }
+        public string name { get; set; }
         public List<ClassStage> progression { get; set; }
     }
 
