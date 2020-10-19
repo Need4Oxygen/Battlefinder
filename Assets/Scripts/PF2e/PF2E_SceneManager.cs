@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Pathfinder2e.GameData;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,7 +12,7 @@ public class PF2E_SceneManager : MonoBehaviour
     [SerializeField] private WallTool wallTool = null;
     [SerializeField] private FloorTool floorTool = null;
 
-    public PF2E_BoardDetails currentBoardMaps = null;
+    public BoardDetails currentBoardMaps = null;
 
     void Awake()
     {
@@ -20,10 +21,10 @@ public class PF2E_SceneManager : MonoBehaviour
 
         if (PF2E_Globals.CurrentBoard != null)
         {
-            currentBoardMaps = Json.Deserialize<PF2E_BoardDetails>(PF2E_Globals.CurrentBoard.boardMaps);
+            currentBoardMaps = Json.Deserialize<BoardDetails>(PF2E_Globals.CurrentBoard.boardMaps);
 
             if (currentBoardMaps == null)
-                currentBoardMaps = new PF2E_BoardDetails();
+                currentBoardMaps = new BoardDetails();
 
             // Apply found maps
             string[] strArray = null;

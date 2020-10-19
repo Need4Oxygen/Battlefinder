@@ -32,11 +32,6 @@ public enum E_PF2E_Skill
     Survival, Thievery
 }
 
-public enum E_PF2E_Proficiency
-{
-    None, Default, Untrained, Trained, Expert, Master, Lengend
-}
-
 public enum E_PF2E_ABC
 {
     None, Default, Ancestry, Background, Class

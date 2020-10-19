@@ -1,8 +1,13 @@
 using UnityEngine;
 
-public class PF2E_EnemyData
+namespace Pathfinder2e.GameData
 {
 
-    public string guid;
+    public class EnemyData
+    {
+
+        public string guid;
+
+    }
 
 }

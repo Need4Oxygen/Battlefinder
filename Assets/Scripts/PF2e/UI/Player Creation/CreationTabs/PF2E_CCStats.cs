@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Pathfinder2e;
+using Pathfinder2e.Player;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
 
 public class PF2E_CCStats : MonoBehaviour
 {
     [Serializable] class SkillsWrapper { public List<Image> list = null; } // For Abilities serialization
 
     [SerializeField] private GameObject statsPanel = null;
-    [SerializeField] private PF2E_CharacterCreation creation = null;
+    [SerializeField] private CharacterCreation creation = null;
 
     [Header("Health")]
     [SerializeField] private TMP_Text HPCurrentText = null;
@@ -107,7 +110,7 @@ public class PF2E_CCStats : MonoBehaviour
         willAPIC.Refresh(creation.currentPlayer.Saves_Get("will"));
 
         // ClassDC
-        classDCText.text = PF2E_DataBase.Prof_Enum2ColoredAbbr(creation.currentPlayer.classDC);
+        classDCText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.classDC);
 
         // Size
         sizeText.text = creation.currentPlayer.size;
@@ -122,16 +125,16 @@ public class PF2E_CCStats : MonoBehaviour
         wealthInput.SetTextWithoutNotify(creation.currentPlayer.Wealth_Formated());
 
         // Abilities
-        Color active = Globals.Theme["text_2"]; Color unactive = Globals.Theme["background_1"];
-        int[,] abl_map = creation.currentPlayer.Abl_GetMap();
-        for (int i = 0; i < abl_map.GetLength(0); i++)
-            for (int j = 0; j < abl_map.GetLength(1); j++)
-                if (abl_map[i, j] > 0)
-                    ablMapImages[j].list[i].color = active;
-                else if (abl_map[i, j] < 0)
-                    ablMapImages[j].list[i].color = Color.red;
-                else
-                    ablMapImages[j].list[i].color = unactive;
+        // Color active = Globals.Theme["text_2"]; Color unactive = Globals.Theme["background_1"];
+        // int[,] abl_map = creation.currentPlayer.Abl_MapGet();
+        // for (int i = 0; i < abl_map.GetLength(0); i++)
+        //     for (int j = 0; j < abl_map.GetLength(1); j++)
+        //         if (abl_map[i, j] > 0)
+        //             ablMapImages[j].list[i].color = active;
+        //         else if (abl_map[i, j] < 0)
+        //             ablMapImages[j].list[i].color = Color.red;
+        //         else
+        //             ablMapImages[j].list[i].color = unactive;
 
         // Skills
         var list = creation.currentPlayer.Skills_GetAllAsList();
@@ -166,15 +169,15 @@ public class PF2E_CCStats : MonoBehaviour
         speedBurrowText.text = creation.currentPlayer.speed_burrow.ToString();
 
         // Weapon & Armor Profs
-        unarmoredText.text = PF2E_DataBase.Prof_Enum2ColoredAbbr(creation.currentPlayer.unarmored);
-        lightArmorText.text = PF2E_DataBase.Prof_Enum2ColoredAbbr(creation.currentPlayer.lightArmor);
-        mediumArmorText.text = PF2E_DataBase.Prof_Enum2ColoredAbbr(creation.currentPlayer.mediumArmor);
-        heavyArmorText.text = PF2E_DataBase.Prof_Enum2ColoredAbbr(creation.currentPlayer.heavyArmor);
+        unarmoredText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.unarmored);
+        lightArmorText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.lightArmor);
+        mediumArmorText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.mediumArmor);
+        heavyArmorText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.heavyArmor);
 
-        unarmedText.text = PF2E_DataBase.Prof_Enum2ColoredAbbr(creation.currentPlayer.unarmed);
-        simpleWeaponText.text = PF2E_DataBase.Prof_Enum2ColoredAbbr(creation.currentPlayer.simpleWeapons);
-        martialWeaponText.text = PF2E_DataBase.Prof_Enum2ColoredAbbr(creation.currentPlayer.martialWeapons);
-        advancedWeaponText.text = PF2E_DataBase.Prof_Enum2ColoredAbbr(creation.currentPlayer.advancedWeapons);
+        unarmedText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.unarmed);
+        simpleWeaponText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.simpleWeapons);
+        martialWeaponText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.martialWeapons);
+        advancedWeaponText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.advancedWeapons);
     }
 
     #endregion

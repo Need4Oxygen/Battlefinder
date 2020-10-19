@@ -1,13 +1,17 @@
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Pathfinder2e;
+using Pathfinder2e.Player;
+using Pathfinder2e.Containers;
 
 public class PF2E_ABCSelector : MonoBehaviour
 {
     [HideInInspector] public E_PF2E_ABC currentlyDisplaying;
 
-    [SerializeField] PF2E_CharacterCreation characterCreation = null;
+    [SerializeField] CharacterCreation characterCreation = null;
 
     [Header("ABC")]
     [SerializeField] CanvasGroup ABCSelectionPanel = null;
@@ -177,15 +181,15 @@ public class PF2E_ABCSelector : MonoBehaviour
         tabList.Add(newTabScript);
 
         ButtonText currentAncestryButton = null;
-        foreach (var item in PF2E_DataBase.Ancestries)
+        foreach (var item in DB.Ancestries)
         {
             Transform newButton = Instantiate(button, Vector3.zero, Quaternion.identity, buttonContainer);
             ButtonText newButtonScript = newButton.GetComponent<ButtonText>();
-            newButtonScript.text.text = item.Value.name;
-            newButtonScript.button.onClick.AddListener(() => SelectAncestry(item.Value.name, newButtonScript));
+            newButtonScript.text.text = item.name;
+            newButtonScript.button.onClick.AddListener(() => SelectAncestry(item.name, newButtonScript));
             buttonList.Add(newButtonScript);
 
-            if (item.Value.name == currentAncestry)
+            if (item.name == currentAncestry)
                 currentAncestryButton = newButtonScript;
         }
 
@@ -198,26 +202,26 @@ public class PF2E_ABCSelector : MonoBehaviour
     private void SelectAncestry(string ancestryName, ButtonText button)
     {
         Select(button);
-        PF2E_Ancestry ancestry = PF2E_DataBase.Ancestries[ancestryName];
+        Ancestry ancestry = DB.Ancestries.Find(ctx => ctx.name == ancestryName);
         selectedAncestry = ancestryName;
         int count, total = 0;
 
         ancestryTitle.text = ancestry.name;
-        ancestryDescription.text = ancestry.description;
-        ancestryHitPoints.text = ancestry.hitPoints.ToString();
+        ancestryDescription.text = ancestry.descr;
+        ancestryHitPoints.text = ancestry.hp.ToString();
         ancestrySpeed.text = ancestry.speed.ToString();
-        ancestrySize.text = PF2E_DataBase.Size_Abbr2Full(ancestry.size);
+        ancestrySize.text = DB.Size_Abbr2Full(ancestry.size);
 
 
         // Ability Boosts
         string abilityBoostString = "";
-        count = 0; total = ancestry.abilityBoosts.Count;
-        foreach (var item in ancestry.abilityBoosts)
+        count = 0; total = ancestry.abl_boosts.Count;
+        foreach (var item in ancestry.abl_boosts)
         {
             if (count < total - 1)
-                abilityBoostString += PF2E_DataBase.Abl_Abbr2Full(item.Value.target) + ", ";
+                abilityBoostString += DB.Abl_Abbr2Full(item) + ", ";
             else
-                abilityBoostString += PF2E_DataBase.Abl_Abbr2Full(item.Value.target);
+                abilityBoostString += DB.Abl_Abbr2Full(item);
             count++;
         }
         ancestryAbilityBoosts.text = abilityBoostString;
@@ -225,13 +229,13 @@ public class PF2E_ABCSelector : MonoBehaviour
 
         // Ability Flaws
         string abilityFlawsString = "";
-        count = 0; total = ancestry.abilityFlaws.Count;
-        foreach (var item in ancestry.abilityFlaws)
+        count = 0; total = ancestry.abl_flaw.Count;
+        foreach (var item in ancestry.abl_flaw)
         {
             if (count < total - 1)
-                abilityFlawsString += PF2E_DataBase.Abl_Abbr2Full(item.Value.target) + ", ";
+                abilityFlawsString += DB.Abl_Abbr2Full(item) + ", ";
             else
-                abilityFlawsString += PF2E_DataBase.Abl_Abbr2Full(item.Value.target);
+                abilityFlawsString += DB.Abl_Abbr2Full(item);
             count++;
         }
         ancestryAbilityFlaws.text = abilityFlawsString;
@@ -239,8 +243,8 @@ public class PF2E_ABCSelector : MonoBehaviour
 
         // Languages
         string languagesString = "";
-        for (int i = 0; i < ancestry.languages.Length; i++)
-            if (i < ancestry.languages.Length - 1)
+        for (int i = 0; i < ancestry.languages.Count; i++)
+            if (i < ancestry.languages.Count - 1)
                 languagesString += ancestry.languages[i] + ", ";
             else
                 languagesString += ancestry.languages[i];
@@ -253,9 +257,9 @@ public class PF2E_ABCSelector : MonoBehaviour
         foreach (var item in ancestry.traits)
         {
             if (count < total - 1)
-                ancestryTraitsString += item.Value.name + ", ";
+                ancestryTraitsString += item + ", ";
             else
-                ancestryTraitsString += item.Value.name;
+                ancestryTraitsString += item;
             count++;
         }
         ancestryTraits.text = ancestryTraitsString;
@@ -263,11 +267,11 @@ public class PF2E_ABCSelector : MonoBehaviour
 
         // Ancestry features
         string ancestryFeaturesString = "";
-        for (int i = 0; i < ancestry.ancestryFeatures.Length; i++)
-            if (i < ancestry.ancestryFeatures.Length - 1)
-                ancestryFeaturesString += ancestry.ancestryFeatures[i] + ", ";
+        for (int i = 0; i < ancestry.ancestry_features.Count; i++)
+            if (i < ancestry.ancestry_features.Count - 1)
+                ancestryFeaturesString += ancestry.ancestry_features[i] + ", ";
             else
-                ancestryFeaturesString += ancestry.ancestryFeatures[i];
+                ancestryFeaturesString += ancestry.ancestry_features[i];
         ancestryFeatures.text = ancestryFeaturesString;
     }
 
@@ -285,15 +289,15 @@ public class PF2E_ABCSelector : MonoBehaviour
         tabList.Add(newTabScript);
 
         ButtonText currentBackgroundButton = null;
-        foreach (var item in PF2E_DataBase.Backgrounds)
+        foreach (var item in DB.Backgrounds)
         {
             Transform newButton = Instantiate(button, Vector3.zero, Quaternion.identity, buttonContainer);
             ButtonText newButtonScript = newButton.GetComponent<ButtonText>();
-            newButtonScript.text.text = item.Value.name;
-            newButtonScript.button.onClick.AddListener(() => SelectBackground(item.Value.name, newButtonScript));
+            newButtonScript.text.text = item.name;
+            newButtonScript.button.onClick.AddListener(() => SelectBackground(item.name, newButtonScript));
             buttonList.Add(newButtonScript);
 
-            if (item.Value.name == currentBackground)
+            if (item.name == currentBackground)
                 currentBackgroundButton = newButtonScript;
         }
 
@@ -306,36 +310,47 @@ public class PF2E_ABCSelector : MonoBehaviour
     private void SelectBackground(string backgroundName, ButtonText button)
     {
         Select(button);
-        PF2E_Background background = PF2E_DataBase.Backgrounds[backgroundName];
+        Background background = DB.Backgrounds.Find(ctx => ctx.name == backgroundName);
         selectedBackground = backgroundName;
 
         backgroundTitle.text = background.name;
-        backgroundDescription.text = background.description;
+        backgroundDescription.text = background.descr;
 
         string backgroundAbilityBoostString = "";
-        int count = 0; int total = background.abilityBoostsChoice.Count;
-        foreach (var item in background.abilityBoostsChoice)
+        int count = 0; int total = background.abl_choices.Count;
+        foreach (var item in background.abl_choices)
         {
             if (count < total - 1)
-                backgroundAbilityBoostString += PF2E_DataBase.Abl_Abbr2Full(item.Value.target) + ", ";
+                backgroundAbilityBoostString += DB.Abl_Abbr2Full(item) + ", ";
             else
-                backgroundAbilityBoostString += PF2E_DataBase.Abl_Abbr2Full(item.Value.target);
+                backgroundAbilityBoostString += DB.Abl_Abbr2Full(item);
             count++;
         }
         backgroundAbilityBoosts.text = backgroundAbilityBoostString;
 
+        // Extract feats to display in a string
         string backgroundSkillTrainString = "";
-        List<string> sNames = new List<string>();
+        List<string> skillNames = new List<string>();
         foreach (var item in background.lectures)
-            sNames.Add(item.Value.name);
-        for (int i = 0; i < sNames.Count; i++)
-            if (i < sNames.Count - 1)
-                backgroundSkillTrainString += sNames[i] + ", ";
+            skillNames.Add(item.target);
+        for (int i = 0; i < skillNames.Count; i++)
+            if (i < skillNames.Count - 1)
+                backgroundSkillTrainString += skillNames[i] + ", ";
             else
-                backgroundSkillTrainString += sNames[i];
+                backgroundSkillTrainString += skillNames[i];
         backgroundSkillTrain.text = backgroundSkillTrainString;
 
-        backgroundSkillFeat.text = background.skillFeat;
+        // Extract feats to display in a string
+        string backgroundSkillFeatsString = "";
+        List<string> skillFeats = new List<string>();
+        foreach (var item in background.free_skill_feats)
+            skillFeats.Add(item);
+        for (int i = 0; i < skillFeats.Count; i++)
+            if (i < skillFeats.Count - 1)
+                backgroundSkillFeatsString += skillFeats[i] + ", ";
+            else
+                backgroundSkillFeatsString += skillFeats[i];
+        backgroundSkillFeat.text = backgroundSkillFeatsString;
     }
 
     //------------------------------------CLASSES------------------------------------
@@ -351,15 +366,15 @@ public class PF2E_ABCSelector : MonoBehaviour
         tabList.Add(newTabScript);
 
         ButtonText currentClassButton = null;
-        foreach (var item in PF2E_DataBase.Classes)
+        foreach (var item in DB.Classes)
         {
             Transform newButton = Instantiate(button, Vector3.zero, Quaternion.identity, buttonContainer);
             ButtonText newButtonScript = newButton.GetComponent<ButtonText>();
-            newButtonScript.text.text = item.Value.name;
-            newButtonScript.button.onClick.AddListener(() => SelectClass(item.Value.name, newButtonScript));
+            newButtonScript.text.text = item.name;
+            newButtonScript.button.onClick.AddListener(() => SelectClass(item.name, newButtonScript));
             buttonList.Add(newButtonScript);
 
-            if (item.Value.name == currentClass)
+            if (item.name == currentClass)
                 currentClassButton = newButtonScript;
         }
 
@@ -372,73 +387,97 @@ public class PF2E_ABCSelector : MonoBehaviour
     private void SelectClass(string className, ButtonText button)
     {
         Select(button);
-        PF2E_Class classObj = PF2E_DataBase.Classes[className];
+        Class classObj = DB.Classes.Find(ctx => ctx.name == className);
         selectedClass = className;
 
         classTitle.text = classObj.name;
-        classDescription.text = classObj.description;
-        classHitPoints.text = classObj.hitPoints.ToString();
-        classSkillTrain.text = classObj.freeSkillTrainsString;
+        classDescription.text = classObj.descr;
+        classHitPoints.text = classObj.hp.ToString();
+        classSkillTrain.text = ClassSkillTrainStringProcessor(classObj.skills);
 
-        if (className == "Fighter")
-            classKeyAbility.text = "Strength or Dexterity";
-        else
-        {
-            List<string> keyAbilities = new List<string>();
-            foreach (var item in classObj.keyAbility)
-                keyAbilities.Add(item.Value.target);
-            classKeyAbility.text = PF2E_DataBase.Abl_Abbr2Full(keyAbilities[0]);
-        }
+        string classKeyAbilityString = "";
+        for (int i = 0; i < classObj.key_ability_choices.Count; i++)
+            if (i == 0)
+                classKeyAbilityString = DB.Abl_Abbr2Full(classObj.key_ability_choices[i]);
+            else
+                classKeyAbilityString += $" or {DB.Abl_Abbr2Full(classObj.key_ability_choices[i])}";
+        classKeyAbility.text = classKeyAbilityString;
 
         classUnarmed.text = "U"; classUnarmored.text = "U"; classPerception.text = "U";
         classSimpleWeapons.text = "U"; classLightArmor.text = "U"; classFortitude.text = "U";
         classMartialWeapons.text = "U"; classMediumArmor.text = "U"; classReflex.text = "U";
         classAdvancedWeapons.text = "U"; classHeavyArmor.text = "U"; classWill.text = "U";
 
-        foreach (var item in classObj.lectures)
-        {
-            switch (item.Value.target)
+        List<Lecture> lectures = new List<Lecture>(classObj.attacks.Concat<Lecture>(classObj.defenses).Concat<Lecture>(classObj.perception).Concat<Lecture>(classObj.saves));
+        foreach (var item in lectures)
+            switch (item.target)
             {
                 case "unarmed":
-                    classUnarmed.text = item.Value.proficiency;
+                    classUnarmed.text = item.prof;
                     break;
                 case "simpleWeapons":
-                    classSimpleWeapons.text = item.Value.proficiency;
+                    classSimpleWeapons.text = item.prof;
                     break;
                 case "martialWeapons":
-                    classMartialWeapons.text = item.Value.proficiency;
+                    classMartialWeapons.text = item.prof;
                     break;
                 case "advancedWeapons":
-                    classAdvancedWeapons.text = item.Value.proficiency;
+                    classAdvancedWeapons.text = item.prof;
                     break;
                 case "unarmored":
-                    classUnarmored.text = item.Value.proficiency;
+                    classUnarmored.text = item.prof;
                     break;
                 case "lightArmor":
-                    classLightArmor.text = item.Value.proficiency;
+                    classLightArmor.text = item.prof;
                     break;
                 case "mediumArmor":
-                    classMediumArmor.text = item.Value.proficiency;
+                    classMediumArmor.text = item.prof;
                     break;
                 case "heavyArmor":
-                    classHeavyArmor.text = item.Value.proficiency;
+                    classHeavyArmor.text = item.prof;
                     break;
                 case "perception":
-                    classPerception.text = item.Value.proficiency;
+                    classPerception.text = item.prof;
                     break;
                 case "fortitude":
-                    classFortitude.text = item.Value.proficiency;
+                    classFortitude.text = item.prof;
                     break;
                 case "reflex":
-                    classReflex.text = item.Value.proficiency;
+                    classReflex.text = item.prof;
                     break;
                 case "will":
-                    classWill.text = item.Value.proficiency;
+                    classWill.text = item.prof;
                     break;
                 default:
                     break;
             }
-        }
     }
+
+    static string ClassSkillTrainStringProcessor(List<Lecture> lectures)
+    {
+        string str = "";
+
+        foreach (var item in lectures)
+        {
+            if (DB.SkillNames.Contains(item.target))
+                str += $"{DB.ToUpperFirst(item.prof)} in {DB.ToUpperFirst(item.target)}. ";
+            else if (item.target.Substring(0, 8) == "a number")
+                str += $"{DB.ToUpperFirst(item.prof)} in a number of additional skills equal to {new string(item.target.Where(char.IsDigit).ToArray())} plus your intelligence modifier. ";
+            else if (item.target == "your choice of acrobatics or athletics") // for fighter choice of acrobatics or athletics
+                str += $"{DB.ToUpperFirst(item.prof)} in your choice of acrobatics or athletics";
+            else if (item.target == "one skill determined by your choice of deity") // for champion cleric deity
+                str += $"{DB.ToUpperFirst(item.prof)} in one skill determined by your choice of deity";
+            else if (item.target == "one skill determined by your druidic order") // for druid order
+                str += $"{DB.ToUpperFirst(item.prof)} in one skill determined by your druidic order";
+            else if (item.target == "one or more skills determined by your rogue's racket") // for rogues racket
+                str += $"{DB.ToUpperFirst(item.prof)} in one or more skills determined by your rogue's racket";
+            else if (item.target == "one or more skills determined by your bloodline") // for sorcerer bloodline
+                str += $"{DB.ToUpperFirst(item.prof)} in one or more skills determined by your bloodline";
+        }
+
+        return str;
+    }
+
+
 
 }

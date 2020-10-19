@@ -1,13 +1,14 @@
 using System.Collections.Generic;
 using System.IO;
+using Pathfinder2e.GameData;
 using UnityEngine;
 
 public abstract class PF2E_Globals : MonoBehaviour
 {
     public static Dictionary<string, string> CampaignIDs = new Dictionary<string, string>();
     public static string CurrentCampaignID = null;
-    public static PF2E_CampaignData CurrentCampaign = null;
-    public static PF2E_BoardData CurrentBoard = null;
+    public static CampaignData CurrentCampaign = null;
+    public static BoardData CurrentBoard = null;
 
     /// <summary>Create a new campaing if one of the same ID doesn't exist. </summary>
     /// <returns>Returns campaign ID. </returns>
@@ -18,7 +19,7 @@ public abstract class PF2E_Globals : MonoBehaviour
         if (CampaignIDs.ContainsKey(newCampaignID))
             return "";
 
-        PF2E_CampaignData newCampaignData = new PF2E_CampaignData(newCampaignID, name);
+        CampaignData newCampaignData = new CampaignData(newCampaignID, name);
         Json.SerializeFile(newCampaignData, newCampaignID, Globals.SystemData.PF2ECampaignsPathSep);
 
         CampaignIDs.Add(newCampaignID, Globals.SystemData.PF2ECampaignsPathSep + newCampaignID);
@@ -35,7 +36,7 @@ public abstract class PF2E_Globals : MonoBehaviour
     public static void LoadCampaign(string campaignID)
     {
         CurrentCampaignID = campaignID;
-        CurrentCampaign = Json.DeserializeFile<PF2E_CampaignData>(Globals.SystemData.PF2ECampaignsPathSep + campaignID);
+        CurrentCampaign = Json.DeserializeFile<CampaignData>(Globals.SystemData.PF2ECampaignsPathSep + campaignID);
     }
 
     public static void SaveCampaign()
@@ -43,7 +44,7 @@ public abstract class PF2E_Globals : MonoBehaviour
         Json.SerializeFile(CurrentCampaign, CurrentCampaignID, Globals.SystemData.PF2ECampaignsPathSep);
     }
 
-    public static void SaveBoard(PF2E_BoardData board)
+    public static void SaveBoard(BoardData board)
     {
         if (CurrentCampaign.boards.ContainsKey(board.guid))
             CurrentCampaign.boards[board.guid] = board;

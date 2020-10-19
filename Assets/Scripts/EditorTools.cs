@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Pathfinder2e;
+using Pathfinder2e.Containers;
 using UnityEditor;
 using UnityEngine;
 
@@ -20,7 +22,7 @@ public class EditorTools : MonoBehaviour
         public List<string> ability_boost_choices { get; set; }
         public string is_comty_use { get; set; }
         public string is_specific_to_adv { get; set; }
-        public List<PF2E_Source> source { get; set; }
+        public List<Source> source { get; set; }
     }
 
     [MenuItem("Tools/Update Backgrounds")]
@@ -44,9 +46,7 @@ public class EditorTools : MonoBehaviour
             newString += $"  ability_boost_choices:{"\n"}";
 
             foreach (var choice in bg.ability_boost_choices)
-            {
-                newString += $"    - {PF2E_DataBase.Abl_Full2Abbr(choice)}{"\n"}";
-            }
+                newString += $"    - {DB.Abl_Full2Abbr(choice)}{"\n"}";
 
             newString += $"  community_licenced: {bg.is_comty_use}{"\n"}";
             newString += $"  is_specific_to_adv: {bg.is_specific_to_adv}{"\n"}";
@@ -74,14 +74,14 @@ public class EditorTools : MonoBehaviour
         public string trigger { get; set; }
         public string req { get; set; }
         public List<string> trait { get; set; }
-        public List<PF2E_Source> source { get; set; }
+        public List<Source> source { get; set; }
     }
 
     public class ActionCategory_Wrapper
     {
         public string name { get; set; }
         public string descr { get; set; }
-        public List<PF2E_Source> source { get; set; }
+        public List<Source> source { get; set; }
     }
 
     [MenuItem("Tools/Update Actions")]
@@ -107,7 +107,7 @@ public class EditorTools : MonoBehaviour
             newActions += $"- name: {a.name}{"\n"}";
             newActions += $"  descr: {"\""}{a.descr}{"\""}{"\n"}";
             newActions += $"  action_category: {a.actioncategory}{"\n"}";
-            newActions += $"  action_cost: {PF2E_DataBase.ActionCost_Full2Abbr(a.actioncost_name)}{"\n"}";
+            newActions += $"  action_cost: {DB.ActionCost_Full2Abbr(a.actioncost_name)}{"\n"}";
             newActions += $"  trigger: {a.trigger}{"\n"}";
             newActions += $"  requirement: {a.req}{"\n"}";
 
@@ -142,7 +142,7 @@ public class EditorTools : MonoBehaviour
         public string name { get; set; }
         public string rarity { get; set; }
         public string speakers { get; set; }
-        public List<PF2E_Source> source { get; set; }
+        public List<Source> source { get; set; }
     }
 
     [MenuItem("Tools/Update Languages")]
@@ -177,7 +177,7 @@ public class EditorTools : MonoBehaviour
     {
         public string name { get; set; }
         public string descr { get; set; }
-        public List<PF2E_Source> source { get; set; }
+        public List<Source> source { get; set; }
     }
 
     [MenuItem("Tools/Update Senses")]
@@ -305,11 +305,11 @@ public class EditorTools : MonoBehaviour
             WriteLectures(ref newString, "skills", c.skills);
             WriteLectures(ref newString, "class_dc_and_spells", c.class_dc_and_spells);
 
-            PF2E_Source source = new PF2E_Source();
+            Source source = new Source();
             source.abbr = "CRB";
             source.page_start = 0;
             source.page_stop = 0;
-            List<PF2E_Source> sourceList = new List<PF2E_Source> { source };
+            List<Source> sourceList = new List<Source> { source };
             WriteSources(ref newString, sourceList);
 
             newString += "\n";
@@ -323,7 +323,7 @@ public class EditorTools : MonoBehaviour
         public string name { get; set; }
         public string descr { get; set; }
         public string short_descr { get; set; }
-        public List<PF2E_Source> source { get; set; }
+        public List<Source> source { get; set; }
     }
 
     [MenuItem("Tools/Update Conditions")]
@@ -383,7 +383,7 @@ public class EditorTools : MonoBehaviour
         public string duration { get; set; }
         public List<string> components { get; set; }
 
-        public List<PF2E_Source> source { get; set; }
+        public List<Source> source { get; set; }
         public string has_been_manually_proofread { get; set; }
     }
 
@@ -473,17 +473,9 @@ public class EditorTools : MonoBehaviour
 
     ///--------------------General Stuff--------------------
 
-    static string DescriptionCleaner(string descr)
-    {
-
-
-
-        return "";
-    }
-
-    static void WriteSources(ref string mainString, List<PF2E_Source> source)
+    static void WriteSources(ref string mainString, List<Source> source)
     { WriteSources(ref mainString, 0, source); }
-    static void WriteSources(ref string mainString, int indent, List<PF2E_Source> source)
+    static void WriteSources(ref string mainString, int indent, List<Source> source)
     {
         string i = "  ";
         for (int j = 0; j < indent; j++)

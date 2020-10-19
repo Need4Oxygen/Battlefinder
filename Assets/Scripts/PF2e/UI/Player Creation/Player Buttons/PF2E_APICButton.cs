@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Pathfinder2e.Player;
 using TMPro;
 using UnityEngine;
 
@@ -16,12 +17,12 @@ public class PF2E_APICButton : MonoBehaviour
     [SerializeField] private TMP_Text tempText = null;
     [SerializeField] private TMP_Text scoreText = null;
 
-    public void Refresh(PF2E_APIC skill)
+    public void Refresh(APIC skill)
     {
         if (lore)
             labelText.text = skill.name;
 
-        profLetterText.text = skill.profLetter;
+        profLetterText.text = skill.prof;
         ablText.text = Process(skill.ablScore);
         profText.text = Process(skill.profScore);
         itemText.text = Process(skill.itemScore);

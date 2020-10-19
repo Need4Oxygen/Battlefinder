@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using Pathfinder2e;
+using Pathfinder2e.Player;
+using Pathfinder2e.Containers;
 
 public class PF2E_AblBoostsSelector : MonoBehaviour
 {
-    [SerializeField] private PF2E_CharacterCreation creation = null;
+    [SerializeField] private CharacterCreation creation = null;
     [SerializeField] private Transform dropdownPrefab = null;
 
     [Header("Initial Abilities Boosts")]
@@ -28,7 +31,7 @@ public class PF2E_AblBoostsSelector : MonoBehaviour
     // [SerializeField] private Button ablBoostsAcceptButotn = null;
     // [SerializeField] private Toggle[] toggles = null;
 
-    private PF2E_InitAblBoostData currentData = null;
+    private AblBoostData currentData = null;
 
     [HideInInspector] public bool isOpen;
 
@@ -47,9 +50,9 @@ public class PF2E_AblBoostsSelector : MonoBehaviour
         isOpen = true;
         StartCoroutine(PanelFader.RescaleAndFade(iAblBoostsPanel.transform, iAblBoostsPanel, 1f, 1f, 0.1f));
 
-        currentData = creation.currentPlayer.Build_Get<PF2E_InitAblBoostData>("Level 1", "Initial Ability Boosts");
-        if (currentData == null)
-            currentData = new PF2E_InitAblBoostData();
+        // currentData = creation.currentPlayer.Build_Get<AblBoostData>("Level 1", "Initial Ability Boosts");
+        // if (currentData == null)
+        //     currentData = new AblBoostData();
 
         AssignInitialAblBoosts();
     }
@@ -81,7 +84,7 @@ public class PF2E_AblBoostsSelector : MonoBehaviour
     //--------------------------------------------ANCESTRIES ASSIGMENT STUFF--------------------------------------------
     private void AssignAncestryBoosts()
     {
-        PF2E_Ancestry ancestry = PF2E_DataBase.Ancestries[creation.currentPlayer.ancestry];
+        Ancestry ancestry = DB.Ancestries.Find(ctx => ctx.name == creation.currentPlayer.ancestry);
         List<string> alreadyBoosted = new List<string>();
         int currentDrop = 0;
 
@@ -94,51 +97,52 @@ public class PF2E_AblBoostsSelector : MonoBehaviour
         ancestryDrops.Clear();
 
         // Set already boosted/flawed abilities so user can't boost them
-        foreach (var item in ancestry.abilityBoosts)
-            alreadyBoosted.Add(AbilityToFullName(item.Value.target));
-        foreach (var item in ancestry.abilityFlaws)
-            alreadyBoosted.Add(AbilityToFullName(item.Value.target));
+        foreach (var item in ancestry.abl_boosts)
+            alreadyBoosted.Add(AbilityToFullName(item));
+        // foreach (var item in ancestry.abl_flaw) // You can use free ancestry boost to nullify ancestry flaw
+        //     alreadyBoosted.Add(AbilityToFullName(item));
 
-        // Instantiate ability boosts drops
+        // Instantiate and lock ability boosts drops
         ancestryBoosts.Clear();
-        foreach (var item in ancestry.abilityBoosts)
+        foreach (var item in ancestry.abl_boosts)
         {
             TMP_Dropdown drop = GenerateDropdown(ancestryContainer);
             ancestryDrops.Add(drop);
             drop.interactable = false;
-            drop.AddOptions(CreateOptionList(new string[] { item.Value.target }));
-            ancestryBoosts.Add(item.Value.target);
+            drop.AddOptions(CreateOptionList(new string[] { item }));
+            ancestryBoosts.Add(item);
             currentDrop++;
         }
 
         // Instantiate free ability boosts drops
-        int freeBoostsCount = ancestry.freeAbilityBoosts.Count;
+        int freeBoostsCount = ancestry.abl_boosts.FindAll(ctx => ctx == "free").Count;
         int counter = 0;
         ancestryFreeAssignsDropdowns.Clear();
-        foreach (var item in ancestry.freeAbilityBoosts)
+        for (int i = 0; i < freeBoostsCount; i++)
         {
             TMP_Dropdown drop = GenerateDropdown(ancestryContainer);
             ancestryDrops.Add(drop);
             ancestryFreeAssignsDropdowns.Add(drop);
 
             // Ready a dropdown
-            List<TMP_Dropdown.OptionData> optionList = CreateOptionList();
-            if (currentData.ancestryFree.Count > 0)
-                optionList.RemoveAll(v => alreadyBoosted.Contains(v.text) && v.text != AbilityToFullName(currentData.ancestryFree[counter]));
-            else
-                optionList.RemoveAll(v => alreadyBoosted.Contains(v.text));
-            drop.AddOptions(optionList);
-            drop.interactable = true;
-            drop.onValueChanged.AddListener((v) => OnValueChangedAncestryDropdown(v));
-            alreadyBoosted.Add(AbilityToFullName(item.Value.target));
+            // List<TMP_Dropdown.OptionData> optionList = CreateOptionList();
+            // if (currentData.ancestryFree.Count > 0)
+            //     optionList.RemoveAll(v => alreadyBoosted.Contains(v.text) && v.text != AbilityToFullName(currentData.ancestryFree[counter]));
+            // else
+            //     optionList.RemoveAll(v => alreadyBoosted.Contains(v.text));
+            // drop.AddOptions(optionList);
+            // drop.interactable = true;
+            // drop.onValueChanged.AddListener((v) => OnValueChangedAncestryDropdown(v));
+            // alreadyBoosted.Add("Free");
 
             // Select dropdown value corresponding to last time
-            string shouldSelect = ""; int shouldSelectIndex = 0;
-            if (counter < currentData.ancestryFree.Count)
-                shouldSelect = currentData.ancestryFree[counter];
-            if (shouldSelect != "" && shouldSelect != "None" && shouldSelect != "Null" && shouldSelect != null)
-                shouldSelectIndex = optionList.FindIndex(0, optionList.Count, i => i.text == AbilityToFullName(shouldSelect));
-            drop.SetValueWithoutNotify(shouldSelectIndex);
+            // string shouldSelect = "";
+            // int shouldSelectIndex = 0;
+            // if (counter < currentData.ancestryFree.Count)
+            //     shouldSelect = currentData.ancestryFree[counter];
+            // if (shouldSelect != "" && shouldSelect != "None" && shouldSelect != "Null" && shouldSelect != null)
+            //     shouldSelectIndex = optionList.FindIndex(0, optionList.Count, i => i.text == AbilityToFullName(shouldSelect));
+            // drop.SetValueWithoutNotify(shouldSelectIndex);
 
             currentDrop++;
             counter++;
@@ -146,18 +150,17 @@ public class PF2E_AblBoostsSelector : MonoBehaviour
 
         // Instantiate ability flaws drops
         ancestryFlaws.Clear();
-        foreach (var item in ancestry.abilityFlaws)
+        foreach (var item in ancestry.abl_flaw)
         {
             TMP_Dropdown drop = GenerateDropdown(ancestryContainer);
             ancestryDrops.Add(drop);
             drop.interactable = false;
-            drop.AddOptions(CreateOptionList(new string[] { item.Value.target }));
+            drop.AddOptions(CreateOptionList(new string[] { item }));
             drop.captionText.color = Color.red;
-            ancestryFlaws.Add(item.Value.target);
+            ancestryFlaws.Add(item);
             currentDrop++;
         }
     }
-
 
     private void OnValueChangedAncestryDropdown(int value)
     {
@@ -166,16 +169,16 @@ public class PF2E_AblBoostsSelector : MonoBehaviour
 
     private void SaveAncestryOptions()
     {
-        currentData.ancestryBoosts.Clear();
-        currentData.ancestryFlaws.Clear();
-        currentData.ancestryFree.Clear();
+        // currentData.ancestryBoosts.Clear();
+        // currentData.ancestryFlaws.Clear();
+        // currentData.ancestryFree.Clear();
 
-        foreach (var item in ancestryBoosts)
-            currentData.ancestryBoosts.Add(item);
-        foreach (var item in ancestryFlaws)
-            currentData.ancestryFlaws.Add(item);
-        foreach (var item in ancestryFreeAssignsDropdowns)
-            currentData.ancestryFree.Add(AbilityToAbbr(item.captionText.text));
+        // foreach (var item in ancestryBoosts)
+        //     currentData.ancestryBoosts.Add(item);
+        // foreach (var item in ancestryFlaws)
+        //     currentData.ancestryFlaws.Add(item);
+        // foreach (var item in ancestryFreeAssignsDropdowns) // User selected free ancestry bonus
+        //     currentData.ancestryFree.Add(AbilityToAbbr(item.captionText.text));
 
         AssignAncestryBoosts();
     }
@@ -184,7 +187,7 @@ public class PF2E_AblBoostsSelector : MonoBehaviour
     //--------------------------------------------BACKGROUND ASSIGMENT STUFF--------------------------------------------
     private void AssignBackgroundBoosts()
     {
-        PF2E_Background background = PF2E_DataBase.Backgrounds[creation.currentPlayer.background];
+        Background background = DB.Backgrounds.Find(ctx => ctx.name == creation.currentPlayer.background);
         List<string> alreadyBoosted = new List<string>();
 
         // Delete previous drops
@@ -196,8 +199,8 @@ public class PF2E_AblBoostsSelector : MonoBehaviour
         backgroundDrops.Clear();
 
         // Set background boosted/flawed abilities so user can't boost them
-        foreach (var item in currentData.backgroundBoosts)
-            alreadyBoosted.Add(AbilityToFullName(item));
+        // foreach (var item in currentData.backgroundBoosts)
+        //     alreadyBoosted.Add(AbilityToFullName(item));
 
         for (int i = 0; i < 2; i++)
         {
@@ -207,14 +210,14 @@ public class PF2E_AblBoostsSelector : MonoBehaviour
             {
                 List<string> choices = new List<string>();
                 choices.Add("None");
-                foreach (var item in background.abilityBoostsChoice)
-                    choices.Add(item.Value.target);
+                foreach (var item in background.abl_choices)
+                    choices.Add(item);
                 optionList = CreateOptionList(choices.ToArray());
-                optionList.RemoveAll(v => alreadyBoosted.Contains(v.text) && v.text != AbilityToFullName(currentData.backgroundBoosts[i]));
+                // optionList.RemoveAll(v => alreadyBoosted.Contains(v.text) && v.text != AbilityToFullName(currentData.backgroundBoosts[i]));
             }
             else
             {
-                optionList.RemoveAll(v => alreadyBoosted.Contains(v.text) && v.text != AbilityToFullName(currentData.backgroundBoosts[i]));
+                // optionList.RemoveAll(v => alreadyBoosted.Contains(v.text) && v.text != AbilityToFullName(currentData.backgroundBoosts[i]));
             }
 
             TMP_Dropdown drop = GenerateDropdown(backgroundContainer);
@@ -224,8 +227,8 @@ public class PF2E_AblBoostsSelector : MonoBehaviour
             drop.AddOptions(optionList);
 
             string shouldSelect = ""; int shouldSelectIndex = 0;
-            if (i < currentData.backgroundBoosts.Count)
-                shouldSelect = currentData.backgroundBoosts[i];
+            // if (i < currentData.backgroundBoosts.Count)
+            //     shouldSelect = currentData.backgroundBoosts[i];
             if (shouldSelect != "" && shouldSelect != "None" && shouldSelect != null)
                 shouldSelectIndex = optionList.FindIndex(0, optionList.Count, v => v.text == AbilityToFullName(shouldSelect));
             drop.SetValueWithoutNotify(shouldSelectIndex);
@@ -239,10 +242,10 @@ public class PF2E_AblBoostsSelector : MonoBehaviour
 
     private void SaveBackgroundOptions()
     {
-        currentData.backgroundBoosts.Clear();
+        // currentData.backgroundBoosts.Clear();
 
-        foreach (var item in backgroundDrops)
-            currentData.backgroundBoosts.Add(AbilityToAbbr(item.captionText.text));
+        // foreach (var item in backgroundDrops)
+        //     currentData.backgroundBoosts.Add(AbilityToAbbr(item.captionText.text));
 
         AssignBackgroundBoosts();
     }
@@ -251,28 +254,28 @@ public class PF2E_AblBoostsSelector : MonoBehaviour
     //--------------------------------------------CLASS ASSIGMENT STUFF--------------------------------------------
     private void AssignClassBoosts()
     {
-        PF2E_Class classObj = PF2E_DataBase.Classes[creation.currentPlayer.class_name];
+        Class classObj = DB.Classes.Find(ctx => ctx.name == creation.currentPlayer.class_name);
 
         // Delete previous drops
         foreach (var item in classDrops)
         {
-            item.gameObject.SetActive(false); // This prevents flickering
+            item.gameObject.SetActive(false);
             Destroy(item.gameObject, 0.001f);
         }
         classDrops.Clear();
 
         List<string> choices = new List<string>();
 
-        if (classObj.keyAbility.Count > 1)
+        if (classObj.key_ability_choices.Count > 1)
         {
             choices.Add("None");
-            foreach (var item in classObj.keyAbility)
-                choices.Add(item.Value.target);
+            foreach (var item in classObj.key_ability_choices)
+                choices.Add(item);
         }
         else
         {
-            foreach (var item in classObj.keyAbility)
-                choices.Add(item.Value.target);
+            foreach (var item in classObj.key_ability_choices)
+                choices.Add(item);
         }
 
         TMP_Dropdown drop = GenerateDropdown(classContainer);
@@ -286,8 +289,8 @@ public class PF2E_AblBoostsSelector : MonoBehaviour
             drop.interactable = false;
 
         string shouldSelect = ""; int shouldSelectIndex = 0;
-        if (currentData.classBoosts.Count > 0)
-            shouldSelect = currentData.classBoosts[0];
+        // if (currentData.classBoosts.Count > 0)
+        //     shouldSelect = currentData.classBoosts[0];
         if (shouldSelect != "" && shouldSelect != "None" && shouldSelect != null)
             shouldSelectIndex = choices.FindIndex(0, choices.Count, v => v == shouldSelect);
         drop.SetValueWithoutNotify(shouldSelectIndex);
@@ -300,10 +303,10 @@ public class PF2E_AblBoostsSelector : MonoBehaviour
 
     private void SaveClassOptions()
     {
-        currentData.classBoosts.Clear();
+        // currentData.classBoosts.Clear();
 
-        foreach (var item in classDrops)
-            currentData.classBoosts.Add(AbilityToAbbr(item.captionText.text));
+        // foreach (var item in classDrops)
+        //     currentData.classBoosts.Add(AbilityToAbbr(item.captionText.text));
 
         AssignClassBoosts();
     }
@@ -321,31 +324,31 @@ public class PF2E_AblBoostsSelector : MonoBehaviour
 
     private void AssignLvl1Boosts()
     {
-        foreach (var item in currentData.lvl1boosts)
-            switch (item)
-            {
-                case "str":
-                    level1Toggles[0].SetIsOnWithoutNotify(true);
-                    break;
-                case "dex":
-                    level1Toggles[2].SetIsOnWithoutNotify(true);
-                    break;
-                case "con":
-                    level1Toggles[4].SetIsOnWithoutNotify(true);
-                    break;
-                case "int":
-                    level1Toggles[1].SetIsOnWithoutNotify(true);
-                    break;
-                case "wis":
-                    level1Toggles[3].SetIsOnWithoutNotify(true);
-                    break;
-                case "cha":
-                    level1Toggles[5].SetIsOnWithoutNotify(true);
-                    break;
+        // foreach (var item in currentData.lvl1boosts)
+        //     switch (item)
+        //     {
+        //         case "str":
+        //             level1Toggles[0].SetIsOnWithoutNotify(true);
+        //             break;
+        //         case "dex":
+        //             level1Toggles[2].SetIsOnWithoutNotify(true);
+        //             break;
+        //         case "con":
+        //             level1Toggles[4].SetIsOnWithoutNotify(true);
+        //             break;
+        //         case "int":
+        //             level1Toggles[1].SetIsOnWithoutNotify(true);
+        //             break;
+        //         case "wis":
+        //             level1Toggles[3].SetIsOnWithoutNotify(true);
+        //             break;
+        //         case "cha":
+        //             level1Toggles[5].SetIsOnWithoutNotify(true);
+        //             break;
 
-                default:
-                    break;
-            }
+        //         default:
+        //             break;
+        //     }
     }
 
     public void OnValueChangedLvl1BoostsToggle(Toggle toggle, bool value)
@@ -360,12 +363,12 @@ public class PF2E_AblBoostsSelector : MonoBehaviour
 
     private void SaveLvl1Boosts()
     {
-        currentData.lvl1boosts.Clear();
+        // currentData.lvl1boosts.Clear();
 
-        List<Toggle> activeToggles = level1Toggles.FindAll(v => v.isOn == true);
+        // List<Toggle> activeToggles = level1Toggles.FindAll(v => v.isOn == true);
 
-        foreach (var item in activeToggles)
-            currentData.lvl1boosts.Add(AbilityToAbbr(item.GetComponentInChildren<TMP_Text>().text));
+        // foreach (var item in activeToggles)
+        //     currentData.lvl1boosts.Add(AbilityToAbbr(item.GetComponentInChildren<TMP_Text>().text));
     }
 
 
@@ -377,7 +380,7 @@ public class PF2E_AblBoostsSelector : MonoBehaviour
         SaveClassOptions();
         SaveLvl1Boosts();
 
-        creation.currentPlayer.Build_Set("Level 1", "Initial Ability Boosts", currentData);
+        // creation.currentPlayer.Build_Set("Level 1", "Initial Ability Boosts", currentData);
         creation.RefreshPlayerIntoPanel();
         creation.SavePlayer();
         ClosePlayerInitialAblBoostsPanel();
@@ -429,7 +432,7 @@ public class PF2E_AblBoostsSelector : MonoBehaviour
     private string AbilityToAbbr(string ablFullName)
     {
         if (ablFullName != "" && ablFullName != "None")
-            return PF2E_DataBase.Abl_Full2Abbr(ablFullName);
+            return DB.Abl_Full2Abbr(ablFullName);
         else
             return "";
     }
@@ -437,7 +440,7 @@ public class PF2E_AblBoostsSelector : MonoBehaviour
     private string AbilityToFullName(string ablAbbr)
     {
         if (ablAbbr != "" && ablAbbr != "None")
-            return PF2E_DataBase.Abl_Abbr2Full(ablAbbr);
+            return DB.Abl_Abbr2Full(ablAbbr);
         else
             return "";
     }

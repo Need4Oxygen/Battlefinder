@@ -1,29 +1,35 @@
 using System.Collections.Generic;
+using Pathfinder2e.Player;
 
-public class PF2E_CampaignData
+namespace Pathfinder2e.GameData
 {
-    public string ID = ""; // ID is the file name
-    public string name = "";
-    public Dictionary<string, PF2E_BoardData> boards = new Dictionary<string, PF2E_BoardData>();
-    public Dictionary<string, PF2E_PlayerData> players = new Dictionary<string, PF2E_PlayerData>();
-    public Dictionary<string, PF2E_EnemyData> enemies = new Dictionary<string, PF2E_EnemyData>();
-    public Dictionary<string, PF2E_NPCData> npcs = new Dictionary<string, PF2E_NPCData>();
 
-    public PF2E_CampaignData() { }
-
-    public PF2E_CampaignData(string ID, string name)
+    public class CampaignData
     {
-        this.ID = ID;
-        this.name = name;
+        public string ID = ""; // ID is the file name
+        public string name = "";
+        public Dictionary<string, BoardData> boards = new Dictionary<string, BoardData>();
+        public Dictionary<string, PlayerData> players = new Dictionary<string, PlayerData>();
+        public Dictionary<string, EnemyData> enemies = new Dictionary<string, EnemyData>();
+        public Dictionary<string, NPCData> npcs = new Dictionary<string, NPCData>();
+
+        public CampaignData() { }
+
+        public CampaignData(string ID, string name)
+        {
+            this.ID = ID;
+            this.name = name;
+        }
+
+        public CampaignData(string ID, string name, Dictionary<string, BoardData> boards, Dictionary<string, PlayerData> players, Dictionary<string, EnemyData> enemies, Dictionary<string, NPCData> npcs)
+        {
+            this.ID = ID;
+            this.name = name;
+            this.boards = boards;
+            this.players = players;
+            this.enemies = enemies;
+            this.npcs = npcs;
+        }
     }
 
-    public PF2E_CampaignData(string ID, string name, Dictionary<string, PF2E_BoardData> boards, Dictionary<string, PF2E_PlayerData> players, Dictionary<string, PF2E_EnemyData> enemies, Dictionary<string, PF2E_NPCData> npcs)
-    {
-        this.ID = ID;
-        this.name = name;
-        this.boards = boards;
-        this.players = players;
-        this.enemies = enemies;
-        this.npcs = npcs;
-    }
 }

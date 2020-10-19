@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using Pathfinder2e.Player;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +11,7 @@ public class PF2E_CampaingHandler : MonoBehaviour
     // Controls the PF2e campaing retrieval and send thems to load and display
     // Controls the PF2e board, player, enemies and npcs buttons
 
-    [SerializeField] private PF2E_CharacterCreation characterCreation = null;
+    [SerializeField] private CharacterCreation characterCreation = null;
     [SerializeField] private PF2E_BoardHandler boardHandler = null;
     [SerializeField] private ConfirmationController confirmation = null;
 

@@ -3,7 +3,7 @@ using Pathfinder2e;
 using Pathfinder2e.Containers;
 using UnityEngine;
 
-namespace Pathfinder.PlayerData
+namespace Pathfinder2e.Player
 {
 
     public class APIC

@@ -18,22 +18,6 @@ namespace Pathfinder2e.Containers
         public List<Source> source { get; set; }
     }
 
-    public sealed class ClassFeatures
-    {
-        public List<Feat> alchemist { get; set; }
-        public List<Feat> barbarian { get; set; }
-        public List<Feat> bard { get; set; }
-        public List<Feat> champion { get; set; }
-        public List<Feat> cleric { get; set; }
-        public List<Feat> druid { get; set; }
-        public List<Feat> fighter { get; set; }
-        public List<Feat> monk { get; set; }
-        public List<Feat> ranger { get; set; }
-        public List<Feat> rogue { get; set; }
-        public List<Feat> sorcerer { get; set; }
-        public List<Feat> wizard { get; set; }
-    }
-
     public sealed class ClassFeats
     {
         public List<Feat> alchemist { get; set; }

@@ -1,12 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Newtonsoft.Json;
 using Pathfinder2e;
 using Pathfinder2e.Containers;
 using UnityEngine;
 
-namespace Pathfinder.PlayerData
+namespace Pathfinder2e.Player
 {
 
     public class PlayerData
@@ -264,77 +263,51 @@ namespace Pathfinder.PlayerData
         public int abl_wisdomMod { get { return Abl_ModCalc(abl_wisdom); } }
         public int abl_charismaMod { get { return Abl_ModCalc(abl_charisma); } }
 
-        public Dictionary<Vector2, AblBoostData> abl_map = new Dictionary<Vector2, AblBoostData>();
+        public List<AblBoostData> abl_boostList = new List<AblBoostData>();
 
         public int Abl_GetScore(string abl)
         {
-            switch (abl)
-            {
-                case "str": return abl_strength;
-                case "dex": return abl_dexterity;
-                case "con": return abl_constitution;
-                case "int": return abl_intelligence;
-                case "wis": return abl_wisdom;
-                case "cha": return abl_charisma;
-                default: return 0;
-            }
+            return Abl_ScoreCalc(abl);
         }
 
         public int Abl_GetMod(string abl)
         {
-            switch (abl)
-            {
-                case "str": return abl_strengthMod;
-                case "dex": return abl_dexterityMod;
-                case "con": return abl_constitutionMod;
-                case "int": return abl_intelligenceMod;
-                case "wis": return abl_wisdomMod;
-                case "cha": return abl_charismaMod;
-                default: return 0;
-            }
+            return Abl_ModCalc(Abl_ScoreCalc(abl));
         }
 
-        public bool Abl_SetMap(Vector2 coords, AblBoostData boost)
+        public void Abl_MapAdd(AblBoostData boost)
         {
+            abl_boostList.Add(boost);
+        }
 
-            // set a boost data in the dicctionary
+        public void Abl_MapDelete(string name)
+        {
+            abl_boostList.RemoveAll(ctx => ctx.name == name);
+        }
 
-            return true;
+        public AblBoostData Abl_MapGet(string name)
+        {
+            return abl_boostList.Find(ctx => ctx.name == name);
+        }
+
+        public List<AblBoostData> Abl_MapGetAll(string name)
+        {
+            return abl_boostList.FindAll(ctx => ctx.name == name);
         }
 
         private int Abl_ScoreCalc(string abl)
         {
-            int count = 0;
-            int score = 10;
+            List<AblBoostData> boosts = abl_boostList.FindAll(ctx => ctx.abl == abl);
+            int count = 0, score = 10;
 
-            if (initAblBoosts != null)
-            {
-                count += initAblBoosts.ancestryBoosts.FindAll(boost => boost == abl).Count;
-                count -= initAblBoosts.ancestryFlaws.FindAll(flaw => flaw == abl).Count;
-                count += initAblBoosts.ancestryFree.FindAll(boost => boost == abl).Count;
-                count += initAblBoosts.backgroundBoosts.FindAll(boost => boost == abl).Count;
-                count += initAblBoosts.classBoosts.FindAll(boost => boost == abl).Count;
-                count += initAblBoosts.lvl1boosts.FindAll(boost => boost == abl).Count;
-            }
-
-            if (lvl5AblBoosts != null)
-                count += lvl5AblBoosts.boosts.FindAll(boost => boost == abl).Count;
-            if (lvl10AblBoosts != null)
-                count += lvl5AblBoosts.boosts.FindAll(boost => boost == abl).Count;
-            if (lvl15AblBoosts != null)
-                count += lvl5AblBoosts.boosts.FindAll(boost => boost == abl).Count;
-            if (lvl20AblBoosts != null)
-                count += lvl5AblBoosts.boosts.FindAll(boost => boost == abl).Count;
+            foreach (var item in boosts)
+                count += item.value;
 
             if (count >= 0)
                 for (int i = 0; i < count; i++)
-                    if (score < 18)
-                        score += 2;
-                    else
-                        score++;
+                    score += score < 18 ? 2 : 1;
             else
-                for (int i = 0; i > count; i--)
-                    score -= 2;
+                score *= 2;
 
             return score;
         }
@@ -576,47 +549,122 @@ namespace Pathfinder.PlayerData
 
         // ---------------------------------------------------ANCESTRY--------------------------------------------------
         private string _ancestry = "";
-        public string ancestry { get { return _ancestry; } set { SetAncestry(value); } }
+        public string ancestry { get { return _ancestry; } set { Ancestry_Set(value); } }
 
-        private void SetAncestry(string newAncestry)
+        private void Ancestry_Set(string newAncestry)
         {
-            Ancestry ancestry = DB.Ancestries.Find(ctx => ctx.name == newAncestry);
-            if (ancestry != null)
-            {
-                _ancestry = newAncestry;
-                hp_ancestry = ancestry.hp;
-                speed_ancestry = ancestry.speed;
-                size_ancestry = ancestry.size;
+            if (newAncestry != _ancestry)
+                return;
 
-                Traits_ClearFrom("ancestry");
-                foreach (var item in ancestry.traits)
-                    traits_list.Add(new Trait(item, "ancestry"));
+            if (newAncestry != "")
+            {
+                Ancestry ancestryData = DB.Ancestries.Find(ctx => ctx.name == newAncestry);
+
+                if (ancestryData != null)
+                {
+                    // Not choices
+                    Ancestry_Cleanse(false);
+
+                    _ancestry = newAncestry;
+                    hp_ancestry = ancestryData.hp;
+                    speed_ancestry = ancestryData.speed;
+                    size_ancestry = ancestryData.size;
+
+                    foreach (var item in ancestryData.traits)
+                        traits_list.Add(new Trait(item, "ancestry"));
+                    foreach (var item in ancestryData.abl_boosts)
+                        if (item != "free")
+                            Abl_MapAdd(new AblBoostData("ancestry boost", item, 1));
+                    foreach (var item in ancestryData.abl_flaw)
+                        Abl_MapAdd(new AblBoostData("ancestry flaw", item, -1));
+
+                    // Choices
+                    List<AblBoostData> previousFree = Abl_MapGetAll("ancestry free");
+                    Abl_MapDelete("ancestry free");
+                    for (int i = 0; i < ancestryData.abl_boosts.FindAll(ctx => ctx == "free").Count; i++)
+                        if (i < previousFree.Count) // Saves as many free choices as it can, given what new ancestry gives you
+                            Abl_MapAdd(previousFree[i]);
+                }
+                else
+                {
+                    Debug.LogWarning($"[PlayerData] Couldn't find ancestry {newAncestry} ");
+                }
             }
             else
             {
-                Debug.LogWarning($"[PlayerData] ({playerName}) Can't find ancestry: {newAncestry}!");
+                Ancestry_Cleanse(true);
             }
+        }
+
+        private void Ancestry_Cleanse(bool cleanseChoices)
+        {
+            _ancestry = "";
+            hp_ancestry = 0;
+            speed_ancestry = 0;
+            size_ancestry = "M";
+
+            Abl_MapDelete("ancestry boost");
+            Abl_MapDelete("ancestry flaw");
+            Traits_ClearFrom("ancestry");
+            if (cleanseChoices)
+                Abl_MapDelete("ancestry free");
         }
 
 
         // ---------------------------------------------------BACKGROUND--------------------------------------------------
         private string _background = "";
-        public string background { get { return _background; } set { SetBackground(value); } }
+        public string background { get { return _background; } set { Background_Set(value); } }
 
-        private void SetBackground(string newBackground)
+        private void Background_Set(string newBackground)
         {
-            Background background = DB.Backgrounds.Find(ctx => ctx.name == newBackground);
-            if (background != null)
-            {
-                _background = newBackground;
+            if (newBackground != _background)
+                return;
 
-                Skills_ClearFrom("background");
-                Lores_ClearFrom("background");
-                foreach (var item in background.lectures)
-                    if (item.target.Contains("lore"))
-                        Lores_Train(item, "background");
-                    else
-                        Skills_Train(item, "background");
+            if (newBackground != "")
+            {
+                Background backgroundData = DB.Backgrounds.Find(ctx => ctx.name == newBackground);
+
+                if (backgroundData != null)
+                {
+                    // Not Choices
+                    Background_Cleanse(false);
+
+                    _background = newBackground;
+
+                    foreach (var item in backgroundData.lectures)
+                        if (item.target.Contains("lore"))
+                            Lores_Train(item, "background");
+                        else
+                            Skills_Train(item, "background");
+
+                    // Choices
+                    List<AblBoostData> previousChoice = Abl_MapGetAll("background choice");
+                    Abl_MapDelete("background choice");
+                    // Abl_MapGet(background choice)
+
+
+                }
+                else
+                {
+                    Debug.LogWarning($"[PlayerData] Couldn't find background {newBackground} ");
+                }
+            }
+            else
+            {
+                Background_Cleanse(true);
+            }
+        }
+
+        private void Background_Cleanse(bool cleanseChoices)
+        {
+            _background = "";
+
+            Skills_ClearFrom("background");
+            Lores_ClearFrom("background");
+            if (cleanseChoices)
+            {
+                Abl_MapDelete("background choice");
+                Abl_MapDelete("background free");
             }
         }
 
@@ -653,74 +701,81 @@ namespace Pathfinder.PlayerData
                     ClassDC_Train(item, "class");
 
                 // Try to rescue data from the old build
-                Dictionary<string, Dictionary<string, BuildBlock>> newBuild = classObj.build;
-                Build_SetNewBuild(newBuild);
+                Build_SetNewProgression(classObj.name);
             }
+        }
+
+        private void Class_Cleanse()
+        {
+            _class = "";
+            hp_class = 0;
+
+            Abl_MapDelete("class");
+            Skills_ClearFrom("class");
+            Perception_ClearFrom("class");
+            Saves_ClearFrom("class");
+            WeaponArmor_ClearFrom("class");
+            ClassDC_ClearFrom("class");
         }
 
 
         // ---------------------------------------------------BUILD--------------------------------------------------
-        // build[level][feat]
-        public List<BuildBlock> build = new List<BuildBlock>();
+        public Dictionary<int, Dictionary<string, BuildBlock>> build = new Dictionary<int, Dictionary<string, BuildBlock>>();
 
-        public T Build_Get<T>(string level, string itemKey)
+        public T Build_GetFromBlock<T>(int level, string key)
         {
             try
             {
                 if (build.ContainsKey(level))
-                    if (build[level].ContainsKey(itemKey))
-                        if (build[level][itemKey].obj != null)
-                            return JsonConvert.DeserializeObject<T>(build[level][itemKey].obj);
-                        else
-                            return default(T);
-                    else
-                        return default(T);
-                else
-                    return default(T); // Can't do all of this in one line because null exception
+                    if (build[level].ContainsKey(key))
+                        if (build[level][key].value != null)
+                            return JsonConvert.DeserializeObject<T>(build[level][key].value);
 
+                Debug.LogWarning($"[PlayerData] Couldn't find key {key} ");
+                return default(T);
             }
             catch (Exception e)
             {
-                Debug.LogError("[PlayerData] ERROR: Couldn't retrieve object " + itemKey + " from build\n" + e.Message + "\n" + e.StackTrace);
+                Debug.LogError($"[PlayerData] Couldn't retrieve object {key} from build\n{e.Message}\n{e.StackTrace}");
                 return default(T);
             }
-        }
-
-        public void Build_Set(string level, string itemkey, object obj)
-        {
-            string jsonString = JsonConvert.SerializeObject(obj, Formatting.Indented);
-            Build_Set(level, itemkey, jsonString);
-
-            Build_Refresh();
-        }
-        public void Build_Set(string level, string itemkey, string obj)
-        {
-            if (build.ContainsKey(level))
-                if (build[level].ContainsKey(itemkey))
-                    build[level][itemkey].obj = obj;
-        }
-
-        public void Build_Refresh()
-        {
-            Debug.Log($"[PlayerData] Refreshing [{playerName}] build");
-
-            initAblBoosts = Build_Get<AblBoostData>("Level 1", "Initial Ability Boosts");
         }
 
         private void Build_SetNewProgression(string className)
         {
             Debug.Log($"[PlayerData] changing [{playerName}] class progression");
 
+            Dictionary<int, Dictionary<string, BuildBlock>> newBuild = new Dictionary<int, Dictionary<string, BuildBlock>>();
             ClassProgression prog = DB.ClassProgression.Find(ctx => ctx.name == className);
-            List<BuildBlock> newBuild = new List<BuildBlock>();
+            List<BuildBlock> coincidences = new List<BuildBlock>();
 
-            foreach (var block in build) // If old blocks targets coincides with new class progression targets, they are saved
-                if (block.key == prog.progression[block.level].items.Find(ctx => ctx == block.key))
-                    newBuild.Add(block);
+            // Search for coincidences in old build with new class progression
+            foreach (var lvlDic in build)
+                foreach (var block in lvlDic.Value)
+                    if (block.Value.value == prog.progression[block.Value.level].items.Find(ctx => ctx == block.Value.name))
+                        coincidences.Add(block.Value);
+
+            // Generate new build
+            foreach (var block in coincidences)
+            {
+                if (!newBuild.ContainsKey(block.level))
+                    newBuild.Add(block.level, new Dictionary<string, BuildBlock>());
+
+                newBuild[block.level].Add(block.name, block);
+            }
 
             build = newBuild;
-
             Build_Refresh();
+        }
+
+        public void Build_Refresh()
+        {
+            Debug.LogWarning($"[PlayerData] Refreshing [{playerName}] build - NOT IMPLEMENTED");
+
+            // Remove all data saved
+
+            // Reapply all data from build
+
         }
 
 

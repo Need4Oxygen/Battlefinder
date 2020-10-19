@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Pathfinder2e.GameData;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,7 +17,7 @@ public class PF2E_BoardHandler : MonoBehaviour
     [SerializeField] private Transform actorsButtonContainer = null;
 
     private List<ButtonText> actorButtonList = new List<ButtonText>();
-    private PF2E_BoardData currentBoard = null;
+    private BoardData currentBoard = null;
 
     void Start()
     {
@@ -39,7 +40,7 @@ public class PF2E_BoardHandler : MonoBehaviour
     public void NewBoard()
     {
         string newGuid = Guid.NewGuid().ToString();
-        currentBoard = new PF2E_BoardData();
+        currentBoard = new BoardData();
         currentBoard.guid = newGuid;
 
         RefreshBoardPanel();
@@ -48,7 +49,7 @@ public class PF2E_BoardHandler : MonoBehaviour
     }
 
     /// <summary> Called by CampaignHandler when the play button on a board button is pressed </summary>
-    public void LoadBoard(PF2E_BoardData board)
+    public void LoadBoard(BoardData board)
     {
         currentBoard = board;
 
