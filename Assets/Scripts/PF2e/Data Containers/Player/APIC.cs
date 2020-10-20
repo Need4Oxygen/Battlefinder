@@ -15,8 +15,8 @@ namespace Pathfinder2e.Player
         public List<LectureFull> lectures = new List<LectureFull>();
 
         private string keyAbl = "";
-        private List<PF2E_Effect> itemModifiers = new List<PF2E_Effect>();
-        private List<PF2E_Effect> circModifiers = new List<PF2E_Effect>();
+        // private List<PF2E_Effect> itemModifiers = new List<PF2E_Effect>();
+        // private List<PF2E_Effect> circModifiers = new List<PF2E_Effect>();
 
         public APIC(string name, PlayerData playerData, string keyAbl, int initialScore)
         {

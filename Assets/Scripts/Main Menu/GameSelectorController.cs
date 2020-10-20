@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Pathfinder2e.GameData;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,7 +14,7 @@ public class GameSelectorController : MonoBehaviour
     [SerializeField] private Button createCampaignCancelButton = null;
 
     [Header("Pathfinder 2e")]
-    [SerializeField] private PF2E_CampaingHandler PF2E_campaingHandler = null;
+    [SerializeField] private CampaingHandler PF2E_campaingHandler = null;
     [SerializeField] private Transform PF2E_campaingButtonPrefab = null;
     [SerializeField] private Transform PF2E_container = null;
 
@@ -98,7 +99,7 @@ public class GameSelectorController : MonoBehaviour
     private void PF2E_ExtendGameButtons()
     {
         // Campaign buttons
-        foreach (var item in PF2E_Globals.CampaignIDs)
+        foreach (var item in Pathfinder2e.GameData.Globals_PF2E.CampaignIDs)
         {
             Transform newButton = Instantiate(PF2E_campaingButtonPrefab, PF2E_container.position, PF2E_container.rotation, PF2E_container);
             ButtonText newButtonScript = newButton.GetComponent<ButtonText>();

@@ -819,7 +819,6 @@ namespace Pathfinder2e.Player
 
 
         // ---------------------------------------------------EFFECTS--------------------------------------------------
-        public Dictionary<string, List<PF2E_Effect>> effects_library = new Dictionary<string, List<PF2E_Effect>>();
 
 
         // ---------------------------------------------------CONSTRUCTOR--------------------------------------------------
@@ -846,6 +845,8 @@ namespace Pathfinder2e.Player
             {"survival",new APIC("Survival" , this , "wis", 0)},
             {"thievery",new APIC("Thievery" , this , "dex", 0)},
         };
+
+            lores_dic = new Dictionary<string, APIC>() { };
 
             saves_dic = new Dictionary<string, APIC>
         {

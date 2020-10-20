@@ -30,7 +30,7 @@ public class FloorTool : MonoBehaviour
     void Awake()
     {
         CustomEvents.OnToolChange += OnToolChange;
-        PF2E_SceneManager.OnPlaySceneExit += Unsubscribe;
+        SceneManager_PF2E.OnPlaySceneExit += Unsubscribe;
     }
 
     void Start()
@@ -64,7 +64,7 @@ public class FloorTool : MonoBehaviour
     private void Unsubscribe()
     {
         CustomEvents.OnToolChange -= OnToolChange;
-        PF2E_SceneManager.OnPlaySceneExit -= Unsubscribe;
+        SceneManager_PF2E.OnPlaySceneExit -= Unsubscribe;
     }
 
     private void OnToolChange(E_Tools tool)

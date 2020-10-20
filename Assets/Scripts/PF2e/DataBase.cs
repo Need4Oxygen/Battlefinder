@@ -148,32 +148,6 @@ namespace Pathfinder2e
             }
         }
 
-        /// <summary>Recieves a string "str", "dex", "con", etc, and returns corresponding enumerator. </summary>
-        public static E_PF2E_Ability Abl_Abbr2Enum(string abilityAbreviated)
-        {
-            switch (abilityAbreviated)
-            {
-                case "str":
-                    return E_PF2E_Ability.Strength;
-                case "dex":
-                    return E_PF2E_Ability.Dexterity;
-                case "con":
-                    return E_PF2E_Ability.Constitution;
-                case "int":
-                    return E_PF2E_Ability.Intelligence;
-                case "wis":
-                    return E_PF2E_Ability.Wisdom;
-                case "cha":
-                    return E_PF2E_Ability.Charisma;
-                case "free":
-                    return E_PF2E_Ability.Free;
-
-                default:
-                    Debug.LogWarning("[DB] Error: ability abreviation (" + abilityAbreviated + ") not recognized!");
-                    return E_PF2E_Ability.Free;
-            }
-        }
-
 
         // ---------------------------------------------------PROFICIENCIES--------------------------------------------------
 
