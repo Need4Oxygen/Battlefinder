@@ -232,14 +232,17 @@ namespace Pathfinder2e.GameData
 
             // Ability Flaws
             string abilityFlawsString = "";
-            count = 0; total = ancestry.abl_flaw.Count;
-            foreach (var item in ancestry.abl_flaw)
+            if (ancestry.abl_flaw != null)
             {
-                if (count < total - 1)
-                    abilityFlawsString += DB.Abl_Abbr2Full(item) + ", ";
-                else
-                    abilityFlawsString += DB.Abl_Abbr2Full(item);
-                count++;
+                count = 0; total = ancestry.abl_flaw.Count;
+                foreach (var item in ancestry.abl_flaw)
+                {
+                    if (count < total - 1)
+                        abilityFlawsString += DB.Abl_Abbr2Full(item) + ", ";
+                    else
+                        abilityFlawsString += DB.Abl_Abbr2Full(item);
+                    count++;
+                }
             }
             ancestryAbilityFlaws.text = abilityFlawsString;
 
@@ -270,11 +273,14 @@ namespace Pathfinder2e.GameData
 
             // Ancestry features
             string ancestryFeaturesString = "";
-            for (int i = 0; i < ancestry.ancestry_features.Count; i++)
-                if (i < ancestry.ancestry_features.Count - 1)
-                    ancestryFeaturesString += ancestry.ancestry_features[i] + ", ";
-                else
-                    ancestryFeaturesString += ancestry.ancestry_features[i];
+            if (ancestry.ancestry_features != null)
+            {
+                for (int i = 0; i < ancestry.ancestry_features.Count; i++)
+                    if (i < ancestry.ancestry_features.Count - 1)
+                        ancestryFeaturesString += ancestry.ancestry_features[i] + ", ";
+                    else
+                        ancestryFeaturesString += ancestry.ancestry_features[i];
+            }
             ancestryFeatures.text = ancestryFeaturesString;
         }
 
@@ -338,9 +344,9 @@ namespace Pathfinder2e.GameData
                 skillNames.Add(item.target);
             for (int i = 0; i < skillNames.Count; i++)
                 if (i < skillNames.Count - 1)
-                    backgroundSkillTrainString += skillNames[i] + ", ";
+                    backgroundSkillTrainString += DB.ToUpperFirst(skillNames[i]) + ", ";
                 else
-                    backgroundSkillTrainString += skillNames[i];
+                    backgroundSkillTrainString += DB.ToUpperFirst(skillNames[i]);
             backgroundSkillTrain.text = backgroundSkillTrainString;
 
             // Extract feats to display in a string
@@ -406,50 +412,68 @@ namespace Pathfinder2e.GameData
                     classKeyAbilityString += $" or {DB.Abl_Abbr2Full(classObj.key_ability_choices[i])}";
             classKeyAbility.text = classKeyAbilityString;
 
-            classUnarmed.text = "U"; classUnarmored.text = "U"; classPerception.text = "U";
-            classSimpleWeapons.text = "U"; classLightArmor.text = "U"; classFortitude.text = "U";
-            classMartialWeapons.text = "U"; classMediumArmor.text = "U"; classReflex.text = "U";
-            classAdvancedWeapons.text = "U"; classHeavyArmor.text = "U"; classWill.text = "U";
+            string untrained = DB.Prof_Full2AbbrColored("untrained");
+            classUnarmed.text = untrained; classUnarmored.text = untrained; classPerception.text = untrained;
+            classSimpleWeapons.text = untrained; classLightArmor.text = untrained; classFortitude.text = untrained;
+            classMartialWeapons.text = untrained; classMediumArmor.text = untrained; classReflex.text = untrained;
+            classAdvancedWeapons.text = untrained; classHeavyArmor.text = untrained; classWill.text = untrained;
 
-            List<Lecture> lectures = new List<Lecture>(classObj.attacks.Concat<Lecture>(classObj.defenses).Concat<Lecture>(classObj.perception).Concat<Lecture>(classObj.saves));
-            foreach (var item in lectures)
+            classPerception.text = DB.Prof_Full2AbbrColored(classObj.perception[0].prof);
+
+            foreach (var item in classObj.attacks)
                 switch (item.target)
                 {
-                    case "unarmed":
-                        classUnarmed.text = item.prof;
+                    case "unarmed attacks":
+                        classUnarmed.text = DB.Prof_Full2AbbrColored(item.prof);
                         break;
-                    case "simpleWeapons":
-                        classSimpleWeapons.text = item.prof;
+                    case "simple weapons":
+                        classSimpleWeapons.text = DB.Prof_Full2AbbrColored(item.prof);
                         break;
-                    case "martialWeapons":
-                        classMartialWeapons.text = item.prof;
+                    case "martial weapons":
+                        classMartialWeapons.text = DB.Prof_Full2AbbrColored(item.prof);
                         break;
-                    case "advancedWeapons":
-                        classAdvancedWeapons.text = item.prof;
+                    case "advanced weapons":
+                        classAdvancedWeapons.text = DB.Prof_Full2AbbrColored(item.prof);
                         break;
-                    case "unarmored":
-                        classUnarmored.text = item.prof;
+                    default:
                         break;
-                    case "lightArmor":
-                        classLightArmor.text = item.prof;
+                }
+
+            foreach (var item in classObj.defenses)
+                switch (item.target)
+                {
+                    case "unarmored defense":
+                        classUnarmored.text = DB.Prof_Full2AbbrColored(item.prof);
                         break;
-                    case "mediumArmor":
-                        classMediumArmor.text = item.prof;
+                    case "light armor":
+                        classLightArmor.text = DB.Prof_Full2AbbrColored(item.prof);
                         break;
-                    case "heavyArmor":
-                        classHeavyArmor.text = item.prof;
+                    case "medium armor":
+                        classMediumArmor.text = DB.Prof_Full2AbbrColored(item.prof);
                         break;
-                    case "perception":
-                        classPerception.text = item.prof;
+                    case "heavy armor":
+                        classHeavyArmor.text = DB.Prof_Full2AbbrColored(item.prof);
                         break;
+                    case "all armor":
+                        classLightArmor.text = DB.Prof_Full2AbbrColored(item.prof);
+                        classMediumArmor.text = DB.Prof_Full2AbbrColored(item.prof);
+                        classHeavyArmor.text = DB.Prof_Full2AbbrColored(item.prof);
+                        break;
+                    default:
+                        break;
+                }
+
+            foreach (var item in classObj.saves)
+                switch (item.target)
+                {
                     case "fortitude":
-                        classFortitude.text = item.prof;
+                        classFortitude.text = DB.Prof_Full2AbbrColored(item.prof);
                         break;
                     case "reflex":
-                        classReflex.text = item.prof;
+                        classReflex.text = DB.Prof_Full2AbbrColored(item.prof);
                         break;
                     case "will":
-                        classWill.text = item.prof;
+                        classWill.text = DB.Prof_Full2AbbrColored(item.prof);
                         break;
                     default:
                         break;
@@ -464,7 +488,7 @@ namespace Pathfinder2e.GameData
             {
                 if (DB.SkillNames.Contains(item.target))
                     str += $"{DB.ToUpperFirst(item.prof)} in {DB.ToUpperFirst(item.target)}. ";
-                else if (item.target.Substring(0, 8) == "a number")
+                else if (item.target.Contains("a number"))
                     str += $"{DB.ToUpperFirst(item.prof)} in a number of additional skills equal to {new string(item.target.Where(char.IsDigit).ToArray())} plus your intelligence modifier. ";
                 else if (item.target == "your choice of acrobatics or athletics") // for fighter choice of acrobatics or athletics
                     str += $"{DB.ToUpperFirst(item.prof)} in your choice of acrobatics or athletics";

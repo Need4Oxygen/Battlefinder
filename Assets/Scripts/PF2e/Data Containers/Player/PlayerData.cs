@@ -564,12 +564,10 @@ namespace Pathfinder2e.Player
                 {
                     // Not choices
                     Ancestry_Cleanse(false);
-
                     _ancestry = newAncestry;
                     hp_ancestry = ancestryData.hp;
                     speed_ancestry = ancestryData.speed;
                     size_ancestry = ancestryData.size;
-
                     foreach (var item in ancestryData.traits)
                         traits_list.Add(new Trait(item, "ancestry"));
                     foreach (var item in ancestryData.abl_boosts)
@@ -628,9 +626,7 @@ namespace Pathfinder2e.Player
                 {
                     // Not Choices
                     Background_Cleanse(false);
-
                     _background = newBackground;
-
                     foreach (var item in backgroundData.lectures)
                         if (item.target.Contains("lore"))
                             Lores_Train(item, "background");
@@ -638,11 +634,13 @@ namespace Pathfinder2e.Player
                             Skills_Train(item, "background");
 
                     // Choices
-                    List<AblBoostData> previousChoice = Abl_MapGetAll("background choice");
-                    Abl_MapDelete("background choice");
-                    // Abl_MapGet(background choice)
-
-
+                    AblBoostData previousChoice = Abl_MapGet("background choice");
+                    bool match = false;
+                    foreach (var item in backgroundData.abl_choices)
+                        if (previousChoice.abl == item)
+                            match = true;
+                    if (!match)
+                        Abl_MapDelete("background choice");
                 }
                 else
                 {
@@ -675,47 +673,68 @@ namespace Pathfinder2e.Player
 
         private void SetClass(string newClass)
         {
-            Class classObj = DB.Classes.Find(ctx => ctx.name == newClass);
-            if (classObj != null)
+            if (newClass != _class)
+                return;
+
+            if (newClass != "")
             {
-                _class = newClass;
-                hp_class = classObj.hp;
+                Class classData = DB.Classes.Find(ctx => ctx.name == newClass);
 
-                Skills_ClearFrom("class");
-                Perception_ClearFrom("class");
-                Saves_ClearFrom("class");
-                WeaponArmor_ClearFrom("class");
-                ClassDC_ClearFrom("class");
+                if (classData != null)
+                {
+                    // Not Choices
+                    Class_Cleanse(false);
+                    _class = newClass;
+                    hp_class = classData.hp;
+                    foreach (var item in classData.skills)
+                        Skills_Train(item, "class");
+                    foreach (var item in classData.perception)
+                        Perception_Train(item, "class");
+                    foreach (var item in classData.saves)
+                        Saves_Train(item, "class");
+                    foreach (var item in classData.attacks)
+                        AttackDefense_Train(item, "class");
+                    foreach (var item in classData.defenses)
+                        AttackDefense_Train(item, "class");
+                    foreach (var item in classData.class_dc_and_spells)
+                        ClassDC_Train(item, "class");
 
-                foreach (var item in classObj.skills)
-                    Skills_Train(item, "class");
-                foreach (var item in classObj.perception)
-                    Perception_Train(item, "class");
-                foreach (var item in classObj.saves)
-                    Saves_Train(item, "class");
-                foreach (var item in classObj.attacks)
-                    AttackDefense_Train(item, "class");
-                foreach (var item in classObj.defenses)
-                    AttackDefense_Train(item, "class");
-                foreach (var item in classObj.class_dc_and_spells)
-                    ClassDC_Train(item, "class");
-
-                // Try to rescue data from the old build
-                Build_SetNewProgression(classObj.name);
+                    // Not Choices
+                    // Build_SetNewProgression(classData.name);
+                    AblBoostData previousChoice = Abl_MapGet("class");
+                    bool match = false;
+                    foreach (var item in classData.key_ability_choices)
+                        if (previousChoice.abl == item)
+                            match = true;
+                    if (!match)
+                        Abl_MapDelete("class");
+                }
+                else
+                {
+                    Debug.LogWarning($"[PlayerData] Couldn't find background {newClass} ");
+                }
+            }
+            else
+            {
+                Class_Cleanse(true);
             }
         }
 
-        private void Class_Cleanse()
+        private void Class_Cleanse(bool cleanseChoices)
         {
             _class = "";
             hp_class = 0;
 
-            Abl_MapDelete("class");
             Skills_ClearFrom("class");
             Perception_ClearFrom("class");
             Saves_ClearFrom("class");
             WeaponArmor_ClearFrom("class");
             ClassDC_ClearFrom("class");
+
+            if (cleanseChoices)
+            {
+                Abl_MapDelete("class");
+            }
         }
 
 
@@ -847,7 +866,6 @@ namespace Pathfinder2e.Player
         };
 
             lores_dic = new Dictionary<string, APIC>() { };
-
             saves_dic = new Dictionary<string, APIC>
         {
             {"fortitude",new APIC("Fortitude" , this , "con", 0)},

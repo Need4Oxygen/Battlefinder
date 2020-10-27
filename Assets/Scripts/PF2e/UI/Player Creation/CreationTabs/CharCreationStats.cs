@@ -27,7 +27,7 @@ namespace Pathfinder2e.Player
         [SerializeField] private TMP_InputField doomInput = null;
 
         [Header("AC")]
-        [SerializeField] private APICButton acAPIC = null;
+        [SerializeField] private APICButton armorAPIC = null;
         [SerializeField] private TMP_Text shieldHealth = null;
         [SerializeField] private TMP_Text shieldHard = null;
         [SerializeField] private TMP_InputField shieldDamage = null;
@@ -97,7 +97,7 @@ namespace Pathfinder2e.Player
             DyingMaxtText.text = creation.currentPlayer.hp_dyingMax.ToString();
 
             // AC
-            acAPIC.Refresh(creation.currentPlayer.AC_Get());
+            armorAPIC.Refresh(creation.currentPlayer.AC_Get());
             shieldHealth.text = "0/0";
             shieldHard.text = "Hard 0";
             shieldDamage.SetTextWithoutNotify("0");

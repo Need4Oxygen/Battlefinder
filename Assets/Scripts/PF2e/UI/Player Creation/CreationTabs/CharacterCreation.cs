@@ -16,7 +16,7 @@ namespace Pathfinder2e.Player
 
         [SerializeField] private ABCSelector ABCSelector = null;
         [SerializeField] private AblBoostsSelector ablBoostsSelector = null;
-        [SerializeField] private CanvasGroup playerPanel = null;
+        [SerializeField] private CanvasGroup characterPanel = null;
 
         [Header("Name & Level")]
         [SerializeField] private TMP_InputField levelInput = null;
@@ -44,7 +44,7 @@ namespace Pathfinder2e.Player
 
         void Start()
         {
-            StartCoroutine(PanelFader.RescaleAndFade(playerPanel.transform, playerPanel, 0.85f, 0f, 0f));
+            StartCoroutine(PanelFader.RescaleAndFade(characterPanel.transform, characterPanel, 0.85f, 0f, 0f));
 
             tabOn = Globals.Theme["background_1"];
             tabOff = Globals.Theme["background_2"];
@@ -54,13 +54,13 @@ namespace Pathfinder2e.Player
 
         private void OpenPlayerCreationPanel()
         {
-            StartCoroutine(PanelFader.RescaleAndFade(playerPanel.transform, playerPanel, 1f, 1f, 0.1f));
+            StartCoroutine(PanelFader.RescaleAndFade(characterPanel.transform, characterPanel, 1f, 1f, 0.1f));
             OnClickTabStats();
         }
 
         private void ClosePlayerCreationPanel()
         {
-            StartCoroutine(PanelFader.RescaleAndFade(playerPanel.transform, playerPanel, 0.85f, 0f, 0.1f));
+            StartCoroutine(PanelFader.RescaleAndFade(characterPanel.transform, characterPanel, 0.85f, 0f, 0.1f));
             currentPlayer = null;
 
             CloseAllTabs();

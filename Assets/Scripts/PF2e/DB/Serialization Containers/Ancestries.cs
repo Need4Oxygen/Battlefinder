@@ -36,6 +36,9 @@ namespace Pathfinder2e.Containers
         public List<Feat> goblin { get; set; }
         public List<Feat> halfling { get; set; }
         public List<Feat> human { get; set; }
+        public List<Feat> half_elf { get; set; }
+        public List<Feat> half_orc { get; set; }
+
     }
 
 }

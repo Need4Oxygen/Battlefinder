@@ -9,9 +9,8 @@ namespace Pathfinder2e.GameData
 
     public class APICButton : MonoBehaviour
     {
-        [SerializeField] private bool lore = false;
-
-        [SerializeField] private TMP_Text labelText = null;
+        [SerializeField] private TMP_Text skillName = null;
+        [SerializeField] private TMP_Text ablDependency = null;
         [SerializeField] private TMP_Text profLetterText = null;
         [SerializeField] private TMP_Text dcText = null;
         [SerializeField] private TMP_Text ablText = null;
@@ -22,8 +21,8 @@ namespace Pathfinder2e.GameData
 
         public void Refresh(APIC skill)
         {
-            if (lore)
-                labelText.text = skill.name;
+            skillName.text = skill.name;
+            ablDependency.text = skill.abl.ToUpper();
 
             profLetterText.text = skill.prof;
             ablText.text = Process(skill.ablScore);

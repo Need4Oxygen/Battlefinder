@@ -6,11 +6,14 @@ namespace Pathfinder2e.Containers
         public string target { get; set; }
         public string prof { get; set; }
 
+        public Lecture() { }
+
         public Lecture(string target, string prof)
         {
             this.target = target;
             this.prof = prof;
         }
+
     }
 
     public class LectureFull : Lecture
