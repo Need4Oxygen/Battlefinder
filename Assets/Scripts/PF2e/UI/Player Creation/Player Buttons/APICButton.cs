@@ -19,23 +19,23 @@ namespace Pathfinder2e.GameData
         [SerializeField] private TMP_Text tempText = null;
         [SerializeField] private TMP_Text scoreText = null;
 
-        public void Refresh(APIC skill)
+        public void Refresh(APIC apic)
         {
-            skillName.text = skill.name;
-            ablDependency.text = skill.abl.ToUpper();
+            skillName.text = apic.name;
+            ablDependency.text = apic.abl.ToUpper();
 
-            profLetterText.text = skill.prof;
-            ablText.text = Process(skill.ablScore);
-            profText.text = Process(skill.profScore);
-            itemText.text = Process(skill.itemScore);
-            tempText.text = Process(skill.tempScore);
-            scoreText.text = ProcessScore(skill.score);
+            profLetterText.text = apic.profColored;
+            ablText.text = ToEmptyOrString(apic.ablScore);
+            profText.text = ToEmptyOrString(apic.profScore);
+            itemText.text = ToEmptyOrString(apic.itemScore);
+            tempText.text = ToEmptyOrString(apic.tempScore);
+            scoreText.text = ProcessScore(apic.score);
 
             if (dcText != null)
-                dcText.text = skill.dcScore.ToString();
+                dcText.text = apic.dcScore.ToString();
         }
 
-        private string Process(int value)
+        private string ToEmptyOrString(int value)
         {
             if (value == 0)
                 return "";

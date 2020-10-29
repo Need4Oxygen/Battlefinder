@@ -3,13 +3,13 @@ namespace Pathfinder2e.Containers
 
     public class Trait
     {
-        public string from;
         public string name;
+        public string from;
 
-        public Trait(string from, string name)
+        public Trait(string name, string from)
         {
-            this.from = from;
             this.name = name;
+            this.from = from;
         }
     }
 

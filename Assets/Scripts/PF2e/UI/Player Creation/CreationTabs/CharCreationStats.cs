@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Pathfinder2e;
+﻿using System.Collections.Generic;
 using Pathfinder2e.GameData;
-using Pathfinder2e.Player;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +9,8 @@ namespace Pathfinder2e.Player
 
     public class CharCreationStats : MonoBehaviour
     {
+        [System.Serializable] private class ListWrapper { public List<Image> myList; }
+
         [SerializeField] private GameObject statsPanel = null;
         [SerializeField] private CharacterCreation creation = null;
 
@@ -66,6 +64,7 @@ namespace Pathfinder2e.Player
         [SerializeField] private TMP_InputField heroPointsInput = null;
         [SerializeField] private TMP_InputField wealthInput = null;
         [SerializeField] private List<APICButton> skills = null;
+        [SerializeField] private List<ListWrapper> ablMap = null;
 
         [HideInInspector] public bool isOpen = false;
 
@@ -125,16 +124,38 @@ namespace Pathfinder2e.Player
             wealthInput.SetTextWithoutNotify(creation.currentPlayer.Wealth_Formated());
 
             // Abilities
-            // Color active = Globals.Theme["text_2"]; Color unactive = Globals.Theme["background_1"];
-            // int[,] abl_map = creation.currentPlayer.Abl_MapGet();
-            // for (int i = 0; i < abl_map.GetLength(0); i++)
-            //     for (int j = 0; j < abl_map.GetLength(1); j++)
-            //         if (abl_map[i, j] > 0)
-            //             ablMapImages[j].list[i].color = active;
-            //         else if (abl_map[i, j] < 0)
-            //             ablMapImages[j].list[i].color = Color.red;
-            //         else
-            //             ablMapImages[j].list[i].color = unactive;
+            Color active = Globals.Theme["text_2"]; Color unactive = Globals.Theme["background_1"]; Color flaw = Globals.Theme["untrained"];
+            foreach (var item in ablMap)
+                foreach (var image in item.myList)
+                    image.color = unactive;
+            foreach (var boost in creation.currentPlayer.abl_boostList)
+                switch (boost.from)
+                {
+                    case "ancestry boost":
+                        ablMap[0].myList[DB.Abl_Abbr2Int(boost.abl)].color = active; break;
+                    case "ancestry flaw":
+                        ablMap[0].myList[DB.Abl_Abbr2Int(boost.abl)].color = flaw; break;
+                    case "ancestry free":
+                        ablMap[0].myList[DB.Abl_Abbr2Int(boost.abl)].color = active; break;
+                    case "background choice":
+                        ablMap[1].myList[DB.Abl_Abbr2Int(boost.abl)].color = active; break;
+                    case "background free":
+                        ablMap[1].myList[DB.Abl_Abbr2Int(boost.abl)].color = flaw; break;
+                    case "class":
+                        ablMap[2].myList[DB.Abl_Abbr2Int(boost.abl)].color = active; break;
+                    case "lvl1":
+                        ablMap[3].myList[DB.Abl_Abbr2Int(boost.abl)].color = active; break;
+                    case "lvl5":
+                        ablMap[4].myList[DB.Abl_Abbr2Int(boost.abl)].color = active; break;
+                    case "lvl10":
+                        ablMap[5].myList[DB.Abl_Abbr2Int(boost.abl)].color = active; break;
+                    case "lvl15":
+                        ablMap[6].myList[DB.Abl_Abbr2Int(boost.abl)].color = active; break;
+                    case "lvl20":
+                        ablMap[7].myList[DB.Abl_Abbr2Int(boost.abl)].color = active; break;
+
+                    default: break;
+                }
 
             // Skills
             var list = creation.currentPlayer.Skills_GetAllAsList();

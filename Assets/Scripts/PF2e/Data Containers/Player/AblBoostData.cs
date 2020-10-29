@@ -8,13 +8,13 @@ namespace Pathfinder2e
         //     background choice, background free, class
         //     lvl1, lvl5, lvl10, lvl15, lvl20
 
-        public string name { get; set; }
+        public string from { get; set; }
         public string abl { get; set; }
         public int value { get; set; }
 
-        public AblBoostData(string name, string abl, int value)
+        public AblBoostData(string from, string abl, int value)
         {
-            this.name = name;
+            this.from = from;
             this.abl = abl;
             this.value = value;
         }

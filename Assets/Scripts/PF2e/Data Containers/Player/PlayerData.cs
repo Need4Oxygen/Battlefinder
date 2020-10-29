@@ -150,16 +150,8 @@ namespace Pathfinder2e.Player
 
         public bool ClassDC_Train(Lecture lecture, string from)
         {
-            if (lecture.target == "classDC")
-            {
-                classDC_lectures.Add(new LectureFull(lecture, from));
-                return true;
-            }
-            else
-            {
-                Debug.LogWarning("[PlayerData] Tried to train classDC: " + lecture.target + " but wtf!");
-                return false;
-            }
+            classDC_lectures.Add(new LectureFull(lecture, from));
+            return true;
         }
 
 
@@ -224,7 +216,7 @@ namespace Pathfinder2e.Player
         public float bulk_bonus = 0f; // This has to be turn into effect list
         public float bulk_encThreshold { get { return Size_BulkMod() * (5 + abl_strengthMod) + bulk_bonus; } }
         public float bulk_maxThreshold { get { return Size_BulkMod() * (10 + abl_strengthMod) + bulk_bonus; } }
-        public float bulk_current = 5f; // This has to be turn into full Inventory solution that calcs objects weight
+        public float bulk_current = 0f; // This has to be turn into full Inventory solution that calcs objects weight
 
 
         // ---------------------------------------------------CHARACTER TRAITS--------------------------------------------------
@@ -240,14 +232,11 @@ namespace Pathfinder2e.Player
         public string languages = "";
 
         // ---------------------------------------------------ABILITIES--------------------------------------------------
-
-        //       |Ancestry|Background|Class|Lvl1Boost|Lvl5Boost|Lvl10Boost|Lvl15Boost|Lvl20Boost|
-        //    STR|        |          |     |         |         |          |          |          |
-        //    DEX|        |          |     |         |         |          |          |          |
-        //    CON|        |          |     |         |         |          |          |          |  x = boosts
-        //    INT|        |          |     |         |         |          |          |          |  y = abilities
-        //    WIS|        |          |     |         |         |          |          |          |
-        //    CHA|        |          |     |         |         |          |          |          |
+        // AblBoostData - "from" variable can contain this strings:
+        //     ancestry boost, ancestry flaw, ancestry free
+        //     background choice, background free
+        //     class
+        //     lvl1, lvl5, lvl10, lvl15, lvl20
 
         public int abl_strength { get { return Abl_ScoreCalc("str"); } }
         public int abl_dexterity { get { return Abl_ScoreCalc("dex"); } }
@@ -282,17 +271,17 @@ namespace Pathfinder2e.Player
 
         public void Abl_MapDelete(string name)
         {
-            abl_boostList.RemoveAll(ctx => ctx.name == name);
+            abl_boostList.RemoveAll(ctx => ctx.from == name);
         }
 
         public AblBoostData Abl_MapGet(string name)
         {
-            return abl_boostList.Find(ctx => ctx.name == name);
+            return abl_boostList.Find(ctx => ctx.from == name);
         }
 
         public List<AblBoostData> Abl_MapGetAll(string name)
         {
-            return abl_boostList.FindAll(ctx => ctx.name == name);
+            return abl_boostList.FindAll(ctx => ctx.from == name);
         }
 
         private int Abl_ScoreCalc(string abl)
@@ -306,8 +295,8 @@ namespace Pathfinder2e.Player
             if (count >= 0)
                 for (int i = 0; i < count; i++)
                     score += score < 18 ? 2 : 1;
-            else
-                score *= 2;
+            else if (count < 0)
+                score += count * 2;
 
             return score;
         }
@@ -505,26 +494,26 @@ namespace Pathfinder2e.Player
         // ---------------------------------------------------WEAPONS/ARMOR PROFICIENCIES--------------------------------------------------
         private Dictionary<string, List<LectureFull>> attackDefense_lectures = new Dictionary<string, List<LectureFull>>
     {
-        {"unarmed", new List<LectureFull>() },
-        {"simpleWeapons", new List<LectureFull>() },
-        {"martialWeapons", new List<LectureFull>() },
-        {"advancedWeapons", new List<LectureFull>() },
+        {"unarmed attacks", new List<LectureFull>() },
+        {"simple weapons", new List<LectureFull>() },
+        {"martial weapons", new List<LectureFull>() },
+        {"advanced weapons", new List<LectureFull>() },
 
-        {"unarmored", new List<LectureFull>() },
-        {"lightArmor", new List<LectureFull>() },
-        {"mediumArmor", new List<LectureFull>() },
-        {"heavyArmor", new List<LectureFull>() },
+        {"unarmored defense", new List<LectureFull>() },
+        {"light armor", new List<LectureFull>() },
+        {"medium armor", new List<LectureFull>() },
+        {"heavy armor", new List<LectureFull>() },
     };
 
-        public string unarmed { get { return DB.Prof_FindMax(attackDefense_lectures["unarmed"]); } }
-        public string simpleWeapons { get { return DB.Prof_FindMax(attackDefense_lectures["simpleWeapons"]); } }
-        public string martialWeapons { get { return DB.Prof_FindMax(attackDefense_lectures["martialWeapons"]); } }
-        public string advancedWeapons { get { return DB.Prof_FindMax(attackDefense_lectures["advancedWeapons"]); } }
+        public string unarmed { get { return DB.Prof_FindMax(attackDefense_lectures["unarmed attacks"]); } }
+        public string simpleWeapons { get { return DB.Prof_FindMax(attackDefense_lectures["simple weapons"]); } }
+        public string martialWeapons { get { return DB.Prof_FindMax(attackDefense_lectures["martial weapons"]); } }
+        public string advancedWeapons { get { return DB.Prof_FindMax(attackDefense_lectures["advanced weapons"]); } }
 
-        public string unarmored { get { return DB.Prof_FindMax(attackDefense_lectures["unarmored"]); } }
-        public string lightArmor { get { return DB.Prof_FindMax(attackDefense_lectures["lightArmor"]); } }
-        public string mediumArmor { get { return DB.Prof_FindMax(attackDefense_lectures["mediumArmor"]); } }
-        public string heavyArmor { get { return DB.Prof_FindMax(attackDefense_lectures["heavyArmor"]); } }
+        public string unarmored { get { return DB.Prof_FindMax(attackDefense_lectures["unarmored defense"]); } }
+        public string lightArmor { get { return DB.Prof_FindMax(attackDefense_lectures["light armor"]); } }
+        public string mediumArmor { get { return DB.Prof_FindMax(attackDefense_lectures["medium armor"]); } }
+        public string heavyArmor { get { return DB.Prof_FindMax(attackDefense_lectures["heavy armor"]); } }
 
         public void WeaponArmor_ClearFrom(string from)
         {
@@ -537,6 +526,14 @@ namespace Pathfinder2e.Player
             if (attackDefense_lectures.ContainsKey(lecture.target))
             {
                 attackDefense_lectures[lecture.target].Add(new LectureFull(lecture, from));
+                return true;
+            }
+            else if (lecture.target == "all armor")
+            {
+                attackDefense_lectures["unarmored defense"].Add(new LectureFull(lecture, from));
+                attackDefense_lectures["light armor"].Add(new LectureFull(lecture, from));
+                attackDefense_lectures["medium armor"].Add(new LectureFull(lecture, from));
+                attackDefense_lectures["heavy armor"].Add(new LectureFull(lecture, from));
                 return true;
             }
             else
@@ -553,7 +550,7 @@ namespace Pathfinder2e.Player
 
         private void Ancestry_Set(string newAncestry)
         {
-            if (newAncestry != _ancestry)
+            if (newAncestry == _ancestry)
                 return;
 
             if (newAncestry != "")
@@ -573,8 +570,9 @@ namespace Pathfinder2e.Player
                     foreach (var item in ancestryData.abl_boosts)
                         if (item != "free")
                             Abl_MapAdd(new AblBoostData("ancestry boost", item, 1));
-                    foreach (var item in ancestryData.abl_flaw)
-                        Abl_MapAdd(new AblBoostData("ancestry flaw", item, -1));
+                    if (ancestryData.abl_flaw != null)
+                        foreach (var item in ancestryData.abl_flaw)
+                            Abl_MapAdd(new AblBoostData("ancestry flaw", item, -1));
 
                     // Choices
                     List<AblBoostData> previousFree = Abl_MapGetAll("ancestry free");
@@ -615,7 +613,7 @@ namespace Pathfinder2e.Player
 
         private void Background_Set(string newBackground)
         {
-            if (newBackground != _background)
+            if (newBackground == _background)
                 return;
 
             if (newBackground != "")
@@ -636,9 +634,10 @@ namespace Pathfinder2e.Player
                     // Choices
                     AblBoostData previousChoice = Abl_MapGet("background choice");
                     bool match = false;
-                    foreach (var item in backgroundData.abl_choices)
-                        if (previousChoice.abl == item)
-                            match = true;
+                    if (previousChoice != null)
+                        foreach (var item in backgroundData.abl_choices)
+                            if (previousChoice.abl == item)
+                                match = true;
                     if (!match)
                         Abl_MapDelete("background choice");
                 }
@@ -673,7 +672,7 @@ namespace Pathfinder2e.Player
 
         private void SetClass(string newClass)
         {
-            if (newClass != _class)
+            if (newClass == _class)
                 return;
 
             if (newClass != "")
@@ -699,15 +698,24 @@ namespace Pathfinder2e.Player
                     foreach (var item in classData.class_dc_and_spells)
                         ClassDC_Train(item, "class");
 
-                    // Not Choices
+                    // Choices
                     // Build_SetNewProgression(classData.name);
-                    AblBoostData previousChoice = Abl_MapGet("class");
-                    bool match = false;
-                    foreach (var item in classData.key_ability_choices)
-                        if (previousChoice.abl == item)
-                            match = true;
-                    if (!match)
+                    if (classData.key_ability_choices.Count > 1)
+                    {
+                        AblBoostData previousChoice = Abl_MapGet("class");
+                        bool match = false;
+                        if (previousChoice != null)
+                            foreach (var item in classData.key_ability_choices)
+                                if (previousChoice.abl == item)
+                                    match = true;
+                        if (!match)
+                            Abl_MapDelete("class");
+                    }
+                    else
+                    {
                         Abl_MapDelete("class");
+                        Abl_MapAdd(new AblBoostData("class", classData.key_ability_choices[0], 1));
+                    }
                 }
                 else
                 {
@@ -801,35 +809,35 @@ namespace Pathfinder2e.Player
         // ---------------------------------------------------LECTURES MANAGEMENT--------------------------------------------------
         private List<LectureFull> lectures_unused = new List<LectureFull>();
 
-        public bool Lectures_Allocate(Lecture lecture, string from)
-        {
-            bool trainSuccessful = false;
+        // public bool Lectures_Allocate(Lecture lecture, string from)
+        // {
+        //     bool trainSuccessful = false;
 
-            if (lecture.target == "unarmed" || lecture.target == "simpleWeapons" || lecture.target == "martialWeapons" ||
-            lecture.target == "advancedWeapons" || lecture.target == "unarmored" || lecture.target == "lightArmor" ||
-            lecture.target == "mediumArmor" || lecture.target == "heavyArmor")
-            {
-                trainSuccessful = AttackDefense_Train(lecture, from);
-            }
-            else if (lecture.target == "fortitude" || lecture.target == "reflex" || lecture.target == "will")
-            {
-                trainSuccessful = Saves_Train(lecture, from);
-            }
-            else if (lecture.target == "perception")
-            {
-                trainSuccessful = Perception_Train(lecture, from);
-            }
-            else if (lecture.target == "acrobatics" || lecture.target == "arcana" || lecture.target == "athletics" || lecture.target == "crafting" ||
-            lecture.target == "deception" || lecture.target == "diplomacy" || lecture.target == "intimidation" || lecture.target == "medicine" ||
-            lecture.target == "nature" || lecture.target == "occultism" || lecture.target == "performance" || lecture.target == "religion" ||
-            lecture.target == "society" || lecture.target == "stealth" || lecture.target == "survival" || lecture.target == "thievery" ||
-            lecture.target == "lore 1" || lecture.target == "lore 2")
-            {
-                trainSuccessful = Skills_Train(lecture, from);
-            }
+        //     if (lecture.target == "unarmed" || lecture.target == "simple weapons" || lecture.target == "martial weapons" ||
+        //     lecture.target == "advanced weapons" || lecture.target == "unarmored defense" || lecture.target == "light armor" ||
+        //     lecture.target == "medium armor" || lecture.target == "heavy armor")
+        //     {
+        //         trainSuccessful = AttackDefense_Train(lecture, from);
+        //     }
+        //     else if (lecture.target == "fortitude" || lecture.target == "reflex" || lecture.target == "will")
+        //     {
+        //         trainSuccessful = Saves_Train(lecture, from);
+        //     }
+        //     else if (lecture.target == "perception")
+        //     {
+        //         trainSuccessful = Perception_Train(lecture, from);
+        //     }
+        //     else if (lecture.target == "acrobatics" || lecture.target == "arcana" || lecture.target == "athletics" || lecture.target == "crafting" ||
+        //     lecture.target == "deception" || lecture.target == "diplomacy" || lecture.target == "intimidation" || lecture.target == "medicine" ||
+        //     lecture.target == "nature" || lecture.target == "occultism" || lecture.target == "performance" || lecture.target == "religion" ||
+        //     lecture.target == "society" || lecture.target == "stealth" || lecture.target == "survival" || lecture.target == "thievery" ||
+        //     lecture.target == "lore 1" || lecture.target == "lore 2")
+        //     {
+        //         trainSuccessful = Skills_Train(lecture, from);
+        //     }
 
-            return trainSuccessful;
-        }
+        //     return trainSuccessful;
+        // }
 
         public void Lectures_ClearFrom(List<LectureFull> lectures, string from)
         {
