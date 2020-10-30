@@ -176,28 +176,42 @@ namespace Pathfinder2e.Player
                 Destroy(item.gameObject, 0.001f);
             }
             buildButtonList.Clear();
-            foreach (var level in currentPlayer.build)
+            ClassProgression progression = DB.ClassProgression.Find(ctx => ctx.name == currentPlayer.class_name);
+            int stageCounter = 0;
+
+            foreach (var stage in progression.progression)
             {
-                Transform separator = Instantiate(buildLevelSeparator, Vector3.zero, Quaternion.identity, buildContainer);
-                buildButtonList.Add(separator.gameObject);
-                ButtonText separatorScript = separator.GetComponent<ButtonText>();
-                separatorScript.text.text = level.Key.ToString();
+                stageCounter++;
+                GenerateSeparator(stageCounter);
 
-                if (level.Value != null) // Separo choices de no choices
+                foreach (var item in stage.items)
                 {
-                    List<BuildBlock> choices = new List<BuildBlock>();
-                    List<BuildBlock> noChoices = new List<BuildBlock>();
-
-                    // foreach (var item in level.Value)
-                    //     if (false)
-                    //         choices.Add(item.Value);
-                    //     else
-                    //         noChoices.Add(item.Value);
-
-                    foreach (var item in choices)
-                        ChoiceButtonsAssigner(item, GenerateBuildButton());
-                    foreach (var item in noChoices)
-                        NoChoiceButtonsAssigner(item, GenerateBuildButton());
+                    switch (item)
+                    {
+                        case "initial proficiencies": // I'm ussing this to initialize abilities boost and later, when developed, also fot unspent lectures
+                            BuildButton initAblBoosts = GenerateBuildButton(item, "");
+                            initAblBoosts.button.onClick.AddListener(() => OnClickInitialAbilityBoosts());
+                            // Should get into the build, retrieve init abl choices, check if they have errors and display a message
+                            // if (currentPlayer.Build_GetFromBlock<>) 
+                            break;
+                        case "class feat":
+                            // search in build for choice
+                            BuildButton classFeat = GenerateBuildButton("Class Feat", "");
+                            classFeat.button.interactable = false;
+                            break;
+                        case "skill feat":
+                            // search in build for choice
+                            BuildButton skillFeat = GenerateBuildButton("Skill Feat", "");
+                            skillFeat.button.interactable = false;
+                            break;
+                        case "alchemy":
+                            BuildButton alch = GenerateBuildButton("Class Feature", "Alchemy");
+                            alch.button.interactable = false;
+                            break;
+                        default:
+                            // buildButton.
+                            break;
+                    }
                 }
             }
         }
@@ -206,10 +220,28 @@ namespace Pathfinder2e.Player
 
         #region --------------------------------------------BUILD--------------------------------------------
 
-        private BuildButton GenerateBuildButton()
+        private GameObject GenerateSeparator(int stage)
+        {
+            Transform separator = Instantiate(buildLevelSeparator, Vector3.zero, Quaternion.identity, buildContainer);
+            buildButtonList.Add(separator.gameObject);
+            ButtonText separatorScript = separator.GetComponent<ButtonText>();
+            separatorScript.text.text = $"Level {stage}";
+
+            return separator.gameObject;
+        }
+
+        private BuildButton GenerateBuildButton() { return GenerateBuildButton("", ""); }
+        private BuildButton GenerateBuildButton(string title, string subtitle)
         {
             Transform button = Instantiate(buildButton, Vector3.zero, Quaternion.identity, buildContainer);
             buildButtonList.Add(button.gameObject);
+
+            BuildButton buttonScript = button.GetComponent<BuildButton>();
+            if (!string.IsNullOrEmpty(title))
+                buttonScript.title.text = title;
+            if (!string.IsNullOrEmpty(subtitle))
+                buttonScript.subtitle.text = subtitle;
+
             return button.GetComponent<BuildButton>();
         }
 

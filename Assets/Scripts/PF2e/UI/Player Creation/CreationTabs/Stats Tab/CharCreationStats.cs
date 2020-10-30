@@ -9,7 +9,7 @@ namespace Pathfinder2e.Player
 
     public class CharCreationStats : MonoBehaviour
     {
-        [System.Serializable] private class ListWrapper { public List<Image> myList; }
+        [System.Serializable] private class ListWrapper { public List<Image> myList = null; }
 
         [SerializeField] private GameObject statsPanel = null;
         [SerializeField] private CharacterCreation creation = null;
@@ -124,38 +124,34 @@ namespace Pathfinder2e.Player
             wealthInput.SetTextWithoutNotify(creation.currentPlayer.Wealth_Formated());
 
             // Abilities
-            Color active = Globals.Theme["text_2"]; Color unactive = Globals.Theme["background_1"]; Color flaw = Globals.Theme["untrained"];
+            Color unactive = Globals.Theme["background_1"]; Color boostColor = Globals.Theme["text_2"]; Color flawColor = Globals.Theme["untrained"];
             foreach (var item in ablMap)
                 foreach (var image in item.myList)
                     image.color = unactive;
+            int[,] map = new int[8, 6];
             foreach (var boost in creation.currentPlayer.abl_boostList)
                 switch (boost.from)
                 {
-                    case "ancestry boost":
-                        ablMap[0].myList[DB.Abl_Abbr2Int(boost.abl)].color = active; break;
-                    case "ancestry flaw":
-                        ablMap[0].myList[DB.Abl_Abbr2Int(boost.abl)].color = flaw; break;
-                    case "ancestry free":
-                        ablMap[0].myList[DB.Abl_Abbr2Int(boost.abl)].color = active; break;
-                    case "background choice":
-                        ablMap[1].myList[DB.Abl_Abbr2Int(boost.abl)].color = active; break;
-                    case "background free":
-                        ablMap[1].myList[DB.Abl_Abbr2Int(boost.abl)].color = flaw; break;
-                    case "class":
-                        ablMap[2].myList[DB.Abl_Abbr2Int(boost.abl)].color = active; break;
-                    case "lvl1":
-                        ablMap[3].myList[DB.Abl_Abbr2Int(boost.abl)].color = active; break;
-                    case "lvl5":
-                        ablMap[4].myList[DB.Abl_Abbr2Int(boost.abl)].color = active; break;
-                    case "lvl10":
-                        ablMap[5].myList[DB.Abl_Abbr2Int(boost.abl)].color = active; break;
-                    case "lvl15":
-                        ablMap[6].myList[DB.Abl_Abbr2Int(boost.abl)].color = active; break;
-                    case "lvl20":
-                        ablMap[7].myList[DB.Abl_Abbr2Int(boost.abl)].color = active; break;
+                    case "ancestry boost": map[0, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
+                    case "ancestry flaw": map[0, DB.Abl_Abbr2Int(boost.abl)] -= 1; break;
+                    case "ancestry free": map[0, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
+                    case "background choice": map[1, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
+                    case "background free": map[1, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
+                    case "class": map[2, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
+                    case "lvl1": map[3, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
+                    case "lvl5": map[4, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
+                    case "lvl10": map[5, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
+                    case "lvl15": map[6, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
+                    case "lvl20": map[7, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
 
                     default: break;
                 }
+            for (int i = 0; i < 8; i++)
+                for (int j = 0; j < 6; j++)
+                    if (map[i, j] < 0)
+                        ablMap[i].myList[j].color = flawColor;
+                    else if (map[i, j] > 0)
+                        ablMap[i].myList[j].color = boostColor;
 
             // Skills
             var list = creation.currentPlayer.Skills_GetAllAsList();
@@ -199,6 +195,7 @@ namespace Pathfinder2e.Player
             simpleWeaponText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.simpleWeapons);
             martialWeaponText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.martialWeapons);
             advancedWeaponText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.advancedWeapons);
+
         }
 
         #endregion

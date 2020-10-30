@@ -34,7 +34,7 @@ namespace Pathfinder2e.GameData
         // [SerializeField] private Button ablBoostsAcceptButotn = null;
         // [SerializeField] private Toggle[] toggles = null;
 
-        // private AblBoostData currentData = null;
+        private List<AblBoostData> currentData = null;
 
         [HideInInspector] public bool isOpen;
 
@@ -53,9 +53,7 @@ namespace Pathfinder2e.GameData
             isOpen = true;
             StartCoroutine(PanelFader.RescaleAndFade(initialAblBoostsPanel.transform, initialAblBoostsPanel, 1f, 1f, 0.1f));
 
-            // currentData = creation.currentPlayer.Build_Get<AblBoostData>("Level 1", "Initial Ability Boosts");
-            // if (currentData == null)
-            //     currentData = new AblBoostData();
+            currentData = creation.currentPlayer.abl_boostList;
 
             AssignInitialAblBoosts();
         }
@@ -65,7 +63,7 @@ namespace Pathfinder2e.GameData
             isOpen = false;
             StartCoroutine(PanelFader.RescaleAndFade(initialAblBoostsPanel.transform, initialAblBoostsPanel, 0.85f, 0f, 0.1f));
 
-            // currentData = null;
+            currentData = null;
         }
 
         private void AssignInitialAblBoosts()
