@@ -48,26 +48,31 @@ public class ObjectPooler : MonoBehaviour
     {
         if (Pools.ContainsKey(prefab.name))
         {
-            GameObject objectToSpawn;
+            GameObject obj = new GameObject();
+            bool needNew = false;
 
-            if (!Pools[prefab.name].Peek().activeSelf)
+            if (Pools[prefab.name].Count > 0)
             {
-                objectToSpawn = Pools[prefab.name].Dequeue();
-                objectToSpawn.transform.position = position;
-                objectToSpawn.transform.rotation = rotation;
-                objectToSpawn.transform.parent = parent;
-                objectToSpawn.SetActive(true);
+                if (!Pools[prefab.name].Peek().activeSelf)
+                {
+                    obj = Pools[prefab.name].Dequeue();
+                    obj.transform.position = position;
+                    obj.transform.rotation = rotation;
+                    obj.transform.parent = parent;
+                    obj.SetActive(true);
+                }
+                else
+                    needNew = true;
             }
             else
-            {
-                objectToSpawn = Instantiate(prefab, position, rotation, parent);
-            }
+                needNew = true;
 
-            IPooleable obj = objectToSpawn.GetComponent<IPooleable>();
-            if (obj != null) { obj.OnSpawn(); }
-            Pools[prefab.name].Enqueue(objectToSpawn);
+            if (needNew) obj = Instantiate(prefab, position, rotation, parent);
 
-            return objectToSpawn;
+            IPooleable pooleable = obj.GetComponent<IPooleable>();
+            if (pooleable != null) { pooleable.OnSpawn(); }
+
+            return obj;
         }
         else
         {
@@ -75,5 +80,12 @@ public class ObjectPooler : MonoBehaviour
             CreatePool(prefab, 1);
             return Spawn(prefab, position, rotation, parent);
         }
+    }
+
+    public static void Destroy(GameObject prefab)
+    {
+        prefab.SetActive(false);
+        if (Pools.ContainsKey(prefab.name))
+            Pools[prefab.name].Enqueue(prefab);
     }
 }

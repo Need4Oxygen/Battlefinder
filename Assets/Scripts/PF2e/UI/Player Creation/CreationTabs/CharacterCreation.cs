@@ -362,6 +362,7 @@ namespace Pathfinder2e.Player
         /// <summary> Called by the ancestry selection button. </summary>
         public void OnClickSelectAncestry()
         {
+            if (ablBoostsSelector.isOpen) return;
             ABCSelector.OpenSelectorPanel();
             ABCSelector.Display("ancestry");
             ABCSelector.acceptButton.onClick.AddListener(() => SelectAncestryAccept());
@@ -380,6 +381,7 @@ namespace Pathfinder2e.Player
         /// <summary> Called by the backgrond selection button. </summary>
         public void OnClickSelectBackground()
         {
+            if (ablBoostsSelector.isOpen) return;
             ABCSelector.OpenSelectorPanel();
             ABCSelector.Display("background");
             ABCSelector.acceptButton.onClick.AddListener(() => SelectBackgroundAccept());
@@ -398,6 +400,7 @@ namespace Pathfinder2e.Player
         /// <summary> Called by the class selection button. </summary>
         public void OnClickSelectedClass()
         {
+            if (ablBoostsSelector.isOpen) return;
             ABCSelector.OpenSelectorPanel();
             ABCSelector.Display("class");
             ABCSelector.acceptButton.onClick.AddListener(() => SelectClassAccept());

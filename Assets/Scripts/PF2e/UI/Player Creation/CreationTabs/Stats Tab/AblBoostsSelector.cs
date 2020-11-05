@@ -6,6 +6,7 @@ using TMPro;
 using Pathfinder2e;
 using Pathfinder2e.Player;
 using Pathfinder2e.Containers;
+using static TMPro.TMP_Dropdown;
 
 namespace Pathfinder2e.GameData
 {
@@ -22,14 +23,7 @@ namespace Pathfinder2e.GameData
         [SerializeField] private Transform classContainer = null;
         [SerializeField] private List<Toggle> level1Toggles = null;
 
-        private List<string> ancestryBoosts = new List<string>();
-        private List<string> ancestryFlaws = new List<string>();
-        private List<TMP_Dropdown> ancestryFreeAssignsDropdowns = new List<TMP_Dropdown>();
-        private List<TMP_Dropdown> ancestryDrops = new List<TMP_Dropdown>();
-        private List<TMP_Dropdown> backgroundDrops = new List<TMP_Dropdown>();
-        private List<TMP_Dropdown> classDrops = new List<TMP_Dropdown>();
-
-        // [Header("Other Abilities Boosts")]
+        // [Header("Every Other Abilities Boosts")]
         // [SerializeField] private CanvasGroup ablBoostsPanel = null;
         // [SerializeField] private Button ablBoostsAcceptButotn = null;
         // [SerializeField] private Toggle[] toggles = null;
@@ -53,7 +47,7 @@ namespace Pathfinder2e.GameData
             isOpen = true;
             StartCoroutine(PanelFader.RescaleAndFade(initialAblBoostsPanel.transform, initialAblBoostsPanel, 1f, 1f, 0.1f));
 
-            currentData = creation.currentPlayer.abl_boostList;
+            currentData = new List<AblBoostData>(creation.currentPlayer.abl_boostList);
 
             AssignInitialAblBoosts();
         }
@@ -68,312 +62,380 @@ namespace Pathfinder2e.GameData
 
         private void AssignInitialAblBoosts()
         {
-            AssignAncestryBoosts();
-            AssignBackgroundBoosts();
-            AssignClassBoosts();
+            GenerateAncestryDrops();
+            RefreshAncestryOptions();
+
+            GenerateBackgroundDrops();
+            RefreshBackgroundOptions();
+
+            GenerateClassDrops();
+
             AssignLvl1Boosts();
         }
 
-        private TMP_Dropdown GenerateDropdown(Transform parent)
-        {
-            Transform drop = Instantiate(dropdownPrefab, Vector3.zero, Quaternion.identity, parent);
-            TMP_Dropdown dropdown = drop.GetComponent<TMP_Dropdown>();
-            dropdown.ClearOptions();
-            return dropdown;
-        }
-
         //--------------------------------------------ANCESTRIES ASSIGMENT STUFF--------------------------------------------
-        private void AssignAncestryBoosts()
+        private Ancestry ancestry = null;
+        private List<TMP_Dropdown.OptionData> ancestryOptionList = new List<OptionData>();
+        private List<TMP_Dropdown> allAncestryDrops = new List<TMP_Dropdown>();
+        private List<TMP_Dropdown> ancestryBoostDrops = new List<TMP_Dropdown>();
+        private List<TMP_Dropdown> ancestryFlawDrops = new List<TMP_Dropdown>();
+        private List<TMP_Dropdown> ancestryFreeDrops = new List<TMP_Dropdown>();
+
+        private void GenerateAncestryDrops()
         {
-            Ancestry ancestry = DB.Ancestries.Find(ctx => ctx.name == creation.currentPlayer.ancestry);
-            List<string> alreadyBoosted = new List<string>();
-            int currentDrop = 0;
+            ancestry = DB.Ancestries.Find(ctx => ctx.name == creation.currentPlayer.ancestry);
+            ancestryOptionList = GenerateOptionList();
+            int abl_free = ancestry.abl_boosts.FindAll(ctx => ctx == "free").Count;
 
-            // Delete previous drops
-            foreach (var item in ancestryDrops)
-            {
-                item.gameObject.SetActive(false); // This prevents flickering
-                Destroy(item.gameObject, 0.001f);
-            }
-            ancestryDrops.Clear();
+            // Boosts
+            if (ancestry.abl_boosts != null)
+                foreach (var item in ancestry.abl_boosts)
+                    if (item != "free")
+                    {
+                        TMP_Dropdown drop = GenerateDropdown(ancestryContainer);
+                        allAncestryDrops.Add(drop);
+                        ancestryBoostDrops.Add(drop);
+                        drop.interactable = false;
+                        drop.AddOptions(GenerateOptionList(new string[] { item }, false));
 
-            // Set already boosted/flawed abilities so user can't boost them
-            foreach (var item in ancestry.abl_boosts)
-                alreadyBoosted.Add(AbilityToFullName(item));
-            // foreach (var item in ancestry.abl_flaw) // You can use free ancestry boost to nullify ancestry flaw
-            //     alreadyBoosted.Add(AbilityToFullName(item));
+                        // Discard obligatory boosts from possible options
+                        if (ancestry.abl_boosts.Count > 0)
+                            ancestryOptionList.RemoveAll(ctx => ancestry.abl_boosts.Contains(AbilityToAbbr(ctx.text)));
+                    }
 
-            // Instantiate and lock ability boosts drops
-            ancestryBoosts.Clear();
-            foreach (var item in ancestry.abl_boosts)
-            {
-                TMP_Dropdown drop = GenerateDropdown(ancestryContainer);
-                ancestryDrops.Add(drop);
-                drop.interactable = false;
-                drop.AddOptions(CreateOptionList(new string[] { item }));
-                ancestryBoosts.Add(item);
-                currentDrop++;
-            }
-
-            // Instantiate free ability boosts drops
-            int freeBoostsCount = ancestry.abl_boosts.FindAll(ctx => ctx == "free").Count;
-            int counter = 0;
-            ancestryFreeAssignsDropdowns.Clear();
-            for (int i = 0; i < freeBoostsCount; i++)
-            {
-                TMP_Dropdown drop = GenerateDropdown(ancestryContainer);
-                ancestryDrops.Add(drop);
-                ancestryFreeAssignsDropdowns.Add(drop);
-
-                // Ready a dropdown
-                // List<TMP_Dropdown.OptionData> optionList = CreateOptionList();
-                // if (currentData.ancestryFree.Count > 0)
-                //     optionList.RemoveAll(v => alreadyBoosted.Contains(v.text) && v.text != AbilityToFullName(currentData.ancestryFree[counter]));
-                // else
-                //     optionList.RemoveAll(v => alreadyBoosted.Contains(v.text));
-                // drop.AddOptions(optionList);
-                // drop.interactable = true;
-                // drop.onValueChanged.AddListener((v) => OnValueChangedAncestryDropdown(v));
-                // alreadyBoosted.Add("Free");
-
-                // Select dropdown value corresponding to last time
-                // string shouldSelect = "";
-                // int shouldSelectIndex = 0;
-                // if (counter < currentData.ancestryFree.Count)
-                //     shouldSelect = currentData.ancestryFree[counter];
-                // if (shouldSelect != "" && shouldSelect != "None" && shouldSelect != "Null" && shouldSelect != null)
-                //     shouldSelectIndex = optionList.FindIndex(0, optionList.Count, i => i.text == AbilityToFullName(shouldSelect));
-                // drop.SetValueWithoutNotify(shouldSelectIndex);
-
-                currentDrop++;
-                counter++;
-            }
-
-            // Instantiate ability flaws drops
-            ancestryFlaws.Clear();
-            foreach (var item in ancestry.abl_flaw)
-            {
-                TMP_Dropdown drop = GenerateDropdown(ancestryContainer);
-                ancestryDrops.Add(drop);
-                drop.interactable = false;
-                drop.AddOptions(CreateOptionList(new string[] { item }));
-                drop.captionText.color = Color.red;
-                ancestryFlaws.Add(item);
-                currentDrop++;
-            }
-        }
-
-        private void OnValueChangedAncestryDropdown(int value)
-        {
-            SaveAncestryOptions();
-        }
-
-        private void SaveAncestryOptions()
-        {
-            // currentData.ancestryBoosts.Clear();
-            // currentData.ancestryFlaws.Clear();
-            // currentData.ancestryFree.Clear();
-
-            // foreach (var item in ancestryBoosts)
-            //     currentData.ancestryBoosts.Add(item);
-            // foreach (var item in ancestryFlaws)
-            //     currentData.ancestryFlaws.Add(item);
-            // foreach (var item in ancestryFreeAssignsDropdowns) // User selected free ancestry bonus
-            //     currentData.ancestryFree.Add(AbilityToAbbr(item.captionText.text));
-
-            AssignAncestryBoosts();
-        }
-
-
-        //--------------------------------------------BACKGROUND ASSIGMENT STUFF--------------------------------------------
-        private void AssignBackgroundBoosts()
-        {
-            Background background = DB.Backgrounds.Find(ctx => ctx.name == creation.currentPlayer.background);
-            List<string> alreadyBoosted = new List<string>();
-
-            // Delete previous drops
-            foreach (var item in backgroundDrops)
-            {
-                item.gameObject.SetActive(false); // This prevents flickering
-                Destroy(item.gameObject, 0.001f);
-            }
-            backgroundDrops.Clear();
-
-            // Set background boosted/flawed abilities so user can't boost them
-            // foreach (var item in currentData.backgroundBoosts)
-            //     alreadyBoosted.Add(AbilityToFullName(item));
-
-            for (int i = 0; i < 2; i++)
-            {
-                List<TMP_Dropdown.OptionData> optionList = CreateOptionList();
-
-                if (i == 0)
+            // Flaws
+            if (ancestry.abl_flaws != null)
+                foreach (var item in ancestry.abl_flaws)
                 {
-                    List<string> choices = new List<string>();
-                    choices.Add("None");
-                    foreach (var item in background.abl_choices)
-                        choices.Add(item);
-                    optionList = CreateOptionList(choices.ToArray());
-                    // optionList.RemoveAll(v => alreadyBoosted.Contains(v.text) && v.text != AbilityToFullName(currentData.backgroundBoosts[i]));
-                }
-                else
-                {
-                    // optionList.RemoveAll(v => alreadyBoosted.Contains(v.text) && v.text != AbilityToFullName(currentData.backgroundBoosts[i]));
+                    TMP_Dropdown drop = GenerateDropdown(ancestryContainer);
+                    allAncestryDrops.Add(drop);
+                    ancestryFlawDrops.Add(drop);
+                    drop.interactable = false;
+                    drop.AddOptions(GenerateOptionList(new string[] { item }, false));
+                    drop.captionText.color = Globals.Theme["untrained"];
                 }
 
-                TMP_Dropdown drop = GenerateDropdown(backgroundContainer);
-                backgroundDrops.Add(drop);
-                drop.interactable = true;
-                drop.onValueChanged.AddListener((v) => OnValueChangedBackgroundDropdown(v));
-                drop.AddOptions(optionList);
+            List<AblBoostData> previous = currentData.FindAll(ctx => ctx.from == "ancestry free");
+            for (int i = 0; i < abl_free; i++)
+            {
+                TMP_Dropdown drop = GenerateDropdown(ancestryContainer);
+                allAncestryDrops.Add(drop);
+                ancestryFreeDrops.Add(drop);
 
-                string shouldSelect = ""; int shouldSelectIndex = 0;
-                // if (i < currentData.backgroundBoosts.Count)
-                //     shouldSelect = currentData.backgroundBoosts[i];
-                if (shouldSelect != "" && shouldSelect != "None" && shouldSelect != null)
-                    shouldSelectIndex = optionList.FindIndex(0, optionList.Count, v => v.text == AbilityToFullName(shouldSelect));
+                drop.options = ancestryOptionList;
+                drop.onValueChanged.AddListener(v => OnValueChangedAncestryDropdown());
+
+                // Select old boosts if applicable
+                if (previous != null)
+                    if (previous.Count > i)
+                    {
+                        string previousAbl = DB.Abl_Abbr2Full(previous[i].abl);
+                        if (ancestryOptionList.Find(ctx => ctx.text == previousAbl) != null)
+                        {
+                            int shouldSelectIndex = 0;
+                            shouldSelectIndex = ancestryFreeDrops[i].options.FindIndex(0, ancestryOptionList.Count, ctx => ctx.text == previousAbl);
+                            drop.SetValueWithoutNotify(shouldSelectIndex);
+                        }
+                    }
+            }
+        }
+
+        private void RefreshAncestryOptions()
+        {
+            for (int i = 0; i < ancestryFreeDrops.Count; i++)
+            {
+                // Get drop
+                TMP_Dropdown drop = ancestryFreeDrops[i];
+                string dropAbl = drop.captionText.text;
+
+                // Discard every other free drop option
+                List<OptionData> options = new List<OptionData>(ancestryOptionList);
+                foreach (var item in ancestryFreeDrops)
+                    if (item.captionText.text != "None" && item.captionText.text != "" && item.captionText.text != dropAbl)
+                        options.Remove(options.Find(ctx => ctx.text == item.captionText.text));
+                drop.options = options;
+
+                // Reset value in case options change, so value follows
+                int shouldSelectIndex = 0;
+                shouldSelectIndex = drop.options.FindIndex(0, drop.options.Count, ctx => ctx.text == dropAbl);
                 drop.SetValueWithoutNotify(shouldSelectIndex);
             }
         }
 
-        private void OnValueChangedBackgroundDropdown(int value)
+        private void OnValueChangedAncestryDropdown()
         {
-            SaveBackgroundOptions();
+            RefreshAncestryOptions();
         }
 
-        private void SaveBackgroundOptions()
+        private void SaveAncestryOptions()
         {
-            // currentData.backgroundBoosts.Clear();
+            currentData.RemoveAll(ctx => ctx.from == "ancestry free");
 
-            // foreach (var item in backgroundDrops)
-            //     currentData.backgroundBoosts.Add(AbilityToAbbr(item.captionText.text));
+            foreach (var item in ancestryFreeDrops)
+            {
+                string abl = AbilityToAbbr(item.captionText.text);
+                if (abl != "")
+                    currentData.Add(new AblBoostData("ancestry free", abl, 1));
+            }
 
-            AssignBackgroundBoosts();
+            ClearAncestryData();
         }
 
-
-        //--------------------------------------------CLASS ASSIGMENT STUFF--------------------------------------------
-        private void AssignClassBoosts()
+        private void ClearAncestryData()
         {
-            Class classObj = DB.Classes.Find(ctx => ctx.name == creation.currentPlayer.class_name);
-
-            // Delete previous drops
-            foreach (var item in classDrops)
+            foreach (var item in allAncestryDrops)
             {
                 item.gameObject.SetActive(false);
                 Destroy(item.gameObject, 0.001f);
             }
-            classDrops.Clear();
 
-            List<string> choices = new List<string>();
-
-            if (classObj.key_ability_choices.Count > 1)
-            {
-                choices.Add("None");
-                foreach (var item in classObj.key_ability_choices)
-                    choices.Add(item);
-            }
-            else
-            {
-                foreach (var item in classObj.key_ability_choices)
-                    choices.Add(item);
-            }
-
-            TMP_Dropdown drop = GenerateDropdown(classContainer);
-            classDrops.Add(drop);
-            drop.onValueChanged.AddListener((v) => OnValueChangedClassDropdown(v));
-            drop.AddOptions(CreateOptionList(choices.ToArray()));
-
-            if (choices.Count > 1)
-                drop.interactable = true;
-            else
-                drop.interactable = false;
-
-            string shouldSelect = ""; int shouldSelectIndex = 0;
-            // if (currentData.classBoosts.Count > 0)
-            //     shouldSelect = currentData.classBoosts[0];
-            if (shouldSelect != "" && shouldSelect != "None" && shouldSelect != null)
-                shouldSelectIndex = choices.FindIndex(0, choices.Count, v => v == shouldSelect);
-            drop.SetValueWithoutNotify(shouldSelectIndex);
+            ancestry = null;
+            allAncestryDrops.Clear();
+            ancestryBoostDrops.Clear();
+            ancestryFlawDrops.Clear();
+            ancestryFreeDrops.Clear();
+            ancestryOptionList.Clear();
         }
 
-        private void OnValueChangedClassDropdown(int value)
+
+        //--------------------------------------------BACKGROUND ASSIGMENT STUFF--------------------------------------------
+        private Background background = null;
+        private List<TMP_Dropdown> allBackgroundDrops = new List<TMP_Dropdown>();
+        private TMP_Dropdown backgroundChoiceDrop = null;
+        private TMP_Dropdown backgroundFreeDrop = null;
+
+        private void GenerateBackgroundDrops()
         {
-            SaveClassOptions();
+            background = DB.Backgrounds.Find(ctx => ctx.name == creation.currentPlayer.background);
+
+            {   // Choice
+                AblBoostData previous = currentData.Find(ctx => ctx.from == "background choice");
+
+                TMP_Dropdown drop = GenerateDropdown(backgroundContainer);
+                allBackgroundDrops.Add(drop);
+                backgroundChoiceDrop = drop;
+
+                List<TMP_Dropdown.OptionData> optionList = GenerateOptionList(background.abl_choices.ToArray(), true);
+                drop.options = optionList;
+
+                int shouldSelectIndex = 0;
+                if (previous != null)
+                {
+                    string previousAbl = DB.Abl_Abbr2Full(previous.abl);
+                    if (optionList.Find(ctx => ctx.text == previousAbl) != null)
+                        shouldSelectIndex = optionList.FindIndex(0, optionList.Count, ctx => ctx.text == previousAbl);
+                }
+                drop.SetValueWithoutNotify(shouldSelectIndex);
+
+                drop.onValueChanged.AddListener(v => OnValueChangedBackgroundDropdown());
+            }
+
+            {   // Free
+                AblBoostData previous = currentData.Find(ctx => ctx.from == "background free");
+
+                TMP_Dropdown drop = GenerateDropdown(backgroundContainer);
+                allBackgroundDrops.Add(drop);
+                backgroundFreeDrop = drop;
+
+                List<TMP_Dropdown.OptionData> optionList = GenerateOptionList();
+                drop.options = optionList;
+
+                int shouldSelectIndex = 0;
+                if (previous != null)
+                {
+                    string previousAbl = DB.Abl_Abbr2Full(previous.abl);
+                    if (optionList.Find(ctx => ctx.text == previousAbl) != null)
+                        shouldSelectIndex = optionList.FindIndex(0, optionList.Count, ctx => ctx.text == previousAbl);
+                }
+                drop.SetValueWithoutNotify(shouldSelectIndex);
+
+                drop.onValueChanged.AddListener(v => OnValueChangedBackgroundDropdown());
+            }
         }
 
-        private void SaveClassOptions()
+        private void RefreshBackgroundOptions()
         {
-            // currentData.classBoosts.Clear();
+            {   // Choice
+                string abl = backgroundChoiceDrop.captionText.text;
 
-            // foreach (var item in classDrops)
-            //     currentData.classBoosts.Add(AbilityToAbbr(item.captionText.text));
+                // Discard free drop choice
+                List<TMP_Dropdown.OptionData> choiceDropOptions = GenerateOptionList(background.abl_choices.ToArray(), true);
+                if (backgroundFreeDrop.captionText.text != "None" &&
+                backgroundFreeDrop.captionText.text != "" &&
+                backgroundFreeDrop.captionText.text != abl)
+                    choiceDropOptions.Remove(choiceDropOptions.Find(ctx => ctx.text == backgroundFreeDrop.captionText.text));
+                backgroundChoiceDrop.options = choiceDropOptions;
 
-            AssignClassBoosts();
+                // Reset value in case options change, so value follows
+                int shouldSelectIndex = 0;
+                shouldSelectIndex = backgroundChoiceDrop.options.FindIndex(0, backgroundChoiceDrop.options.Count, ctx => ctx.text == abl);
+                backgroundChoiceDrop.SetValueWithoutNotify(shouldSelectIndex);
+            }
+
+            {   // Free
+                string abl = backgroundFreeDrop.captionText.text;
+
+                // Discard free drop choice
+                List<TMP_Dropdown.OptionData> freeDropOptions = GenerateOptionList();
+                if (backgroundChoiceDrop.captionText.text != "None" &&
+                backgroundChoiceDrop.captionText.text != "" &&
+                backgroundChoiceDrop.captionText.text != abl)
+                    freeDropOptions.Remove(freeDropOptions.Find(ctx => ctx.text == backgroundChoiceDrop.captionText.text));
+                backgroundFreeDrop.options = freeDropOptions;
+
+                // Reset value in case options change, so value follows
+                int shouldSelectIndex = 0;
+                shouldSelectIndex = backgroundFreeDrop.options.FindIndex(0, backgroundFreeDrop.options.Count, ctx => ctx.text == abl);
+                backgroundFreeDrop.SetValueWithoutNotify(shouldSelectIndex);
+            }
+        }
+
+        private void OnValueChangedBackgroundDropdown()
+        {
+            RefreshBackgroundOptions();
+        }
+
+        private void SaveBackgroundOptions()
+        {
+            currentData.RemoveAll(ctx => ctx.from == "background choice");
+            currentData.RemoveAll(ctx => ctx.from == "background free");
+
+            string abl = "";
+
+            abl = AbilityToAbbr(backgroundChoiceDrop.captionText.text);
+            if (abl != "")
+                currentData.Add(new AblBoostData("background choice", abl, 1));
+
+            abl = AbilityToAbbr(backgroundFreeDrop.captionText.text);
+            if (abl != "")
+                currentData.Add(new AblBoostData("background free", abl, 1));
+
+            ClearBackgroundData();
+        }
+
+        private void ClearBackgroundData()
+        {
+            foreach (var item in allBackgroundDrops)
+            {
+                item.gameObject.SetActive(false);
+                Destroy(item.gameObject, 0.001f);
+            }
+
+            background = null;
+            allBackgroundDrops.Clear();
+            backgroundChoiceDrop = null;
+            backgroundFreeDrop = null;
         }
 
 
         //--------------------------------------------CLASS ASSIGMENT STUFF--------------------------------------------
+        private Class classObj = null;
+        private TMP_Dropdown classDrop = null;
+
+        private void GenerateClassDrops()
+        {
+            classObj = DB.Classes.Find(ctx => ctx.name == creation.currentPlayer.class_name);
+
+            AblBoostData previous = currentData.Find(ctx => ctx.from == "class");
+
+            TMP_Dropdown drop = GenerateDropdown(classContainer);
+            classDrop = drop;
+
+            List<TMP_Dropdown.OptionData> optionList = GenerateOptionList(classObj.key_ability_choices.ToArray(), true);
+            classDrop.options = optionList;
+
+            int shouldSelectIndex = 0;
+            if (previous != null)
+            {
+                string previousAbl = DB.Abl_Abbr2Full(previous.abl);
+                if (optionList.Find(ctx => ctx.text == previousAbl) != null)
+                    shouldSelectIndex = optionList.FindIndex(0, optionList.Count, ctx => ctx.text == previousAbl);
+            }
+            drop.SetValueWithoutNotify(shouldSelectIndex);
+
+            drop.onValueChanged.AddListener(v => OnValueChangedClassDropdown());
+        }
+
+        private void OnValueChangedClassDropdown()
+        {
+
+        }
+
+        private void SaveClassOptions()
+        {
+            currentData.RemoveAll(ctx => ctx.from == "class");
+
+            string abl = AbilityToAbbr(classDrop.captionText.text);
+            if (abl != "")
+                currentData.Add(new AblBoostData("class", abl, 1));
+
+            ClearClassData();
+        }
+
+        private void ClearClassData()
+        {
+            classDrop.gameObject.SetActive(false);
+            Destroy(classDrop.gameObject, 0.001f);
+
+            classObj = null;
+            classDrop = null;
+        }
+
+
+        //--------------------------------------------LVL 1 ASSIGMENT STUFF--------------------------------------------
+        // Assign method to each lvl 1 toggle
         private void AssignLvl1BoostsFunctionality()
         {
-            foreach (var item in level1Toggles)
-            {
-                item.onValueChanged.RemoveAllListeners();
-                item.onValueChanged.AddListener(v => OnValueChangedLvl1BoostsToggle(item, v));
-            }
+            for (int i = 0; i < level1Toggles.Count; i++)
+                level1Toggles[i].onValueChanged.RemoveAllListeners();
+
+            // Putting this inside the for breaks it, still don't know why
+            level1Toggles[0].onValueChanged.AddListener((v) => { OnValueChangedLvl1BoostsToggle(level1Toggles[0], v); });
+            level1Toggles[1].onValueChanged.AddListener((v) => { OnValueChangedLvl1BoostsToggle(level1Toggles[1], v); });
+            level1Toggles[2].onValueChanged.AddListener((v) => { OnValueChangedLvl1BoostsToggle(level1Toggles[2], v); });
+            level1Toggles[3].onValueChanged.AddListener((v) => { OnValueChangedLvl1BoostsToggle(level1Toggles[3], v); });
+            level1Toggles[4].onValueChanged.AddListener((v) => { OnValueChangedLvl1BoostsToggle(level1Toggles[4], v); });
+            level1Toggles[5].onValueChanged.AddListener((v) => { OnValueChangedLvl1BoostsToggle(level1Toggles[5], v); });
         }
 
         private void AssignLvl1Boosts()
         {
-            // foreach (var item in currentData.lvl1boosts)
-            //     switch (item)
-            //     {
-            //         case "str":
-            //             level1Toggles[0].SetIsOnWithoutNotify(true);
-            //             break;
-            //         case "dex":
-            //             level1Toggles[2].SetIsOnWithoutNotify(true);
-            //             break;
-            //         case "con":
-            //             level1Toggles[4].SetIsOnWithoutNotify(true);
-            //             break;
-            //         case "int":
-            //             level1Toggles[1].SetIsOnWithoutNotify(true);
-            //             break;
-            //         case "wis":
-            //             level1Toggles[3].SetIsOnWithoutNotify(true);
-            //             break;
-            //         case "cha":
-            //             level1Toggles[5].SetIsOnWithoutNotify(true);
-            //             break;
+            foreach (var item in level1Toggles)
+                item.SetIsOnWithoutNotify(false);
 
-            //         default:
-            //             break;
-            //     }
+            foreach (var item in currentData.FindAll(ctx => ctx.from == "lvl1"))
+                switch (item.abl)
+                {
+                    case "str": level1Toggles[0].SetIsOnWithoutNotify(true); break;
+                    case "dex": level1Toggles[1].SetIsOnWithoutNotify(true); break;
+                    case "con": level1Toggles[2].SetIsOnWithoutNotify(true); break;
+                    case "int": level1Toggles[3].SetIsOnWithoutNotify(true); break;
+                    case "wis": level1Toggles[4].SetIsOnWithoutNotify(true); break;
+                    case "cha": level1Toggles[5].SetIsOnWithoutNotify(true); break;
+                    default:
+                        break;
+                }
         }
 
         public void OnValueChangedLvl1BoostsToggle(Toggle toggle, bool value)
         {
-            if (level1Toggles.FindAll(v => v.isOn == true).Count <= 4 && value)
+            if (level1Toggles.FindAll(ctx => ctx.isOn == true).Count <= 4 && value)
                 toggle.SetIsOnWithoutNotify(true);
             else
                 toggle.SetIsOnWithoutNotify(false);
-
-            SaveLvl1Boosts();
         }
 
         private void SaveLvl1Boosts()
         {
-            // currentData.lvl1boosts.Clear();
+            currentData.RemoveAll(ctx => ctx.from == "lvl1");
 
-            // List<Toggle> activeToggles = level1Toggles.FindAll(v => v.isOn == true);
-
-            // foreach (var item in activeToggles)
-            //     currentData.lvl1boosts.Add(AbilityToAbbr(item.GetComponentInChildren<TMP_Text>().text));
+            for (int i = 0; i < level1Toggles.Count; i++)
+                if (level1Toggles[i].isOn)
+                    currentData.Add(new AblBoostData("lvl1", DB.Abl_Int2Abbr(i), 1));
         }
 
 
-        //--------------------------------------------INPUT--------------------------------------------
+        //-------------------------------------------- EXIT --------------------------------------------
         public void OnClickAcceptButton()
         {
             SaveAncestryOptions();
@@ -381,7 +443,7 @@ namespace Pathfinder2e.GameData
             SaveClassOptions();
             SaveLvl1Boosts();
 
-            // creation.currentPlayer.Build_Set("Level 1", "Initial Ability Boosts", currentData);
+            creation.currentPlayer.abl_boostList = new List<AblBoostData>(currentData);
             creation.RefreshPlayerIntoPanel();
             creation.SavePlayer();
             ClosePlayerInitialAblBoostsPanel();
@@ -408,17 +470,28 @@ namespace Pathfinder2e.GameData
 
         #endregion
 
-        private List<TMP_Dropdown.OptionData> CreateOptionList() { return CreateOptionList(null); }
-        private List<TMP_Dropdown.OptionData> CreateOptionList(string[] options)
+        private TMP_Dropdown GenerateDropdown(Transform parent)
+        {
+            Transform drop = Instantiate(dropdownPrefab, Vector3.zero, Quaternion.identity, parent);
+            TMP_Dropdown dropdown = drop.GetComponent<TMP_Dropdown>();
+            dropdown.ClearOptions();
+            return dropdown;
+        }
+
+        private List<TMP_Dropdown.OptionData> GenerateOptionList() { return GenerateOptionList(null, true); }
+        private List<TMP_Dropdown.OptionData> GenerateOptionList(string[] options, bool includeNone)
         {
             List<TMP_Dropdown.OptionData> list = new List<TMP_Dropdown.OptionData>();
+
             if (options != null)
+            {
+                if (includeNone)
+                    list.Add(new TMP_Dropdown.OptionData("None"));
                 foreach (var item in options)
-                    if (item == "None")
-                        list.Add(new TMP_Dropdown.OptionData("None"));
-                    else
-                        list.Add(new TMP_Dropdown.OptionData(AbilityToFullName(item)));
+                    list.Add(new TMP_Dropdown.OptionData(DB.Abl_Abbr2Full(item)));
+            }
             else
+            {
                 list = new List<TMP_Dropdown.OptionData> {
                 new TMP_Dropdown.OptionData("None"),
                 new TMP_Dropdown.OptionData("Strength"),
@@ -427,6 +500,7 @@ namespace Pathfinder2e.GameData
                 new TMP_Dropdown.OptionData("Intelligence"),
                 new TMP_Dropdown.OptionData("Wisdom"),
                 new TMP_Dropdown.OptionData("Charisma")};
+            }
             return (list);
         }
 
@@ -434,14 +508,6 @@ namespace Pathfinder2e.GameData
         {
             if (ablFullName != "" && ablFullName != "None")
                 return DB.Abl_Full2Abbr(ablFullName);
-            else
-                return "";
-        }
-
-        private string AbilityToFullName(string ablAbbr)
-        {
-            if (ablAbbr != "" && ablAbbr != "None")
-                return DB.Abl_Abbr2Full(ablAbbr);
             else
                 return "";
         }

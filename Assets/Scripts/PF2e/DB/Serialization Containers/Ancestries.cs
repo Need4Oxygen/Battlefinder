@@ -11,7 +11,7 @@ namespace Pathfinder2e.Containers
         public int speed { get; set; }
         public string size { get; set; }
         public List<string> abl_boosts { get; set; }
-        public List<string> abl_flaw { get; set; }
+        public List<string> abl_flaws { get; set; }
         public List<string> languages { get; set; }
         public List<string> traits { get; set; }
         public List<string> ancestry_features { get; set; }

@@ -220,7 +220,7 @@ namespace Pathfinder2e.Player
 
 
         // ---------------------------------------------------CHARACTER TRAITS--------------------------------------------------
-        public List<Trait> traits_list = new List<Trait>();
+        public List<TraitFull> traits_list = new List<TraitFull>();
 
         private void Traits_ClearFrom(string from)
         {
@@ -243,7 +243,7 @@ namespace Pathfinder2e.Player
         public int abl_constitution { get { return Abl_ScoreCalc("con"); } }
         public int abl_intelligence { get { return Abl_ScoreCalc("int"); } }
         public int abl_wisdom { get { return Abl_ScoreCalc("wis"); } }
-        public int abl_charisma { get { return Abl_ScoreCalc("con"); } }
+        public int abl_charisma { get { return Abl_ScoreCalc("cha"); } }
 
         public int abl_strengthMod { get { return Abl_ModCalc(abl_strength); } }
         public int abl_dexterityMod { get { return Abl_ModCalc(abl_dexterity); } }
@@ -566,12 +566,16 @@ namespace Pathfinder2e.Player
                     speed_ancestry = ancestryData.speed;
                     size_ancestry = ancestryData.size;
                     foreach (var item in ancestryData.traits)
-                        traits_list.Add(new Trait(item, "ancestry"));
+                    {
+                        Trait trait = DB.Traits.Find(ctx => ctx.name == item);
+                        if (trait != null)
+                            traits_list.Add(new TraitFull(trait, "ancestry"));
+                    }
                     foreach (var item in ancestryData.abl_boosts)
                         if (item != "free")
                             Abl_MapAdd(new AblBoostData("ancestry boost", item, 1));
-                    if (ancestryData.abl_flaw != null)
-                        foreach (var item in ancestryData.abl_flaw)
+                    if (ancestryData.abl_flaws != null)
+                        foreach (var item in ancestryData.abl_flaws)
                             Abl_MapAdd(new AblBoostData("ancestry flaw", item, -1));
 
                     // Choices

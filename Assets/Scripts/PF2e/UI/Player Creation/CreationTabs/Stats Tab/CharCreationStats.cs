@@ -65,6 +65,7 @@ namespace Pathfinder2e.Player
         [SerializeField] private TMP_InputField wealthInput = null;
         [SerializeField] private List<APICButton> skills = null;
         [SerializeField] private List<ListWrapper> ablMap = null;
+        [SerializeField] private List<TMP_Text> ablMapScores = null;
 
         [HideInInspector] public bool isOpen = false;
 
@@ -152,6 +153,12 @@ namespace Pathfinder2e.Player
                         ablMap[i].myList[j].color = flawColor;
                     else if (map[i, j] > 0)
                         ablMap[i].myList[j].color = boostColor;
+            ablMapScores[0].text = creation.currentPlayer.abl_strengthMod >= 0 ? "+" : "" + creation.currentPlayer.abl_strengthMod;
+            ablMapScores[1].text = creation.currentPlayer.abl_dexterityMod >= 0 ? "+" : "" + creation.currentPlayer.abl_dexterityMod;
+            ablMapScores[2].text = creation.currentPlayer.abl_constitutionMod >= 0 ? "+" : "" + creation.currentPlayer.abl_constitutionMod;
+            ablMapScores[3].text = creation.currentPlayer.abl_intelligenceMod >= 0 ? "+" : "" + creation.currentPlayer.abl_intelligenceMod;
+            ablMapScores[4].text = creation.currentPlayer.abl_wisdomMod >= 0 ? "+" : "" + creation.currentPlayer.abl_wisdomMod;
+            ablMapScores[5].text = creation.currentPlayer.abl_charismaMod >= 0 ? "+" : "" + creation.currentPlayer.abl_charismaMod;
 
             // Skills
             var list = creation.currentPlayer.Skills_GetAllAsList();

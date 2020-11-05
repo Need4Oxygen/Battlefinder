@@ -11,6 +11,7 @@ namespace Pathfinder2e
         public static DB Instance;
 
         [SerializeField] private TextAsset t_actions = null;
+        [SerializeField] private TextAsset t_traits = null;
         [Header("Ancestry Stuff")]
         [SerializeField] private TextAsset t_ancestries = null;
         [SerializeField] private TextAsset t_ancestryFeatures = null;
@@ -39,13 +40,11 @@ namespace Pathfinder2e
         public static ClassFeats ClassFeat = new ClassFeats();
         public static List<ClassProgression> ClassProgression = new List<ClassProgression>();
 
-        public static List<ArmorPiece> ArmorPieces = new List<ArmorPiece>();
-        public static List<ArmorGroup> ArmorGroups = new List<ArmorGroup>();
-        public static List<string> ArmorCategories = new List<string>();
-
         // public static List<ArmorPiece> ArmorPieces = new List<ArmorPiece>();
         // public static List<ArmorGroup> ArmorGroups = new List<ArmorGroup>();
         // public static List<string> ArmorCategories = new List<string>();
+
+        public static List<Trait> Traits = new List<Trait>();
 
         public static List<string> SkillNames = new List<string>() { "acrobatics", "athletics", "crafting", "deception", "diplomacy", "intimidation", "medicine", "nature", "occultism", "performance", "religion", "society", "stealth", "survival", "thievery" };
 
@@ -77,6 +76,8 @@ namespace Pathfinder2e
             ClassFeatures = YamlConvert.DeserializeObject<ClassFeats>(t_classFeatures.text);
             ClassFeat = YamlConvert.DeserializeObject<ClassFeats>(t_classFeats.text);
             ClassProgression = YamlConvert.DeserializeObject<List<ClassProgression>>(t_classAdvancements.text);
+
+            Traits = YamlConvert.DeserializeObject<List<Trait>>(t_traits.text);
         }
 
         public static void Clear()
@@ -127,6 +128,24 @@ namespace Pathfinder2e
                 default:
                     Debug.LogWarning("[DB] Error: ability abreviation \"" + abilityAbreviated + "\" not recognized!");
                     return 0;
+            }
+        }
+
+        public static string Abl_Int2Abbr(int abilityInt)
+        {
+            switch (abilityInt)
+            {
+                case 0: return "str";
+                case 1: return "dex";
+                case 2: return "con";
+                case 3: return "int";
+                case 4: return "wis";
+                case 5: return "cha";
+                case 6: return "free";
+
+                default:
+                    Debug.LogWarning("[DB] Error: ability int \"" + abilityInt + "\" not recognized!");
+                    return "";
             }
         }
 

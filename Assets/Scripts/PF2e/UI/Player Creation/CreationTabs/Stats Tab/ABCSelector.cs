@@ -232,10 +232,10 @@ namespace Pathfinder2e.GameData
 
             // Ability Flaws
             string abilityFlawsString = "";
-            if (ancestry.abl_flaw != null)
+            if (ancestry.abl_flaws != null)
             {
-                count = 0; total = ancestry.abl_flaw.Count;
-                foreach (var item in ancestry.abl_flaw)
+                count = 0; total = ancestry.abl_flaws.Count;
+                foreach (var item in ancestry.abl_flaws)
                 {
                     if (count < total - 1)
                         abilityFlawsString += DB.Abl_Abbr2Full(item) + ", ";
