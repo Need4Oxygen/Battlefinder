@@ -23,6 +23,12 @@ public class MainMenuCamera : MonoBehaviour
     private Vector3 iPos = Vector3.zero;
     private Coroutine rorateCorou = null;
 
+    void Awake()
+    {
+        QualitySettings.vSyncCount = 0;  // VSync must be disabled
+        Application.targetFrameRate = 45;
+    }
+
     void Start()
     {
         iPos = closeUpCam.transform.position;
