@@ -11,5 +11,3 @@ public enum E_Actors { None, Default, Player, Enemy, NPC }
 public enum E_Positionables { None, Default, Actor, }
 
 public enum E_WallElement { None, Default, Knot, Wall }
-
-public enum E_FeatSearch { None, Default, Heritage, AncestryFeat, ClassFeat, SkillFeat, GeneralFeat }

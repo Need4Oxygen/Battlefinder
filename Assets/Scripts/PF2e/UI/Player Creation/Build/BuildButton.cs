@@ -5,7 +5,7 @@ using UnityEngine.UI;
 namespace Pathfinder2e.Containers
 {
 
-    public class BuildButton : MonoBehaviour
+    public class BuildButton : MonoBehaviour, IPooleable
     {
         [Header("Build Button")]
         public string itemType;
@@ -13,6 +13,14 @@ namespace Pathfinder2e.Containers
         public Image icon;
         public TMP_Text title;
         public TMP_Text subtitle;
+
+        public void OnSpawn()
+        { }
+
+        public void Destroy()
+        {
+            ObjectPooler.Destroy(gameObject);
+        }
     }
 
 }

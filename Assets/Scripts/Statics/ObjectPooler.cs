@@ -7,12 +7,16 @@ using UnityEngine.SceneManagement;
 public interface IPooleable
 {
     void OnSpawn();
-    void OnDestroy();
+    void Destroy();
 }
 
 public class ObjectPooler : MonoBehaviour
 {
     public static Dictionary<string, Queue<GameObject>> Pools = new Dictionary<string, Queue<GameObject>>();
+
+    // Pools only contain deactivated gameobjects
+    // When spawned via ObjectPooler, object is dequeued
+    // When destroyed via IPooleable, object is requeued
 
     public static void OnSceneChange(Scene current, Scene next)
     {
@@ -20,19 +24,35 @@ public class ObjectPooler : MonoBehaviour
     }
 
     public static List<GameObject> CreatePool(GameObject prefab, int size)
+    { return CreatePool(prefab, null, size); }
+    public static List<GameObject> CreatePool(GameObject prefab, Transform parent, int size)
     {
         if (!Pools.ContainsKey(prefab.name))
         {
+
+            IPooleable pooleable = prefab.GetComponent<IPooleable>();
+            if (pooleable == null)
+            {
+                Debug.LogError($"[ObjPooler] Not pooleable object detected: {prefab.name}");
+                return null;
+            }
+
             Queue<GameObject> newPool = new Queue<GameObject>();
+            Pools.Add(prefab.name, newPool);
 
             for (int i = 0; i < size; i++)
             {
-                GameObject obj = Instantiate(prefab);
+                GameObject obj = null;
+                if (parent != null)
+                    obj = Instantiate(prefab, parent);
+                else
+                    obj = Instantiate(prefab);
                 obj.SetActive(false);
+                obj.name = prefab.name;
+
                 newPool.Enqueue(obj);
             }
 
-            Pools.Add(prefab.name, newPool);
             Debug.Log($"[ObjPooler] New pool: {prefab.name} with size: {size}");
             return newPool.ToList(); ;
         }
@@ -43,43 +63,31 @@ public class ObjectPooler : MonoBehaviour
         }
     }
 
+    public static GameObject Spawn(GameObject prefab) { return Spawn(prefab, Vector3.zero, Quaternion.identity, null); }
     public static GameObject Spawn(GameObject prefab, Transform parent) { return Spawn(prefab, Vector3.zero, Quaternion.identity, parent); }
     public static GameObject Spawn(GameObject prefab, Vector3 position, Quaternion rotation, Transform parent)
     {
-        if (Pools.ContainsKey(prefab.name))
+        GameObject obj = null;
+
+        if (Pools[prefab.name].Count > 0)
         {
-            GameObject obj = new GameObject();
-            bool needNew = false;
-
-            if (Pools[prefab.name].Count > 0)
-            {
-                if (!Pools[prefab.name].Peek().activeSelf)
-                {
-                    obj = Pools[prefab.name].Dequeue();
-                    obj.transform.position = position;
-                    obj.transform.rotation = rotation;
-                    obj.transform.parent = parent;
-                    obj.SetActive(true);
-                }
-                else
-                    needNew = true;
-            }
-            else
-                needNew = true;
-
-            if (needNew) obj = Instantiate(prefab, position, rotation, parent);
-
-            IPooleable pooleable = obj.GetComponent<IPooleable>();
-            if (pooleable != null) { pooleable.OnSpawn(); }
-
-            return obj;
+            obj = Pools[prefab.name].Dequeue();
+            obj.transform.position = position;
+            obj.transform.rotation = rotation;
+            obj.transform.SetParent(parent);
+            obj.SetActive(true);
         }
         else
         {
-            Debug.LogWarning($"[ObjPooler] Couldn't find pool wiht name: {prefab.name}, creating one now!");
-            CreatePool(prefab, 1);
-            return Spawn(prefab, position, rotation, parent);
+            obj = Instantiate(prefab, position, rotation, parent);
         }
+
+        obj.name = prefab.name;
+
+        IPooleable pooleable = obj.GetComponent<IPooleable>();
+        pooleable.OnSpawn();
+
+        return obj;
     }
 
     public static void Destroy(GameObject prefab)

@@ -12,17 +12,12 @@ namespace Pathfinder2e.GameData
         public TMP_Text mainText;
         public Image actionCostImage;
 
-        public string result;
-
         public void OnSpawn()
-        {
+        { }
 
-            // throw new System.NotImplementedException();
-        }
-
-        public void OnDestroy()
+        public void Destroy()
         {
-            gameObject.SetActive(false);
+            ObjectPooler.Destroy(gameObject);
         }
     }
 

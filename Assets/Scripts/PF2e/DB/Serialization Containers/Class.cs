@@ -32,6 +32,26 @@ namespace Pathfinder2e.Containers
         public List<Feat> rogue { get; set; }
         public List<Feat> sorcerer { get; set; }
         public List<Feat> wizard { get; set; }
+
+        public List<Feat> Find(string className)
+        {
+            switch (className)
+            {
+                case "Alchemist": return alchemist;
+                case "Barbarian": return barbarian;
+                case "Bard": return bard;
+                case "Champion": return champion;
+                case "Cleric": return cleric;
+                case "Druid": return druid;
+                case "Fighter": return fighter;
+                case "Monk": return monk;
+                case "Ranger": return ranger;
+                case "Rogue": return rogue;
+                case "Sorcerer": return sorcerer;
+                case "Wizard": return wizard;
+                default: return new List<Feat>();
+            }
+        }
     }
 
     public sealed class ClassProgression

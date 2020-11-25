@@ -60,7 +60,7 @@ public class GameSelectorController : MonoBehaviour
 
     private void OpenCreateCampaignPanel()
     {
-        StartCoroutine(PanelFader.RescaleAndFade(createCampaignPanel.transform, createCampaignPanel, 0.85f, 1f, 0f, 1f, 0.1f));
+        StartCoroutine(PanelFader.RescaleAndFade(createCampaignPanel.transform, createCampaignPanel, 0.85f, 1f, 0f, 1f, 0.1f, null, null));
         createCampaignAcceptButton.onClick.RemoveAllListeners();
         createCampaignCancelButton.onClick.RemoveAllListeners();
         createCampaignAcceptButton.onClick.AddListener(() => OnClickCreateCampaingPanelAccept());

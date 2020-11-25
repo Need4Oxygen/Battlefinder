@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿#if UNITY_EDITOR
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -6,7 +7,6 @@ using Pathfinder2e;
 using Pathfinder2e.Containers;
 using UnityEditor;
 using UnityEngine;
-
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
@@ -523,3 +523,5 @@ public class EditorTools : MonoBehaviour
     }
 
 }
+
+#endif

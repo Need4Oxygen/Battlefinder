@@ -26,6 +26,20 @@ namespace Pathfinder2e.Containers
         public List<Feat> goblin { get; set; }
         public List<Feat> halfling { get; set; }
         public List<Feat> human { get; set; }
+
+        public List<Feat> Find(string ancestryName)
+        {
+            switch (ancestryName)
+            {
+                case "Dwarf": return dwarf;
+                case "Elf": return elf;
+                case "Gnome": return gnome;
+                case "Goblin": return goblin;
+                case "Halfling": return halfling;
+                case "Human": return human;
+                default: return new List<Feat>();
+            }
+        }
     }
 
     public sealed class AncestryFeats
@@ -39,6 +53,21 @@ namespace Pathfinder2e.Containers
         public List<Feat> half_elf { get; set; }
         public List<Feat> half_orc { get; set; }
 
+        public List<Feat> Find(string ancestryName)
+        {
+            switch (ancestryName)
+            {
+                case "Dwarf": return dwarf;
+                case "Elf": return elf;
+                case "Gnome": return gnome;
+                case "Goblin": return goblin;
+                case "Halfling": return halfling;
+                case "Human": return human;
+                case "Half_elf": return human;
+                case "Half_orc": return human;
+                default: return new List<Feat>();
+            }
+        }
     }
 
 }

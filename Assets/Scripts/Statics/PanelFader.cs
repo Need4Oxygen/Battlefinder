@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -56,25 +57,43 @@ public class PanelFader : MonoBehaviour
         panelTransform.localScale = new Vector2(scaleTarget, scaleTarget);
     }
 
-    public static IEnumerator RescaleAndFade(Transform panelTransform, CanvasGroup cg, float scaleTarget, float alphaTarget, float duration)
+    public static IEnumerator RescaleAndFade(Transform panelTransform, CanvasGroup canvasGroup,
+    float scaleTarget, float alphaTarget, float duration)
     {
         float scaleInit = panelTransform.localScale.x;
-        float alphaInit = cg.alpha;
-        yield return RescaleAndFade(panelTransform, cg, scaleInit, scaleTarget, alphaInit, alphaTarget, duration);
+        float alphaInit = canvasGroup.alpha;
+        yield return RescaleAndFade(panelTransform, canvasGroup, scaleInit, scaleTarget, alphaInit, alphaTarget, duration, null, null);
+    }
+    public static IEnumerator RescaleAndFade(Transform panelTransform, CanvasGroup canvasGroup,
+    float scaleTarget, float alphaTarget, float duration,
+    Action onFadeStart, Action onFadeEnd)
+    {
+        float scaleInit = panelTransform.localScale.x;
+        float alphaInit = canvasGroup.alpha;
+        yield return RescaleAndFade(panelTransform, canvasGroup, scaleInit, scaleTarget, alphaInit, alphaTarget, duration, onFadeStart, onFadeEnd);
     }
     public static IEnumerator RescaleAndFade(Transform panelTransform, CanvasGroup canvasGroup,
     float scaleInit, float scaleFinal,
     float alphaInit, float alphaFinal,
     float duration)
     {
+        yield return RescaleAndFade(panelTransform, canvasGroup, scaleInit, scaleFinal, alphaInit, alphaFinal, duration, null, null);
+    }
+    public static IEnumerator RescaleAndFade(Transform panelTransform, CanvasGroup canvasGroup,
+    float scaleInit, float scaleFinal,
+    float alphaInit, float alphaFinal,
+    float duration,
+    Action onFadeStart, Action onFadeEnd)
+    {
         if (duration > 0f)
         {
-
-            yield return null;
-            yield return null;
-
             if (panelTransform.gameObject.activeSelf == false)
                 panelTransform.gameObject.SetActive(true);
+
+            yield return null;
+
+            if (onFadeStart != null)
+                onFadeStart.Invoke();
 
             float counter = 0;
             float completion = 0;
@@ -98,6 +117,9 @@ public class PanelFader : MonoBehaviour
             {
                 Debug.Log("[PanelFader] RescaleAndFade failed: initial scale or fade equal to target");
             }
+
+            if (onFadeEnd != null)
+                onFadeEnd.Invoke();
         }
 
         canvasGroup.alpha = alphaFinal;

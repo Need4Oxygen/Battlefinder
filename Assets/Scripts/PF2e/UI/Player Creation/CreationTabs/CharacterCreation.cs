@@ -16,6 +16,7 @@ namespace Pathfinder2e.Player
 
         [SerializeField] private ABCSelector ABCSelector = null;
         [SerializeField] private AblBoostsSelector ablBoostsSelector = null;
+        [SerializeField] private Searcher searcher = null;
         [SerializeField] private CanvasGroup characterPanel = null;
 
         [Header("Name & Level")]
@@ -46,8 +47,8 @@ namespace Pathfinder2e.Player
         {
             StartCoroutine(PanelFader.RescaleAndFade(characterPanel.transform, characterPanel, 0.85f, 0f, 0f));
 
-            tabOn = Globals.Theme["background_1"];
-            tabOff = Globals.Theme["background_2"];
+            tabOnColor = Globals.Theme["background_1"];
+            tabOffColor = Globals.Theme["background_2"];
         }
 
         #region --------------------------------------------GENERAL--------------------------------------------
@@ -190,14 +191,14 @@ namespace Pathfinder2e.Player
                     {
                         case "initial proficiencies": // I'm ussing this to initialize abilities boost and later, when developed, also fot unspent lectures
                             BuildButton initAblBoosts = GenerateBuildButton(item, "");
-                            initAblBoosts.button.onClick.AddListener(() => OnClickInitialAbilityBoosts());
+                            initAblBoosts.button.onClick.AddListener(() => OnClick_InitialAbilityBoosts());
                             // Should get into the build, retrieve init abl choices, check if they have errors and display a message
                             // if (currentPlayer.Build_GetFromBlock<>) 
                             break;
                         case "class feat":
                             // search in build for choice
                             BuildButton classFeat = GenerateBuildButton("Class Feat", "");
-                            classFeat.button.interactable = false;
+                            classFeat.button.onClick.AddListener(() => OnClick_ClassFeat());
                             break;
                         case "skill feat":
                             // search in build for choice
@@ -245,48 +246,28 @@ namespace Pathfinder2e.Player
             return button.GetComponent<BuildButton>();
         }
 
-        private void ChoiceButtonsAssigner(BuildBlock buildItem, BuildButton button)
-        {
-            if (buildItem.name == "initial ability boosts")
-            {
-                button.title.text = buildItem.name;
-                button.button.onClick.AddListener(() => OnClickInitialAbilityBoosts());
-
-                //     PF2E_InitAblBoostData initAblData = currentPlayer.Build_Get<PF2E_InitAblBoostData>("Level 1", "Initial Ability Boosts");
-                //     int x = 0;
-                //     if (initAblData != null)
-                //         x = initAblData.lvl1boosts.Count - 4;
-                //     if (x < 0)
-                //         button.subtitle.text = "Boosts not assigned: " + (x * -1);
-                //     else
-                //         button.subtitle.text = "Everything is correct.";
-            }
-            else
-            {
-                // Debug.LogWarning("[Creation] Choice button: " + buildItem.type + " miss functionality!");
-
-                // button.title.text = buildItem.type;
-                // button.subtitle.text = buildItem.value;
-            }
-        }
-
         private void NoChoiceButtonsAssigner(BuildBlock buildItem, BuildButton button)
         {
             // button.title.text = buildItem.type;
             // button.subtitle.text = buildItem.value;
         }
 
-        private void OnClickInitialAbilityBoosts()
+        private void OnClick_InitialAbilityBoosts()
         {
             ablBoostsSelector.OpenPlayerInitialAblBoostsPanel();
+        }
+
+        private void OnClick_ClassFeat()
+        {
+            searcher.Search(E_Searcher_Type.ClassFeat);
         }
 
         #endregion
 
         #region --------------------------------------------TABS--------------------------------------------
 
-        private Color tabOn;
-        private Color tabOff;
+        private Color tabOnColor;
+        private Color tabOffColor;
 
         public void OnClickTabStats()
         {
@@ -334,10 +315,10 @@ namespace Pathfinder2e.Player
             {
                 if (active)
                     foreach (var item in array)
-                        item.color = tabOn;
+                        item.color = tabOnColor;
                 else
                     foreach (var item in array)
-                        item.color = tabOff;
+                        item.color = tabOffColor;
             }
         }
 

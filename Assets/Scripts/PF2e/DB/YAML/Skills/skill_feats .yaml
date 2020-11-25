@@ -7,7 +7,7 @@ general:
     frequency: null
     cost: null
     trigger: null
-    prereqs: null
+    prerequisites: null
     requirement: null
     traits:
       - General
@@ -25,7 +25,7 @@ general:
     frequency: null
     cost: null
     trigger: null
-    prereqs: null
+    prerequisites: null
     requirement: null
     traits:
       - General
@@ -43,7 +43,7 @@ general:
     frequency: null
     cost: null
     trigger: null
-    prereqs: null
+    prerequisites: null
     requirement: null
     traits:
       - General
@@ -61,7 +61,7 @@ general:
     frequency: null
     cost: null
     trigger: null
-    prereqs: null
+    prerequisites: null
     requirement: null
     traits:
       - General
@@ -79,7 +79,7 @@ general:
     frequency: null
     cost: null
     trigger: null
-    prereqs: null
+    prerequisites: null
     requirement: null
     traits:
       - General
@@ -97,7 +97,7 @@ general:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: ability
         descr: Constitution 14
     requirement: null
@@ -117,7 +117,7 @@ general:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: ability
         descr: Dexterity 14
     requirement: null
@@ -137,7 +137,7 @@ general:
     frequency: null
     cost: null
     trigger: null
-    prereqs: null
+    prerequisites: null
     requirement: null
     traits:
       - General
@@ -155,7 +155,7 @@ general:
     frequency: null
     cost: null
     trigger: null
-    prereqs: null
+    prerequisites: null
     requirement: null
     traits:
       - General
@@ -173,7 +173,7 @@ general:
     frequency: null
     cost: null
     trigger: null
-    prereqs: null
+    prerequisites: null
     requirement: null
     traits:
       - General
@@ -191,7 +191,7 @@ general:
     frequency: null
     cost: null
     trigger: While you have your shield raised, you would take damage from a physical attack.
-    prereqs: null
+    prerequisites: null
     requirement: null
     traits:
       - General
@@ -209,7 +209,7 @@ general:
     frequency: null
     cost: null
     trigger: null
-    prereqs: null
+    prerequisites: null
     requirement: null
     traits:
       - General
@@ -227,7 +227,7 @@ general:
     frequency: null
     cost: null
     trigger: null
-    prereqs: null
+    prerequisites: null
     requirement: null
     traits:
       - General
@@ -245,7 +245,7 @@ general:
     frequency: null
     cost: null
     trigger: null
-    prereqs: null
+    prerequisites: null
     requirement: null
     traits:
       - General
@@ -263,7 +263,7 @@ general:
     frequency: null
     cost: null
     trigger: null
-    prereqs: null
+    prerequisites: null
     requirement: null
     traits:
       - General
@@ -281,7 +281,7 @@ general:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: master in Perception
     requirement: null
@@ -301,7 +301,7 @@ general:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: ability
         descr: Charisma 16
     requirement: null
@@ -322,7 +322,7 @@ varying:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in at least one skill
     requirement: null
@@ -344,7 +344,7 @@ varying:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in a skill with the Recall Knowledge action
     requirement: null
@@ -365,7 +365,7 @@ varying:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Arcana, Nature, Occultism or Religion
     requirement: null
@@ -386,7 +386,7 @@ varying:
     frequency: null
     cost: null
     trigger: A creature within line of sight casts a spell that you don’t have prepared or in your spell repertoire, or a trap or similar object casts such a spell. You must be aware of the casting.
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Arcana, Nature, Occultism, or Religion
     requirement: null
@@ -408,7 +408,7 @@ varying:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: ability
         descr: Intelligence 12
     requirement: null
@@ -429,7 +429,7 @@ varying:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Arcana, Nature, Occultism, or Religion
     requirement: null
@@ -451,7 +451,7 @@ varying:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: expert in a skill with the Recall Knowledge action, Assurance in that skill
     requirement: null
@@ -472,7 +472,7 @@ varying:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Arcana, Nature, Occultism, or Religion
     requirement: null
@@ -493,7 +493,7 @@ varying:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: master in Arcana, Nature, Occultism, or Religion
     requirement: null
@@ -515,7 +515,7 @@ acrobatics:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Acrobatics
     requirement: null
@@ -536,7 +536,7 @@ acrobatics:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Acrobatics
     requirement: null
@@ -557,7 +557,7 @@ acrobatics:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Acrobatics
     requirement: null
@@ -578,7 +578,7 @@ acrobatics:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: expert in Acrobatics
     requirement: null
@@ -599,7 +599,7 @@ acrobatics:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: master in Acrobatics
     requirement: null
@@ -612,7 +612,7 @@ acrobatics:
         page_start: 262
         page_stop: 262
 
-Arcana:
+arcana:
   - name: Arcane Sense
     descr: "Your study of magic allows you to instinctively sense its presence. You can cast 1st-level detect magic at will as an arcane innate spell. If you’re a master in Arcana, the spell is heightened to 3rd level; if you’re legendary, it is heightened to 4th level."
     type: skill feat
@@ -621,7 +621,7 @@ Arcana:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Arcana
     requirement: null
@@ -642,7 +642,7 @@ Arcana:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: legendary in Arcana
     requirement: null
@@ -664,7 +664,7 @@ athletics:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Athletics
     requirement: null
@@ -685,7 +685,7 @@ athletics:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Athletics
     requirement: null
@@ -706,7 +706,7 @@ athletics:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Athletics
     requirement: null
@@ -727,7 +727,7 @@ athletics:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Athletics
     requirement: null
@@ -748,7 +748,7 @@ athletics:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Athletics
     requirement: null
@@ -769,7 +769,7 @@ athletics:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: expert in Athletics
     requirement: null
@@ -790,7 +790,7 @@ athletics:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: expert in Athletics
     requirement: null
@@ -811,7 +811,7 @@ athletics:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: master in Athletics
     requirement: null
@@ -832,7 +832,7 @@ athletics:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: master in Athletics
     requirement: null
@@ -853,7 +853,7 @@ athletics:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: master in Athletics
     requirement: null
@@ -874,7 +874,7 @@ athletics:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: legendary in Athletics
     requirement: null
@@ -896,7 +896,7 @@ crafting:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Crafting
     requirement: null
@@ -917,7 +917,7 @@ crafting:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Crafting
     requirement: null
@@ -938,7 +938,7 @@ crafting:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Crafting
     requirement: null
@@ -959,7 +959,7 @@ crafting:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Crafting
     requirement: null
@@ -980,7 +980,7 @@ crafting:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: expert in Crafting
     requirement: null
@@ -1001,7 +1001,7 @@ crafting:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: master in Crafting
       - type: skill feat
@@ -1024,7 +1024,7 @@ crafting:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: master in Crafting
     requirement: null
@@ -1046,7 +1046,7 @@ crafting:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: legendary in Crafting
     requirement: null
@@ -1068,7 +1068,7 @@ deception:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Deception
     requirement: null
@@ -1089,7 +1089,7 @@ deception:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Deception
     requirement: null
@@ -1110,7 +1110,7 @@ deception:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Deception
     requirement: null
@@ -1131,7 +1131,7 @@ deception:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: expert in Deception
     requirement: null
@@ -1152,7 +1152,7 @@ deception:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: expert in Deception
     requirement: null
@@ -1173,7 +1173,7 @@ deception:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: master in Deception
     requirement: null
@@ -1195,7 +1195,7 @@ diplomacy:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Diplomacy
     requirement: null
@@ -1216,7 +1216,7 @@ diplomacy:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Diplomacy
     requirement: null
@@ -1237,7 +1237,7 @@ diplomacy:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Diplomacy
     requirement: null
@@ -1258,7 +1258,7 @@ diplomacy:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: expert in Diplomacy
     requirement: null
@@ -1279,7 +1279,7 @@ diplomacy:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: master in Diplomacy
     requirement: null
@@ -1300,7 +1300,7 @@ diplomacy:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: legendary in Diplomacy
     requirement: null
@@ -1322,7 +1322,7 @@ intimidation:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Intimidation
     requirement: null
@@ -1343,7 +1343,7 @@ intimidation:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Intimidation
     requirement: null
@@ -1364,7 +1364,7 @@ intimidation:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Intimidation
     requirement: null
@@ -1385,7 +1385,7 @@ intimidation:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: ability
         descr: Strength 16
       - type: proficiency
@@ -1408,7 +1408,7 @@ intimidation:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: expert in Intimidation
     requirement: null
@@ -1429,7 +1429,7 @@ intimidation:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: master in Intimidation
     requirement: null
@@ -1450,7 +1450,7 @@ intimidation:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: master in Intimidation
     requirement: null
@@ -1471,7 +1471,7 @@ intimidation:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: legendary in Intimidation
     requirement: null
@@ -1497,7 +1497,7 @@ lore:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Lore
     requirement: null
@@ -1518,7 +1518,7 @@ lore:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Lore
     requirement: null
@@ -1539,7 +1539,7 @@ lore:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: expert in Lore
     requirement: null
@@ -1560,7 +1560,7 @@ lore:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: legendary in Lore
     requirement: null
@@ -1582,7 +1582,7 @@ medicine:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Medicine
     requirement: null
@@ -1605,7 +1605,7 @@ medicine:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: expert in Medicine
     requirement: null
@@ -1626,7 +1626,7 @@ medicine:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: expert in Medicine
     requirement: null
@@ -1647,7 +1647,7 @@ medicine:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: expert in Medicine
     requirement: null
@@ -1668,7 +1668,7 @@ medicine:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: legendary in Medicine
     requirement: null
@@ -1690,7 +1690,7 @@ nature:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Nature
     requirement: null
@@ -1711,7 +1711,7 @@ nature:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Nature
     requirement: null
@@ -1734,7 +1734,7 @@ nature:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: expert in Nature
     requirement: null
@@ -1757,7 +1757,7 @@ occultism:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Occultism
     requirement: null
@@ -1778,7 +1778,7 @@ occultism:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: master in Occultism
     requirement: null
@@ -1800,7 +1800,7 @@ performance:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Performance
     requirement: null
@@ -1821,7 +1821,7 @@ performance:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Performance
     requirement: null
@@ -1842,7 +1842,7 @@ performance:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Performance
     requirement: null
@@ -1863,7 +1863,7 @@ performance:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: legendary in Performance
       - type: skill feat
@@ -1887,7 +1887,7 @@ religion:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Religion
     requirement: null
@@ -1908,7 +1908,7 @@ religion:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: legendary in Religion
     requirement: null
@@ -1930,7 +1930,7 @@ society:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Society
     requirement: null
@@ -1951,7 +1951,7 @@ society:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Society
     requirement: null
@@ -1972,7 +1972,7 @@ society:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Society
     requirement: null
@@ -1993,7 +1993,7 @@ society:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Society
     requirement: null
@@ -2014,7 +2014,7 @@ society:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Society
     requirement: null
@@ -2035,7 +2035,7 @@ society:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Society
       - type: skill feat
@@ -2058,7 +2058,7 @@ society:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: legendary in Society
     requirement: null
@@ -2079,7 +2079,7 @@ society:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: legendary in Society
       - type: skill feat
@@ -2103,7 +2103,7 @@ stealth:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Stealth
     requirement: null
@@ -2124,7 +2124,7 @@ stealth:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Stealth
     requirement: null
@@ -2145,7 +2145,7 @@ stealth:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: expert in Stealth
     requirement: null
@@ -2166,7 +2166,7 @@ stealth:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: master in Stealth
     requirement: null
@@ -2187,7 +2187,7 @@ stealth:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: master in Stealth
     requirement: null
@@ -2208,7 +2208,7 @@ stealth:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: legendary in Stealth
       - type: skill feat
@@ -2232,7 +2232,7 @@ survival:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Survival
     requirement: null
@@ -2253,7 +2253,7 @@ survival:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Survival
     requirement: null
@@ -2274,7 +2274,7 @@ survival:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Survival
     requirement: null
@@ -2295,7 +2295,7 @@ survival:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Survival
     requirement: null
@@ -2316,7 +2316,7 @@ survival:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: master in Survival
     requirement: null
@@ -2337,7 +2337,7 @@ survival:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: legendary in Survival
     requirement: null
@@ -2359,7 +2359,7 @@ thievery:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Thievery
     requirement: null
@@ -2380,7 +2380,7 @@ thievery:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: trained in Thievery
     requirement: null
@@ -2401,7 +2401,7 @@ thievery:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: expert in Thievery
     requirement: null
@@ -2422,7 +2422,7 @@ thievery:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: master in Thievery
     requirement: null
@@ -2443,7 +2443,7 @@ thievery:
     frequency: null
     cost: null
     trigger: null
-    prereqs:
+    prerequisites:
       - type: proficiency
         descr: legendary in Thievery
       - type: skill feat
