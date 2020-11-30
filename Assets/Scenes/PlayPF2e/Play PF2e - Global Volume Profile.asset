@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: Global Volume Profile
+  m_Name: Play PF2e - Global Volume Profile
   m_EditorClassIdentifier: 
   components:
   - {fileID: 7628605641368956673}
@@ -360,13 +360,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   m_AdvancedMode: 0
-  indirectSpecularIntensity:
-    m_OverrideState: 1
-    m_Value: 1
-    min: 0
   indirectDiffuseIntensity:
     m_OverrideState: 1
     m_Value: 1.5
+    min: 0
+  indirectDiffuseLightingLayers:
+    m_OverrideState: 0
+    m_Value: 255
+  reflectionLightingMultiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  reflectionLightingLayers:
+    m_OverrideState: 0
+    m_Value: 255
+  indirectSpecularIntensity:
+    m_OverrideState: 1
+    m_Value: 1
     min: 0
 --- !u!114 &4035819649956055571
 MonoBehaviour:
