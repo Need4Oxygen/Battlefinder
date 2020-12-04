@@ -1,0 +1,271 @@
+- name: Alchemist Dedication
+  descr: "You put your alchemical interest into practice. You become trained in alchemical bombs and Crafting; if you were already trained in Crafting, you instead become trained in a skill of your choice. You become trained in alchemist class DC. You gain the alchemist’s infused reagents class feature, gaining a number of reagents each day equal to your level.\nYou also gain the Alchemical Crafting feat and four additional formulas for 1st-level alchemical items, as well as the ability to create free items during your daily preparations. Your advanced alchemy level is 1 and doesn’t increase on its own.\n<b>Special</b> You cannot select another dedication feat until you have gained two other feats from the alchemist archetype."
+  type: dedication feat
+  level: 2
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: ability
+      descr: Intelligence 14
+  requirement: null
+  traits:
+    - Archetype
+    - Dedication
+    - Multiclass
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 220
+      page_stop: 220
+
+- name: Barbarian Dedication
+  descr: "You become trained in Athletics; if you were already trained in Athletics, you instead become trained in a skill of your choice.\nYou become trained in barbarian class DC. You can use the Rage action (page 84). \nChoose an instinct as you would if you were a barbarian. You have that instinct for all purposes and become bound by its anathema, but you don’t gain any of the other abilities it grants.\n<b>Special</b> You cannot select another dedication feat until you have gained two other feats from the barbarian archetype."
+  type: dedication feat
+  level: 2
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: ability
+      descr: Strength 14
+    - type: ability
+      descr: Constitution 14
+  requirement: null
+  traits:
+    - Archetype
+    - Dedication
+    - Multiclass
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 221
+      page_stop: 221
+
+- name: Bard Dedication
+  descr: "You cast spells like a bard and gain the Cast a Spell activity. You gain a spell repertoire with two common cantrips from the occult spell list, or any other cantrips you learn or discover. You’re trained in spell attack rolls and spell DCs for occult spells. Your key spellcasting ability for bard archetype spells is Charisma, and they are occult bard spells. You become trained in Occultism and Performance; for each of these skills in which you were already trained, you instead become trained in a skill of your choice.\nChoose a muse as you would if you were a bard. You have that muse for all purposes, allowing you to take that muse’s feats, but you don’t gain any of the other abilities it grants."
+  type: dedication feat
+  level: 2
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: ability
+      descr: Charisma 14
+  requirement: null
+  traits:
+    - Archetype
+    - Dedication
+    - Multiclass
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 222
+      page_stop: 222
+
+- name: Champion Dedication
+  descr: "Choose a deity and cause as you would if you were a champion. You become trained in light, medium, and heavy armor. You become trained in Religion and your deity’s associated skill; for each of these skills in which you were already trained, you instead become trained in a skill of your choice. You become trained in champion class DC.\nYou are bound by your deity’s anathema and must follow the champion’s code and alignment requirements for your cause. You don’t gain any other abilities from your choice of deity or cause.\n<b>Special</b> You cannot select another dedication feat until you have gained two other feats from the champion archetype."
+  type: dedication feat
+  level: 2
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: ability
+      descr: Strength 14
+    - type: ability
+      descr: Charisma 14
+  requirement: null
+  traits:
+    - Archetype
+    - Dedication
+    - Multiclass
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 223
+      page_stop: 223
+
+- name: Cleric Dedication
+  descr: "You cast spells like a cleric. You gain access to the Cast a Spell activity. You can prepare two common cantrips each day from the divine spell list in this book or any other cantrips you learn or discover. You’re trained in spell attack rolls and spell DCs for divine spells. Your key spellcasting ability for cleric archetype spells is Wisdom, and they are divine cleric spells. Choose a deity as you would if you were a cleric. You become bound by that deity’s anathema. You become trained in Religion and your deity’s associated skill; for each of these skills in which you were already trained, you instead become trained in a skill of your choice. You don’t gain any other abilities from your choice of deity.\n<b>Special</b> You cannot select another dedication feat until you have gained two other feats from the cleric archetype."
+  type: dedication feat
+  level: 2
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: ability
+      descr: Wisdom 14
+  requirement: null
+  traits:
+    - Archetype
+    - Dedication
+    - Multiclass
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 224
+      page_stop: 224
+
+- name: Druid Dedication
+  descr: "You cast spells like a druid. You gain access to the Cast a Spell activity. You can prepare two common cantrips each day from the primal spell list in this book or any other cantrips you learn or discover. You’re trained in spell attack rolls and spell DCs for primal spells. Your key spellcasting ability for druid archetype spells is Wisdom, and they are primal druid spells.\nYou learn the Druidic language.\nChoose an order as you would if you were a druid. You become a member of that order and are bound by its anathema, allowing you to take the order’s feats. You become trained in Nature and your order’s associated skill; for each of these skills in which you were already trained, you become trained in a skill of your choice. You don’t gain any other abilities from your choice of order.\n<b>Special</b> You cannot select another dedication feat until you have gained two other feats from the druid archetype."
+  type: dedication feat
+  level: 2
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: ability
+      descr: Wisdom 14
+  requirement: null
+  traits:
+    - Archetype
+    - Dedication
+    - Multiclass
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 225
+      page_stop: 225
+
+- name: Fighter Dedication
+  descr: "You become trained in simple weapons and martial weapons. You become trained in your choice of Acrobatics or Athletics; if you are already trained in both of these skills, you instead become trained in a skill of your choice. You become trained in fighter class DC.\n<b>Special</b> You cannot select another dedication feat until you have gained two other feats from the fighter archetype."
+  type: dedication feat
+  level: 2
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: ability
+      descr: Strength 14
+    - type: ability
+      descr: Dexterity 14
+  requirement: null
+  traits:
+    - Archetype
+    - Dedication
+    - Multiclass
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 226
+      page_stop: 226
+
+- name: Monk Dedication
+  descr: "You become trained in unarmed attacks and gain the powerful fist class feature (page 156). You become trained in your choice of Acrobatics or Athletics; if you are already trained in both of these skills, you become trained in a skill of your choice. You become trained in monk class DC.\n<b>Special</b> You can’t select another dedication feat until you have gained two other feats from the monk archetype."
+  type: dedication feat
+  level: 2
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: ability
+      descr: Strength 14
+    - type: ability
+      descr: Dexterity 14
+  requirement: null
+  traits:
+    - Archetype
+    - Dedication
+    - Multiclass
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 227
+      page_stop: 227
+
+- name: Ranger Dedication
+  descr: "You become trained in Survival; if you were already trained in Survival, you instead become trained in another skill of your choice. You become trained in ranger class DC. You can use the Hunt Prey action (page 168).\n<b>Special</b> You cannot select another dedication feat until you have gained two other feats from the ranger archetype."
+  type: dedication feat
+  level: 2
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: ability
+      descr: Dexterity 14
+  requirement: null
+  traits:
+    - Archetype
+    - Dedication
+    - Multiclass
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 228
+      page_stop: 228
+
+- name: Rogue Dedication
+  descr: "You gain a skill feat and the rogue’s surprise attack class feature (page 181). You become trained in light armor. In addition, you become trained in Stealth or Thievery plus one skill of your choice; if you are already trained in both Stealth and Thievery, you become trained in an additional skill of your choice. You become trained in rogue class DC.\n<b>Special</b> You cannot gain another dedication feat until you have gained two other feats from the rogue archetype."
+  type: dedication feat
+  level: 2
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: ability
+      descr: Dexterity 14
+  requirement: null
+  traits:
+    - Archetype
+    - Dedication
+    - Multiclass
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 229
+      page_stop: 229
+
+- name: Sorcerer Dedication
+  descr: "Choose a bloodline. You become trained in the bloodline’s two skills; for each of these skills in which you were already trained, you become trained in a skill of your choice.\nYou cast spells like a sorcerer. You gain access to the Cast a Spell activity. You gain a spell repertoire with two common cantrips from the spell list associated with your bloodline, or any other cantrips you learn or discover. You’re trained in spell attack rolls and spell DCs for your tradition’s spells. Your key spellcasting ability for sorcerer archetype spells is Charisma, and they are sorcerer spells of your bloodline’s tradition. You don’t gain any other abilities from your choice of bloodline.\n<b>Special</b> You cannot select another dedication feat until you have gained two other feats from the sorcerer archetype."
+  type: dedication feat
+  level: 2
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: ability
+      descr: Dexterity 14
+  requirement: null
+  traits:
+    - Archetype
+    - Dedication
+    - Multiclass
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 230
+      page_stop: 230
+
+- name: Wizard Dedication
+  descr: "You cast spells like a wizard, gaining a spellbook with four common arcane cantrips of your choice. You gain the Cast a Spell activity. You can prepare two cantrips each day from your spellbook. You’re trained in arcane spell attack rolls and spell DCs. Your key spellcasting ability for wizard archetype spells is Int, and they are arcane wizard spells. You become trained in Arcana; if you were already trained in Arcana, you instead become trained in a skill of your choice.\n<b>Special</b> You can’t select another dedication feat until you have gained two other feats from the wizard archetype."
+  type: dedication feat
+  level: 2
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: ability
+      descr: Intelligence 14
+  requirement: null
+  traits:
+    - Archetype
+    - Dedication
+    - Multiclass
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 231
+      page_stop: 231
