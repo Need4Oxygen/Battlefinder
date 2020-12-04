@@ -24,6 +24,9 @@ namespace Pathfinder2e
         [SerializeField] private TextAsset t_classFeatures = null;
         [SerializeField] private TextAsset t_classFeats = null;
         [SerializeField] private TextAsset t_classAdvancements = null;
+        [Header("Dedications")]
+        [SerializeField] private TextAsset t_dedicationFeats = null;
+        [SerializeField] private TextAsset t_archetypeFeats = null;
         [Header("Skills Stuff")]
         [SerializeField] private TextAsset t_skillFeats = null;
 
@@ -43,6 +46,9 @@ namespace Pathfinder2e
         public static ClassFeats ClassFeatures = new ClassFeats();
         public static ClassFeats ClassFeats = new ClassFeats();
         public static List<ClassProgression> ClassProgression = new List<ClassProgression>();
+
+        public static List<Feat> Dedications = new List<Feat>();
+        public static List<Feat> ArchetypeFeats = new List<Feat>();
 
         public static SkillFeats SkillFeats = new SkillFeats();
         public static List<Trait> Traits = new List<Trait>();
@@ -77,6 +83,9 @@ namespace Pathfinder2e
             ClassFeatures = YamlConvert.DeserializeObject<ClassFeats>(t_classFeatures.text);
             ClassFeats = YamlConvert.DeserializeObject<ClassFeats>(t_classFeats.text);
             ClassProgression = YamlConvert.DeserializeObject<List<ClassProgression>>(t_classAdvancements.text);
+
+            Dedications = YamlConvert.DeserializeObject<List<Feat>>(t_dedicationFeats.text);
+            ArchetypeFeats = YamlConvert.DeserializeObject<List<Feat>>(t_archetypeFeats.text);
 
             SkillFeats = YamlConvert.DeserializeObject<SkillFeats>(t_skillFeats.text);
             Traits = YamlConvert.DeserializeObject<List<Trait>>(t_traits.text);

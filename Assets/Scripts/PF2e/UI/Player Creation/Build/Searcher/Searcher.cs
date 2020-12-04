@@ -11,7 +11,7 @@ using UnityEngine.UI;
 namespace Pathfinder2e.Player
 {
 
-    public enum E_Searcher_Type { None, Default, Heritage, AncestryFeat, ClassFeat, SkillFeat, GeneralFeat }
+    public enum E_Searcher_Type { None, Default, Heritage, AncestryFeat, ClassFeat, Dedication, ArchetypeFeat, SkillFeat, GeneralFeat }
     public enum E_Searcher_Sort { None, Default, ABC, LVL }
 
     public class Searcher : MonoBehaviour
@@ -99,7 +99,13 @@ namespace Pathfinder2e.Player
         // Called by Type dropdown when user select another type of feat to search for
         public void OnValueChanged_TypeDropdown(int value)
         {
-
+            switch (typeDropdown.options[value].text)
+            {
+                case "Class Feats": SearchPrivate(E_Searcher_Type.ClassFeat); break;
+                case "Dedications": SearchPrivate(E_Searcher_Type.Dedication); break;
+                case "Archetype Feats": SearchPrivate(E_Searcher_Type.ArchetypeFeat); break;
+                default: SearchPrivate(E_Searcher_Type.ClassFeat); break;
+            }
         }
 
         // Called by Back button on searcher bar
@@ -120,21 +126,44 @@ namespace Pathfinder2e.Player
             }
 
             Sort(ref queryFiltered);
+            resultButtons = SpawnResultButtons(queryFiltered);
         }
 
         private void Sort(ref List<Feat> feats)
         {
             if (searchingSort == E_Searcher_Sort.ABC)
-                feats.OrderBy(x => x.name).ThenBy(x => x.level);
+                feats = feats.OrderBy(x => x.name).ThenBy(x => x.level).ToList();
             else
-                feats.OrderBy(x => x.level).ThenBy(x => x.name);
+                feats = feats.OrderBy(x => x.level).ThenBy(x => x.name).ToList();
         }
 
-        // Called by buuild buttons to search for feats
+        // Called by build buttons to search for feats
         public void Search(E_Searcher_Type featType)
         {
             OpenSearcher();
 
+            if (featType == E_Searcher_Type.ClassFeat)
+            {
+                typeDropdown.options = new List<TMP_Dropdown.OptionData>{
+                    new TMP_Dropdown.OptionData("Class Feats"),
+                    new TMP_Dropdown.OptionData("Dedications"),
+                    new TMP_Dropdown.OptionData("Archetype Feats")};
+                typeDropdown.SetValueWithoutNotify(0);
+                typeDropdown.interactable = true;
+            }
+            else
+            {
+                typeDropdown.options = new List<TMP_Dropdown.OptionData> { new TMP_Dropdown.OptionData("Type") };
+                typeDropdown.SetValueWithoutNotify(0);
+                typeDropdown.interactable = false;
+            }
+
+            SearchPrivate(featType);
+        }
+
+        // Called by this script to separate searchs from build buttons (public, requires OpenSearcher) and searchs from searcher dropdowns (searcher already opened)
+        private void SearchPrivate(E_Searcher_Type featType)
+        {
             searchingType = featType;
             query = new List<Feat>(SearchDB(featType));
             queryFiltered = SearchFilter(query);
@@ -150,8 +179,10 @@ namespace Pathfinder2e.Player
                 case E_Searcher_Type.Heritage: return DB.AncestryHeritages.Find(creation.currentPlayer.ancestry);
                 case E_Searcher_Type.AncestryFeat: return DB.AncestryFeats.Find(creation.currentPlayer.ancestry);
                 case E_Searcher_Type.ClassFeat: return DB.ClassFeats.Find(creation.currentPlayer.class_name);
-                case E_Searcher_Type.SkillFeat: return DB.SkillFeats.Find("general feats");
-                case E_Searcher_Type.GeneralFeat: return DB.SkillFeats.Find("skill feats");
+                case E_Searcher_Type.Dedication: return DB.Dedications;
+                case E_Searcher_Type.ArchetypeFeat: return DB.ArchetypeFeats;
+                case E_Searcher_Type.SkillFeat: return DB.SkillFeats.Find("skill feats");
+                case E_Searcher_Type.GeneralFeat: return DB.SkillFeats.Find("general feats");
                 default: return new List<Feat>();
             }
         }
@@ -160,7 +191,6 @@ namespace Pathfinder2e.Player
         private List<Feat> SearchFilter(List<Feat> feats, string value)
         {
             List<Feat> filteredFeats = new List<Feat>();
-
 
             // Look if inputed value is a trait
             List<Trait> detectedTraits = new List<Trait>();
@@ -340,7 +370,7 @@ namespace Pathfinder2e.Player
 
             if (feat.descr != null)
             {
-                featDescription.text = $"<b><size=18>Description:</size></b> {feat.descr}";
+                featDescription.text = $"{feat.descr}";
                 featDescription.gameObject.SetActive(true);
             }
             else
@@ -362,17 +392,22 @@ namespace Pathfinder2e.Player
 
             if (feat.source != null)
             {
-                string[] sources = new string[feat.source.Count];
+                string sourceString = "";
                 for (int i = 0; i < feat.source.Count; i++)
-                    sources[i] = feat.source[i].abbr;
-                // Need to implement DB source abbr to full name
-                featSource.text = $"<b><size=18>Prerequisites:</size></b> {string.Join(" ,", sources)}";
+                {
+                    if (i > 0) sourceString += "\n";
+                    sourceString += $"<b><size=18>{feat.source[i].abbr}</size></b>\npg.{feat.source[i].page_start}-{feat.source[i].page_stop}";
+                }
+                featSource.text = sourceString;
             }
             else
             {
                 featSource.gameObject.SetActive(false);
             }
 
+            if (traitButtons.Count != 0)
+                foreach (var item in traitButtons)
+                    item.Destroy();
             if (feat.traits != null)
                 foreach (var item in feat.traits)
                 {
@@ -398,7 +433,6 @@ namespace Pathfinder2e.Player
 
         IEnumerator UpdateVerticalLayoutGroup()
         {
-            Debug.Log("lmao");
             verticalContainer.enabled = false;
             yield return null;
             verticalContainer.enabled = true;

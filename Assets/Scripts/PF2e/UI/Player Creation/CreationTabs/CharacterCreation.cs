@@ -195,6 +195,11 @@ namespace Pathfinder2e.Player
                             // Should get into the build, retrieve init abl choices, check if they have errors and display a message
                             // if (currentPlayer.Build_GetFromBlock<>) 
                             break;
+                        case "ancestry feat":
+                            // search in build for choice
+                            BuildButton ancestryFeat = GenerateBuildButton("Ancestry Feat", "");
+                            ancestryFeat.button.onClick.AddListener(() => OnClick_AncestryFeat());
+                            break;
                         case "class feat":
                             // search in build for choice
                             BuildButton classFeat = GenerateBuildButton("Class Feat", "");
@@ -203,14 +208,18 @@ namespace Pathfinder2e.Player
                         case "skill feat":
                             // search in build for choice
                             BuildButton skillFeat = GenerateBuildButton("Skill Feat", "");
-                            skillFeat.button.interactable = false;
+                            skillFeat.button.onClick.AddListener(() => OnClick_SkillFeat());
                             break;
-                        case "alchemy":
+                        case "general feat":
+                            // search in build for choice
+                            BuildButton generalFeat = GenerateBuildButton("General Feat", "");
+                            generalFeat.button.onClick.AddListener(() => OnClick_GeneralFeat());
+                            break;
+                        case "alchemy": // Features should be checked last, searching in class feature feats
                             BuildButton alch = GenerateBuildButton("Class Feature", "Alchemy");
-                            alch.button.interactable = false;
                             break;
                         default:
-                            // buildButton.
+                            // buildButton
                             break;
                     }
                 }
@@ -257,9 +266,24 @@ namespace Pathfinder2e.Player
             ablBoostsSelector.OpenPlayerInitialAblBoostsPanel();
         }
 
+        private void OnClick_AncestryFeat()
+        {
+            searcher.Search(E_Searcher_Type.AncestryFeat);
+        }
+
         private void OnClick_ClassFeat()
         {
             searcher.Search(E_Searcher_Type.ClassFeat);
+        }
+
+        private void OnClick_SkillFeat()
+        {
+            searcher.Search(E_Searcher_Type.SkillFeat);
+        }
+
+        private void OnClick_GeneralFeat()
+        {
+            searcher.Search(E_Searcher_Type.GeneralFeat);
         }
 
         #endregion
