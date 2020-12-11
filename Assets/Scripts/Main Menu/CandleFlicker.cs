@@ -14,10 +14,14 @@ public class CandleFlicker : MonoBehaviour
 
     [Header("Light Shake Variation")]
     [SerializeField] private bool isShaking = true;
-    [SerializeField] private bool freezeOnSplashEnd = false;
     [SerializeField] private float shakeSpeed = 1f;
     [Space(5)]
     [SerializeField] private Vector3 shakeMultiplier = Vector3.one;
+
+    [Header("Optimization")]
+    [SerializeField] private bool freezeOnSplashEnd = false;
+    [SerializeField] private bool disableOnSplashEnd = false;
+
 
     private float shakeTimeCount;
     private float flickerTimeCount;
@@ -31,6 +35,8 @@ public class CandleFlicker : MonoBehaviour
     {
         if (freezeOnSplashEnd)
             SplashController.OnSplashEnd += StopShaking;
+        if (disableOnSplashEnd)
+            SplashController.OnSplashEnd += DisableLight;
 
         startPos = transform.localPosition;
         startIntensity = lightSource.intensity;
@@ -93,5 +99,17 @@ public class CandleFlicker : MonoBehaviour
     {
         isShaking = false;
         SplashController.OnSplashEnd -= StopShaking;
+    }
+
+    private void DisableLight()
+    {
+        StartCoroutine(DisableLightCor());
+        SplashController.OnSplashEnd -= DisableLight;
+    }
+
+    IEnumerator DisableLightCor()
+    {
+        yield return new WaitForSeconds(1);
+        lightSource.enabled = false;
     }
 }
