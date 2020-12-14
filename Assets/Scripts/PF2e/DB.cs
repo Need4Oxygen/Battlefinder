@@ -12,6 +12,7 @@ namespace Pathfinder2e
 
         [SerializeField] private TextAsset t_actions = null;
         [SerializeField] private TextAsset t_traits = null;
+        [SerializeField] private TextAsset t_sources = null;
         [Header("Ancestry Stuff")]
         [SerializeField] private TextAsset t_ancestries = null;
         [SerializeField] private TextAsset t_ancestryFeatures = null;
@@ -52,6 +53,7 @@ namespace Pathfinder2e
 
         public static SkillFeats SkillFeats = new SkillFeats();
         public static List<Trait> Traits = new List<Trait>();
+        public static List<SourceInfo> Sources = new List<SourceInfo>();
 
         public static List<string> SkillNames = new List<string>() { "acrobatics", "athletics", "crafting", "deception", "diplomacy", "intimidation", "medicine", "nature", "occultism", "performance", "religion", "society", "stealth", "survival", "thievery" };
 
@@ -89,6 +91,7 @@ namespace Pathfinder2e
 
             SkillFeats = YamlConvert.DeserializeObject<SkillFeats>(t_skillFeats.text);
             Traits = YamlConvert.DeserializeObject<List<Trait>>(t_traits.text);
+            Sources = YamlConvert.DeserializeObject<List<SourceInfo>>(t_sources.text);
         }
 
         public static void Clear()
@@ -109,6 +112,7 @@ namespace Pathfinder2e
 
             SkillFeats = null;
             Traits.Clear();
+            Sources.Clear();
         }
 
         // ---------------------------------------------------ABILITIES--------------------------------------------------
@@ -406,18 +410,6 @@ namespace Pathfinder2e
             return new string(a);
         }
 
-        // ---------------------------------------------------SOURCES--------------------------------------------------
-
-        // public static string Src_Abbr2Full(string abbr)
-        // {
-        //     switch (abbr)
-        //     {
-        //         sources.
-
-        //         default:
-        //             Debug.LogWarning("[DB] Error: size abreviation (" + abbr + ") not recognized!"); return "";
-        //     }
-        // }
     }
 
 }

@@ -393,10 +393,17 @@ namespace Pathfinder2e.Player
             if (feat.source != null)
             {
                 string sourceString = "";
+
                 for (int i = 0; i < feat.source.Count; i++)
                 {
                     if (i > 0) sourceString += "\n";
-                    sourceString += $"<b><size=18>{feat.source[i].abbr}</size></b>\npg.{feat.source[i].page_start}-{feat.source[i].page_stop}";
+
+                    SourceInfo source = DB.Sources.Find(x => feat.source[i].abbr == x.abbr);
+
+                    if (source != null)
+                        sourceString += $"<b>{source.short_name}</b> <size=15>pg.{feat.source[i].page_start}-{feat.source[i].page_stop}</size>";
+                    else
+                        sourceString += $"<b>{feat.source[i].abbr}</b>\n<size=15>pg.{feat.source[i].page_start}-{feat.source[i].page_stop}</size>";
                 }
                 featSource.text = sourceString;
             }
