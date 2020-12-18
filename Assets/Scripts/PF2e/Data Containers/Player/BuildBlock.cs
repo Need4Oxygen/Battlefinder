@@ -5,7 +5,8 @@ namespace Pathfinder2e.Containers
     {
         public int level { get; set; }
         public string name { get; set; }
-        public string value { get; set; }
+        public string type { get; set; }
+        public string data { get; set; }
         public BuildBlock child { get; set; }
     }
 

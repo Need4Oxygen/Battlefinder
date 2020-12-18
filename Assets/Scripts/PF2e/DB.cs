@@ -12,6 +12,7 @@ namespace Pathfinder2e
 
         [SerializeField] private TextAsset t_actions = null;
         [SerializeField] private TextAsset t_traits = null;
+        [SerializeField] private TextAsset t_sources = null;
         [Header("Ancestry Stuff")]
         [SerializeField] private TextAsset t_ancestries = null;
         [SerializeField] private TextAsset t_ancestryFeatures = null;
@@ -24,6 +25,9 @@ namespace Pathfinder2e
         [SerializeField] private TextAsset t_classFeatures = null;
         [SerializeField] private TextAsset t_classFeats = null;
         [SerializeField] private TextAsset t_classAdvancements = null;
+        [Header("Dedications")]
+        [SerializeField] private TextAsset t_dedicationFeats = null;
+        [SerializeField] private TextAsset t_archetypeFeats = null;
         [Header("Skills Stuff")]
         [SerializeField] private TextAsset t_skillFeats = null;
 
@@ -44,8 +48,12 @@ namespace Pathfinder2e
         public static ClassFeats ClassFeats = new ClassFeats();
         public static List<ClassProgression> ClassProgression = new List<ClassProgression>();
 
+        public static List<Feat> Dedications = new List<Feat>();
+        public static List<Feat> ArchetypeFeats = new List<Feat>();
+
         public static SkillFeats SkillFeats = new SkillFeats();
         public static List<Trait> Traits = new List<Trait>();
+        public static List<SourceInfo> Sources = new List<SourceInfo>();
 
         public static List<string> SkillNames = new List<string>() { "acrobatics", "athletics", "crafting", "deception", "diplomacy", "intimidation", "medicine", "nature", "occultism", "performance", "religion", "society", "stealth", "survival", "thievery" };
 
@@ -78,8 +86,12 @@ namespace Pathfinder2e
             ClassFeats = YamlConvert.DeserializeObject<ClassFeats>(t_classFeats.text);
             ClassProgression = YamlConvert.DeserializeObject<List<ClassProgression>>(t_classAdvancements.text);
 
+            Dedications = YamlConvert.DeserializeObject<List<Feat>>(t_dedicationFeats.text);
+            ArchetypeFeats = YamlConvert.DeserializeObject<List<Feat>>(t_archetypeFeats.text);
+
             SkillFeats = YamlConvert.DeserializeObject<SkillFeats>(t_skillFeats.text);
             Traits = YamlConvert.DeserializeObject<List<Trait>>(t_traits.text);
+            Sources = YamlConvert.DeserializeObject<List<SourceInfo>>(t_sources.text);
         }
 
         public static void Clear()
@@ -100,6 +112,7 @@ namespace Pathfinder2e
 
             SkillFeats = null;
             Traits.Clear();
+            Sources.Clear();
         }
 
         // ---------------------------------------------------ABILITIES--------------------------------------------------
@@ -377,38 +390,6 @@ namespace Pathfinder2e
             }
         }
 
-        public static string ToUpperFirst(string s)
-        {
-            if (string.IsNullOrEmpty(s))
-                return string.Empty;
-
-            char[] a = s.ToCharArray();
-            a[0] = char.ToUpper(a[0]);
-            return new string(a);
-        }
-
-        public static string ToLowerFirst(string s)
-        {
-            if (string.IsNullOrEmpty(s))
-                return string.Empty;
-
-            char[] a = s.ToCharArray();
-            a[0] = char.ToLower(a[0]);
-            return new string(a);
-        }
-
-        // ---------------------------------------------------SOURCES--------------------------------------------------
-
-        // public static string Src_Abbr2Full(string abbr)
-        // {
-        //     switch (abbr)
-        //     {
-        //         sources.
-
-        //         default:
-        //             Debug.LogWarning("[DB] Error: size abreviation (" + abbr + ") not recognized!"); return "";
-        //     }
-        // }
     }
 
 }

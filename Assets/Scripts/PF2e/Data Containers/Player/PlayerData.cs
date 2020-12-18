@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using Pathfinder2e;
 using Pathfinder2e.Containers;
+using Pathfinder2e.GameData;
 using UnityEngine;
 
 namespace Pathfinder2e.Player
@@ -306,7 +307,6 @@ namespace Pathfinder2e.Player
             return Mathf.FloorToInt((ablScore - 10) / 2);
         }
 
-
         // ---------------------------------------------------SKILLS--------------------------------------------------
         private Dictionary<string, APIC> skills_dic;
         private Dictionary<string, APIC> lores_dic;
@@ -412,10 +412,7 @@ namespace Pathfinder2e.Player
 
         public int perception_score { get { return perception.score; } }
 
-        public APIC Perception_Get()
-        {
-            return perception;
-        }
+        public APIC Perception_Get() { return perception; }
 
         public void Perception_ClearFrom(string from)
         {
@@ -440,16 +437,17 @@ namespace Pathfinder2e.Player
         // ---------------------------------------------------SAVES--------------------------------------------------
         private Dictionary<string, APIC> saves_dic;
 
-        public APIC Saves_Get(string savesName)
+        /// <summary> Retrieve APIC corresponding to the asked save throw. Saves can be: "fortitude", "reflex" and "wisdom" </summary>
+        public APIC Saves_Get(string save)
         {
-            if (saves_dic.ContainsKey(savesName))
+            if (saves_dic.ContainsKey(save))
             {
-                APIC save = saves_dic[savesName];
-                return save;
+                APIC apic = saves_dic[save];
+                return apic;
             }
             else
             {
-                Debug.LogWarning("[PlayerData] Couldn't find save: " + savesName + "!");
+                Debug.LogWarning("[PlayerData] Couldn't find save: " + save + "!");
                 return null;
             }
         }
@@ -759,8 +757,8 @@ namespace Pathfinder2e.Player
             {
                 if (build.ContainsKey(level))
                     if (build[level].ContainsKey(key))
-                        if (build[level][key].value != null)
-                            return JsonConvert.DeserializeObject<T>(build[level][key].value);
+                        if (build[level][key].data != null)
+                            return JsonConvert.DeserializeObject<T>(build[level][key].data);
 
                 Debug.LogWarning($"[PlayerData] Couldn't find key {key} ");
                 return default(T);
@@ -770,6 +768,98 @@ namespace Pathfinder2e.Player
                 Debug.LogError($"[PlayerData] Couldn't retrieve object {key} from build\n{e.Message}\n{e.StackTrace}");
                 return default(T);
             }
+        }
+
+        /// <summary>
+        /// Retrieve feats of specific type in the current build. Types can be: "heritage", "ancestry feat", "ancestry feature", "class feat", "class feature", "general feat" and "skill feat"
+        /// </summary>
+        /// <param name="type"> heritage, ancestry feat, ancestry feature, class feat, class feature, general feat and skill feat </param>
+        public List<Feat> Build_GetFeats(string type)
+        {
+            List<string> featNames = Build_GetFeatNames(type);
+            List<Feat> feats = new List<Feat>();
+
+            switch (type)
+            {
+                case "heritage":
+                    foreach (var item in featNames)
+                    {
+                        Feat feat = DB.AncestryHeritages.Find(ancestry).Find(x => x.name == item);
+                        if (feat != null)
+                            feats.Add(feat);
+                    }
+                    break;
+                case "ancestry feat":
+                    foreach (var item in featNames)
+                    {
+                        Feat feat = DB.AncestryFeats.Find(ancestry).Find(x => x.name == item);
+                        if (feat != null)
+                            feats.Add(feat);
+                    }
+                    break;
+                case "ancestry feature":
+                    foreach (var item in featNames)
+                    {
+                        Feat feat = DB.AncestryFeatures.Find(x => x.name == item);
+                        if (feat != null)
+                            feats.Add(feat);
+                    }
+                    break;
+                case "class feat":
+                    foreach (var item in featNames)
+                    {
+                        Feat feat = DB.ClassFeats.Find(class_name).Find(x => x.name == item);
+                        if (feat != null)
+                            feats.Add(feat);
+                    }
+                    break;
+                case "class feature":
+                    foreach (var item in featNames)
+                    {
+                        Feat feat = DB.ClassFeatures.Find(class_name).Find(x => x.name == item);
+                        if (feat != null)
+                            feats.Add(feat);
+                    }
+                    break;
+                case "general feat":
+                    foreach (var item in featNames)
+                    {
+                        Feat feat = DB.SkillFeats.Find("general feat").Find(x => x.name == item);
+                        if (feat != null)
+                            feats.Add(feat);
+                    }
+                    break;
+                case "skill feat":
+                    foreach (var item in featNames)
+                    {
+                        Feat feat = DB.SkillFeats.Find("skill feat").Find(x => x.name == item);
+                        if (feat != null)
+                            feats.Add(feat);
+                    }
+                    break;
+                default: break;
+            }
+
+            if (feats.Count == 0)
+                Debug.LogWarning($"[PlayerData] Couldn't find feats with type \"{type}\"");
+
+            return feats;
+        }
+
+        /// <summary>
+        /// Retrieve feat names of specific type in the current build. Types can be: "heritage", "ancestry feat", "ancestry feature", "class feat", "class feature", "general feat" and "skill feat"
+        /// </summary>
+        /// <param name="type">heritage, ancestry feat, ancestry feature, class feat, class feature, general feat and skill feat </param>
+        public List<string> Build_GetFeatNames(string type)
+        {
+            List<string> featNames = new List<string>();
+
+            foreach (var lvl in build)
+                foreach (var block in lvl.Value)
+                    if (block.Key == type)
+                        featNames.Add(block.Value.name);
+
+            return featNames;
         }
 
         private void Build_SetNewProgression(string className)
@@ -783,7 +873,7 @@ namespace Pathfinder2e.Player
             // Search for coincidences in old build with new class progression
             foreach (var lvlDic in build)
                 foreach (var block in lvlDic.Value)
-                    if (block.Value.value == prog.progression[block.Value.level].items.Find(ctx => ctx == block.Value.name))
+                    if (block.Value.data == prog.progression[block.Value.level].items.Find(ctx => ctx == block.Value.name))
                         coincidences.Add(block.Value);
 
             // Generate new build

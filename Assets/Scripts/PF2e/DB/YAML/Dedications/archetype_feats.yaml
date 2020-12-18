@@ -1,0 +1,1301 @@
+- name: Basic Concoction
+  descr: "You gain a 1st- or 2nd-level alchemist feat."
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Alchemist Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 220
+      page_stop: 220
+
+- name: Quick Alchemy
+  descr: "You gain the Quick Alchemy action (page 72)."
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Alchemist Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 220
+      page_stop: 220
+
+- name: Advanced Concoction
+  descr: "You gain one alchemist feat. For the purpose of meeting its prerequisites, your alchemist level is equal to half your character level.\n<b>Special</b> You can select this feat more than once. Each time you select it, you gain another alchemist feat."
+  type: archetype feat
+  level: 6
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: archetype feat
+      descr: Basic Concoction
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 220
+      page_stop: 220
+
+- name: Expert Alchemy
+  descr: "Your advanced alchemy level increases to 3. At 10th level, it increases to 5."
+  type: archetype feat
+  level: 6
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Alchemist Dedication
+    - type: proficiency
+      descr: expert in Crafting
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 220
+      page_stop: 220
+
+- name: Master Alchemy
+  descr: "Your advanced alchemy level increases to 7. For every level you gain beyond 12th, your advanced alchemy level increases by 1."
+  type: archetype feat
+  level: 12
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: archetype feat
+      descr: Expert Alchemy
+    - type: proficiency
+      descr: master in Crafting
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 220
+      page_stop: 220
+
+- name: Barbarian Resiliency
+  descr: "You gain 3 additional Hit Points for each barbarian archetype class feat you have. As you continue selecting barbarian archetype class feats, you continue to gain additional Hit Points in this way."
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Barbarian Dedication
+    - type: special
+      descr: class granting no more Hit Points per level than 10 + your Constitution modifier
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 221
+      page_stop: 221
+
+- name: Barbarian Resiliency
+  descr: "You gain 3 additional Hit Points for each barbarian archetype class feat you have. As you continue selecting barbarian archetype class feats, you continue to gain additional Hit Points in this way."
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Barbarian Dedication
+    - type: special
+      descr: class granting no more Hit Points per level than 10 + your Constitution modifier
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 221
+      page_stop: 221
+
+- name: Barbarian Fury
+  descr: "You gain a 1st- or 2nd-level barbarian feat."
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Barbarian Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 221
+      page_stop: 221
+
+- name: Advanced Fury
+  descr: "You gain one barbarian feat. For the purpose of meeting its prerequisites, your barbarian level is equal to half your character level.\n<b>Special<\b> You can select this feat more than once. Each time you select it, you gain another barbarian feat."
+  type: archetype feat
+  level: 6
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: archetype feat
+      descr: Basic Fury
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 221
+      page_stop: 221
+
+- name: Instinct Ability
+  descr: "You gain one barbarian feat. For the purpose of meeting its prerequisites, your barbarian level is equal to half your character level.\n<b>Special<\b> You can select this feat more than once. Each time you select it, you gain another barbarian feat."
+  type: archetype feat
+  level: 6
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Barbarian Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 221
+      page_stop: 221
+
+- name: Instinct Ability
+  descr: "Your proficiency rank in Fortitude saves increases to master."
+  type: archetype feat
+  level: 12
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Barbarian Dedication
+    - type: save throw
+      descr: expert in Fortitude saves
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 221
+      page_stop: 221
+
+- name: Basic Bard Spellcasting
+  descr: "You gain the basic spellcasting benefits (page 219). Each time you gain a spell slot of a new level from the bard archetype, add a common occult spell or another spell you learned or discovered to your repertoire, of the appropriate spell level."
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Barbarian Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 222
+      page_stop: 222
+
+- name: Basic Muse's Whispers
+  descr: "You gain a 1st- or 2nd-level bard feat."
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Barbarian Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 222
+      page_stop: 222
+
+- name: Advanced Muse's Whispers
+  descr: "You gain one bard feat. For the FEAT 6 purpose of meeting it's prerequisites, your bard level is equal to half your character level.\n<b>Special<\b> You can select this feat more than once. Each time you select it, you gain another bard feat."
+  type: archetype feat
+  level: 6
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: archetype feat
+      descr: Basic Muse’s Whispers
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 222
+      page_stop: 222
+
+- name: Counter Perform
+  descr: "You gain the counter performance composition spell. If you don’t already have one, you gain a focus pool of 1 Focus Point, which you can Refocus by engaging your muse. (For more on composition spells, see page 97.)"
+  type: archetype feat
+  level: 6
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Bard Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 222
+      page_stop: 222
+
+- name: Inspirational Performance
+  descr: "You gain the inspire courage composition cantrip."
+  type: archetype feat
+  level: 8
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Bard Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 222
+      page_stop: 222
+
+- name: Occult Breadth
+  descr: "Your repertoire expands, and you can cast more occult spells each day. Increase the number of spells in your repertoire and the number of spell slots you gain from bard archetype feats by 1 for each spell level other than your two highest spell levels."
+  type: archetype feat
+  level: 8
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: archetype feat
+      descr: Basic Bard Spellcasting
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 222
+      page_stop: 222
+
+- name: Expert Bard Spellcasting
+  descr: "You gain the expert spellcasting benefits (page 219)."
+  type: archetype feat
+  level: 12
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: archetype feat
+      descr: Basic Bard Spellcasting
+    - type: proficiency
+      descr: master in Occultism
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 222
+      page_stop: 222
+
+- name: Master Bard Spellcasting
+  descr: "You gain the master spellcasting benefits (page 219)."
+  type: archetype feat
+  level: 18
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: archetype feat
+      descr: Expert Bard Spellcasting
+    - type: proficiency
+      descr: legendary in Occultism
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 222
+      page_stop: 222
+
+- name: Basic Devoltion
+  descr: "You gain a 1st- or 2nd-level champion feat."
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Champion Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 223
+      page_stop: 223
+
+- name: Champion Resiliency
+  descr: "You gain 3 additional Hit Points for each champion archetype class feat you have. As you continue selecting champion archetype class feats, you continue to gain additional Hit Points in this way."
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Champion Dedication
+    - type: special
+      descr: class granting no more Hit Points per level than 8 + your Constitution modifier
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 223
+      page_stop: 223
+
+- name: Healing Touch
+  descr: "You gain the appropriate devotion spell for your cause (lay on hands for the paladin, redeemer, and liberator). If you don’t already have one, you gain a focus pool of 1 Focus Point, which you can Refocus by praying or serving your deity. (For more on devotion spells, see page 107.)"
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Champion Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 223
+      page_stop: 223
+
+- name: Advanced Devotion
+  descr: "You gain one champion feat. For the purpose of meeting its prerequisites, your champion level is equal to half your character level.\n<b>Special<\b> You can select this feat more than once. Each time you select it, you gain another champion feat."
+  type: archetype feat
+  level: 6
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: archetype feat
+      descr: Basic Devoltion
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 223
+      page_stop: 223
+
+- name: Champion's Reaction
+  descr: "You can use the champion’s reaction associated with your cause."
+  type: archetype feat
+  level: 6
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Champion Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 223
+      page_stop: 223
+
+- name: Divine Ally
+  descr: "You gain a divine ally of your choice (page 108)."
+  type: archetype feat
+  level: 6
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Champion Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 223
+      page_stop: 223
+
+- name: Diverse Armor Expert
+  descr: "Your proficiency ranks for light armor, medium armor, heavy armor, and unarmored defense increase to expert."
+  type: archetype feat
+  level: 14
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Champion Dedication
+    - type: special
+      descr: expert in unarmored defense or one or more types of armor
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 223
+      page_stop: 223
+
+- name: Basic Cleric Spellcasting
+  descr: "You gain the basic spellcasting benefits (page 219). You can prepare your deity’s spells in your spell slots of the appropriate level from the cleric archetype."
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Cleric Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 224
+      page_stop: 224
+
+- name: Basic Dogma
+  descr: "You gain a 1st- or 2nd-level cleric feat."
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Cleric Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 224
+      page_stop: 224
+
+- name: Advanced Dogma
+  descr: "You gain one cleric feat. For the purpose of meeting its prerequisites, your cleric level is equal to half your character level.\n<b>Special<\b> You can select this feat more than once. Each time you select it, you gain another cleric feat."
+  type: archetype feat
+  level: 6
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: archetype feat
+      descr: Basic Dogma
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 224
+      page_stop: 224
+
+- name: Divine Breadth
+  descr: "You can cast more divine spells each day. Increase the spell slots you gain from cleric archetype feats by 1 for each spell level other than your two highest spell levels."
+  type: archetype feat
+  level: 8
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: archetype feat
+      descr: Basic Cleric Spellcasting
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 224
+      page_stop: 224
+
+- name: Expert Cleric Spellcasting
+  descr: "You gain the expert spellcasting benefits (page 219)."
+  type: archetype feat
+  level: 12
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: archetype feat
+      descr: Basic Cleric Spellcasting
+    - type: proficiency
+      descr: master in Religion
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 224
+      page_stop: 224
+
+- name: Master Cleric Spellcasting
+  descr: "You gain the master spellcasting benefits (page 219)."
+  type: archetype feat
+  level: 18
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: archetype feat
+      descr: Expert Cleric Spellcasting
+    - type: proficiency
+      descr: legendary in Religion
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 224
+      page_stop: 224
+
+- name: Basic Druid Spellcasting
+  descr: "You gain the basic spellcasting benefits (page 219)."
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Druid Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 225
+      page_stop: 225
+
+- name: Basic Wilding
+  descr: "You gain a 1st- or 2nd-level druid feat."
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Druid Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 225
+      page_stop: 225
+
+- name: Order Spell
+  descr: "You gain the initial order spell from your order. If you don’t already have one, you gain a focus pool of 1 Focus Point, which you can Refocus by being one with nature. (For more on order spells, see page 131.)"
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Druid Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 225
+      page_stop: 225
+
+- name: Advanced Wilding
+  descr: "You gain one druid feat. For the purpose of meeting its prerequisites, your druid level is equal to half your character level.\n<b>Special<\b> You can select this feat more than once. Each time you select it, you gain another druid feat."
+  type: archetype feat
+  level: 6
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: archetype feat
+      descr: Basic Wilding
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 225
+      page_stop: 225
+
+- name: Primal Breadth
+  descr: "Increase the spell slots you gain from druid archetype feats by 1 for each spell level other than your two highest spell levels."
+  type: archetype feat
+  level: 8
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Druid Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 225
+      page_stop: 225
+
+- name: Expert Druid Spellcasting
+  descr: "Increase the spell slots you gain from druid archetype feats by 1 for each spell level other than your two highest spell levels."
+  type: archetype feat
+  level: 12
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: archetype feat
+      descr: Basic Druid Spellcasting
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 225
+      page_stop: 225
+
+- name: Expert Druid Spellcasting
+  descr: "Increase the spell slots you gain from druid archetype feats by 1 for each spell level other than your two highest spell levels."
+  type: archetype feat
+  level: 12
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: archetype feat
+      descr: Basic Druid Spellcasting
+    - type: proficiency
+      descr: master in Nature
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 225
+      page_stop: 225
+
+- name: Master Druid Spellcasting
+  descr: "You gain the master spellcasting benefits (page 219)."
+  type: archetype feat
+  level: 18
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: archetype feat
+      descr: Expert Druid Spellcasting
+    - type: proficiency
+      descr: legendary in Nature
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 225
+      page_stop: 225
+
+- name: Basic Maneuver
+  descr: "You gain a 1st- or 2nd-level fighter feat."
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Fighter Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 226
+      page_stop: 226
+
+- name: Fighter Resiliency
+  descr: "You gain 3 additional Hit Points for each fighter archetype class feat you have. As you continue selecting fighter archetype class feats, you continue to gain additional Hit Points in this way."
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Fighter Dedication
+    - type: special
+      descr: class granting no more Hit Points per level than 8 + your Constitution modifier
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 226
+      page_stop: 226
+
+- name: Opportunist
+  descr: "You gain the Attack of Opportunity reaction, found on page 142."
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Fighter Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 226
+      page_stop: 226
+
+- name: Advanced Maneuver
+  descr: "You gain a fighter feat. For the purpose of meeting its prerequisites, your fighter level is equal to half your character level.\n<b>Special<\b> You can select this feat more than once. Each time you select it, you gain another fighter feat."
+  type: archetype feat
+  level: 6
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: archetype feat
+      descr: Basic Maneuver
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 226
+      page_stop: 226
+
+- name: Diverse Weapon Expert
+  descr: "Your proficiency ranks for simple weapons and martial weapons increase to expert, and your proficiency rank for advanced weapons increases to trained."
+  type: archetype feat
+  level: 12
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Fighter Dedication
+    - type: special
+      descr: expert in any kind of weapon or unarmed attack
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 226
+      page_stop: 226
+
+- name: Basic Kata
+  descr: "You gain a 1st- or 2nd-level monk feat."
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Monk Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 227
+      page_stop: 227
+
+- name: Monk Resiliency
+  descr: "You gain 3 additional Hit Points for each monk archetype class feat you have. As you continue selecting monk archetype class feats, you continue to gain additional Hit Points in this way."
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Monk Dedication
+    - type: special
+      descr: class granting no more Hit Points per level than 8 + your Constitution modifier
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 227
+      page_stop: 227
+
+- name: Advanced Kata
+  descr: "You gain one monk feat. For the purpose of meeting its prerequisites, your monk level is equal to half your character level.\n<b>Special<\b> You can select this feat more than once. Each time you select it, you gain another monk feat."
+  type: archetype feat
+  level: 6
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: archetype feat
+      descr: Basic Kata
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 227
+      page_stop: 227
+
+- name: Monk Moves
+  descr: "You gain a +10-foot status bonus to your Speed when you’re not wearing armor."
+  type: archetype feat
+  level: 8
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Monk Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 227
+      page_stop: 227
+
+- name: Monk's Flurry
+  descr: "You gain the Flurry of Blows action (page 156)."
+  type: archetype feat
+  level: 10
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Monk Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 227
+      page_stop: 227
+
+- name: Perfection's Path
+  descr: "Choose one saving throw (Fortitude, Reflex, or Will) in which you are an expert. Your proficiency rank in the chosen saving throw increases to master."
+  type: archetype feat
+  level: 12
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Monk Dedication
+    - type: saving throw
+      descr: expert in at least one saving throw
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 227
+      page_stop: 227
+
+- name: Basic Hunter's Trick
+  descr: "You gain a 1st- or 2nd-level ranger feat."
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Ranger Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 228
+      page_stop: 228
+
+- name: Rangers Resiliency
+  descr: "You gain 3 additional Hit Points for each ranger archetype class feat you have. As you continue selecting ranger archetype class feats, you continue to gain additional Hit Points in this way."
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Ranger Dedication
+    - type: special
+      descr: class granting no more Hit Points per level than 8 + your Constitution modifier
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 228
+      page_stop: 228
+
+- name: Advanced Hunter's Trick
+  descr: "You gain one ranger feat. For the purpose of meeting its prerequisites, your ranger level is equal to half your character level.\n<b>Special<\b> You can select this feat more than once. Each time you select it, you gain another ranger feat."
+  type: archetype feat
+  level: 6
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: archetype feat
+      descr: Basic Hunter’s Trick
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 228
+      page_stop: 228
+
+- name: Master Spotter
+  descr: "Your proficiency rank in Perception increases to master."
+  type: archetype feat
+  level: 12
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Ranger Dedication
+    - type: proficiency
+      descr: expert in Perception
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 228
+      page_stop: 228
+
+- name: Basic Trickery
+  descr: "You gain a 1st- or 2nd-level rogue feat."
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Rogue Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 229
+      page_stop: 229
+
+- name: Sneak Attacker
+  descr: "You gain the sneak attack class feature (page 181), except it deals 1d4 damage, increasing to 1d6 at 6th level. You don’t increase the number of dice as you gain levels."
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Rogue Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 229
+      page_stop: 229
+
+- name: Advanced Trickery
+  descr: "You gain one rogue feat. For the purpose of meeting it's prerequisites, your rogue level is equal to half your character level.\n<b>Special<\b> You can select this feat more than once. Each time you select it, you gain another rogue feat."
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: archetype feat
+      descr: Basic Trickery
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 229
+      page_stop: 229
+
+- name: Skill Mastery
+  descr: "Increase your proficiency rank in one of your skills from expert to master and in another of your skills from trained to expert. You gain a skill feat associated with one of the skills you chose. Special You can select this feat up to five times."
+  type: archetype feat
+  level: 8
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Rogue Dedication
+    - type: special
+      descr: trained in at least one skill and expert in at least one skill
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 229
+      page_stop: 229
+
+- name: Uncanny Dodge
+  descr: "You gain the deny advantage class feature (page 181)."
+  type: archetype feat
+  level: 10
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Rogue Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 229
+      page_stop: 229
+
+- name: Evasiveness
+  descr: "Your proficiency rank for Reflex saves increases to master."
+  type: archetype feat
+  level: 12
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Rogue Dedication
+    - type: save throw
+      descr: expert in Reflex saves
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 229
+      page_stop: 229
+
+- name: Basic Sorcerer Spellcasting
+  descr: "You gain the basic spellcasting benefits (page 219). Each time you gain a spell slot of a new level from the sorcerer archetype, add a spell of the appropriate spell level to your repertoire: a common spell of your bloodline’s tradition, one of your bloodline’s granted spells, or another spell you have learned or discovered."
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Sorcerer Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 230
+      page_stop: 230
+
+- name: Basic Sorcerer Spellcasting
+  descr: "You gain the basic spellcasting benefits (page 219). Each time you gain a spell slot of a new level from the sorcerer archetype, add a spell of the appropriate spell level to your repertoire: a common spell of your bloodline’s tradition, one of your bloodline’s granted spells, or another spell you have learned or discovered."
+  type: archetype feat
+  level: 4
+  actioncost: null
+  frequency: null
+  cost: null
+  trigger: null
+  prerequisites:
+    - type: dedication feat
+      descr: Sorcerer Dedication
+  requirement: null
+  traits:
+    - Archetype
+  lectures: null
+  source:
+    - abbr: CRB
+      page_start: 230
+      page_stop: 230
