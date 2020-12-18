@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using Pathfinder2e;
 using Pathfinder2e.Player;
 using Pathfinder2e.Containers;
+using Tools;
 
 namespace Pathfinder2e.GameData
 {
@@ -344,9 +345,9 @@ namespace Pathfinder2e.GameData
                 skillNames.Add(item.target);
             for (int i = 0; i < skillNames.Count; i++)
                 if (i < skillNames.Count - 1)
-                    backgroundSkillTrainString += DB.ToUpperFirst(skillNames[i]) + ", ";
+                    backgroundSkillTrainString += StrTools.ToUpperFirst(skillNames[i]) + ", ";
                 else
-                    backgroundSkillTrainString += DB.ToUpperFirst(skillNames[i]);
+                    backgroundSkillTrainString += StrTools.ToUpperFirst(skillNames[i]);
             backgroundSkillTrain.text = backgroundSkillTrainString;
 
             // Extract feats to display in a string
@@ -487,19 +488,19 @@ namespace Pathfinder2e.GameData
             foreach (var item in lectures)
             {
                 if (DB.SkillNames.Contains(item.target))
-                    str += $"{DB.ToUpperFirst(item.prof)} in {DB.ToUpperFirst(item.target)}. ";
+                    str += $"{StrTools.ToUpperFirst(item.prof)} in {StrTools.ToUpperFirst(item.target)}. ";
                 else if (item.target.Contains("a number"))
-                    str += $"{DB.ToUpperFirst(item.prof)} in a number of additional skills equal to {new string(item.target.Where(char.IsDigit).ToArray())} plus your intelligence modifier. ";
+                    str += $"{StrTools.ToUpperFirst(item.prof)} in a number of additional skills equal to {new string(item.target.Where(char.IsDigit).ToArray())} plus your intelligence modifier. ";
                 else if (item.target == "your choice of acrobatics or athletics") // for fighter choice of acrobatics or athletics
-                    str += $"{DB.ToUpperFirst(item.prof)} in your choice of acrobatics or athletics";
+                    str += $"{StrTools.ToUpperFirst(item.prof)} in your choice of acrobatics or athletics";
                 else if (item.target == "one skill determined by your choice of deity") // for champion cleric deity
-                    str += $"{DB.ToUpperFirst(item.prof)} in one skill determined by your choice of deity";
+                    str += $"{StrTools.ToUpperFirst(item.prof)} in one skill determined by your choice of deity";
                 else if (item.target == "one skill determined by your druidic order") // for druid order
-                    str += $"{DB.ToUpperFirst(item.prof)} in one skill determined by your druidic order";
+                    str += $"{StrTools.ToUpperFirst(item.prof)} in one skill determined by your druidic order";
                 else if (item.target == "one or more skills determined by your rogue's racket") // for rogues racket
-                    str += $"{DB.ToUpperFirst(item.prof)} in one or more skills determined by your rogue's racket";
+                    str += $"{StrTools.ToUpperFirst(item.prof)} in one or more skills determined by your rogue's racket";
                 else if (item.target == "one or more skills determined by your bloodline") // for sorcerer bloodline
-                    str += $"{DB.ToUpperFirst(item.prof)} in one or more skills determined by your bloodline";
+                    str += $"{StrTools.ToUpperFirst(item.prof)} in one or more skills determined by your bloodline";
             }
 
             return str;

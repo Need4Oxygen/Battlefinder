@@ -50,6 +50,9 @@ namespace Pathfinder2e.Player
         private List<ResultButton> resultButtons = new List<ResultButton>();
         private List<TraitButton> traitButtons = new List<TraitButton>();
 
+        private Color acceptedPrereqColor;
+        private Color failedPrereqColor;
+
         void Start()
         {
             StartCoroutine(PanelFader.RescaleAndFade(searcherPanel.transform, searcherPanel, 0.85f, 0f, 0f));
@@ -69,6 +72,9 @@ namespace Pathfinder2e.Player
             sortDropdown.options = new List<TMP_Dropdown.OptionData> { new TMP_Dropdown.OptionData("LVL"), new TMP_Dropdown.OptionData("ABC") };
             sortDropdown.SetValueWithoutNotify(0);
             sortDropdown.onValueChanged.AddListener((v) => { OnValueChanged_SortDropdown(v); });
+
+            acceptedPrereqColor = resultButtonPrefab.GetComponent<ResultButton>().mainText.color;
+            failedPrereqColor = Color.red;
 
             ClearFeatDisplayer();
         }
@@ -255,6 +261,13 @@ namespace Pathfinder2e.Player
                     newButton.actionCostImage.enabled = false;
                 }
 
+                newButton.mainText.color = acceptedPrereqColor;
+
+                if (feat.prerequisites != null)
+                    if (!PrerequisitesSolver.Check_Feat(feat, ref creation.currentPlayer).isValidated)
+                        newButton.mainText.color = failedPrereqColor;
+
+
                 newButton.button.onClick.AddListener(() => { OnClick_ResultButton(feat); });
 
                 buttons.Add(newButton);
@@ -330,7 +343,7 @@ namespace Pathfinder2e.Player
 
             if (feat.cost != null)
             {
-                featCost.text = $"<b><size=18>Cost:</size></b> {feat.cost}";
+                featCost.text = $"<b><color=#C59D6B>Cost:</color></b> {feat.cost}";
                 featCost.gameObject.SetActive(true);
             }
             else
@@ -340,7 +353,7 @@ namespace Pathfinder2e.Player
 
             if (feat.frequency != null)
             {
-                featFrequency.text = $"<b><size=18>Frequency:</size></b> {feat.frequency}";
+                featFrequency.text = $"<b><color=#C59D6B>Frequency:</color></b> {feat.frequency}";
                 featFrequency.gameObject.SetActive(true);
             }
             else
@@ -350,7 +363,7 @@ namespace Pathfinder2e.Player
 
             if (feat.trigger != null)
             {
-                featTrigger.text = $"<b><size=18>Trigger:</size></b> {feat.trigger}";
+                featTrigger.text = $"<b><color=#C59D6B>Trigger:</color></b> {feat.trigger}";
                 featTrigger.gameObject.SetActive(true);
             }
             else
@@ -360,7 +373,7 @@ namespace Pathfinder2e.Player
 
             if (feat.requirement != null)
             {
-                featRequirement.text = $"<b><size=18>Requirement:</size></b> {feat.requirement}";
+                featRequirement.text = $"<b><color=#C59D6B>Requirement:</color></b> {feat.requirement}";
                 featRequirement.gameObject.SetActive(true);
             }
             else
@@ -383,7 +396,7 @@ namespace Pathfinder2e.Player
                 string[] prerequisites = new string[feat.prerequisites.Count];
                 for (int i = 0; i < feat.prerequisites.Count; i++)
                     prerequisites[i] = feat.prerequisites[i].descr;
-                featPrerequisites.text = $"<b><size=18>Prerequisites:</size></b> {string.Join(" ,", prerequisites)}";
+                featPrerequisites.text = $"<b><color=#C59D6B>Prerequisites:</color></b> {string.Join(" ,", prerequisites)}";
             }
             else
             {
@@ -401,9 +414,9 @@ namespace Pathfinder2e.Player
                     SourceInfo source = DB.Sources.Find(x => feat.source[i].abbr == x.abbr);
 
                     if (source != null)
-                        sourceString += $"<b>{source.short_name}</b> <size=15>pg.{feat.source[i].page_start}-{feat.source[i].page_stop}</size>";
+                        sourceString += $"<b><color=#C59D6B>{source.short_name}</color></b> <size=15>pg.{feat.source[i].page_start}-{feat.source[i].page_stop}</size>";
                     else
-                        sourceString += $"<b>{feat.source[i].abbr}</b>\n<size=15>pg.{feat.source[i].page_start}-{feat.source[i].page_stop}</size>";
+                        sourceString += $"<b><color=#C59D6B>{feat.source[i].abbr}</color></b>\n<size=15>pg.{feat.source[i].page_start}-{feat.source[i].page_stop}</size>";
                 }
                 featSource.text = sourceString;
             }
