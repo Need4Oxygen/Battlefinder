@@ -5,6 +5,7 @@ using Cinemachine;
 
 public class MainMenuCamera : MonoBehaviour
 {
+    [SerializeField] Camera mainCamera = null;
     [SerializeField] CinemachineBrain brainCam = null;
     [SerializeField] CinemachineVirtualCamera closeUpCam = null;
     [SerializeField] Animator boxAnimator = null;
@@ -27,6 +28,9 @@ public class MainMenuCamera : MonoBehaviour
     {
         QualitySettings.vSyncCount = 1;  // VSync must be disabled
         Application.targetFrameRate = 0;
+
+        WindowManager.OnWindowOpens += WindowOpensListener;
+        WindowManager.OnWindowCloses += WindowClosesListener;
     }
 
     void Start()
@@ -79,4 +83,26 @@ public class MainMenuCamera : MonoBehaviour
             yield return null;
         }
     }
+
+    private void WindowOpensListener(Window window)
+    {
+        StartCoroutine(WindowOpensCorou(window));
+    }
+    private IEnumerator WindowOpensCorou(Window window)
+    {
+        yield return new WaitForSecondsRealtime(0.15f);
+        mainCamera.enabled = false;
+    }
+
+    private void WindowClosesListener(Window window)
+    {
+        if (WindowManager.OpenWindows.Count == 0)
+            StartCoroutine(WindowClosesCorou(window));
+    }
+    private IEnumerator WindowClosesCorou(Window window)
+    {
+        mainCamera.enabled = true;
+        yield return null;
+    }
+
 }

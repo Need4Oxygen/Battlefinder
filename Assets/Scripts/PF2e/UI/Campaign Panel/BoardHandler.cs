@@ -11,8 +11,8 @@ namespace Pathfinder2e.GameData
 
     public class BoardHandler : MonoBehaviour
     {
-        [SerializeField] private CampaingHandler campaignHandler = null;
-        [SerializeField] private CanvasGroup boardPanel = null;
+        [SerializeField] private Window window = null;
+        [SerializeField] private CampaignHandler campaignHandler = null;
         [SerializeField] private TMP_InputField boardNameInput = null;
 
         [Space(15)]
@@ -22,19 +22,14 @@ namespace Pathfinder2e.GameData
         private List<ButtonText> actorButtonList = new List<ButtonText>();
         private BoardData currentBoard = null;
 
-        void Start()
-        {
-            StartCoroutine(PanelFader.RescaleAndFade(boardPanel.transform, boardPanel, 0.85f, 0f, 0f));
-        }
-
         private void OpenBoardPanel()
         {
-            StartCoroutine(PanelFader.RescaleAndFade(boardPanel.transform, boardPanel, 1f, 1f, 0.1f));
+            window.OpenWindow();
         }
 
         private void CloseBoardPanel()
         {
-            StartCoroutine(PanelFader.RescaleAndFade(boardPanel.transform, boardPanel, 0.85f, 0f, 0.1f));
+            window.CloseWindow();
 
             currentBoard = null;
         }

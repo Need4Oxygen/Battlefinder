@@ -9,7 +9,7 @@ using UnityEngine.UI;
 namespace Pathfinder2e.GameData
 {
 
-    public class CampaingHandler : MonoBehaviour
+    public class CampaignHandler : MonoBehaviour
     {
         // Controls the PF2e campaing retrieval and send thems to load and display
         // Controls the PF2e board, player, enemies and npcs buttons
@@ -19,8 +19,7 @@ namespace Pathfinder2e.GameData
         [SerializeField] private ConfirmationController confirmation = null;
 
         [Header("Campaign Stuff")]
-        [SerializeField] private CanvasGroup campaignPanel = null;
-        [SerializeField] private GameObject campaignContainersPanel = null;
+        [SerializeField] private Window window = null;
         [SerializeField] private TMP_Text campaignName = null;
 
         [Header("Boards")]
@@ -45,6 +44,8 @@ namespace Pathfinder2e.GameData
 
         void Awake()
         {
+            characterCreation.OnCharacterCreationClose += RefreshCampaignContainers;
+
             if (Time.time < 10)
             {
                 char sep = Path.DirectorySeparatorChar;
@@ -63,13 +64,6 @@ namespace Pathfinder2e.GameData
             }
         }
 
-        void Start()
-        {
-            StartCoroutine(PanelFader.RescaleAndFade(campaignPanel.transform, campaignPanel, 0.85f, 0f, 0f));
-
-            characterCreation.OnCharacterCreationClose += RefreshCampaignContainers;
-        }
-
         public void OnClickBackButton()
         {
             CloseCampaingPanel();
@@ -84,13 +78,12 @@ namespace Pathfinder2e.GameData
 
         private void OpenCampaingPanel()
         {
-            StartCoroutine(PanelFader.RescaleAndFade(campaignPanel.transform, campaignPanel, 1f, 1f, 0.1f));
-            campaignContainersPanel.SetActive(true);
+            window.OpenWindow();
         }
 
         private void CloseCampaingPanel()
         {
-            StartCoroutine(PanelFader.RescaleAndFade(campaignPanel.transform, campaignPanel, 0.85f, 0f, 0.1f));
+            window.CloseWindow();
         }
 
         /// <summary> Called by GameSelectorController after asking the name for a new campaign has been prompted and accepted. </summary>

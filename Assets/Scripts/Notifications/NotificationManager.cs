@@ -9,7 +9,7 @@ public enum NotifSprites
     _default, _deco1, _deco2, _deco3, _deco4, _deco5, _exclamation,
     _tick, _cross, _arrow
 };
-public enum NotifColors { _default, _green, _orange, _red, _blue };
+public enum NotifColors { _default, _green, _orange, _red, _blue, _black };
 
 public class NotificationManager : MonoBehaviour
 {
@@ -30,6 +30,7 @@ public class NotificationManager : MonoBehaviour
         public Color color;
     }
 
+    [SerializeField] Transform dontDestroy = null;
     [SerializeField] GameObject messageStandarPrefab = default;
     [SerializeField] RectTransform canvas = default;
 
@@ -44,11 +45,11 @@ public class NotificationManager : MonoBehaviour
     {
         if (Instance == null)
         {
-            DontDestroyOnLoad(transform.parent);
+            DontDestroyOnLoad(dontDestroy);
             Instance = this;
         }
         else
-            Destroy(transform.parent.gameObject);
+            Destroy(dontDestroy.gameObject);
     }
 
     void Start()

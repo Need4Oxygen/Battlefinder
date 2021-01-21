@@ -18,7 +18,7 @@ namespace Pathfinder2e.GameData
         [SerializeField] CharacterCreation characterCreation = null;
 
         [Header("ABC")]
-        [SerializeField] CanvasGroup ABCSelectionPanel = null;
+        [SerializeField] Window window = null;
         [SerializeField] Transform buttonContainer = null;
         [SerializeField] Transform button = null;
         [SerializeField] Transform tabContainer = null;
@@ -92,18 +92,17 @@ namespace Pathfinder2e.GameData
 
         void Awake()
         {
-            StartCoroutine(PanelFader.RescaleAndFade(ABCSelectionPanel.transform, ABCSelectionPanel, 0.85f, 0f, 0f));
             CloseSubpanels();
         }
 
         public void OpenSelectorPanel()
         {
-            StartCoroutine(PanelFader.RescaleAndFade(ABCSelectionPanel.transform, ABCSelectionPanel, 1f, 1f, 0.1f));
+            window.OpenWindow();
         }
 
         public void CloseSelectorPanel()
         {
-            StartCoroutine(PanelFader.RescaleAndFade(ABCSelectionPanel.transform, ABCSelectionPanel, 0.85f, 0f, 0.1f));
+            window.CloseWindow();
             ClearTabs();
             ClearButtons();
 
