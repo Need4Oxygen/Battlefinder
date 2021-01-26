@@ -30546,10 +30546,10 @@ RectTransform:
   m_Father: {fileID: 761738282504288428}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225.36002, y: -13.355}
+  m_SizeDelta: {x: 50.08, y: 26.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &761738282164023303
 GameObject:
@@ -36033,10 +36033,10 @@ RectTransform:
   m_Father: {fileID: 761738282504288428}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 175.28, y: -13.355}
+  m_SizeDelta: {x: 50.08, y: 26.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &761738282540604748
 MonoBehaviour:
@@ -43813,10 +43813,10 @@ RectTransform:
   m_Father: {fileID: 761738282504288428}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 75.12, y: -13.355}
+  m_SizeDelta: {x: 50.08, y: 26.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &761738283257049542
 CanvasRenderer:
@@ -43841,10 +43841,10 @@ RectTransform:
   m_Father: {fileID: 761738282504288428}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 125.200005, y: -13.355}
+  m_SizeDelta: {x: 50.08, y: 26.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &761738283257049563
 GameObject:
@@ -47167,10 +47167,10 @@ RectTransform:
   m_Father: {fileID: 761738282504288428}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 25.04, y: -13.355}
+  m_SizeDelta: {x: 50.08, y: 26.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &761738283565513641
 GameObject:
@@ -64027,6 +64027,26 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
         type: 3}
+      propertyPath: m_ContentType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_KeyboardType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_CharacterLimit
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_CharacterValidation
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7131613613510969228}
@@ -72908,7 +72928,7 @@ GameObject:
   - component: {fileID: 5242653454537132746}
   - component: {fileID: 5242653454537132747}
   m_Layer: 5
-  m_Name: InputField
+  m_Name: Board Name Input
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78543,6 +78563,26 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
         type: 3}
+      propertyPath: m_ContentType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_KeyboardType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_CharacterLimit
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_CharacterValidation
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7131613613510969228}
@@ -81913,6 +81953,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7131613612643402074}
     m_Modifications:
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_CharacterLimit
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
         type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -91284,6 +91329,26 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
         type: 3}
+      propertyPath: m_ContentType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_KeyboardType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_CharacterLimit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_CharacterValidation
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7131613613510969228}
@@ -91537,6 +91602,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7131613613639696180}
     m_Modifications:
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_KeyboardType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_CharacterValidation
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
         type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -92989,6 +93064,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 761738283139029620}
     m_Modifications:
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_ContentType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_KeyboardType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_CharacterLimit
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_CharacterValidation
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4780635231739088026, guid: 020790bae588d4e4a803db23c6a2a5b2,
         type: 3}
       propertyPath: m_Name
@@ -95628,6 +95723,26 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
         type: 3}
+      propertyPath: m_ContentType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_KeyboardType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_CharacterLimit
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_CharacterValidation
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7131613613510969228}
@@ -96152,6 +96267,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 761738282395158605}
     m_Modifications:
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_ContentType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_KeyboardType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_CharacterLimit
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_CharacterValidation
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4780635231739088026, guid: 020790bae588d4e4a803db23c6a2a5b2,
         type: 3}
       propertyPath: m_Name
@@ -97263,6 +97398,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 761738283071932737}
     m_Modifications:
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_ContentType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_KeyboardType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_CharacterLimit
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_CharacterValidation
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
         type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -101685,6 +101840,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 761738282820722293}
     m_Modifications:
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_ContentType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_KeyboardType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_CharacterLimit
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_CharacterValidation
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4780635231739088026, guid: 020790bae588d4e4a803db23c6a2a5b2,
         type: 3}
       propertyPath: m_Name
