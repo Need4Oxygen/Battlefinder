@@ -90,7 +90,6 @@ namespace Pathfinder2e.Player
             currentPlayer.guid = newGuid;
 
 
-            ABCSelector.OpenSelectorPanel();
             ABCSelector.Display("ancestry");
             ABCSelector.acceptButton.onClick.AddListener(() => NewPlayerProcessAccept());
             ABCSelector.backButton.onClick.AddListener(() => NewPlayerProcessBack());
@@ -366,7 +365,6 @@ namespace Pathfinder2e.Player
         public void OnClickSelectAncestry()
         {
             if (ablBoostsSelector.isOpen) return;
-            ABCSelector.OpenSelectorPanel();
             ABCSelector.Display("ancestry");
             ABCSelector.acceptButton.onClick.AddListener(() => SelectAncestryAccept());
             ABCSelector.backButton.onClick.AddListener(() => SelectAncestryCancel());
@@ -385,7 +383,6 @@ namespace Pathfinder2e.Player
         public void OnClickSelectBackground()
         {
             if (ablBoostsSelector.isOpen) return;
-            ABCSelector.OpenSelectorPanel();
             ABCSelector.Display("background");
             ABCSelector.acceptButton.onClick.AddListener(() => SelectBackgroundAccept());
             ABCSelector.backButton.onClick.AddListener(() => SelectBackgroundCancel());
@@ -404,7 +401,6 @@ namespace Pathfinder2e.Player
         public void OnClickSelectedClass()
         {
             if (ablBoostsSelector.isOpen) return;
-            ABCSelector.OpenSelectorPanel();
             ABCSelector.Display("class");
             ABCSelector.acceptButton.onClick.AddListener(() => SelectClassAccept());
             ABCSelector.backButton.onClick.AddListener(() => SelectClassCancel());

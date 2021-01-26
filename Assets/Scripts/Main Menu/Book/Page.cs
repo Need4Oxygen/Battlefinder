@@ -4,6 +4,9 @@ using TMPro;
 
 public class Page : MonoBehaviour
 {
+
+    // Pages have to be deactivated on game start, or grads explode
+
     public bool hasTab;
 
     [HideInInspector] public BookScript bookScript;
