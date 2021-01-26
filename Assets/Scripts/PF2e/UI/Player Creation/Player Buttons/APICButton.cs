@@ -21,8 +21,12 @@ namespace Pathfinder2e.GameData
 
         public void Refresh(APIC apic)
         {
-            skillName.text = apic.name;
-            ablDependency.text = apic.abl.ToUpper();
+            if (skillName != null)
+                skillName.text = apic.name;
+            if (ablDependency != null)
+                ablDependency.text = apic.abl.ToUpper();
+            if (dcText != null)
+                dcText.text = apic.dcScore.ToString();
 
             profLetterText.text = apic.profColored;
             ablText.text = ToEmptyOrString(apic.ablScore);
@@ -30,9 +34,6 @@ namespace Pathfinder2e.GameData
             itemText.text = ToEmptyOrString(apic.itemScore);
             tempText.text = ToEmptyOrString(apic.tempScore);
             scoreText.text = ProcessScore(apic.score);
-
-            if (dcText != null)
-                dcText.text = apic.dcScore.ToString();
         }
 
         private string ToEmptyOrString(int value)
