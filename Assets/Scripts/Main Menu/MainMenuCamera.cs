@@ -27,7 +27,7 @@ public class MainMenuCamera : MonoBehaviour
     void Awake()
     {
         QualitySettings.vSyncCount = 1;  // VSync must be disabled
-        Application.targetFrameRate = 0;
+        Application.targetFrameRate = VideoSettings.fpsLimit;
 
         WindowManager.OnWindowOpens += WindowOpensListener;
         WindowManager.OnWindowCloses += WindowClosesListener;
@@ -90,6 +90,7 @@ public class MainMenuCamera : MonoBehaviour
     }
     private IEnumerator WindowOpensCorou(Window window)
     {
+        Application.targetFrameRate = VideoSettings.fpsLimitUI;
         yield return new WaitForSecondsRealtime(0.15f);
         mainCamera.enabled = false;
     }
@@ -101,6 +102,7 @@ public class MainMenuCamera : MonoBehaviour
     }
     private IEnumerator WindowClosesCorou(Window window)
     {
+        Application.targetFrameRate = VideoSettings.fpsLimit;
         mainCamera.enabled = true;
         yield return null;
     }
