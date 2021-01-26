@@ -3,26 +3,21 @@ using UnityEngine;
 
 public class ConfirmationController : MonoBehaviour
 {
-    [SerializeField] CanvasGroup confirmationPanel = null;
+    [SerializeField] Window window = null;
     [SerializeField] TMP_Text message = null;
 
     DBool callback;
 
-    void Start()
-    {
-        StartCoroutine(PanelFader.RescaleAndFade(confirmationPanel.transform, confirmationPanel, 0.85f, 0f, 0f));
-    }
-
     private void OpenPanel()
     {
-        StartCoroutine(PanelFader.RescaleAndFade(confirmationPanel.transform, confirmationPanel, 1f, 1f, 0.1f));
+        window.OpenWindow();
     }
 
     private void ClosePanel()
     {
         callback = null;
         message.text = "";
-        StartCoroutine(PanelFader.RescaleAndFade(confirmationPanel.transform, confirmationPanel, 0.85f, 0f, 0.1f));
+        window.CloseWindow();
     }
 
     public void AskForConfirmation(string message, DBool callback)

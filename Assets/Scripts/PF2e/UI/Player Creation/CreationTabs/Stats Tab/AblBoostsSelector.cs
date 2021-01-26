@@ -17,7 +17,7 @@ namespace Pathfinder2e.GameData
         [SerializeField] private Transform dropdownPrefab = null;
 
         [Header("Initial Abilities Boosts")]
-        [SerializeField] private CanvasGroup initialAblBoostsPanel = null;
+        [SerializeField] private Window window = null;
         [SerializeField] private Transform ancestryContainer = null;
         [SerializeField] private Transform backgroundContainer = null;
         [SerializeField] private Transform classContainer = null;
@@ -35,9 +35,6 @@ namespace Pathfinder2e.GameData
         void Start()
         {
             AssignLvl1BoostsFunctionality();
-
-            StartCoroutine(PanelFader.RescaleAndFade(initialAblBoostsPanel.transform, initialAblBoostsPanel, 0.85f, 0f, 0f));
-            // StartCoroutine(PanelFader.RescaleAndFade(ablBoostsPanel.transform, ablBoostsPanel, 0.85f, 0f, 0f));
         }
 
         #region --------------------------------INITIAL BOOSTS--------------------------------
@@ -45,7 +42,7 @@ namespace Pathfinder2e.GameData
         public void OpenPlayerInitialAblBoostsPanel()
         {
             isOpen = true;
-            StartCoroutine(PanelFader.RescaleAndFade(initialAblBoostsPanel.transform, initialAblBoostsPanel, 1f, 1f, 0.1f));
+            window.OpenWindow();
 
             currentData = new List<AblBoostData>(creation.currentPlayer.abl_boostList);
 
@@ -55,7 +52,7 @@ namespace Pathfinder2e.GameData
         public void ClosePlayerInitialAblBoostsPanel()
         {
             isOpen = false;
-            StartCoroutine(PanelFader.RescaleAndFade(initialAblBoostsPanel.transform, initialAblBoostsPanel, 0.85f, 0f, 0.1f));
+            window.CloseWindow();
 
             currentData = null;
         }

@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class PanelFader : MonoBehaviour
 {
-    public static IEnumerator Fade(CanvasGroup cg, float alphaTarget, float duration)
+    public static IEnumerator Fade(CanvasGroup group, float alphaTarget, float duration)
     {
         float counter = 0;
         float completion = 0;
-        float alphaInit = cg.alpha;
+        float alphaInit = group.alpha;
         float alphaDiff = alphaInit - alphaTarget;
 
         if (alphaDiff != 0)
@@ -19,7 +19,7 @@ public class PanelFader : MonoBehaviour
                 counter += Time.unscaledDeltaTime;
                 completion = counter / duration;
 
-                cg.alpha = -Mathf.Clamp(completion, 0f, 1.0f) * alphaDiff + alphaInit;
+                group.alpha = -Mathf.Clamp(completion, 0f, 1.0f) * alphaDiff + alphaInit;
                 yield return null;
             }
         }
@@ -28,14 +28,14 @@ public class PanelFader : MonoBehaviour
             Debug.Log("Fade failed: initial alpha equal to target");
         }
 
-        cg.alpha = alphaTarget;
+        group.alpha = alphaTarget;
     }
 
-    public static IEnumerator Rescale(Transform panelTransform, float scaleTarget, float duration)
+    public static IEnumerator Rescale(Transform panel, float scaleTarget, float duration)
     {
         float counter = 0;
         float completion = 0;
-        float scaleInit = panelTransform.localScale.x;
+        float scaleInit = panel.localScale.x;
         float scaleDiff = scaleInit - scaleTarget;
 
         if (scaleDiff != 0)
@@ -45,7 +45,7 @@ public class PanelFader : MonoBehaviour
                 counter += Time.unscaledDeltaTime;
                 completion = counter / duration;
 
-                panelTransform.localScale = new Vector2(-Mathf.Clamp(completion, 0.1f, 1.0f) * scaleDiff + scaleInit, -Mathf.Clamp(completion, 0.1f, 1.0f) * scaleDiff + scaleInit);
+                panel.localScale = new Vector2(-Mathf.Clamp(completion, 0.1f, 1.0f) * scaleDiff + scaleInit, -Mathf.Clamp(completion, 0.1f, 1.0f) * scaleDiff + scaleInit);
                 yield return null;
             }
         }
@@ -54,32 +54,32 @@ public class PanelFader : MonoBehaviour
             Debug.Log("[PanelFader] RescaleAndFade failed: initial scale equal to target");
         }
 
-        panelTransform.localScale = new Vector2(scaleTarget, scaleTarget);
+        panel.localScale = new Vector2(scaleTarget, scaleTarget);
     }
 
-    public static IEnumerator RescaleAndFade(Transform panelTransform, CanvasGroup canvasGroup,
+    public static IEnumerator RescaleAndFadePanel(Transform panel, CanvasGroup group,
     float scaleTarget, float alphaTarget, float duration)
     {
-        float scaleInit = panelTransform.localScale.x;
-        float alphaInit = canvasGroup.alpha;
-        yield return RescaleAndFade(panelTransform, canvasGroup, scaleInit, scaleTarget, alphaInit, alphaTarget, duration, null, null);
+        float scaleInit = panel.localScale.x;
+        float alphaInit = group.alpha;
+        yield return RescaleAndFadePanel(panel, group, scaleInit, scaleTarget, alphaInit, alphaTarget, duration, null, null);
     }
-    public static IEnumerator RescaleAndFade(Transform panelTransform, CanvasGroup canvasGroup,
+    public static IEnumerator RescaleAndFadePanel(Transform panel, CanvasGroup group,
     float scaleTarget, float alphaTarget, float duration,
     Action onFadeStart, Action onFadeEnd)
     {
-        float scaleInit = panelTransform.localScale.x;
-        float alphaInit = canvasGroup.alpha;
-        yield return RescaleAndFade(panelTransform, canvasGroup, scaleInit, scaleTarget, alphaInit, alphaTarget, duration, onFadeStart, onFadeEnd);
+        float scaleInit = panel.localScale.x;
+        float alphaInit = group.alpha;
+        yield return RescaleAndFadePanel(panel, group, scaleInit, scaleTarget, alphaInit, alphaTarget, duration, onFadeStart, onFadeEnd);
     }
-    public static IEnumerator RescaleAndFade(Transform panelTransform, CanvasGroup canvasGroup,
+    public static IEnumerator RescaleAndFadePanel(Transform panel, CanvasGroup group,
     float scaleInit, float scaleFinal,
     float alphaInit, float alphaFinal,
     float duration)
     {
-        yield return RescaleAndFade(panelTransform, canvasGroup, scaleInit, scaleFinal, alphaInit, alphaFinal, duration, null, null);
+        yield return RescaleAndFadePanel(panel, group, scaleInit, scaleFinal, alphaInit, alphaFinal, duration, null, null);
     }
-    public static IEnumerator RescaleAndFade(Transform panelTransform, CanvasGroup canvasGroup,
+    public static IEnumerator RescaleAndFadePanel(Transform panel, CanvasGroup group,
     float scaleInit, float scaleFinal,
     float alphaInit, float alphaFinal,
     float duration,
@@ -87,8 +87,8 @@ public class PanelFader : MonoBehaviour
     {
         if (duration > 0f)
         {
-            if (panelTransform.gameObject.activeSelf == false)
-                panelTransform.gameObject.SetActive(true);
+            if (panel.gameObject.activeSelf == false)
+                panel.gameObject.SetActive(true);
 
             yield return null;
 
@@ -107,9 +107,10 @@ public class PanelFader : MonoBehaviour
                     counter += Time.unscaledDeltaTime;
                     completion = counter / duration;
 
-                    canvasGroup.alpha = -Mathf.Clamp(completion, 0f, 1.0f) * alphaDiff + alphaInit;
-                    panelTransform.localScale = new Vector2(-Mathf.Clamp(completion, 0f, 1.0f) * scaleDiff + scaleInit,
-                                                            -Mathf.Clamp(completion, 0f, 1.0f) * scaleDiff + scaleInit);
+                    group.alpha = -Mathf.Clamp(completion, 0f, 1.0f) * alphaDiff + alphaInit;
+                    float localScale = -Mathf.Clamp(completion, 0f, 1.0f) * scaleDiff + scaleInit;
+                    panel.localScale = new Vector2(localScale, localScale);
+
                     yield return null;
                 }
             }
@@ -122,10 +123,76 @@ public class PanelFader : MonoBehaviour
                 onFadeEnd.Invoke();
         }
 
-        canvasGroup.alpha = alphaFinal;
-        panelTransform.localScale = new Vector2(scaleFinal, scaleFinal);
+        group.alpha = alphaFinal;
+        panel.localScale = new Vector2(scaleFinal, scaleFinal);
 
-        if (canvasGroup.alpha == 0f)
-            panelTransform.gameObject.SetActive(false);
+        if (group.alpha == 0f)
+            panel.gameObject.SetActive(false);
+    }
+
+    public static IEnumerator RescaleAndFadeWindow(Window window, float scaleTarget, float alphaTarget, float delay, float duration)
+    {
+        float scaleInit = window.transform.localScale.x;
+        float alphaInit = window.group.alpha;
+        yield return RescaleAndFadeWindow(window, scaleInit, scaleTarget, alphaInit, alphaTarget, delay, duration, null, null);
+    }
+    public static IEnumerator RescaleAndFadeWindow(Window window, float scaleTarget, float alphaTarget, float delay, float duration, Action onFadeStart, Action onFadeEnd)
+    {
+        float scaleInit = window.transform.localScale.x;
+        float alphaInit = window.group.alpha;
+        yield return RescaleAndFadeWindow(window, scaleInit, scaleTarget, alphaInit, alphaTarget, delay, duration, onFadeStart, onFadeEnd);
+    }
+    public static IEnumerator RescaleAndFadeWindow(Window window, float scaleInit, float scaleFinal, float alphaInit, float alphaFinal, float delay, float duration)
+    {
+        yield return RescaleAndFadeWindow(window, scaleInit, scaleFinal, alphaInit, alphaFinal, delay, duration, null, null);
+    }
+    public static IEnumerator RescaleAndFadeWindow(Window window, float scaleInit, float scaleFinal, float alphaInit, float alphaFinal, float delay, float duration, Action onFadeStart, Action onFadeEnd)
+    {
+        if (delay > 0f)
+            yield return new WaitForSecondsRealtime(delay);
+
+        if (duration > 0f)
+        {
+            if (window.canvas.enabled == false)
+                window.canvas.enabled = true;
+
+            yield return null;
+
+            if (onFadeStart != null)
+                onFadeStart.Invoke();
+
+            float counter = 0;
+            float completion = 0;
+            float scaleDiff = scaleInit - scaleFinal;
+            float alphaDiff = alphaInit - alphaFinal;
+
+            if (scaleDiff != 0 || alphaDiff != 0)
+            {
+                while (counter < duration)
+                {
+                    counter += Time.unscaledDeltaTime;
+                    completion = counter / duration;
+
+                    window.group.alpha = -Mathf.Clamp(completion, 0f, 1.0f) * alphaDiff + alphaInit;
+                    float localScale = -Mathf.Clamp(completion, 0f, 1.0f) * scaleDiff + scaleInit;
+                    window.transform.localScale = new Vector2(localScale, localScale);
+
+                    yield return null;
+                }
+            }
+            else
+            {
+                Debug.Log("[PanelFader] RescaleAndFade failed: initial scale or fade equal to target");
+            }
+
+            if (onFadeEnd != null)
+                onFadeEnd.Invoke();
+        }
+
+        window.group.alpha = alphaFinal;
+        window.transform.localScale = new Vector2(scaleFinal, scaleFinal);
+
+        if (window.group.alpha == 0f)
+            window.canvas.enabled = false;
     }
 }

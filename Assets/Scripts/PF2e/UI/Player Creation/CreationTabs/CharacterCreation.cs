@@ -14,10 +14,10 @@ namespace Pathfinder2e.Player
     {
         public DVoid OnCharacterCreationClose = null;
 
+        [SerializeField] private Window window = null;
         [SerializeField] private ABCSelector ABCSelector = null;
         [SerializeField] private AblBoostsSelector ablBoostsSelector = null;
         [SerializeField] private Searcher searcher = null;
-        [SerializeField] private CanvasGroup characterPanel = null;
 
         [Header("Name & Level")]
         [SerializeField] private TMP_InputField levelInput = null;
@@ -45,8 +45,6 @@ namespace Pathfinder2e.Player
 
         void Start()
         {
-            StartCoroutine(PanelFader.RescaleAndFade(characterPanel.transform, characterPanel, 0.85f, 0f, 0f));
-
             tabOnColor = Globals.Theme["background_1"];
             tabOffColor = Globals.Theme["background_2"];
         }
@@ -55,13 +53,13 @@ namespace Pathfinder2e.Player
 
         private void OpenPlayerCreationPanel()
         {
-            StartCoroutine(PanelFader.RescaleAndFade(characterPanel.transform, characterPanel, 1f, 1f, 0.1f));
+            window.OpenWindow();
             OnClickTabStats();
         }
 
         private void ClosePlayerCreationPanel()
         {
-            StartCoroutine(PanelFader.RescaleAndFade(characterPanel.transform, characterPanel, 0.85f, 0f, 0.1f));
+            window.CloseWindow();
             currentPlayer = null;
 
             CloseAllTabs();
@@ -92,7 +90,6 @@ namespace Pathfinder2e.Player
             currentPlayer.guid = newGuid;
 
 
-            ABCSelector.OpenSelectorPanel();
             ABCSelector.Display("ancestry");
             ABCSelector.acceptButton.onClick.AddListener(() => NewPlayerProcessAccept());
             ABCSelector.backButton.onClick.AddListener(() => NewPlayerProcessBack());
@@ -368,7 +365,6 @@ namespace Pathfinder2e.Player
         public void OnClickSelectAncestry()
         {
             if (ablBoostsSelector.isOpen) return;
-            ABCSelector.OpenSelectorPanel();
             ABCSelector.Display("ancestry");
             ABCSelector.acceptButton.onClick.AddListener(() => SelectAncestryAccept());
             ABCSelector.backButton.onClick.AddListener(() => SelectAncestryCancel());
@@ -387,7 +383,6 @@ namespace Pathfinder2e.Player
         public void OnClickSelectBackground()
         {
             if (ablBoostsSelector.isOpen) return;
-            ABCSelector.OpenSelectorPanel();
             ABCSelector.Display("background");
             ABCSelector.acceptButton.onClick.AddListener(() => SelectBackgroundAccept());
             ABCSelector.backButton.onClick.AddListener(() => SelectBackgroundCancel());
@@ -406,7 +401,6 @@ namespace Pathfinder2e.Player
         public void OnClickSelectedClass()
         {
             if (ablBoostsSelector.isOpen) return;
-            ABCSelector.OpenSelectorPanel();
             ABCSelector.Display("class");
             ABCSelector.acceptButton.onClick.AddListener(() => SelectClassAccept());
             ABCSelector.backButton.onClick.AddListener(() => SelectClassCancel());

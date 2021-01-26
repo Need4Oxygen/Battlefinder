@@ -11,7 +11,7 @@ namespace Pathfinder2e.Player
     {
         [System.Serializable] private class ListWrapper { public List<Image> myList = null; }
 
-        [SerializeField] private GameObject statsPanel = null;
+        [SerializeField] private Window statsWindow = null;
         [SerializeField] private CharacterCreation creation = null;
 
         [Header("Health")]
@@ -74,14 +74,14 @@ namespace Pathfinder2e.Player
         public void OpenStatsPanel()
         {
             isOpen = true;
-            statsPanel.SetActive(true);
+            statsWindow.OpenWindow();
             RefreshPlayerIntoPanel();
         }
 
         public void CloseStatsPanel()
         {
             isOpen = false;
-            statsPanel.SetActive(false);
+            statsWindow.CloseWindow();
         }
 
         #endregion

@@ -18,14 +18,14 @@ namespace Pathfinder2e.Player
     {
         [SerializeField] private CharacterCreation creation = null;
         [Header("Searcher")]
-        [SerializeField] private CanvasGroup searcherPanel = null;
+        [SerializeField] private Window window = null;
         [SerializeField] private TMP_InputField searchField = null;
         [SerializeField] private TMP_Dropdown typeDropdown = null;
         [SerializeField] private TMP_Dropdown sortDropdown = null;
         [SerializeField] private Transform resultButtonContainer = null;
         [SerializeField] private GameObject resultButtonPrefab = null;
         [Header("Feat Displayer")]
-        [SerializeField] private CanvasGroup featDisplayerPanel = null;
+        [SerializeField] private Window featDisplayerWindow = null;
         [SerializeField] private VerticalLayoutGroup verticalContainer = null;
         [SerializeField] private TMP_Text featLvl = null;
         [SerializeField] private TMP_Text featName = null;
@@ -55,9 +55,6 @@ namespace Pathfinder2e.Player
 
         void Start()
         {
-            StartCoroutine(PanelFader.RescaleAndFade(searcherPanel.transform, searcherPanel, 0.85f, 0f, 0f));
-            StartCoroutine(PanelFader.RescaleAndFade(featDisplayerPanel.transform, featDisplayerPanel, 0.85f, 0f, 0f));
-
             ObjectPooler.CreatePool(resultButtonPrefab, resultButtonContainer, 100);
             ObjectPooler.CreatePool(traitPrefab, traitsContainer, 6);
 
@@ -81,12 +78,12 @@ namespace Pathfinder2e.Player
 
         private void OpenSearcher()
         {
-            StartCoroutine(PanelFader.RescaleAndFade(searcherPanel.transform, searcherPanel, 1f, 1f, 0.1f));
+            window.OpenWindow();
         }
 
         private void CloseSearcher()
         {
-            StartCoroutine(PanelFader.RescaleAndFade(searcherPanel.transform, searcherPanel, 0.85f, 0f, 0.1f));
+            window.CloseWindow();
 
             ClearQueries();
             Invoke("ClearResultButtons", 0.1f);
@@ -299,12 +296,12 @@ namespace Pathfinder2e.Player
 
         private void OpenFeatDisplayer()
         {
-            StartCoroutine(PanelFader.RescaleAndFade(featDisplayerPanel.transform, featDisplayerPanel, 1f, 1f, 0.1f, () => StartCoroutine(UpdateVerticalLayoutGroup()), null));
+            featDisplayerWindow.OpenWindow();
         }
 
         private void CloseFeatDisplayer()
         {
-            StartCoroutine(PanelFader.RescaleAndFade(featDisplayerPanel.transform, featDisplayerPanel, 0.85f, 0f, 0.1f));
+            featDisplayerWindow.CloseWindow();
 
             Invoke("ClearFeatDisplayer", 0.1f);
         }
