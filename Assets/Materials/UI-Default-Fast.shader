@@ -7,6 +7,8 @@ Shader "UI/Default Fast"
     Properties
     {
         [PerRendererData] _MainTex ("Sprite Texture", 2D) = "white" {}
+        [HideInInspector] _Stencil("Stencil ID", Float) = 0
+
         _Color ("Tint", Color) = (1,1,1,1)
     }
 
