@@ -75,12 +75,13 @@ public class ObjectPooler : MonoBehaviour
             obj.transform.position = position;
             obj.transform.rotation = rotation;
             obj.transform.SetParent(parent);
-            obj.SetActive(true);
         }
         else
         {
             obj = Instantiate(prefab, position, rotation, parent);
         }
+
+        obj.SetActive(false);
 
         obj.name = prefab.name;
 

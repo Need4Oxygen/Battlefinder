@@ -267,6 +267,8 @@ namespace Pathfinder2e.Player
 
                 newButton.button.onClick.AddListener(() => { OnClick_ResultButton(feat); });
 
+                newButton.gameObject.SetActive(true);
+
                 buttons.Add(newButton);
             }
 
@@ -433,6 +435,7 @@ namespace Pathfinder2e.Player
                     TraitButton traitScript = trait.GetComponent<TraitButton>();
                     traitScript.text.text = item;
                     traitButtons.Add(traitScript);
+                    trait.gameObject.SetActive(true);
                 }
 
             OpenFeatDisplayer();
