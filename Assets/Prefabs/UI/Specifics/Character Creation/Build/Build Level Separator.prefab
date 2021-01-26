@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1170815956440455287}
   - component: {fileID: 1170815956440455284}
   - component: {fileID: 1170815956440455285}
+  - component: {fileID: 2152025162177464894}
   m_Layer: 5
   m_Name: Build Level Separator
   m_TagString: Untagged
@@ -59,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 5a86a7a8cf7acc84bb39d36f147ccf19, type: 2}
+  m_Material: {fileID: 2100000, guid: d2db621a181b2ae4cb4cc99fe31602c4, type: 2}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -77,6 +78,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 5
+--- !u!114 &2152025162177464894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170815956440455280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b85816f5db54204fa94a5d401836604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 0}
+  text: {fileID: 1170815957027205674}
 --- !u!1 &1170815957027205684
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,7 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 5a86a7a8cf7acc84bb39d36f147ccf19, type: 2}
+  m_Material: {fileID: 2100000, guid: d2db621a181b2ae4cb4cc99fe31602c4, type: 2}
   m_Color: {r: 0.7735849, g: 0.61673576, b: 0.41963333, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
