@@ -9,9 +9,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-* [Unity 2019.3.9f1](https://unity3d.com/get-unity/download/archive) - Unity version
+* [Unity 2020.1.14f1](https://unity3d.com/get-unity/download/archive) - Unity version
 * Download all the assets in the list at the bottom of this document.
-* Once you have all needed assets, contact us at [contact@need4oxygen.com](contact@need4oxygen.com), we will give you access to a submodule with all the configuration files.
+* Once you have all needed assets, contact us at [contact@need4oxygen.com](contact@need4oxygen.com)
+* We will give you access to the Third Party submodule with all the configuration files needed to work with all the third Party software we are using.
 
 ### How To Collaborate
 * Fork the project from the link above & clone locally.
@@ -30,7 +31,8 @@ These instructions will get you a copy of the project up and running on your loc
 * "master" - Only updated for releases.
 * "develop" - Main branch. Push your work towards this branch.
 
-Theoretically, no bug should ever enter "develop". Practically, no bug should ever enter "master".
+Theoretically, no bug should ever enter "develop".
+Practically, no bug should ever enter "master".
 
 ### Naming
 
@@ -50,7 +52,7 @@ Contributor branches should be something like "C-[Affected_System]-[Purpose]" fo
 
 Mildly condensed, highly readable.
 
-When declarating variables, prioritize inspector legibility:
+When declarating variables, prioritize inspector legibility over declaration properties such as "private" or "public":
 
 ```c#
     [Header("Initial Ability Boosts")]
@@ -78,16 +80,16 @@ Always group functionality regardless of accessibility:
 ```c#
     //------------------ANCESTRIES ASSIGMENT------------------
     private void AssignAncestryBoosts() {}
-    public void OnValueChangedAncestryDropdown(int value) {}
+    public void OnValueChanged_AncestryDropdown(int value) {}
     public void SaveAncestryOptions() {}
     
     //------------------BACKGROUND ASSIGMENT------------------
     private void AssignBackgroundBoosts() {}
-    public void OnValueChangedBackgroundDropdown(int value) {}
+    public void OnValueChanged_BackgroundDropdown(int value) {}
     public void SaveBackgroundOptions() {}
 ```
 
-Always try to comment public functions, especially if they are called via UI because those references wont't appear when you look for them in your code editor.
+Always try to comment public functions, especially if they are called via UI because those references wont't appear when you look for them in the code editor.
 
 ```c#
     <summary> Called by X button instantiated on Y system to make Z </summary>

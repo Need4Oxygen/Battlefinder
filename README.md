@@ -16,7 +16,7 @@ Please read the [CONTRIBUTING.md](https://github.com/Need4Oxygen/Battlefinder/bl
 ## License
 
 This project is composed of software and assets from:
-* Main Devs
+* Main Devs ()
 * Contributors
 * Third party
 
@@ -24,10 +24,23 @@ Everything made by Main Devs and Contributors is licensed under the GPLv3 Licens
 Third party software and assets are licensed by their corresponding owners and we don't claim any kind of ownership over them.
 We try in good faith to honor the requirements of each license, but if you find this is not the case, please reach us swiftly.
 
-## Main Developers
+## Licenses
 
-* Manuel Segura - Programmer
-* Sergio Arroyo - Design and Art
+### Code
+
+* All forms of code in this project is licensed under the [Apache License v2](https://github.com/Need4Oxygen/Battlefinder/blob/develop/LICENSE.md).
+* Ownership of the code is shared between main devevelopers (Manuel Segura, Sergio Arroyo) and contributors.
+* Ownership of individual parts of the code can be found, if necessary, thanks to the Git structure.
+
+### Assets
+
+* Original assets created by main devevelopers (Manuel Segura, Sergio Arroyo) are released under the Open Game License (OPEN GAME LICENSE Version 1.0a).
+* Any Pathfinder Second Edition information used under the Paizo Inc. Community Use Policy (<https://paizo.com/community/communityuse>)
+* Any Pathfinder Game system information and mechanics are licensed under the Open Game License [OPEN GAME LICENSE Version 1.0a](https://github.com/Need4Oxygen/Battlefinder/blob/develop/OpenGameLicense.md).
+* License information for third party assets used in this project can be found in each asset source, all listed at the bottom of [CONTRIBUTING.md](https://github.com/Need4Oxygen/Battlefinder/blob/develop/CONTRIBUTING.md).
+
+Third party software and assets are licensed by their corresponding owners and we don't claim any kind of ownership over them.
+We try in good faith to honor the requirements of each license, but if you find this is not the case, please reach us swiftly.
 
 ## Contact
 
