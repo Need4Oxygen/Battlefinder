@@ -39,17 +39,11 @@ public class WindowManager : MonoBehaviour
                     SetRaycastTarget(OpenWindows.Peek());
         }
 
-        // Close children
-        if (window.children.Count > 0)
-            foreach (var child in window.children)
-                if (window.startClosed)
-                    child.CloseWindow();
-
         if (OnWindowCloses != null)
             OnWindowCloses(window);
 
         string type = window.isSubpanel ? "Subpanel" : "Window";
-        Debug.Log($" [WindowManager] {type} \"{window.windowName}\" closed, stack count: {OpenWindows.Count}");
+        Debug.Log($"[WindowManager] {type} \"{window.windowName}\" closed, stack count: {OpenWindows.Count}");
     }
 
     private static void SetRaycastTarget(Window window)
@@ -62,7 +56,7 @@ public class WindowManager : MonoBehaviour
 
             if (win.children.Count > 0)
                 foreach (var child in win.children)
-                    if (win.syncRaycastWithParent)
+                    if (child.syncRaycastWithParent)
                         child.raycaster.enabled = false;
         }
 

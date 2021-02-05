@@ -1,0 +1,23 @@
+- from: "Inspire Courage" # where it comes from
+  key: flat modifier # how the rule will be applied
+  target: damage # what the rule will be applied to
+  type: status # how the value will be stacked (circumstancial, status, item, untyped)
+  diceNumber: 3 # the 3 in 3d20
+  dieSize: 20 # the 20 in 3d20
+  damageType: piercing # type of damage in case it's
+  value: 1
+  valueList: # value is determined by bracket start and end; meant for player level
+    - end: 5
+      value: 1
+    - start: 6
+      end: 12
+      value: 2
+    - start: 13
+      value: 3
+  predicate: # basically requirements
+    all: # if everything in the list is present for a roll the modifier is applied
+      - improvised
+    any: # if at least one in the list is present the modifier is applied
+      - unarmed
+    not: # if at least one item in the list is present the modifier is not applied
+      - agile

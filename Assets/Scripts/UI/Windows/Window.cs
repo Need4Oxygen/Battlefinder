@@ -14,11 +14,17 @@ public class Window : MonoBehaviour
 
     [Space(15)]
     public bool startClosed = true;
-    public bool raycastTarget = true;             // isolate raycast on self and children when opened
+    [Tooltip("Isolate raycast on self and children when opened.")]
+    public bool raycastTarget = true;
 
     [Space(15)]
-    public bool isSubpanel = false;               // don't go back in raycast stack
-    public bool syncRaycastWithParent = false;    // when parent raycast activates, this window's raycast will activate too
+    [Tooltip("Don't go back in raycast stack.")]
+    public bool isSubpanel = false;
+    [Tooltip("Activates raycast when opening, deactivates raycast when closing.")]
+    public bool selfHandleRaycast = false;
+    [Tooltip("When parent raycast activates, this window's raycast will activate too.")]
+    public bool syncRaycastWithParent = false;
+
 
     [Space(15)]
     public float openScaleTarget = 1f;
@@ -31,7 +37,8 @@ public class Window : MonoBehaviour
     [Space(15)]
     public float openDelay = 0f;
     public float closeDelay = 0f;
-    public float closeDelayIfLast = 0.1f;          // delay if this is the last opened window in the hierarchy, so camera have time to turn back on
+    [Tooltip("Delay if this is the last opened window in the hierarchy, so camera have time to turn back on.")]
+    public float closeDelayIfLast = 0.1f;
     public float openCloseAnimDuration = 0.1f;
 
     [Space(15)]
@@ -48,7 +55,7 @@ public class Window : MonoBehaviour
 
     public void OpenWindow()
     {
-        if (raycaster != null)
+        if (selfHandleRaycast)
             raycaster.enabled = true;
 
         WindowManager.WindowOpened(this);
@@ -57,7 +64,7 @@ public class Window : MonoBehaviour
 
     public void CloseWindow()
     {
-        if (raycaster != null)
+        if (selfHandleRaycast)
             raycaster.enabled = false;
 
         WindowManager.WindowClosed(this);

@@ -17,6 +17,7 @@ namespace Pathfinder2e.Player
     public class Searcher : MonoBehaviour
     {
         [SerializeField] private CharacterCreation creation = null;
+
         [Header("Searcher")]
         [SerializeField] private Window window = null;
         [SerializeField] private TMP_InputField searchField = null;
@@ -24,6 +25,7 @@ namespace Pathfinder2e.Player
         [SerializeField] private TMP_Dropdown sortDropdown = null;
         [SerializeField] private Transform resultButtonContainer = null;
         [SerializeField] private GameObject resultButtonPrefab = null;
+
         [Header("Feat Displayer")]
         [SerializeField] private Window featDisplayerWindow = null;
         [SerializeField] private VerticalLayoutGroup verticalContainer = null;
@@ -39,9 +41,12 @@ namespace Pathfinder2e.Player
         [SerializeField] private TMP_Text featSource = null;
         [SerializeField] private Transform traitsContainer = null;
         [SerializeField] private GameObject traitPrefab = null;
+
         [Header("General")]
         [Space(15)]
         [SerializeField] private Sprite[] actionCostImages = null;
+
+        [HideInInspector] public bool isOpen;
 
         private E_Searcher_Type searchingType = 0;
         private E_Searcher_Sort searchingSort = 0;
@@ -76,13 +81,15 @@ namespace Pathfinder2e.Player
             ClearFeatDisplayer();
         }
 
-        private void OpenSearcher()
+        public void OpenSearcher()
         {
+            isOpen = true;
             window.OpenWindow();
         }
 
-        private void CloseSearcher()
+        public void CloseSearcher()
         {
+            isOpen = false;
             window.CloseWindow();
 
             ClearQueries();

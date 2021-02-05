@@ -37,9 +37,9 @@ namespace Pathfinder2e.GameData
             AssignLvl1BoostsFunctionality();
         }
 
-        #region --------------------------------INITIAL BOOSTS--------------------------------
+        #region --------------------------------------------INITIAL BOOSTS--------------------------------------------
 
-        public void OpenPlayerInitialAblBoostsPanel()
+        public void OpenPlayerInitialAblBoosts()
         {
             isOpen = true;
             window.OpenWindow();
@@ -49,7 +49,7 @@ namespace Pathfinder2e.GameData
             AssignInitialAblBoosts();
         }
 
-        public void ClosePlayerInitialAblBoostsPanel()
+        public void ClosePlayerInitialAblBoosts()
         {
             isOpen = false;
             window.CloseWindow();
@@ -443,12 +443,16 @@ namespace Pathfinder2e.GameData
             creation.currentPlayer.abl_boostList = new List<AblBoostData>(currentData);
             creation.RefreshPlayerIntoPanel();
             creation.SavePlayer();
-            ClosePlayerInitialAblBoostsPanel();
+            ClosePlayerInitialAblBoosts();
         }
 
         public void OnClickCancelButton()
         {
-            ClosePlayerInitialAblBoostsPanel();
+            ClearAncestryData();
+            ClearBackgroundData();
+            ClearClassData();
+
+            ClosePlayerInitialAblBoosts();
         }
 
         #endregion

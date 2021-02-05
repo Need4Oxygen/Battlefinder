@@ -73,7 +73,9 @@ namespace Pathfinder2e.Player
             SavePlayer();
 
             if (ablBoostsSelector.isOpen)
-                ablBoostsSelector.ClosePlayerInitialAblBoostsPanel();
+                ablBoostsSelector.ClosePlayerInitialAblBoosts();
+            if (searcher.isOpen)
+                searcher.CloseSearcher();
 
             ClosePlayerCreationPanel();
         }
@@ -260,7 +262,7 @@ namespace Pathfinder2e.Player
 
         private void OnClick_InitialAbilityBoosts()
         {
-            ablBoostsSelector.OpenPlayerInitialAblBoostsPanel();
+            ablBoostsSelector.OpenPlayerInitialAblBoosts();
         }
 
         private void OnClick_AncestryFeat()
