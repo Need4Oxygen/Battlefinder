@@ -4958,8 +4958,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 960.04364, y: 0}
-  m_SizeDelta: {x: 1920.0873, y: 0}
+  m_AnchoredPosition: {x: 960.121, y: 0}
+  m_SizeDelta: {x: 1920.242, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &568412481
 MonoBehaviour:
@@ -5310,8 +5310,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 960.04364, y: 0}
-  m_SizeDelta: {x: 1920.0873, y: 0}
+  m_AnchoredPosition: {x: 960.121, y: 0}
+  m_SizeDelta: {x: 1920.242, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &613252721
 MonoBehaviour:
@@ -6820,8 +6820,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 960.04364, y: 0}
-  m_SizeDelta: {x: 1920.0873, y: 0}
+  m_AnchoredPosition: {x: 960.121, y: 0}
+  m_SizeDelta: {x: 1920.242, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &759522483
 MonoBehaviour:
@@ -7088,6 +7088,82 @@ MonoScript:
   m_ExecutionOrder: 0
   m_ClassName: SceneObjectIDMapSceneAsset
   m_Namespace: UnityEngine.Rendering.HighDefinition
+--- !u!1 &789518892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 789518893}
+  - component: {fileID: 789518895}
+  - component: {fileID: 789518894}
+  m_Layer: 5
+  m_Name: BG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &789518893
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789518892}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 761738282626488470}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &789518894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789518892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 5a86a7a8cf7acc84bb39d36f147ccf19, type: 2}
+  m_Color: {r: 0.1, g: 0.098557696, b: 0.09182692, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -7089075153246629797, guid: ddbe3f6524995c44380759984c310fbc,
+    type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 5
+--- !u!222 &789518895
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789518892}
+  m_CullTransparentMesh: 0
 --- !u!1 &800225915
 GameObject:
   m_ObjectHideFlags: 0
@@ -25546,8 +25622,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 960.04364, y: 0}
-  m_SizeDelta: {x: 1920.0873, y: 0}
+  m_AnchoredPosition: {x: 960.121, y: 0}
+  m_SizeDelta: {x: 1920.242, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2115778831
 MonoBehaviour:
@@ -34214,6 +34290,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 789518893}
   - {fileID: 761738282782539733}
   m_Father: {fileID: 7131613612089962215}
   m_RootOrder: 0
@@ -34263,12 +34340,13 @@ MonoBehaviour:
   startClosed: 1
   raycastTarget: 0
   isSubpanel: 1
+  selfHandleRaycast: 1
   syncRaycastWithParent: 0
   openScaleTarget: 1
   openAlphaTarget: 1
   closeScaleTarget: 1
   closeAlphaTarget: 0
-  openDelay: 0
+  openDelay: 0.1
   closeDelay: 0
   closeDelayIfLast: 0.1
   openCloseAnimDuration: 0.1
@@ -34290,7 +34368,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -36030,7 +36108,7 @@ RectTransform:
   - {fileID: 761738283512313724}
   - {fileID: 761738283940465605}
   m_Father: {fileID: 761738282626488470}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -43968,7 +44046,7 @@ PrefabInstance:
     - target: {fileID: 8316422106656940882, guid: 377d5b9886d3b454dbf9ac4f4e24d87f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8316422106656940882, guid: 377d5b9886d3b454dbf9ac4f4e24d87f,
         type: 3}
@@ -48174,7 +48252,7 @@ PrefabInstance:
     - target: {fileID: 8316422106656940882, guid: 377d5b9886d3b454dbf9ac4f4e24d87f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8316422106656940882, guid: 377d5b9886d3b454dbf9ac4f4e24d87f,
         type: 3}
@@ -49529,7 +49607,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7131613612951128714}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -61272,7 +61350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2342660866009504828}
   m_Layer: 5
-  m_Name: '[Window] Board'
+  m_Name: '[Window] Play Board'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64406,8 +64484,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -261.75, y: -45.52002}
-  m_SizeDelta: {x: 446.99124, y: -280.85852}
+  m_AnchoredPosition: {x: -264.4, y: -45.52002}
+  m_SizeDelta: {x: 452.36337, y: -280.85852}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5058847669864040439
 GameObject:
@@ -66353,6 +66431,7 @@ MonoBehaviour:
   startClosed: 0
   raycastTarget: 0
   isSubpanel: 1
+  selfHandleRaycast: 0
   syncRaycastWithParent: 1
   openScaleTarget: 1
   openAlphaTarget: 1
@@ -66360,8 +66439,8 @@ MonoBehaviour:
   closeAlphaTarget: 0
   openDelay: 0
   closeDelay: 0
-  closeDelayIfLast: 0.1
-  openCloseAnimDuration: 0.1
+  closeDelayIfLast: 0
+  openCloseAnimDuration: 0
   children: []
 --- !u!1 &5058847670704316804
 GameObject:
@@ -71824,12 +71903,12 @@ PrefabInstance:
     - target: {fileID: 3225068926834635703, guid: 17015ed12388d894db92af0ff51af634,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3225068926834635703, guid: 17015ed12388d894db92af0ff51af634,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3225068927150503683, guid: 17015ed12388d894db92af0ff51af634,
         type: 3}
@@ -74364,7 +74443,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000869751, y: -47.868896}
+  m_AnchoredPosition: {x: -0.00088500977, y: -47.868896}
   m_SizeDelta: {x: -0.00289917, y: -95.73816}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7131613611747123465
@@ -74382,16 +74461,17 @@ MonoBehaviour:
   windowName: 
   canvas: {fileID: 7131613611747123467}
   group: {fileID: 7131613611747123466}
-  raycaster: {fileID: 0}
+  raycaster: {fileID: 7131613611747123480}
   startClosed: 1
-  raycastTarget: 1
-  isSubpanel: 0
+  raycastTarget: 0
+  isSubpanel: 1
+  selfHandleRaycast: 1
   syncRaycastWithParent: 0
   openScaleTarget: 1
   openAlphaTarget: 1
-  closeScaleTarget: 0.85
+  closeScaleTarget: 1
   closeAlphaTarget: 0
-  openDelay: 0
+  openDelay: 0.1
   closeDelay: 0
   closeDelayIfLast: 0.1
   openCloseAnimDuration: 0.1
@@ -74415,7 +74495,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7131613611747123479}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
   m_Camera: {fileID: 0}
@@ -74440,6 +74520,7 @@ GameObject:
   - component: {fileID: 7131613611747123464}
   - component: {fileID: 7131613611747123467}
   - component: {fileID: 7131613611747123466}
+  - component: {fileID: 7131613611747123480}
   - component: {fileID: 7131613611747123465}
   m_Layer: 5
   m_Name: Feat Displayer
@@ -74448,6 +74529,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7131613611747123480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7131613611747123479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!222 &7131613611749663064
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -74681,13 +74779,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7da0126f27049e44895a068cc383a4d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: Board
+  windowName: Play Board
   canvas: {fileID: 7131613611761099620}
   group: {fileID: 7131613611761099619}
   raycaster: {fileID: 7131613613189596110}
   startClosed: 1
   raycastTarget: 1
   isSubpanel: 0
+  selfHandleRaycast: 0
   syncRaycastWithParent: 0
   openScaleTarget: 1
   openAlphaTarget: 1
@@ -75208,12 +75307,13 @@ MonoBehaviour:
   startClosed: 1
   raycastTarget: 0
   isSubpanel: 1
+  selfHandleRaycast: 1
   syncRaycastWithParent: 0
   openScaleTarget: 1
   openAlphaTarget: 1
   closeScaleTarget: 1
   closeAlphaTarget: 0
-  openDelay: 0
+  openDelay: 0.1
   closeDelay: 0
   closeDelayIfLast: 0.1
   openCloseAnimDuration: 0.1
@@ -75291,7 +75391,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -75334,7 +75434,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7131613613510969228}
+      objectReference: {fileID: 761738283129046263}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnEndEditLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Pathfinder2e.Player.CharacterCreation, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4780635231739088026, guid: 020790bae588d4e4a803db23c6a2a5b2,
         type: 3}
       propertyPath: m_Name
@@ -75779,13 +75889,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7da0126f27049e44895a068cc383a4d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: 
+  windowName: Campaign Name Select
   canvas: {fileID: 7131613611805467930}
   group: {fileID: 7131613611805467929}
   raycaster: {fileID: 7131613613639696181}
   startClosed: 1
   raycastTarget: 1
   isSubpanel: 0
+  selfHandleRaycast: 0
   syncRaycastWithParent: 0
   openScaleTarget: 1
   openAlphaTarget: 1
@@ -76386,7 +76497,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 217.63174, y: 0}
   m_SizeDelta: {x: 420.47162, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7131613611861213131
@@ -77182,7 +77293,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 217.63174, y: 0}
   m_SizeDelta: {x: 420.47162, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7131613611947180471
@@ -78712,6 +78823,16 @@ PrefabInstance:
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7131613613510969228}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnEndEditLanguages
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Pathfinder2e.Player.CharCreationStats, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4780635231739088025, guid: 020790bae588d4e4a803db23c6a2a5b2,
         type: 3}
       propertyPath: m_Sprite
@@ -79779,7 +79900,7 @@ PrefabInstance:
     - target: {fileID: 8644805419961555441, guid: 2f3a5e4bc20d87d40a677299bed276ea,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 9.999847
+      value: 9.999817
       objectReference: {fileID: 0}
     - target: {fileID: 8644805420963630505, guid: 2f3a5e4bc20d87d40a677299bed276ea,
         type: 3}
@@ -79852,7 +79973,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00012207031, y: -23.940216}
+  m_AnchoredPosition: {x: -0.00012207031, y: -23.940155}
   m_SizeDelta: {x: 0, y: -48.23059}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7131613612190124495
@@ -80053,7 +80174,7 @@ GameObject:
   - component: {fileID: 7131613612199596755}
   - component: {fileID: 7131613612199596754}
   m_Layer: 5
-  m_Name: Bluild Scrollbar Blocker
+  m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80073,10 +80194,10 @@ RectTransform:
   m_Father: {fileID: 7131613611796182836}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 223.86, y: 2.1292}
-  m_SizeDelta: {x: 54.776947, y: 808.55835}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 10.71, y: 0}
+  m_SizeDelta: {x: 21.33905, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7131613612199596754
 MonoBehaviour:
@@ -80256,7 +80377,7 @@ PrefabInstance:
     - target: {fileID: 8644805419689040916, guid: 2f3a5e4bc20d87d40a677299bed276ea,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -22.749908
+      value: -22.749847
       objectReference: {fileID: 0}
     - target: {fileID: 8644805419689040916, guid: 2f3a5e4bc20d87d40a677299bed276ea,
         type: 3}
@@ -82002,17 +82123,18 @@ MonoBehaviour:
   canvas: {fileID: 7131613612323789406}
   group: {fileID: 7131613612323789392}
   raycaster: {fileID: 7131613612323789405}
-  startClosed: 0
+  startClosed: 1
   raycastTarget: 0
   isSubpanel: 1
-  syncRaycastWithParent: 1
+  selfHandleRaycast: 1
+  syncRaycastWithParent: 0
   openScaleTarget: 1
   openAlphaTarget: 1
   closeScaleTarget: 1
   closeAlphaTarget: 0
   openDelay: 0
   closeDelay: 0
-  closeDelayIfLast: 0.1
+  closeDelayIfLast: 0
   openCloseAnimDuration: 0.1
   children: []
 --- !u!224 &7131613612330604248
@@ -82660,7 +82782,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26
+  m_fontSize: 26.85
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -82917,9 +83039,9 @@ RectTransform:
   m_Father: {fileID: 7131613612299839161}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 214.94568, y: -62.775}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 217.63174, y: 0}
   m_SizeDelta: {x: 420.47162, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7131613612386797286
@@ -84498,7 +84620,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.44999695, y: 51.329956}
+  m_AnchoredPosition: {x: 0.4500122, y: 51.329956}
   m_SizeDelta: {x: 54.677673, y: 102.6803}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7131613612517064511
@@ -86145,7 +86267,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7131613613510969228}
+      objectReference: {fileID: 761738283129046263}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnEndEditName
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Pathfinder2e.Player.CharacterCreation, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4780635231739088026, guid: 020790bae588d4e4a803db23c6a2a5b2,
         type: 3}
       propertyPath: m_Name
@@ -86727,7 +86859,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4.2690887, y: -22.579834}
+  m_AnchoredPosition: {x: -4.269104, y: -22.579834}
   m_SizeDelta: {x: -108.47879, y: 45.16185}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7131613612662567205
@@ -87457,9 +87589,9 @@ RectTransform:
   m_Father: {fileID: 7131613612299839161}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 214.94568, y: -37.665}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 217.63174, y: 0}
   m_SizeDelta: {x: 420.47162, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7131613612711632895
@@ -87672,7 +87804,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7131613612951128714}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -87715,11 +87847,12 @@ MonoBehaviour:
   traitPrefab: {fileID: 1374628189182371759, guid: 38f467cab62cbfb44bcb56da99fae84c,
     type: 3}
   actionCostImages:
-  - {fileID: -5047921151688099772, guid: 535a4d44b9f3365479377a353c9115b9, type: 3}
-  - {fileID: 2404857638658663200, guid: 535a4d44b9f3365479377a353c9115b9, type: 3}
-  - {fileID: 4766217471735116141, guid: 535a4d44b9f3365479377a353c9115b9, type: 3}
-  - {fileID: 2898256617470617554, guid: 535a4d44b9f3365479377a353c9115b9, type: 3}
-  - {fileID: 5041570328060129094, guid: 535a4d44b9f3365479377a353c9115b9, type: 3}
+  - {fileID: -7494251869569301583, guid: ddbe3f6524995c44380759984c310fbc, type: 3}
+  - {fileID: 1459976505537945765, guid: ddbe3f6524995c44380759984c310fbc, type: 3}
+  - {fileID: -536900402235854032, guid: ddbe3f6524995c44380759984c310fbc, type: 3}
+  - {fileID: 2277324043881967277, guid: ddbe3f6524995c44380759984c310fbc, type: 3}
+  - {fileID: -5861711079567537667, guid: ddbe3f6524995c44380759984c310fbc, type: 3}
+  isOpen: 0
 --- !u!1 &7131613612759349744
 GameObject:
   m_ObjectHideFlags: 0
@@ -87780,6 +87913,7 @@ MonoBehaviour:
   startClosed: 1
   raycastTarget: 1
   isSubpanel: 0
+  selfHandleRaycast: 0
   syncRaycastWithParent: 0
   openScaleTarget: 1
   openAlphaTarget: 1
@@ -88101,6 +88235,16 @@ PrefabInstance:
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7131613613510969228}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnEndEditHeroPoints
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Pathfinder2e.Player.CharCreationStats, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4780635231739088026, guid: 020790bae588d4e4a803db23c6a2a5b2,
         type: 3}
       propertyPath: m_Name
@@ -88363,9 +88507,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
         type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7131613613510969228}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4780635231739088025, guid: 020790bae588d4e4a803db23c6a2a5b2,
         type: 3}
       propertyPath: m_Sprite
@@ -88910,17 +89064,17 @@ MonoBehaviour:
   startClosed: 1
   raycastTarget: 1
   isSubpanel: 0
+  selfHandleRaycast: 0
   syncRaycastWithParent: 0
   openScaleTarget: 1
   openAlphaTarget: 1
   closeScaleTarget: 0.85
   closeAlphaTarget: 0
-  openDelay: 0
+  openDelay: 0.1
   closeDelay: 0
   closeDelayIfLast: 0.1
   openCloseAnimDuration: 0.1
   children:
-  - {fileID: 7131613612323789407}
   - {fileID: 5058847670704316793}
 --- !u!1 &7131613612856854832
 GameObject:
@@ -89833,6 +89987,21 @@ PrefabInstance:
       propertyPath: m_CharacterValidation
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7131613613510969228}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnEndEditDoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Pathfinder2e.Player.CharCreationStats, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4780635231739088026, guid: 020790bae588d4e4a803db23c6a2a5b2,
         type: 3}
       propertyPath: m_Name
@@ -90098,8 +90267,8 @@ RectTransform:
   m_Children:
   - {fileID: 761738283129046262}
   - {fileID: 7131613613510969227}
-  - {fileID: 7131613612743902653}
   - {fileID: 761738284081681422}
+  - {fileID: 7131613612743902653}
   m_Father: {fileID: 7131613611982243286}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -92114,9 +92283,9 @@ RectTransform:
   m_Father: {fileID: 7131613612299839161}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 214.94568, y: -112.995}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 217.63174, y: 0}
   m_SizeDelta: {x: 420.47162, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7131613613135866443
@@ -92495,6 +92664,16 @@ PrefabInstance:
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7131613613510969228}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnEndEditShieldDamage
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Pathfinder2e.Player.CharCreationStats, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4780635231739088026, guid: 020790bae588d4e4a803db23c6a2a5b2,
         type: 3}
       propertyPath: m_Name
@@ -93006,7 +93185,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.003250122, y: -47.869873}
+  m_AnchoredPosition: {x: -0.0032653809, y: -47.869873}
   m_SizeDelta: {x: 0.0065612793, y: 95.73721}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &7131613613187806426
@@ -93035,6 +93214,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_CharacterValidation
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7131613613510969228}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnEndEditDying
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Pathfinder2e.Player.CharCreationStats, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4780635231739088026, guid: 020790bae588d4e4a803db23c6a2a5b2,
         type: 3}
@@ -94172,6 +94366,16 @@ PrefabInstance:
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7131613613510969228}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnEndEditDamage
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Pathfinder2e.Player.CharCreationStats, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4780635231739088026, guid: 020790bae588d4e4a803db23c6a2a5b2,
         type: 3}
       propertyPath: m_Name
@@ -97413,9 +97617,9 @@ RectTransform:
   m_Father: {fileID: 7131613612299839161}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 214.94568, y: -142.725}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 217.63174, y: 0}
   m_SizeDelta: {x: 397.68402, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7131613613535971729
@@ -98089,13 +98293,14 @@ MonoBehaviour:
   startClosed: 1
   raycastTarget: 1
   isSubpanel: 0
+  selfHandleRaycast: 0
   syncRaycastWithParent: 0
   openScaleTarget: 1
   openAlphaTarget: 1
   closeScaleTarget: 0.85
   closeAlphaTarget: 0
   openDelay: 0
-  closeDelay: 0
+  closeDelay: 0.1
   closeDelayIfLast: 0.1
   openCloseAnimDuration: 0.1
   children: []
@@ -98240,9 +98445,9 @@ RectTransform:
   m_Father: {fileID: 7131613612299839161}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 214.94568, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 217.63174, y: 0}
   m_SizeDelta: {x: 429.99042, y: 0}
   m_Pivot: {x: 0.5, y: 1.0000001}
 --- !u!1 &7131613613596189027
@@ -98421,6 +98626,7 @@ MonoBehaviour:
   startClosed: 1
   raycastTarget: 1
   isSubpanel: 0
+  selfHandleRaycast: 0
   syncRaycastWithParent: 0
   openScaleTarget: 1
   openAlphaTarget: 1
@@ -98608,6 +98814,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_CharacterValidation
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7131613613510969228}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnEndEditWounds
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780635231739088024, guid: 020790bae588d4e4a803db23c6a2a5b2,
+        type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Pathfinder2e.Player.CharCreationStats, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4780635231739088026, guid: 020790bae588d4e4a803db23c6a2a5b2,
         type: 3}
@@ -101623,7 +101844,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3.2996826, y: 0}
+  m_AnchoredPosition: {x: -3.2996216, y: 0}
   m_SizeDelta: {x: -93.409, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8308190672812186012
