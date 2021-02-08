@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Pathfinder2e;
-using Pathfinder2e.Player;
+using Pathfinder2e.Character;
 using Pathfinder2e.Containers;
 using Tools;
 

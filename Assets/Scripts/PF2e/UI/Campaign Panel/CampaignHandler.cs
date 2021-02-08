@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using Pathfinder2e.Player;
+using Pathfinder2e.Character;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,7 +12,7 @@ namespace Pathfinder2e.GameData
     public class CampaignHandler : MonoBehaviour
     {
         // Controls the PF2e campaing retrieval and send thems to load and display
-        // Controls the PF2e board, player, enemies and npcs buttons
+        // Controls the PF2e board, character, enemies and npcs buttons
 
         [SerializeField] private CharacterCreation characterCreation = null;
         [SerializeField] private BoardHandler boardHandler = null;
@@ -27,10 +27,10 @@ namespace Pathfinder2e.GameData
         [SerializeField] private GameObject boardsButtonPrefab = null;
         private List<GameObject> boardsButtonList = new List<GameObject>();
 
-        [Header("Players")]
-        [SerializeField] private Transform playersContainer = null;
-        [SerializeField] private GameObject playersButtonPrefab = null;
-        private List<GameObject> playersButtonList = new List<GameObject>();
+        [Header("Characters")]
+        [SerializeField] private Transform charactersContainer = null;
+        [SerializeField] private GameObject charactersButtonPrefab = null;
+        private List<GameObject> charactersButtonList = new List<GameObject>();
 
         [Header("Enemies")]
         [SerializeField] private Transform enemiesContainer = null;
@@ -100,7 +100,7 @@ namespace Pathfinder2e.GameData
             // Open Campaign Panel
             campaignName.text = campaignID.Replace(".json", "");
 
-            // Set current campaing and refresh boards, players, enemies and npcs
+            // Set current campaing and refresh boards, characters, enemies and npcs
             Globals_PF2E.LoadCampaign(campaignID);
             RefreshCampaignContainers();
 
@@ -158,37 +158,37 @@ namespace Pathfinder2e.GameData
 
         #endregion
 
-        #region --------PLAYERS--------
+        #region --------CHARACTERS--------
 
-        /// <summary> Called by the + button in the players section of the campaign panel </summary>
+        /// <summary> Called by the + button in the characters section of the campaign panel </summary>
         public void OnClickNewPlayerButton()
         {
             characterCreation.NewPlayer();
         }
 
         // Edition
-        private void OnClickPayerButtonEdit(string player)
+        private void OnClickPayerButtonEdit(string character)
         {
-            characterCreation.LoadPlayer(Globals_PF2E.CurrentCampaign.players[player]);
+            characterCreation.LoadPlayer(Globals_PF2E.CurrentCampaign.characters[character]);
         }
 
         // Deletion
-        private string playerToDelete = "";
-        private void OnClickPayerButtonDelete(string player)
+        private string characterToDelete = "";
+        private void OnClickPayerButtonDelete(string character)
         {
-            playerToDelete = player;
+            characterToDelete = character;
             confirmation.AskForConfirmation("Are you sure you want to delete this character?", OnClickPayerButtonDeleteCallback);
         }
         private void OnClickPayerButtonDeleteCallback(bool value)
         {
             if (value)
             {
-                Globals_PF2E.CurrentCampaign.players.Remove(playerToDelete);
+                Globals_PF2E.CurrentCampaign.characters.Remove(characterToDelete);
                 RefreshCampaignContainers();
                 Globals_PF2E.SaveCampaign();
             }
 
-            playerToDelete = "";
+            characterToDelete = "";
         }
 
         #endregion
@@ -198,7 +198,7 @@ namespace Pathfinder2e.GameData
             // Delete all buttons
             foreach (var button in boardsButtonList)
                 Destroy(button, 0.001f);
-            foreach (var button in playersButtonList)
+            foreach (var button in charactersButtonList)
                 Destroy(button, 0.001f);
             foreach (var button in enemiesButtonList)
                 Destroy(button, 0.001f);
@@ -206,7 +206,7 @@ namespace Pathfinder2e.GameData
                 Destroy(button, 0.001f);
 
             boardsButtonList.Clear();
-            playersButtonList.Clear();
+            charactersButtonList.Clear();
             enemiesButtonList.Clear();
             npcsButtonList.Clear();
 
@@ -222,18 +222,18 @@ namespace Pathfinder2e.GameData
 
                     boardsButtonList.Add(newBoardButton.gameObject);
                 }
-            if (Globals_PF2E.CurrentCampaign.players != null)
-                foreach (var player in Globals_PF2E.CurrentCampaign.players)
+            if (Globals_PF2E.CurrentCampaign.characters != null)
+                foreach (var character in Globals_PF2E.CurrentCampaign.characters)
                 {
-                    Transform newPlayerButton = Instantiate(playersButtonPrefab, Vector3.zero, Quaternion.identity, playersContainer).transform;
-                    PlayerButton newPlayerButtonScript = newPlayerButton.GetComponent<PlayerButton>();
-                    newPlayerButtonScript.level.text = player.Value.level.ToString();
-                    newPlayerButtonScript.playerName.text = player.Value.playerName;
+                    Transform newPlayerButton = Instantiate(charactersButtonPrefab, Vector3.zero, Quaternion.identity, charactersContainer).transform;
+                    CharacterButton newPlayerButtonScript = newPlayerButton.GetComponent<CharacterButton>();
+                    newPlayerButtonScript.level.text = character.Value.level.ToString();
+                    newPlayerButtonScript.characterName.text = character.Value.name;
 
-                    newPlayerButtonScript.editButton.onClick.AddListener(() => OnClickPayerButtonEdit(player.Key));
-                    newPlayerButtonScript.deleteButton.onClick.AddListener(() => OnClickPayerButtonDelete(player.Key));
+                    newPlayerButtonScript.editButton.onClick.AddListener(() => OnClickPayerButtonEdit(character.Key));
+                    newPlayerButtonScript.deleteButton.onClick.AddListener(() => OnClickPayerButtonDelete(character.Key));
 
-                    playersButtonList.Add(newPlayerButton.gameObject);
+                    charactersButtonList.Add(newPlayerButton.gameObject);
                 }
             for (int i = 0; i < Globals_PF2E.CurrentCampaign.enemies.Count; i++)
             {

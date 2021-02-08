@@ -91,7 +91,7 @@ namespace Pathfinder2e.GameData
         public void OnClickPlayButton()
         {
             Globals_PF2E.CurrentBoard = currentBoard;
-            SceneManager.LoadScene("PlayPF2e", LoadSceneMode.Single);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("PlayPF2e", LoadSceneMode.Single);
 
             CloseBoardPanel();
         }

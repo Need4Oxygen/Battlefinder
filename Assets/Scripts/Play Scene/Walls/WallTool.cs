@@ -31,7 +31,7 @@ public class WallTool : MonoBehaviour
     void Awake()
     {
         CustomEvents.OnToolChange += OnToolChange;
-        SceneManager_PF2E.OnPlaySceneExit += Unsubscribe;
+        SceneManager.OnPlaySceneExit += Unsubscribe;
     }
 
     void Start()
@@ -70,7 +70,7 @@ public class WallTool : MonoBehaviour
     private void Unsubscribe()
     {
         CustomEvents.OnToolChange -= OnToolChange;
-        SceneManager_PF2E.OnPlaySceneExit -= Unsubscribe;
+        SceneManager.OnPlaySceneExit -= Unsubscribe;
     }
 
     private void SetPointer()

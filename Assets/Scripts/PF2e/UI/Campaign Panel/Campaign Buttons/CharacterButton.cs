@@ -5,10 +5,10 @@ using UnityEngine.UI;
 namespace Pathfinder2e.GameData
 {
 
-    public class PlayerButton : MonoBehaviour
+    public class CharacterButton : MonoBehaviour
     {
         public TMP_Text level;
-        public TMP_Text playerName;
+        public TMP_Text characterName;
         public Button editButton;
         public Button deleteButton;
     }

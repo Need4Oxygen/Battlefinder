@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using Pathfinder2e.Player;
+using Pathfinder2e.Character;
 using Pathfinder2e.Containers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Pathfinder2e.GameData;
+using UnityEditor;
 
-namespace Pathfinder2e.Player
+namespace Pathfinder2e.Character
 {
 
     public class CharacterCreation : MonoBehaviour
@@ -41,7 +42,7 @@ namespace Pathfinder2e.Player
         [SerializeField] private Transform buildButton = null;
 
         private List<GameObject> buildButtonList = new List<GameObject>();
-        public PlayerData currentPlayer = null;
+        public CharacterData currentPlayer = null;
 
         void Start()
         {
@@ -59,6 +60,15 @@ namespace Pathfinder2e.Player
 
         private void ClosePlayerCreationPanel()
         {
+            SavePlayer();
+
+            if (ablBoostsSelector.init_isOpen)
+                ablBoostsSelector.Close_InitialAblBoosts();
+            if (ablBoostsSelector.other_isOpen)
+                ablBoostsSelector.Close_OtherAblBoosts();
+            if (searcher.isOpen)
+                searcher.CloseSearcher();
+
             window.CloseWindow();
             currentPlayer = null;
 
@@ -70,13 +80,6 @@ namespace Pathfinder2e.Player
 
         public void OnClickAcceptButton()
         {
-            SavePlayer();
-
-            if (ablBoostsSelector.isOpen)
-                ablBoostsSelector.ClosePlayerInitialAblBoosts();
-            if (searcher.isOpen)
-                searcher.CloseSearcher();
-
             ClosePlayerCreationPanel();
         }
 
@@ -88,13 +91,24 @@ namespace Pathfinder2e.Player
         public void NewPlayer()
         {
             string newGuid = Guid.NewGuid().ToString();
-            currentPlayer = new PlayerData();
+            currentPlayer = new CharacterData();
             currentPlayer.guid = newGuid;
 
 
             ABCSelector.Display("ancestry");
             ABCSelector.acceptButton.onClick.AddListener(() => NewPlayerProcessAccept());
             ABCSelector.backButton.onClick.AddListener(() => NewPlayerProcessBack());
+        }
+
+        [MenuItem("Debug/Reset Character")]
+        public void NewPlayer2()
+        {
+            string newGuid = Guid.NewGuid().ToString();
+            currentPlayer = new CharacterData();
+            currentPlayer.guid = newGuid;
+
+            SavePlayer();
+            ClosePlayerCreationPanel();
         }
 
         private void NewPlayerProcessAccept()
@@ -138,7 +152,7 @@ namespace Pathfinder2e.Player
         }
 
         /// <summary> Load new player and open the player panel. </summary>
-        public void LoadPlayer(PlayerData player)
+        public void LoadPlayer(CharacterData player)
         {
             currentPlayer = player;
             RefreshPlayerIntoPanel();
@@ -148,10 +162,10 @@ namespace Pathfinder2e.Player
         /// <summary> Save Player into campaing player list. </summary>
         public void SavePlayer()
         {
-            if (Globals_PF2E.CurrentCampaign.players.ContainsKey(currentPlayer.guid))
-                GameData.Globals_PF2E.CurrentCampaign.players[currentPlayer.guid] = currentPlayer;
+            if (Globals_PF2E.CurrentCampaign.characters.ContainsKey(currentPlayer.guid))
+                GameData.Globals_PF2E.CurrentCampaign.characters[currentPlayer.guid] = currentPlayer;
             else
-                GameData.Globals_PF2E.CurrentCampaign.players.Add(currentPlayer.guid, currentPlayer);
+                GameData.Globals_PF2E.CurrentCampaign.characters.Add(currentPlayer.guid, currentPlayer);
 
             GameData.Globals_PF2E.SaveCampaign();
         }
@@ -163,7 +177,7 @@ namespace Pathfinder2e.Player
                 stats.RefreshPlayerIntoPanel();
 
             levelInput.SetTextWithoutNotify(currentPlayer.level.ToString());
-            playerNameInput.SetTextWithoutNotify(currentPlayer.playerName);
+            playerNameInput.SetTextWithoutNotify(currentPlayer.name);
 
             ancestryButton.subtitle.text = currentPlayer.ancestry;
             backgroundButton.subtitle.text = currentPlayer.background;
@@ -177,22 +191,27 @@ namespace Pathfinder2e.Player
             }
             buildButtonList.Clear();
             ClassProgression progression = DB.ClassProgression.Find(ctx => ctx.name == currentPlayer.class_name);
-            int stageCounter = 0;
 
-            foreach (var stage in progression.progression)
+            for (int i = 0; i < progression.progression.Count; i++)
             {
-                stageCounter++;
-                GenerateSeparator(stageCounter);
+                ClassStage stage = progression.progression[i];
+                GenerateSeparator(i + 1);
 
-                foreach (var item in stage.items)
+                foreach (string item in stage.items)
                 {
                     switch (item)
                     {
-                        case "initial proficiencies": // I'm ussing this to initialize abilities boost and later, when developed, also fot unspent lectures
-                            BuildButton initAblBoosts = GenerateBuildButton(item, "");
+                        case "initial proficiencies":
+                            BuildButton initAblBoosts = GenerateBuildButton("Initial Ability Boosts", "");
                             initAblBoosts.button.onClick.AddListener(() => OnClick_InitialAbilityBoosts());
-                            // Should get into the build, retrieve init abl choices, check if they have errors and display a message
-                            // if (currentPlayer.Build_GetFromBlock<>) 
+                            break;
+                        case "ability boosts":
+                            BuildButton otherAblBoosts = GenerateBuildButton($"LvL {i + 1} Ability Boosts", "");
+                            // Listeners have to be declared individually, if not, every button share last listener :c
+                            if (i + 1 == 5) otherAblBoosts.button.onClick.AddListener(() => OnClick_OtherAbilityBoosts(5));
+                            else if (i + 1 == 10) otherAblBoosts.button.onClick.AddListener(() => OnClick_OtherAbilityBoosts(10));
+                            else if (i + 1 == 15) otherAblBoosts.button.onClick.AddListener(() => OnClick_OtherAbilityBoosts(15));
+                            else if (i + 1 == 20) otherAblBoosts.button.onClick.AddListener(() => OnClick_OtherAbilityBoosts(20));
                             break;
                         case "ancestry feat":
                             // search in build for choice
@@ -262,7 +281,12 @@ namespace Pathfinder2e.Player
 
         private void OnClick_InitialAbilityBoosts()
         {
-            ablBoostsSelector.OpenPlayerInitialAblBoosts();
+            ablBoostsSelector.Open_InitialAblBoosts();
+        }
+
+        private void OnClick_OtherAbilityBoosts(int lvl)
+        {
+            ablBoostsSelector.Open_OtherAblBoosts(lvl);
         }
 
         private void OnClick_AncestryFeat()
@@ -359,14 +383,14 @@ namespace Pathfinder2e.Player
         /// <summary> Called by the name inputfiedld. </summary>
         public void OnEndEditName()
         {
-            currentPlayer.playerName = playerNameInput.text;
+            currentPlayer.name = playerNameInput.text;
             RefreshPlayerIntoPanel();
         }
 
         /// <summary> Called by the ancestry selection button. </summary>
         public void OnClickSelectAncestry()
         {
-            if (ablBoostsSelector.isOpen) return;
+            if (ablBoostsSelector.init_isOpen) return;
             ABCSelector.Display("ancestry");
             ABCSelector.acceptButton.onClick.AddListener(() => SelectAncestryAccept());
             ABCSelector.backButton.onClick.AddListener(() => SelectAncestryCancel());
@@ -384,7 +408,7 @@ namespace Pathfinder2e.Player
         /// <summary> Called by the backgrond selection button. </summary>
         public void OnClickSelectBackground()
         {
-            if (ablBoostsSelector.isOpen) return;
+            if (ablBoostsSelector.init_isOpen) return;
             ABCSelector.Display("background");
             ABCSelector.acceptButton.onClick.AddListener(() => SelectBackgroundAccept());
             ABCSelector.backButton.onClick.AddListener(() => SelectBackgroundCancel());
@@ -402,7 +426,7 @@ namespace Pathfinder2e.Player
         /// <summary> Called by the class selection button. </summary>
         public void OnClickSelectedClass()
         {
-            if (ablBoostsSelector.isOpen) return;
+            if (ablBoostsSelector.init_isOpen) return;
             ABCSelector.Display("class");
             ABCSelector.acceptButton.onClick.AddListener(() => SelectClassAccept());
             ABCSelector.backButton.onClick.AddListener(() => SelectClassCancel());

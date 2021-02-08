@@ -15,7 +15,7 @@ public class MoveTool : MonoBehaviour
     void Awake()
     {
         CustomEvents.OnToolChange += OnToolChange;
-        SceneManager_PF2E.OnPlaySceneExit += Unsubscribe;
+        SceneManager.OnPlaySceneExit += Unsubscribe;
     }
 
     void Update()
@@ -32,7 +32,7 @@ public class MoveTool : MonoBehaviour
     private void Unsubscribe()
     {
         CustomEvents.OnToolChange -= OnToolChange;
-        SceneManager_PF2E.OnPlaySceneExit -= Unsubscribe;
+        SceneManager.OnPlaySceneExit -= Unsubscribe;
     }
 
     private void OnToolChange(E_Tools tool)

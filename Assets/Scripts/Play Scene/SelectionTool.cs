@@ -22,7 +22,7 @@ public class SelectionTool : MonoBehaviour
     void Awake()
     {
         CustomEvents.OnToolChange += OnToolChange;
-        SceneManager_PF2E.OnPlaySceneExit += Unsubscribe;
+        SceneManager.OnPlaySceneExit += Unsubscribe;
     }
 
     void Update()
@@ -55,7 +55,7 @@ public class SelectionTool : MonoBehaviour
     private void Unsubscribe()
     {
         CustomEvents.OnToolChange -= OnToolChange;
-        SceneManager_PF2E.OnPlaySceneExit -= Unsubscribe;
+        SceneManager.OnPlaySceneExit -= Unsubscribe;
     }
 
     private void OnToolChange(E_Tools tool)

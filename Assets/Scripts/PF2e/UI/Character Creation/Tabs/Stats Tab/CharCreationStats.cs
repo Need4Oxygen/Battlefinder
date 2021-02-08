@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Pathfinder2e.Player
+namespace Pathfinder2e.Character
 {
 
     public class CharCreationStats : MonoBehaviour
@@ -130,8 +130,8 @@ namespace Pathfinder2e.Player
                 foreach (var image in item.myList)
                     image.color = unactive;
             int[,] map = new int[8, 6];
-            foreach (var boost in creation.currentPlayer.abl_boostList)
-                switch (boost.from)
+            foreach (var boost in creation.currentPlayer.Abl_MapGet())
+                switch (boost.source)
                 {
                     case "ancestry boost": map[0, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
                     case "ancestry flaw": map[0, DB.Abl_Abbr2Int(boost.abl)] -= 1; break;
@@ -153,12 +153,12 @@ namespace Pathfinder2e.Player
                         ablMap[i].myList[j].color = flawColor;
                     else if (map[i, j] > 0)
                         ablMap[i].myList[j].color = boostColor;
-            ablMapScores[0].text = creation.currentPlayer.abl_strengthMod >= 0 ? "+" : "" + creation.currentPlayer.abl_strengthMod;
-            ablMapScores[1].text = creation.currentPlayer.abl_dexterityMod >= 0 ? "+" : "" + creation.currentPlayer.abl_dexterityMod;
-            ablMapScores[2].text = creation.currentPlayer.abl_constitutionMod >= 0 ? "+" : "" + creation.currentPlayer.abl_constitutionMod;
-            ablMapScores[3].text = creation.currentPlayer.abl_intelligenceMod >= 0 ? "+" : "" + creation.currentPlayer.abl_intelligenceMod;
-            ablMapScores[4].text = creation.currentPlayer.abl_wisdomMod >= 0 ? "+" : "" + creation.currentPlayer.abl_wisdomMod;
-            ablMapScores[5].text = creation.currentPlayer.abl_charismaMod >= 0 ? "+" : "" + creation.currentPlayer.abl_charismaMod;
+            ablMapScores[0].text = (creation.currentPlayer.Abl_GetMod("str") >= 0 ? "+" : "") + creation.currentPlayer.Abl_GetMod("str");
+            ablMapScores[1].text = (creation.currentPlayer.Abl_GetMod("dex") >= 0 ? "+" : "") + creation.currentPlayer.Abl_GetMod("dex");
+            ablMapScores[2].text = (creation.currentPlayer.Abl_GetMod("con") >= 0 ? "+" : "") + creation.currentPlayer.Abl_GetMod("con");
+            ablMapScores[3].text = (creation.currentPlayer.Abl_GetMod("int") >= 0 ? "+" : "") + creation.currentPlayer.Abl_GetMod("int");
+            ablMapScores[4].text = (creation.currentPlayer.Abl_GetMod("wis") >= 0 ? "+" : "") + creation.currentPlayer.Abl_GetMod("wis");
+            ablMapScores[5].text = (creation.currentPlayer.Abl_GetMod("cha") >= 0 ? "+" : "") + creation.currentPlayer.Abl_GetMod("cha");
 
             // Skills
             var list = creation.currentPlayer.Skills_GetAllAsList();

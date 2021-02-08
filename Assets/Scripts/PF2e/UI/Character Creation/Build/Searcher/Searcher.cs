@@ -8,7 +8,7 @@ using Pathfinder2e.Containers;
 using Pathfinder2e.GameData;
 using UnityEngine.UI;
 
-namespace Pathfinder2e.Player
+namespace Pathfinder2e.Character
 {
 
     public enum E_Searcher_Type { None, Default, Heritage, AncestryFeat, ClassFeat, Dedication, ArchetypeFeat, SkillFeat, GeneralFeat }

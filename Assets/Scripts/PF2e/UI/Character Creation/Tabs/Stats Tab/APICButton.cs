@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Pathfinder2e.Player;
+using Pathfinder2e.Character;
 using TMPro;
 using UnityEngine;
 

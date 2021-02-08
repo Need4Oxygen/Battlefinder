@@ -5,10 +5,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class SceneManager_PF2E : MonoBehaviour
+public class SceneManager : MonoBehaviour
 {
-    // Manages scene changes for Pathfinder 2e boards
-
     public static DVoid OnPlaySceneLoad;
     public static DVoid OnPlaySceneExit;
 
@@ -113,6 +111,6 @@ public class SceneManager_PF2E : MonoBehaviour
             OnPlaySceneExit();
         OnPlaySceneExit = null;
 
-        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
 }

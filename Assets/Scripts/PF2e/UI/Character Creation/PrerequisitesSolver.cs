@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Pathfinder2e;
 using Pathfinder2e.Containers;
-using Pathfinder2e.Player;
+using Pathfinder2e.Character;
 using Tools;
 using UnityEngine;
 
@@ -17,7 +17,7 @@ public class PrequisitesReport
 public static class PrerequisitesSolver
 {
 
-    public static PrequisitesReport Check_Feat(Feat feat, ref PlayerData player)
+    public static PrequisitesReport Check_Feat(Feat feat, ref CharacterData player)
     {
         PrequisitesReport report = new PrequisitesReport();
 
@@ -31,7 +31,7 @@ public static class PrerequisitesSolver
         return report;
     }
 
-    private static bool ValidatePrereq(Prerequisite prereq, ref PlayerData player)
+    private static bool ValidatePrereq(Prerequisite prereq, ref CharacterData player)
     {
         switch (prereq.type)
         {
@@ -83,13 +83,13 @@ public static class PrerequisitesSolver
         }
     }
 
-    private static bool Validate_Ability(string descr, ref PlayerData playerData)
+    private static bool Validate_Ability(string descr, ref CharacterData playerData)
     {
         string[] split = descr.Split(' ');
         return playerData.Abl_GetScore(StrTools.ToLowerFirst(split[0])) >= int.Parse(split[1]) ? true : false;
     }
 
-    private static bool Validate_Proficiency(string descr, ref PlayerData playerData)
+    private static bool Validate_Proficiency(string descr, ref CharacterData playerData)
     {
         string[] split = descr.Split(' ');
         if (split.Length < 3) return false;
@@ -135,37 +135,37 @@ public static class PrerequisitesSolver
         }
     }
 
-    private static bool Validate_Heritage(string feat, ref PlayerData playerData)
+    private static bool Validate_Heritage(string feat, ref CharacterData playerData)
     {
         return playerData.Build_GetFeatNames("heritage").Contains(feat); ;
     }
 
-    private static bool Validate_AncestryFeat(string feat, ref PlayerData playerData)
+    private static bool Validate_AncestryFeat(string feat, ref CharacterData playerData)
     {
         return playerData.Build_GetFeatNames("ancestry feat").Contains(feat); ;
     }
 
-    private static bool Validate_AncestryFeature(string feat, ref PlayerData playerData)
+    private static bool Validate_AncestryFeature(string feat, ref CharacterData playerData)
     {
         return playerData.Build_GetFeatNames("ancestry feature").Contains(feat); ;
     }
 
-    private static bool Validate_ClassFeat(string feat, ref PlayerData playerData)
+    private static bool Validate_ClassFeat(string feat, ref CharacterData playerData)
     {
         return playerData.Build_GetFeatNames("class feat").Contains(feat); ;
     }
 
-    private static bool Validate_ClassFeature(string feat, ref PlayerData playerData)
+    private static bool Validate_ClassFeature(string feat, ref CharacterData playerData)
     {
         return playerData.Build_GetFeatNames("class feature").Contains(feat); ;
     }
 
-    private static bool Validate_GeneralFeat(string feat, ref PlayerData playerData)
+    private static bool Validate_GeneralFeat(string feat, ref CharacterData playerData)
     {
         return playerData.Build_GetFeatNames("general feat").Contains(feat); ;
     }
 
-    private static bool Validate_SkillFeat(string feat, ref PlayerData playerData)
+    private static bool Validate_SkillFeat(string feat, ref CharacterData playerData)
     {
         return playerData.Build_GetFeatNames("skill feat").Contains(feat); ;
     }

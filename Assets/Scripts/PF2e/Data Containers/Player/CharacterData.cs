@@ -6,13 +6,13 @@ using Pathfinder2e.Containers;
 using Pathfinder2e.GameData;
 using UnityEngine;
 
-namespace Pathfinder2e.Player
+namespace Pathfinder2e.Character
 {
 
-    public class PlayerData
+    public class CharacterData
     {
         public string guid = "";
-        public string playerName = "";
+        public string name = "";
 
 
         // ---------------------------------------------------LEVEL--------------------------------------------------
@@ -23,7 +23,7 @@ namespace Pathfinder2e.Player
             set { }
         }
 
-        private int _level = 1;
+        private int _level = 0;
         public int level
         {
             get
@@ -38,6 +38,8 @@ namespace Pathfinder2e.Player
                     _level = 20;
                 else
                     _level = value;
+
+                Abl_SetLvlFilter(_level);
             }
         }
 
@@ -47,7 +49,7 @@ namespace Pathfinder2e.Player
         private int hp_ancestry = 0;
 
         public int hp_current { get { return hp_max - hp_damage; } }
-        public int hp_max { get { return level * (hp_class + abl_constitutionMod) + hp_ancestry + hp_temp; } }
+        public int hp_max { get { return level * (hp_class + Abl_GetMod("con")) + hp_ancestry + hp_temp; } }
 
         private int _damage = 0;
         public int hp_damage
@@ -215,8 +217,8 @@ namespace Pathfinder2e.Player
 
         // ---------------------------------------------------BULK--------------------------------------------------
         public float bulk_bonus = 0f; // This has to be turn into effect list
-        public float bulk_encThreshold { get { return Size_BulkMod() * (5 + abl_strengthMod) + bulk_bonus; } }
-        public float bulk_maxThreshold { get { return Size_BulkMod() * (10 + abl_strengthMod) + bulk_bonus; } }
+        public float bulk_encThreshold { get { return Size_BulkMod() * (5 + Abl_GetMod("str")) + bulk_bonus; } }
+        public float bulk_maxThreshold { get { return Size_BulkMod() * (10 + Abl_GetMod("str")) + bulk_bonus; } }
         public float bulk_current = 0f; // This has to be turn into full Inventory solution that calcs objects weight
 
 
@@ -233,79 +235,95 @@ namespace Pathfinder2e.Player
         public string languages = "";
 
         // ---------------------------------------------------ABILITIES--------------------------------------------------
-        // AblBoostData - "from" variable can contain this strings:
-        //     ancestry boost, ancestry flaw, ancestry free
-        //     background choice, background free
-        //     class
-        //     lvl1, lvl5, lvl10, lvl15, lvl20
+        private static List<string> abl_sources = new List<string> { "str", "dex", "con", "int", "wis", "cha" };
 
-        public int abl_strength { get { return Abl_ScoreCalc("str"); } }
-        public int abl_dexterity { get { return Abl_ScoreCalc("dex"); } }
-        public int abl_constitution { get { return Abl_ScoreCalc("con"); } }
-        public int abl_intelligence { get { return Abl_ScoreCalc("int"); } }
-        public int abl_wisdom { get { return Abl_ScoreCalc("wis"); } }
-        public int abl_charisma { get { return Abl_ScoreCalc("cha"); } }
-
-        public int abl_strengthMod { get { return Abl_ModCalc(abl_strength); } }
-        public int abl_dexterityMod { get { return Abl_ModCalc(abl_dexterity); } }
-        public int abl_constitutionMod { get { return Abl_ModCalc(abl_constitution); } }
-        public int abl_intelligenceMod { get { return Abl_ModCalc(abl_intelligence); } }
-        public int abl_wisdomMod { get { return Abl_ModCalc(abl_wisdom); } }
-        public int abl_charismaMod { get { return Abl_ModCalc(abl_charisma); } }
-
-        public List<AblBoostData> abl_boostList = new List<AblBoostData>();
+        private Dictionary<string, Vector2Int> abl_values;
+        private List<AblBoostData> abl_boostList = new List<AblBoostData>();
+        private List<string> abl_lvlFilter = new List<string>();
 
         public int Abl_GetScore(string abl)
         {
-            return Abl_ScoreCalc(abl);
+            return abl_values[abl].x;
         }
 
         public int Abl_GetMod(string abl)
         {
-            return Abl_ModCalc(Abl_ScoreCalc(abl));
+            return abl_values[abl].y;
         }
 
         public void Abl_MapAdd(AblBoostData boost)
         {
             abl_boostList.Add(boost);
+            Abl_UpdateValues();
         }
 
-        public void Abl_MapDelete(string name)
+        public void Abl_MapSet(List<AblBoostData> list)
         {
-            abl_boostList.RemoveAll(ctx => ctx.from == name);
+            abl_boostList = new List<AblBoostData>(list);
+            Abl_UpdateValues();
         }
 
-        public AblBoostData Abl_MapGet(string name)
+        public void Abl_MapClearFrom(string source)
         {
-            return abl_boostList.Find(ctx => ctx.from == name);
+            abl_boostList.RemoveAll(ctx => ctx.source == source);
+            Abl_UpdateValues();
         }
 
-        public List<AblBoostData> Abl_MapGetAll(string name)
+        public List<AblBoostData> Abl_MapGet()
         {
-            return abl_boostList.FindAll(ctx => ctx.from == name);
+            return new List<AblBoostData>(abl_boostList);
         }
 
-        private int Abl_ScoreCalc(string abl)
+        public AblBoostData Abl_MapGetFrom(string name)
         {
-            List<AblBoostData> boosts = abl_boostList.FindAll(ctx => ctx.abl == abl);
-            int count = 0, score = 10;
-
-            foreach (var item in boosts)
-                count += item.value;
-
-            if (count >= 0)
-                for (int i = 0; i < count; i++)
-                    score += score < 18 ? 2 : 1;
-            else if (count < 0)
-                score += count * 2;
-
-            return score;
+            return abl_boostList.Find(ctx => ctx.source == name);
         }
 
-        private int Abl_ModCalc(int ablScore)
+        public List<AblBoostData> Abl_MapGetAllFrom(string name)
         {
-            return Mathf.FloorToInt((ablScore - 10) / 2);
+            return new List<AblBoostData>(abl_boostList.FindAll(ctx => ctx.source == name));
         }
+
+        private void Abl_SetLvlFilter(int lvl)
+        {
+            abl_lvlFilter.Clear();
+
+            if (lvl < 5)
+            { abl_lvlFilter.Add("lvl5"); abl_lvlFilter.Add("lvl10"); abl_lvlFilter.Add("lvl15"); abl_lvlFilter.Add("lvl20"); }
+            else if (lvl < 10)
+            { abl_lvlFilter.Add("lvl10"); abl_lvlFilter.Add("lvl15"); abl_lvlFilter.Add("lvl20"); }
+            else if (lvl < 15)
+            { abl_lvlFilter.Add("lvl15"); abl_lvlFilter.Add("lvl20"); }
+            else if (lvl < 20)
+            { abl_lvlFilter.Add("lvl20"); }
+
+            Abl_UpdateValues();
+        }
+
+        private void Abl_UpdateValues()
+        {
+            abl_boostList.RemoveAll(ctx => ctx.source == null || string.IsNullOrEmpty(ctx.source));
+
+            foreach (var abl in abl_sources)
+            {
+                List<AblBoostData> boosts = abl_boostList.FindAll(ctx => ctx.abl == abl);
+                int count = 0, score = 10, mod = 0;
+
+                foreach (var item in boosts)
+                    if (!abl_lvlFilter.Contains(item.source))
+                        count += item.value;
+
+                if (count >= 0)
+                    for (int i = 0; i < count; i++)
+                        score += score < 18 ? 2 : 1;
+                else if (count < 0)
+                    score += count * 2;
+                mod = Mathf.FloorToInt((score - 10) / 2);
+
+                abl_values[abl] = new Vector2Int(score, mod);
+            }
+        }
+
 
         // ---------------------------------------------------SKILLS--------------------------------------------------
         private Dictionary<string, APIC> skills_dic;
@@ -577,8 +595,8 @@ namespace Pathfinder2e.Player
                             Abl_MapAdd(new AblBoostData("ancestry flaw", item, -1));
 
                     // Choices
-                    List<AblBoostData> previousFree = Abl_MapGetAll("ancestry free");
-                    Abl_MapDelete("ancestry free");
+                    List<AblBoostData> previousFree = Abl_MapGetAllFrom("ancestry free");
+                    Abl_MapClearFrom("ancestry free");
                     for (int i = 0; i < ancestryData.abl_boosts.FindAll(ctx => ctx == "free").Count; i++)
                         if (i < previousFree.Count) // Saves as many free choices as it can, given what new ancestry gives you
                             Abl_MapAdd(previousFree[i]);
@@ -601,11 +619,11 @@ namespace Pathfinder2e.Player
             speed_ancestry = 0;
             size_ancestry = "M";
 
-            Abl_MapDelete("ancestry boost");
-            Abl_MapDelete("ancestry flaw");
+            Abl_MapClearFrom("ancestry boost");
+            Abl_MapClearFrom("ancestry flaw");
             Traits_ClearFrom("ancestry");
             if (cleanseChoices)
-                Abl_MapDelete("ancestry free");
+                Abl_MapClearFrom("ancestry free");
         }
 
 
@@ -634,14 +652,14 @@ namespace Pathfinder2e.Player
                             Skills_Train(item, "background");
 
                     // Choices
-                    AblBoostData previousChoice = Abl_MapGet("background choice");
+                    AblBoostData previousChoice = Abl_MapGetFrom("background choice");
                     bool match = false;
                     if (previousChoice != null)
                         foreach (var item in backgroundData.abl_choices)
                             if (previousChoice.abl == item)
                                 match = true;
                     if (!match)
-                        Abl_MapDelete("background choice");
+                        Abl_MapClearFrom("background choice");
                 }
                 else
                 {
@@ -662,8 +680,8 @@ namespace Pathfinder2e.Player
             Lores_ClearFrom("background");
             if (cleanseChoices)
             {
-                Abl_MapDelete("background choice");
-                Abl_MapDelete("background free");
+                Abl_MapClearFrom("background choice");
+                Abl_MapClearFrom("background free");
             }
         }
 
@@ -704,18 +722,18 @@ namespace Pathfinder2e.Player
                     // Build_SetNewProgression(classData.name);
                     if (classData.key_ability_choices.Count > 1)
                     {
-                        AblBoostData previousChoice = Abl_MapGet("class");
+                        AblBoostData previousChoice = Abl_MapGetFrom("class");
                         bool match = false;
                         if (previousChoice != null)
                             foreach (var item in classData.key_ability_choices)
                                 if (previousChoice.abl == item)
                                     match = true;
                         if (!match)
-                            Abl_MapDelete("class");
+                            Abl_MapClearFrom("class");
                     }
                     else
                     {
-                        Abl_MapDelete("class");
+                        Abl_MapClearFrom("class");
                         Abl_MapAdd(new AblBoostData("class", classData.key_ability_choices[0], 1));
                     }
                 }
@@ -743,7 +761,7 @@ namespace Pathfinder2e.Player
 
             if (cleanseChoices)
             {
-                Abl_MapDelete("class");
+                Abl_MapClearFrom("class");
             }
         }
 
@@ -864,7 +882,7 @@ namespace Pathfinder2e.Player
 
         private void Build_SetNewProgression(string className)
         {
-            Debug.Log($"[PlayerData] changing [{playerName}] class progression");
+            Debug.Log($"[PlayerData] changing [{name}] class progression");
 
             Dictionary<int, Dictionary<string, BuildBlock>> newBuild = new Dictionary<int, Dictionary<string, BuildBlock>>();
             ClassProgression prog = DB.ClassProgression.Find(ctx => ctx.name == className);
@@ -891,7 +909,7 @@ namespace Pathfinder2e.Player
 
         public void Build_Refresh()
         {
-            Debug.LogWarning($"[PlayerData] Refreshing [{playerName}] build - NOT IMPLEMENTED");
+            Debug.LogWarning($"[PlayerData] Refreshing [{name}] build - NOT IMPLEMENTED");
 
             // Remove all data saved
 
@@ -943,9 +961,21 @@ namespace Pathfinder2e.Player
 
 
         // ---------------------------------------------------CONSTRUCTOR--------------------------------------------------
-        public PlayerData()
+        public CharacterData() // Do NOT change the order
         {
             ac = new APIC("Armor Class", this, "dex", 10);
+
+            abl_values = new Dictionary<string, Vector2Int>()
+        {
+            {"str",new Vector2Int(0,0)},
+            {"dex",new Vector2Int(0,0)},
+            {"con",new Vector2Int(0,0)},
+            {"int",new Vector2Int(0,0)},
+            {"wis",new Vector2Int(0,0)},
+            {"cha",new Vector2Int(0,0)},
+        };
+
+            level = 1;
 
             skills_dic = new Dictionary<string, APIC>()
         {

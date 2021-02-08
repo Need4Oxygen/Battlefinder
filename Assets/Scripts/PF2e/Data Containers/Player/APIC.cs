@@ -3,12 +3,12 @@ using Pathfinder2e;
 using Pathfinder2e.Containers;
 using UnityEngine;
 
-namespace Pathfinder2e.Player
+namespace Pathfinder2e.Character
 {
 
     public class APIC
     {
-        public PlayerData playerData = null;
+        public CharacterData playerData = null;
 
         public string name = "";
         public string abl = "";
@@ -18,7 +18,7 @@ namespace Pathfinder2e.Player
         // private List<PF2E_Effect> itemModifiers = new List<PF2E_Effect>();
         // private List<PF2E_Effect> circModifiers = new List<PF2E_Effect>();
 
-        public APIC(string name, PlayerData playerData, string abl, int initialScore)
+        public APIC(string name, CharacterData playerData, string abl, int initialScore)
         {
             this.name = name;
             this.playerData = playerData;

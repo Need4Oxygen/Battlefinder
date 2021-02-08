@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Pathfinder2e;
-using Pathfinder2e.Player;
+using Pathfinder2e.Character;
 using Pathfinder2e.Containers;
 using static TMPro.TMP_Dropdown;
 
@@ -17,42 +17,44 @@ namespace Pathfinder2e.GameData
         [SerializeField] private Transform dropdownPrefab = null;
 
         [Header("Initial Abilities Boosts")]
-        [SerializeField] private Window window = null;
+        [SerializeField] private Window initAbl_window = null;
         [SerializeField] private Transform ancestryContainer = null;
         [SerializeField] private Transform backgroundContainer = null;
         [SerializeField] private Transform classContainer = null;
         [SerializeField] private List<Toggle> level1Toggles = null;
 
-        // [Header("Every Other Abilities Boosts")]
-        // [SerializeField] private CanvasGroup ablBoostsPanel = null;
-        // [SerializeField] private Button ablBoostsAcceptButotn = null;
-        // [SerializeField] private Toggle[] toggles = null;
+        [Header("Every Other Abilities Boosts")]
+        [SerializeField] private Window other_window = null;
+        [SerializeField] private List<Toggle> otherToggles = null;
 
         private List<AblBoostData> currentData = null;
 
-        [HideInInspector] public bool isOpen;
+        [HideInInspector] public bool init_isOpen;
+        [HideInInspector] public bool other_isOpen;
 
         void Start()
         {
             AssignLvl1BoostsFunctionality();
+            AssignOtherBoostsFunctionality();
+
         }
 
         #region --------------------------------------------INITIAL BOOSTS--------------------------------------------
 
-        public void OpenPlayerInitialAblBoosts()
+        public void Open_InitialAblBoosts()
         {
-            isOpen = true;
-            window.OpenWindow();
+            init_isOpen = true;
+            initAbl_window.OpenWindow();
 
-            currentData = new List<AblBoostData>(creation.currentPlayer.abl_boostList);
+            currentData = new List<AblBoostData>(creation.currentPlayer.Abl_MapGet());
 
             AssignInitialAblBoosts();
         }
 
-        public void ClosePlayerInitialAblBoosts()
+        public void Close_InitialAblBoosts()
         {
-            isOpen = false;
-            window.CloseWindow();
+            init_isOpen = false;
+            initAbl_window.CloseWindow();
 
             currentData = null;
         }
@@ -112,7 +114,7 @@ namespace Pathfinder2e.GameData
                     drop.captionText.color = Globals.Theme["untrained"];
                 }
 
-            List<AblBoostData> previous = currentData.FindAll(ctx => ctx.from == "ancestry free");
+            List<AblBoostData> previous = currentData.FindAll(ctx => ctx.source == "ancestry free");
             for (int i = 0; i < abl_free; i++)
             {
                 TMP_Dropdown drop = GenerateDropdown(ancestryContainer);
@@ -166,7 +168,7 @@ namespace Pathfinder2e.GameData
 
         private void SaveAncestryOptions()
         {
-            currentData.RemoveAll(ctx => ctx.from == "ancestry free");
+            currentData.RemoveAll(ctx => ctx.source == "ancestry free");
 
             foreach (var item in ancestryFreeDrops)
             {
@@ -206,7 +208,7 @@ namespace Pathfinder2e.GameData
             background = DB.Backgrounds.Find(ctx => ctx.name == creation.currentPlayer.background);
 
             {   // Choice
-                AblBoostData previous = currentData.Find(ctx => ctx.from == "background choice");
+                AblBoostData previous = currentData.Find(ctx => ctx.source == "background choice");
 
                 TMP_Dropdown drop = GenerateDropdown(backgroundContainer);
                 allBackgroundDrops.Add(drop);
@@ -228,7 +230,7 @@ namespace Pathfinder2e.GameData
             }
 
             {   // Free
-                AblBoostData previous = currentData.Find(ctx => ctx.from == "background free");
+                AblBoostData previous = currentData.Find(ctx => ctx.source == "background free");
 
                 TMP_Dropdown drop = GenerateDropdown(backgroundContainer);
                 allBackgroundDrops.Add(drop);
@@ -294,8 +296,8 @@ namespace Pathfinder2e.GameData
 
         private void SaveBackgroundOptions()
         {
-            currentData.RemoveAll(ctx => ctx.from == "background choice");
-            currentData.RemoveAll(ctx => ctx.from == "background free");
+            currentData.RemoveAll(ctx => ctx.source == "background choice");
+            currentData.RemoveAll(ctx => ctx.source == "background free");
 
             string abl = "";
 
@@ -333,7 +335,7 @@ namespace Pathfinder2e.GameData
         {
             classObj = DB.Classes.Find(ctx => ctx.name == creation.currentPlayer.class_name);
 
-            AblBoostData previous = currentData.Find(ctx => ctx.from == "class");
+            AblBoostData previous = currentData.Find(ctx => ctx.source == "class");
 
             TMP_Dropdown drop = GenerateDropdown(classContainer);
             classDrop = drop;
@@ -360,7 +362,7 @@ namespace Pathfinder2e.GameData
 
         private void SaveClassOptions()
         {
-            currentData.RemoveAll(ctx => ctx.from == "class");
+            currentData.RemoveAll(ctx => ctx.source == "class");
 
             string abl = AbilityToAbbr(classDrop.captionText.text);
             if (abl != "")
@@ -399,19 +401,8 @@ namespace Pathfinder2e.GameData
         {
             foreach (var item in level1Toggles)
                 item.SetIsOnWithoutNotify(false);
-
-            foreach (var item in currentData.FindAll(ctx => ctx.from == "lvl1"))
-                switch (item.abl)
-                {
-                    case "str": level1Toggles[0].SetIsOnWithoutNotify(true); break;
-                    case "dex": level1Toggles[1].SetIsOnWithoutNotify(true); break;
-                    case "con": level1Toggles[2].SetIsOnWithoutNotify(true); break;
-                    case "int": level1Toggles[3].SetIsOnWithoutNotify(true); break;
-                    case "wis": level1Toggles[4].SetIsOnWithoutNotify(true); break;
-                    case "cha": level1Toggles[5].SetIsOnWithoutNotify(true); break;
-                    default:
-                        break;
-                }
+            foreach (var item in currentData.FindAll(ctx => ctx.source == "lvl1"))
+                level1Toggles[DB.Abl_Abbr2Int(item.abl)].SetIsOnWithoutNotify(true);
         }
 
         public void OnValueChangedLvl1BoostsToggle(Toggle toggle, bool value)
@@ -424,7 +415,7 @@ namespace Pathfinder2e.GameData
 
         private void SaveLvl1Boosts()
         {
-            currentData.RemoveAll(ctx => ctx.from == "lvl1");
+            currentData.RemoveAll(ctx => ctx.source == "lvl1");
 
             for (int i = 0; i < level1Toggles.Count; i++)
                 if (level1Toggles[i].isOn)
@@ -433,41 +424,109 @@ namespace Pathfinder2e.GameData
 
 
         //-------------------------------------------- EXIT --------------------------------------------
-        public void OnClickAcceptButton()
+        public void OnClickInitAblAcceptButton()
         {
             SaveAncestryOptions();
             SaveBackgroundOptions();
             SaveClassOptions();
             SaveLvl1Boosts();
 
-            creation.currentPlayer.abl_boostList = new List<AblBoostData>(currentData);
+            creation.currentPlayer.Abl_MapSet(new List<AblBoostData>(currentData));
             creation.RefreshPlayerIntoPanel();
             creation.SavePlayer();
-            ClosePlayerInitialAblBoosts();
+            Close_InitialAblBoosts();
         }
 
-        public void OnClickCancelButton()
+        public void OnClickInitAblCancelButton()
         {
             ClearAncestryData();
             ClearBackgroundData();
             ClearClassData();
 
-            ClosePlayerInitialAblBoosts();
+            Close_InitialAblBoosts();
         }
 
         #endregion
 
         #region --------------------------------OTHER BOOSTS--------------------------------
 
-        // public void OpenPlayerAblBoostsPanel()
-        // {
-        //     StartCoroutine(PanelFader.RescaleAndFade(ablBoostsPanel.transform, ablBoostsPanel, 1f, 1f, 0.1f));
-        // }
+        private int currentLvl = 5;
 
-        // public void ClosePlayerAblBoostsPanel()
-        // {
-        //     StartCoroutine(PanelFader.RescaleAndFade(ablBoostsPanel.transform, ablBoostsPanel, 0.85f, 0f, 0.1f));
-        // }
+        public void Open_OtherAblBoosts(int lvl)
+        {
+            other_isOpen = true;
+            other_window.OpenWindow();
+
+            currentData = new List<AblBoostData>(creation.currentPlayer.Abl_MapGet());
+
+            currentLvl = lvl;
+
+            AssignOtherBoosts();
+        }
+
+        public void Close_OtherAblBoosts()
+        {
+            other_isOpen = false;
+            other_window.CloseWindow();
+
+            currentData = null;
+        }
+
+        private void AssignOtherBoostsFunctionality()
+        {
+            for (int i = 0; i < otherToggles.Count; i++)
+                otherToggles[i].onValueChanged.RemoveAllListeners();
+
+            // Putting this inside the for breaks it, still don't know why
+            otherToggles[0].onValueChanged.AddListener((v) => { OnValueChangedOtherBoostsToggle(otherToggles[0], v); });
+            otherToggles[1].onValueChanged.AddListener((v) => { OnValueChangedOtherBoostsToggle(otherToggles[1], v); });
+            otherToggles[2].onValueChanged.AddListener((v) => { OnValueChangedOtherBoostsToggle(otherToggles[2], v); });
+            otherToggles[3].onValueChanged.AddListener((v) => { OnValueChangedOtherBoostsToggle(otherToggles[3], v); });
+            otherToggles[4].onValueChanged.AddListener((v) => { OnValueChangedOtherBoostsToggle(otherToggles[4], v); });
+            otherToggles[5].onValueChanged.AddListener((v) => { OnValueChangedOtherBoostsToggle(otherToggles[5], v); });
+        }
+
+        private void AssignOtherBoosts()
+        {
+            foreach (var item in otherToggles)
+                item.SetIsOnWithoutNotify(false);
+            foreach (var item in currentData.FindAll(ctx => ctx.source == $"lvl{currentLvl}"))
+                otherToggles[DB.Abl_Abbr2Int(item.abl)].SetIsOnWithoutNotify(true);
+        }
+
+        public void OnValueChangedOtherBoostsToggle(Toggle toggle, bool value)
+        {
+            if (otherToggles.FindAll(ctx => ctx.isOn == true).Count <= 4 && value)
+                toggle.SetIsOnWithoutNotify(true);
+            else
+                toggle.SetIsOnWithoutNotify(false);
+        }
+
+        private void SaveOtherBoosts()
+        {
+            currentData.RemoveAll(ctx => ctx.source == $"lvl{currentLvl}");
+
+            for (int i = 0; i < otherToggles.Count; i++)
+                if (otherToggles[i].isOn)
+                    currentData.Add(new AblBoostData($"lvl{currentLvl}", DB.Abl_Int2Abbr(i), 1));
+        }
+
+        //-------------------------------------------- EXIT --------------------------------------------
+
+        public void OnClickOtherAcceptButton()
+        {
+            SaveOtherBoosts();
+
+            creation.currentPlayer.Abl_MapSet(new List<AblBoostData>(currentData));
+            creation.RefreshPlayerIntoPanel();
+            creation.SavePlayer();
+            Close_OtherAblBoosts();
+        }
+
+        public void OnClickOtherCancelButton()
+        {
+            Close_OtherAblBoosts();
+        }
 
         #endregion
 

@@ -9,13 +9,13 @@ namespace Pathfinder2e
         //     "lvl1"                "lvl5"              "lvl10"
         //     "lvl15"               "lvl20"
 
-        public string from { get; set; }
+        public string source { get; set; }
         public string abl { get; set; }
         public int value { get; set; }
 
-        public AblBoostData(string from, string abl, int value)
+        public AblBoostData(string source, string abl, int value)
         {
-            this.from = from;
+            this.source = source;
             this.abl = abl;
             this.value = value;
         }
