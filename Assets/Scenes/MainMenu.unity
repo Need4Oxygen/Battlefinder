@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.0020627438, g: 0.0017341211, b: 0.0025949674, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -74274,9 +74274,8 @@ MonoBehaviour:
   boardsContainer: {fileID: 7131613613150919541}
   boardsButtonPrefab: {fileID: 5526447326518976865, guid: ee4eeb9dc1f4c9c45bc01765a1cc694f,
     type: 3}
-  playersContainer: {fileID: 7131613613644145521}
-  playersButtonPrefab: {fileID: 2069474197792940282, guid: 75d5c9dff7270ed4899dd9d69b0fcc4f,
-    type: 3}
+  charactersContainer: {fileID: 0}
+  charactersButtonPrefab: {fileID: 0}
   enemiesContainer: {fileID: 7131613612497475899}
   enemiesButtonPrefab: {fileID: 3578669237437880559, guid: 4385fbaab7e9c1940b25529f7c9c78bf,
     type: 3}
@@ -101483,12 +101482,6 @@ PrefabInstance:
 --- !u!224 &7131613613644145520 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8644805419689040916, guid: 2f3a5e4bc20d87d40a677299bed276ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 7131613613644145519}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &7131613613644145521 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8644805420963630505, guid: 2f3a5e4bc20d87d40a677299bed276ea,
     type: 3}
   m_PrefabInstance: {fileID: 7131613613644145519}
   m_PrefabAsset: {fileID: 0}
