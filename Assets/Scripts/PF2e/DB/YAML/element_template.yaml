@@ -1,12 +1,31 @@
+# Every property
+
 - from: "Inspire Courage" # where it comes from
   key: flat modifier # how the rule will be applied
-  target: damage # what the rule will be applied to
+  selector: damage # what the rule will be applied to
+  level: 1 # what level is it
   type: status # how the value will be stacked (circumstancial, status, item, untyped)
-  diceNumber: 3 # the 3 in 3d20
-  dieSize: 20 # the 20 in 3d20
-  damageType: piercing # type of damage in case it's
+  duration: 1 # how many rounds will it be active (1 round = 3 seconds)
+  frecuency: once per day # how many rounds will it be active (1 round = 3 seconds)
+  until: start of your turn # when does it end
+  dice_number: 3 # the 3 in 3d20
+  die_size: 20 # the 20 in 3d20
+  strike:
+    label: "Cold Iron Claws"
+    category: unarmed
+    damage_type: slashing
+    dice_number: 1
+    die_size: 6
+    group: brawling
+    range: melee
+    traits:
+      - agile
+      - finesse
+      - unarmed
+      - nonlethal
+  proficiency: trained # proficiency
   value: 1
-  valueList: # value is determined by bracket start and end; meant for player level
+  value_list: # value is determined by bracket start and end; meant for player level
     - end: 5
       value: 1
     - start: 6
@@ -21,3 +40,27 @@
       - unarmed
     not: # if at least one item in the list is present the modifier is not applied
       - agile
+
+# Fields from: and level: will be filled automatically when adding the element to the player
+# Training survival
+- key: proficiency_static
+  selector: survival
+  proficiency: trained
+
+# Training a lore
+- key: proficiency_static
+  selector: lore
+  proficiency: trained
+  value: Scribling Lore
+
+# Training individual weapons
+- key: proficiency_weapon
+  selector: weapon proficiencies
+  value: trained
+  value_list:
+    - value: longsword
+    - value: rapier
+    - value: sap
+    - value: shortbow
+    - value: shortsword
+    - value: whip

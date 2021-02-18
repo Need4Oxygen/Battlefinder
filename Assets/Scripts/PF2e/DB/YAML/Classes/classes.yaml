@@ -1,38 +1,51 @@
 - name: Alchemist
   descr: "There’s no sight more beautiful to you than a strange brew bubbling in a beaker, and you consume your ingenious elixirs with abandon. You’re fascinated by uncovering the secrets of science and the natural world, and you’re constantly experimenting in your lab or on the go with inventive concoctions for every eventuality. You are fearless in the face of risk, hurling explosive or toxic creations at your foes. Your unique path toward greatness is lined with alchemical brews that push your mind and body to their limits."
   hp: 8
+  skill_train_strings:
+    - Trained in Crafting
+    - Trained in a number of additional skills equal to 3 plus your Intelligence modifier
   key_ability_choices:
     - int
-  perception:
-    - target: perception
-      prof: trained
-  saves:
-    - target: fortitude
-      prof: expert
-    - target: reflex
-      prof: expert
-    - target: will
-      prof: trained
-  attacks:
-    - target: simple weapons
-      prof: trained
-    - target: alchemical bombs
-      prof: trained
-    - target: unarmed attacks
-      prof: trained
-  defenses:
-    - target: light armor
-      prof: trained
-    - target: unarmored defense
-      prof: trained
-  skills:
-    - target: crafting
-      prof: trained
-    - target: a number of additional skills equal to 3 plus your intelligence modifier
-      prof: trained
-  class_dc_and_spells:
-    - target: alchemist class dc
-      prof: trained
+  elements:
+    - key: proficiency_static
+      selector: perception
+      proficiency: trained
+    - key: proficiency_static
+      selector: fortitude
+      proficiency: expert
+    - key: proficiency_static
+      selector: reflex
+      proficiency: expert
+    - key: proficiency_static
+      selector: will
+      proficiency: trained
+    - key: proficiency_static
+      selector: simple_weapons
+      proficiency: trained
+    - key: proficiency_static
+      selector: weapon proficiency
+      proficiency: trained
+      value_list:
+        - value: alchemical bombs
+    - key: proficiency_static
+      selector: unarmed
+      proficiency: trained
+    - key: proficiency_static
+      selector: light_armor
+      proficiency: trained
+    - key: proficiency_static
+      selector: unarmored
+      proficiency: trained
+    - key: skill_static
+      selector: crafting
+      proficiency: trained
+    - key: skill_free
+      selector: skills
+      proficiency: trained
+      value: 3
+    - key: proficiency_static
+      selector: class_dc
+      proficiency: trained
   source:
     - abbr: CRB
       page_start: 70
@@ -41,40 +54,52 @@
 - name: Barbarian
   descr: "Rage consumes you in battle. You delight in wreaking havoc and using powerful weapons to carve through your enemies, relying on astonishing durability without needing complicated techniques or rigid training. Your rages draw upon a vicious instinct, which you might associate with an animal, a spirit, or some part of yourself. To many barbarians, brute force is a hammer and every problem looks like a nail, whereas others try to hold back the storm of emotions inside them and release their rage only when it matters most."
   hp: 12
+  skill_train_strings:
+    - Trained in Athletics
+    - Trained in a number of additional skills equal to 3 plus your Intelligence modifier
   key_ability_choices:
     - str
-  perception:
-    - target: perception
-      prof: expert
-  saves:
-    - target: fortitude
-      prof: expert
-    - target: reflex
-      prof: trained
-    - target: will
-      prof: expert
-  attacks:
-    - target: simple weapons
-      prof: trained
-    - target: martial weapons
-      prof: trained
-    - target: unarmed attacks
-      prof: trained
-  defenses:
-    - target: light armor
-      prof: trained
-    - target: medium armor
-      prof: trained
-    - target: unarmored defense
-      prof: trained
-  skills:
-    - target: athletics
-      prof: trained
-    - target: a number of additional skills equal to 3 plus your intelligence modifier
-      prof: trained
-  class_dc_and_spells:
-    - target: barbarian class dc
-      prof: trained
+  elements:
+    - key: proficiency_static
+      selector: perception
+      proficiency: expert
+    - key: proficiency_static
+      selector: fortitude
+      proficiency: expert
+    - key: proficiency_static
+      selector: reflex
+      proficiency: trained
+    - key: proficiency_static
+      selector: will
+      proficiency: expert
+    - key: proficiency_static
+      selector: simple_weapons
+      proficiency: trained
+    - key: proficiency_static
+      selector: martial_weapons
+      proficiency: trained
+    - key: proficiency_static
+      selector: unarmed
+      proficiency: trained
+    - key: proficiency_static
+      selector: light_armor
+      proficiency: trained
+    - key: proficiency_static
+      selector: medium_armor
+      proficiency: trained
+    - key: proficiency_static
+      selector: unarmored
+      proficiency: trained
+    - key: skill_static
+      selector: athletics
+      proficiency: trained
+    - key: skill_free
+      selector: skills
+      proficiency: trained
+      value: 3
+    - key: proficiency_static
+      selector: class_dc
+      proficiency: trained
   source:
     - abbr: CRB
       page_start: 82
@@ -83,42 +108,62 @@
 - name: Bard
   descr: "You are a master of artistry, a scholar of hidden secrets, and a captivating persuader. Using powerful performances, you influence minds and elevate souls to new levels of heroics. You might use your powers to become a charismatic leader, or perhaps you might instead be a counselor, manipulator, scholar, scoundrel, or virtuoso. While your versatility leads some to consider you a beguiling ne’erdo-well and a jack-of-all-trades, it’s dangerous to dismiss you as a master of none."
   hp: 8
+  skill_train_strings:
+    - Trained in Performance
+    - Trained in a number of additional skills equal to 4 plus your Intelligence modifier
   key_ability_choices:
     - cha
-  perception:
-    - target: perception
-      prof: expert
-  saves:
-    - target: fortitude
-      prof: trained
-    - target: reflex
-      prof: trained
-    - target: will
-      prof: expert
-  attacks:
-    - target: simple weapons
-      prof: trained
-    - target: the longsword, rapier, sap, shortbow, shortsword, and whip
-      prof: trained
-    - target: unarmed attacks
-      prof: trained
-  defenses:
-    - target: light armor
-      prof: trained
-    - target: unarmored defense
-      prof: trained
-  skills:
-    - target: occultism
-      prof: trained
-    - target: performance
-      prof: trained
-    - target: a number of additional skills equal to 4 plus your intelligence modifier
-      prof: trained
-  class_dc_and_spells:
-    - target: occult spell attacks
-      prof: trained
-    - target: occult spell dcs
-      prof: trained
+  elements:
+    - key: proficiency_static
+      selector: perception
+      proficiency: expert
+    - key: proficiency_static
+      selector: fortitude
+      proficiency: trained
+    - key: proficiency_static
+      selector: reflex
+      proficiency: trained
+    - key: proficiency_static
+      selector: will
+      proficiency: expert
+    - key: proficiency_static
+      selector: simple_weapons
+      proficiency: trained
+    - key: proficiency_static
+      selector: proficiency_weapon
+      proficiency: trained
+      value_list:
+        - value: longsword
+        - value: rapier
+        - value: sap
+        - value: shortbow
+        - value: shortsword
+        - value: whip
+    - key: proficiency_static
+      selector: unarmed
+      proficiency: trained
+    - key: proficiency_static
+      selector: light_armor
+      proficiency: trained
+    - key: proficiency_static
+      selector: unarmored
+      proficiency: trained
+    - key: skill_static
+      selector: occultism
+      proficiency: trained
+    - key: skill_static
+      selector: performance
+      proficiency: trained
+    - key: skill_free
+      selector: skills
+      proficiency: trained
+      value: 4
+    - key: proficiency_static
+      selector: occult spell attacks
+      proficiency: trained
+    - key: proficiency_static
+      selector: occult spell dcs
+      proficiency: trained
   source:
     - abbr: CRB
       page_start: 94
@@ -127,45 +172,63 @@
 - name: Champion
   descr: "You are an emissary of a deity, a devoted servant who has taken up a weighty mantle, and you adhere to a code that holds you apart from those around you. While champions exist for every alignment, as a champion of good, you provide certainty and hope to the innocent. You have powerful defenses that you share freely with your allies and innocent bystanders, as well as holy power you use to end the threat of evil. Your devotion even attracts the attention of holy spirits who aid you on your journey."
   hp: 10
+  skill_train_strings:
+    - Trained in Religion
+    - Trained in one skill determined by your choice of deity
+    - Trained in a number of additional skills equal to 2 plus your Intelligence modifier
   key_ability_choices:
     - str
     - dex
-  perception:
-    - target: perception
-      prof: trained
-  saves:
-    - target: fortitude
-      prof: expert
-    - target: reflex
-      prof: trained
-    - target: will
-      prof: expert
-  attacks:
-    - target: simple weapons
-      prof: trained
-    - target: martial weapons
-      prof: trained
-    - target: unarmed attacks
-      prof: trained
-  defenses:
-    - target: all armor
-      prof: trained
-    - target: unarmored defense
-      prof: trained
-  skills:
-    - target: religion
-      prof: trained
-    - target: one skill determined by your choice of deity
-      prof: trained
-    - target: a number of additional skills equal to 2 plus your intelligence modifier
-      prof: trained
-  class_dc_and_spells:
-    - target: champion class dc
-      prof: trained
-    - target: divine spell attacks
-      prof: trained
-    - target: divine spell dcs
-      prof: trained
+  elements:
+    - key: proficiency_static
+      selector: perception
+      proficiency: trained
+    - key: proficiency_static
+      selector: fortitude
+      proficiency: expert
+    - key: proficiency_static
+      selector: reflex
+      proficiency: trained
+    - key: proficiency_static
+      selector: will
+      proficiency: expert
+    - key: proficiency_static
+      selector: simple_weapons
+      proficiency: trained
+    - key: proficiency_static
+      selector: martial_weapons
+      proficiency: trained
+    - key: proficiency_static
+      selector: unarmed
+      proficiency: trained
+    - key: proficiency_static
+      selector: light_armor
+      proficiency: trained
+    - key: proficiency_static
+      selector: medium_armor
+      proficiency: trained
+    - key: proficiency_static
+      selector: heavy_armor
+      proficiency: trained
+    - key: proficiency_static
+      selector: unarmored
+      proficiency: trained
+    - key: skill_static
+      selector: religion
+      proficiency: trained
+    - key: skill_free
+      selector: skills
+      proficiency: trained
+      value: 2
+    - key: proficiency_static
+      selector: class_dc
+      proficiency: trained
+    - key: proficiency_static
+      selector: divine spell attacks
+      proficiency: trained
+    - key: proficiency_static
+      selector: divine spell dcs
+      proficiency: trained
   source:
     - abbr: CRB
       page_start: 104
@@ -174,40 +237,47 @@
 - name: Cleric
   descr: "Deities work their will upon the world in infinite ways, and you serve as one of their most stalwart mortal servants. Blessed with divine magic, you live the ideals of your faith, adorn yourself with the symbols of your church, and train diligently to wield your deity’s favored weapon. Your spells might protect and heal your allies, or they might punish foes and enemies of your faith, as your deity wills. Yours is a life of devotion, spreading the teachings of your faith through both word and deed."
   hp: 8
+  skill_train_strings:
+    - Trained in Religion
+    - Trained in one skill determined by your choice of deity
+    - Trained in a number of additional skills equal to 2 plus your Intelligence modifier
   key_ability_choices:
     - wis
-  perception:
-    - target: perception
-      prof: trained
-  saves:
-    - target: fortitude
-      prof: trained
-    - target: reflex
-      prof: trained
-    - target: will
-      prof: expert
-  attacks:
-    - target: simple weapons
-      prof: trained
-    - target: the favored weapon of your deity. if your deity’s favored weapon is uncommon, you also gain access to that weapon.
-      prof: trained
-    - target: unarmed attacks
-      prof: trained
-  defenses:
-    - target: unarmored defense
-      prof: trained
-  skills:
-    - target: religion
-      prof: trained
-    - target: one skill determined by your choice of deity
-      prof: trained
-    - target: a number of additional skills equal to 2 plus your intelligence modifier
-      prof: trained
-  class_dc_and_spells:
-    - target: divine spell attacks
-      prof: trained
-    - target: divine spell dcs
-      prof: trained
+  elements:
+    - key: proficiency_static
+      selector: perception
+      proficiency: trained
+    - key: proficiency_static
+      selector: fortitude
+      proficiency: trained
+    - key: proficiency_static
+      selector: reflex
+      proficiency: trained
+    - key: proficiency_static
+      selector: will
+      proficiency: expert
+    - key: proficiency_static
+      selector: simple_weapons
+      proficiency: trained
+    - key: proficiency_static
+      selector: unarmed
+      proficiency: trained
+    - key: proficiency_static
+      selector: unarmored
+      proficiency: trained
+    - key: skill_static
+      selector: religion
+      proficiency: trained
+    - key: skill_free
+      selector: skills
+      proficiency: trained
+      value: 2
+    - key: proficiency_static
+      selector: divine spell attacks
+      proficiency: trained
+    - key: proficiency_static
+      selector: divine spell dcs
+      proficiency: trained
   source:
     - abbr: CRB
       page_start: 116
@@ -216,44 +286,56 @@
 - name: Druid
   descr: "The power of nature is impossible to resist. It can bring ruin to the stoutest fortress in minutes, reducing even the mightiest works to rubble, burning them to ash, burying them beneath an avalanche of snow, or drowning them beneath the waves. It can provide endless bounty and breathtaking splendor to those who respect it— and an agonizing death to those who take it too lightly. You are one of those who hear nature’s call. You stand in awe of the majesty of its power and give yourself over to its service."
   hp: 8
+  skill_train_strings:
+    - Trained in Nature
+    - Trained in one skill determined by your druidic order
+    - Trained in a number of additional skills equal to 2 plus your Intelligence modifier
   key_ability_choices:
     - wis
-  perception:
-    - target: perception
-      prof: trained
-  saves:
-    - target: fortitude
-      prof: trained
-    - target: reflex
-      prof: trained
-    - target: will
-      prof: expert
-  attacks:
-    - target: simple weapons
-      prof: trained
-    - target: unarmed attacks
-      prof: trained
-  defenses:
-    - target: light armor
-      prof: trained
-    - target: medium armor
-      prof: trained
-    - target: unarmored defense
-      prof: trained
-  skills:
-    - target: nature
-      prof: trained
-    - target: one skill determined by your druidic order
-      prof: trained
-    - target: a number of additional skills equal to 2 plus your intelligence modifier
-      prof: trained
-  class_dc_and_spells:
-    - target: druid class dc
-      prof: trained
-    - target: primal spell attacks
-      prof: trained
-    - target: primal spell dcs
-      prof: trained
+  elements:
+    - key: proficiency_static
+      selector: perception
+      proficiency: trained
+    - key: proficiency_static
+      selector: fortitude
+      proficiency: trained
+    - key: proficiency_static
+      selector: reflex
+      proficiency: trained
+    - key: proficiency_static
+      selector: will
+      proficiency: expert
+    - key: proficiency_static
+      selector: simple_weapons
+      proficiency: trained
+    - key: proficiency_static
+      selector: unarmed
+      proficiency: trained
+    - key: proficiency_static
+      selector: light_armor
+      proficiency: trained
+    - key: proficiency_static
+      selector: medium_armor
+      proficiency: trained
+    - key: proficiency_static
+      selector: unarmored
+      proficiency: trained
+    - key: skill_static
+      selector: nature
+      proficiency: trained
+    - key: skill_free
+      selector: skills
+      proficiency: trained
+      value: 2
+    - key: proficiency_static
+      selector: class_dc
+      proficiency: trained
+    - key: proficiency_static
+      selector: primal spell attacks
+      proficiency: trained
+    - key: proficiency_static
+      selector: primal spell dcs
+      proficiency: trained
   source:
     - abbr: CRB
       page_start: 128
@@ -262,41 +344,62 @@
 - name: Fighter
   descr: "Fighting for honor, greed, loyalty, or simply the thrill of battle, you are an undisputed master of weaponry and combat techniques. You combine your actions through clever combinations of opening moves, finishing strikes, and counterattacks whenever your foes are unwise enough to drop their guard. Whether you are a knight, mercenary, sharpshooter, or blade master, you have honed your martial skills into an art form and perform devastating critical attacks on your enemies."
   hp: 10
+  skill_train_strings:
+    - Trained in your choice of acrobatics or athletics
+    - Trained in a number of additional skills equal to 3 plus your intelligence modifier
   key_ability_choices:
     - str
     - dex
-  perception:
-    - target: perception
-      prof: expert
-  saves:
-    - target: fortitude
-      prof: expert
-    - target: reflex
-      prof: expert
-    - target: will
-      prof: trained
-  attacks:
-    - target: simple weapons
-      prof: expert
-    - target: martial weapons
-      prof: expert
-    - target: advanced weapons
-      prof: trained
-    - target: unarmed attacks
-      prof: expert
-  defenses:
-    - target: all armor
-      prof: trained
-    - target: unarmored defense
-      prof: trained
-  skills:
-    - target: your choice of acrobatics or athletics
-      prof: trained
-    - target: a number of additional skills equal to 3 plus your intelligence modifier
-      prof: trained
-  class_dc_and_spells:
-    - target: fighter class dc
-      prof: trained
+  elements:
+    - key: proficiency_static
+      selector: perception
+      proficiency: expert
+    - key: proficiency_static
+      selector: fortitude
+      proficiency: expert
+    - key: proficiency_static
+      selector: reflex
+      proficiency: expert
+    - key: proficiency_static
+      selector: will
+      proficiency: trained
+    - key: proficiency_static
+      selector: simple_weapons
+      proficiency: expert
+    - key: proficiency_static
+      selector: martial_weapons
+      proficiency: expert
+    - key: proficiency_static
+      selector: advanced_weapons
+      proficiency: trained
+    - key: proficiency_static
+      selector: unarmed
+      proficiency: expert
+    - key: proficiency_static
+      selector: light_armor
+      proficiency: trained
+    - key: proficiency_static
+      selector: medium_armor
+      proficiency: trained
+    - key: proficiency_static
+      selector: heavy_armor
+      proficiency: trained
+    - key: proficiency_static
+      selector: unarmored
+      proficiency: trained
+    - key: skill_choice
+      selector: skills
+      proficiency: trained
+      value_list:
+        - value: athletics
+        - value: acrobatics
+    - key: skill_free
+      selector: skills
+      proficiency: trained
+      value: 2
+    - key: proficiency_static
+      selector: class_dc
+      proficiency: trained
   source:
     - abbr: CRB
       page_start: 140
@@ -305,33 +408,40 @@
 - name: Monk
   descr: "The strength of your fist flows from your mind and spirit. You seek perfection—honing your body into a flawless instrument and your mind into an orderly bastion of wisdom. You’re a fierce combatant renowned for martial arts skills and combat stances that grant you unique fighting moves. While the challenge of mastering many fighting styles drives you to great heights, you also enjoy meditating on philosophical questions and discovering new ways to obtain peace and enlightenment."
   hp: 10
+  skill_train_strings:
+    - Trained in a number of additional skills equal to 4 plus your intelligence modifier
   key_ability_choices:
     - str
     - dex
-  perception:
-    - target: perception
-      prof: trained
-  saves:
-    - target: fortitude
-      prof: expert
-    - target: reflex
-      prof: expert
-    - target: will
-      prof: expert
-  attacks:
-    - target: simple weapons
-      prof: trained
-    - target: unarmed attacks
-      prof: trained
-  defenses:
-    - target: unarmored defense
-      prof: expert
-  skills:
-    - target: a number of additional skills equal to 4 plus your intelligence modifier
-      prof: trained
-  class_dc_and_spells:
-    - target: monk class dc
-      prof: trained
+  elements:
+    - key: proficiency_static
+      selector: perception
+      proficiency: trained
+    - key: proficiency_static
+      selector: fortitude
+      proficiency: expert
+    - key: proficiency_static
+      selector: reflex
+      proficiency: expert
+    - key: proficiency_static
+      selector: will
+      proficiency: expert
+    - key: proficiency_static
+      selector: simple_weapons
+      proficiency: trained
+    - key: proficiency_static
+      selector: unarmed
+      proficiency: trained
+    - key: proficiency_static
+      selector: unarmored
+      proficiency: expert
+    - key: skill_free
+      selector: skills
+      proficiency: trained
+      value: 4
+    - key: proficiency_static
+      selector: class_dc
+      proficiency: trained
   source:
     - abbr: CRB
       page_start: 154
@@ -340,43 +450,57 @@
 - name: Ranger
   descr: "Some rangers believe civilization wears down the soul, but still needs to be protected from wild creatures. Others say nature needs to be protected from the greedy, who wish to tame its beauty and plunder its treasures. You could champion either goal, or both. You might be a scout, tracker, or hunter of fugitives or beasts, haunting the edge of civilization or exploring the wilds. You know how to live off the land and are skilled at spotting and taking down both opportune prey and hated enemies."
   hp: 10
+  skill_train_strings:
+    - Trained in Survival
+    - Trained in Nature
+    - Trained in a number of additional skills equal to 4 plus your intelligence modifier
   key_ability_choices:
     - str
     - dex
-  perception:
-    - target: perception
-      prof: expert
-  saves:
-    - target: fortitude
-      prof: expert
-    - target: reflex
-      prof: expert
-    - target: will
-      prof: trained
-  attacks:
-    - target: simple weapons
-      prof: trained
-    - target: martial weapons
-      prof: trained
-    - target: unarmed attacks
-      prof: trained
-  defenses:
-    - target: light armor
-      prof: trained
-    - target: medium armor
-      prof: trained
-    - target: unarmored defense
-      prof: trained
-  skills:
-    - target: nature
-      prof: trained
-    - target: survival
-      prof: trained
-    - target: a number of additional skills equal to 4 plus your intelligence modifier
-      prof: trained
-  class_dc_and_spells:
-    - target: ranger class dc
-      prof: trained
+  elements:
+    - key: proficiency_static
+      selector: perception
+      proficiency: expert
+    - key: proficiency_static
+      selector: fortitude
+      proficiency: expert
+    - key: proficiency_static
+      selector: reflex
+      proficiency: expert
+    - key: proficiency_static
+      selector: will
+      proficiency: trained
+    - key: proficiency_static
+      selector: simple_weapons
+      proficiency: trained
+    - key: proficiency_static
+      selector: martial_weapons
+      proficiency: trained
+    - key: proficiency_static
+      selector: unarmed
+      proficiency: trained
+    - key: proficiency_static
+      selector: light_armor
+      proficiency: trained
+    - key: proficiency_static
+      selector: medium_armor
+      proficiency: trained
+    - key: proficiency_static
+      selector: unarmored
+      proficiency: trained
+    - key: skill_static
+      selector: nature
+      proficiency: trained
+    - key: skill_static
+      selector: survival
+      proficiency: trained
+    - key: skill_free
+      selector: skills
+      proficiency: trained
+      value: 4
+    - key: proficiency_static
+      selector: class_dc
+      proficiency: trained
   source:
     - abbr: CRB
       page_start: 166
@@ -385,40 +509,55 @@
 - name: Rogue
   descr: "You are skilled and opportunistic­­. Using your sharp wits and quick reactions, you take advantage of your opponents’ missteps and strike where it hurts most. You play a dangerous game, seeking thrills and testing your skills, and likely don’t care much for any laws that happen to get in your way. While the path of every rogue is unique and riddled with danger, the one thing you all share in common is the breadth and depth of your skills."
   hp: 8
+  skill_train_strings:
+    - Trained in Stealth
+    - Trained in one or more skills determined by your rogue's racket
+    - Trained in a number of additional skills equal to 7 plus your Intelligence modifier
   key_ability_choices:
     - dex
-  perception:
-    - target: perception
-      prof: expert
-  saves:
-    - target: fortitude
-      prof: trained
-    - target: reflex
-      prof: expert
-    - target: will
-      prof: expert
-  attacks:
-    - target: simple weapons
-      prof: trained
-    - target: the rapier, sap, shortbow, and shortsword
-      prof: trained
-    - target: unarmed attacks
-      prof: trained
-  defenses:
-    - target: light armor
-      prof: trained
-    - target: unarmored defense
-      prof: trained
-  skills:
-    - target: stealth
-      prof: trained
-    - target: one or more skills determined by your rogue's racket.
-      prof: trained
-    - target: a number of additional skills equal to 7 plus your intelligence modifier
-      prof: trained
-  class_dc_and_spells:
-    - target: rogue class dc
-      prof: trained
+  elements:
+    - key: proficiency_static
+      selector: perception
+      proficiency: expert
+    - key: proficiency_static
+      selector: fortitude
+      proficiency: trained
+    - key: proficiency_static
+      selector: reflex
+      proficiency: expert
+    - key: proficiency_static
+      selector: will
+      proficiency: expert
+    - key: proficiency_static
+      selector: simple_weapons
+      proficiency: trained
+    - key: proficiency_static
+      selector: proficiency_weapon
+      proficiency: trained
+      value_list:
+        - value: rapier
+        - value: sap
+        - value: shortbow
+        - value: shortsword
+    - key: proficiency_static
+      selector: unarmed
+      proficiency: trained
+    - key: proficiency_static
+      selector: light_armor
+      proficiency: trained
+    - key: proficiency_static
+      selector: unarmored
+      proficiency: trained
+    - key: skill_static
+      selector: stealth
+      proficiency: trained
+    - key: skill_free
+      selector: skills
+      proficiency: trained
+      value: 7
+    - key: proficiency_static
+      selector: class_dc
+      proficiency: trained
   source:
     - abbr: CRB
       page_start: 178
@@ -427,36 +566,37 @@
 - name: Sorcerer
   descr: "You didn’t choose to become a spellcaster—you were born one. There’s magic in your blood, whether a divinity touched one of your ancestors, a forebear communed with a primal creature, or a powerful occult ritual influenced your line. Self-reflection and study allow you to refine your inherent magical skills and unlock new, more powerful abilities. The power in your blood carries a risk, however, and you constantly face the choice of whether you’ll rise to become a master spellcaster or fall into destruction."
   hp: 6
+  skill_train_strings:
+    - Trained in one or more skills determined by your bloodline
+    - Trained in a number of additional skills equal to 2 plus your Intelligence modifier
   key_ability_choices:
     - cha
-  perception:
-    - target: perception
-      prof: trained
-  saves:
-    - target: fortitude
-      prof: trained
-    - target: reflex
-      prof: trained
-    - target: will
-      prof: expert
-  attacks:
-    - target: simple weapons
-      prof: trained
-    - target: unarmed attacks
-      prof: trained
-  defenses:
-    - target: unarmored defense
-      prof: trained
-  skills:
-    - target: one or more skills determined by your bloodline
-      prof: trained
-    - target: a number of additional skills equal to 2 plus your intelligence modifier
-      prof: trained
-  class_dc_and_spells:
-    - target: spell attack rolls of your spellcasting tradition, as indicated by your bloodline
-      prof: trained
-    - target: spell dcs of your spellcasting tradition, as indicated by your bloodline
-      prof: trained
+  elements:
+    - key: proficiency_static
+      selector: perception
+      proficiency: trained
+    - key: proficiency_static
+      selector: fortitude
+      proficiency: trained
+    - key: proficiency_static
+      selector: reflex
+      proficiency: trained
+    - key: proficiency_static
+      selector: will
+      proficiency: expert
+    - key: proficiency_static
+      selector: simple_weapons
+      proficiency: trained
+    - key: proficiency_static
+      selector: unarmed
+      proficiency: trained
+    - key: proficiency_static
+      selector: unarmored
+      proficiency: trained
+    - key: skill_free
+      selector: skills
+      proficiency: trained
+      value: 2
   source:
     - abbr: CRB
       page_start: 190
@@ -465,36 +605,52 @@
 - name: Wizard
   descr: "You are an eternal student of the arcane secrets of the universe, using your mastery of magic to cast powerful and devastating spells. You treat magic like a science, cross-referencing the latest texts on practical spellcraft with ancient esoteric tomes to discover and understand how magic works. Yet magical theory is vast, and there’s no way you can study it all. You either specialize in one of the eight schools of magic, gaining deeper understanding of the nuances of those spells above all others, or favor a broader approach that emphasizes the way all magic comes together at the expense of depth."
   hp: 6
+  skill_train_strings:
+    - Trained in Arcana
+    - Trained in a number of additional skills equal to 2 plus your Intelligence modifier
   key_ability_choices:
     - int
-  perception:
-    - target: perception
-      prof: trained
-  saves:
-    - target: fortitude
-      prof: trained
-    - target: reflex
-      prof: trained
-    - target: will
-      prof: expert
-  attacks:
-    - target: the club, crossbow, dagger, heavy crossbow, and staff
-      prof: trained
-    - target: unarmed attacks
-      prof: trained
-  defenses:
-    - target: unarmored defense
-      prof: trained
-  skills:
-    - target: arcana
-      prof: trained
-    - target: a number of additional skills equal to 2 plus your intelligence modifier
-      prof: trained
-  class_dc_and_spells:
-    - target: arcane spell attacks
-      prof: trained
-    - target: arcane spell dcs
-      prof: trained
+  elements:
+    - key: proficiency_static
+      selector: perception
+      proficiency: trained
+    - key: proficiency_static
+      selector: fortitude
+      proficiency: trained
+    - key: proficiency_static
+      selector: reflex
+      proficiency: trained
+    - key: proficiency_static
+      selector: will
+      proficiency: expert
+    - key: proficiency_weapon
+      selector: weapons
+      proficiency: trained
+      value_list:
+        - value: club
+        - value: crossbow
+        - value: dagger
+        - value: heavy crossbow
+        - value: staff
+    - key: proficiency_static
+      selector: unarmed
+      proficiency: trained
+    - key: proficiency_static
+      selector: unarmored
+      proficiency: trained
+    - key: skill_static
+      selector: arcana
+      proficiency: trained
+    - key: skill_free
+      selector: skills
+      proficiency: trained
+      value: 2
+    - key: proficiency_static
+      selector: arcane spell attacks
+      proficiency: trained
+    - key: proficiency_static
+      selector: arcane spell dcs
+      proficiency: trained
   source:
     - abbr: CRB
       page_start: 202
