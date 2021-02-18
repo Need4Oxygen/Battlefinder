@@ -22,7 +22,7 @@ namespace Pathfinder2e.GameData
         public void Refresh(APIC apic)
         {
             if (skillName != null)
-                skillName.text = apic.name;
+                skillName.text = apic.selector;
             if (ablDependency != null)
                 ablDependency.text = apic.abl.ToUpper();
             if (dcText != null)

@@ -10,7 +10,7 @@ namespace YamlTools
 
         public static T DeserializeObject<T>(string value)
         {
-            var deserializer = new DeserializerBuilder().WithNamingConvention(new UnderscoredNamingConvention()).Build();
+            var deserializer = new DeserializerBuilder().WithNamingConvention(new UnderscoredNamingConvention()).IgnoreUnmatchedProperties().Build();
             var reader = new StringReader(value);
             var data = deserializer.Deserialize<T>(reader);
             reader.Close();

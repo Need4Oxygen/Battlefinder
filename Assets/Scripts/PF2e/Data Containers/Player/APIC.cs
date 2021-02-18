@@ -8,63 +8,67 @@ namespace Pathfinder2e.Character
 
     public class APIC
     {
-        public CharacterData playerData = null;
+        public APIC(string selector, CharacterData charData, string abl, int initialScore)
+        {
+            this.selector = selector;
+            this.charData = charData;
+            this.abl = abl;
+            this.initialScore = initialScore;
 
-        public string name = "";
+            Refresh();
+        }
+
+        public CharacterData charData = null;
+        public string selector = "";
         public string abl = "";
         public int initialScore = 0;
-        public List<LectureFull> lectures = new List<LectureFull>();
 
-        // private List<PF2E_Effect> itemModifiers = new List<PF2E_Effect>();
-        // private List<PF2E_Effect> circModifiers = new List<PF2E_Effect>();
+        public string prof = "U";
+        public string profColored = "";
 
-        public APIC(string name, CharacterData playerData, string abl, int initialScore)
+        public int ablScore = 0;
+        public int profScore = 0;
+        public int itemScore = 0;
+        public int tempScore = 0;
+
+        public int score { get { return initialScore + ablScore + profScore; } }
+
+        public int dcScore { get { return 10 + profScore; } }
+
+        public virtual IEnumerable<RuleElement> GetElements()
         {
-            this.name = name;
-            this.playerData = playerData;
+            return charData.RE_Get(selector);
+        }
+
+        public void Refresh()
+        {
+            IEnumerable<RuleElement> elements = GetElements();
+
+            prof = DB.Prof_FindMax(elements);
+            profColored = DB.Prof_Abbr2AbbrColored(prof);
+
+            ablScore = charData.Abl_GetMod(abl);
+            profScore = charData.level + DB.Prof_Abbr2Score(DB.Prof_FindMax(elements));
+        }
+    }
+
+    public class APIC_Lore : APIC
+    {
+        public APIC_Lore(string selector, string loreName, CharacterData charData, string abl, int initialScore) : base(selector, charData, abl, initialScore)
+        {
+            this.selector = selector;
+            this.loreName = loreName;
+            this.charData = charData;
             this.abl = abl;
             this.initialScore = initialScore;
         }
 
-        public int profScore
+        public string loreName = "";
+
+        public override IEnumerable<RuleElement> GetElements()
         {
-            get
-            {
-                if (playerData != null)
-                {
-                    if (lectures.Count < 0)
-                        return 0;
-
-                    switch (DB.Prof_FindMax(lectures))
-                    {
-                        case "L": return playerData.level + 8;
-                        case "M": return playerData.level + 6;
-                        case "E": return playerData.level + 4;
-                        case "T": return playerData.level + 2;
-                        default: return 0;
-                    }
-                }
-                else
-                {
-                    Debug.Log($"[APIC] Error: {name} is missing PlayerData!");
-                    return 0;
-                }
-            }
+            return charData.RE_Get(selector, loreName);
         }
-
-        public int ablScore { get { return playerData.Abl_GetMod(abl); } }
-
-        public int score { get { return initialScore + ablScore + profScore; } }
-
-        public string prof { get { return DB.Prof_FindMax(lectures); } }
-
-        public string profColored { get { return DB.Prof_FindMaxColored(lectures); } }
-
-        public int dcScore { get { return 10 + profScore; } }
-
-        public int itemScore = 0;
-
-        public int tempScore = 0;
     }
 
 }

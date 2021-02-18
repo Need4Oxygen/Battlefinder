@@ -97,20 +97,20 @@ namespace Pathfinder2e.Character
             DyingMaxtText.text = creation.currentPlayer.hp_dyingMax.ToString();
 
             // AC
-            armorAPIC.Refresh(creation.currentPlayer.AC_Get());
+            armorAPIC.Refresh(creation.currentPlayer.ac);
             shieldHealth.text = "0/0";
             shieldHard.text = "Hard 0";
             shieldDamage.SetTextWithoutNotify("0");
             shieldBonusAC.text = "+0";
 
             // Perception & Savesd
-            perceptionAPIC.Refresh(creation.currentPlayer.Perception_Get());
-            fortitudeAPIC.Refresh(creation.currentPlayer.Saves_Get("fortitude"));
-            reflexAPIC.Refresh(creation.currentPlayer.Saves_Get("reflex"));
-            willAPIC.Refresh(creation.currentPlayer.Saves_Get("will"));
+            perceptionAPIC.Refresh(creation.currentPlayer.perception);
+            fortitudeAPIC.Refresh(creation.currentPlayer.fortitude);
+            reflexAPIC.Refresh(creation.currentPlayer.reflex);
+            willAPIC.Refresh(creation.currentPlayer.will);
 
             // ClassDC
-            classDCText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.classDC);
+            classDCText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.class_dc);
 
             // Size
             sizeText.text = creation.currentPlayer.size;
@@ -161,7 +161,7 @@ namespace Pathfinder2e.Character
             ablMapScores[5].text = (creation.currentPlayer.Abl_GetMod("cha") >= 0 ? "+" : "") + creation.currentPlayer.Abl_GetMod("cha");
 
             // Skills
-            var list = creation.currentPlayer.Skills_GetAllAsList();
+            var list = creation.currentPlayer.Skill_GetAll();
             for (int i = 0; i < skills.Count; i++)
                 skills[i].Refresh(list[i]);
 
@@ -194,15 +194,14 @@ namespace Pathfinder2e.Character
 
             // Weapon & Armor Profs
             unarmoredText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.unarmored);
-            lightArmorText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.lightArmor);
-            mediumArmorText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.mediumArmor);
-            heavyArmorText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.heavyArmor);
+            lightArmorText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.light_armor);
+            mediumArmorText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.medium_armor);
+            heavyArmorText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.heavy_armor);
 
             unarmedText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.unarmed);
-            simpleWeaponText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.simpleWeapons);
-            martialWeaponText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.martialWeapons);
-            advancedWeaponText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.advancedWeapons);
-
+            simpleWeaponText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.simple_weapons);
+            martialWeaponText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.martial_weapons);
+            advancedWeaponText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.advanced_weapons);
         }
 
         #endregion
@@ -259,7 +258,7 @@ namespace Pathfinder2e.Character
 
         public void OnEndEditShieldDamage()
         {
-            // string value = shieldDamage.text;
+            // string value = shieldDamage.text;u
             // creation.currentPlayer.shield = value;
             RefreshPlayerIntoPanel();
         }

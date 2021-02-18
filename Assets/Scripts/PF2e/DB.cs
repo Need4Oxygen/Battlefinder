@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using YamlTools;
 using Pathfinder2e.Containers;
+using System.Linq;
 
 namespace Pathfinder2e
 {
@@ -30,8 +31,6 @@ namespace Pathfinder2e
         [SerializeField] private TextAsset t_archetypeFeats = null;
         [Header("Skills Stuff")]
         [SerializeField] private TextAsset t_skillFeats = null;
-
-
 
 
         public static List<Action> Actions = new List<Action>();
@@ -115,7 +114,7 @@ namespace Pathfinder2e
             Sources.Clear();
         }
 
-        // ---------------------------------------------------ABILITIES--------------------------------------------------
+        // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------ABILITIES
 
         public static string Abl_Abbr2Full(string abilityAbreviated)
         {
@@ -188,11 +187,28 @@ namespace Pathfinder2e
         }
 
 
-        // ---------------------------------------------------PROFICIENCIES--------------------------------------------------
+        // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------PROFICIENCIES
+
+        /// <summary>Recieves a string "U", "T", etc, and returns score as 0, 2, 4, 6 or 8. </summary>
+        public static int Prof_Abbr2Score(string profAbbr)
+        {
+            switch (profAbbr)
+            {
+                case "L": return 8;
+                case "M": return 6;
+                case "E": return 4;
+                case "T": return 2;
+                default:
+                    Debug.LogWarning($"[DB] Error: proficiency abreviation ({profAbbr}) not recognized!");
+                    return 0;
+            }
+        }
 
         /// <summary>Recieves a string "U", "T", etc, and returns int as 0, 1, etc. </summary>
         public static int Prof_Abbr2Int(string profAbbr)
         {
+            if (string.IsNullOrEmpty(profAbbr)) { Debug.LogWarning($"[DB] Error: proficiency abreviation was empty!"); return 0; }
+
             switch (profAbbr)
             {
                 case "U": return 0;
@@ -200,10 +216,7 @@ namespace Pathfinder2e
                 case "E": return 2;
                 case "M": return 3;
                 case "L": return 4;
-
-                default:
-                    Debug.LogWarning($"[DB] Error: proficiency abreviation ({profAbbr}) not recognized!");
-                    return 0;
+                default: Debug.LogWarning($"[DB] Error: proficiency abreviation ({profAbbr}) not recognized!"); return 0;
             }
         }
 
@@ -309,37 +322,45 @@ namespace Pathfinder2e
             }
         }
 
-        private static List<Lecture> LectureFullList2LectureList(List<LectureFull> lecturesFull)
-        {
-            List<Lecture> list = new List<Lecture>(lecturesFull.Count);
-            foreach (var item in lecturesFull)
-                list.Add(item as Lecture);
-            return list;
-        }
-
         /// <summary>Recieves a lecture list and returns max proficiency as "U", "T", etc. </summary>
-        public static string Prof_FindMax(List<LectureFull> lectures)
+        public static string Prof_FindMax(IEnumerable<RuleElement> list)
         {
-            int maxProf = 0;
+            // U = 0, T = 1, E = 2, M = 3, L = 4
+            int prof = 0;
 
-            if (lectures != null)
-                foreach (var item in lectures)
+            // Set max static prof
+            foreach (var element in list.Where(ctx => ctx.key == "proficiency_static" || ctx.key == "skill_static"))
+            {
+                int currentProf = Prof_Full2Int(element.proficiency);
+                if (currentProf > prof)
+                    prof = currentProf;
+            }
+
+            // Add improvements
+            if (list.Any(x => x.key.Contains("skill")))
+            {
+                List<int> improvements = new List<int>();
+
+                foreach (var element in list.Where(ctx => ctx.key == "skill_improve"))
+                    improvements.Add(DB.Prof_Full2Int(element.proficiency));
+                improvements.Sort();
+
+                for (int i = 0; i < improvements.Count; i++)
                 {
-                    int currentProf = Prof_Full2Int(item.prof);
-                    if (currentProf > maxProf)
-                        maxProf = currentProf;
+                    int item = improvements[i];
+                    if (prof++ == item)
+                        prof++;
                 }
-            else
-                Debug.LogWarning($"[APIC] Error: provided lecture list was empty!");
+            }
 
-            return DB.Prof_Int2Abbr(maxProf);
+            return DB.Prof_Int2Abbr(prof);
         }
 
         /// <summary>Recieves a lecture list and returns colored max proficiency as "U", "T", etc. </summary>
-        public static string Prof_FindMaxColored(List<LectureFull> lectures) { return Prof_Abbr2AbbrColored(Prof_FindMax(lectures)); }
+        public static string Prof_FindMaxColored(List<RuleElement> elements) { return Prof_Abbr2AbbrColored(Prof_FindMax(elements)); }
 
 
-        // ---------------------------------------------------SIZES--------------------------------------------------
+        // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------SIZES
 
         public static string Size_Abbr2Full(string abbr)
         {
