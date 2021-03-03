@@ -2,12 +2,15 @@ using System.Collections.Generic;
 using Pathfinder2e;
 using Pathfinder2e.Containers;
 using UnityEngine;
+using YamlDotNet;
 
 namespace Pathfinder2e.Character
 {
 
     public class APIC
     {
+        public APIC() { }
+
         public APIC(string selector, CharacterData charData, string abl, int initialScore)
         {
             this.selector = selector;
@@ -54,6 +57,8 @@ namespace Pathfinder2e.Character
 
     public class APIC_Lore : APIC
     {
+        public APIC_Lore() { }
+
         public APIC_Lore(string selector, string loreName, CharacterData charData, string abl, int initialScore) : base(selector, charData, abl, initialScore)
         {
             this.selector = selector;
@@ -68,6 +73,24 @@ namespace Pathfinder2e.Character
         public override IEnumerable<RuleElement> GetElements()
         {
             return charData.RE_Get(selector, loreName);
+        }
+    }
+
+    public class APIC_Skill : APIC
+    {
+        public APIC_Skill() { }
+
+        public APIC_Skill(string selector, CharacterData charData, string abl, int initialScore) : base(selector, charData, abl, initialScore)
+        {
+            this.selector = selector;
+            this.charData = charData;
+            this.abl = abl;
+            this.initialScore = initialScore;
+        }
+
+        public override IEnumerable<RuleElement> GetElements()
+        {
+            return charData.RE_GetFromSkill(selector);
         }
     }
 

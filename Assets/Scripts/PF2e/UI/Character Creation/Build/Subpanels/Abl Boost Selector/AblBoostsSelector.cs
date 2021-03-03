@@ -7,6 +7,7 @@ using Pathfinder2e;
 using Pathfinder2e.Character;
 using Pathfinder2e.Containers;
 using static TMPro.TMP_Dropdown;
+using System.Linq;
 
 namespace Pathfinder2e.GameData
 {
@@ -27,7 +28,7 @@ namespace Pathfinder2e.GameData
         [SerializeField] private Window other_window = null;
         [SerializeField] private List<Toggle> otherToggles = null;
 
-        private List<AblBoostData> currentData = null;
+        private List<RuleElement> currentData = null;
 
         [HideInInspector] public bool init_isOpen;
         [HideInInspector] public bool other_isOpen;
@@ -36,17 +37,16 @@ namespace Pathfinder2e.GameData
         {
             AssignLvl1BoostsFunctionality();
             AssignOtherBoostsFunctionality();
-
         }
 
-        #region --------------------------------------------INITIAL BOOSTS--------------------------------------------
 
+        #region --------------------------------------------INITIAL BOOSTS--------------------------------------------
         public void Open_InitialAblBoosts()
         {
             init_isOpen = true;
             initAbl_window.OpenWindow();
 
-            currentData = new List<AblBoostData>(creation.currentPlayer.Abl_MapGet());
+            currentData = new List<RuleElement>(creation.currentPlayer.Abl_MapGet());
 
             AssignInitialAblBoosts();
         }
@@ -72,7 +72,8 @@ namespace Pathfinder2e.GameData
             AssignLvl1Boosts();
         }
 
-        //--------------------------------------------ANCESTRIES ASSIGMENT STUFF--------------------------------------------
+
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- ANCESTRIES ASSIGMENT STUFF
         private Ancestry ancestry = null;
         private List<TMP_Dropdown.OptionData> ancestryOptionList = new List<OptionData>();
         private List<TMP_Dropdown> allAncestryDrops = new List<TMP_Dropdown>();
@@ -82,9 +83,9 @@ namespace Pathfinder2e.GameData
 
         private void GenerateAncestryDrops()
         {
-            ancestry = DB.Ancestries.Find(ctx => ctx.name == creation.currentPlayer.ancestry);
+            ancestry = DB.Ancestries.Find(x => x.name == creation.currentPlayer.ancestry);
             ancestryOptionList = GenerateOptionList();
-            int abl_free = ancestry.abl_boosts.FindAll(ctx => ctx == "free").Count;
+            int abl_free = ancestry.abl_boosts.FindAll(x => x == "free").Count;
 
             // Boosts
             if (ancestry.abl_boosts != null)
@@ -99,7 +100,7 @@ namespace Pathfinder2e.GameData
 
                         // Discard obligatory boosts from possible options
                         if (ancestry.abl_boosts.Count > 0)
-                            ancestryOptionList.RemoveAll(ctx => ancestry.abl_boosts.Contains(AbilityToAbbr(ctx.text)));
+                            ancestryOptionList.RemoveAll(x => ancestry.abl_boosts.Contains(AbilityToAbbr(x.text)));
                     }
 
             // Flaws
@@ -114,7 +115,7 @@ namespace Pathfinder2e.GameData
                     drop.captionText.color = Globals.Theme["untrained"];
                 }
 
-            List<AblBoostData> previous = currentData.FindAll(ctx => ctx.source == "ancestry free");
+            IEnumerable<RuleElement> previous = currentData.Where(x => x.from == "ancestry free");
             for (int i = 0; i < abl_free; i++)
             {
                 TMP_Dropdown drop = GenerateDropdown(ancestryContainer);
@@ -126,13 +127,13 @@ namespace Pathfinder2e.GameData
 
                 // Select old boosts if applicable
                 if (previous != null)
-                    if (previous.Count > i)
+                    if (previous.Count() > i)
                     {
-                        string previousAbl = DB.Abl_Abbr2Full(previous[i].abl);
-                        if (ancestryOptionList.Find(ctx => ctx.text == previousAbl) != null)
+                        string previousAbl = DB.Abl_Abbr2Full(previous.ElementAt(i).from);
+                        if (ancestryOptionList.Find(x => x.text == previousAbl) != null)
                         {
                             int shouldSelectIndex = 0;
-                            shouldSelectIndex = ancestryFreeDrops[i].options.FindIndex(0, ancestryOptionList.Count, ctx => ctx.text == previousAbl);
+                            shouldSelectIndex = ancestryFreeDrops[i].options.FindIndex(0, ancestryOptionList.Count, x => x.text == previousAbl);
                             drop.SetValueWithoutNotify(shouldSelectIndex);
                         }
                     }
@@ -151,12 +152,12 @@ namespace Pathfinder2e.GameData
                 List<OptionData> options = new List<OptionData>(ancestryOptionList);
                 foreach (var item in ancestryFreeDrops)
                     if (item.captionText.text != "None" && item.captionText.text != "" && item.captionText.text != dropAbl)
-                        options.Remove(options.Find(ctx => ctx.text == item.captionText.text));
+                        options.Remove(options.Find(x => x.text == item.captionText.text));
                 drop.options = options;
 
                 // Reset value in case options change, so value follows
                 int shouldSelectIndex = 0;
-                shouldSelectIndex = drop.options.FindIndex(0, drop.options.Count, ctx => ctx.text == dropAbl);
+                shouldSelectIndex = drop.options.FindIndex(0, drop.options.Count, x => x.text == dropAbl);
                 drop.SetValueWithoutNotify(shouldSelectIndex);
             }
         }
@@ -168,13 +169,13 @@ namespace Pathfinder2e.GameData
 
         private void SaveAncestryOptions()
         {
-            currentData.RemoveAll(ctx => ctx.source == "ancestry free");
+            currentData.RemoveAll(x => x.from == "ancestry free");
 
             foreach (var item in ancestryFreeDrops)
             {
                 string abl = AbilityToAbbr(item.captionText.text);
                 if (abl != "")
-                    currentData.Add(new AblBoostData("ancestry free", abl, 1));
+                    currentData.Add(new RuleElement() { from = "ancestry free", selector = abl, level = "1", value = "1" });
             }
 
             ClearAncestryData();
@@ -197,7 +198,7 @@ namespace Pathfinder2e.GameData
         }
 
 
-        //--------------------------------------------BACKGROUND ASSIGMENT STUFF--------------------------------------------
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- BACKGROUND ASSIGMENT STUFF
         private Background background = null;
         private List<TMP_Dropdown> allBackgroundDrops = new List<TMP_Dropdown>();
         private TMP_Dropdown backgroundChoiceDrop = null;
@@ -205,10 +206,10 @@ namespace Pathfinder2e.GameData
 
         private void GenerateBackgroundDrops()
         {
-            background = DB.Backgrounds.Find(ctx => ctx.name == creation.currentPlayer.background);
+            background = DB.Backgrounds.Find(x => x.name == creation.currentPlayer.background);
 
             {   // Choice
-                AblBoostData previous = currentData.Find(ctx => ctx.source == "background choice");
+                RuleElement previous = currentData.Find(x => x.from == "background choice");
 
                 TMP_Dropdown drop = GenerateDropdown(backgroundContainer);
                 allBackgroundDrops.Add(drop);
@@ -220,9 +221,9 @@ namespace Pathfinder2e.GameData
                 int shouldSelectIndex = 0;
                 if (previous != null)
                 {
-                    string previousAbl = DB.Abl_Abbr2Full(previous.abl);
-                    if (optionList.Find(ctx => ctx.text == previousAbl) != null)
-                        shouldSelectIndex = optionList.FindIndex(0, optionList.Count, ctx => ctx.text == previousAbl);
+                    string previousAbl = DB.Abl_Abbr2Full(previous.selector);
+                    if (optionList.Find(x => x.text == previousAbl) != null)
+                        shouldSelectIndex = optionList.FindIndex(0, optionList.Count, x => x.text == previousAbl);
                 }
                 drop.SetValueWithoutNotify(shouldSelectIndex);
 
@@ -230,7 +231,7 @@ namespace Pathfinder2e.GameData
             }
 
             {   // Free
-                AblBoostData previous = currentData.Find(ctx => ctx.source == "background free");
+                RuleElement previous = currentData.Find(x => x.from == "background free");
 
                 TMP_Dropdown drop = GenerateDropdown(backgroundContainer);
                 allBackgroundDrops.Add(drop);
@@ -242,9 +243,9 @@ namespace Pathfinder2e.GameData
                 int shouldSelectIndex = 0;
                 if (previous != null)
                 {
-                    string previousAbl = DB.Abl_Abbr2Full(previous.abl);
-                    if (optionList.Find(ctx => ctx.text == previousAbl) != null)
-                        shouldSelectIndex = optionList.FindIndex(0, optionList.Count, ctx => ctx.text == previousAbl);
+                    string previousAbl = DB.Abl_Abbr2Full(previous.selector);
+                    if (optionList.Find(x => x.text == previousAbl) != null)
+                        shouldSelectIndex = optionList.FindIndex(0, optionList.Count, x => x.text == previousAbl);
                 }
                 drop.SetValueWithoutNotify(shouldSelectIndex);
 
@@ -262,12 +263,12 @@ namespace Pathfinder2e.GameData
                 if (backgroundFreeDrop.captionText.text != "None" &&
                 backgroundFreeDrop.captionText.text != "" &&
                 backgroundFreeDrop.captionText.text != abl)
-                    choiceDropOptions.Remove(choiceDropOptions.Find(ctx => ctx.text == backgroundFreeDrop.captionText.text));
+                    choiceDropOptions.Remove(choiceDropOptions.Find(x => x.text == backgroundFreeDrop.captionText.text));
                 backgroundChoiceDrop.options = choiceDropOptions;
 
                 // Reset value in case options change, so value follows
                 int shouldSelectIndex = 0;
-                shouldSelectIndex = backgroundChoiceDrop.options.FindIndex(0, backgroundChoiceDrop.options.Count, ctx => ctx.text == abl);
+                shouldSelectIndex = backgroundChoiceDrop.options.FindIndex(0, backgroundChoiceDrop.options.Count, x => x.text == abl);
                 backgroundChoiceDrop.SetValueWithoutNotify(shouldSelectIndex);
             }
 
@@ -279,12 +280,12 @@ namespace Pathfinder2e.GameData
                 if (backgroundChoiceDrop.captionText.text != "None" &&
                 backgroundChoiceDrop.captionText.text != "" &&
                 backgroundChoiceDrop.captionText.text != abl)
-                    freeDropOptions.Remove(freeDropOptions.Find(ctx => ctx.text == backgroundChoiceDrop.captionText.text));
+                    freeDropOptions.Remove(freeDropOptions.Find(x => x.text == backgroundChoiceDrop.captionText.text));
                 backgroundFreeDrop.options = freeDropOptions;
 
                 // Reset value in case options change, so value follows
                 int shouldSelectIndex = 0;
-                shouldSelectIndex = backgroundFreeDrop.options.FindIndex(0, backgroundFreeDrop.options.Count, ctx => ctx.text == abl);
+                shouldSelectIndex = backgroundFreeDrop.options.FindIndex(0, backgroundFreeDrop.options.Count, x => x.text == abl);
                 backgroundFreeDrop.SetValueWithoutNotify(shouldSelectIndex);
             }
         }
@@ -296,18 +297,18 @@ namespace Pathfinder2e.GameData
 
         private void SaveBackgroundOptions()
         {
-            currentData.RemoveAll(ctx => ctx.source == "background choice");
-            currentData.RemoveAll(ctx => ctx.source == "background free");
+            currentData.RemoveAll(x => x.from == "background choice");
+            currentData.RemoveAll(x => x.from == "background free");
 
             string abl = "";
 
             abl = AbilityToAbbr(backgroundChoiceDrop.captionText.text);
             if (abl != "")
-                currentData.Add(new AblBoostData("background choice", abl, 1));
+                currentData.Add(new RuleElement() { from = "background choice", selector = abl, level = "1", value = "1" });
 
             abl = AbilityToAbbr(backgroundFreeDrop.captionText.text);
             if (abl != "")
-                currentData.Add(new AblBoostData("background free", abl, 1));
+                currentData.Add(new RuleElement() { from = "background free", selector = abl, level = "1", value = "1" });
 
             ClearBackgroundData();
         }
@@ -327,15 +328,15 @@ namespace Pathfinder2e.GameData
         }
 
 
-        //--------------------------------------------CLASS ASSIGMENT STUFF--------------------------------------------
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- CLASS ASSIGMENT STUFF
         private Class classObj = null;
         private TMP_Dropdown classDrop = null;
 
         private void GenerateClassDrops()
         {
-            classObj = DB.Classes.Find(ctx => ctx.name == creation.currentPlayer.class_name);
+            classObj = DB.Classes.Find(x => x.name == creation.currentPlayer.class_name);
 
-            AblBoostData previous = currentData.Find(ctx => ctx.source == "class");
+            RuleElement previous = currentData.Find(x => x.from == "class");
 
             TMP_Dropdown drop = GenerateDropdown(classContainer);
             classDrop = drop;
@@ -346,9 +347,9 @@ namespace Pathfinder2e.GameData
             int shouldSelectIndex = 0;
             if (previous != null)
             {
-                string previousAbl = DB.Abl_Abbr2Full(previous.abl);
-                if (optionList.Find(ctx => ctx.text == previousAbl) != null)
-                    shouldSelectIndex = optionList.FindIndex(0, optionList.Count, ctx => ctx.text == previousAbl);
+                string previousAbl = DB.Abl_Abbr2Full(previous.selector);
+                if (optionList.Find(x => x.text == previousAbl) != null)
+                    shouldSelectIndex = optionList.FindIndex(0, optionList.Count, x => x.text == previousAbl);
             }
             drop.SetValueWithoutNotify(shouldSelectIndex);
 
@@ -362,11 +363,11 @@ namespace Pathfinder2e.GameData
 
         private void SaveClassOptions()
         {
-            currentData.RemoveAll(ctx => ctx.source == "class");
+            currentData.RemoveAll(x => x.from == "class");
 
             string abl = AbilityToAbbr(classDrop.captionText.text);
             if (abl != "")
-                currentData.Add(new AblBoostData("class", abl, 1));
+                currentData.Add(new RuleElement() { from = "class", selector = abl, level = "1", value = "1" });
 
             ClearClassData();
         }
@@ -381,14 +382,13 @@ namespace Pathfinder2e.GameData
         }
 
 
-        //--------------------------------------------LVL 1 ASSIGMENT STUFF--------------------------------------------
-        // Assign method to each lvl 1 toggle
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- LVL 1 ASSIGMENT STUFF
         private void AssignLvl1BoostsFunctionality()
         {
             for (int i = 0; i < level1Toggles.Count; i++)
                 level1Toggles[i].onValueChanged.RemoveAllListeners();
 
-            // Putting this inside the for breaks it, still don't know why
+            // Putting this inside a for breaks it, still don't know why
             level1Toggles[0].onValueChanged.AddListener((v) => { OnValueChangedLvl1BoostsToggle(level1Toggles[0], v); });
             level1Toggles[1].onValueChanged.AddListener((v) => { OnValueChangedLvl1BoostsToggle(level1Toggles[1], v); });
             level1Toggles[2].onValueChanged.AddListener((v) => { OnValueChangedLvl1BoostsToggle(level1Toggles[2], v); });
@@ -401,13 +401,13 @@ namespace Pathfinder2e.GameData
         {
             foreach (var item in level1Toggles)
                 item.SetIsOnWithoutNotify(false);
-            foreach (var item in currentData.FindAll(ctx => ctx.source == "lvl1"))
-                level1Toggles[DB.Abl_Abbr2Int(item.abl)].SetIsOnWithoutNotify(true);
+            foreach (var item in currentData.FindAll(x => x.from == "lvl1"))
+                level1Toggles[DB.Abl_Abbr2Int(item.selector)].SetIsOnWithoutNotify(true);
         }
 
-        public void OnValueChangedLvl1BoostsToggle(Toggle toggle, bool value)
+        private void OnValueChangedLvl1BoostsToggle(Toggle toggle, bool value)
         {
-            if (level1Toggles.FindAll(ctx => ctx.isOn == true).Count <= 4 && value)
+            if (level1Toggles.Where(x => x.isOn == true).Count() <= 4 && value)
                 toggle.SetIsOnWithoutNotify(true);
             else
                 toggle.SetIsOnWithoutNotify(false);
@@ -415,15 +415,15 @@ namespace Pathfinder2e.GameData
 
         private void SaveLvl1Boosts()
         {
-            currentData.RemoveAll(ctx => ctx.source == "lvl1");
+            currentData.RemoveAll(x => x.from == "lvl1");
 
             for (int i = 0; i < level1Toggles.Count; i++)
                 if (level1Toggles[i].isOn)
-                    currentData.Add(new AblBoostData("lvl1", DB.Abl_Int2Abbr(i), 1));
+                    currentData.Add(new RuleElement() { from = "lvl1", selector = DB.Abl_Int2Abbr(i), level = "1", value = "1" });
         }
 
 
-        //-------------------------------------------- EXIT --------------------------------------------
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- EXIT
         public void OnClickInitAblAcceptButton()
         {
             SaveAncestryOptions();
@@ -431,7 +431,7 @@ namespace Pathfinder2e.GameData
             SaveClassOptions();
             SaveLvl1Boosts();
 
-            creation.currentPlayer.Abl_MapSet(new List<AblBoostData>(currentData));
+            creation.currentPlayer.Abl_MapSet(new List<RuleElement>(currentData));
             creation.RefreshPlayerIntoPanel();
             creation.SavePlayer();
             Close_InitialAblBoosts();
@@ -445,11 +445,10 @@ namespace Pathfinder2e.GameData
 
             Close_InitialAblBoosts();
         }
-
         #endregion
 
-        #region --------------------------------OTHER BOOSTS--------------------------------
 
+        #region --------------------------------OTHER BOOSTS--------------------------------
         private int currentLvl = 5;
 
         public void Open_OtherAblBoosts(int lvl)
@@ -457,7 +456,7 @@ namespace Pathfinder2e.GameData
             other_isOpen = true;
             other_window.OpenWindow();
 
-            currentData = new List<AblBoostData>(creation.currentPlayer.Abl_MapGet());
+            currentData = new List<RuleElement>(creation.currentPlayer.Abl_MapGet());
 
             currentLvl = lvl;
 
@@ -490,13 +489,13 @@ namespace Pathfinder2e.GameData
         {
             foreach (var item in otherToggles)
                 item.SetIsOnWithoutNotify(false);
-            foreach (var item in currentData.FindAll(ctx => ctx.source == $"lvl{currentLvl}"))
-                otherToggles[DB.Abl_Abbr2Int(item.abl)].SetIsOnWithoutNotify(true);
+            foreach (var item in currentData.FindAll(x => x.from == $"lvl{currentLvl}"))
+                otherToggles[DB.Abl_Abbr2Int(item.selector)].SetIsOnWithoutNotify(true);
         }
 
-        public void OnValueChangedOtherBoostsToggle(Toggle toggle, bool value)
+        private void OnValueChangedOtherBoostsToggle(Toggle toggle, bool value)
         {
-            if (otherToggles.FindAll(ctx => ctx.isOn == true).Count <= 4 && value)
+            if (otherToggles.FindAll(x => x.isOn == true).Count <= 4 && value)
                 toggle.SetIsOnWithoutNotify(true);
             else
                 toggle.SetIsOnWithoutNotify(false);
@@ -504,20 +503,20 @@ namespace Pathfinder2e.GameData
 
         private void SaveOtherBoosts()
         {
-            currentData.RemoveAll(ctx => ctx.source == $"lvl{currentLvl}");
+            currentData.RemoveAll(x => x.from == $"lvl{currentLvl}");
 
             for (int i = 0; i < otherToggles.Count; i++)
                 if (otherToggles[i].isOn)
-                    currentData.Add(new AblBoostData($"lvl{currentLvl}", DB.Abl_Int2Abbr(i), 1));
+                    currentData.Add(new RuleElement() { from = $"lvl{currentLvl}", selector = DB.Abl_Int2Abbr(i), level = currentLvl.ToString(), value = "1" });
         }
 
-        //-------------------------------------------- EXIT --------------------------------------------
 
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- EXIT
         public void OnClickOtherAcceptButton()
         {
             SaveOtherBoosts();
 
-            creation.currentPlayer.Abl_MapSet(new List<AblBoostData>(currentData));
+            creation.currentPlayer.Abl_MapSet(new List<RuleElement>(currentData));
             creation.RefreshPlayerIntoPanel();
             creation.SavePlayer();
             Close_OtherAblBoosts();

@@ -9,6 +9,10 @@ using UnityEditor;
 using UnityEngine;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
+using System;
+using System.Threading;
+using System.Diagnostics;
+using System.Linq;
 
 public class EditorTools : MonoBehaviour
 {
@@ -35,7 +39,7 @@ public class EditorTools : MonoBehaviour
         var input = new StringReader(File.ReadAllText(bgBad));
         var backgrounds = deserializer.Deserialize<List<Background_Wrapper>>(input);
 
-        Debug.Log($"[EditorTools] Updating Backgrounds with size: {backgrounds.Count}{"\n"}");
+        UnityEngine.Debug.Log($"[EditorTools] Updating Backgrounds with size: {backgrounds.Count}{"\n"}");
 
         string newString = "";
 
@@ -97,8 +101,8 @@ public class EditorTools : MonoBehaviour
         List<Actions_Wrapper> actions = yaml.action;
         List<ActionCategory_Wrapper> categories = yaml.actioncategory;
 
-        Debug.Log($"[EditorTools] Updating Actions with size: {actions.Count}{"\n"}");
-        Debug.Log($"[EditorTools] Updating Actions Categories with size: {categories.Count}{"\n"}");
+        UnityEngine.Debug.Log($"[EditorTools] Updating Actions with size: {actions.Count}{"\n"}");
+        UnityEngine.Debug.Log($"[EditorTools] Updating Actions Categories with size: {categories.Count}{"\n"}");
 
         string newActions = "";
 
@@ -155,7 +159,7 @@ public class EditorTools : MonoBehaviour
         var input = new StringReader(File.ReadAllText(lBad));
         var languages = deserializer.Deserialize<List<Language_Wrapper>>(input);
 
-        Debug.Log($"[EditorTools] Updating Languages with size: {languages.Count}{"\n"}");
+        UnityEngine.Debug.Log($"[EditorTools] Updating Languages with size: {languages.Count}{"\n"}");
 
         string newString = "";
 
@@ -190,7 +194,7 @@ public class EditorTools : MonoBehaviour
         var input = new StringReader(File.ReadAllText(sBad));
         var senses = deserializer.Deserialize<List<Senses_Wrapper>>(input);
 
-        Debug.Log($"[EditorTools] Updating Senses with size: {senses.Count}{"\n"}");
+        UnityEngine.Debug.Log($"[EditorTools] Updating Senses with size: {senses.Count}{"\n"}");
 
         string newString = "";
 
@@ -233,8 +237,8 @@ public class EditorTools : MonoBehaviour
         List<Traits_Wrapper> traits = yaml.trait;
         List<string> categories = yaml.traittype;
 
-        Debug.Log($"[EditorTools] Updating Traits with size: {traits.Count}{"\n"}");
-        Debug.Log($"[EditorTools] Updating Traits Categories with size: {categories.Count}{"\n"}");
+        UnityEngine.Debug.Log($"[EditorTools] Updating Traits with size: {traits.Count}{"\n"}");
+        UnityEngine.Debug.Log($"[EditorTools] Updating Traits Categories with size: {categories.Count}{"\n"}");
 
         string newTraits = "";
 
@@ -281,7 +285,7 @@ public class EditorTools : MonoBehaviour
         var input = new StringReader(File.ReadAllText(tBad));
         var classes = deserializer.Deserialize<List<ClassesFile_Wrapper>>(input);
 
-        Debug.Log($"[EditorTools] Updating Classes with size: {classes.Count}{"\n"}");
+        UnityEngine.Debug.Log($"[EditorTools] Updating Classes with size: {classes.Count}{"\n"}");
 
         string newString = "";
 
@@ -336,7 +340,7 @@ public class EditorTools : MonoBehaviour
         var input = new StringReader(File.ReadAllText(tBad));
         var conditions = deserializer.Deserialize<List<ConditionsFile_Wrapper>>(input);
 
-        Debug.Log($"[EditorTools] Updating Conditions with size: {conditions.Count}{"\n"}");
+        UnityEngine.Debug.Log($"[EditorTools] Updating Conditions with size: {conditions.Count}{"\n"}");
 
         string newString = "";
 
@@ -401,7 +405,7 @@ public class EditorTools : MonoBehaviour
         var input = new StringReader(File.ReadAllText(tBad));
         var spellstuff = deserializer.Deserialize<SpellFile_Wrapper>(input);
 
-        Debug.Log($"[EditorTools] Updating Spells with size: {spellstuff.spell.Count}{"\n"}");
+        UnityEngine.Debug.Log($"[EditorTools] Updating Spells with size: {spellstuff.spell.Count}{"\n"}");
 
         string spellsSTR = "spells:\n";
         string shoolSTR = "";
@@ -468,9 +472,6 @@ public class EditorTools : MonoBehaviour
     }
 
 
-
-
-
     ///--------------------General Stuff--------------------
 
     static void WriteSources(ref string mainString, List<Source> source)
@@ -520,6 +521,48 @@ public class EditorTools : MonoBehaviour
             mainString += $"{i}  - target: {l.type.ToLowerInvariant()}{"\n"}";
             mainString += $"{i}    prof: {l.degree.ToLowerInvariant()}{"\n"}";
         }
+    }
+
+    [MenuItem("Tools/Test performance")]
+    public static void Test()
+    {
+        Stopwatch stopWatch = new Stopwatch();
+        RuleElement rule = new RuleElement() { key = "lol", selector = "lmao" };
+
+        List<double> op_1 = new List<double>();
+        List<double> op_2 = new List<double>();
+
+
+        for (int i = 0; i < 2; i++)
+            for (int j = 0; j < 10000; j++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        stopWatch.Start();
+
+                        RuleElement.IsEmpty(rule);
+
+                        stopWatch.Stop();
+                        op_1.Add(stopWatch.Elapsed.TotalMilliseconds);
+                        stopWatch.Reset();
+                        break;
+                    case 1:
+                        stopWatch.Start();
+
+                        if (rule.selector != null) { };
+
+                        stopWatch.Stop();
+                        op_2.Add(stopWatch.Elapsed.TotalMilliseconds);
+                        stopWatch.Reset();
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+        UnityEngine.Debug.Log($" OP 1 = {(op_1.Sum() / op_1.Count).ToString("F7")}");
+        UnityEngine.Debug.Log($" OP 2 = {(op_2.Sum() / op_2.Count).ToString("F7")}");
     }
 
 }

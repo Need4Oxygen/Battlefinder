@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using Pathfinder2e.GameData;
 using UnityEngine;
+using static TYaml.Serialization;
 
 namespace Pathfinder2e.GameData
 {
@@ -17,13 +18,13 @@ namespace Pathfinder2e.GameData
         /// <returns>Returns campaign ID. </returns>
         public static string CreateCampaign(string name)
         {
-            string newCampaignID = name + ".json";
+            string newCampaignID = name + ".yaml";
 
             if (CampaignIDs.ContainsKey(newCampaignID))
                 return "";
 
             CampaignData newCampaignData = new CampaignData(newCampaignID, name);
-            Json.SerializeFile(newCampaignData, newCampaignID, Globals.SystemData.PF2ECampaignsPathSep);
+            SerializeFile(newCampaignData, newCampaignID, Globals.SystemData.PF2ECampaignsPathSep);
 
             CampaignIDs.Add(newCampaignID, Globals.SystemData.PF2ECampaignsPathSep + newCampaignID);
 
@@ -39,12 +40,12 @@ namespace Pathfinder2e.GameData
         public static void LoadCampaign(string campaignID)
         {
             CurrentCampaignID = campaignID;
-            CurrentCampaign = Json.DeserializeFile<CampaignData>(Globals.SystemData.PF2ECampaignsPathSep + campaignID);
+            CurrentCampaign = DeserializeFile<CampaignData>(Globals.SystemData.PF2ECampaignsPathSep + campaignID);
         }
 
         public static void SaveCampaign()
         {
-            Json.SerializeFile(CurrentCampaign, CurrentCampaignID, Globals.SystemData.PF2ECampaignsPathSep);
+            SerializeFile(CurrentCampaign, CurrentCampaignID, Globals.SystemData.PF2ECampaignsPathSep);
         }
 
         public static void SaveBoard(BoardData board)

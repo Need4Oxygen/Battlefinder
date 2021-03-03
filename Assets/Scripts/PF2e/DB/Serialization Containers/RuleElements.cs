@@ -6,7 +6,6 @@ namespace Pathfinder2e.Containers
 
     public class RuleElement
     {
-        // General
         public string from { get; set; }
         public string key { get; set; } // Type of element
         public string selector { get; set; } // What does it affect
@@ -70,6 +69,64 @@ namespace Pathfinder2e.Containers
             this.value_list = element.value_list;
             this.predicate = element.predicate;
         }
+
+        public RuleElement(RuleElement element)
+        {
+            this.from = element.from;
+            this.level = element.level;
+            this.selector = element.selector;
+            this.key = element.key;
+            this.type = element.type;
+            this.duration = element.duration;
+            this.frecuency = element.frecuency;
+            this.until = element.until;
+            this.dice_number = element.dice_number;
+            this.die_size = element.die_size;
+            this.strike = element.strike;
+            this.proficiency = element.proficiency;
+            this.value = element.value;
+            this.value_list = element.value_list;
+            this.predicate = element.predicate;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+                return false;
+
+            RuleElement otherRule = obj as RuleElement;
+            if (otherRule == null)
+                return false;
+
+            if (otherRule.from == from &&
+            otherRule.key == key &&
+            otherRule.selector == selector &&
+            otherRule.level == level &&
+            otherRule.value == value)
+                return true;
+
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public static bool IsNullOrEmpty(RuleElement rule)
+        {
+            if (rule == null) return true;
+            if (IsEmpty(rule)) return true;
+            return false;
+        }
+
+        public static bool IsEmpty(RuleElement rule)
+        {
+            if (rule.key == null && rule.selector == null)
+                return true;
+            else
+                return false;
+        }
     }
 
     public class Strike
@@ -107,6 +164,8 @@ namespace Pathfinder2e.Containers
 
 //
 //  List of Keys:
+//      Abilities
+//          abl_static
 //      Skills
 //          +skill_static - Set skill proficiency start proficiency to given value
 //          skill_free - Let the player train a number of skills they choose

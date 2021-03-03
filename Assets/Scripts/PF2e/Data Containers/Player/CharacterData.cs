@@ -5,7 +5,9 @@ using Newtonsoft.Json;
 using Pathfinder2e;
 using Pathfinder2e.Containers;
 using Pathfinder2e.GameData;
+using Tools;
 using UnityEngine;
+using YamlDotNet.Serialization;
 
 namespace Pathfinder2e.Character
 {
@@ -40,17 +42,17 @@ namespace Pathfinder2e.Character
                 else
                     _level = value;
 
-                Abl_SetLvlFilter(_level);
+                Abl_UpdateValues();
             }
         }
 
 
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- HIT POINTS
         private int hp_class = 0;
-        private int hp_ancestry = 0;
+        private int hpancestry = 0;
 
         public int hp_current { get { return hp_max - hp_damage; } }
-        public int hp_max { get { return level * (hp_class + Abl_GetMod("con")) + hp_ancestry + hp_temp; } }
+        public int hp_max { get { return level * (hp_class + Abl_GetMod("con")) + hpancestry + hp_temp; } }
 
         private int _damage = 0;
         public int hp_damage
@@ -97,7 +99,7 @@ namespace Pathfinder2e.Character
 
 
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- WEALTH
-        private float _wealth = 15;
+        private float _wealth = 0;
         public float wealth
         {
             get { return _wealth; }
@@ -137,7 +139,7 @@ namespace Pathfinder2e.Character
 
 
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- SPEED
-        private int speed_ancestry = 0;
+        public int speed_ancestry = 0;
 
         public int speed_base { get { return speed_ancestry; } }
         public int speed_burrow = 0;
@@ -147,8 +149,8 @@ namespace Pathfinder2e.Character
 
 
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- SIZE
-        private string size_ancestry = "M";
-        private string size_temp = "";
+        public string sizeancestry = "M";
+        public string size_temp = "";
 
         public string size
         {
@@ -157,7 +159,7 @@ namespace Pathfinder2e.Character
                 if (size_temp != "")
                     return size_temp;
                 else
-                    return size_ancestry;
+                    return sizeancestry;
             }
             set
             {
@@ -171,19 +173,12 @@ namespace Pathfinder2e.Character
             if (sizeStr != "")
                 switch (sizeStr)
                 {
-                    case "T":
-                        return 0.5f;
-                    case "S":
-                        return 1f;
-                    case "M":
-                        return 1f;
-                    case "L":
-                        return 2f;
-                    case "H":
-                        return 4f;
-                    case "G":
-                        return 8f;
-
+                    case "T": return 0.5f;
+                    case "S": return 1f;
+                    case "M": return 1f;
+                    case "L": return 2f;
+                    case "H": return 4f;
+                    case "G": return 8f;
                     default:
                         Debug.LogWarning("[PF2E_DataBase] Error: size (" + sizeStr + ") not recognized!");
                         return 1f;
@@ -200,97 +195,81 @@ namespace Pathfinder2e.Character
         public float bulk_current = 0f; // This has to be turn into full Inventory solution that calcs objects weight
 
 
-        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- CHARACTER TRAITS
-        public List<TraitFull> traits_list = new List<TraitFull>();
-
-        private void Traits_ClearFrom(string from)
-        {
-            traits_list.RemoveAll(item => item.from == from);
-        }
-
-
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- LANGUAGES
         public string languages = "";
 
+
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- ABILITIES
+        public List<RuleElement> RE_abilities;
+
+        public Dictionary<string, Vector2Int> abl_values;
         private static List<string> abl_sources = new List<string> { "str", "dex", "con", "int", "wis", "cha" };
 
-        private Dictionary<string, Vector2Int> abl_values;
-        private List<AblBoostData> abl_boostList = new List<AblBoostData>();
-        private List<string> abl_lvlFilter = new List<string>();
-
+        /// <summary> Retrieve ability score in the shape of an interger. </summary>
+        /// <param name="abl"> In the form of "str", "dex", "con", "int", "wis", "cha". </param>
         public int Abl_GetScore(string abl)
         {
             return abl_values[abl].x;
         }
 
+        /// <summary> Retrieve ability modifier in the shape of an interger. </summary>
+        /// <param name="abl"> In the form of "str", "dex", "con", "int", "wis", "cha". </param>
         public int Abl_GetMod(string abl)
         {
             return abl_values[abl].y;
         }
 
-        public void Abl_MapAdd(AblBoostData boost)
+        public void Abl_MapAdd(RuleElement boost) { Abl_MapAdd(new List<RuleElement> { boost }); }
+        public void Abl_MapAdd(List<RuleElement> boosts)
         {
-            abl_boostList.Add(boost);
+            foreach (var boost in boosts)
+                RE_abilities.Add(boost);
             Abl_UpdateValues();
         }
 
-        public void Abl_MapSet(List<AblBoostData> list)
+        public void Abl_MapSet(List<RuleElement> list)
         {
-            abl_boostList = new List<AblBoostData>(list);
+            RE_abilities = new List<RuleElement>(list);
             Abl_UpdateValues();
         }
 
-        public void Abl_MapClearFrom(string source)
+        public void Abl_MapClearFrom(string from)
         {
-            abl_boostList.RemoveAll(ctx => ctx.source == source);
+            RE_abilities.RemoveAll(x => x.from == from);
             Abl_UpdateValues();
         }
 
-        public List<AblBoostData> Abl_MapGet()
+        public IEnumerable<RuleElement> Abl_MapGet()
         {
-            return new List<AblBoostData>(abl_boostList);
+            return RE_abilities.AsEnumerable();
         }
 
-        public AblBoostData Abl_MapGetFrom(string name)
+        public RuleElement Abl_MapGetFrom(string from)
         {
-            return abl_boostList.Find(ctx => ctx.source == name);
+            return RE_abilities.Find(x => x.from == from);
         }
 
-        public List<AblBoostData> Abl_MapGetAllFrom(string name)
+        public IEnumerable<RuleElement> Abl_MapGetAllFrom(string from)
         {
-            return new List<AblBoostData>(abl_boostList.FindAll(ctx => ctx.source == name));
-        }
-
-        private void Abl_SetLvlFilter(int lvl)
-        {
-            abl_lvlFilter.Clear();
-
-            if (lvl < 5)
-            { abl_lvlFilter.Add("lvl5"); abl_lvlFilter.Add("lvl10"); abl_lvlFilter.Add("lvl15"); abl_lvlFilter.Add("lvl20"); }
-            else if (lvl < 10)
-            { abl_lvlFilter.Add("lvl10"); abl_lvlFilter.Add("lvl15"); abl_lvlFilter.Add("lvl20"); }
-            else if (lvl < 15)
-            { abl_lvlFilter.Add("lvl15"); abl_lvlFilter.Add("lvl20"); }
-            else if (lvl < 20)
-            { abl_lvlFilter.Add("lvl20"); }
-
-            Abl_UpdateValues();
+            return from a in RE_abilities
+                   where a.@from == @from
+                   select a;
         }
 
         private void Abl_UpdateValues()
         {
-            abl_boostList.RemoveAll(ctx => ctx.source == null || string.IsNullOrEmpty(ctx.source));
+            RE_abilities.RemoveAll(x => x.from == null || string.IsNullOrEmpty(x.from));
+
+            if (RE_abilities.Count < 1) return;
+
+            Dictionary<string, Vector2Int> abl_valuesPrev = new Dictionary<string, Vector2Int>(abl_values);
 
             foreach (var abl in abl_sources)
             {
-                List<AblBoostData> boosts = abl_boostList.FindAll(ctx => ctx.abl == abl);
-                int count = 0, score = 10, mod = 0;
+                IEnumerable<RuleElement> all = RE_abilities.Where(x => int.Parse(x.level) <= level && x.selector == abl);
+                int count = all.Sum(x => int.Parse(x.value));
 
-                foreach (var item in boosts)
-                    if (!abl_lvlFilter.Contains(item.source))
-                        count += item.value;
-
+                int score = 10, mod = 0;
                 if (count >= 0)
                     for (int i = 0; i < count; i++)
                         score += score < 18 ? 2 : 1;
@@ -300,6 +279,12 @@ namespace Pathfinder2e.Character
 
                 abl_values[abl] = new Vector2Int(score, mod);
             }
+
+            HashSet<string> selectors = new HashSet<string>();
+            foreach (var abl in abl_sources)
+                if (abl_values[abl].x != abl_valuesPrev[abl].x)
+                    selectors.Add(StrExtensions.ToLowerFirst(DB.Abl_Abbr2Full(abl)));
+            RE_SelectiveRefresh(selectors);
         }
 
 
@@ -312,17 +297,34 @@ namespace Pathfinder2e.Character
 
 
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- SKILLS
-        public APIC acrobatics, arcana, athletics, crafting, deception, diplomacy, intimidation, medicine, nature, occultism, performance, religion, society, stealth, survival, thievery;
+        public APIC_Skill acrobatics, arcana, athletics, crafting, deception, diplomacy, intimidation, medicine, nature, occultism, performance, religion, society, stealth, survival, thievery;
 
-        // This dictionaries track the skills proficiency allocation
-        public Dictionary<RuleElement, List<RuleElement>> skill_unspent;
-        public Dictionary<RuleElement, List<RuleElement>> skill_choice;
+        // All this track the skills proficiency allocation
+        public Dictionary<RuleElement, RuleElement> skill_singles;
+        public Dictionary<RuleElement, RuleElement> skill_unspent;
+        public Dictionary<RuleElement, RuleElement> skill_choice;
         public Dictionary<RuleElement, List<RuleElement>> skill_free;
-        public Dictionary<RuleElement, List<RuleElement>> skill_improve;
+        public Dictionary<RuleElement, RuleElement> skill_improve;
 
-        public APIC Skill_Get(string skill)
+        [YamlIgnore]
+        public IEnumerable<RuleElement> RE_skills
         {
-            switch (skill)
+            get
+            {
+                return
+                    skill_singles.Values.AsEnumerable()
+                    .Concat(skill_unspent.Values.AsEnumerable())
+                    .Concat(skill_choice.Values.AsEnumerable())
+                    .Concat(skill_free.Values.SelectMany(x => x))
+                    .Concat(skill_improve.Values.AsEnumerable())
+                    .Where(x => !RuleElement.IsEmpty(x) && int.Parse(x.level) <= level);
+            }
+            set { }
+        }
+
+        public APIC_Skill Skill_Get(string full)
+        {
+            switch (full)
             {
                 case "acrobatics": return acrobatics;
                 case "arcana": return arcana;
@@ -344,39 +346,132 @@ namespace Pathfinder2e.Character
             }
         }
 
-        public List<APIC> Skill_GetAll()
+        public List<APIC_Skill> Skill_GetAll()
         {
-            return new List<APIC> {
-                acrobatics, athletics, arcana, crafting, deception,
+            return new List<APIC_Skill> {
+                acrobatics, arcana, athletics,  crafting, deception,
                 diplomacy, intimidation, medicine, nature, occultism,
                 performance, religion, society, stealth, survival, thievery };
         }
 
-        public void Skill_Allocate(string from, string lvl, RuleElement element)
+        public void Skill_Add(string from, string lvl, RuleElement element)
         {
             switch (element.key)
             {
                 case "skill_static":
-                    skill_unspent.Add(new RuleElement(from, lvl, element), new List<RuleElement>());
+                    if (Skill_TraineableTo(element.selector, element.proficiency))
+                    {
+                        skill_singles.Add(new RuleElement(from, lvl, element), new RuleElement(from, lvl, element));
+                        RE_SelectiveRefresh(new HashSet<string> { element.selector });
+                    }
+                    else
+                        skill_unspent.Add(new RuleElement(from, lvl, element), new RuleElement());
                     break;
                 case "skill_choice":
-                    int alreadyTrainedCount = 0;
-                    foreach (var item in element.value_list)
-                        if (AlreadyTrained(item.value, element.proficiency)) alreadyTrainedCount++;
-                    if (alreadyTrainedCount >= element.value_list.Count) // If all choices are already trained
-                        skill_unspent.Add(new RuleElement(from, lvl, element), new List<RuleElement>());
-                    else
-                        skill_choice.Add(new RuleElement(from, lvl, element), new List<RuleElement>());
+                    skill_choice.Add(new RuleElement(from, lvl, element), new RuleElement());
                     break;
                 case "skill_free":
                     skill_free.Add(new RuleElement(from, lvl, element), new List<RuleElement>());
                     break;
                 case "skill_improve":
-                    skill_improve.Add(new RuleElement(from, lvl, element), new List<RuleElement>());
+                    skill_improve.Add(new RuleElement(from, lvl, element), new RuleElement());
                     break;
                 default:
                     break;
             }
+        }
+
+        public void Skill_Set(RuleElement key, List<RuleElement> value)
+        {
+            HashSet<string> selectors = new HashSet<string>();
+            RuleElement oldTrain = new RuleElement();
+
+            foreach (var item in value.Where(x => x.selector != null))
+                selectors.Add(item.selector);
+
+            switch (key.key)
+            {
+                case "skill_static":
+                    skill_unspent.TryGetValue(key, out oldTrain);
+                    if (oldTrain.selector != null) selectors.Add(oldTrain.selector);
+                    skill_unspent[key] = value.Count > 0 ? value[0] : new RuleElement();
+                    break;
+                case "skill_choice":
+                    skill_choice.TryGetValue(key, out oldTrain);
+                    if (oldTrain.selector != null) selectors.Add(oldTrain.selector);
+                    skill_choice[key] = value.Count > 0 ? value[0] : new RuleElement();
+                    break;
+                case "skill_free":
+                    List<RuleElement> oldTraining = new List<RuleElement>();
+                    oldTraining = skill_free[key];
+                    foreach (var item in oldTraining) { if (item.selector != null) selectors.Add(item.selector); }
+                    skill_free[key] = value;
+                    break;
+                case "skill_improve":
+                    skill_improve.TryGetValue(key, out oldTrain);
+                    if (oldTrain.selector != null) selectors.Add(oldTrain.selector);
+                    skill_improve[key] = value.Count > 0 ? value[0] : new RuleElement();
+                    break;
+            }
+
+            RE_SelectiveRefresh(selectors);
+            Skill_CheckUnspents();
+        }
+
+        private void Skill_RemoveFrom(string from)
+        {
+            List<RuleElement> keys;
+            HashSet<string> selectors = new HashSet<string>();
+
+            keys = (from a in skill_singles where a.Key.@from == @from select a.Key).ToList();
+            foreach (var key in keys) selectors.Add(key.selector);
+            if (keys.Count > 0) skill_singles.RemoveAll(keys);
+
+            keys = (from a in skill_unspent where a.Key.@from == @from select a.Key).ToList();
+            foreach (var key in keys) selectors.Add(key.selector);
+            if (keys.Count > 0) skill_unspent.RemoveAll(keys);
+
+            keys = (from a in skill_choice where a.Key.@from == @from select a.Key).ToList();
+            foreach (var key in keys) selectors.Add(key.selector);
+            if (keys.Count > 0) skill_choice.RemoveAll(keys);
+
+            keys = (from a in skill_free where a.Key.@from == @from select a.Key).ToList();
+            foreach (var key in keys) selectors.Add(key.selector);
+            if (keys.Count > 0) skill_free.RemoveAll(keys);
+
+            keys = (from a in skill_improve where a.Key.@from == @from select a.Key).ToList();
+            foreach (var key in keys) selectors.Add(key.selector);
+            if (keys.Count > 0) skill_improve.RemoveAll(keys);
+
+            RE_SelectiveRefresh(selectors);
+            Skill_CheckUnspents();
+        }
+
+        private void Skill_CheckUnspents()
+        {
+            HashSet<string> selectors = new HashSet<string>();
+            List<RuleElement> keys = (from a in skill_unspent where Skill_TraineableTo(a.Key.selector, a.Key.proficiency) select a.Key).ToList();
+
+            foreach (var key in keys)
+            {
+                selectors.Add(key.selector);
+                selectors.Add(skill_unspent[key].selector);
+
+                RuleElement newRule = new RuleElement(key);
+                skill_singles.Add(newRule, newRule);
+                skill_unspent.Remove(key);
+            }
+
+            RE_SelectiveRefresh(selectors);
+        }
+
+        /// <summary> Compares selector proficiency against some proficiency. Profficiency must be abbr as "T" "E" "M"...</summary>
+        /// <returns> True if selector is > or = to the proficiency that the rule wants to train. AKA selector can't be trained by this rule. </returns>
+        public bool Skill_TraineableTo(string selector, string prof)
+        {
+            int selectorProf = DB.Prof_Abbr2Int(Skill_Get(selector).prof);
+            int trainProf = DB.Prof_Full2Int(prof);
+            return (selectorProf + 1) == trainProf ? true : false;
         }
 
 
@@ -421,12 +516,11 @@ namespace Pathfinder2e.Character
 
 
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- ANCESTRY
-        private string _ancestry = "";
-        public string ancestry { get { return _ancestry; } set { Ancestry_Set(value); } }
+        public string ancestry = "";
 
-        private void Ancestry_Set(string newAncestry)
+        public void Ancestry_Set(string newAncestry)
         {
-            if (newAncestry == _ancestry) return;
+            if (newAncestry == ancestry) return;
             if (newAncestry == "")
             {
                 Ancestry_Cleanse(true);
@@ -438,74 +532,77 @@ namespace Pathfinder2e.Character
                 return;
             }
 
-            Ancestry ancestryData = DB.Ancestries.Find(ctx => ctx.name == newAncestry);
+            Ancestry ancestryData = DB.Ancestries.Find(x => x.name == newAncestry);
 
             Ancestry_Cleanse(false);
-            _ancestry = newAncestry;
-            hp_ancestry = ancestryData.hp;
+            ancestry = newAncestry;
+            hpancestry = ancestryData.hp;
             speed_ancestry = ancestryData.speed;
-            size_ancestry = ancestryData.size;
+            sizeancestry = ancestryData.size;
             foreach (var item in ancestryData.traits)
             {
-                Trait trait = DB.Traits.Find(ctx => ctx.name == item);
-                if (trait != null)
-                    traits_list.Add(new TraitFull(trait, "ancestry"));
+                Trait trait = DB.Traits.Find(x => x.name == item);
+                if (trait != null) RE_Add("ancestry", "1", new RuleElement() { key = "trait", selector = "trait", value = trait.name });
             }
-            foreach (var item in ancestryData.abl_boosts)
-                if (item != "free")
-                    Abl_MapAdd(new AblBoostData("ancestry boost", item, 1));
-            if (ancestryData.abl_flaws != null)
-                foreach (var item in ancestryData.abl_flaws)
-                    Abl_MapAdd(new AblBoostData("ancestry flaw", item, -1));
 
             // Abl Boosts Stuff
-            List<AblBoostData> previousFree = Abl_MapGetAllFrom("ancestry free");
+            List<RuleElement> ablBoostToAdd = new List<RuleElement>();
+
+            foreach (var item in ancestryData.abl_boosts)
+                if (item != "free")
+                    ablBoostToAdd.Add(new RuleElement() { from = "ancestry boost", selector = item, level = "1", value = "1" });
+            if (ancestryData.abl_flaws != null)
+                foreach (var item in ancestryData.abl_flaws)
+                    ablBoostToAdd.Add(new RuleElement() { from = "ancestry flaw", selector = item, level = "1", value = "-1" });
+
+            IEnumerable<RuleElement> previousFree = Abl_MapGetAllFrom("ancestry free"); // Save last ancestry free boosts into new ancestry
             Abl_MapClearFrom("ancestry free");
-            for (int i = 0; i < ancestryData.abl_boosts.FindAll(ctx => ctx == "free").Count; i++)
-                if (i < previousFree.Count) // Saves as many free choices as it can, given what new ancestry gives you
-                    Abl_MapAdd(previousFree[i]);
+            for (int i = 0; i < ancestryData.abl_boosts.Count(x => x == "free"); i++)
+                if (i < previousFree.Count())
+                    ablBoostToAdd.Add(previousFree.ElementAt(i));
+
+            Abl_MapAdd(ablBoostToAdd);
         }
 
         private void Ancestry_Cleanse(bool cleanseChoices)
         {
-            _ancestry = "";
-            hp_ancestry = 0;
+            ancestry = "";
+            hpancestry = 0;
             speed_ancestry = 0;
-            size_ancestry = "M";
+            sizeancestry = "M";
 
             Abl_MapClearFrom("ancestry boost");
             Abl_MapClearFrom("ancestry flaw");
-            Traits_ClearFrom("ancestry");
+            RE_RemoveFrom("ancestry");
             if (cleanseChoices)
                 Abl_MapClearFrom("ancestry free");
         }
 
 
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- BACKGROUND
-        private string _background = "";
-        public string background { get { return _background; } set { Background_Set(value); } }
+        public string background = "";
 
-        private void Background_Set(string newBackground)
+        public void Background_Set(string newBackground)
         {
-            if (newBackground == _background)
+            if (newBackground == background)
                 return;
 
             if (newBackground != "")
             {
-                Background backgroundData = DB.Backgrounds.Find(ctx => ctx.name == newBackground);
+                Background backgroundData = DB.Backgrounds.Find(x => x.name == newBackground);
 
                 if (backgroundData != null)
                 {
                     Background_Cleanse(false);
-                    _background = newBackground;
+                    background = newBackground;
                     RE_Add("background", "1", new List<RuleElement>(backgroundData.elements));
 
                     // Abl Boosts Stuff
-                    AblBoostData previousChoice = Abl_MapGetFrom("background choice");
+                    RuleElement previousChoice = Abl_MapGetFrom("background choice");
                     bool match = false;
                     if (previousChoice != null)
                         foreach (var item in backgroundData.abl_choices)
-                            if (previousChoice.abl == item)
+                            if (previousChoice.selector == item)
                                 match = true;
                     if (!match)
                         Abl_MapClearFrom("background choice");
@@ -523,7 +620,7 @@ namespace Pathfinder2e.Character
 
         private void Background_Cleanse(bool cleanseChoices)
         {
-            _background = "";
+            background = "";
 
             RE_RemoveFrom("background");
             if (cleanseChoices)
@@ -535,33 +632,32 @@ namespace Pathfinder2e.Character
 
 
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- CLASS
-        private string _class = "";
-        public string class_name { get { return _class; } set { SetClass(value); } }
+        public string class_name = "";
 
-        private void SetClass(string newClass)
+        public void Class_Set(string newClass)
         {
-            if (newClass == _class)
+            if (newClass == class_name)
                 return;
 
             if (newClass != "")
             {
-                Class classData = DB.Classes.Find(ctx => ctx.name == newClass);
+                Class classData = DB.Classes.Find(x => x.name == newClass);
 
                 if (classData != null)
                 {
                     Class_Cleanse(false);
-                    _class = newClass;
+                    class_name = newClass;
                     hp_class = classData.hp;
                     RE_Add("class", "1", new List<RuleElement>(classData.elements));
 
                     // Abl Boosts Stuff
                     if (classData.key_ability_choices.Count > 1)
                     {
-                        AblBoostData previousChoice = Abl_MapGetFrom("class");
+                        RuleElement previousChoice = Abl_MapGetFrom("class");
                         bool match = false;
                         if (previousChoice != null)
                             foreach (var item in classData.key_ability_choices)
-                                if (previousChoice.abl == item)
+                                if (previousChoice.selector == item)
                                     match = true;
                         if (!match)
                             Abl_MapClearFrom("class");
@@ -569,7 +665,7 @@ namespace Pathfinder2e.Character
                     else
                     {
                         Abl_MapClearFrom("class");
-                        Abl_MapAdd(new AblBoostData("class", classData.key_ability_choices[0], 1));
+                        Abl_MapAdd(new RuleElement() { from = "class", selector = classData.key_ability_choices[0], level = "1", value = "1" });
                     }
                 }
                 else
@@ -585,7 +681,7 @@ namespace Pathfinder2e.Character
 
         private void Class_Cleanse(bool cleanseChoices)
         {
-            _class = "";
+            class_name = "";
             hp_class = 0;
             RE_RemoveFrom("class");
 
@@ -596,199 +692,45 @@ namespace Pathfinder2e.Character
         }
 
 
-        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- BUILD
-        public Dictionary<int, Dictionary<string, BuildBlock>> build = new Dictionary<int, Dictionary<string, BuildBlock>>();
-
-        public T Build_GetFromBlock<T>(int level, string key)
-        {
-            try
-            {
-                if (build.ContainsKey(level))
-                    if (build[level].ContainsKey(key))
-                        if (build[level][key].data != null)
-                            return JsonConvert.DeserializeObject<T>(build[level][key].data);
-
-                Debug.LogWarning($"[PlayerData] Couldn't find key {key} ");
-                return default(T);
-            }
-            catch (Exception e)
-            {
-                Debug.LogError($"[PlayerData] Couldn't retrieve object {key} from build\n{e.Message}\n{e.StackTrace}");
-                return default(T);
-            }
-        }
-
-        /// <summary>
-        /// Retrieve feats of specific type in the current build. Types can be: "heritage", "ancestry feat", "ancestry feature", "class feat", "class feature", "general feat" and "skill feat"
-        /// </summary>
-        /// <param name="type"> heritage, ancestry feat, ancestry feature, class feat, class feature, general feat and skill feat </param>
-        public List<Feat> Build_GetFeats(string type)
-        {
-            List<string> featNames = Build_GetFeatNames(type);
-            List<Feat> feats = new List<Feat>();
-
-            switch (type)
-            {
-                case "heritage":
-                    foreach (var item in featNames)
-                    {
-                        Feat feat = DB.AncestryHeritages.Find(ancestry).Find(x => x.name == item);
-                        if (feat != null)
-                            feats.Add(feat);
-                    }
-                    break;
-                case "ancestry feat":
-                    foreach (var item in featNames)
-                    {
-                        Feat feat = DB.AncestryFeats.Find(ancestry).Find(x => x.name == item);
-                        if (feat != null)
-                            feats.Add(feat);
-                    }
-                    break;
-                case "ancestry feature":
-                    foreach (var item in featNames)
-                    {
-                        Feat feat = DB.AncestryFeatures.Find(x => x.name == item);
-                        if (feat != null)
-                            feats.Add(feat);
-                    }
-                    break;
-                case "class feat":
-                    foreach (var item in featNames)
-                    {
-                        Feat feat = DB.ClassFeats.Find(class_name).Find(x => x.name == item);
-                        if (feat != null)
-                            feats.Add(feat);
-                    }
-                    break;
-                case "class feature":
-                    foreach (var item in featNames)
-                    {
-                        Feat feat = DB.ClassFeatures.Find(class_name).Find(x => x.name == item);
-                        if (feat != null)
-                            feats.Add(feat);
-                    }
-                    break;
-                case "general feat":
-                    foreach (var item in featNames)
-                    {
-                        Feat feat = DB.SkillFeats.Find("general feat").Find(x => x.name == item);
-                        if (feat != null)
-                            feats.Add(feat);
-                    }
-                    break;
-                case "skill feat":
-                    foreach (var item in featNames)
-                    {
-                        Feat feat = DB.SkillFeats.Find("skill feat").Find(x => x.name == item);
-                        if (feat != null)
-                            feats.Add(feat);
-                    }
-                    break;
-                default: break;
-            }
-
-            if (feats.Count == 0)
-                Debug.LogWarning($"[PlayerData] Couldn't find feats with type \"{type}\"");
-
-            return feats;
-        }
-
-        /// <summary>
-        /// Retrieve feat names of specific type in the current build. Types can be: "heritage", "ancestry feat", "ancestry feature", "class feat", "class feature", "general feat" and "skill feat"
-        /// </summary>
-        /// <param name="type">heritage, ancestry feat, ancestry feature, class feat, class feature, general feat and skill feat </param>
-        public List<string> Build_GetFeatNames(string type)
-        {
-            List<string> featNames = new List<string>();
-
-            foreach (var lvl in build)
-                foreach (var block in lvl.Value)
-                    if (block.Key == type)
-                        featNames.Add(block.Value.name);
-
-            return featNames;
-        }
-
-        private void Build_SetNewProgression(string className)
-        {
-            Debug.Log($"[PlayerData] changing [{name}] class progression");
-
-            Dictionary<int, Dictionary<string, BuildBlock>> newBuild = new Dictionary<int, Dictionary<string, BuildBlock>>();
-            ClassProgression prog = DB.ClassProgression.Find(ctx => ctx.name == className);
-            List<BuildBlock> coincidences = new List<BuildBlock>();
-
-            // Search for coincidences in old build with new class progression
-            foreach (var lvlDic in build)
-                foreach (var block in lvlDic.Value)
-                    if (block.Value.data == prog.progression[block.Value.level].items.Find(ctx => ctx == block.Value.name))
-                        coincidences.Add(block.Value);
-
-            // Generate new build
-            foreach (var block in coincidences)
-            {
-                if (!newBuild.ContainsKey(block.level))
-                    newBuild.Add(block.level, new Dictionary<string, BuildBlock>());
-
-                newBuild[block.level].Add(block.name, block);
-            }
-
-            build = newBuild;
-            Build_Refresh();
-        }
-
-        public void Build_Refresh()
-        {
-            Debug.LogWarning($"[PlayerData] Refreshing [{name}] build - NOT IMPLEMENTED");
-        }
-
-
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- RULE ELEMENTS
-        private List<RuleElement> RE_general = new List<RuleElement>();
+        public List<RuleElement> RE_general;
 
         public void RE_Add(string from, string lvl, RuleElement element) { RE_Add(from, lvl, new List<RuleElement> { element }); }
         public void RE_Add(string from, string lvl, List<RuleElement> list)
         {
-            List<string> selectors = new List<string>();
+            HashSet<string> selectors = new HashSet<string>();
 
             foreach (var element in list)
             {
                 switch (element.key)
                 {
                     case "skill_static":
-                        if (AlreadyTrained(element.selector, element.proficiency))
+                        if (Skill_TraineableTo(element.selector, element.proficiency))
                         {
-                            Skill_Allocate(from, lvl, element);
+                            skill_singles.Add(new RuleElement(from, lvl, element), new RuleElement(from, lvl, element));
+                            RE_SelectiveRefresh(new HashSet<string> { element.selector });
                         }
                         else
-                        {
-                            RE_general.Add(new RuleElement(from, lvl, element));
-                            if (!selectors.Contains(element.selector))
-                                selectors.Add(element.selector);
-                        }
+                            skill_unspent.Add(new RuleElement(from, lvl, element), new RuleElement());
                         break;
                     case "skill_choice":
-                        Skill_Allocate(from, lvl, element);
+                        skill_choice.Add(new RuleElement(from, lvl, element), new RuleElement());
                         break;
                     case "skill_free":
-                        Skill_Allocate(from, lvl, element);
+                        skill_free.Add(new RuleElement(from, lvl, element), new List<RuleElement>());
                         break;
                     case "skill_improve":
-                        Skill_Allocate(from, lvl, element);
+                        skill_improve.Add(new RuleElement(from, lvl, element), new RuleElement());
                         break;
+
                     default:
+                        RE_general.Add(new RuleElement(from, lvl, element));
+                        selectors.Add(element.selector);
                         break;
                 }
             }
 
             RE_SelectiveRefresh(selectors);
-        }
-
-        private void RE_Filter(string from, string lvl, RuleElement element)
-        {
-
-            RE_general.Add(new RuleElement(from, lvl, element));
-
         }
 
         public IEnumerable<RuleElement> RE_Get(string selector)
@@ -797,99 +739,162 @@ namespace Pathfinder2e.Character
                    where a.selector == selector
                    select a;
         }
-
         public IEnumerable<RuleElement> RE_Get(string selector, string value)
         {
             return from a in RE_general
                    where a.selector == selector && a.value == value
                    select a;
         }
+        public IEnumerable<RuleElement> RE_GetFromSkill(string selector)
+        {
+            return from a in RE_skills
+                   where a.selector == selector
+                   select a;
+        }
 
         public void RE_RemoveFrom(string from)
         {
-            // if its a skill, needs to check if it was unspent and detrain that
-            RE_general.RemoveAll(ctx => ctx.from == from);
+            List<RuleElement> keys;
+            HashSet<string> selectors = new HashSet<string>();
+
+            keys = (from a in RE_general where a.@from == @from select a).ToList();
+            foreach (var key in keys) selectors.Add(key.selector);
+            if (keys.Count > 0) RE_general.RemoveAll(keys);
+
+            RE_SelectiveRefresh(selectors);
+
+            Skill_RemoveFrom(from);
         }
 
-        public void RE_SelectiveRefresh(List<string> selectors)
+        public void RE_SelectiveRefresh(string selectors) { RE_SelectiveRefresh(new HashSet<string> { selectors }); }
+        public void RE_SelectiveRefresh(HashSet<string> selectors)
         {
-            List<string> alreadyRefreshed = new List<string>();
+            if (selectors.Count < 1) return;
 
-            foreach (var item in selectors)
-                if (!alreadyRefreshed.Contains(item))
+            Debug.Log($"[PlayerData] Refreshing selectors {String.Join(", ", selectors)} ");
+
+            foreach (var selector in selectors)
+                switch (selector)
                 {
-                    alreadyRefreshed.Add(item);
-                    switch (item)
-                    {
-                        case "ac": ac.Refresh(); break;
+                    case "strength":
+                        athletics?.Refresh();
+                        break;
+                    case "dexterity":
+                        ac?.Refresh();
+                        reflex?.Refresh();
+                        acrobatics?.Refresh();
+                        stealth?.Refresh();
+                        thievery?.Refresh();
+                        break;
+                    case "constitution":
+                        fortitude?.Refresh();
+                        break;
+                    case "intelligence":
+                        arcana?.Refresh();
+                        crafting?.Refresh();
+                        occultism?.Refresh();
+                        society?.Refresh();
+                        Lores_Refresh();
+                        break;
+                    case "wisdom":
+                        perception?.Refresh();
+                        will?.Refresh();
+                        diplomacy?.Refresh();
+                        medicine?.Refresh();
+                        nature?.Refresh();
+                        religion?.Refresh();
+                        survival?.Refresh();
+                        break;
+                    case "charisma":
+                        deception?.Refresh();
+                        diplomacy?.Refresh();
+                        intimidation?.Refresh();
+                        performance?.Refresh();
+                        break;
 
-                        case "perception": perception.Refresh(); break;
+                    case "ac": ac?.Refresh(); break;
 
-                        case "fortitude": fortitude.Refresh(); break;
-                        case "reflex": reflex.Refresh(); break;
-                        case "will": will.Refresh(); break;
+                    case "perception": perception.Refresh(); break;
 
-                        case "acrobatics": acrobatics.Refresh(); break;
-                        case "arcana": arcana.Refresh(); break;
-                        case "athletics": athletics.Refresh(); break;
-                        case "crafting": crafting.Refresh(); break;
-                        case "deception": deception.Refresh(); break;
-                        case "diplomacy": diplomacy.Refresh(); break;
-                        case "intimidation": intimidation.Refresh(); break;
-                        case "medicine": medicine.Refresh(); break;
-                        case "nature": nature.Refresh(); break;
-                        case "occultism": occultism.Refresh(); break;
-                        case "performance": performance.Refresh(); break;
-                        case "religion": religion.Refresh(); break;
-                        case "society": society.Refresh(); break;
-                        case "stealth": stealth.Refresh(); break;
-                        case "survival": survival.Refresh(); break;
-                        case "thievery": thievery.Refresh(); break;
+                    case "fortitude": fortitude.Refresh(); break;
+                    case "reflex": reflex.Refresh(); break;
+                    case "will": will.Refresh(); break;
 
-                        case "class_dc": ClassDC_Refresh(); break;
+                    case "acrobatics": acrobatics.Refresh(); break;
+                    case "arcana": arcana.Refresh(); break;
+                    case "athletics": athletics.Refresh(); break;
+                    case "crafting": crafting.Refresh(); break;
+                    case "deception": deception.Refresh(); break;
+                    case "diplomacy": diplomacy.Refresh(); break;
+                    case "intimidation": intimidation.Refresh(); break;
+                    case "medicine": medicine.Refresh(); break;
+                    case "nature": nature.Refresh(); break;
+                    case "occultism": occultism.Refresh(); break;
+                    case "performance": performance.Refresh(); break;
+                    case "religion": religion.Refresh(); break;
+                    case "society": society.Refresh(); break;
+                    case "stealth": stealth.Refresh(); break;
+                    case "survival": survival.Refresh(); break;
+                    case "thievery": thievery.Refresh(); break;
 
-                        case "lore": Lores_Refresh(); break;
+                    case "class_dc": ClassDC_Refresh(); break;
 
-                        case "unarmed": Unarmed_Refresh(); break;
-                        case "simple_weapons": SimpleWeapons_Refresh(); break;
-                        case "martial_weapons": MartialWeapons_Refresh(); break;
-                        case "advanced_weapons": AdvancedWeapons_Refresh(); break;
+                    case "lore": Lores_Refresh(); break;
 
-                        case "unarmored": Unarmored_Refresh(); break;
-                        case "light_armor": LightArmor_Refresh(); break;
-                        case "medium_armor": MediumArmor_Refresh(); break;
-                        case "heavy_armor": HeavyArmor_Refresh(); break;
+                    case "unarmed": Unarmed_Refresh(); break;
+                    case "simple_weapons": SimpleWeapons_Refresh(); break;
+                    case "martial_weapons": MartialWeapons_Refresh(); break;
+                    case "advanced_weapons": AdvancedWeapons_Refresh(); break;
 
+                    case "unarmored": Unarmored_Refresh(); break;
+                    case "light_armor": LightArmor_Refresh(); break;
+                    case "medium_armor": MediumArmor_Refresh(); break;
+                    case "heavy_armor": HeavyArmor_Refresh(); break;
 
-                        default: return;
-                    }
+                    case "skills": break;
+
+                    case null: break;
+                    default: Debug.LogWarning($"[PlayerData] Selector \"{selector}\" couldn't be found!"); break;
                 }
         }
 
-        /// <summary> Compares selector proficiency against rule proficiency. </summary>
-        /// <returns> True if selector is > or = to the proficiency that the rule wants to train. AKA selector can't be trained by this rule. </returns>
-        private bool AlreadyTrained(string selector, string ruleProf)
+        public void RE_SkillRefresh()
         {
-            return DB.Prof_Abbr2Int(Skill_Get(selector).prof) <= DB.Prof_Full2Int(ruleProf) ? true : false;
+            acrobatics.Refresh();
+            arcana.Refresh();
+            athletics.Refresh();
+            crafting.Refresh();
+            deception.Refresh();
+            diplomacy.Refresh();
+            intimidation.Refresh();
+            medicine.Refresh();
+            nature.Refresh();
+            occultism.Refresh();
+            performance.Refresh();
+            religion.Refresh();
+            society.Refresh();
+            stealth.Refresh();
+            survival.Refresh();
+            thievery.Refresh();
         }
 
 
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- CONSTRUCTOR
         public CharacterData() // Do NOT change the order
         {
+            RE_general = new List<RuleElement>();
+            RE_abilities = new List<RuleElement>();
+
             // Needs to be declared before any APIC
             abl_values = new Dictionary<string, Vector2Int>()
             {
-            {"str",new Vector2Int(0,0)},
-            {"dex",new Vector2Int(0,0)},
-            {"con",new Vector2Int(0,0)},
-            {"int",new Vector2Int(0,0)},
-            {"wis",new Vector2Int(0,0)},
-            {"cha",new Vector2Int(0,0)},
+            {"str",new Vector2Int(10,0)},
+            {"dex",new Vector2Int(10,0)},
+            {"con",new Vector2Int(10,0)},
+            {"int",new Vector2Int(10,0)},
+            {"wis",new Vector2Int(10,0)},
+            {"cha",new Vector2Int(10,0)},
             };
-
-            // Needs to be after abl_values declaration
-            level = 1;
 
             ac = new APIC("ac", this, "dex", 10);
 
@@ -899,28 +904,34 @@ namespace Pathfinder2e.Character
             reflex = new APIC("reflex", this, "dex", 0);
             will = new APIC("will", this, "wis", 0);
 
-            acrobatics = new APIC("acrobatics", this, "dex", 0);
-            arcana = new APIC("arcana", this, "int", 0);
-            athletics = new APIC("athletics", this, "str", 0);
-            crafting = new APIC("crafting", this, "int", 0);
-            deception = new APIC("deception", this, "cha", 0);
-            diplomacy = new APIC("diplomacy", this, "cha", 0);
-            intimidation = new APIC("intimidation", this, "cha", 0);
-            medicine = new APIC("medicine", this, "wis", 0);
-            nature = new APIC("nature", this, "wis", 0);
-            occultism = new APIC("occultism", this, "int", 0);
-            performance = new APIC("performance", this, "dex", 0);
-            religion = new APIC("religion", this, "wis", 0);
-            society = new APIC("society", this, "cha", 0);
-            stealth = new APIC("stealth", this, "dex", 0);
-            survival = new APIC("survival", this, "wis", 0);
-            thievery = new APIC("thievery", this, "dex", 0);
+            // Needs to be after skill APICs declaration
+            skill_singles = new Dictionary<RuleElement, RuleElement>();
+            skill_unspent = new Dictionary<RuleElement, RuleElement>();
+            skill_choice = new Dictionary<RuleElement, RuleElement>();
+            skill_free = new Dictionary<RuleElement, List<RuleElement>>();
+            skill_improve = new Dictionary<RuleElement, RuleElement>();
+
+            acrobatics = new APIC_Skill("acrobatics", this, "dex", 0);
+            arcana = new APIC_Skill("arcana", this, "int", 0);
+            athletics = new APIC_Skill("athletics", this, "str", 0);
+            crafting = new APIC_Skill("crafting", this, "int", 0);
+            deception = new APIC_Skill("deception", this, "cha", 0);
+            diplomacy = new APIC_Skill("diplomacy", this, "cha", 0);
+            intimidation = new APIC_Skill("intimidation", this, "cha", 0);
+            medicine = new APIC_Skill("medicine", this, "wis", 0);
+            nature = new APIC_Skill("nature", this, "wis", 0);
+            occultism = new APIC_Skill("occultism", this, "int", 0);
+            performance = new APIC_Skill("performance", this, "dex", 0);
+            religion = new APIC_Skill("religion", this, "wis", 0);
+            society = new APIC_Skill("society", this, "cha", 0);
+            stealth = new APIC_Skill("stealth", this, "dex", 0);
+            survival = new APIC_Skill("survival", this, "wis", 0);
+            thievery = new APIC_Skill("thievery", this, "dex", 0);
 
             lore_dic = new Dictionary<string, APIC>();
 
-            skill_choice = new Dictionary<RuleElement, List<RuleElement>>();
-            skill_free = new Dictionary<RuleElement, List<RuleElement>>();
-            skill_unspent = new Dictionary<RuleElement, List<RuleElement>>();
+            // Needs to be after ALL
+            level = 1;
         }
     }
 

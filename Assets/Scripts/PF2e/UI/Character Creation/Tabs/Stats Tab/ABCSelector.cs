@@ -343,9 +343,9 @@ namespace Pathfinder2e.GameData
                 skillNames.Add(item.selector);
             for (int i = 0; i < skillNames.Count; i++)
                 if (i < skillNames.Count - 1)
-                    backgroundSkillTrainString += StrTools.ToUpperFirst(skillNames[i]) + ", ";
+                    backgroundSkillTrainString += StrExtensions.ToUpperFirst(skillNames[i]) + ", ";
                 else
-                    backgroundSkillTrainString += StrTools.ToUpperFirst(skillNames[i]);
+                    backgroundSkillTrainString += StrExtensions.ToUpperFirst(skillNames[i]);
             backgroundSkillTrain.text = backgroundSkillTrainString;
 
             // Extract feats to display in a string

@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Linq;
 using System.Collections.Generic;
-using YamlTools;
+using UnityEngine;
 using Pathfinder2e.Containers;
-using System.Linq;
+using static TYaml.Serialization;
 
 namespace Pathfinder2e
 {
@@ -54,8 +54,6 @@ namespace Pathfinder2e
         public static List<Trait> Traits = new List<Trait>();
         public static List<SourceInfo> Sources = new List<SourceInfo>();
 
-        public static List<string> SkillNames = new List<string>() { "acrobatics", "athletics", "crafting", "deception", "diplomacy", "intimidation", "medicine", "nature", "occultism", "performance", "religion", "society", "stealth", "survival", "thievery" };
-
         void Awake()
         {
             if (Instance != null)
@@ -71,26 +69,26 @@ namespace Pathfinder2e
 
         public void InitializeDB()
         {
-            Actions = YamlConvert.DeserializeObject<List<Action>>(t_actions.text);
+            Actions = Deserialize<List<Action>>(t_actions.text);
 
-            Ancestries = YamlConvert.DeserializeObject<List<Ancestry>>(t_ancestries.text);
-            AncestryFeatures = YamlConvert.DeserializeObject<List<Feat>>(t_ancestryFeatures.text);
-            AncestryHeritages = YamlConvert.DeserializeObject<AncestryHeritages>(t_ancestryHeritages.text);
-            AncestryFeats = YamlConvert.DeserializeObject<AncestryFeats>(t_ancestryFeats.text);
+            Ancestries = Deserialize<List<Ancestry>>(t_ancestries.text);
+            AncestryFeatures = Deserialize<List<Feat>>(t_ancestryFeatures.text);
+            AncestryHeritages = Deserialize<AncestryHeritages>(t_ancestryHeritages.text);
+            AncestryFeats = Deserialize<AncestryFeats>(t_ancestryFeats.text);
 
-            Backgrounds = YamlConvert.DeserializeObject<List<Background>>(t_backgrounds.text);
+            Backgrounds = Deserialize<List<Background>>(t_backgrounds.text);
 
-            Classes = YamlConvert.DeserializeObject<List<Class>>(t_classes.text);
-            ClassFeatures = YamlConvert.DeserializeObject<ClassFeats>(t_classFeatures.text);
-            ClassFeats = YamlConvert.DeserializeObject<ClassFeats>(t_classFeats.text);
-            ClassProgression = YamlConvert.DeserializeObject<List<ClassProgression>>(t_classAdvancements.text);
+            Classes = Deserialize<List<Class>>(t_classes.text);
+            ClassFeatures = Deserialize<ClassFeats>(t_classFeatures.text);
+            ClassFeats = Deserialize<ClassFeats>(t_classFeats.text);
+            ClassProgression = Deserialize<List<ClassProgression>>(t_classAdvancements.text);
 
-            Dedications = YamlConvert.DeserializeObject<List<Feat>>(t_dedicationFeats.text);
-            ArchetypeFeats = YamlConvert.DeserializeObject<List<Feat>>(t_archetypeFeats.text);
+            Dedications = Deserialize<List<Feat>>(t_dedicationFeats.text);
+            ArchetypeFeats = Deserialize<List<Feat>>(t_archetypeFeats.text);
 
-            SkillFeats = YamlConvert.DeserializeObject<SkillFeats>(t_skillFeats.text);
-            Traits = YamlConvert.DeserializeObject<List<Trait>>(t_traits.text);
-            Sources = YamlConvert.DeserializeObject<List<SourceInfo>>(t_sources.text);
+            SkillFeats = Deserialize<SkillFeats>(t_skillFeats.text);
+            Traits = Deserialize<List<Trait>>(t_traits.text);
+            Sources = Deserialize<List<SourceInfo>>(t_sources.text);
         }
 
         public static void Clear()
@@ -114,7 +112,7 @@ namespace Pathfinder2e
             Sources.Clear();
         }
 
-        // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------ABILITIES
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- ABILITIES
 
         public static string Abl_Abbr2Full(string abilityAbreviated)
         {
@@ -187,7 +185,7 @@ namespace Pathfinder2e
         }
 
 
-        // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------PROFICIENCIES
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- PROFICIENCIES
 
         /// <summary>Recieves a string "U", "T", etc, and returns score as 0, 2, 4, 6 or 8. </summary>
         public static int Prof_Abbr2Score(string profAbbr)
@@ -198,8 +196,9 @@ namespace Pathfinder2e
                 case "M": return 6;
                 case "E": return 4;
                 case "T": return 2;
+                case "U": return 0;
                 default:
-                    Debug.LogWarning($"[DB] Error: proficiency abreviation ({profAbbr}) not recognized!");
+                    Debug.LogWarning($"[DB] Error: proficiency abreviation \"{profAbbr}\" not recognized!");
                     return 0;
             }
         }
@@ -207,8 +206,6 @@ namespace Pathfinder2e
         /// <summary>Recieves a string "U", "T", etc, and returns int as 0, 1, etc. </summary>
         public static int Prof_Abbr2Int(string profAbbr)
         {
-            if (string.IsNullOrEmpty(profAbbr)) { Debug.LogWarning($"[DB] Error: proficiency abreviation was empty!"); return 0; }
-
             switch (profAbbr)
             {
                 case "U": return 0;
@@ -221,9 +218,9 @@ namespace Pathfinder2e
         }
 
         /// <summary>Recieves a string "untrained", "trained", etc, and returns int as 0, 1, etc. </summary>
-        public static int Prof_Full2Int(string profAbbr)
+        public static int Prof_Full2Int(string profFull)
         {
-            switch (profAbbr)
+            switch (profFull)
             {
                 case "untrained": return 0;
                 case "trained": return 1;
@@ -232,7 +229,7 @@ namespace Pathfinder2e
                 case "legendary": return 4;
 
                 default:
-                    Debug.LogWarning($"[DB] Error: proficiency abreviation ({profAbbr}) not recognized!");
+                    Debug.LogWarning($"[DB] Error: proficiency abreviation ({profFull}) not recognized!");
                     return 0;
             }
         }
@@ -306,6 +303,23 @@ namespace Pathfinder2e
         }
 
         /// <summary>Recieves a string "untrained", "trained", etc, and returns colored abbr as "U", "T", etc. </summary>
+        public static string Prof_Full2Abbr(string profFull)
+        {
+            switch (profFull)
+            {
+                case "untrained": return "U";
+                case "trained": return "T";
+                case "expert": return "E";
+                case "master": return "M";
+                case "legendary": return "L";
+
+                default:
+                    Debug.LogWarning($"[DB] Error: proficiency full ({profFull}) not recognized!");
+                    return "U";
+            }
+        }
+
+        /// <summary>Recieves a string "untrained", "trained", etc, and returns colored abbr as "U", "T", etc. </summary>
         public static string Prof_Full2AbbrColored(string profAbbr)
         {
             switch (profAbbr)
@@ -325,6 +339,9 @@ namespace Pathfinder2e
         /// <summary>Recieves a lecture list and returns max proficiency as "U", "T", etc. </summary>
         public static string Prof_FindMax(IEnumerable<RuleElement> list)
         {
+            if (list == null) return "U";
+            if (list.Count() < 1) return "U";
+
             // U = 0, T = 1, E = 2, M = 3, L = 4
             int prof = 0;
 
@@ -360,7 +377,63 @@ namespace Pathfinder2e
         public static string Prof_FindMaxColored(List<RuleElement> elements) { return Prof_Abbr2AbbrColored(Prof_FindMax(elements)); }
 
 
-        // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------SIZES
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- SKILLS
+        public static List<string> SkillNames = new List<string>() { "acrobatics", "arcana", "athletics", "crafting", "deception", "diplomacy", "intimidation", "medicine", "nature", "occultism", "performance", "religion", "society", "stealth", "survival", "thievery" };
+
+        public static int Skl_Full2Int(string selector)
+        {
+            switch (selector)
+            {
+                case "acrobatics": return 0;
+                case "arcana": return 1;
+                case "athletics": return 2;
+                case "crafting": return 3;
+                case "deception": return 4;
+                case "diplomacy": return 5;
+                case "intimidation": return 6;
+                case "medicine": return 7;
+                case "nature": return 8;
+                case "occultism": return 9;
+                case "performance": return 10;
+                case "religion": return 11;
+                case "society": return 12;
+                case "stealth": return 13;
+                case "survival": return 14;
+                case "thievery": return 15;
+                default:
+                    Debug.LogWarning($"[DB] Error: skill \"{selector}\" not recognized!");
+                    return -1;
+            }
+        }
+
+        public static string Skl_Int2Full(int value)
+        {
+            switch (value)
+            {
+                case 0: return "acrobatics";
+                case 1: return "arcana";
+                case 2: return "athletics";
+                case 3: return "crafting";
+                case 4: return "deception";
+                case 5: return "diplomacy";
+                case 6: return "intimidation";
+                case 7: return "medicine";
+                case 8: return "nature";
+                case 9: return "occultism";
+                case 10: return "performance";
+                case 11: return "religion";
+                case 12: return "society";
+                case 13: return "stealth";
+                case 14: return "survival";
+                case 15: return "thievery";
+                default:
+                    Debug.LogWarning($"[DB] Error: skill int ({value}) not recognized!");
+                    return "";
+            }
+        }
+
+
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- SIZES
 
         public static string Size_Abbr2Full(string abbr)
         {

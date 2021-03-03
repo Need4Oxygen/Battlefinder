@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Pathfinder2e.GameData;
 using TMPro;
 using UnityEngine;
@@ -131,19 +132,19 @@ namespace Pathfinder2e.Character
                     image.color = unactive;
             int[,] map = new int[8, 6];
             foreach (var boost in creation.currentPlayer.Abl_MapGet())
-                switch (boost.source)
+                switch (boost.from)
                 {
-                    case "ancestry boost": map[0, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
-                    case "ancestry flaw": map[0, DB.Abl_Abbr2Int(boost.abl)] -= 1; break;
-                    case "ancestry free": map[0, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
-                    case "background choice": map[1, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
-                    case "background free": map[1, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
-                    case "class": map[2, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
-                    case "lvl1": map[3, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
-                    case "lvl5": map[4, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
-                    case "lvl10": map[5, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
-                    case "lvl15": map[6, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
-                    case "lvl20": map[7, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
+                    case "ancestry boost": map[0, DB.Abl_Abbr2Int(boost.selector)] += 1; break;
+                    case "ancestry flaw": map[0, DB.Abl_Abbr2Int(boost.selector)] -= 1; break;
+                    case "ancestry free": map[0, DB.Abl_Abbr2Int(boost.selector)] += 1; break;
+                    case "background choice": map[1, DB.Abl_Abbr2Int(boost.selector)] += 1; break;
+                    case "background free": map[1, DB.Abl_Abbr2Int(boost.selector)] += 1; break;
+                    case "class": map[2, DB.Abl_Abbr2Int(boost.selector)] += 1; break;
+                    case "lvl1": map[3, DB.Abl_Abbr2Int(boost.selector)] += 1; break;
+                    case "lvl5": map[4, DB.Abl_Abbr2Int(boost.selector)] += 1; break;
+                    case "lvl10": map[5, DB.Abl_Abbr2Int(boost.selector)] += 1; break;
+                    case "lvl15": map[6, DB.Abl_Abbr2Int(boost.selector)] += 1; break;
+                    case "lvl20": map[7, DB.Abl_Abbr2Int(boost.selector)] += 1; break;
 
                     default: break;
                 }
@@ -167,15 +168,8 @@ namespace Pathfinder2e.Character
 
             // Traits
             string traits = "";
-            int count = 0; int total = creation.currentPlayer.traits_list.Count;
-            foreach (var item in creation.currentPlayer.traits_list)
-            {
-                if (count < total - 1)
-                    traits += item.name + ", ";
-                else
-                    traits += item.name;
-                count++;
-            }
+            List<string> traitList = (from a in creation.currentPlayer.RE_general where a.selector == "trait" select a.value).ToList() ?? new List<string>();
+            if (traitList.Count > 0) traits = string.Join(", ", traitList);
             traitsText.text = traits;
 
             // Languages

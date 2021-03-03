@@ -86,7 +86,7 @@ public static class PrerequisitesSolver
     private static bool Validate_Ability(ref CharacterData playerData, string descr)
     {
         string[] split = descr.Split(' ');
-        return playerData.Abl_GetScore(StrTools.ToLowerFirst(split[0])) >= int.Parse(split[1]) ? true : false;
+        return playerData.Abl_GetScore(StrExtensions.ToLowerFirst(split[0])) >= int.Parse(split[1]) ? true : false;
     }
 
     private static bool Validate_Proficiency(ref CharacterData playerData, string descr)
@@ -97,7 +97,7 @@ public static class PrerequisitesSolver
         if (split.Length == 3) // For "expert in stealth" type of string
         {
             int maxProf = DB.Prof_Full2Int(split[0]);
-            string item = StrTools.ToLowerFirst(split[2]);
+            string item = StrExtensions.ToLowerFirst(split[2]);
 
             switch (item)
             {
@@ -138,37 +138,44 @@ public static class PrerequisitesSolver
 
     private static bool Validate_Heritage(string feat, ref CharacterData playerData)
     {
-        return playerData.Build_GetFeatNames("heritage").Contains(feat); ;
+        return false;
+        // return playerData.Build_GetFeatNames("heritage").Contains(feat);
     }
 
     private static bool Validate_AncestryFeat(string feat, ref CharacterData playerData)
     {
-        return playerData.Build_GetFeatNames("ancestry feat").Contains(feat); ;
+        return false;
+        // return playerData.Build_GetFeatNames("ancestry feat").Contains(feat);
     }
 
     private static bool Validate_AncestryFeature(string feat, ref CharacterData playerData)
     {
-        return playerData.Build_GetFeatNames("ancestry feature").Contains(feat); ;
+        return false;
+        // return playerData.Build_GetFeatNames("ancestry feature").Contains(feat);
     }
 
     private static bool Validate_ClassFeat(string feat, ref CharacterData playerData)
     {
-        return playerData.Build_GetFeatNames("class feat").Contains(feat); ;
+        return false;
+        // return playerData.Build_GetFeatNames("class feat").Contains(feat);
     }
 
     private static bool Validate_ClassFeature(string feat, ref CharacterData playerData)
     {
-        return playerData.Build_GetFeatNames("class feature").Contains(feat); ;
+        return false;
+        // return playerData.Build_GetFeatNames("class feature").Contains(feat);
     }
 
     private static bool Validate_GeneralFeat(string feat, ref CharacterData playerData)
     {
-        return playerData.Build_GetFeatNames("general feat").Contains(feat); ;
+        return false;
+        // return playerData.Build_GetFeatNames("general feat").Contains(feat);
     }
 
     private static bool Validate_SkillFeat(string feat, ref CharacterData playerData)
     {
-        return playerData.Build_GetFeatNames("skill feat").Contains(feat); ;
+        return false;
+        // return playerData.Build_GetFeatNames("skill feat").Contains(feat);
     }
 
 }
