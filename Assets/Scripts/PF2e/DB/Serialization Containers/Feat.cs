@@ -17,7 +17,7 @@ namespace Pathfinder2e.Containers
         public List<Prerequisite> prerequisites { get; set; }
         public string requirement { get; set; }
         public List<string> traits { get; set; }
-        public List<Lecture> lectures { get; set; }
+        public List<RuleElement> lectures { get; set; }
         public List<Source> source { get; set; }
     }
 

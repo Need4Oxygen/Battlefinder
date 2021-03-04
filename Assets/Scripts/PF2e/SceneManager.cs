@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Pathfinder2e.GameData;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using static TYaml.Serialization;
 
 public class SceneManager : MonoBehaviour
 {
@@ -22,7 +22,7 @@ public class SceneManager : MonoBehaviour
 
         if (Globals_PF2E.CurrentBoard != null)
         {
-            currentBoardMaps = Json.Deserialize<BoardDetails>(Globals_PF2E.CurrentBoard.boardMaps);
+            currentBoardMaps = Deserialize<BoardDetails>(Globals_PF2E.CurrentBoard.boardMaps);
 
             if (currentBoardMaps == null)
                 currentBoardMaps = new BoardDetails();
@@ -103,7 +103,7 @@ public class SceneManager : MonoBehaviour
             currentBoardMaps.terrainHeightmaps = heightDic;
             currentBoardMaps.wallElements = wallTool.RetrieveWallElements();
 
-            Globals_PF2E.CurrentBoard.boardMaps = Json.Serialize(currentBoardMaps);
+            Globals_PF2E.CurrentBoard.boardMaps = Serialize(currentBoardMaps);
             Globals_PF2E.SaveBoard(Globals_PF2E.CurrentBoard);
         }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Pathfinder2e.Character;
 using TMPro;
 using UnityEngine;
+using Tools;
 
 namespace Pathfinder2e.GameData
 {
@@ -22,7 +23,7 @@ namespace Pathfinder2e.GameData
         public void Refresh(APIC apic)
         {
             if (skillName != null)
-                skillName.text = apic.name;
+                skillName.text = StrExtensions.ToUpperFirst(apic.selector);
             if (ablDependency != null)
                 ablDependency.text = apic.abl.ToUpper();
             if (dcText != null)

@@ -8,13 +8,9 @@ namespace Pathfinder2e.Containers
         public string name { get; set; }
         public string descr { get; set; }
         public int hp { get; set; }
+        public List<string> skill_train_strings { get; set; }
         public List<string> key_ability_choices { get; set; }
-        public List<Lecture> perception { get; set; }
-        public List<Lecture> saves { get; set; }
-        public List<Lecture> attacks { get; set; }
-        public List<Lecture> defenses { get; set; }
-        public List<Lecture> skills { get; set; }
-        public List<Lecture> class_dc_and_spells { get; set; }
+        public List<RuleElement> elements { get; set; }
         public List<Source> source { get; set; }
     }
 

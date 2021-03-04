@@ -99,6 +99,7 @@ namespace Pathfinder2e.GameData
         {
             // Open Campaign Panel
             campaignName.text = campaignID.Replace(".json", "");
+            campaignName.text = campaignID.Replace(".yaml", "");
 
             // Set current campaing and refresh boards, characters, enemies and npcs
             Globals_PF2E.LoadCampaign(campaignID);

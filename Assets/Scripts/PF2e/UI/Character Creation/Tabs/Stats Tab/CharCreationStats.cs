@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Pathfinder2e.GameData;
 using TMPro;
 using UnityEngine;
@@ -97,20 +98,20 @@ namespace Pathfinder2e.Character
             DyingMaxtText.text = creation.currentPlayer.hp_dyingMax.ToString();
 
             // AC
-            armorAPIC.Refresh(creation.currentPlayer.AC_Get());
+            armorAPIC.Refresh(creation.currentPlayer.ac);
             shieldHealth.text = "0/0";
             shieldHard.text = "Hard 0";
             shieldDamage.SetTextWithoutNotify("0");
             shieldBonusAC.text = "+0";
 
             // Perception & Savesd
-            perceptionAPIC.Refresh(creation.currentPlayer.Perception_Get());
-            fortitudeAPIC.Refresh(creation.currentPlayer.Saves_Get("fortitude"));
-            reflexAPIC.Refresh(creation.currentPlayer.Saves_Get("reflex"));
-            willAPIC.Refresh(creation.currentPlayer.Saves_Get("will"));
+            perceptionAPIC.Refresh(creation.currentPlayer.perception);
+            fortitudeAPIC.Refresh(creation.currentPlayer.fortitude);
+            reflexAPIC.Refresh(creation.currentPlayer.reflex);
+            willAPIC.Refresh(creation.currentPlayer.will);
 
             // ClassDC
-            classDCText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.classDC);
+            classDCText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.class_dc);
 
             // Size
             sizeText.text = creation.currentPlayer.size;
@@ -131,19 +132,19 @@ namespace Pathfinder2e.Character
                     image.color = unactive;
             int[,] map = new int[8, 6];
             foreach (var boost in creation.currentPlayer.Abl_MapGet())
-                switch (boost.source)
+                switch (boost.from)
                 {
-                    case "ancestry boost": map[0, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
-                    case "ancestry flaw": map[0, DB.Abl_Abbr2Int(boost.abl)] -= 1; break;
-                    case "ancestry free": map[0, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
-                    case "background choice": map[1, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
-                    case "background free": map[1, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
-                    case "class": map[2, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
-                    case "lvl1": map[3, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
-                    case "lvl5": map[4, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
-                    case "lvl10": map[5, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
-                    case "lvl15": map[6, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
-                    case "lvl20": map[7, DB.Abl_Abbr2Int(boost.abl)] += 1; break;
+                    case "ancestry boost": map[0, DB.Abl_Abbr2Int(boost.selector)] += 1; break;
+                    case "ancestry flaw": map[0, DB.Abl_Abbr2Int(boost.selector)] -= 1; break;
+                    case "ancestry free": map[0, DB.Abl_Abbr2Int(boost.selector)] += 1; break;
+                    case "background choice": map[1, DB.Abl_Abbr2Int(boost.selector)] += 1; break;
+                    case "background free": map[1, DB.Abl_Abbr2Int(boost.selector)] += 1; break;
+                    case "class": map[2, DB.Abl_Abbr2Int(boost.selector)] += 1; break;
+                    case "lvl1": map[3, DB.Abl_Abbr2Int(boost.selector)] += 1; break;
+                    case "lvl5": map[4, DB.Abl_Abbr2Int(boost.selector)] += 1; break;
+                    case "lvl10": map[5, DB.Abl_Abbr2Int(boost.selector)] += 1; break;
+                    case "lvl15": map[6, DB.Abl_Abbr2Int(boost.selector)] += 1; break;
+                    case "lvl20": map[7, DB.Abl_Abbr2Int(boost.selector)] += 1; break;
 
                     default: break;
                 }
@@ -161,21 +162,14 @@ namespace Pathfinder2e.Character
             ablMapScores[5].text = (creation.currentPlayer.Abl_GetMod("cha") >= 0 ? "+" : "") + creation.currentPlayer.Abl_GetMod("cha");
 
             // Skills
-            var list = creation.currentPlayer.Skills_GetAllAsList();
+            var list = creation.currentPlayer.Skill_GetAll();
             for (int i = 0; i < skills.Count; i++)
                 skills[i].Refresh(list[i]);
 
             // Traits
             string traits = "";
-            int count = 0; int total = creation.currentPlayer.traits_list.Count;
-            foreach (var item in creation.currentPlayer.traits_list)
-            {
-                if (count < total - 1)
-                    traits += item.name + ", ";
-                else
-                    traits += item.name;
-                count++;
-            }
+            List<string> traitList = (from a in creation.currentPlayer.RE_general where a.selector == "trait" select a.value).ToList() ?? new List<string>();
+            if (traitList.Count > 0) traits = string.Join(", ", traitList);
             traitsText.text = traits;
 
             // Languages
@@ -194,15 +188,14 @@ namespace Pathfinder2e.Character
 
             // Weapon & Armor Profs
             unarmoredText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.unarmored);
-            lightArmorText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.lightArmor);
-            mediumArmorText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.mediumArmor);
-            heavyArmorText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.heavyArmor);
+            lightArmorText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.light_armor);
+            mediumArmorText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.medium_armor);
+            heavyArmorText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.heavy_armor);
 
             unarmedText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.unarmed);
-            simpleWeaponText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.simpleWeapons);
-            martialWeaponText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.martialWeapons);
-            advancedWeaponText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.advancedWeapons);
-
+            simpleWeaponText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.simple_weapons);
+            martialWeaponText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.martial_weapons);
+            advancedWeaponText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.advanced_weapons);
         }
 
         #endregion
@@ -259,7 +252,7 @@ namespace Pathfinder2e.Character
 
         public void OnEndEditShieldDamage()
         {
-            // string value = shieldDamage.text;
+            // string value = shieldDamage.text;u
             // creation.currentPlayer.shield = value;
             RefreshPlayerIntoPanel();
         }

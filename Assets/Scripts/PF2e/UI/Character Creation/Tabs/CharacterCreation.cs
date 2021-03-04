@@ -7,6 +7,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using Pathfinder2e.GameData;
 using UnityEditor;
+using System.Linq;
+using Tools;
 
 namespace Pathfinder2e.Character
 {
@@ -19,6 +21,7 @@ namespace Pathfinder2e.Character
         [SerializeField] private ABCSelector ABCSelector = null;
         [SerializeField] private AblBoostsSelector ablBoostsSelector = null;
         [SerializeField] private Searcher searcher = null;
+        [SerializeField] private SkillPlanner sklPlanner = null;
 
         [Header("Name & Level")]
         [SerializeField] private TMP_InputField levelInput = null;
@@ -40,6 +43,8 @@ namespace Pathfinder2e.Character
         [SerializeField] private Transform buildContainer = null;
         [SerializeField] private Transform buildLevelSeparator = null;
         [SerializeField] private Transform buildButton = null;
+        [SerializeField] private Transform buildMiniButton = null;
+        [SerializeField] private Transform buildMiniButtonContainer = null;
 
         private List<GameObject> buildButtonList = new List<GameObject>();
         public CharacterData currentPlayer = null;
@@ -50,7 +55,7 @@ namespace Pathfinder2e.Character
             tabOffColor = Globals.Theme["background_2"];
         }
 
-        #region --------------------------------------------GENERAL--------------------------------------------
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- GENERAL
 
         private void OpenPlayerCreationPanel()
         {
@@ -83,9 +88,8 @@ namespace Pathfinder2e.Character
             ClosePlayerCreationPanel();
         }
 
-        #endregion
 
-        #region --------------------------------------------PLAYERS--------------------------------------------
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- PLAYERS
 
         /// <summary> Generates new player and open the player panel. </summary>
         public void NewPlayer()
@@ -100,32 +104,21 @@ namespace Pathfinder2e.Character
             ABCSelector.backButton.onClick.AddListener(() => NewPlayerProcessBack());
         }
 
-        [MenuItem("Debug/Reset Character")]
-        public void NewPlayer2()
-        {
-            string newGuid = Guid.NewGuid().ToString();
-            currentPlayer = new CharacterData();
-            currentPlayer.guid = newGuid;
-
-            SavePlayer();
-            ClosePlayerCreationPanel();
-        }
-
         private void NewPlayerProcessAccept()
         {
             if (ABCSelector.currentlyDisplaying == "ancestry")
             {
-                currentPlayer.ancestry = ABCSelector.selectedAncestry;
+                currentPlayer.Ancestry_Set(ABCSelector.selectedAncestry);
                 ABCSelector.Display("background");
             }
             else if (ABCSelector.currentlyDisplaying == "background")
             {
-                currentPlayer.background = ABCSelector.selectedBackground;
+                currentPlayer.Background_Set(ABCSelector.selectedBackground);
                 ABCSelector.Display("class");
             }
             else if (ABCSelector.currentlyDisplaying == "class")
             {
-                currentPlayer.class_name = ABCSelector.selectedClass;
+                currentPlayer.Class_Set(ABCSelector.selectedClass);
                 CloseABCPanel(true);
                 OpenPlayerCreationPanel();
             }
@@ -140,13 +133,13 @@ namespace Pathfinder2e.Character
             }
             else if (ABCSelector.currentlyDisplaying == "background")
             {
-                currentPlayer.background = "";
+                currentPlayer.Background_Set("");
                 ABCSelector.Display("ancestry");
 
             }
             else if (ABCSelector.currentlyDisplaying == "class")
             {
-                currentPlayer.class_name = "";
+                currentPlayer.Class_Set("");
                 ABCSelector.Display("background");
             }
         }
@@ -190,13 +183,61 @@ namespace Pathfinder2e.Character
                 Destroy(item.gameObject, 0.001f);
             }
             buildButtonList.Clear();
-            ClassProgression progression = DB.ClassProgression.Find(ctx => ctx.name == currentPlayer.class_name);
 
+            ClassProgression progression = DB.ClassProgression.Find(ctx => ctx.name == currentPlayer.class_name);
             for (int i = 0; i < progression.progression.Count; i++)
             {
                 ClassStage stage = progression.progression[i];
+
+                // Generate Separator as Level 1 , Level 2...
                 GenerateSeparator(i + 1);
 
+                // Generate minibuttons as for unspent skills, skill choices, free skills, improvements
+                List<BuildButton> miniButtons = new List<BuildButton>();
+
+                foreach (var item in currentPlayer.skill_unspent.Where(x => int.Parse(x.Key.level) == i + 1)) // Unspent
+                {
+                    BuildButton miniButt = GenerateBuildMiniButton($"{StrExtensions.ToUpperFirst(item.Key.from)} Unspent", item.Value != null ? "O" : "X", null);
+                    RuleElement listenerRule = item.Key;
+                    miniButt.button.onClick.AddListener(() => OnClick_Skill(listenerRule));
+                    miniButtons.Add(miniButt);
+                }
+
+                foreach (var item in currentPlayer.skill_choice.Where(x => int.Parse(x.Key.level) == i + 1)) // Choices
+                {
+                    BuildButton miniButt = GenerateBuildMiniButton($"{StrExtensions.ToUpperFirst(item.Key.from)} choice", item.Value != null ? "O" : "X", null);
+                    RuleElement listenerRule = item.Key;
+                    miniButt.button.onClick.AddListener(() => OnClick_Skill(listenerRule));
+                    miniButtons.Add(miniButt);
+                }
+
+                foreach (var item in currentPlayer.skill_free.Where(x => int.Parse(x.Key.level) == i + 1)) // Free
+                {
+                    BuildButton miniButt = GenerateBuildMiniButton($"{StrExtensions.ToUpperFirst(item.Key.from)} free", item.Value != null ? item.Value.Count.ToString() + $"/{item.Key.value}" : "0" + $"/{item.Key.value}", null);
+                    RuleElement listenerRule = item.Key;
+                    miniButt.button.onClick.AddListener(() => OnClick_Skill(listenerRule));
+                    miniButtons.Add(miniButt);
+                }
+
+                foreach (var item in currentPlayer.skill_improve.Where(x => int.Parse(x.Key.level) == i + 1)) // Improve
+                {
+                    BuildButton miniButt = GenerateBuildMiniButton($"{StrExtensions.ToUpperFirst(item.Key.from)} choice", item.Value != null ? "O" : "X", null);
+                    RuleElement listenerRule = item.Key;
+                    miniButt.button.onClick.AddListener(() => OnClick_Skill(listenerRule));
+                    miniButtons.Add(miniButt);
+                }
+
+                if (miniButtons.Count > 0)
+                {
+                    Transform miniCont = GenerateBuildMiniButtonContainer();
+                    foreach (var but in miniButtons)
+                    {
+                        but.transform.SetParent(miniCont);
+                        but.transform.localScale = Vector3.one;
+                    }
+                }
+
+                // Generate other buttons
                 foreach (string item in stage.items)
                 {
                     switch (item)
@@ -244,10 +285,8 @@ namespace Pathfinder2e.Character
             }
         }
 
-        #endregion
 
-        #region --------------------------------------------BUILD--------------------------------------------
-
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- BUILD
         private GameObject GenerateSeparator(int stage)
         {
             Transform separator = Instantiate(buildLevelSeparator, Vector3.zero, Quaternion.identity, buildContainer);
@@ -265,12 +304,30 @@ namespace Pathfinder2e.Character
             buildButtonList.Add(button.gameObject);
 
             BuildButton buttonScript = button.GetComponent<BuildButton>();
-            if (!string.IsNullOrEmpty(title))
-                buttonScript.title.text = title;
-            if (!string.IsNullOrEmpty(subtitle))
-                buttonScript.subtitle.text = subtitle;
+            buttonScript.title.text = string.IsNullOrEmpty(title) ? "" : title;
+            buttonScript.subtitle.text = string.IsNullOrEmpty(subtitle) ? "" : subtitle;
 
             return button.GetComponent<BuildButton>();
+        }
+
+        private BuildButton GenerateBuildMiniButton(Transform parent) { return GenerateBuildMiniButton("", "", parent); }
+        private BuildButton GenerateBuildMiniButton(string title, string subtitle, Transform parent)
+        {
+            Transform button = Instantiate(buildMiniButton, Vector3.zero, Quaternion.identity, parent);
+            buildButtonList.Add(button.gameObject);
+
+            BuildButton buttonScript = button.GetComponent<BuildButton>();
+            buttonScript.title.text = string.IsNullOrEmpty(title) ? "" : title;
+            buttonScript.subtitle.text = string.IsNullOrEmpty(subtitle) ? "" : subtitle;
+
+            return button.GetComponent<BuildButton>();
+        }
+
+        private Transform GenerateBuildMiniButtonContainer()
+        {
+            Transform button = Instantiate(buildMiniButtonContainer, Vector3.zero, Quaternion.identity, buildContainer);
+            buildButtonList.Add(button.gameObject);
+            return button;
         }
 
         private void NoChoiceButtonsAssigner(BuildBlock buildItem, BuildButton button)
@@ -279,6 +336,8 @@ namespace Pathfinder2e.Character
             // button.subtitle.text = buildItem.value;
         }
 
+
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- LISTENERS
         private void OnClick_InitialAbilityBoosts()
         {
             ablBoostsSelector.Open_InitialAblBoosts();
@@ -309,9 +368,13 @@ namespace Pathfinder2e.Character
             searcher.Search(E_Searcher_Type.GeneralFeat);
         }
 
-        #endregion
+        private void OnClick_Skill(RuleElement rule)
+        {
+            sklPlanner.OpenWithRule(rule);
+        }
 
-        #region --------------------------------------------TABS--------------------------------------------
+
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- TABS
 
         private Color tabOnColor;
         private Color tabOffColor;
@@ -369,9 +432,8 @@ namespace Pathfinder2e.Character
             }
         }
 
-        #endregion
 
-        #region --------------------------------------------BUTTONS & INPUT--------------------------------------------
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- BUTTONS & INPUT
 
         /// <summary> Called by the level inputfiedld. </summary>
         public void OnEndEditLevel()
@@ -397,7 +459,7 @@ namespace Pathfinder2e.Character
         }
         private void SelectAncestryAccept()
         {
-            currentPlayer.ancestry = ABCSelector.selectedAncestry;
+            currentPlayer.Ancestry_Set(ABCSelector.selectedAncestry);
             CloseABCPanel(true);
         }
         private void SelectAncestryCancel()
@@ -415,7 +477,7 @@ namespace Pathfinder2e.Character
         }
         private void SelectBackgroundAccept()
         {
-            currentPlayer.background = ABCSelector.selectedBackground;
+            currentPlayer.Background_Set(ABCSelector.selectedBackground);
             CloseABCPanel(true);
         }
         private void SelectBackgroundCancel()
@@ -433,7 +495,7 @@ namespace Pathfinder2e.Character
         }
         private void SelectClassAccept()
         {
-            currentPlayer.class_name = ABCSelector.selectedClass;
+            currentPlayer.Class_Set(ABCSelector.selectedClass);
             CloseABCPanel(true);
         }
         private void SelectClassCancel()
@@ -449,10 +511,10 @@ namespace Pathfinder2e.Character
             ABCSelector.backButton.onClick.RemoveAllListeners();
 
             if (refreshPanels)
+            {
                 RefreshPlayerIntoPanel();
+            }
         }
-
-        #endregion
 
     }
 

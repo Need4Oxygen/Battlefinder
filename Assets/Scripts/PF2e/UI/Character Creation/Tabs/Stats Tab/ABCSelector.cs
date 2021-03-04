@@ -14,67 +14,66 @@ namespace Pathfinder2e.GameData
     public class ABCSelector : MonoBehaviour
     {
         [HideInInspector] public string currentlyDisplaying;
-
-        [SerializeField] CharacterCreation characterCreation = null;
+        [SerializeField] private CharacterCreation characterCreation = null;
 
         [Header("ABC")]
-        [SerializeField] Window window = null;
-        [SerializeField] Transform buttonContainer = null;
-        [SerializeField] Transform button = null;
-        [SerializeField] Transform tabContainer = null;
-        [SerializeField] Transform tab = null;
+        [SerializeField] private Window window = null;
+        [SerializeField] private Transform buttonContainer = null;
+        [SerializeField] private Transform button = null;
+        [SerializeField] private Transform tabContainer = null;
+        [SerializeField] private Transform tab = null;
 
         [Space(15)]
         public Button acceptButton = null;
         public Button backButton = null;
 
         [Header("Ancestries Panel")]
-        [SerializeField] Transform ancestryPanel = null;
-        [SerializeField] TMP_Text ancestryTitle = null;
-        [SerializeField] TMP_Text ancestryDescription = null;
-        [SerializeField] TMP_Text ancestryHitPoints = null;
-        [SerializeField] TMP_Text ancestrySpeed = null;
-        [SerializeField] TMP_Text ancestrySize = null;
-        [SerializeField] TMP_Text ancestryAbilityBoosts = null;
-        [SerializeField] TMP_Text ancestryAbilityFlaws = null;
-        [SerializeField] TMP_Text ancestryLanguages = null;
-        [SerializeField] TMP_Text ancestryTraits = null;
-        [SerializeField] TMP_Text ancestryFeatures = null;
+        [SerializeField] private Transform ancestryPanel = null;
+        [SerializeField] private TMP_Text ancestryTitle = null;
+        [SerializeField] private TMP_Text ancestryDescription = null;
+        [SerializeField] private TMP_Text ancestryHitPoints = null;
+        [SerializeField] private TMP_Text ancestrySpeed = null;
+        [SerializeField] private TMP_Text ancestrySize = null;
+        [SerializeField] private TMP_Text ancestryAbilityBoosts = null;
+        [SerializeField] private TMP_Text ancestryAbilityFlaws = null;
+        [SerializeField] private TMP_Text ancestryLanguages = null;
+        [SerializeField] private TMP_Text ancestryTraits = null;
+        [SerializeField] private TMP_Text ancestryFeatures = null;
 
 
         [Header("Backgrounds Panel")]
-        [SerializeField] Transform backgroundPanel = null;
-        [SerializeField] TMP_Text backgroundTitle = null;
-        [SerializeField] TMP_Text backgroundDescription = null;
-        [SerializeField] TMP_Text backgroundAbilityBoosts = null;
-        [SerializeField] TMP_Text backgroundSkillTrain = null;
-        [SerializeField] TMP_Text backgroundSkillFeat = null;
+        [SerializeField] private Transform backgroundPanel = null;
+        [SerializeField] private TMP_Text backgroundTitle = null;
+        [SerializeField] private TMP_Text backgroundDescription = null;
+        [SerializeField] private TMP_Text backgroundAbilityBoosts = null;
+        [SerializeField] private TMP_Text backgroundSkillTrain = null;
+        [SerializeField] private TMP_Text backgroundSkillFeat = null;
 
 
         [Header("Classes Panel")]
-        [SerializeField] Transform classPanel = null;
-        [SerializeField] Transform weaponArmorLeyendPanel = null;
-        [SerializeField] TMP_Text classTitle = null;
-        [SerializeField] TMP_Text classDescription = null;
-        [SerializeField] TMP_Text classHitPoints = null;
+        [SerializeField] private Transform classPanel = null;
+        [SerializeField] private Transform weaponArmorLeyendPanel = null;
+        [SerializeField] private TMP_Text classTitle = null;
+        [SerializeField] private TMP_Text classDescription = null;
+        [SerializeField] private TMP_Text classHitPoints = null;
 
-        [SerializeField] TMP_Text classUnarmed = null;
-        [SerializeField] TMP_Text classSimpleWeapons = null;
-        [SerializeField] TMP_Text classMartialWeapons = null;
-        [SerializeField] TMP_Text classAdvancedWeapons = null;
+        [SerializeField] private TMP_Text classUnarmed = null;
+        [SerializeField] private TMP_Text classSimpleWeapons = null;
+        [SerializeField] private TMP_Text classMartialWeapons = null;
+        [SerializeField] private TMP_Text classAdvancedWeapons = null;
 
-        [SerializeField] TMP_Text classUnarmored = null;
-        [SerializeField] TMP_Text classLightArmor = null;
-        [SerializeField] TMP_Text classMediumArmor = null;
-        [SerializeField] TMP_Text classHeavyArmor = null;
+        [SerializeField] private TMP_Text classUnarmored = null;
+        [SerializeField] private TMP_Text classLightArmor = null;
+        [SerializeField] private TMP_Text classMediumArmor = null;
+        [SerializeField] private TMP_Text classHeavyArmor = null;
 
-        [SerializeField] TMP_Text classKeyAbility = null;
-        [SerializeField] TMP_Text classSkillTrain = null;
+        [SerializeField] private TMP_Text classKeyAbility = null;
+        [SerializeField] private TMP_Text classSkillTrain = null;
 
-        [SerializeField] TMP_Text classPerception = null;
-        [SerializeField] TMP_Text classFortitude = null;
-        [SerializeField] TMP_Text classReflex = null;
-        [SerializeField] TMP_Text classWill = null;
+        [SerializeField] private TMP_Text classPerception = null;
+        [SerializeField] private TMP_Text classFortitude = null;
+        [SerializeField] private TMP_Text classReflex = null;
+        [SerializeField] private TMP_Text classWill = null;
 
 
         [HideInInspector] public string selectedAncestry = "";
@@ -340,13 +339,13 @@ namespace Pathfinder2e.GameData
             // Extract feats to display in a string
             string backgroundSkillTrainString = "";
             List<string> skillNames = new List<string>();
-            foreach (var item in background.lectures)
-                skillNames.Add(item.target);
+            foreach (var item in background.elements)
+                skillNames.Add(item.selector);
             for (int i = 0; i < skillNames.Count; i++)
                 if (i < skillNames.Count - 1)
-                    backgroundSkillTrainString += StrTools.ToUpperFirst(skillNames[i]) + ", ";
+                    backgroundSkillTrainString += StrExtensions.ToUpperFirst(skillNames[i]) + ", ";
                 else
-                    backgroundSkillTrainString += StrTools.ToUpperFirst(skillNames[i]);
+                    backgroundSkillTrainString += StrExtensions.ToUpperFirst(skillNames[i]);
             backgroundSkillTrain.text = backgroundSkillTrainString;
 
             // Extract feats to display in a string
@@ -402,7 +401,7 @@ namespace Pathfinder2e.GameData
             classTitle.text = classObj.name;
             classDescription.text = classObj.descr;
             classHitPoints.text = classObj.hp.ToString();
-            classSkillTrain.text = ClassSkillTrainStringProcessor(classObj.skills);
+            classSkillTrain.text = ClassSkillTrainStringProcessor(classObj);
 
             string classKeyAbilityString = "";
             for (int i = 0; i < classObj.key_ability_choices.Count; i++)
@@ -418,95 +417,39 @@ namespace Pathfinder2e.GameData
             classMartialWeapons.text = untrained; classMediumArmor.text = untrained; classReflex.text = untrained;
             classAdvancedWeapons.text = untrained; classHeavyArmor.text = untrained; classWill.text = untrained;
 
-            classPerception.text = DB.Prof_Full2AbbrColored(classObj.perception[0].prof);
-
-            foreach (var item in classObj.attacks)
-                switch (item.target)
+            foreach (var element in classObj.elements)
+            {
+                switch (element.selector)
                 {
-                    case "unarmed attacks":
-                        classUnarmed.text = DB.Prof_Full2AbbrColored(item.prof);
-                        break;
-                    case "simple weapons":
-                        classSimpleWeapons.text = DB.Prof_Full2AbbrColored(item.prof);
-                        break;
-                    case "martial weapons":
-                        classMartialWeapons.text = DB.Prof_Full2AbbrColored(item.prof);
-                        break;
-                    case "advanced weapons":
-                        classAdvancedWeapons.text = DB.Prof_Full2AbbrColored(item.prof);
-                        break;
-                    default:
-                        break;
-                }
+                    case "perception": classPerception.text = DB.Prof_Full2AbbrColored(element.proficiency); break;
 
-            foreach (var item in classObj.defenses)
-                switch (item.target)
-                {
-                    case "unarmored defense":
-                        classUnarmored.text = DB.Prof_Full2AbbrColored(item.prof);
-                        break;
-                    case "light armor":
-                        classLightArmor.text = DB.Prof_Full2AbbrColored(item.prof);
-                        break;
-                    case "medium armor":
-                        classMediumArmor.text = DB.Prof_Full2AbbrColored(item.prof);
-                        break;
-                    case "heavy armor":
-                        classHeavyArmor.text = DB.Prof_Full2AbbrColored(item.prof);
-                        break;
-                    case "all armor":
-                        classLightArmor.text = DB.Prof_Full2AbbrColored(item.prof);
-                        classMediumArmor.text = DB.Prof_Full2AbbrColored(item.prof);
-                        classHeavyArmor.text = DB.Prof_Full2AbbrColored(item.prof);
-                        break;
-                    default:
-                        break;
-                }
+                    case "fortitude": classFortitude.text = DB.Prof_Full2AbbrColored(element.proficiency); break;
+                    case "reflex": classReflex.text = DB.Prof_Full2AbbrColored(element.proficiency); break;
+                    case "will": classWill.text = DB.Prof_Full2AbbrColored(element.proficiency); break;
 
-            foreach (var item in classObj.saves)
-                switch (item.target)
-                {
-                    case "fortitude":
-                        classFortitude.text = DB.Prof_Full2AbbrColored(item.prof);
-                        break;
-                    case "reflex":
-                        classReflex.text = DB.Prof_Full2AbbrColored(item.prof);
-                        break;
-                    case "will":
-                        classWill.text = DB.Prof_Full2AbbrColored(item.prof);
-                        break;
-                    default:
-                        break;
+                    case "unarmed": classUnarmed.text = DB.Prof_Full2AbbrColored(element.proficiency); break;
+                    case "simple_weapons": classSimpleWeapons.text = DB.Prof_Full2AbbrColored(element.proficiency); break;
+                    case "martial_weapons": classMartialWeapons.text = DB.Prof_Full2AbbrColored(element.proficiency); break;
+                    case "advanced_weapons": classAdvancedWeapons.text = DB.Prof_Full2AbbrColored(element.proficiency); break;
+
+                    case "unarmored": classUnarmored.text = DB.Prof_Full2AbbrColored(element.proficiency); break;
+                    case "light_armor": classLightArmor.text = DB.Prof_Full2AbbrColored(element.proficiency); break;
+                    case "medium_armor": classMediumArmor.text = DB.Prof_Full2AbbrColored(element.proficiency); break;
+                    case "heavy_armor": classHeavyArmor.text = DB.Prof_Full2AbbrColored(element.proficiency); break;
+                    default: break;
                 }
+            }
         }
 
-        static string ClassSkillTrainStringProcessor(List<Lecture> lectures)
+        static string ClassSkillTrainStringProcessor(Class classObj)
         {
             string str = "";
 
-            foreach (var item in lectures)
-            {
-                if (DB.SkillNames.Contains(item.target))
-                    str += $"{StrTools.ToUpperFirst(item.prof)} in {StrTools.ToUpperFirst(item.target)}. ";
-                else if (item.target.Contains("a number"))
-                    str += $"{StrTools.ToUpperFirst(item.prof)} in a number of additional skills equal to {new string(item.target.Where(char.IsDigit).ToArray())} plus your intelligence modifier. ";
-                else if (item.target == "your choice of acrobatics or athletics") // for fighter choice of acrobatics or athletics
-                    str += $"{StrTools.ToUpperFirst(item.prof)} in your choice of acrobatics or athletics";
-                else if (item.target == "one skill determined by your choice of deity") // for champion cleric deity
-                    str += $"{StrTools.ToUpperFirst(item.prof)} in one skill determined by your choice of deity";
-                else if (item.target == "one skill determined by your druidic order") // for druid order
-                    str += $"{StrTools.ToUpperFirst(item.prof)} in one skill determined by your druidic order";
-                else if (item.target == "one or more skills determined by your rogue's racket") // for rogues racket
-                    str += $"{StrTools.ToUpperFirst(item.prof)} in one or more skills determined by your rogue's racket";
-                else if (item.target == "one or more skills determined by your bloodline") // for sorcerer bloodline
-                    str += $"{StrTools.ToUpperFirst(item.prof)} in one or more skills determined by your bloodline";
-            }
+            foreach (var item in classObj.skill_train_strings)
+                str += $"{item}. ";
 
             return str;
         }
-
-
-
     }
 
 }

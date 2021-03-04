@@ -7,6 +7,7 @@ using TMPro;
 using Pathfinder2e.Containers;
 using Pathfinder2e.GameData;
 using UnityEngine.UI;
+using Tools;
 
 namespace Pathfinder2e.Character
 {

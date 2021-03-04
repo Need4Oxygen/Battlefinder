@@ -23,7 +23,7 @@ public class WindowManager : MonoBehaviour
             OnWindowOpens(window);
 
         string type = window.isSubpanel ? "Subpanel" : "Window";
-        Debug.Log($"[WindowManager] {type} \"{window.windowName}\" opened, stack count: {OpenWindows.Count}");
+        // Debug.Log($"[WindowManager] {type} \"{window.windowName}\" opened, stack count: {OpenWindows.Count}");
     }
 
     public static void WindowClosed(Window window)
@@ -43,7 +43,7 @@ public class WindowManager : MonoBehaviour
             OnWindowCloses(window);
 
         string type = window.isSubpanel ? "Subpanel" : "Window";
-        Debug.Log($"[WindowManager] {type} \"{window.windowName}\" closed, stack count: {OpenWindows.Count}");
+        // Debug.Log($"[WindowManager] {type} \"{window.windowName}\" closed, stack count: {OpenWindows.Count}");
     }
 
     private static void SetRaycastTarget(Window window)
@@ -69,7 +69,7 @@ public class WindowManager : MonoBehaviour
                 if (child.syncRaycastWithParent)
                     child.raycaster.enabled = true;
 
-        Debug.Log($"[WindowManager] Raycast target: {window.windowName} with {window.children.Count} childs!");
+        // Debug.Log($"[WindowManager] Raycast target: {window.windowName} with {window.children.Count} childs!");
     }
 
 }

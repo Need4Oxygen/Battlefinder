@@ -11,7 +11,7 @@ alchemist:
     requirement: null
       - Alchemist
     traits:
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 72
@@ -29,7 +29,7 @@ alchemist:
     requirement: null
     traits:
       - Alchemist
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 72
@@ -48,7 +48,7 @@ alchemist:
     traits:
       - Alchemist
       - Manipulate
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 72
@@ -66,7 +66,7 @@ alchemist:
     requirement: null
     traits:
       - Alchemist
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 73
@@ -84,7 +84,7 @@ alchemist:
     requirement: null
     traits:
       - Alchemist
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 73
@@ -102,7 +102,7 @@ alchemist:
     requirement: null
     traits:
       - Alchemist
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 73
@@ -120,7 +120,7 @@ alchemist:
     requirement: null
     traits:
       - Alchemist
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 73
@@ -138,7 +138,7 @@ alchemist:
     requirement: null
       - Alchemist
     traits:
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 74
@@ -156,7 +156,7 @@ alchemist:
     requirement: null
     traits:
       - Alchemist
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 74
@@ -174,11 +174,13 @@ alchemist:
     requirement: null
     traits:
       - Alchemist
-    lectures:
-      - target: simple weapons
-        prof: expert
-      - target: alchemical bombs
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: simple_weapons
+        proficiency: expert
+      - key: proficiency_static
+        selector: alchemical bombs
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 74
@@ -196,9 +198,10 @@ alchemist:
     requirement: null
     traits:
       - Alchemist
-    lectures:
-      - target: will
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: simple_weapons
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 74
@@ -216,7 +219,7 @@ alchemist:
     requirement: null
     traits:
       - Alchemist
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 74
@@ -234,9 +237,10 @@ alchemist:
     requirement: null
     traits:
       - Alchemist
-    lectures:
-      - target: alchemist class DC
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: class dc
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 75
@@ -254,7 +258,7 @@ alchemist:
     requirement: null
     traits:
       - Alchemist
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 75
@@ -272,9 +276,10 @@ alchemist:
     requirement: null
     traits:
       - Alchemist
-    lectures:
-      - target: fortitude
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: fortitude
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 76
@@ -292,7 +297,7 @@ alchemist:
     requirement: null
     traits:
       - Alchemist
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 75
@@ -310,7 +315,7 @@ alchemist:
     requirement: null
     traits:
       - Alchemist
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 75
@@ -328,11 +333,13 @@ alchemist:
     requirement: null
     traits:
       - Alchemist
-    lectures:
-      - target: unarmored
-        prof: expert
-      - target: light armor
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: unarmored
+        proficiency: expert
+      - key: proficiency_static
+        selector: light_armor
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 76
@@ -350,7 +357,7 @@ alchemist:
     requirement: null
     traits:
       - Alchemist
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 75
@@ -368,7 +375,7 @@ alchemist:
     requirement: null
     traits:
       - Alchemist
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 75
@@ -386,9 +393,10 @@ alchemist:
     requirement: null
     traits:
       - Alchemist
-    lectures:
-      - target: refelx
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: reflex
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 76
@@ -406,9 +414,10 @@ alchemist:
     requirement: null
       - Alchemist
     traits:
-    lectures:
-      - target: alchemist class DC
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: class dc
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 76
@@ -426,7 +435,7 @@ alchemist:
     requirement: null
     traits:
       - Alchemist
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 76
@@ -435,7 +444,7 @@ alchemist:
   - name: Light Armor Mastery
     descr: "Your skill with light armor improves, increasing your ability to dodge blows. Your proficiency ranks for light armor and unarmored defense increase to master."
     type: class feature
-    level: 1
+    level: 19
     actioncost: null
     frequency: null
     cost: null
@@ -444,11 +453,13 @@ alchemist:
     requirement: null
     traits:
       - Alchemist
-    lectures:
-      - target: unarmored
-        prof: master
-      - target: light armor
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: unarmored
+        proficiency: master
+      - key: proficiency_static
+        selector: light_armor
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 76
@@ -470,7 +481,7 @@ barbarian:
       - Concentrate
       - Emotion
       - Mental
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 84
@@ -488,7 +499,7 @@ barbarian:
     requirement: null
     traits:
       - Barbarian
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 84
@@ -506,7 +517,7 @@ barbarian:
     requirement: null
     traits:
       - Barbarian
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 84
@@ -524,7 +535,7 @@ barbarian:
     requirement: null
     traits:
       - Barbarian
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 85
@@ -542,9 +553,10 @@ barbarian:
     requirement: null
     traits:
       - Barbarian
-    lectures:
-      - target: fortitude
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: fortitude
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 85
@@ -562,7 +574,7 @@ barbarian:
     requirement: null
     traits:
       - Barbarian
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 85
@@ -580,7 +592,7 @@ barbarian:
     requirement: null
     traits:
       - Barbarian
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 85
@@ -598,7 +610,7 @@ barbarian:
     requirement: null
     traits:
       - Barbarian
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 85
@@ -616,9 +628,10 @@ barbarian:
     requirement: null
     traits:
       - Barbarian
-    lectures:
-      - target: fortitude
-        prof: legendary
+    elements:
+      - key: proficiency_static
+        selector: fortitude
+        proficiency: legendary
     source:
       - abbr: CRB
         page_start: 85
@@ -636,13 +649,16 @@ barbarian:
     requirement: null
     traits:
       - Barbarian
-    lectures:
-      - target: unarmored
-        prof: expert
-      - target: light armor
-        prof: expert
-      - target: medium armor
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: unarmored
+        proficiency: expert
+      - key: proficiency_static
+        selector: light_armor
+        proficiency: expert
+      - key: proficiency_static
+        selector: medium_armor
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 85
@@ -660,13 +676,16 @@ barbarian:
     requirement: null
     traits:
       - Barbarian
-    lectures:
-      - target: unarmed
-        prof: master
-      - target: simple weapons
-        prof: master
-      - target: martial weapons
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: unarmed
+        proficiency: master
+      - key: proficiency_static
+        selector: simple_weapons
+        proficiency: master
+      - key: proficiency_static
+        selector: martial_weapons
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 85
@@ -684,7 +703,7 @@ barbarian:
     requirement: null
     traits:
       - Barbarian
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 86
@@ -702,9 +721,10 @@ barbarian:
     requirement: null
     traits:
       - Barbarian
-    lectures:
-      - target: will
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: will
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 86
@@ -722,9 +742,10 @@ barbarian:
     requirement: null
     traits:
       - Barbarian
-    lectures:
-      - target: perception
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: perception
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 86
@@ -742,7 +763,7 @@ barbarian:
     requirement: null
     traits:
       - Barbarian
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 86
@@ -760,13 +781,16 @@ barbarian:
     requirement: null
     traits:
       - Barbarian
-    lectures:
-      - target: unarmored
-        prof: master
-      - target: light armor
-        prof: master
-      - target: medium armor
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: unarmored
+        proficiency: master
+      - key: proficiency_static
+        selector: light_armor
+        proficiency: master
+      - key: proficiency_static
+        selector: medium_armor
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 86
@@ -784,7 +808,7 @@ barbarian:
     requirement: null
     traits:
       - Barbarian
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 86
@@ -803,7 +827,7 @@ bard:
     requirement: null
     traits:
       - Bard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 96
@@ -821,7 +845,7 @@ bard:
     requirement: null
     traits:
       - Bard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 96
@@ -839,7 +863,7 @@ bard:
     requirement: null
     traits:
       - Bard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 96
@@ -857,7 +881,7 @@ bard:
     requirement: null
     traits:
       - Bard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 96
@@ -875,7 +899,7 @@ bard:
     requirement: null
     traits:
       - Bard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 97
@@ -893,7 +917,7 @@ bard:
     requirement: null
     traits:
       - Bard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 97
@@ -911,7 +935,7 @@ bard:
     requirement: null
     traits:
       - Bard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 97
@@ -929,7 +953,7 @@ bard:
     requirement: null
     traits:
       - Bard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 97
@@ -947,7 +971,7 @@ bard:
     requirement: null
     traits:
       - Bard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 97
@@ -965,7 +989,7 @@ bard:
     requirement: null
     traits:
       - Bard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 97
@@ -983,7 +1007,7 @@ bard:
     requirement: null
     traits:
       - Bard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 97
@@ -1001,9 +1025,10 @@ bard:
     requirement: null
     traits:
       - Bard
-    lectures:
-      - target: reflex
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: reflex
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 98
@@ -1021,7 +1046,7 @@ bard:
     requirement: null
     traits:
       - Bard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 98
@@ -1039,11 +1064,13 @@ bard:
     requirement: null
     traits:
       - Bard
-    lectures:
-      - target: occult spell attacks
-        prof: expert
-      - target: occult spell dcs
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: occult spell attacks
+        proficiency: expert
+      - key: proficiency_static
+        selector: occult spell dcs
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 98
@@ -1061,9 +1088,10 @@ bard:
     requirement: null
     traits:
       - Bard
-    lectures:
-      - target: fortitude
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: fortitude
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 99
@@ -1081,9 +1109,14 @@ bard:
     requirement: null
     traits:
       - Bard
-    lectures:
-      - target: will
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: will
+        proficiency: master
+
+      - key: proficiency_static
+        selector: fortitude
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 99
@@ -1101,9 +1134,10 @@ bard:
     requirement: null
     traits:
       - Bard
-    lectures:
-      - target: simple weapons
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: simple_weapons
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 99
@@ -1121,9 +1155,10 @@ bard:
     requirement: null
     traits:
       - Bard
-    lectures:
-      - target: perception
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: perception
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 99
@@ -1141,11 +1176,13 @@ bard:
     requirement: null
     traits:
       - Bard
-    lectures:
-      - target: unarmored
-        prof: expert
-      - target: light armor
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: unarmored
+        proficiency: expert
+      - key: proficiency_static
+        selector: light_armor
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 99
@@ -1163,7 +1200,7 @@ bard:
     requirement: null
     traits:
       - Bard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 99
@@ -1181,11 +1218,13 @@ bard:
     requirement: null
     traits:
       - Bard
-    lectures:
-      - target: occult spell attacks
-        prof: master
-      - target: occult spell dcs
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: occult spell attacks
+        proficiency: master
+      - key: proficiency_static
+        selector: occult spell dcs
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 99
@@ -1203,9 +1242,10 @@ bard:
     requirement: null
     traits:
       - Bard
-    lectures:
-      - target: will
-        prof: legendary
+    elements:
+      - key: proficiency_static
+        selector: will
+        proficiency: legendary
     source:
       - abbr: CRB
         page_start: 99
@@ -1223,9 +1263,10 @@ bard:
     requirement: null
     traits:
       - Bard
-    lectures:
-      - target: will
-        prof: legendary
+    elements:
+      - key: proficiency_static
+        selector: will
+        proficiency: legendary
     source:
       - abbr: CRB
         page_start: 99
@@ -1243,7 +1284,7 @@ bard:
     requirement: null
     traits:
       - Bard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 99
@@ -1261,11 +1302,13 @@ bard:
     requirement: null
     traits:
       - Bard
-    lectures:
-      - target: occult spell attacks
-        prof: legendary
-      - target: occult spell dcs
-        prof: legendary
+    elements:
+      - key: proficiency_static
+        selector: occult spell attacks
+        proficiency: legendary
+      - key: proficiency_static
+        selector: occult spell dcs
+        proficiency: legendary
     source:
       - abbr: CRB
         page_start: 99
@@ -1284,7 +1327,7 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 106
@@ -1302,7 +1345,7 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 106
@@ -1320,7 +1363,7 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 106
@@ -1338,7 +1381,7 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 106
@@ -1356,7 +1399,7 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 106
@@ -1374,7 +1417,7 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 107
@@ -1392,7 +1435,7 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 107
@@ -1410,7 +1453,7 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 107
@@ -1428,7 +1471,7 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 107
@@ -1446,7 +1489,7 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 107
@@ -1464,7 +1507,7 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 107
@@ -1482,7 +1525,7 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 108
@@ -1500,7 +1543,7 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 108
@@ -1518,7 +1561,7 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 108
@@ -1536,11 +1579,13 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures:
-      - target: simple weapons
-        prof: expert
-      - target: martial weapons
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: simple_weapons
+        proficiency: expert
+      - key: proficiency_static
+        selector: martial_weapons
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 108
@@ -1558,15 +1603,19 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures:
-      - target: unarmored
-        prof: expert
-      - target: light armor
-        prof: expert
-      - target: medium armor
-        prof: expert
-      - target: heavy armor
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: unarmored
+        proficiency: expert
+      - key: proficiency_static
+        selector: light_armor
+        proficiency: expert
+      - key: proficiency_static
+        selector: medium_armor
+        proficiency: expert
+      - key: proficiency_static
+        selector: heavy_armor
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 108
@@ -1584,7 +1633,7 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 108
@@ -1602,13 +1651,16 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures:
-      - target: champion class dc
-        prof: expert
-      - target: divine spell attacks
-        prof: expert
-      - target: divine spell dcs
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: class dc
+        proficiency: expert
+      - key: proficiency_static
+        selector: divine spell attacks
+        proficiency: expert
+      - key: proficiency_static
+        selector: divine spell dcs
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 108
@@ -1626,7 +1678,7 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 108
@@ -1644,9 +1696,10 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures:
-      - target: fortitude
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: fortitude
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 109
@@ -1664,9 +1717,10 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures:
-      - target: reflex
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: reflex
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 109
@@ -1684,9 +1738,10 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures:
-      - target: perception
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: perception
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 109
@@ -1704,9 +1759,10 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures:
-      - target: perception
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: perception
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 109
@@ -1724,9 +1780,10 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures:
-      - target: will
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: will
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 109
@@ -1744,7 +1801,7 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 109
@@ -1762,15 +1819,19 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures:
-      - target: unarmored
-        prof: master
-      - target: light armor
-        prof: master
-      - target: medium armor
-        prof: master
-      - target: heavy armor
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: unarmored
+        proficiency: master
+      - key: proficiency_static
+        selector: light_armor
+        proficiency: master
+      - key: proficiency_static
+        selector: medium_armor
+        proficiency: master
+      - key: proficiency_static
+        selector: heavy_armor
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 109
@@ -1788,11 +1849,13 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures:
-      - target: simple weapons
-        prof: master
-      - target: martial weapons
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: simple_weapons
+        proficiency: master
+      - key: proficiency_static
+        selector: martial_weapons
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 109
@@ -1810,7 +1873,7 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 109
@@ -1828,13 +1891,16 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures:
-      - target: champion class dc
-        prof: master
-      - target: divine spell attacks
-        prof: master
-      - target: divine spell dcs
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: class dc
+        proficiency: master
+      - key: proficiency_static
+        selector: divine spell attacks
+        proficiency: master
+      - key: proficiency_static
+        selector: divine spell dcs
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 109
@@ -1852,15 +1918,19 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures:
-      - target: unarmored
-        prof: legendary
-      - target: light armor
-        prof: legendary
-      - target: medium armor
-        prof: legendary
-      - target: heavy armor
-        prof: legendary
+    elements:
+      - key: proficiency_static
+        selector: unarmored
+        proficiency: legendary
+      - key: proficiency_static
+        selector: light_armor
+        proficiency: legendary
+      - key: proficiency_static
+        selector: medium_armor
+        proficiency: legendary
+      - key: proficiency_static
+        selector: heavy_armor
+        proficiency: legendary
     source:
       - abbr: CRB
         page_start: 109
@@ -1878,7 +1948,7 @@ champion:
     requirement: null
     traits:
       - Champion
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 109
@@ -1897,7 +1967,7 @@ cleric:
     requirement: null
     traits:
       - Cleric
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 118
@@ -1915,7 +1985,7 @@ cleric:
     requirement: null
     traits:
       - Cleric
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 118
@@ -1933,7 +2003,7 @@ cleric:
     requirement: null
     traits:
       - Cleric
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 118
@@ -1951,7 +2021,7 @@ cleric:
     requirement: null
     traits:
       - Cleric
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 119
@@ -1969,7 +2039,7 @@ cleric:
     requirement: null
     traits:
       - Cleric
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 119
@@ -1987,7 +2057,7 @@ cleric:
     requirement: null
     traits:
       - Cleric
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 119
@@ -2005,7 +2075,7 @@ cleric:
     requirement: null
     traits:
       - Cleric
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 119
@@ -2023,7 +2093,7 @@ cleric:
     requirement: null
     traits:
       - Cleric
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 119
@@ -2041,7 +2111,7 @@ cleric:
     requirement: null
     traits:
       - Cleric
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 119
@@ -2059,7 +2129,7 @@ cleric:
     requirement: null
     traits:
       - Cleric
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 120
@@ -2077,9 +2147,10 @@ cleric:
     requirement: null
     traits:
       - Cleric
-    lectures:
-      - target: perception
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: perception
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 121
@@ -2097,9 +2168,10 @@ cleric:
     requirement: null
     traits:
       - Cleric
-    lectures:
-      - target: will
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: will
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 121
@@ -2117,9 +2189,10 @@ cleric:
     requirement: null
     traits:
       - Cleric
-    lectures:
-      - target: reflex
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: reflex
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 121
@@ -2137,9 +2210,10 @@ cleric:
     requirement: null
     traits:
       - Cleric
-    lectures:
-      - target: unarmored
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: unarmored
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 121
@@ -2157,7 +2231,7 @@ cleric:
     requirement: null
     traits:
       - Cleric
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 121
@@ -2175,7 +2249,7 @@ cleric:
     requirement: null
     traits:
       - Cleric
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 121
@@ -2194,7 +2268,7 @@ druid:
     requirement: null
     traits:
       - Druid
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 130
@@ -2212,7 +2286,7 @@ druid:
     requirement: null
     traits:
       - Druid
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 130
@@ -2230,7 +2304,7 @@ druid:
     requirement: null
     traits:
       - Druid
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 130
@@ -2248,7 +2322,7 @@ druid:
     requirement: null
     traits:
       - Druid
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 130
@@ -2266,7 +2340,7 @@ druid:
     requirement: null
     traits:
       - Druid
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 130
@@ -2284,7 +2358,7 @@ druid:
     requirement: null
     traits:
       - Druid
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 131
@@ -2302,7 +2376,7 @@ druid:
     requirement: null
     traits:
       - Druid
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 131
@@ -2320,7 +2394,7 @@ druid:
     requirement: null
     traits:
       - Druid
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 131
@@ -2338,7 +2412,7 @@ druid:
     requirement: null
     traits:
       - Druid
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 132
@@ -2356,7 +2430,7 @@ druid:
     requirement: null
     traits:
       - Druid
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 132
@@ -2374,7 +2448,7 @@ druid:
     requirement: null
     traits:
       - Druid
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 132
@@ -2392,7 +2466,7 @@ druid:
     requirement: null
     traits:
       - Druid
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 132
@@ -2410,9 +2484,10 @@ druid:
     requirement: null
     traits:
       - Druid
-    lectures:
-      - target: perception
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: perception
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 132
@@ -2430,9 +2505,10 @@ druid:
     requirement: null
     traits:
       - Druid
-    lectures:
-      - target: fortitude
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: fortitude
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 132
@@ -2450,9 +2526,10 @@ druid:
     requirement: null
     traits:
       - Druid
-    lectures:
-      - target: reflex
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: reflex
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 133
@@ -2470,11 +2547,13 @@ druid:
     requirement: null
     traits:
       - Druid
-    lectures:
-      - target: primal spell attacks
-        prof: expert
-      - target: primal spell dcs
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: primal spell attacks
+        proficiency: expert
+      - key: proficiency_static
+        selector: primal spell dcs
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 133
@@ -2492,11 +2571,13 @@ druid:
     requirement: null
     traits:
       - Druid
-    lectures:
-      - target: unarmed
-        prof: expert
-      - target: simple weapons
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: unarmed
+        proficiency: expert
+      - key: proficiency_static
+        selector: simple_weapons
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 133
@@ -2514,9 +2595,10 @@ druid:
     requirement: null
     traits:
       - Druid
-    lectures:
-      - target: will
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: will
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 133
@@ -2534,13 +2616,16 @@ druid:
     requirement: null
     traits:
       - Druid
-    lectures:
-      - target: unarmored
-        prof: expert
-      - target: light armor
-        prof: expert
-      - target: medium armor
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: unarmored
+        proficiency: expert
+      - key: proficiency_static
+        selector: light_armor
+        proficiency: expert
+      - key: proficiency_static
+        selector: medium_armor
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 133
@@ -2558,7 +2643,7 @@ druid:
     requirement: null
     traits:
       - Druid
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 133
@@ -2576,11 +2661,13 @@ druid:
     requirement: null
     traits:
       - Druid
-    lectures:
-      - target: primal spell attacks
-        prof: master
-      - target: primal spell dcs
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: primal spell attacks
+        proficiency: master
+      - key: proficiency_static
+        selector: primal spell attacks
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 133
@@ -2598,11 +2685,13 @@ druid:
     requirement: null
     traits:
       - Druid
-    lectures:
-      - target: primal spell attacks
-        prof: legendary
-      - target: primal spell dcs
-        prof: legendary
+    elements:
+      - key: proficiency_static
+        selector: primal spell attacks
+        proficiency: legendary
+      - key: proficiency_static
+        selector: primal spell dcs
+        proficiency: legendary
     source:
       - abbr: CRB
         page_start: 133
@@ -2620,7 +2709,7 @@ druid:
     requirement: null
     traits:
       - Druid
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 133
@@ -2639,7 +2728,7 @@ fighter:
     requirement: null
     traits:
       - Fighter
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 142
@@ -2657,7 +2746,7 @@ fighter:
     requirement: null
     traits:
       - Fighter
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 142
@@ -2675,9 +2764,10 @@ fighter:
     requirement: null
     traits:
       - Fighter
-    lectures:
-      - target: will
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: will
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 142
@@ -2695,7 +2785,7 @@ fighter:
     requirement: null
     traits:
       - Fighter
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 143
@@ -2713,9 +2803,10 @@ fighter:
     requirement: null
     traits:
       - Fighter
-    lectures:
-      - target: perception
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: perception
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 143
@@ -2733,7 +2824,7 @@ fighter:
     requirement: null
     traits:
       - Fighter
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 143
@@ -2751,7 +2842,7 @@ fighter:
     requirement: null
     traits:
       - Fighter
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 143
@@ -2769,9 +2860,10 @@ fighter:
     requirement: null
     traits:
       - Fighter
-    lectures:
-      - target: fortitude
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: fortitude
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 143
@@ -2789,15 +2881,19 @@ fighter:
     requirement: null
     traits:
       - Fighter
-    lectures:
-      - target: unarmored
-        prof: expert
-      - target: light armor
-        prof: expert
-      - target: medium armor
-        prof: expert
-      - target: heavy armor
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: unarmored
+        proficiency: expert
+      - key: proficiency_static
+        selector: light_armor
+        proficiency: expert
+      - key: proficiency_static
+        selector: medium_armor
+        proficiency: expert
+      - key: proficiency_static
+        selector: heavy_armor
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 143
@@ -2815,9 +2911,10 @@ fighter:
     requirement: null
     traits:
       - Fighter
-    lectures:
-      - target: fighter class dc
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: class dc
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 143
@@ -2835,13 +2932,16 @@ fighter:
     requirement: null
     traits:
       - Fighter
-    lectures:
-      - target: simple weapons
-        prof: master
-      - target: martial weapons
-        prof: master
-      - target: advanced weapons
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: simple_weapons
+        proficiency: master
+      - key: proficiency_static
+        selector: martial_weapons
+        proficiency: master
+      - key: proficiency_static
+        selector: advanced_weapons
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 143
@@ -2859,9 +2959,10 @@ fighter:
     requirement: null
     traits:
       - Fighter
-    lectures:
-      - target: reflex
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: reflex
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 143
@@ -2879,7 +2980,7 @@ fighter:
     requirement: null
     traits:
       - Fighter
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 143
@@ -2897,7 +2998,7 @@ fighter:
     requirement: null
     traits:
       - Fighter
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 143
@@ -2915,15 +3016,19 @@ fighter:
     requirement: null
     traits:
       - Fighter
-    lectures:
-      - target: unarmored
-        prof: master
-      - target: light armor
-        prof: master
-      - target: medium armor
-        prof: master
-      - target: heavy armor
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: unarmored
+        proficiency: master
+      - key: proficiency_static
+        selector: light_armor
+        proficiency: master
+      - key: proficiency_static
+        selector: medium_armor
+        proficiency: master
+      - key: proficiency_static
+        selector: heavy_armor
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 144
@@ -2941,15 +3046,19 @@ fighter:
     requirement: null
     traits:
       - Fighter
-    lectures:
-      - target: simple weapons
-        prof: legendary
-      - target: martial weapons
-        prof: legendary
-      - target: advanced weapons
-        prof: master
-      - target: fighter class dc
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: simple_weapons
+        proficiency: legendary
+      - key: proficiency_static
+        selector: martial_weapons
+        proficiency: legendary
+      - key: proficiency_static
+        selector: advanced_weapons
+        proficiency: master
+      - key: proficiency_static
+        selector: class dc
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 144
@@ -2969,7 +3078,7 @@ monk:
     traits:
       - Monk
       - Flourish
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 156
@@ -2987,7 +3096,7 @@ monk:
     requirement: null
     traits:
       - Monk
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 156
@@ -3005,7 +3114,7 @@ monk:
     requirement: null
     traits:
       - Monk
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 156
@@ -3023,7 +3132,7 @@ monk:
     requirement: null
     traits:
       - Monk
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 156
@@ -3041,7 +3150,7 @@ monk:
     requirement: null
     traits:
       - Monk
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 156
@@ -3059,9 +3168,10 @@ monk:
     requirement: null
     traits:
       - Monk
-    lectures:
-      - target: perception
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: perception
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 157
@@ -3079,9 +3189,10 @@ monk:
     requirement: null
     traits:
       - Monk
-    lectures:
-      - target: unarmed
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: unarmed
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 157
@@ -3099,7 +3210,7 @@ monk:
     requirement: null
     traits:
       - Monk
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 157
@@ -3117,7 +3228,7 @@ monk:
     requirement: null
     traits:
       - Monk
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 157
@@ -3135,7 +3246,7 @@ monk:
     requirement: null
     traits:
       - Monk
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 157
@@ -3153,13 +3264,16 @@ monk:
     requirement: null
     traits:
       - Monk
-    lectures:
-      - target: monk class dc
-        prof: expert
-      - target: ki spell attacks
-        prof: expert
-      - target: ki spell dcs
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: class dc
+        proficiency: expert
+      - key: proficiency_static
+        selector: ki spell attacks
+        proficiency: expert
+      - key: proficiency_static
+        selector: ki spell dcs
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 157
@@ -3177,7 +3291,7 @@ monk:
     requirement: null
     traits:
       - Monk
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 157
@@ -3195,9 +3309,10 @@ monk:
     requirement: null
     traits:
       - Monk
-    lectures:
-      - target: unarmored
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: unarmored
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 157
@@ -3215,11 +3330,13 @@ monk:
     requirement: null
     traits:
       - Monk
-    lectures:
-      - target: unarmed
-        prof: master
-      - target: simple weapons
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: unarmed
+        proficiency: master
+      - key: proficiency_static
+        selector: simple_weapons
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 157
@@ -3237,7 +3354,7 @@ monk:
     requirement: null
     traits:
       - Monk
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 157
@@ -3255,7 +3372,7 @@ monk:
     requirement: null
     traits:
       - Monk
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 157
@@ -3273,7 +3390,7 @@ monk:
     requirement: null
     traits:
       - Monk
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 158
@@ -3291,15 +3408,19 @@ monk:
     requirement: null
     traits:
       - Monk
-    lectures:
-      - target: unarmored
-        prof: legendary
-      - target: monk class dc
-        prof: master
-      - target: ki spell attacks
-        prof: master
-      - target: ki spell dcs
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: unarmored
+        proficiency: legendary
+      - key: proficiency_static
+        selector: class dc
+        proficiency: master
+      - key: proficiency_static
+        selector: ki spell attacks
+        proficiency: master
+      - key: proficiency_static
+        selector: ki spell dcs
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 158
@@ -3317,7 +3438,7 @@ monk:
     requirement: null
     traits:
       - Monk
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 158
@@ -3337,7 +3458,7 @@ ranger:
     traits:
       - Ranger
       - Concentrate
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 168
@@ -3355,7 +3476,7 @@ ranger:
     requirement: null
     traits:
       - Ranger
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 168
@@ -3373,9 +3494,10 @@ ranger:
     requirement: null
     traits:
       - Ranger
-    lectures:
-      - target: will
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: will
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 168
@@ -3393,7 +3515,7 @@ ranger:
     requirement: null
     traits:
       - Ranger
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 169
@@ -3411,11 +3533,13 @@ ranger:
     requirement: null
     traits:
       - Ranger
-    lectures:
-      - target: simple weapons
-        prof: expert
-      - target: martial weapons
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: simple_weapons
+        proficiency: expert
+      - key: proficiency_static
+        selector: martial_weapons
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 169
@@ -3433,9 +3557,10 @@ ranger:
     requirement: null
     traits:
       - Ranger
-    lectures:
-      - target: reflex
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: reflex
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 169
@@ -3453,9 +3578,10 @@ ranger:
     requirement: null
     traits:
       - Ranger
-    lectures:
-      - target: perception
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: perception
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 169
@@ -3473,7 +3599,7 @@ ranger:
     requirement: null
     traits:
       - Ranger
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 169
@@ -3491,7 +3617,7 @@ ranger:
     requirement: null
     traits:
       - Ranger
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 169
@@ -3509,9 +3635,10 @@ ranger:
     requirement: null
     traits:
       - Ranger
-    lectures:
-      - target: ranger class dc
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: class dc
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 169
@@ -3529,9 +3656,10 @@ ranger:
     requirement: null
     traits:
       - Ranger
-    lectures:
-      - target: fortitude
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: fortitude
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 169
@@ -3549,13 +3677,16 @@ ranger:
     requirement: null
     traits:
       - Ranger
-    lectures:
-      - target: unarmored
-        prof: expert
-      - target: simple weapons
-        prof: expert
-      - target: martial weapons
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: unarmored
+        proficiency: expert
+      - key: proficiency_static
+        selector: simple_weapons
+        proficiency: expert
+      - key: proficiency_static
+        selector: martial_weapons
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 169
@@ -3573,7 +3704,7 @@ ranger:
     requirement: null
     traits:
       - Ranger
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 169
@@ -3591,11 +3722,13 @@ ranger:
     requirement: null
     traits:
       - Ranger
-    lectures:
-      - target: simple weapons
-        prof: master
-      - target: martial weapons
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: simple_weapons
+        proficiency: master
+      - key: proficiency_static
+        selector: martial_weapons
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 169
@@ -3613,7 +3746,7 @@ ranger:
     requirement: null
     traits:
       - Ranger
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 169
@@ -3631,9 +3764,10 @@ ranger:
     requirement: null
     traits:
       - Ranger
-    lectures:
-      - target: reflex
-        prof: legendary
+    elements:
+      - key: proficiency_static
+        selector: reflex
+        proficiency: legendary
     source:
       - abbr: CRB
         page_start: 170
@@ -3651,9 +3785,10 @@ ranger:
     requirement: null
     traits:
       - Ranger
-    lectures:
-      - target: perception
-        prof: legendary
+    elements:
+      - key: proficiency_static
+        selector: perception
+        proficiency: legendary
     source:
       - abbr: CRB
         page_start: 170
@@ -3671,9 +3806,10 @@ ranger:
     requirement: null
     traits:
       - Ranger
-    lectures:
-      - target: ranger class dc
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: class dc
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 170
@@ -3691,13 +3827,16 @@ ranger:
     requirement: null
     traits:
       - Ranger
-    lectures:
-      - target: unarmored
-        prof: master
-      - target: simple weapons
-        prof: master
-      - target: martial weapons
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: unarmored
+        proficiency: master
+      - key: proficiency_static
+        selector: simple_weapons
+        proficiency: master
+      - key: proficiency_static
+        selector: martial_weapons
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 170
@@ -3715,7 +3854,7 @@ ranger:
     requirement: null
     traits:
       - Ranger
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 170
@@ -3734,7 +3873,7 @@ rogue:
     requirement: null
     traits:
       - Rogue
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 180
@@ -3752,7 +3891,7 @@ rogue:
     requirement: null
     traits:
       - Rogue
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 180
@@ -3770,7 +3909,7 @@ rogue:
     requirement: null
     traits:
       - Rogue
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 180
@@ -3788,7 +3927,7 @@ rogue:
     requirement: null
     traits:
       - Rogue
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 180
@@ -3806,7 +3945,7 @@ rogue:
     requirement: null
     traits:
       - Rogue
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 181
@@ -3824,7 +3963,7 @@ rogue:
     requirement: null
     traits:
       - Rogue
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 181
@@ -3842,7 +3981,7 @@ rogue:
     requirement: null
     traits:
       - Rogue
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 181
@@ -3860,9 +3999,10 @@ rogue:
     requirement: null
     traits:
       - Rogue
-    lectures:
-      - target: simple weapons
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: simple_weapons
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 182
@@ -3880,9 +4020,10 @@ rogue:
     requirement: null
     traits:
       - Rogue
-    lectures:
-      - target: reflex
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: reflex
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 182
@@ -3900,9 +4041,10 @@ rogue:
     requirement: null
     traits:
       - Rogue
-    lectures:
-      - target: perception
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: perception
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 182
@@ -3920,9 +4062,10 @@ rogue:
     requirement: null
     traits:
       - Rogue
-    lectures:
-      - target: perception
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: perception
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 182
@@ -3940,9 +4083,10 @@ rogue:
     requirement: null
     traits:
       - Rogue
-    lectures:
-      - target: perception
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: perception
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 182
@@ -3960,9 +4104,10 @@ rogue:
     requirement: null
     traits:
       - Rogue
-    lectures:
-      - target: fortitude
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: fortitude
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 182
@@ -3980,9 +4125,10 @@ rogue:
     requirement: null
     traits:
       - Rogue
-    lectures:
-      - target: rogue class dc
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: class dc
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 182
@@ -4000,9 +4146,10 @@ rogue:
     requirement: null
     traits:
       - Rogue
-    lectures:
-      - target: reflex
-        prof: legendary
+    elements:
+      - key: proficiency_static
+        selector: reflex
+        proficiency: legendary
     source:
       - abbr: CRB
         page_start: 182
@@ -4020,9 +4167,10 @@ rogue:
     requirement: null
     traits:
       - Rogue
-    lectures:
-      - target: perception
-        prof: legendary
+    elements:
+      - key: proficiency_static
+        selector: perception
+        proficiency: legendary
     source:
       - abbr: CRB
         page_start: 182
@@ -4040,11 +4188,13 @@ rogue:
     requirement: null
     traits:
       - Rogue
-    lectures:
-      - target: unarmored
-        prof: expert
-      - target: light armor
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: unarmored
+        proficiency: expert
+      - key: proficiency_static
+        selector: light_armor
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 182
@@ -4062,9 +4212,10 @@ rogue:
     requirement: null
     traits:
       - Rogue
-    lectures:
-      - target: simple weapons
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: simple_weapons
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 182
@@ -4082,7 +4233,7 @@ rogue:
     requirement: null
     traits:
       - Rogue
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 182
@@ -4100,7 +4251,7 @@ rogue:
     requirement: null
     traits:
       - Rogue
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 182
@@ -4118,9 +4269,10 @@ rogue:
     requirement: null
     traits:
       - Rogue
-    lectures:
-      - target: will
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: will
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 182
@@ -4138,11 +4290,13 @@ rogue:
     requirement: null
     traits:
       - Rogue
-    lectures:
-      - target: unarmored
-        prof: master
-      - target: light armor
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: unarmored
+        proficiency: master
+      - key: proficiency_static
+        selector: light_armor
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 182
@@ -4161,9 +4315,10 @@ rogue:
     traits:
       - Rogue
       - Incapacitation
-    lectures:
-      - target: rogue class dc
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: class dc
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 182
@@ -4182,7 +4337,7 @@ sorcerer:
     requirement: null
     traits:
       - Sorcerer
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 192
@@ -4200,7 +4355,7 @@ sorcerer:
     requirement: null
     traits:
       - Sorcerer
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 192
@@ -4218,7 +4373,7 @@ sorcerer:
     requirement: null
     traits:
       - Sorcerer
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 192
@@ -4236,7 +4391,7 @@ sorcerer:
     requirement: null
     traits:
       - Sorcerer
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 192
@@ -4254,7 +4409,7 @@ sorcerer:
     requirement: null
     traits:
       - Sorcerer
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 193
@@ -4272,7 +4427,7 @@ sorcerer:
     requirement: null
     traits:
       - Sorcerer
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 193
@@ -4290,7 +4445,7 @@ sorcerer:
     requirement: null
     traits:
       - Sorcerer
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 193
@@ -4308,9 +4463,10 @@ sorcerer:
     requirement: null
     traits:
       - Sorcerer
-    lectures:
-      - target: fortitude
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: fortitude
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 194
@@ -4328,11 +4484,13 @@ sorcerer:
     requirement: null
     traits:
       - Sorcerer
-    lectures:
-      - target: tradition spell attacks
-        prof: expert
-      - target: tradition spell dcs
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: tradition spell attacks
+        proficiency: expert
+      - key: proficiency_static
+        selector: tradition spell dcs
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 194
@@ -4350,9 +4508,10 @@ sorcerer:
     requirement: null
     traits:
       - Sorcerer
-    lectures:
-      - target: reflex
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: reflex
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 194
@@ -4370,9 +4529,10 @@ sorcerer:
     requirement: null
     traits:
       - Sorcerer
-    lectures:
-      - target: perception
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: perception
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 194
@@ -4390,9 +4550,10 @@ sorcerer:
     requirement: null
     traits:
       - Sorcerer
-    lectures:
-      - target: simple weapons
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: simple_weapons
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 194
@@ -4410,9 +4571,10 @@ sorcerer:
     requirement: null
     traits:
       - Sorcerer
-    lectures:
-      - target: unarmed
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: unarmed
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 194
@@ -4430,9 +4592,10 @@ sorcerer:
     requirement: null
     traits:
       - Sorcerer
-    lectures:
-      - target: unarmed
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: unarmed
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 194
@@ -4450,11 +4613,13 @@ sorcerer:
     requirement: null
     traits:
       - Sorcerer
-    lectures:
-      - target: tradition spell attacks
-        prof: master
-      - target: tradition spell dcs
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: tradition spell attacks
+        proficiency: master
+      - key: proficiency_static
+        selector: tradition spell dcs
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 194
@@ -4472,7 +4637,7 @@ sorcerer:
     requirement: null
     traits:
       - Sorcerer
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 194
@@ -4490,11 +4655,13 @@ sorcerer:
     requirement: null
     traits:
       - Sorcerer
-    lectures:
-      - target: tradition spell attacks
-        prof: legendary
-      - target: tradition spell dcs
-        prof: legendary
+    elements:
+      - key: proficiency_static
+        selector: tradition spell attacks
+        proficiency: legendary
+      - key: proficiency_static
+        selector: tradition spell dcs
+        proficiency: legendary
     source:
       - abbr: CRB
         page_start: 194
@@ -4513,11 +4680,13 @@ wizard:
     requirement: null
     traits:
       - Wizard
-    lectures:
-      - target: arcane spell attacks
-        prof: trained
-      - target: arcane spell dcs
-        prof: trained
+    elements:
+      - key: proficiency_static
+        selector: arcane spell attacks
+        proficiency: trained
+      - key: proficiency_static
+        selector: arcane spell dcs
+        proficiency: trained
     source:
       - abbr: CRB
         page_start: 204
@@ -4535,7 +4704,7 @@ wizard:
     requirement: null
     traits:
       - Wizard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 204
@@ -4553,7 +4722,7 @@ wizard:
     requirement: null
     traits:
       - Wizard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 204
@@ -4571,7 +4740,7 @@ wizard:
     requirement: null
     traits:
       - Wizard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 204
@@ -4589,7 +4758,7 @@ wizard:
     requirement: null
     traits:
       - Wizard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 204
@@ -4607,7 +4776,7 @@ wizard:
     requirement: null
     traits:
       - Wizard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 204
@@ -4625,7 +4794,7 @@ wizard:
     requirement: null
     traits:
       - Wizard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 205
@@ -4644,7 +4813,7 @@ wizard:
     traits:
       - Wizard
       - Arcane
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 205
@@ -4662,7 +4831,7 @@ wizard:
     requirement: null
     traits:
       - Wizard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 205
@@ -4680,7 +4849,7 @@ wizard:
     requirement: null
     traits:
       - Wizard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 205
@@ -4698,7 +4867,7 @@ wizard:
     requirement: null
     traits:
       - Wizard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 205
@@ -4716,7 +4885,7 @@ wizard:
     requirement: null
     traits:
       - Wizard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 206
@@ -4734,7 +4903,7 @@ wizard:
     requirement: null
     traits:
       - Wizard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 206
@@ -4752,9 +4921,10 @@ wizard:
     requirement: null
     traits:
       - Wizard
-    lectures:
-      - target: reflex
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: reflex
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 207
@@ -4772,11 +4942,13 @@ wizard:
     requirement: null
     traits:
       - Wizard
-    lectures:
-      - target: arcane spell attacks
-        prof: expert
-      - target: arcane spell dcs
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: arcane spell attacks
+        proficiency: expert
+      - key: proficiency_static
+        selector: arcane spell dcs
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 207
@@ -4794,9 +4966,10 @@ wizard:
     requirement: null
     traits:
       - Wizard
-    lectures:
-      - target: fortitude
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: fortitude
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 207
@@ -4814,9 +4987,10 @@ wizard:
     requirement: null
     traits:
       - Wizard
-    lectures:
-      - target: perception
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: perception
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 207
@@ -4834,7 +5008,7 @@ wizard:
     requirement: null
     traits:
       - Wizard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 207
@@ -4852,9 +5026,10 @@ wizard:
     requirement: null
     traits:
       - Wizard
-    lectures:
-      - target: unarmored
-        prof: expert
+    elements:
+      - key: proficiency_static
+        selector: unarmored
+        proficiency: expert
     source:
       - abbr: CRB
         page_start: 207
@@ -4872,7 +5047,7 @@ wizard:
     requirement: null
     traits:
       - Wizard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 207
@@ -4890,11 +5065,13 @@ wizard:
     requirement: null
     traits:
       - Wizard
-    lectures:
-      - target: arcane spell attacks
-        prof: master
-      - target: arcane spell dcs
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: arcane spell attacks
+        proficiency: master
+      - key: proficiency_static
+        selector: arcane spell dcs
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 207
@@ -4912,9 +5089,10 @@ wizard:
     requirement: null
     traits:
       - Wizard
-    lectures:
-      - target: will
-        prof: master
+    elements:
+      - key: proficiency_static
+        selector: will
+        proficiency: master
     source:
       - abbr: CRB
         page_start: 207
@@ -4932,7 +5110,7 @@ wizard:
     requirement: null
     traits:
       - Wizard
-    lectures: null
+    elements: null
     source:
       - abbr: CRB
         page_start: 207
@@ -4950,11 +5128,13 @@ wizard:
     requirement: null
     traits:
       - Wizard
-    lectures:
-      - target: arcane spell attacks
-        prof: legendary
-      - target: arcane spell dcs
-        prof: legendary
+    elements:
+      - key: proficiency_static
+        selector: arcane spell attacks
+        proficiency: legendary
+      - key: proficiency_static
+        selector: arcane spell dcs
+        proficiency: legendary
     source:
       - abbr: CRB
         page_start: 207

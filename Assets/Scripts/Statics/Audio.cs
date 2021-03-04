@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static TJson.Serialization;
 
 public class Audio : MonoBehaviour
 {
@@ -47,12 +48,12 @@ public class Audio : MonoBehaviour
         if (PlayerPrefs.HasKey("AudioSettings"))
         {
             string str = PlayerPrefs.GetString("AudioSettings");
-            Settings = Json.Deserialize<AudioSettings>(str);
+            Settings = Deserialize<AudioSettings>(str);
         }
         else
         {
             Settings = new AudioSettings();
-            PlayerPrefs.SetString("AudioSettings", Json.Serialize(Settings));
+            PlayerPrefs.SetString("AudioSettings", TJson.Serialization.Serialize(Settings));
         }
 
         UpdateAllAssVolume(false);
@@ -95,7 +96,7 @@ public class Audio : MonoBehaviour
 
     private void SaveVolumes()
     {
-        PlayerPrefs.SetString("AudioSettings", Json.Serialize(Settings));
+        PlayerPrefs.SetString("AudioSettings", Serialize(Settings));
     }
 
 
