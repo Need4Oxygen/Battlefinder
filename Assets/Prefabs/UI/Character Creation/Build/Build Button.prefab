@@ -110,8 +110,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 23.750977, y: -6.207489}
-  m_SizeDelta: {x: -47.5, y: -12.415}
+  m_AnchoredPosition: {x: 23.750977, y: -5.68}
+  m_SizeDelta: {x: -47.5, y: -11.355663}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8065134594118313305
 CanvasRenderer:
@@ -168,8 +168,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 14.0846405, y: 0, z: 0, w: 0}
+  m_margin: {x: 12.474793, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -308,7 +308,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -407,14 +407,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: d2db621a181b2ae4cb4cc99fe31602c4, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 194220190051465629, guid: ddbe3f6524995c44380759984c310fbc, type: 3}
+  m_Sprite: {fileID: -2189134008780956383, guid: ddbe3f6524995c44380759984c310fbc,
+    type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -423,7 +424,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 5
+  m_PixelsPerUnitMultiplier: 4
 --- !u!114 &8065134594706099974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,10 +445,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.52156866, g: 0.2901961, b: 0.2901961, a: 1}
-    m_HighlightedColor: {r: 0.52156866, g: 0.2901961, b: 0.2901961, a: 1}
+    m_NormalColor: {r: 0.24528301, g: 0.15156639, b: 0.15156639, a: 1}
+    m_HighlightedColor: {r: 0.41509432, g: 0.21733712, b: 0.21733712, a: 1}
     m_PressedColor: {r: 0.24528301, g: 0.15156639, b: 0.15156639, a: 1}
-    m_SelectedColor: {r: 0.52156866, g: 0.2901961, b: 0.2901961, a: 1}
+    m_SelectedColor: {r: 0.41509432, g: 0.21733712, b: 0.21733712, a: 1}
     m_DisabledColor: {r: 0.24528301, g: 0.15156639, b: 0.15156639, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0
