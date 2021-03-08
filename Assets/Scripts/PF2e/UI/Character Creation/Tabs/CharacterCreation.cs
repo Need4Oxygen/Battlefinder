@@ -15,6 +15,7 @@ namespace Pathfinder2e.Character
 
     public class CharacterCreation : MonoBehaviour
     {
+        [Serializable] private class StrSpritePair { public string label; public Sprite sprite; }
         public DVoid OnCharacterCreationClose = null;
 
         [SerializeField] private Window window = null;
@@ -45,6 +46,7 @@ namespace Pathfinder2e.Character
         [SerializeField] private Transform buildButton = null;
         [SerializeField] private Transform buildMiniButton = null;
         [SerializeField] private Transform buildMiniButtonContainer = null;
+        [SerializeField] private List<StrSpritePair> buildButtonIcons = null;
 
         private List<GameObject> buildButtonList = new List<GameObject>();
         public CharacterData currentPlayer = null;
@@ -97,7 +99,6 @@ namespace Pathfinder2e.Character
             string newGuid = Guid.NewGuid().ToString();
             currentPlayer = new CharacterData();
             currentPlayer.guid = newGuid;
-
 
             ABCSelector.Display("ancestry");
             ABCSelector.acceptButton.onClick.AddListener(() => NewPlayerProcessAccept());
@@ -240,46 +241,45 @@ namespace Pathfinder2e.Character
                 // Generate other buttons
                 foreach (string item in stage.items)
                 {
+                    BuildButton button = null;
+                    Sprite icon = null;
+                    foreach (var pair in buildButtonIcons)
+                        if (pair.label == item) { icon = pair.sprite; break; }
+
                     switch (item)
                     {
                         case "initial proficiencies":
-                            BuildButton initAblBoosts = GenerateBuildButton("Initial Ability Boosts", "");
-                            initAblBoosts.button.onClick.AddListener(() => OnClick_InitialAbilityBoosts());
+                            button = GenerateBuildButton("Initial Ability Boosts", "", icon);
+                            button.button.onClick.AddListener(() => OnClick_InitialAbilityBoosts());
                             break;
                         case "ability boosts":
-                            BuildButton otherAblBoosts = GenerateBuildButton($"LvL {i + 1} Ability Boosts", "");
-                            // Listeners have to be declared individually, if not, every button share last listener :c
-                            if (i + 1 == 5) otherAblBoosts.button.onClick.AddListener(() => OnClick_OtherAbilityBoosts(5));
-                            else if (i + 1 == 10) otherAblBoosts.button.onClick.AddListener(() => OnClick_OtherAbilityBoosts(10));
-                            else if (i + 1 == 15) otherAblBoosts.button.onClick.AddListener(() => OnClick_OtherAbilityBoosts(15));
-                            else if (i + 1 == 20) otherAblBoosts.button.onClick.AddListener(() => OnClick_OtherAbilityBoosts(20));
+                            button = GenerateBuildButton($"LvL {i + 1} Ability Boosts", "", icon);
+                            int lvl = i + 1;
+                            button.button.onClick.AddListener(() => OnClick_OtherAbilityBoosts(lvl));
                             break;
                         case "ancestry feat":
-                            // search in build for choice
-                            BuildButton ancestryFeat = GenerateBuildButton("Ancestry Feat", "");
-                            ancestryFeat.button.onClick.AddListener(() => OnClick_AncestryFeat());
+                            button = GenerateBuildButton("Ancestry Feat", "---", icon);
+                            button.button.onClick.AddListener(() => OnClick_AncestryFeat());
                             break;
                         case "class feat":
-                            // search in build for choice
-                            BuildButton classFeat = GenerateBuildButton("Class Feat", "");
-                            classFeat.button.onClick.AddListener(() => OnClick_ClassFeat());
+                            button = GenerateBuildButton("Class Feat", "---", icon);
+                            button.button.onClick.AddListener(() => OnClick_ClassFeat());
                             break;
                         case "skill feat":
-                            // search in build for choice
-                            BuildButton skillFeat = GenerateBuildButton("Skill Feat", "");
-                            skillFeat.button.onClick.AddListener(() => OnClick_SkillFeat());
+                            button = GenerateBuildButton("Skill Feat", "---", icon);
+                            button.button.onClick.AddListener(() => OnClick_SkillFeat());
                             break;
                         case "general feat":
-                            // search in build for choice
-                            BuildButton generalFeat = GenerateBuildButton("General Feat", "");
-                            generalFeat.button.onClick.AddListener(() => OnClick_GeneralFeat());
+                            button = GenerateBuildButton("General Feat", "---", icon);
+                            button.button.onClick.AddListener(() => OnClick_GeneralFeat());
                             break;
-                        case "alchemy": // Features should be checked last, searching in class feature feats
-                            BuildButton alch = GenerateBuildButton("Class Feature", "Alchemy");
+                        case "alchemy":
+                            button = GenerateBuildButton("Class Feature", "Alchemy", icon);
+                            // button.button.onClick.AddListener(() => OnClick_GeneralFeat());
                             break;
+
                         default:
-                            // buildButton
-                            break;
+                            continue;
                     }
                 }
             }
@@ -297,8 +297,9 @@ namespace Pathfinder2e.Character
             return separator.gameObject;
         }
 
-        private BuildButton GenerateBuildButton() { return GenerateBuildButton("", ""); }
-        private BuildButton GenerateBuildButton(string title, string subtitle)
+        private BuildButton GenerateBuildButton() { return GenerateBuildButton("", "", null); }
+        private BuildButton GenerateBuildButton(string title, string subtitle) { return GenerateBuildButton(title, subtitle, null); }
+        private BuildButton GenerateBuildButton(string title, string subtitle, Sprite icon)
         {
             Transform button = Instantiate(buildButton, Vector3.zero, Quaternion.identity, buildContainer);
             buildButtonList.Add(button.gameObject);
@@ -306,6 +307,7 @@ namespace Pathfinder2e.Character
             BuildButton buttonScript = button.GetComponent<BuildButton>();
             buttonScript.title.text = string.IsNullOrEmpty(title) ? "" : title;
             buttonScript.subtitle.text = string.IsNullOrEmpty(subtitle) ? "" : subtitle;
+            if (icon != null) buttonScript.icon.sprite = icon;
 
             return button.GetComponent<BuildButton>();
         }
