@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class WindowManager : MonoBehaviour
 {
-    public static Stack<Window> OpenWindows = new Stack<Window>();
+    public static List<Window> OpenWindows = new List<Window>();
+    public static IEnumerable<string> OpenWindowNames = from a in OpenWindows select a.windowName;
 
     public static DWindow OnWindowOpens = null;
     public static DWindow OnWindowCloses = null;
@@ -13,7 +15,7 @@ public class WindowManager : MonoBehaviour
     {
         // Open new window and push it to stack
         if (!OpenWindows.Contains(window) && !window.isSubpanel)
-            OpenWindows.Push(window); ;
+            OpenWindows.Insert(0, window); ;
 
         // Set new window as raycaster
         if (window.raycastTarget)
@@ -23,7 +25,7 @@ public class WindowManager : MonoBehaviour
             OnWindowOpens(window);
 
         string type = window.isSubpanel ? "Subpanel" : "Window";
-        // Debug.Log($"[WindowManager] {type} \"{window.windowName}\" opened, stack count: {OpenWindows.Count}");
+        Debug.Log($"<color=#edbf28>[WindowManager]</color> {type} \"{window.windowName}\" opened, stack count: {OpenWindows.Count} || {string.Join(" ,", OpenWindowNames)}");
     }
 
     public static void WindowClosed(Window window)
@@ -31,19 +33,23 @@ public class WindowManager : MonoBehaviour
         if (!window.isSubpanel)
         {
             // Delete from stack
-            OpenWindows.Pop();
+            OpenWindows.Remove(window);
 
             // Set previous window as raycast target
             if (OpenWindows.Count > 0)
-                if (OpenWindows.Peek().raycastTarget)
-                    SetRaycastTarget(OpenWindows.Peek());
+                for (int i = 0; i < OpenWindows.Count; i++)
+                    if (OpenWindows[i].raycastTarget)
+                    {
+                        SetRaycastTarget(OpenWindows[i]);
+                        break;
+                    }
         }
 
         if (OnWindowCloses != null)
             OnWindowCloses(window);
 
         string type = window.isSubpanel ? "Subpanel" : "Window";
-        // Debug.Log($"[WindowManager] {type} \"{window.windowName}\" closed, stack count: {OpenWindows.Count}");
+        Debug.Log($"<color=#edbf28>[WindowManager]</color> {type} \"{window.windowName}\" closed, stack count: {OpenWindows.Count} || {string.Join(" ,", OpenWindowNames)}");
     }
 
     private static void SetRaycastTarget(Window window)
@@ -53,23 +59,20 @@ public class WindowManager : MonoBehaviour
         {
             if (win.raycaster != null)
                 win.raycaster.enabled = false;
-
             if (win.children.Count > 0)
                 foreach (var child in win.children)
                     if (child.syncRaycastWithParent)
                         child.raycaster.enabled = false;
         }
 
-        // Activate window raycast
+        // Activate window and children raycast
         window.raycaster.enabled = true;
-
-        // Activate window's children raycast
         if (window.children.Count > 0)
             foreach (var child in window.children)
                 if (child.syncRaycastWithParent)
                     child.raycaster.enabled = true;
 
-        // Debug.Log($"[WindowManager] Raycast target: {window.windowName} with {window.children.Count} childs!");
+        Debug.Log($"<color=#edbf28>[WindowManager]</color> Raycast target: {window.windowName} with {window.children.Count} childs!");
     }
 
 }

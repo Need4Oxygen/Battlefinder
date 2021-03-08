@@ -25,7 +25,7 @@ public class PanelFader : MonoBehaviour
         }
         else
         {
-            Debug.Log("Fade failed: initial alpha equal to target");
+            Debug.Log("<color=white>[PanelFader]</color> Fade failed: initial alpha equal to target");
         }
 
         group.alpha = alphaTarget;
@@ -51,7 +51,7 @@ public class PanelFader : MonoBehaviour
         }
         else
         {
-            Debug.Log("[PanelFader] RescaleAndFade failed: initial scale equal to target");
+            Debug.Log("<color=white>[PanelFader]</color> RescaleAndFade failed: initial scale equal to target");
         }
 
         panel.localScale = new Vector2(scaleTarget, scaleTarget);
@@ -116,7 +116,7 @@ public class PanelFader : MonoBehaviour
             }
             else
             {
-                Debug.Log("[PanelFader] RescaleAndFade failed: initial scale or fade equal to target");
+                Debug.Log("<color=white>[PanelFader]</color> RescaleAndFade failed: initial scale or fade equal to target");
             }
 
             if (onFadeEnd != null)
@@ -182,7 +182,7 @@ public class PanelFader : MonoBehaviour
             }
             else
             {
-                Debug.Log("[PanelFader] RescaleAndFade failed: initial scale or fade equal to target");
+                Debug.Log("<color=white>[PanelFader]</color> RescaleAndFade failed: initial scale or fade equal to target");
             }
 
             if (onFadeEnd != null)

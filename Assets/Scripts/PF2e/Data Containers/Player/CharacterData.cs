@@ -528,7 +528,7 @@ namespace Pathfinder2e.Character
             }
             if (!DB.Ancestries.Any(x => x.name == newAncestry))
             {
-                Debug.LogWarning($"[PlayerData] Couldn't find ancestry {newAncestry} ");
+                Debug.LogWarning($"<color=#5cbcd6>[PlayerData]</color> Couldn't find ancestry {newAncestry} ");
                 return;
             }
 
@@ -609,7 +609,7 @@ namespace Pathfinder2e.Character
                 }
                 else
                 {
-                    Debug.LogWarning($"[PlayerData] Couldn't find background {newBackground} ");
+                    Debug.LogWarning($"<color=#5cbcd6>[PlayerData]</color> Couldn't find background {newBackground} ");
                 }
             }
             else
@@ -670,7 +670,7 @@ namespace Pathfinder2e.Character
                 }
                 else
                 {
-                    Debug.LogWarning($"[PlayerData] Couldn't find background {newClass} ");
+                    Debug.LogWarning($"<color=#5cbcd6>[PlayerData]</color> Couldn't find background {newClass} ");
                 }
             }
             else
@@ -771,7 +771,7 @@ namespace Pathfinder2e.Character
         {
             if (selectors.Count < 1) return;
 
-            Debug.Log($"[PlayerData] Refreshing selectors {String.Join(", ", selectors)} ");
+            Debug.Log($"<color=#5cbcd6>[PlayerData]</color> Refreshing selectors {String.Join(", ", selectors)} ");
 
             foreach (var selector in selectors)
                 switch (selector)
@@ -854,7 +854,7 @@ namespace Pathfinder2e.Character
                     case "skills": break;
 
                     case null: break;
-                    default: Debug.LogWarning($"[PlayerData] Selector \"{selector}\" couldn't be found!"); break;
+                    default: Debug.LogWarning($"<color=#5cbcd6>[PlayerData]</color> Selector \"{selector}\" couldn't be found!"); break;
                 }
         }
 

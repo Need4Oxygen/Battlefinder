@@ -29,7 +29,7 @@ namespace TYaml
             }
             catch (Exception e)
             {
-                Debug.LogError("[Yaml] ERROR: Couldn't deserialize object \n" + e.Message + "\n" + e.StackTrace);
+                Debug.LogError("<color=white>[Yaml]</color> ERROR: Couldn't deserialize object \n" + e.Message + "\n" + e.StackTrace);
                 return default(T);
             }
         }
@@ -46,7 +46,7 @@ namespace TYaml
             }
             catch (Exception e)
             {
-                Debug.LogError("[Yaml] ERROR: Couldn't serialize object " + obj.ToString() + "\n" + e.Message);
+                Debug.LogError("<color=white>[Yaml]</color> ERROR: Couldn't serialize object " + obj.ToString() + "\n" + e.Message);
                 return "";
             }
         }
@@ -68,7 +68,7 @@ namespace TYaml
             }
             catch (Exception e)
             {
-                Debug.LogError("[Yaml] ERROR: Couldn't load object with key " + path + "\n" + e.Message + "\n" + e.StackTrace);
+                Debug.LogError("<color=white>[Yaml]</color> ERROR: Couldn't load object with key " + path + "\n" + e.Message + "\n" + e.StackTrace);
                 return default(T);
             }
         }
@@ -88,11 +88,11 @@ namespace TYaml
 
                 tw.Close();
 
-                Debug.Log("[Yaml] Saved object with name: \"" + fileName + "\" into:\"" + path + "\"");
+                Debug.Log("<color=white>[Yaml]</color> Saved object with name: \"" + fileName + "\" into:\"" + path + "\"");
             }
             catch (Exception e)
             {
-                Debug.LogError("[Yaml] ERROR: Couldn't serialize object " + obj.ToString() + "\n" + e.Message);
+                Debug.LogError("<color=white>[Yaml]</color> ERROR: Couldn't serialize object " + obj.ToString() + "\n" + e.Message);
             }
         }
 

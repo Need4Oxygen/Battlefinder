@@ -25,11 +25,11 @@ namespace TJson
                 sr.WriteLine(str);
                 sr.Close();
 
-                Debug.Log("[Json] Saved object with name: \"" + fileName + "\" into:\"" + path + "\"");
+                Debug.Log("<color=white>[Json]</color> Saved object with name: \"" + fileName + "\" into:\"" + path + "\"");
             }
             catch (Exception e)
             {
-                Debug.LogError("[Json] ERROR: Couldn't save object with name: \"" + fileName + "\" into:\"" + path + "\"\n" + e.Message);
+                Debug.LogError("<color=white>[Json]</color> ERROR: Couldn't save object with name: \"" + fileName + "\" into:\"" + path + "\"\n" + e.Message);
             }
         }
 
@@ -43,7 +43,7 @@ namespace TJson
             }
             catch (Exception e)
             {
-                Debug.LogError("[Json] ERROR: Couldn't load object with key " + path + "\n" + e.Message + "\n" + e.StackTrace);
+                Debug.LogError("<color=white>[Json]</color> ERROR: Couldn't load object with key " + path + "\n" + e.Message + "\n" + e.StackTrace);
                 return default(T);
             }
         }
@@ -59,12 +59,12 @@ namespace TJson
                     Formatting.None,
                     new JsonSerializerSettings() { ReferenceLoopHandling = ReferenceLoopHandling.Ignore, NullValueHandling = NullValueHandling.Ignore });
 
-                // Debug.Log("[Json] Serialized object: " + obj.ToString());
+                // Debug.Log("<color=white>[Json]</color> Serialized object: " + obj.ToString());
                 return str;
             }
             catch (Exception e)
             {
-                Debug.LogError("[Json] ERROR: Couldn't serialize object " + obj.ToString() + "\n" + e.Message);
+                Debug.LogError("<color=white>[Json]</color> ERROR: Couldn't serialize object " + obj.ToString() + "\n" + e.Message);
                 return "";
             }
         }
@@ -80,7 +80,7 @@ namespace TJson
             }
             catch (Exception e)
             {
-                Debug.LogError("[Json] ERROR: Couldn't deserialize object \n" + e.Message + "\n" + e.StackTrace);
+                Debug.LogError("<color=white>[Json]</color> ERROR: Couldn't deserialize object \n" + e.Message + "\n" + e.StackTrace);
                 return default(T);
             }
         }

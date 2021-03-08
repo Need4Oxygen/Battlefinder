@@ -33,7 +33,7 @@ public class ObjectPooler : MonoBehaviour
             IPooleable pooleable = prefab.GetComponent<IPooleable>();
             if (pooleable == null)
             {
-                Debug.LogError($"[ObjPooler] Not pooleable object detected: {prefab.name}");
+                Debug.LogError($"<color=white>[ObjPooler]</color> Not pooleable object detected: {prefab.name}");
                 return null;
             }
 
@@ -53,12 +53,12 @@ public class ObjectPooler : MonoBehaviour
                 newPool.Enqueue(obj);
             }
 
-            Debug.Log($"[ObjPooler] New pool: {prefab.name} with size: {size}");
+            Debug.Log($"<color=white>[ObjPooler]</color> New pool: {prefab.name} with size: {size}");
             return newPool.ToList(); ;
         }
         else
         {
-            Debug.LogWarning($"[ObjPooler] Pool with name: {prefab.name} already exist!");
+            Debug.LogWarning($"<color=white>[ObjPooler]</color> Pool with name: {prefab.name} already exist!");
             return null;
         }
     }
