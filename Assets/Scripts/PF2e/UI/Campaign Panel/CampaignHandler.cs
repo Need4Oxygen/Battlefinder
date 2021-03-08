@@ -74,8 +74,7 @@ namespace Pathfinder2e.GameData
             DeleteCampaign();
         }
 
-        #region --------CAMPAIGNS--------
-
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- CAMPAIGNS
         private void OpenCampaingPanel()
         {
             window.OpenWindow();
@@ -98,7 +97,6 @@ namespace Pathfinder2e.GameData
         public void LoadCampaign(string campaignID)
         {
             // Open Campaign Panel
-            campaignName.text = campaignID.Replace(".json", "");
             campaignName.text = campaignID.Replace(".yaml", "");
 
             // Set current campaing and refresh boards, characters, enemies and npcs
@@ -122,10 +120,8 @@ namespace Pathfinder2e.GameData
             }
         }
 
-        #endregion
 
-        #region --------BOARDS--------
-
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- BOARDS
         /// <summary> Called by the + button in the boards section of the campaign panel </summary>
         public void OnClickNewBoardButton()
         {
@@ -157,10 +153,8 @@ namespace Pathfinder2e.GameData
             boardToDelete = "";
         }
 
-        #endregion
 
-        #region --------CHARACTERS--------
-
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- CHARACTERS
         /// <summary> Called by the + button in the characters section of the campaign panel </summary>
         public void OnClickNewPlayerButton()
         {
@@ -192,8 +186,8 @@ namespace Pathfinder2e.GameData
             characterToDelete = "";
         }
 
-        #endregion
 
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- STUFF
         public void RefreshCampaignContainers()
         {
             // Delete all buttons

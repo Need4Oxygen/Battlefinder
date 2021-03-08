@@ -58,7 +58,8 @@ public class BoxUIController : MonoBehaviour
         {
             Transform newButton = Instantiate(campaingButtonPrefab, buttonContainer.position, buttonContainer.rotation, buttonContainer);
             ButtonText newButtonScript = newButton.GetComponent<ButtonText>();
-            newButtonScript.text.text = item.Key.Replace(".json", "");
+            newButtonScript.text.text = item.Key.Replace(".yaml", "");
+
             newButtonScript.button.onClick.AddListener(() => PF2E_OnClickUI_ButtonText(item.Key));
             PF2E_CampaignButtons.Add(newButton.gameObject);
         }
