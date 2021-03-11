@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Pathfinder2e;
 using Pathfinder2e.Containers;
@@ -27,6 +28,7 @@ namespace Pathfinder2e.Character
         public int initialScore = 0;
 
         public string prof = "U";
+        public string profLvl20 = "U";
         public string profColored = "";
 
         public int ablScore = 0;
@@ -47,11 +49,13 @@ namespace Pathfinder2e.Character
         {
             IEnumerable<RuleElement> elements = GetElements();
 
-            prof = DB.Prof_FindMax(elements);
+            Tuple<string, string> proficiencies = DB.Prof_FindMax(elements, charData.level);
+            prof = proficiencies.Item1;
+            profLvl20 = proficiencies.Item2;
             profColored = DB.Prof_Abbr2AbbrColored(prof);
 
             ablScore = charData.Abl_GetMod(abl);
-            profScore = charData.level + DB.Prof_Abbr2Score(DB.Prof_FindMax(elements));
+            profScore = charData.level + DB.Prof_Abbr2Score(prof);
         }
     }
 

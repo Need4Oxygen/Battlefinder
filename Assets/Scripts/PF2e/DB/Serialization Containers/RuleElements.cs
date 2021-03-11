@@ -91,8 +91,8 @@ namespace Pathfinder2e.Containers
 
         public override bool Equals(object obj)
         {
-            if (obj == null || GetType() != obj.GetType())
-                return false;
+            if (obj == null) return false;
+            if (GetType() != obj.GetType()) return false;
 
             RuleElement otherRule = obj as RuleElement;
             if (otherRule == null)
@@ -115,9 +115,17 @@ namespace Pathfinder2e.Containers
 
         public static bool IsNullOrEmpty(RuleElement rule)
         {
-            if (rule == null) return true;
+            if (IsNull(rule)) return true;
             if (IsEmpty(rule)) return true;
             return false;
+        }
+
+        public static bool IsNull(RuleElement rule)
+        {
+            if (rule == null)
+                return true;
+            else
+                return false;
         }
 
         public static bool IsEmpty(RuleElement rule)
@@ -127,6 +135,9 @@ namespace Pathfinder2e.Containers
             else
                 return false;
         }
+
+        public static bool operator ==(RuleElement a, RuleElement b) => a is null ? (b is null ? true : false) : a.Equals(b);
+        public static bool operator !=(RuleElement a, RuleElement b) => a is null ? (b is null ? false : true) : !a.Equals(b);
     }
 
     public class Strike

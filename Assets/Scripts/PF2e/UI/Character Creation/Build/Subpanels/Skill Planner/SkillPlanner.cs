@@ -4,6 +4,7 @@ using System.Linq;
 using Pathfinder2e;
 using Pathfinder2e.Character;
 using Pathfinder2e.Containers;
+using Tools;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -63,33 +64,37 @@ public class SkillPlanner : MonoBehaviour
 
     private void PlayerIntoToggles()
     {
-        List<string> canTrain = GetTraineables(keyRule.proficiency); // Make toggles interactive or not
+        List<string> canTrain = new List<string>(); // Make toggles interactive or not
         List<string> alrTraining = new List<string>(); // Make toggles interactive and checked or not
         switch (keyRule.key)
         {
             case "skill_static":
                 maxActiveToggles = 1;
+                canTrain = GetSkillsOneLess(keyRule.proficiency);
                 if (!RuleElement.IsEmpty(creation.currentPlayer.skill_unspent[keyRule]))
                     alrTraining.Add(creation.currentPlayer.skill_unspent[keyRule].selector);
                 break;
             case "skill_choice":
+                maxActiveToggles = 1;
+                canTrain = GetSkillsOneLess(keyRule.proficiency);
                 List<string> choices = keyRule.value_list.ConvertAll(x => x.value);
                 choices.RemoveAll(x => !canTrain.Contains(x)); // Remove the non traineables from choice options
                 canTrain = choices;
-                maxActiveToggles = 1;
                 if (!RuleElement.IsEmpty(creation.currentPlayer.skill_choice[keyRule]))
                     alrTraining.Add(creation.currentPlayer.skill_choice[keyRule].selector);
                 break;
             case "skill_free":
-                maxActiveToggles = int.Parse(keyRule.value);
+                maxActiveToggles = keyRule.value.ToInt();
+                canTrain = GetSkillsOneLess(keyRule.proficiency);
                 foreach (var element in creation.currentPlayer.skill_free[keyRule])
                     if (!RuleElement.IsEmpty(element))
                         alrTraining.Add(element.selector);
                 break;
-            case "skill_improve":
+            case "skill_increase":
                 maxActiveToggles = 1;
-                if (!RuleElement.IsEmpty(creation.currentPlayer.skill_improve[keyRule]))
-                    alrTraining.Add(creation.currentPlayer.skill_improve[keyRule].selector);
+                canTrain = GetSkillsUnder(keyRule.proficiency);
+                if (!RuleElement.IsEmpty(creation.currentPlayer.skill_increase[keyRule]))
+                    alrTraining.Add(creation.currentPlayer.skill_increase[keyRule].selector);
                 break;
             default:
                 break;
@@ -124,10 +129,21 @@ public class SkillPlanner : MonoBehaviour
             {
                 RuleElement newRule = new RuleElement();
                 newRule.from = keyRule.from;
-                newRule.key = "skill_static";
                 newRule.selector = DB.Skl_Int2Full(i);
                 newRule.level = keyRule.level;
-                newRule.proficiency = keyRule.proficiency;
+
+                if (keyRule.key == "skill_increase")
+                {
+                    newRule.key = "skill_increase";
+                    string selectorProfLvl20 = creation.currentPlayer.Skill_Get(newRule.selector).profLvl20;
+                    newRule.proficiency = DB.Prof_Int2Full(DB.Prof_Abbr2Int(selectorProfLvl20) + 1);
+                }
+                else
+                {
+                    newRule.key = "skill_static";
+                    newRule.proficiency = keyRule.proficiency;
+                }
+
                 newTraining.Add(newRule);
             }
 
@@ -135,11 +151,20 @@ public class SkillPlanner : MonoBehaviour
         creation.RefreshPlayerIntoPanel();
     }
 
-    private List<string> GetTraineables(string prof)
+    private List<string> GetSkillsOneLess(string prof)
     {
         List<string> list = new List<string>();
         foreach (var sklName in DB.SkillNames)
-            if (creation.currentPlayer.Skill_TraineableTo(sklName, prof))
+            if (creation.currentPlayer.Skill_OneLessProf(sklName, prof))
+                list.Add(sklName);
+        return list;
+    }
+
+    private List<string> GetSkillsUnder(string prof)
+    {
+        List<string> list = new List<string>();
+        foreach (var sklName in DB.SkillNames)
+            if (creation.currentPlayer.Skill_UnderProf(sklName, prof))
                 list.Add(sklName);
         return list;
     }

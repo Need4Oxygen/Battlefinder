@@ -1,6 +1,8 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using PF2C = Pathfinder2e.Containers;
 using Pathfinder2e.Containers;
 using static TYaml.Serialization;
 
@@ -33,7 +35,7 @@ namespace Pathfinder2e
         [SerializeField] private TextAsset t_skillFeats = null;
 
 
-        public static List<Action> Actions = new List<Action>();
+        public static List<PF2C.Action> Actions = new List<PF2C.Action>();
 
         public static List<Ancestry> Ancestries = new List<Ancestry>();
         public static List<Feat> AncestryFeatures = new List<Feat>();
@@ -69,7 +71,7 @@ namespace Pathfinder2e
 
         public void InitializeDB()
         {
-            Actions = Deserialize<List<Action>>(t_actions.text);
+            Actions = Deserialize<List<PF2C.Action>>(t_actions.text);
 
             Ancestries = Deserialize<List<Ancestry>>(t_ancestries.text);
             AncestryFeatures = Deserialize<List<Feat>>(t_ancestryFeatures.text);
@@ -114,9 +116,9 @@ namespace Pathfinder2e
 
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- ABILITIES
 
-        public static string Abl_Abbr2Full(string abilityAbreviated)
+        public static string Abl_Abbr2Full(string abbr)
         {
-            switch (abilityAbreviated)
+            switch (abbr)
             {
                 case "str": return "Strength";
                 case "dex": return "Dexterity";
@@ -127,13 +129,13 @@ namespace Pathfinder2e
                 case "free": return "Free";
 
                 default:
-                    Debug.LogWarning("[DB] Error: ability abreviation \"" + abilityAbreviated + "\" not recognized!"); return "";
+                    Logger.LogWarning("DB", $"Ability abbr \"{abbr}\" not recognized!"); return "";
             }
         }
 
-        public static int Abl_Abbr2Int(string abilityAbreviated)
+        public static int Abl_Abbr2Int(string abbr)
         {
-            switch (abilityAbreviated)
+            switch (abbr)
             {
                 case "str": return 0;
                 case "dex": return 1;
@@ -142,10 +144,8 @@ namespace Pathfinder2e
                 case "wis": return 4;
                 case "cha": return 5;
                 case "free": return 6;
-
                 default:
-                    Debug.LogWarning("[DB] Error: ability abreviation \"" + abilityAbreviated + "\" not recognized!");
-                    return 0;
+                    Logger.LogWarning("DB", $"Ability abbr \"{abbr}\" not recognized!"); return 0;
             }
         }
 
@@ -160,16 +160,14 @@ namespace Pathfinder2e
                 case 4: return "wis";
                 case 5: return "cha";
                 case 6: return "free";
-
                 default:
-                    Debug.LogWarning("[DB] Error: ability int \"" + abilityInt + "\" not recognized!");
-                    return "";
+                    Logger.LogWarning("DB", $"Ability int \"{abilityInt}\" not recognized!"); return "";
             }
         }
 
-        public static string Abl_Full2Abbr(string abilityFullName)
+        public static string Abl_Full2Abbr(string full)
         {
-            switch (abilityFullName)
+            switch (full)
             {
                 case "Strength": return "str";
                 case "Dexterity": return "dex";
@@ -178,9 +176,8 @@ namespace Pathfinder2e
                 case "Wisdom": return "wis";
                 case "Charisma": return "cha";
                 case "Free": return "free";
-
                 default:
-                    Debug.LogWarning($"[DB] Ability abreviation \"{abilityFullName}\" not recognized!"); return "";
+                    Logger.LogWarning("DB", $"Prof full \"{full}\" not recognized!"); return "";
             }
         }
 
@@ -188,9 +185,9 @@ namespace Pathfinder2e
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- PROFICIENCIES
 
         /// <summary>Recieves a string "U", "T", etc, and returns score as 0, 2, 4, 6 or 8. </summary>
-        public static int Prof_Abbr2Score(string profAbbr)
+        public static int Prof_Abbr2Score(string abbr)
         {
-            switch (profAbbr)
+            switch (abbr)
             {
                 case "L": return 8;
                 case "M": return 6;
@@ -198,39 +195,37 @@ namespace Pathfinder2e
                 case "T": return 2;
                 case "U": return 0;
                 default:
-                    Debug.LogWarning($"[DB] Error: proficiency abreviation \"{profAbbr}\" not recognized!");
-                    return 0;
+                    Logger.LogWarning("DB", $"Prof abbr \"{abbr}\" not recognized!"); return 0;
             }
         }
 
         /// <summary>Recieves a string "U", "T", etc, and returns int as 0, 1, etc. </summary>
-        public static int Prof_Abbr2Int(string profAbbr)
+        public static int Prof_Abbr2Int(string abbr)
         {
-            switch (profAbbr)
+            switch (abbr)
             {
                 case "U": return 0;
                 case "T": return 1;
                 case "E": return 2;
                 case "M": return 3;
                 case "L": return 4;
-                default: Debug.LogWarning($"[DB] Error: proficiency abreviation ({profAbbr}) not recognized!"); return 0;
+                default:
+                    Logger.LogWarning("DB", $"Prof abbr \"{abbr}\" not recognized!"); return 0;
             }
         }
 
         /// <summary>Recieves a string "untrained", "trained", etc, and returns int as 0, 1, etc. </summary>
-        public static int Prof_Full2Int(string profFull)
+        public static int Prof_Full2Int(string full)
         {
-            switch (profFull)
+            switch (full)
             {
                 case "untrained": return 0;
                 case "trained": return 1;
                 case "expert": return 2;
                 case "master": return 3;
                 case "legendary": return 4;
-
                 default:
-                    Debug.LogWarning($"[DB] Error: proficiency abreviation ({profFull}) not recognized!");
-                    return 0;
+                    Logger.LogWarning("DB", $"Prof full \"{full}\" not recognized!"); return 0;
             }
         }
 
@@ -244,145 +239,173 @@ namespace Pathfinder2e
                 case 2: return "E";
                 case 3: return "M";
                 case 4: return "L";
-
                 default:
-                    Debug.LogWarning($"[DB] Error: proficiency int ({profInt}) not recognized!");
-                    return "U";
+                    Logger.LogWarning("DB", $"Prof int \"{profInt}\" not recognized!"); return "U";
+            }
+        }
+
+        /// <summary>Recieves an int 0, 1, etc, and returns string as "U", "T", etc. </summary>
+        public static string Prof_Int2Full(int profInt)
+        {
+            switch (profInt)
+            {
+                case 0: return "untrained";
+                case 1: return "trained";
+                case 2: return "expert";
+                case 3: return "master";
+                case 4: return "legendary";
+                default:
+                    Logger.LogWarning("DB", $"Prof int \"{profInt}\" not recognized!"); return "untrained";
             }
         }
 
         /// <summary>Recieves a string "U", "T", etc, and returns full name as "Untrained", "Trained", etc. </summary>
-        public static string Prof_Abbr2Full(string profAbbr)
+        public static string Prof_Abbr2Full(string abbr)
         {
-            switch (profAbbr)
+            switch (abbr)
             {
-                case "U": return "Untrained";
-                case "T": return "Trained";
-                case "E": return "Expert";
-                case "M": return "Master";
-                case "L": return "Lengend";
-
+                case "U": return "untrained";
+                case "T": return "trained";
+                case "E": return "expert";
+                case "M": return "master";
+                case "L": return "lengend";
                 default:
-                    Debug.LogWarning($"[DB] Error: proficiency abreviation ({profAbbr}) not recognized!");
-                    return "Untrained";
+                    Logger.LogWarning("DB", $"Prof abbr \"{abbr}\" not recognized!"); return "Untrained";
             }
         }
 
         /// <summary>Recieves a string "U", "T", etc, and returns colored full name as "Untrained", "Trained", etc. </summary>
-        public static string Prof_Abbr2FullColored(string profAbbr)
+        public static string Prof_Abbr2FullColored(string abbr)
         {
-            switch (profAbbr)
+            switch (abbr)
             {
                 case "U": return $"<color=#{ColorUtility.ToHtmlStringRGBA(Globals.Theme["untrained"])}>Untrained</color>";
                 case "T": return $"<color=#{ColorUtility.ToHtmlStringRGBA(Globals.Theme["trained"])}>Trained</color>";
                 case "E": return $"<color=#{ColorUtility.ToHtmlStringRGBA(Globals.Theme["expert"])}>Expert</color>";
                 case "M": return $"<color=#{ColorUtility.ToHtmlStringRGBA(Globals.Theme["master"])}>Master</color>";
                 case "L": return $"<color=#{ColorUtility.ToHtmlStringRGBA(Globals.Theme["leyend"])}>Leyend</color>";
-
                 default:
-                    Debug.LogWarning($"[DB] Error: proficiency abreviation ({profAbbr}) not recognized!");
+                    Logger.LogWarning("DB", $"Prof abbr \"{abbr}\" not recognized!");
                     return $"<color=#{ColorUtility.ToHtmlStringRGBA(Globals.Theme["untrained"])}>Untrained</color>";
             }
         }
 
         /// <summary>Recieves a string "U", "T", etc, and returns colored abbr as "U", "T", etc. </summary>
-        public static string Prof_Abbr2AbbrColored(string profAbbr)
+        public static string Prof_Abbr2AbbrColored(string abbr)
         {
-            switch (profAbbr)
+            switch (abbr)
             {
                 case "U": return $"<color=#{ColorUtility.ToHtmlStringRGBA(Globals.Theme["untrained"])}>U</color>";
                 case "T": return $"<color=#{ColorUtility.ToHtmlStringRGBA(Globals.Theme["trained"])}>T</color>";
                 case "E": return $"<color=#{ColorUtility.ToHtmlStringRGBA(Globals.Theme["expert"])}>E</color>";
                 case "M": return $"<color=#{ColorUtility.ToHtmlStringRGBA(Globals.Theme["master"])}>M</color>";
                 case "L": return $"<color=#{ColorUtility.ToHtmlStringRGBA(Globals.Theme["leyend"])}>L</color>";
-
                 default:
-                    Debug.LogWarning($"[DB] Error: proficiency abreviation ({profAbbr}) not recognized!");
+                    Logger.LogWarning("DB", $"Prof abbr \"{abbr}\" not recognized!");
                     return $"<color=#{ColorUtility.ToHtmlStringRGBA(Globals.Theme["untrained"])}>U</color>";
             }
         }
 
         /// <summary>Recieves a string "untrained", "trained", etc, and returns colored abbr as "U", "T", etc. </summary>
-        public static string Prof_Full2Abbr(string profFull)
+        public static string Prof_Full2Abbr(string full)
         {
-            switch (profFull)
+            switch (full)
             {
                 case "untrained": return "U";
                 case "trained": return "T";
                 case "expert": return "E";
                 case "master": return "M";
                 case "legendary": return "L";
-
                 default:
-                    Debug.LogWarning($"[DB] Error: proficiency full ({profFull}) not recognized!");
-                    return "U";
+                    Logger.LogWarning("DB", $"Prof full \"{full}\" not recognized!"); return "U";
             }
         }
 
         /// <summary>Recieves a string "untrained", "trained", etc, and returns colored abbr as "U", "T", etc. </summary>
-        public static string Prof_Full2AbbrColored(string profAbbr)
+        public static string Prof_Full2AbbrColored(string abbr)
         {
-            switch (profAbbr)
+            switch (abbr)
             {
                 case "untrained": return $"<color=#{ColorUtility.ToHtmlStringRGBA(Globals.Theme["untrained"])}>U</color>";
                 case "trained": return $"<color=#{ColorUtility.ToHtmlStringRGBA(Globals.Theme["trained"])}>T</color>";
                 case "expert": return $"<color=#{ColorUtility.ToHtmlStringRGBA(Globals.Theme["expert"])}>E</color>";
                 case "master": return $"<color=#{ColorUtility.ToHtmlStringRGBA(Globals.Theme["master"])}>M</color>";
                 case "legendary": return $"<color=#{ColorUtility.ToHtmlStringRGBA(Globals.Theme["leyend"])}>L</color>";
-
                 default:
-                    Debug.LogWarning($"[DB] Error: proficiency abreviation ({profAbbr}) not recognized!");
+                    Logger.LogWarning("DB", $"Prof abbr \"{abbr}\" not recognized!");
                     return $"<color=#{ColorUtility.ToHtmlStringRGBA(Globals.Theme["untrained"])}>U</color>";
             }
         }
 
-        /// <summary>Recieves a lecture list and returns max proficiency as "U", "T", etc. </summary>
-        public static string Prof_FindMax(IEnumerable<RuleElement> list)
+        /// <summary> Recieves a lecture list and returns max proficiency as "U", "T", etc for specified level and level 20. </summary>
+        /// <param name="list"> List from where to extract proficiencies. </param>
+        /// <param name="playerLevel"> Current level of the player beign checked. </param>
+        /// <returns> Returns a Tuple where Item1 is bound to player level, but Item2 isn't. </returns>
+        public static Tuple<string, string> Prof_FindMax(IEnumerable<RuleElement> list, int playerLevel)
         {
-            if (list == null) return "U";
-            if (list.Count() < 1) return "U";
+            if (list == null) return Tuple.Create("U", "U");
+            if (list.Count() < 1) return Tuple.Create("U", "U");
 
-            // U = 0, T = 1, E = 2, M = 3, L = 4
             int prof = 0;
+            int profLvl20 = 0;
+
+            List<RuleElement> rules = new List<RuleElement>();
 
             // Set max static prof
-            foreach (var element in list.Where(ctx => ctx.key == "proficiency_static" || ctx.key == "skill_static"))
+            rules = (from a in list
+                     where a.key == "proficiency_static" || a.key == "skill_static"
+                     select a).ToList() ?? new List<RuleElement>();
+            foreach (var element in rules)
             {
+                if (int.Parse(element.level) > playerLevel) continue;
                 int currentProf = Prof_Full2Int(element.proficiency);
                 if (currentProf > prof)
                     prof = currentProf;
             }
-
-            // Add improvements
-            if (list.Any(x => x.key.Contains("skill")))
+            foreach (var element in rules)
             {
-                List<int> improvements = new List<int>();
-
-                foreach (var element in list.Where(ctx => ctx.key == "skill_improve"))
-                    improvements.Add(DB.Prof_Full2Int(element.proficiency));
-                improvements.Sort();
-
-                for (int i = 0; i < improvements.Count; i++)
-                {
-                    int item = improvements[i];
-                    if (prof++ == item)
-                        prof++;
-                }
+                int currentProf = Prof_Full2Int(element.proficiency);
+                if (currentProf > profLvl20)
+                    profLvl20 = currentProf;
             }
 
-            return DB.Prof_Int2Abbr(prof);
+            // Add increases
+            rules = (from a in list
+                     where a.key == "proficiency_increase" || a.key == "skill_increase"
+                     select a).ToList() ?? new List<RuleElement>();
+            HashSet<int> increases = new HashSet<int>();
+            foreach (var element in rules)
+            {
+                if (int.Parse(element.level) > playerLevel) continue;
+                increases.Add(Prof_Full2Int(element.proficiency));
+            }
+            while (increases.Contains(prof + 1))
+            {
+                prof++;
+            }
+            if (increases.Count > 0) increases.Clear();
+            foreach (var element in rules)
+            {
+                increases.Add(Prof_Full2Int(element.proficiency));
+            }
+            while (increases.Contains(profLvl20 + 1))
+            {
+                profLvl20++;
+            }
+
+            return Tuple.Create(DB.Prof_Int2Abbr(prof), DB.Prof_Int2Abbr(profLvl20));
         }
 
         /// <summary>Recieves a lecture list and returns colored max proficiency as "U", "T", etc. </summary>
-        public static string Prof_FindMaxColored(List<RuleElement> elements) { return Prof_Abbr2AbbrColored(Prof_FindMax(elements)); }
+        public static string Prof_FindMaxColored(List<RuleElement> elements, int playerLevel) { return Prof_Abbr2AbbrColored(Prof_FindMax(elements, playerLevel).Item1); }
 
 
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- SKILLS
         public static List<string> SkillNames = new List<string>() { "acrobatics", "arcana", "athletics", "crafting", "deception", "diplomacy", "intimidation", "medicine", "nature", "occultism", "performance", "religion", "society", "stealth", "survival", "thievery" };
 
-        public static int Skl_Full2Int(string selector)
+        public static int Skl_Full2Int(string full)
         {
-            switch (selector)
+            switch (full)
             {
                 case "acrobatics": return 0;
                 case "arcana": return 1;
@@ -401,8 +424,7 @@ namespace Pathfinder2e
                 case "survival": return 14;
                 case "thievery": return 15;
                 default:
-                    Debug.LogWarning($"[DB] Error: skill \"{selector}\" not recognized!");
-                    return -1;
+                    Logger.LogWarning("DB", $"Skill full \"{full}\" not recognized!"); return -1;
             }
         }
 
@@ -427,9 +449,20 @@ namespace Pathfinder2e
                 case 14: return "survival";
                 case 15: return "thievery";
                 default:
-                    Debug.LogWarning($"[DB] Error: skill int ({value}) not recognized!");
-                    return "";
+                    Logger.LogWarning("DB", $"Skill int \"{value}\" not recognized!"); return "";
             }
+        }
+
+        public static string Skl_Int2MaxTrainability(int value)
+        {
+            if (value >= 1 && value <= 6)
+                return "expert";
+            else if (value >= 7 && value <= 14)
+                return "master";
+            else if (value >= 15 && value <= 20)
+                return "legendary";
+            else
+                return "trained";
         }
 
 
@@ -447,7 +480,7 @@ namespace Pathfinder2e
                 case "G": return "Gargantuan";
 
                 default:
-                    Debug.LogWarning("[DB] Error: size abreviation (" + abbr + ") not recognized!"); return "";
+                    Logger.LogWarning("DB", $"Size abbr \"{abbr}\" not recognized!"); return "";
             }
         }
 
@@ -463,7 +496,8 @@ namespace Pathfinder2e
                 case "Gargantuan": return "G";
 
                 default:
-                    Debug.LogWarning("[DB] Error: size abreviation (" + full + ") not recognized!"); return "";
+                    Logger.LogWarning("DB", $"Size full \"{full}\" not recognized!"); return "";
+
             }
         }
 
@@ -479,8 +513,7 @@ namespace Pathfinder2e
                 case "Varies": return "V";
 
                 default:
-                    Debug.LogWarning($"[DB] Action Cost abreviation \"{full}\" not recognized!");
-                    return "";
+                    Logger.LogWarning("DB", $"Action Cost full \"{full}\" not recognized!"); return "";
             }
         }
 

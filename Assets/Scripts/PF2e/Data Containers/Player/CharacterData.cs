@@ -19,6 +19,21 @@ namespace Pathfinder2e.Character
 
 
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- LEVEL
+        public int level = 1;
+
+        public void Level_Set(int value)
+        {
+            if (value < 1)
+                level = 1;
+            else if (value > 20)
+                level = 20;
+            else
+                level = value;
+
+            Abl_UpdateValues();
+            RE_SelectiveRefresh("all");
+        }
+
         private int _experience = 0;
         public int experience
         {
@@ -26,33 +41,12 @@ namespace Pathfinder2e.Character
             set { }
         }
 
-        private int _level = 0;
-        public int level
-        {
-            get
-            {
-                return _level;
-            }
-            set
-            {
-                if (value < 1)
-                    _level = 1;
-                else if (value > 20)
-                    _level = 20;
-                else
-                    _level = value;
-
-                Abl_UpdateValues();
-            }
-        }
-
-
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- HIT POINTS
         private int hp_class = 0;
-        private int hpancestry = 0;
+        private int hp_ancestry = 0;
 
         public int hp_current { get { return hp_max - hp_damage; } }
-        public int hp_max { get { return level * (hp_class + Abl_GetMod("con")) + hpancestry + hp_temp; } }
+        public int hp_max { get { return level * (hp_class + Abl_GetMod("con")) + hp_ancestry + hp_temp; } }
 
         private int _damage = 0;
         public int hp_damage
@@ -134,7 +128,7 @@ namespace Pathfinder2e.Character
 
         private void ClassDC_Refresh()
         {
-            class_dc = DB.Prof_FindMax(RE_Get("class_dc"));
+            class_dc = DB.Prof_FindMax(RE_Get("class_dc"), level).Item1;
         }
 
 
@@ -180,7 +174,7 @@ namespace Pathfinder2e.Character
                     case "H": return 4f;
                     case "G": return 8f;
                     default:
-                        Debug.LogWarning("[PF2E_DataBase] Error: size (" + sizeStr + ") not recognized!");
+                        Logger.LogWarning("CharacterData", $"Size \"{sizeStr}\" not recognized!");
                         return 1f;
                 }
             else
@@ -222,8 +216,7 @@ namespace Pathfinder2e.Character
         public void Abl_MapAdd(RuleElement boost) { Abl_MapAdd(new List<RuleElement> { boost }); }
         public void Abl_MapAdd(List<RuleElement> boosts)
         {
-            foreach (var boost in boosts)
-                RE_abilities.Add(boost);
+            RE_abilities.AddRange(boosts);
             Abl_UpdateValues();
         }
 
@@ -266,8 +259,8 @@ namespace Pathfinder2e.Character
 
             foreach (var abl in abl_sources)
             {
-                IEnumerable<RuleElement> all = RE_abilities.Where(x => int.Parse(x.level) <= level && x.selector == abl);
-                int count = all.Sum(x => int.Parse(x.value));
+                IEnumerable<RuleElement> all = RE_abilities.Where(x => x.level.ToInt() <= level && x.selector == abl);
+                int count = all.Sum(x => x.value.ToInt());
 
                 int score = 10, mod = 0;
                 if (count >= 0)
@@ -304,22 +297,17 @@ namespace Pathfinder2e.Character
         public Dictionary<RuleElement, RuleElement> skill_unspent;
         public Dictionary<RuleElement, RuleElement> skill_choice;
         public Dictionary<RuleElement, List<RuleElement>> skill_free;
-        public Dictionary<RuleElement, RuleElement> skill_improve;
+        public Dictionary<RuleElement, RuleElement> skill_increase;
 
-        [YamlIgnore]
-        public IEnumerable<RuleElement> RE_skills
+        public IEnumerable<RuleElement> RE_skills()
         {
-            get
-            {
-                return
-                    skill_singles.Values.AsEnumerable()
-                    .Concat(skill_unspent.Values.AsEnumerable())
-                    .Concat(skill_choice.Values.AsEnumerable())
-                    .Concat(skill_free.Values.SelectMany(x => x))
-                    .Concat(skill_improve.Values.AsEnumerable())
-                    .Where(x => !RuleElement.IsEmpty(x) && int.Parse(x.level) <= level);
-            }
-            set { }
+            return
+                skill_singles.Values.AsEnumerable()
+                .Concat(skill_unspent.Values.AsEnumerable())
+                .Concat(skill_choice.Values.AsEnumerable())
+                .Concat(skill_free.Values.SelectMany(x => x))
+                .Concat(skill_increase.Values.AsEnumerable())
+                .Where(x => !RuleElement.IsEmpty(x));
         }
 
         public APIC_Skill Skill_Get(string full)
@@ -354,33 +342,6 @@ namespace Pathfinder2e.Character
                 performance, religion, society, stealth, survival, thievery };
         }
 
-        public void Skill_Add(string from, string lvl, RuleElement element)
-        {
-            switch (element.key)
-            {
-                case "skill_static":
-                    if (Skill_TraineableTo(element.selector, element.proficiency))
-                    {
-                        skill_singles.Add(new RuleElement(from, lvl, element), new RuleElement(from, lvl, element));
-                        RE_SelectiveRefresh(new HashSet<string> { element.selector });
-                    }
-                    else
-                        skill_unspent.Add(new RuleElement(from, lvl, element), new RuleElement());
-                    break;
-                case "skill_choice":
-                    skill_choice.Add(new RuleElement(from, lvl, element), new RuleElement());
-                    break;
-                case "skill_free":
-                    skill_free.Add(new RuleElement(from, lvl, element), new List<RuleElement>());
-                    break;
-                case "skill_improve":
-                    skill_improve.Add(new RuleElement(from, lvl, element), new RuleElement());
-                    break;
-                default:
-                    break;
-            }
-        }
-
         public void Skill_Set(RuleElement key, List<RuleElement> value)
         {
             HashSet<string> selectors = new HashSet<string>();
@@ -407,15 +368,16 @@ namespace Pathfinder2e.Character
                     foreach (var item in oldTraining) { if (item.selector != null) selectors.Add(item.selector); }
                     skill_free[key] = value;
                     break;
-                case "skill_improve":
-                    skill_improve.TryGetValue(key, out oldTrain);
+                case "skill_increase":
+                    skill_increase.TryGetValue(key, out oldTrain);
                     if (oldTrain.selector != null) selectors.Add(oldTrain.selector);
-                    skill_improve[key] = value.Count > 0 ? value[0] : new RuleElement();
+                    skill_increase[key] = value.Count > 0 ? value[0] : new RuleElement();
                     break;
             }
 
             RE_SelectiveRefresh(selectors);
             Skill_CheckUnspents();
+            Skill_CheckIncreases();
         }
 
         private void Skill_RemoveFrom(string from)
@@ -439,18 +401,19 @@ namespace Pathfinder2e.Character
             foreach (var key in keys) selectors.Add(key.selector);
             if (keys.Count > 0) skill_free.RemoveAll(keys);
 
-            keys = (from a in skill_improve where a.Key.@from == @from select a.Key).ToList();
+            keys = (from a in skill_increase where a.Key.@from == @from select a.Key).ToList();
             foreach (var key in keys) selectors.Add(key.selector);
-            if (keys.Count > 0) skill_improve.RemoveAll(keys);
+            if (keys.Count > 0) skill_increase.RemoveAll(keys);
 
             RE_SelectiveRefresh(selectors);
             Skill_CheckUnspents();
+            Skill_CheckIncreases();
         }
 
         private void Skill_CheckUnspents()
         {
             HashSet<string> selectors = new HashSet<string>();
-            List<RuleElement> keys = (from a in skill_unspent where Skill_TraineableTo(a.Key.selector, a.Key.proficiency) select a.Key).ToList();
+            List<RuleElement> keys = (from a in skill_unspent where Skill_OneLessProf(a.Key.selector, a.Key.proficiency) select a.Key).ToList();
 
             foreach (var key in keys)
             {
@@ -465,13 +428,41 @@ namespace Pathfinder2e.Character
             RE_SelectiveRefresh(selectors);
         }
 
-        /// <summary> Compares selector proficiency against some proficiency. Profficiency must be abbr as "T" "E" "M"...</summary>
-        /// <returns> True if selector is > or = to the proficiency that the rule wants to train. AKA selector can't be trained by this rule. </returns>
-        public bool Skill_TraineableTo(string selector, string prof)
+        private void Skill_CheckIncreases()
         {
-            int selectorProf = DB.Prof_Abbr2Int(Skill_Get(selector).prof);
-            int trainProf = DB.Prof_Full2Int(prof);
-            return (selectorProf + 1) == trainProf ? true : false;
+            // HashSet<string> selectors = new HashSet<string>();
+
+            List<RuleElement> keys = (
+                from a in skill_increase
+                where !RuleElement.IsEmpty(a.Value)
+                where DB.Prof_Abbr2Int(Skill_Get(a.Value.selector).profLvl20) < DB.Prof_Full2Int(a.Value.proficiency) ? true : false
+                select a.Key).ToList();
+
+            foreach (var key in keys)
+            {
+                // selectors.Add(key.selector);
+                // selectors.Add(skill_unspent[key].selector);
+
+                skill_increase[key] = new RuleElement();
+            }
+
+            // RE_SelectiveRefresh(selectors);
+        }
+
+        /// <summary> Checks if given selector proficiency level is one under given proficiency level. Proficiency must be abbr as "U", "T"...</summary>
+        public bool Skill_OneLessProf(string selector, string prof)
+        {
+            int selectorProf = DB.Prof_Abbr2Int(Skill_Get(selector).profLvl20);
+            int givenProf = DB.Prof_Full2Int(prof);
+            return (selectorProf + 1) == givenProf ? true : false;
+        }
+
+        /// <summary> Checks if given selector proficiency level is under given proficiency level. Proficiency must be abbr as "U", "T"...</summary>
+        public bool Skill_UnderProf(string selector, string prof)
+        {
+            int selectorProf = DB.Prof_Abbr2Int(Skill_Get(selector).profLvl20);
+            int givenProf = DB.Prof_Full2Int(prof);
+            return (selectorProf) < givenProf ? true : false;
         }
 
 
@@ -504,15 +495,15 @@ namespace Pathfinder2e.Character
         public string medium_armor = "U";
         public string heavy_armor = "U";
 
-        public void Unarmed_Refresh() { unarmed = DB.Prof_FindMax(RE_Get("unarmed")); }
-        public void SimpleWeapons_Refresh() { simple_weapons = DB.Prof_FindMax(RE_Get("simple_weapons")); }
-        public void MartialWeapons_Refresh() { martial_weapons = DB.Prof_FindMax(RE_Get("martial_weapons")); }
-        public void AdvancedWeapons_Refresh() { advanced_weapons = DB.Prof_FindMax(RE_Get("advanced_weapons")); }
+        public void Unarmed_Refresh() { unarmed = DB.Prof_FindMax(RE_Get("unarmed"), level).Item1; }
+        public void SimpleWeapons_Refresh() { simple_weapons = DB.Prof_FindMax(RE_Get("simple_weapons"), level).Item1; }
+        public void MartialWeapons_Refresh() { martial_weapons = DB.Prof_FindMax(RE_Get("martial_weapons"), level).Item1; }
+        public void AdvancedWeapons_Refresh() { advanced_weapons = DB.Prof_FindMax(RE_Get("advanced_weapons"), level).Item1; }
 
-        public void Unarmored_Refresh() { unarmored = DB.Prof_FindMax(RE_Get("unarmored")); }
-        public void LightArmor_Refresh() { light_armor = DB.Prof_FindMax(RE_Get("light_armor")); }
-        public void MediumArmor_Refresh() { medium_armor = DB.Prof_FindMax(RE_Get("medium_armor")); }
-        public void HeavyArmor_Refresh() { heavy_armor = DB.Prof_FindMax(RE_Get("heavy_armor")); }
+        public void Unarmored_Refresh() { unarmored = DB.Prof_FindMax(RE_Get("unarmored"), level).Item1; }
+        public void LightArmor_Refresh() { light_armor = DB.Prof_FindMax(RE_Get("light_armor"), level).Item1; }
+        public void MediumArmor_Refresh() { medium_armor = DB.Prof_FindMax(RE_Get("medium_armor"), level).Item1; }
+        public void HeavyArmor_Refresh() { heavy_armor = DB.Prof_FindMax(RE_Get("heavy_armor"), level).Item1; }
 
 
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- ANCESTRY
@@ -528,7 +519,7 @@ namespace Pathfinder2e.Character
             }
             if (!DB.Ancestries.Any(x => x.name == newAncestry))
             {
-                Debug.LogWarning($"<color=#5cbcd6>[PlayerData]</color> Couldn't find ancestry {newAncestry} ");
+                Logger.LogWarning("CharacterData", $"Couldn't find ancestry \"{newAncestry}\"");
                 return;
             }
 
@@ -536,7 +527,7 @@ namespace Pathfinder2e.Character
 
             Ancestry_Cleanse(false);
             ancestry = newAncestry;
-            hpancestry = ancestryData.hp;
+            hp_ancestry = ancestryData.hp;
             speed_ancestry = ancestryData.speed;
             sizeancestry = ancestryData.size;
             foreach (var item in ancestryData.traits)
@@ -555,8 +546,8 @@ namespace Pathfinder2e.Character
                 foreach (var item in ancestryData.abl_flaws)
                     ablBoostToAdd.Add(new RuleElement() { from = "ancestry flaw", selector = item, level = "1", value = "-1" });
 
-            IEnumerable<RuleElement> previousFree = Abl_MapGetAllFrom("ancestry free"); // Save last ancestry free boosts into new ancestry
-            Abl_MapClearFrom("ancestry free");
+            List<RuleElement> previousFree = Abl_MapGetAllFrom("ancestry free").ToList(); // Save last ancestry free boosts into new ancestry
+            if (previousFree.Count > 1) Abl_MapClearFrom("ancestry free");
             for (int i = 0; i < ancestryData.abl_boosts.Count(x => x == "free"); i++)
                 if (i < previousFree.Count())
                     ablBoostToAdd.Add(previousFree.ElementAt(i));
@@ -567,7 +558,7 @@ namespace Pathfinder2e.Character
         private void Ancestry_Cleanse(bool cleanseChoices)
         {
             ancestry = "";
-            hpancestry = 0;
+            hp_ancestry = 0;
             speed_ancestry = 0;
             sizeancestry = "M";
 
@@ -609,7 +600,7 @@ namespace Pathfinder2e.Character
                 }
                 else
                 {
-                    Debug.LogWarning($"<color=#5cbcd6>[PlayerData]</color> Couldn't find background {newBackground} ");
+                    Logger.LogWarning("CharacterData", $"Couldn't find background \"{newBackground}\"");
                 }
             }
             else
@@ -642,13 +633,23 @@ namespace Pathfinder2e.Character
             if (newClass != "")
             {
                 Class classData = DB.Classes.Find(x => x.name == newClass);
-
+                ClassProgression classProg = DB.ClassProgression.Find(x => x.name == newClass);
                 if (classData != null)
                 {
                     Class_Cleanse(false);
+
+                    // Variables
                     class_name = newClass;
                     hp_class = classData.hp;
+
+                    // Add class RuleElements
                     RE_Add("class", "1", new List<RuleElement>(classData.elements));
+
+                    // Add skill increases inside progression
+                    var skillIcreases = from a in classProg.progression from b in a.items where b == "skill increase" select a.level;
+                    if (skillIcreases?.Count() > 0)
+                        foreach (var item in skillIcreases)
+                            RE_Add("class", item.ToString(), new RuleElement() { key = "skill_increase", proficiency = DB.Skl_Int2MaxTrainability(item) });
 
                     // Abl Boosts Stuff
                     if (classData.key_ability_choices.Count > 1)
@@ -670,7 +671,7 @@ namespace Pathfinder2e.Character
                 }
                 else
                 {
-                    Debug.LogWarning($"<color=#5cbcd6>[PlayerData]</color> Couldn't find background {newClass} ");
+                    Logger.LogWarning("CharacterData", $"Couldn't find class \"{newClass}\"");
                 }
             }
             else
@@ -705,7 +706,7 @@ namespace Pathfinder2e.Character
                 switch (element.key)
                 {
                     case "skill_static":
-                        if (Skill_TraineableTo(element.selector, element.proficiency))
+                        if (Skill_OneLessProf(element.selector, element.proficiency))
                         {
                             skill_singles.Add(new RuleElement(from, lvl, element), new RuleElement(from, lvl, element));
                             RE_SelectiveRefresh(new HashSet<string> { element.selector });
@@ -719,8 +720,8 @@ namespace Pathfinder2e.Character
                     case "skill_free":
                         skill_free.Add(new RuleElement(from, lvl, element), new List<RuleElement>());
                         break;
-                    case "skill_improve":
-                        skill_improve.Add(new RuleElement(from, lvl, element), new RuleElement());
+                    case "skill_increase":
+                        skill_increase.Add(new RuleElement(from, lvl, element), new RuleElement());
                         break;
 
                     default:
@@ -747,7 +748,7 @@ namespace Pathfinder2e.Character
         }
         public IEnumerable<RuleElement> RE_GetFromSkill(string selector)
         {
-            return from a in RE_skills
+            return from a in RE_skills()
                    where a.selector == selector
                    select a;
         }
@@ -771,48 +772,48 @@ namespace Pathfinder2e.Character
         {
             if (selectors.Count < 1) return;
 
-            Debug.Log($"<color=#5cbcd6>[PlayerData]</color> Refreshing selectors {String.Join(", ", selectors)} ");
+            Logger.Log("CharacterData", $"Refreshing selectors \"{String.Join(", ", selectors)}\"");
 
             foreach (var selector in selectors)
                 switch (selector)
                 {
                     case "strength":
-                        athletics?.Refresh();
+                        athletics.Refresh();
                         break;
                     case "dexterity":
-                        ac?.Refresh();
-                        reflex?.Refresh();
-                        acrobatics?.Refresh();
-                        stealth?.Refresh();
-                        thievery?.Refresh();
+                        ac.Refresh();
+                        reflex.Refresh();
+                        acrobatics.Refresh();
+                        stealth.Refresh();
+                        thievery.Refresh();
                         break;
                     case "constitution":
-                        fortitude?.Refresh();
+                        fortitude.Refresh();
                         break;
                     case "intelligence":
-                        arcana?.Refresh();
-                        crafting?.Refresh();
-                        occultism?.Refresh();
-                        society?.Refresh();
+                        arcana.Refresh();
+                        crafting.Refresh();
+                        occultism.Refresh();
+                        society.Refresh();
                         Lores_Refresh();
                         break;
                     case "wisdom":
-                        perception?.Refresh();
-                        will?.Refresh();
-                        diplomacy?.Refresh();
-                        medicine?.Refresh();
-                        nature?.Refresh();
-                        religion?.Refresh();
-                        survival?.Refresh();
+                        perception.Refresh();
+                        will.Refresh();
+                        diplomacy.Refresh();
+                        medicine.Refresh();
+                        nature.Refresh();
+                        religion.Refresh();
+                        survival.Refresh();
                         break;
                     case "charisma":
-                        deception?.Refresh();
-                        diplomacy?.Refresh();
-                        intimidation?.Refresh();
-                        performance?.Refresh();
+                        deception.Refresh();
+                        diplomacy.Refresh();
+                        intimidation.Refresh();
+                        performance.Refresh();
                         break;
 
-                    case "ac": ac?.Refresh(); break;
+                    case "ac": ac.Refresh(); break;
 
                     case "perception": perception.Refresh(); break;
 
@@ -853,29 +854,24 @@ namespace Pathfinder2e.Character
 
                     case "skills": break;
 
+                    case "all":
+                        ac.Refresh(); perception.Refresh(); fortitude.Refresh(); reflex.Refresh(); will.Refresh();
+                        RE_SkillRefresh(); ClassDC_Refresh(); Lores_Refresh();
+                        Unarmed_Refresh(); SimpleWeapons_Refresh(); MartialWeapons_Refresh(); AdvancedWeapons_Refresh();
+                        Unarmored_Refresh(); LightArmor_Refresh(); MediumArmor_Refresh(); HeavyArmor_Refresh();
+                        break;
                     case null: break;
-                    default: Debug.LogWarning($"<color=#5cbcd6>[PlayerData]</color> Selector \"{selector}\" couldn't be found!"); break;
+                    default:
+                        Logger.LogWarning("CharacterData", $"Selector \"{selector}\" couldn't be found!"); break;
                 }
         }
 
         public void RE_SkillRefresh()
         {
-            acrobatics.Refresh();
-            arcana.Refresh();
-            athletics.Refresh();
-            crafting.Refresh();
-            deception.Refresh();
-            diplomacy.Refresh();
-            intimidation.Refresh();
-            medicine.Refresh();
-            nature.Refresh();
-            occultism.Refresh();
-            performance.Refresh();
-            religion.Refresh();
-            society.Refresh();
-            stealth.Refresh();
-            survival.Refresh();
-            thievery.Refresh();
+            acrobatics.Refresh(); arcana.Refresh(); athletics.Refresh(); crafting.Refresh();
+            deception.Refresh(); diplomacy.Refresh(); intimidation.Refresh(); medicine.Refresh();
+            nature.Refresh(); occultism.Refresh(); performance.Refresh(); religion.Refresh();
+            society.Refresh(); stealth.Refresh(); survival.Refresh(); thievery.Refresh();
         }
 
 
@@ -888,12 +884,8 @@ namespace Pathfinder2e.Character
             // Needs to be declared before any APIC
             abl_values = new Dictionary<string, Vector2Int>()
             {
-            {"str",new Vector2Int(10,0)},
-            {"dex",new Vector2Int(10,0)},
-            {"con",new Vector2Int(10,0)},
-            {"int",new Vector2Int(10,0)},
-            {"wis",new Vector2Int(10,0)},
-            {"cha",new Vector2Int(10,0)},
+            {"str",new Vector2Int(10,0)}, {"dex",new Vector2Int(10,0)}, {"con",new Vector2Int(10,0)},
+            {"int",new Vector2Int(10,0)}, {"wis",new Vector2Int(10,0)}, {"cha",new Vector2Int(10,0)},
             };
 
             ac = new APIC("ac", this, "dex", 10);
@@ -909,7 +901,7 @@ namespace Pathfinder2e.Character
             skill_unspent = new Dictionary<RuleElement, RuleElement>();
             skill_choice = new Dictionary<RuleElement, RuleElement>();
             skill_free = new Dictionary<RuleElement, List<RuleElement>>();
-            skill_improve = new Dictionary<RuleElement, RuleElement>();
+            skill_increase = new Dictionary<RuleElement, RuleElement>();
 
             acrobatics = new APIC_Skill("acrobatics", this, "dex", 0);
             arcana = new APIC_Skill("arcana", this, "int", 0);
@@ -921,9 +913,9 @@ namespace Pathfinder2e.Character
             medicine = new APIC_Skill("medicine", this, "wis", 0);
             nature = new APIC_Skill("nature", this, "wis", 0);
             occultism = new APIC_Skill("occultism", this, "int", 0);
-            performance = new APIC_Skill("performance", this, "dex", 0);
+            performance = new APIC_Skill("performance", this, "cha", 0);
             religion = new APIC_Skill("religion", this, "wis", 0);
-            society = new APIC_Skill("society", this, "cha", 0);
+            society = new APIC_Skill("society", this, "int", 0);
             stealth = new APIC_Skill("stealth", this, "dex", 0);
             survival = new APIC_Skill("survival", this, "wis", 0);
             thievery = new APIC_Skill("thievery", this, "dex", 0);
@@ -931,7 +923,7 @@ namespace Pathfinder2e.Character
             lore_dic = new Dictionary<string, APIC>();
 
             // Needs to be after ALL
-            level = 1;
+            Level_Set(1);
         }
     }
 

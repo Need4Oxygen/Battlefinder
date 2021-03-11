@@ -193,36 +193,36 @@ namespace Pathfinder2e.Character
                 // Generate Separator as Level 1 , Level 2...
                 GenerateSeparator(i + 1);
 
-                // Generate minibuttons as for unspent skills, skill choices, free skills, improvements
+                // Generate minibuttons as for unspent skills, skill choices, free skills, increases...
                 List<BuildButton> miniButtons = new List<BuildButton>();
 
-                foreach (var item in currentPlayer.skill_unspent.Where(x => int.Parse(x.Key.level) == i + 1)) // Unspent
+                foreach (var item in currentPlayer.skill_unspent.Where(x => x.Key.level.ToInt() == i + 1)) // Unspent
                 {
-                    BuildButton miniButt = GenerateBuildMiniButton($"{StrExtensions.ToUpperFirst(item.Key.from)} Unspent", item.Value != null ? "O" : "X", null);
+                    BuildButton miniButt = GenerateBuildMiniButton($"{item.Key.from.ToUpperFirst()} Unspent", RuleElement.IsNullOrEmpty(item.Value) ? "X" : "O", null);
                     RuleElement listenerRule = item.Key;
                     miniButt.button.onClick.AddListener(() => OnClick_Skill(listenerRule));
                     miniButtons.Add(miniButt);
                 }
 
-                foreach (var item in currentPlayer.skill_choice.Where(x => int.Parse(x.Key.level) == i + 1)) // Choices
+                foreach (var item in currentPlayer.skill_choice.Where(x => x.Key.level.ToInt() == i + 1)) // Choices
                 {
-                    BuildButton miniButt = GenerateBuildMiniButton($"{StrExtensions.ToUpperFirst(item.Key.from)} choice", item.Value != null ? "O" : "X", null);
+                    BuildButton miniButt = GenerateBuildMiniButton($"{item.Key.from.ToUpperFirst()} Choice", RuleElement.IsNullOrEmpty(item.Value) ? "X" : "O", null);
                     RuleElement listenerRule = item.Key;
                     miniButt.button.onClick.AddListener(() => OnClick_Skill(listenerRule));
                     miniButtons.Add(miniButt);
                 }
 
-                foreach (var item in currentPlayer.skill_free.Where(x => int.Parse(x.Key.level) == i + 1)) // Free
+                foreach (var item in currentPlayer.skill_free.Where(x => x.Key.level.ToInt() == i + 1)) // Free
                 {
-                    BuildButton miniButt = GenerateBuildMiniButton($"{StrExtensions.ToUpperFirst(item.Key.from)} free", item.Value != null ? item.Value.Count.ToString() + $"/{item.Key.value}" : "0" + $"/{item.Key.value}", null);
+                    BuildButton miniButt = GenerateBuildMiniButton($"{item.Key.from.ToUpperFirst()} Free", item.Value != null ? item.Value.Count.ToString() + $"/{item.Key.value}" : "0" + $"/{item.Key.value}", null);
                     RuleElement listenerRule = item.Key;
                     miniButt.button.onClick.AddListener(() => OnClick_Skill(listenerRule));
                     miniButtons.Add(miniButt);
                 }
 
-                foreach (var item in currentPlayer.skill_improve.Where(x => int.Parse(x.Key.level) == i + 1)) // Improve
+                foreach (var item in currentPlayer.skill_increase.Where(x => x.Key.level.ToInt() == i + 1)) // Increase
                 {
-                    BuildButton miniButt = GenerateBuildMiniButton($"{StrExtensions.ToUpperFirst(item.Key.from)} choice", item.Value != null ? "O" : "X", null);
+                    BuildButton miniButt = GenerateBuildMiniButton($"{item.Key.from.ToUpperFirst()} Increase", RuleElement.IsNullOrEmpty(item.Value) ? "X" : "O", null);
                     RuleElement listenerRule = item.Key;
                     miniButt.button.onClick.AddListener(() => OnClick_Skill(listenerRule));
                     miniButtons.Add(miniButt);
@@ -440,7 +440,7 @@ namespace Pathfinder2e.Character
         /// <summary> Called by the level inputfiedld. </summary>
         public void OnEndEditLevel()
         {
-            currentPlayer.level = int.Parse(levelInput.text);
+            currentPlayer.Level_Set(levelInput.text.ToInt());
             RefreshPlayerIntoPanel();
         }
 

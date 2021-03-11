@@ -129,7 +129,7 @@ namespace Pathfinder2e.GameData
                 if (previous != null)
                     if (previous.Count() > i)
                     {
-                        string previousAbl = DB.Abl_Abbr2Full(previous.ElementAt(i).from);
+                        string previousAbl = DB.Abl_Abbr2Full(previous.ElementAt(i).selector);
                         if (ancestryOptionList.Find(x => x.text == previousAbl) != null)
                         {
                             int shouldSelectIndex = 0;
@@ -433,7 +433,6 @@ namespace Pathfinder2e.GameData
 
             creation.currentPlayer.Abl_MapSet(new List<RuleElement>(currentData));
             creation.RefreshPlayerIntoPanel();
-            creation.SavePlayer();
             Close_InitialAblBoosts();
         }
 
@@ -518,7 +517,6 @@ namespace Pathfinder2e.GameData
 
             creation.currentPlayer.Abl_MapSet(new List<RuleElement>(currentData));
             creation.RefreshPlayerIntoPanel();
-            creation.SavePlayer();
             Close_OtherAblBoosts();
         }
 
