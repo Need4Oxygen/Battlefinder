@@ -25,7 +25,7 @@ public class WindowManager : MonoBehaviour
             OnWindowOpens(window);
 
         string type = window.isSubpanel ? "Subpanel" : "Window";
-        Debug.Log($"<color=#edbf28>[WindowManager]</color> {type} \"{window.windowName}\" opened, stack count: {OpenWindows.Count} || {string.Join(" ,", OpenWindowNames)}");
+        Logger.Log("WindowManager", $"{type} \"{type} \"{window.windowName}\" opened, stack count: {OpenWindows.Count} || {string.Join(", ", OpenWindowNames)}");
     }
 
     public static void WindowClosed(Window window)
@@ -49,7 +49,7 @@ public class WindowManager : MonoBehaviour
             OnWindowCloses(window);
 
         string type = window.isSubpanel ? "Subpanel" : "Window";
-        Debug.Log($"<color=#edbf28>[WindowManager]</color> {type} \"{window.windowName}\" closed, stack count: {OpenWindows.Count} || {string.Join(" ,", OpenWindowNames)}");
+        Logger.Log("WindowManager", $"{type} \"{window.windowName}\" closed, stack count: {OpenWindows.Count} || {string.Join(", ", OpenWindowNames)}");
     }
 
     private static void SetRaycastTarget(Window window)
@@ -72,7 +72,15 @@ public class WindowManager : MonoBehaviour
                 if (child.syncRaycastWithParent)
                     child.raycaster.enabled = true;
 
-        Debug.Log($"<color=#edbf28>[WindowManager]</color> Raycast target: {window.windowName} with {window.children.Count} childs!");
+        Logger.Log("WindowManager", $"Raycast target: {window.windowName} with {window.children.Count} childs!");
+    }
+
+    public static bool ShouldCameraRender()
+    {
+        if (OpenWindows.Any(x => x.stopCameraRender))
+            return false;
+        else
+            return true;
     }
 
 }

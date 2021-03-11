@@ -86,25 +86,27 @@ public class MainMenuCamera : MonoBehaviour
 
     private void WindowOpensListener(Window window)
     {
-        StartCoroutine(WindowOpensCorou(window));
+        if (!WindowManager.ShouldCameraRender())
+            StartCoroutine(DisableCameraCorou(window));
     }
-    private IEnumerator WindowOpensCorou(Window window)
+
+    private void WindowClosesListener(Window window)
+    {
+        if (WindowManager.ShouldCameraRender())
+            StartCoroutine(EnableCameraCorou(window));
+    }
+
+    private IEnumerator DisableCameraCorou(Window window)
     {
         Application.targetFrameRate = VideoSettings.fpsLimitUI;
         yield return new WaitForSecondsRealtime(0.15f);
         mainCamera.enabled = false;
     }
 
-    private void WindowClosesListener(Window window)
-    {
-        if (WindowManager.OpenWindows.Count == 0)
-            StartCoroutine(WindowClosesCorou(window));
-    }
-    private IEnumerator WindowClosesCorou(Window window)
+    private IEnumerator EnableCameraCorou(Window window)
     {
         Application.targetFrameRate = VideoSettings.fpsLimit;
         mainCamera.enabled = true;
         yield return null;
     }
-
 }
