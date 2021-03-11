@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using UnityEngine;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
@@ -25,11 +24,12 @@ namespace TYaml
                 var data = deserializer.Deserialize<T>(reader);
                 reader.Close();
 
+                Logger.Log("TYaml", $"Deserialized object of type \"{nameof(T)}\"");
                 return (T)data;
             }
             catch (Exception e)
             {
-                Debug.LogError("<color=white>[Yaml]</color> ERROR: Couldn't deserialize object \n" + e.Message + "\n" + e.StackTrace);
+                Logger.LogError("TYaml", $"Couldn't deserialize object of type \"{nameof(T)}\"\n{e.Message}\n{e.StackTrace}");
                 return default(T);
             }
         }
@@ -42,11 +42,12 @@ namespace TYaml
             {
                 string data = Serialize(obj);
 
+                Logger.Log("TYaml", $"Serialized object with name \"{obj.ToString()}\"");
                 return data;
             }
             catch (Exception e)
             {
-                Debug.LogError("<color=white>[Yaml]</color> ERROR: Couldn't serialize object " + obj.ToString() + "\n" + e.Message);
+                Logger.LogError("TYaml", $"Couldn't serialize object \"{obj.ToString()}\"\n{e.Message}\n{e.StackTrace}");
                 return "";
             }
         }
@@ -64,11 +65,12 @@ namespace TYaml
 
                 var data = deserializer.Deserialize<T>(File.ReadAllText(path));
 
+                Logger.Log("TYaml", $"Deserialized object \"{Path.GetFileName(path)}\" of type \"{nameof(T)}\" from \"{path}\"");
                 return data;
             }
             catch (Exception e)
             {
-                Debug.LogError("<color=white>[Yaml]</color> ERROR: Couldn't load object with key " + path + "\n" + e.Message + "\n" + e.StackTrace);
+                Logger.LogError("TYaml", $"Couldn't deserialize object \"{Path.GetFileName(path)}\" of type \"{nameof(T)}\" from \"{path}\"\n{e.Message}\n{e.StackTrace}");
                 return default(T);
             }
         }
@@ -88,11 +90,11 @@ namespace TYaml
 
                 tw.Close();
 
-                Debug.Log("<color=white>[Yaml]</color> Saved object with name: \"" + fileName + "\" into:\"" + path + "\"");
+                Logger.Log("TYaml", $"Serialized object with name \"{fileName}\" into \"{path}\"");
             }
             catch (Exception e)
             {
-                Debug.LogError("<color=white>[Yaml]</color> ERROR: Couldn't serialize object " + obj.ToString() + "\n" + e.Message);
+                Logger.LogError("TYaml", $"Couldn't serialize object \"{fileName}\"\n{e.Message}\n{e.StackTrace}");
             }
         }
 

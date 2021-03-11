@@ -3,25 +3,25 @@ using System.Collections.Generic;
 
 namespace Tools
 {
+
     public static class StrExtensions
     {
-
-        public static string ToUpperFirst(string s)
+        public static string ToUpperFirst(this string str)
         {
-            if (string.IsNullOrEmpty(s))
+            if (string.IsNullOrEmpty(str))
                 return string.Empty;
 
-            char[] a = s.ToCharArray();
+            char[] a = str.ToCharArray();
             a[0] = char.ToUpper(a[0]);
             return new string(a);
         }
 
-        public static string ToLowerFirst(string s)
+        public static string ToLowerFirst(this string str)
         {
-            if (string.IsNullOrEmpty(s))
+            if (string.IsNullOrEmpty(str))
                 return string.Empty;
 
-            char[] a = s.ToCharArray();
+            char[] a = str.ToCharArray();
             a[0] = char.ToLower(a[0]);
             return new string(a);
         }
@@ -31,6 +31,12 @@ namespace Tools
             return source?.IndexOf(value, comp) >= 0;
         }
 
+        public static int ToInt(this string str)
+        {
+            int y = 0;
+            int.TryParse(str, out y);
+            return y;
+        }
     }
 
     public static class DicExtensions

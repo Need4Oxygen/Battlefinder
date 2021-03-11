@@ -131,7 +131,7 @@ public class Audio : MonoBehaviour
             {
                 music.volume = Settings.master * Settings.music * (1 - (timer / (blend / 2)));
                 timer += Time.deltaTime;
-                Debug.Log(timer);
+                Logger.Log("Audio", $"{timer}");
                 yield return null;
             }
             music.Stop();
@@ -146,7 +146,7 @@ public class Audio : MonoBehaviour
         {
             music.volume = Settings.master * Settings.music * (timer / (blend / 2));
             timer += Time.deltaTime;
-            Debug.Log(timer);
+            Logger.Log("Audio", $"{timer}");
             yield return null;
         }
 

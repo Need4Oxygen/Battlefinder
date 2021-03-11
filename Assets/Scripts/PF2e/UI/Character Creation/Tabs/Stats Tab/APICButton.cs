@@ -23,7 +23,7 @@ namespace Pathfinder2e.GameData
         public void Refresh(APIC apic)
         {
             if (skillName != null)
-                skillName.text = StrExtensions.ToUpperFirst(apic.selector);
+                skillName.text = apic.selector.ToUpperFirst();
             if (ablDependency != null)
                 ablDependency.text = apic.abl.ToUpper();
             if (dcText != null)

@@ -47,7 +47,7 @@ public class BookScript : MonoBehaviour
     {
         if (moving)
         {
-            Debug.Log("[BookScript] Tried to flip page while moving");
+            Logger.Log("BookScript", "Tried to flip page while moving");
             return;
         }
 
@@ -73,7 +73,7 @@ public class BookScript : MonoBehaviour
         }
         else
         {
-            Debug.Log("[BookScript] Reached right limit of pageList");
+            Logger.Log("BookScript", "Reached right limit of pageList");
         }
     }
 
@@ -82,7 +82,7 @@ public class BookScript : MonoBehaviour
     {
         if (moving)
         {
-            Debug.Log("[BookScript] Tried to flip page while moving");
+            Logger.Log("BookScript", "Tried to flip page while moving");
             return;
         }
 
@@ -105,7 +105,7 @@ public class BookScript : MonoBehaviour
         }
         else
         {
-            Debug.Log("[BookScript] Reached left limit of pageList");
+            Logger.Log("BookScript", "Reached left limit of pageList");
         }
     }
 

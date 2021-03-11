@@ -62,23 +62,23 @@ public static class PrerequisitesSolver
 
 
             case "familiar":
-                Debug.LogWarning($"[PrereqChecker] Prerequisite type \"{prereq.type}\" not implemented!");
+                Logger.Log("PrereqChecker", $"Prerequisite type \"{prereq.type}\" not implemented!");
                 return false;
             case "bloodline":
-                Debug.LogWarning($"[PrereqChecker] Prerequisite type \"{prereq.type}\" not implemented!");
+                Logger.Log("PrereqChecker", $"Prerequisite type \"{prereq.type}\" not implemented!");
                 return false;
             case "rogue’s racket":
-                Debug.LogWarning($"[PrereqChecker] Prerequisite type \"{prereq.type}\" not implemented!");
+                Logger.Log("PrereqChecker", $"Prerequisite type \"{prereq.type}\" not implemented!");
                 return false;
 
 
             case "special":
-                Debug.LogWarning($"[PrereqChecker] Prerequisite type \"{prereq.type}\" not implemented!");
+                Logger.Log("PrereqChecker", $"Prerequisite type \"{prereq.type}\" not implemented!");
                 return false;
 
 
             default:
-                Debug.LogWarning($"[PrereqChecker] Prerequisite type \"{prereq.type}\" not recognized!");
+                Logger.Log("PrereqChecker", $"Prerequisite type \"{prereq.type}\" not recognized!");
                 return false;
         }
     }
@@ -86,18 +86,18 @@ public static class PrerequisitesSolver
     private static bool Validate_Ability(ref CharacterData playerData, string descr)
     {
         string[] split = descr.Split(' ');
-        return playerData.Abl_GetScore(StrExtensions.ToLowerFirst(split[0])) >= int.Parse(split[1]) ? true : false;
+        return playerData.Abl_GetScore(split[0].ToLowerFirst()) >= split[1].ToInt() ? true : false;
     }
 
-    private static bool Validate_Proficiency(ref CharacterData playerData, string descr)
+    private static bool Validate_Proficiency(ref CharacterData playerData, string profStr)
     {
-        string[] split = descr.Split(' ');
+        string[] split = profStr.Split(' ');
         if (split.Length < 3) return false;
 
         if (split.Length == 3) // For "expert in stealth" type of string
         {
             int maxProf = DB.Prof_Full2Int(split[0]);
-            string item = StrExtensions.ToLowerFirst(split[2]);
+            string item = split[2].ToLowerFirst();
 
             switch (item)
             {
@@ -115,7 +115,7 @@ public static class PrerequisitesSolver
         }
         else // Exceptions
         {
-            switch (descr)
+            switch (profStr)
             {
                 case "trained in Arcana, Nature, or Religion": // Ancestry Herigage - Seer Elf
                     if (DB.Prof_Abbr2Int(playerData.Skill_Get("arcana").prof) > 1 ||
@@ -126,11 +126,11 @@ public static class PrerequisitesSolver
                         return false;
 
                 // case "expert in your deity’s favored weapon":
-                //     Debug.LogWarning($"[PrereqChecker] Prerequisite \"expert in your deity’s favored weapon\" not implemented!");
+                //     Debug.LogWarning($"<color=#a589e0>[PrereqChecker]</color> Prerequisite \"expert in your deity’s favored weapon\" not implemented!");
                 //     return false;
 
                 default:
-                    Debug.LogWarning($"[PrereqChecker] Prerequisite \"{descr}\" not implemented!");
+                    Logger.Log("PrereqChecker", $"Prerequisite \"{profStr}\" not implemented!");
                     return false;
             }
         }

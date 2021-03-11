@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using UnityEngine;
 using Newtonsoft.Json;
 
 namespace TJson
@@ -25,11 +24,11 @@ namespace TJson
                 sr.WriteLine(str);
                 sr.Close();
 
-                Debug.Log("<color=white>[Json]</color> Saved object with name: \"" + fileName + "\" into:\"" + path + "\"");
+                Logger.Log("TJson", $"Serialized object with name \"{fileName}\" into \"{path}\"");
             }
             catch (Exception e)
             {
-                Debug.LogError("<color=white>[Json]</color> ERROR: Couldn't save object with name: \"" + fileName + "\" into:\"" + path + "\"\n" + e.Message);
+                Logger.LogError("TJson", $"Couldn't serialize object \"{fileName}\"\n{e.Message}\n{e.StackTrace}");
             }
         }
 
@@ -39,11 +38,13 @@ namespace TJson
             try
             {
                 string str = File.ReadAllText(path);
-                return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(str, new JsonSerializerSettings { Error = (se, ev) => { ev.ErrorContext.Handled = true; } });
+                T obj = Newtonsoft.Json.JsonConvert.DeserializeObject<T>(str, new JsonSerializerSettings { Error = (se, ev) => { ev.ErrorContext.Handled = true; } });
+                Logger.Log("TJson", $"Deserialized object \"{Path.GetFileName(path)}\" of type \"{nameof(T)}\" from \"{path}\"");
+                return obj;
             }
             catch (Exception e)
             {
-                Debug.LogError("<color=white>[Json]</color> ERROR: Couldn't load object with key " + path + "\n" + e.Message + "\n" + e.StackTrace);
+                Logger.LogError("TJson", $"Couldn't deserialize object \"{Path.GetFileName(path)}\" of type \"{nameof(T)}\" from \"{path}\"\n{e.Message}\n{e.StackTrace}");
                 return default(T);
             }
         }
@@ -59,12 +60,12 @@ namespace TJson
                     Formatting.None,
                     new JsonSerializerSettings() { ReferenceLoopHandling = ReferenceLoopHandling.Ignore, NullValueHandling = NullValueHandling.Ignore });
 
-                // Debug.Log("<color=white>[Json]</color> Serialized object: " + obj.ToString());
+                Logger.Log("TJson", $"Serialized object with name \"{obj.ToString()}\"");
                 return str;
             }
             catch (Exception e)
             {
-                Debug.LogError("<color=white>[Json]</color> ERROR: Couldn't serialize object " + obj.ToString() + "\n" + e.Message);
+                Logger.LogError("TJson", $"Couldn't serialize object \"{obj.ToString()}\"\n{e.Message}\n{e.StackTrace}");
                 return "";
             }
         }
@@ -76,11 +77,13 @@ namespace TJson
             try
             {
                 string str = obj;
-                return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(str);
+                T newObj = Newtonsoft.Json.JsonConvert.DeserializeObject<T>(str);
+                Logger.Log("TJson", $"Deserialized object of type \"{nameof(T)}\"");
+                return newObj;
             }
             catch (Exception e)
             {
-                Debug.LogError("<color=white>[Json]</color> ERROR: Couldn't deserialize object \n" + e.Message + "\n" + e.StackTrace);
+                Logger.LogError("TJson", $"Couldn't deserialize object of type \"{nameof(T)}\"\n{e.Message}\n{e.StackTrace}");
                 return default(T);
             }
         }

@@ -25,8 +25,6 @@ public class NotifPrefabMain : MonoBehaviour
         text = _text;
     }
 
-    //suscribo esto al NotificationManager para saber cuando sale otra notificacion
-    //se suscribe al instanciarlo en Notification Manager
     public void Rearange(int i)
     {
         positionInQueue = i;
@@ -37,53 +35,26 @@ public class NotifPrefabMain : MonoBehaviour
         self = GetComponent<RectTransform>();
         height = self.sizeDelta.y;
 
-        //posiciono el objeto por encima de la pantalla rozando
         self.anchoredPosition = new Vector2(0, height);
         self.localPosition = new Vector3(self.localPosition.x, self.localPosition.y, 0);//pongo la z a cero
 
-        //comienzo el fadeout
-        StartCoroutine(FadeCanvasGroup(fadeCanvasGroup, 0f, fadeDuration));
+        StartCoroutine(PanelFader.RescaleAndFadePanel(fadeCanvasGroup.transform, fadeCanvasGroup, 1f, 0f, fadeDuration, null, Destroy));
     }
 
-    void Update()
+    private void Update()
     {
         Vector2 targetPos = new Vector2(0, -positionInQueue * height);
         Vector2 distance = targetPos - self.anchoredPosition;
 
-        //me mueve el objeto
         Vector2 newPos = self.anchoredPosition + distance * speed * Time.unscaledDeltaTime;
         self.anchoredPosition = newPos;
     }
 
-    IEnumerator FadeCanvasGroup(CanvasGroup cg, float alphaTarget, float duration)
+    private void Destroy()
     {
-        yield return new WaitForSecondsRealtime(0.1f);
-        yield return new WaitForSecondsRealtime(lifespan);
-
-        float counter = 0;
-        float completion = 0;
-        float alphaInit = cg.alpha;
-        float alphaDif = alphaInit - alphaTarget;
-
-        if (alphaDif != 0)
-            while (counter < duration)
-            {
-                counter += Time.unscaledDeltaTime;
-                completion = counter / duration;
-
-                cg.alpha = -Mathf.Clamp(completion, 0f, 1f) * alphaDif + alphaInit;
-                yield return new WaitForSecondsRealtime(0.01f);
-            }
-        else
-            Debug.Log("Fade failed: initial alpha equal to target");
-
-        cg.alpha = alphaTarget;
-
-        //le digo al manager que me he muerto
         if (notificationManager != null)
             notificationManager.NotifDeath(gameObject);
 
         Destroy(gameObject);
     }
-
 }

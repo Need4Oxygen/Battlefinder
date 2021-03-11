@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
 using Newtonsoft.Json.Linq;
-using System;
 
 public class ExternalLinks : MonoBehaviour
 {
@@ -15,7 +14,7 @@ public class ExternalLinks : MonoBehaviour
         if (url != "")
             Application.OpenURL(url);
         else
-            Debug.LogWarning("[ExternalLinks] Trying to open empty URL!");
+            Logger.LogWarning("ExternalLinks", $"Trying to open empty URL!");
     }
 
     public void Start()
@@ -33,7 +32,7 @@ public class ExternalLinks : MonoBehaviour
 
         if (patreonRequest.isNetworkError)
         {
-            Debug.LogWarning("[ExternalLinks] Error: " + patreonRequest.error);
+            Logger.LogWarning("ExternalLinks", $"Couldn't retrieve patreon count\n{patreonRequest.error}");
         }
         else
         {
@@ -45,7 +44,7 @@ public class ExternalLinks : MonoBehaviour
             }
             catch (Exception e)
             {
-                Debug.LogError("[ExternalLinks] Error retrieving patreon count: \n" + e.Message + "\n" + e.StackTrace);
+                Logger.LogError("ExternalLinks", $"Couldn't retrieve patreon count\n{e.Message}\n{e.StackTrace}");
             }
         }
     }
