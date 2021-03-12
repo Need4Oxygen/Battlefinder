@@ -332,12 +332,6 @@ namespace Pathfinder2e.Character
             return button;
         }
 
-        private void NoChoiceButtonsAssigner(BuildBlock buildItem, BuildButton button)
-        {
-            // button.title.text = buildItem.type;
-            // button.subtitle.text = buildItem.value;
-        }
-
 
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- LISTENERS
         private void OnClick_InitialAbilityBoosts()
