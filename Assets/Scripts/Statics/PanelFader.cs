@@ -151,15 +151,16 @@ public class PanelFader : MonoBehaviour
         if (delay > 0f)
             yield return new WaitForSecondsRealtime(delay);
 
+        if (window.canvas.enabled == false)
+            window.canvas.enabled = true;
+
+        if (onFadeStart != null)
+            onFadeStart.Invoke();
+
+        yield return null;
+
         if (duration > 0f)
         {
-            if (window.canvas.enabled == false)
-                window.canvas.enabled = true;
-
-            yield return null;
-
-            if (onFadeStart != null)
-                onFadeStart.Invoke();
 
             float counter = 0;
             float completion = 0;
@@ -185,9 +186,10 @@ public class PanelFader : MonoBehaviour
                 Logger.Log("PanelFader", $"Initial scale or alpha equal to target!");
             }
 
-            if (onFadeEnd != null)
-                onFadeEnd.Invoke();
         }
+
+        if (onFadeEnd != null)
+            onFadeEnd.Invoke();
 
         window.group.alpha = alphaFinal;
         window.transform.localScale = new Vector2(scaleFinal, scaleFinal);

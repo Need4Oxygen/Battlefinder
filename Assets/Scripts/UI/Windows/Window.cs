@@ -63,7 +63,7 @@ public class Window : MonoBehaviour
 
     public void OpenWindow()
     {
-        if (_isOpen != false) return;
+        if (_isOpen != false) { canvas.enabled = true; return; }
         _isOpen = true;
 
         if (selfHandleRaycast)
