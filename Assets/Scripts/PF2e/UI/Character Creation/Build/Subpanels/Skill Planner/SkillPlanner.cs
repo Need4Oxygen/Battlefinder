@@ -71,8 +71,8 @@ public class SkillPlanner : MonoBehaviour
             case "skill_static":
                 maxActiveToggles = 1;
                 canTrain = GetSkillsOneLess(keyRule.proficiency);
-                if (!RuleElement.IsEmpty(creation.currentPlayer.skill_unspent[keyRule]))
-                    alrTraining.Add(creation.currentPlayer.skill_unspent[keyRule].selector);
+                if (!RuleElement.IsEmpty(creation.currentPlayer.data.skill_unspent[keyRule]))
+                    alrTraining.Add(creation.currentPlayer.data.skill_unspent[keyRule].selector);
                 break;
             case "skill_choice":
                 maxActiveToggles = 1;
@@ -80,21 +80,21 @@ public class SkillPlanner : MonoBehaviour
                 List<string> choices = keyRule.value_list.ConvertAll(x => x.value);
                 choices.RemoveAll(x => !canTrain.Contains(x)); // Remove the non traineables from choice options
                 canTrain = choices;
-                if (!RuleElement.IsEmpty(creation.currentPlayer.skill_choice[keyRule]))
-                    alrTraining.Add(creation.currentPlayer.skill_choice[keyRule].selector);
+                if (!RuleElement.IsEmpty(creation.currentPlayer.data.skill_choice[keyRule]))
+                    alrTraining.Add(creation.currentPlayer.data.skill_choice[keyRule].selector);
                 break;
             case "skill_free":
                 maxActiveToggles = keyRule.value.ToInt();
                 canTrain = GetSkillsOneLess(keyRule.proficiency);
-                foreach (var element in creation.currentPlayer.skill_free[keyRule])
+                foreach (var element in creation.currentPlayer.data.skill_free[keyRule])
                     if (!RuleElement.IsEmpty(element))
                         alrTraining.Add(element.selector);
                 break;
             case "skill_increase":
                 maxActiveToggles = 1;
                 canTrain = GetSkillsUnder(keyRule.proficiency);
-                if (!RuleElement.IsEmpty(creation.currentPlayer.skill_increase[keyRule]))
-                    alrTraining.Add(creation.currentPlayer.skill_increase[keyRule].selector);
+                if (!RuleElement.IsEmpty(creation.currentPlayer.data.skill_increase[keyRule]))
+                    alrTraining.Add(creation.currentPlayer.data.skill_increase[keyRule].selector);
                 break;
             default:
                 break;
@@ -154,7 +154,7 @@ public class SkillPlanner : MonoBehaviour
     private List<string> GetSkillsOneLess(string prof)
     {
         List<string> list = new List<string>();
-        foreach (var sklName in DB.SkillNames)
+        foreach (var sklName in DB.Skl_FullList)
             if (creation.currentPlayer.Skill_OneLessProf(sklName, prof))
                 list.Add(sklName);
         return list;
@@ -163,7 +163,7 @@ public class SkillPlanner : MonoBehaviour
     private List<string> GetSkillsUnder(string prof)
     {
         List<string> list = new List<string>();
-        foreach (var sklName in DB.SkillNames)
+        foreach (var sklName in DB.Skl_FullList)
             if (creation.currentPlayer.Skill_UnderProf(sklName, prof))
                 list.Add(sklName);
         return list;

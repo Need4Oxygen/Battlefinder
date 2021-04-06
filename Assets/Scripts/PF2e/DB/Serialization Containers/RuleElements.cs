@@ -175,24 +175,33 @@ namespace Pathfinder2e.Containers
 
 //
 //  List of Keys:
-//      Abilities
-//          abl_static
-//      Skills
-//          +skill_static - Set skill proficiency start proficiency to given value
-//          skill_free - Let the player train a number of skills they choose
-//          skill_choice - Let the player decide which of the offered skill should be trained
-//          skill_improve - Improve skill proficiency adding a value
-//      Proficiency
-//          +proficiency_static - Set proficiency start proficiency to given value
-//          proficiency_fixed - Override proficiency modifiers and fixes a value
-//          proficiency_weapon - Set proficiency for individual weapons
-//          proficiency_armor - Set proficiency for individual armors
+//      static - stablish a value independent from other values
+//      fixed - enforce a value
+//      temp - enforce a value temporarily
+//      free - multiple selection from multiple choices
+//      choice - single selection frum multiple choices
+//      increase - increase value one incremental step
+//      decrease - decrease value one incremental step
+//
+//      base - stablish a numeric value
+//      bonus - adds to base
+//      penalty - substract from base
+//      forgiven - substract from penalty
+//
+//      arithmetic - adds or subtract value
+//      multiplier - multiplies by value
 //
 //  List of Selectors:
-//      hp, hp_per_level
+//      hp_temp
+//      hp_doom
 //      ac
-//      +class_dc
-//      speed, land_speed, burrow_speed, climb_speed, fly_speed, swim_speed
+//      class_dc
+//      speed_land, speed_burrow, speed_limb, speed_fly, speed_swim
+//
+//
+//
+//
+//
 //      attack, attack_roll, damage
 //      saving_throw, fortitude, reflex, will
 //      initiative, +perception

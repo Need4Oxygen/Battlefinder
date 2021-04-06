@@ -1,100 +1,109 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
-using Pathfinder2e;
+using YamlDotNet.Serialization;
+using Tools;
 using Pathfinder2e.Containers;
-using UnityEngine;
-using YamlDotNet;
 
 namespace Pathfinder2e.Character
 {
 
     public class APIC
     {
-        public APIC() { }
+        [YamlIgnore] public Character charData { get { return RawData.character; } set { RawData.character = value; } }
+        [YamlIgnore] public string selector { get { return RawData.selector; } set { RawData.selector = value; } }
+        [YamlIgnore] public string ability { get { return RawData.ability; } set { RawData.ability = value; } }
+        [YamlIgnore] public int initialScore { get { return RawData.initialScore; } set { RawData.initialScore = value; } }
 
-        public APIC(string selector, CharacterData charData, string abl, int initialScore)
-        {
-            this.selector = selector;
-            this.charData = charData;
-            this.abl = abl;
-            this.initialScore = initialScore;
+        [YamlIgnore] public string prof { get { return RawData.prof; } }
+        [YamlIgnore] public string profLvl20 { get { return RawData.profLvl20; } }
+        [YamlIgnore] public string profColored { get { return RawData.profColored; } }
 
-            Refresh();
-        }
+        [YamlIgnore] public int ablScore { get { return RawData.ablScore; } }
+        [YamlIgnore] public int profScore { get { return RawData.profScore; } }
+        [YamlIgnore] public int itemScore { get { return RawData.itemScore; } }
+        [YamlIgnore] public int tempScore { get { return RawData.tempScore; } }
 
-        public CharacterData charData = null;
-        public string selector = "";
-        public string abl = "";
-        public int initialScore = 0;
-
-        public string prof = "U";
-        public string profLvl20 = "U";
-        public string profColored = "";
-
-        public int ablScore = 0;
-        public int profScore = 0;
-        public int itemScore = 0;
-        public int tempScore = 0;
-
-        public int score { get { return initialScore + ablScore + profScore; } }
-
-        public int dcScore { get { return 10 + profScore; } }
+        [YamlIgnore] public int score { get { return initialScore + ablScore + profScore + itemScore + tempScore; } }
+        [YamlIgnore] public int dcScore { get { return 10 + profScore; } }
 
         public virtual IEnumerable<RuleElement> GetElements()
         {
-            return charData.RE_Get(selector);
+            return charData.RE_GetBy_Sel(selector);
         }
 
         public void Refresh()
         {
             IEnumerable<RuleElement> elements = GetElements();
 
-            Tuple<string, string> proficiencies = DB.Prof_FindMax(elements, charData.level);
-            prof = proficiencies.Item1;
-            profLvl20 = proficiencies.Item2;
-            profColored = DB.Prof_Abbr2AbbrColored(prof);
+            (string, string) proficiencies = DB.Prof_FindMax(elements, charData.level);
+            RawData.prof = proficiencies.Item1;
+            RawData.profLvl20 = proficiencies.Item2;
+            RawData.profColored = DB.Prof_Abbr2AbbrColored(prof);
 
-            ablScore = charData.Abl_GetMod(abl);
-            profScore = charData.level + DB.Prof_Abbr2Score(prof);
+            RawData.ablScore = charData.Abl_GetMod(ability);
+            RawData.profScore = charData.level + DB.Prof_Abbr2Score(prof);
+
+            int item = 0; elements.Where(a => a.type == "item").ForEach(a => { int value = a.value.ToInt(); item = value > item ? value : item; });
+            int circ = 0; elements.Where(a => a.type == "circumstance").ForEach(a => { int value = a.value.ToInt(); circ = value > circ ? value : circ; });
+            int stat = 0; elements.Where(a => a.type == "status").ForEach(a => { int value = a.value.ToInt(); stat = value > stat ? value : stat; });
+            int untyped = elements.Where(a => a.type == "untyped").Sum(a => a.value.ToInt());
+
+            RawData.itemScore = item;
+            RawData.tempScore = circ + stat + untyped;
+        }
+
+        public APICData RawData = new APICData();
+
+        public APIC() { }
+
+        public APIC(string selector, Character charData, string abl, int initialScore)
+        {
+            this.selector = selector;
+            this.charData = charData;
+            this.ability = abl;
+            this.initialScore = initialScore;
+
+            Refresh();
         }
     }
+
 
     public class APIC_Lore : APIC
     {
         public APIC_Lore() { }
 
-        public APIC_Lore(string selector, string loreName, CharacterData charData, string abl, int initialScore) : base(selector, charData, abl, initialScore)
+        public APIC_Lore(string selector, string loreName, Character charData, string abl, int initialScore) : base(selector, charData, abl, initialScore)
         {
             this.selector = selector;
-            this.loreName = loreName;
+            this.RawData.loreName = loreName;
             this.charData = charData;
-            this.abl = abl;
+            this.ability = abl;
             this.initialScore = initialScore;
         }
 
-        public string loreName = "";
-
         public override IEnumerable<RuleElement> GetElements()
         {
-            return charData.RE_Get(selector, loreName);
+            return charData.elements.Where(x => x.selector == selector && x.value == RawData.loreName);
         }
     }
+
 
     public class APIC_Skill : APIC
     {
         public APIC_Skill() { }
 
-        public APIC_Skill(string selector, CharacterData charData, string abl, int initialScore) : base(selector, charData, abl, initialScore)
+        public APIC_Skill(string selector, Character charData, string abl, int initialScore) : base(selector, charData, abl, initialScore)
         {
             this.selector = selector;
             this.charData = charData;
-            this.abl = abl;
+            this.ability = abl;
             this.initialScore = initialScore;
         }
 
         public override IEnumerable<RuleElement> GetElements()
         {
-            return charData.RE_GetFromSkill(selector);
+            return charData.elements_skills.Where(x => x.selector == selector);
         }
     }
 

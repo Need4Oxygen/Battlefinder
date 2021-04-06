@@ -7,42 +7,43 @@
   key_ability_choices:
     - int
   elements:
-    - key: proficiency_static
+    - key: static
       selector: perception
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: fortitude
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: reflex
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: will
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: simple_weapons
       proficiency: trained
-    - key: proficiency_static
-      selector: weapon proficiency
+    - key: static
+      selector: weapon_specific
       proficiency: trained
       value_list:
         - value: alchemical bombs
-    - key: proficiency_static
+    - key: static
       selector: unarmed
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: light_armor
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: unarmored
       proficiency: trained
     - key: skill_static
       selector: crafting
       proficiency: trained
-    - key: skill_free
+    - key: free
+      selector : skills
       proficiency: trained
       value: 3
-    - key: proficiency_static
+    - key: static
       selector: class_dc
       proficiency: trained
   source:
@@ -59,43 +60,44 @@
   key_ability_choices:
     - str
   elements:
-    - key: proficiency_static
+    - key: static
       selector: perception
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: fortitude
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: reflex
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: will
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: simple_weapons
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: martial_weapons
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: unarmed
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: light_armor
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: medium_armor
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: unarmored
       proficiency: trained
     - key: skill_static
       selector: athletics
       proficiency: trained
-    - key: skill_free
+    - key: free
+      selector : skills
       proficiency: trained
       value: 3
-    - key: proficiency_static
+    - key: static
       selector: class_dc
       proficiency: trained
   source:
@@ -112,23 +114,23 @@
   key_ability_choices:
     - cha
   elements:
-    - key: proficiency_static
+    - key: static
       selector: perception
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: fortitude
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: reflex
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: will
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: simple_weapons
       proficiency: trained
-    - key: proficiency_static
-      selector: proficiency_weapon
+    - key: static
+      selector: weapon_specific
       proficiency: trained
       value_list:
         - value: longsword
@@ -137,13 +139,13 @@
         - value: shortbow
         - value: shortsword
         - value: whip
-    - key: proficiency_static
+    - key: static
       selector: unarmed
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: light_armor
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: unarmored
       proficiency: trained
     - key: skill_static
@@ -152,13 +154,14 @@
     - key: skill_static
       selector: performance
       proficiency: trained
-    - key: skill_free
+    - key: free
+      selector : skills
       proficiency: trained
       value: 4
-    - key: proficiency_static
+    - key: static
       selector: occult spell attacks
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: occult spell dcs
       proficiency: trained
   source:
@@ -177,52 +180,53 @@
     - str
     - dex
   elements:
-    - key: proficiency_static
+    - key: static
       selector: perception
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: fortitude
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: reflex
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: will
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: simple_weapons
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: martial_weapons
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: unarmed
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: light_armor
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: medium_armor
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: heavy_armor
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: unarmored
       proficiency: trained
     - key: skill_static
       selector: religion
       proficiency: trained
-    - key: skill_free
+    - key: free
+      selector : skills
       proficiency: trained
       value: 2
-    - key: proficiency_static
+    - key: static
       selector: class_dc
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: divine spell attacks
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: divine spell dcs
       proficiency: trained
   source:
@@ -240,37 +244,38 @@
   key_ability_choices:
     - wis
   elements:
-    - key: proficiency_static
+    - key: static
       selector: perception
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: fortitude
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: reflex
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: will
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: simple_weapons
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: unarmed
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: unarmored
       proficiency: trained
     - key: skill_static
       selector: religion
       proficiency: trained
-    - key: skill_free
+    - key: free
+      selector : skills
       proficiency: trained
       value: 2
-    - key: proficiency_static
+    - key: static
       selector: divine spell attacks
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: divine spell dcs
       proficiency: trained
   source:
@@ -288,46 +293,47 @@
   key_ability_choices:
     - wis
   elements:
-    - key: proficiency_static
+    - key: static
       selector: perception
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: fortitude
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: reflex
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: will
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: simple_weapons
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: unarmed
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: light_armor
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: medium_armor
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: unarmored
       proficiency: trained
     - key: skill_static
       selector: nature
       proficiency: trained
-    - key: skill_free
+    - key: free
+      selector : skills
       proficiency: trained
       value: 2
-    - key: proficiency_static
+    - key: static
       selector: class_dc
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: primal spell attacks
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: primal spell dcs
       proficiency: trained
   source:
@@ -345,40 +351,40 @@
     - str
     - dex
   elements:
-    - key: proficiency_static
+    - key: static
       selector: perception
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: fortitude
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: reflex
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: will
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: simple_weapons
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: martial_weapons
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: advanced_weapons
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: unarmed
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: light_armor
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: medium_armor
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: heavy_armor
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: unarmored
       proficiency: trained
     - key: skill_choice
@@ -386,10 +392,11 @@
       value_list:
         - value: athletics
         - value: acrobatics
-    - key: skill_free
+    - key: free
+      selector : skills
       proficiency: trained
       value: 2
-    - key: proficiency_static
+    - key: static
       selector: class_dc
       proficiency: trained
   source:
@@ -406,31 +413,32 @@
     - str
     - dex
   elements:
-    - key: proficiency_static
+    - key: static
       selector: perception
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: fortitude
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: reflex
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: will
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: simple_weapons
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: unarmed
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: unarmored
       proficiency: expert
-    - key: skill_free
+    - key: free
+      selector : skills
       proficiency: trained
       value: 4
-    - key: proficiency_static
+    - key: static
       selector: class_dc
       proficiency: trained
   source:
@@ -449,34 +457,34 @@
     - str
     - dex
   elements:
-    - key: proficiency_static
+    - key: static
       selector: perception
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: fortitude
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: reflex
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: will
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: simple_weapons
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: martial_weapons
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: unarmed
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: light_armor
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: medium_armor
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: unarmored
       proficiency: trained
     - key: skill_static
@@ -485,10 +493,11 @@
     - key: skill_static
       selector: survival
       proficiency: trained
-    - key: skill_free
+    - key: free
+      selector : skills
       proficiency: trained
       value: 4
-    - key: proficiency_static
+    - key: static
       selector: class_dc
       proficiency: trained
   source:
@@ -506,45 +515,46 @@
   key_ability_choices:
     - dex
   elements:
-    - key: proficiency_static
+    - key: static
       selector: perception
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: fortitude
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: reflex
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: will
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: simple_weapons
       proficiency: trained
-    - key: proficiency_static
-      selector: proficiency_weapon
+    - key: static
+      selector: weapon_specific
       proficiency: trained
       value_list:
         - value: rapier
         - value: sap
         - value: shortbow
         - value: shortsword
-    - key: proficiency_static
+    - key: static
       selector: unarmed
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: light_armor
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: unarmored
       proficiency: trained
     - key: skill_static
       selector: stealth
       proficiency: trained
-    - key: skill_free
+    - key: free
+      selector : skills
       proficiency: trained
       value: 7
-    - key: proficiency_static
+    - key: static
       selector: class_dc
       proficiency: trained
   source:
@@ -561,28 +571,29 @@
   key_ability_choices:
     - cha
   elements:
-    - key: proficiency_static
+    - key: static
       selector: perception
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: fortitude
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: reflex
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: will
       proficiency: expert
-    - key: proficiency_static
+    - key: static
       selector: simple_weapons
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: unarmed
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: unarmored
       proficiency: trained
-    - key: skill_free
+    - key: free
+      selector : skills
       proficiency: trained
       value: 2
   source:
@@ -599,19 +610,19 @@
   key_ability_choices:
     - int
   elements:
-    - key: proficiency_static
+    - key: static
       selector: perception
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: fortitude
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: reflex
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: will
       proficiency: expert
-    - key: proficiency_weapon
+    - key: weapon_specific
       selector: weapons
       proficiency: trained
       value_list:
@@ -620,22 +631,23 @@
         - value: dagger
         - value: heavy crossbow
         - value: staff
-    - key: proficiency_static
+    - key: static
       selector: unarmed
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: unarmored
       proficiency: trained
     - key: skill_static
       selector: arcana
       proficiency: trained
-    - key: skill_free
+    - key: free
+      selector : skills
       proficiency: trained
       value: 2
-    - key: proficiency_static
+    - key: static
       selector: arcane spell attacks
       proficiency: trained
-    - key: proficiency_static
+    - key: static
       selector: arcane spell dcs
       proficiency: trained
   source:

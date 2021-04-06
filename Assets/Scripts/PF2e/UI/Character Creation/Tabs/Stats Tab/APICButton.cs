@@ -25,7 +25,7 @@ namespace Pathfinder2e.GameData
             if (skillName != null)
                 skillName.text = apic.selector.ToUpperFirst();
             if (ablDependency != null)
-                ablDependency.text = apic.abl.ToUpper();
+                ablDependency.text = apic.ability.ToUpper();
             if (dcText != null)
                 dcText.text = apic.dcScore.ToString();
 

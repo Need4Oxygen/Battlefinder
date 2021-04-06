@@ -30,7 +30,7 @@ public class ExternalLinks : MonoBehaviour
 
         yield return patreonRequest.SendWebRequest();
 
-        if (patreonRequest.isNetworkError)
+        if (patreonRequest.result == UnityWebRequest.Result.ConnectionError)
         {
             Logger.LogWarning("ExternalLinks", $"Couldn't retrieve patreon count\n{patreonRequest.error}");
         }

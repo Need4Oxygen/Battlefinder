@@ -9,7 +9,7 @@ namespace Pathfinder2e.GameData
         public string ID = ""; // ID is the file name
         public string name = "";
         public Dictionary<string, BoardData> boards = new Dictionary<string, BoardData>();
-        public Dictionary<string, CharacterData> characters = new Dictionary<string, CharacterData>();
+        public Dictionary<string, Character.Character> characters = new Dictionary<string, Character.Character>();
         public Dictionary<string, EnemyData> enemies = new Dictionary<string, EnemyData>();
         public Dictionary<string, NPCData> npcs = new Dictionary<string, NPCData>();
 
@@ -21,7 +21,7 @@ namespace Pathfinder2e.GameData
             this.name = name;
         }
 
-        public CampaignData(string ID, string name, Dictionary<string, BoardData> boards, Dictionary<string, CharacterData> characters, Dictionary<string, EnemyData> enemies, Dictionary<string, NPCData> npcs)
+        public CampaignData(string ID, string name, Dictionary<string, BoardData> boards, Dictionary<string, Character.Character> characters, Dictionary<string, EnemyData> enemies, Dictionary<string, NPCData> npcs)
         {
             this.ID = ID;
             this.name = name;

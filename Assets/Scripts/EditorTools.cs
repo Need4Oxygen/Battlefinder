@@ -532,14 +532,12 @@ public class EditorTools : MonoBehaviour
 
         List<double> op_1 = new List<double>();
         List<double> op_2 = new List<double>();
-        List<double> op_3 = new List<double>();
-        List<double> op_4 = new List<double>();
+        // List<double> op_3 = new List<double>();
+        // List<double> op_4 = new List<double>();
         int opNumber = 4;
 
-        string numberStr = "38439975";
+        string str = "H";
 
-
-        int lol = 0;
         for (int i = 0; i < opNumber; i++)
             for (int j = 0; j < 10000; j++)
             {
@@ -548,7 +546,6 @@ public class EditorTools : MonoBehaviour
                     case 0:
                         stopWatch.Start();
 
-                        Convert.ToInt32(numberStr);
 
                         stopWatch.Stop();
                         op_1.Add(stopWatch.Elapsed.TotalMilliseconds);
@@ -557,28 +554,10 @@ public class EditorTools : MonoBehaviour
                     case 1:
                         stopWatch.Start();
 
-                        Int32.TryParse(numberStr, out lol);
+                        DB.Size_Abbr2BulkMod(str);
 
                         stopWatch.Stop();
                         op_2.Add(stopWatch.Elapsed.TotalMilliseconds);
-                        stopWatch.Reset();
-                        break;
-                    case 2:
-                        stopWatch.Start();
-
-                        int.Parse(numberStr);
-
-                        stopWatch.Stop();
-                        op_3.Add(stopWatch.Elapsed.TotalMilliseconds);
-                        stopWatch.Reset();
-                        break;
-                    case 3:
-                        stopWatch.Start();
-
-                        numberStr.ToInt();
-
-                        stopWatch.Stop();
-                        op_4.Add(stopWatch.Elapsed.TotalMilliseconds);
                         stopWatch.Reset();
                         break;
                     default:
@@ -586,8 +565,8 @@ public class EditorTools : MonoBehaviour
                 }
             }
 
-        // UnityEngine.Debug.Log($" OP 1 = {(op_1.Sum() / op_1.Count).ToString("F7")}    {Convert.ToInt32(numberStr)}");
-        // UnityEngine.Debug.Log($" OP 2 = {(op_2.Sum() / op_2.Count).ToString("F7")}    {lol}");
+        UnityEngine.Debug.Log($" OP 1 = {(op_1.Sum() / op_1.Count).ToString("F7")}");
+        UnityEngine.Debug.Log($" OP 2 = {(op_2.Sum() / op_2.Count).ToString("F7")}");
         // UnityEngine.Debug.Log($" OP 3 = {(op_3.Sum() / op_3.Count).ToString("F7")}    {int.Parse(numberStr)}");
         // UnityEngine.Debug.Log($" OP 4 = {(op_4.Sum() / op_4.Count).ToString("F7")}    {numberStr.ToInt()}");
     }

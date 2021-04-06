@@ -17,7 +17,7 @@ public class PrequisitesReport
 public static class PrerequisitesSolver
 {
 
-    public static PrequisitesReport Check_Feat(Feat feat, ref CharacterData player)
+    public static PrequisitesReport Check_Feat(Feat feat, ref Character player)
     {
         PrequisitesReport report = new PrequisitesReport();
 
@@ -31,7 +31,7 @@ public static class PrerequisitesSolver
         return report;
     }
 
-    private static bool ValidatePrereq(Prerequisite prereq, ref CharacterData player)
+    private static bool ValidatePrereq(Prerequisite prereq, ref Character player)
     {
         switch (prereq.type)
         {
@@ -83,13 +83,13 @@ public static class PrerequisitesSolver
         }
     }
 
-    private static bool Validate_Ability(ref CharacterData playerData, string descr)
+    private static bool Validate_Ability(ref Character playerData, string descr)
     {
         string[] split = descr.Split(' ');
         return playerData.Abl_GetScore(split[0].ToLowerFirst()) >= split[1].ToInt() ? true : false;
     }
 
-    private static bool Validate_Proficiency(ref CharacterData playerData, string profStr)
+    private static bool Validate_Proficiency(ref Character playerData, string profStr)
     {
         string[] split = profStr.Split(' ');
         if (split.Length < 3) return false;
@@ -102,13 +102,13 @@ public static class PrerequisitesSolver
             switch (item)
             {
                 case "perception":
-                    return DB.Prof_Abbr2Int(playerData.perception.prof) >= maxProf ? true : false;
+                    return DB.Prof_Abbr2Int(playerData.data.perception.prof) >= maxProf ? true : false;
                 case "fortitude":
-                    return DB.Prof_Abbr2Int(playerData.fortitude.prof) >= maxProf ? true : false;
+                    return DB.Prof_Abbr2Int(playerData.data.fortitude.prof) >= maxProf ? true : false;
                 case "reflex":
-                    return DB.Prof_Abbr2Int(playerData.reflex.prof) >= maxProf ? true : false;
+                    return DB.Prof_Abbr2Int(playerData.data.reflex.prof) >= maxProf ? true : false;
                 case "will":
-                    return DB.Prof_Abbr2Int(playerData.will.prof) >= maxProf ? true : false;
+                    return DB.Prof_Abbr2Int(playerData.data.will.prof) >= maxProf ? true : false;
                 default:
                     return DB.Prof_Abbr2Int(playerData.Skill_Get(item).prof) >= maxProf ? true : false;
             }
@@ -136,43 +136,43 @@ public static class PrerequisitesSolver
         }
     }
 
-    private static bool Validate_Heritage(string feat, ref CharacterData playerData)
+    private static bool Validate_Heritage(string feat, ref Character playerData)
     {
         return false;
         // return playerData.Build_GetFeatNames("heritage").Contains(feat);
     }
 
-    private static bool Validate_AncestryFeat(string feat, ref CharacterData playerData)
+    private static bool Validate_AncestryFeat(string feat, ref Character playerData)
     {
         return false;
         // return playerData.Build_GetFeatNames("ancestry feat").Contains(feat);
     }
 
-    private static bool Validate_AncestryFeature(string feat, ref CharacterData playerData)
+    private static bool Validate_AncestryFeature(string feat, ref Character playerData)
     {
         return false;
         // return playerData.Build_GetFeatNames("ancestry feature").Contains(feat);
     }
 
-    private static bool Validate_ClassFeat(string feat, ref CharacterData playerData)
+    private static bool Validate_ClassFeat(string feat, ref Character playerData)
     {
         return false;
         // return playerData.Build_GetFeatNames("class feat").Contains(feat);
     }
 
-    private static bool Validate_ClassFeature(string feat, ref CharacterData playerData)
+    private static bool Validate_ClassFeature(string feat, ref Character playerData)
     {
         return false;
         // return playerData.Build_GetFeatNames("class feature").Contains(feat);
     }
 
-    private static bool Validate_GeneralFeat(string feat, ref CharacterData playerData)
+    private static bool Validate_GeneralFeat(string feat, ref Character playerData)
     {
         return false;
         // return playerData.Build_GetFeatNames("general feat").Contains(feat);
     }
 
-    private static bool Validate_SkillFeat(string feat, ref CharacterData playerData)
+    private static bool Validate_SkillFeat(string feat, ref Character playerData)
     {
         return false;
         // return playerData.Build_GetFeatNames("skill feat").Contains(feat);

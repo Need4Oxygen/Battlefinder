@@ -98,17 +98,17 @@ namespace Pathfinder2e.Character
             DyingMaxtText.text = creation.currentPlayer.hp_dyingMax.ToString();
 
             // AC
-            armorAPIC.Refresh(creation.currentPlayer.ac);
+            armorAPIC.Refresh(creation.currentPlayer.data.ac);
             shieldHealth.text = "0/0";
             shieldHard.text = "Hard 0";
             shieldDamage.SetTextWithoutNotify("0");
             shieldBonusAC.text = "+0";
 
             // Perception & Savesd
-            perceptionAPIC.Refresh(creation.currentPlayer.perception);
-            fortitudeAPIC.Refresh(creation.currentPlayer.fortitude);
-            reflexAPIC.Refresh(creation.currentPlayer.reflex);
-            willAPIC.Refresh(creation.currentPlayer.will);
+            perceptionAPIC.Refresh(creation.currentPlayer.data.perception);
+            fortitudeAPIC.Refresh(creation.currentPlayer.data.fortitude);
+            reflexAPIC.Refresh(creation.currentPlayer.data.reflex);
+            willAPIC.Refresh(creation.currentPlayer.data.will);
 
             // ClassDC
             classDCText.text = DB.Prof_Abbr2AbbrColored(creation.currentPlayer.class_dc);
@@ -123,7 +123,7 @@ namespace Pathfinder2e.Character
             heroPointsInput.SetTextWithoutNotify(creation.currentPlayer.heroPoints.ToString());
 
             // Wealth
-            wealthInput.SetTextWithoutNotify(creation.currentPlayer.Wealth_Formated());
+            wealthInput.SetTextWithoutNotify(creation.currentPlayer.wealth.ToString());
 
             // Abilities
             Color unactive = Globals.Theme["background_1"]; Color boostColor = Globals.Theme["text_2"]; Color flawColor = Globals.Theme["untrained"];
@@ -131,7 +131,7 @@ namespace Pathfinder2e.Character
                 foreach (var image in item.myList)
                     image.color = unactive;
             int[,] map = new int[8, 6];
-            foreach (var boost in creation.currentPlayer.Abl_MapGet())
+            foreach (var boost in creation.currentPlayer.elements_abl)
                 switch (boost.from)
                 {
                     case "ancestry boost": map[0, DB.Abl_Abbr2Int(boost.selector)] += 1; break;
@@ -168,22 +168,18 @@ namespace Pathfinder2e.Character
 
             // Traits
             string traits = "";
-            List<string> traitList = (from a in creation.currentPlayer.RE_general where a.selector == "trait" select a.value).ToList() ?? new List<string>();
+            List<string> traitList = (from a in creation.currentPlayer.data.elements where a.selector == "trait" select a.value).ToList() ?? new List<string>();
             if (traitList.Count > 0) traits = string.Join(", ", traitList);
             traitsText.text = traits;
 
             // Languages
-            string languages = "";
-            if (creation.currentPlayer.languages != null)
-                if (creation.currentPlayer.languages != "")
-                    languages = creation.currentPlayer.languages;
-            languagesInput.SetTextWithoutNotify(languages);
+            languagesInput.SetTextWithoutNotify(creation.currentPlayer.language_str);
 
             // Speeds
-            speedBaseText.text = creation.currentPlayer.speed_base.ToString();
+            speedBaseText.text = creation.currentPlayer.speed_land.ToString();
             speedFlyText.text = creation.currentPlayer.speed_fly.ToString();
             speedSwimText.text = creation.currentPlayer.speed_swim.ToString();
-            speedClimbText.text = creation.currentPlayer.speed_climp.ToString();
+            speedClimbText.text = creation.currentPlayer.speed_climb.ToString();
             speedBurrowText.text = creation.currentPlayer.speed_burrow.ToString();
 
             // Weapon & Armor Profs
@@ -211,7 +207,7 @@ namespace Pathfinder2e.Character
         public void OnEndEditDying()
         {
             int value = 0; int.TryParse(dyingInput.text, out value);
-            creation.currentPlayer.hp_dyingCurrent = value;
+            creation.currentPlayer.hp_dying = value;
             RefreshPlayerIntoPanel();
         }
         public void OnEndEditWounds()
@@ -222,15 +218,15 @@ namespace Pathfinder2e.Character
         }
         public void OnEndEditDoom()
         {
-            int value = 0; int.TryParse(doomInput.text, out value);
-            creation.currentPlayer.hp_doom = value;
-            RefreshPlayerIntoPanel();
+            // int value = 0; int.TryParse(doomInput.text, out value);
+            // creation.currentPlayer.hp_doom = value;
+            // RefreshPlayerIntoPanel();
         }
 
         public void OnEndEditLanguages()
         {
-            string value = languagesInput.text;
-            creation.currentPlayer.languages = value;
+            // string value = languagesInput.text;
+            // creation.currentPlayer.languages = value;
             RefreshPlayerIntoPanel();
         }
 
@@ -244,9 +240,9 @@ namespace Pathfinder2e.Character
 
         public void OnEndEditWealth()
         {
-            string value = wealthInput.text;
-            float valueF = 0; float.TryParse(value, out valueF);
-            creation.currentPlayer.wealth = valueF;
+            // string value = wealthInput.text;
+            // float valueF = 0; float.TryParse(value, out valueF);
+            // creation.currentPlayer.wealth = (int)valueF;
             RefreshPlayerIntoPanel();
         }
 

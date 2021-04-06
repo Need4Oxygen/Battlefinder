@@ -12,13 +12,13 @@ dwarf:
     traits:
       - Dwarf
     elements:
-      - key: proficiency_static
+      - key: static
         selector: crafting
         proficiency: trained
-      - key: proficiency_static
+      - key: static
         selector: religion
         proficiency: trained
-      - key: proficiency_static
+      - key: static
         selector: lore
         proficiency: trained
         value: Dwarven Lore
@@ -247,13 +247,13 @@ elf:
     traits:
       - Elf
     elements:
-      - key: proficiency_static
+      - key: static
         selector: arcana
         proficiency: trained
-      - key: proficiency_static
+      - key: static
         selector: nature
         proficiency: trained
-      - key: proficiency_static
+      - key: static
         selector: lore
         proficiency: trained
         value: Elven Lore
@@ -763,13 +763,13 @@ goblin:
     traits:
       - Goblin
     elements:
-      - key: proficiency_static
+      - key: static
         selector: nature
         proficiency: trained
-      - key: proficiency_static
+      - key: static
         selector: stealth
         proficiency: trained
-      - key: proficiency_static
+      - key: static
         selector: lore
         proficiency: trained
         value: Goblin Lore
@@ -1016,13 +1016,13 @@ halfling:
     traits:
       - Halfling
     elements:
-      - key: proficiency_static
+      - key: static
         selector: acrobatics
         proficiency: trained
-      - key: proficiency_static
+      - key: static
         selector: stealth
         proficiency: trained
-      - key: proficiency_static
+      - key: static
         selector: lore
         proficiency: trained
         value: Halfling Lore
@@ -1397,7 +1397,7 @@ human:
     trigger: null
     frequency: null
     prerequisites:
-      - type: acenstry feat
+      - type: ancenstry feat
         descr: Adapted Cantrip
       - type: null
         descr: can cast 3rd-level spells

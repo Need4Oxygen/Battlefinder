@@ -115,6 +115,7 @@ namespace Pathfinder2e
         }
 
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- ABILITIES
+        public static List<string> Abl_AbbrList = new List<string> { "str", "dex", "con", "int", "wis", "cha" };
 
         public static string Abl_Abbr2Full(string abbr)
         {
@@ -341,28 +342,26 @@ namespace Pathfinder2e
         /// <param name="list"> List from where to extract proficiencies. </param>
         /// <param name="playerLevel"> Current level of the player beign checked. </param>
         /// <returns> Returns a Tuple where Item1 is bound to player level, but Item2 isn't. </returns>
-        public static Tuple<string, string> Prof_FindMax(IEnumerable<RuleElement> list, int playerLevel)
+        public static (string, string) Prof_FindMax(IEnumerable<RuleElement> list, int playerLevel)
         {
-            if (list == null) return Tuple.Create("U", "U");
-            if (list.Count() < 1) return Tuple.Create("U", "U");
+            if (list == null) return ("U", "U");
+            if (list.Count() < 1) return ("U", "U");
 
             int prof = 0;
             int profLvl20 = 0;
 
-            List<RuleElement> rules = new List<RuleElement>();
+            IEnumerable<RuleElement> statics = list.Where(x => x.key == "proficiency_static" || x.key == "skill_static");
+            IEnumerable<RuleElement> increases = list.Where(x => x.key == "proficiency_increase" || x.key == "skill_increase");
 
             // Set max static prof
-            rules = (from a in list
-                     where a.key == "proficiency_static" || a.key == "skill_static"
-                     select a).ToList() ?? new List<RuleElement>();
-            foreach (var element in rules)
+            foreach (var element in statics)
             {
                 if (int.Parse(element.level) > playerLevel) continue;
                 int currentProf = Prof_Full2Int(element.proficiency);
                 if (currentProf > prof)
                     prof = currentProf;
             }
-            foreach (var element in rules)
+            foreach (var element in statics)
             {
                 int currentProf = Prof_Full2Int(element.proficiency);
                 if (currentProf > profLvl20)
@@ -370,30 +369,27 @@ namespace Pathfinder2e
             }
 
             // Add increases
-            rules = (from a in list
-                     where a.key == "proficiency_increase" || a.key == "skill_increase"
-                     select a).ToList() ?? new List<RuleElement>();
-            HashSet<int> increases = new HashSet<int>();
-            foreach (var element in rules)
+            HashSet<int> incUniq = new HashSet<int>();
+            foreach (var element in increases) // For current level
             {
                 if (int.Parse(element.level) > playerLevel) continue;
-                increases.Add(Prof_Full2Int(element.proficiency));
+                incUniq.Add(Prof_Full2Int(element.proficiency));
             }
-            while (increases.Contains(prof + 1))
+            while (incUniq.Contains(prof + 1))
             {
                 prof++;
             }
-            if (increases.Count > 0) increases.Clear();
-            foreach (var element in rules)
+            if (incUniq.Count > 0) incUniq.Clear();
+            foreach (var element in increases) // For level 20
             {
-                increases.Add(Prof_Full2Int(element.proficiency));
+                incUniq.Add(Prof_Full2Int(element.proficiency));
             }
-            while (increases.Contains(profLvl20 + 1))
+            while (incUniq.Contains(profLvl20 + 1))
             {
                 profLvl20++;
             }
 
-            return Tuple.Create(DB.Prof_Int2Abbr(prof), DB.Prof_Int2Abbr(profLvl20));
+            return (DB.Prof_Int2Abbr(prof), DB.Prof_Int2Abbr(profLvl20));
         }
 
         /// <summary>Recieves a lecture list and returns colored max proficiency as "U", "T", etc. </summary>
@@ -401,7 +397,7 @@ namespace Pathfinder2e
 
 
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- SKILLS
-        public static List<string> SkillNames = new List<string>() { "acrobatics", "arcana", "athletics", "crafting", "deception", "diplomacy", "intimidation", "medicine", "nature", "occultism", "performance", "religion", "society", "stealth", "survival", "thievery" };
+        public static List<string> Skl_FullList = new List<string>() { "acrobatics", "arcana", "athletics", "crafting", "deception", "diplomacy", "intimidation", "medicine", "nature", "occultism", "performance", "religion", "society", "stealth", "survival", "thievery" };
 
         public static int Skl_Full2Int(string full)
         {
@@ -453,7 +449,7 @@ namespace Pathfinder2e
             }
         }
 
-        public static string Skl_Int2MaxTrainability(int value)
+        public static string Skl_MaxTrainability(int value)
         {
             if (value >= 1 && value <= 6)
                 return "expert";
@@ -467,7 +463,6 @@ namespace Pathfinder2e
 
 
         // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- SIZES
-
         public static string Size_Abbr2Full(string abbr)
         {
             switch (abbr)
@@ -478,9 +473,7 @@ namespace Pathfinder2e
                 case "L": return "Large";
                 case "H": return "Huge";
                 case "G": return "Gargantuan";
-
-                default:
-                    Logger.LogWarning("DB", $"Size abbr \"{abbr}\" not recognized!"); return "";
+                default: Logger.LogWarning("DB", $"Size abbr \"{abbr}\" not recognized!"); return "";
             }
         }
 
@@ -494,13 +487,60 @@ namespace Pathfinder2e
                 case "Large": return "L";
                 case "Huge": return "H";
                 case "Gargantuan": return "G";
-
-                default:
-                    Logger.LogWarning("DB", $"Size full \"{full}\" not recognized!"); return "";
-
+                default: Logger.LogWarning("DB", $"Size full \"{full}\" not recognized!"); return "";
             }
         }
 
+        public static string Size_Int2Abbr(int value)
+        {
+            switch (value)
+            {
+                case 0: return "T";
+                case 1: return "S";
+                case 2: return "M";
+                case 3: return "L";
+                case 4: return "H";
+                case 5: return "G";
+                default: Logger.LogWarning("DB", $"Size int \"{value}\" not recognized!"); return "";
+            }
+        }
+
+        public static int Size_Abbr2Int(string abbr)
+        {
+            switch (abbr)
+            {
+                case "T": return 0;
+                case "S": return 1;
+                case "M": return 2;
+                case "L": return 3;
+                case "H": return 4;
+                case "G": return 5;
+                default: Logger.LogWarning("DB", $"Size abbr \"{abbr}\" not recognized!"); return 0;
+            }
+        }
+
+        public static float Size_Abbr2BulkMod(string size)
+        {
+            string sizeStr = size;
+            if (sizeStr != "")
+                switch (sizeStr)
+                {
+                    case "T": return 0.5f;
+                    case "S": return 1f;
+                    case "M": return 1f;
+                    case "L": return 2f;
+                    case "H": return 4f;
+                    case "G": return 8f;
+                    default:
+                        Logger.LogWarning("CharacterData", $"Size \"{sizeStr}\" not recognized!");
+                        return 1f;
+                }
+            else
+                return 1f;
+        }
+
+
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- ACTIONCOST
         public static string ActionCost_Full2Abbr(string full)
         {
             switch (full)

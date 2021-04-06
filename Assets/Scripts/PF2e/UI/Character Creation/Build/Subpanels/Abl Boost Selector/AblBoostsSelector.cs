@@ -28,6 +28,7 @@ namespace Pathfinder2e.GameData
         [SerializeField] private Window other_window = null;
         [SerializeField] private List<Toggle> otherToggles = null;
 
+        private List<RuleElement> initialData = null;
         private List<RuleElement> currentData = null;
 
         [HideInInspector] public bool init_isOpen;
@@ -46,7 +47,10 @@ namespace Pathfinder2e.GameData
             init_isOpen = true;
             initAbl_window.OpenWindow();
 
-            currentData = new List<RuleElement>(creation.currentPlayer.Abl_MapGet());
+            List<RuleElement> elements = creation.currentPlayer.elements_abl.ToList() ?? new List<RuleElement>();
+
+            initialData = new List<RuleElement>(elements);
+            currentData = new List<RuleElement>(elements);
 
             AssignInitialAblBoosts();
         }
@@ -56,6 +60,7 @@ namespace Pathfinder2e.GameData
             init_isOpen = false;
             initAbl_window.CloseWindow();
 
+            initialData = null;
             currentData = null;
         }
 
@@ -100,7 +105,7 @@ namespace Pathfinder2e.GameData
 
                         // Discard obligatory boosts from possible options
                         if (ancestry.abl_boosts.Count > 0)
-                            ancestryOptionList.RemoveAll(x => ancestry.abl_boosts.Contains(AbilityToAbbr(x.text)));
+                            ancestryOptionList.RemoveAll(x => ancestry.abl_boosts.Contains(Abl_Full2Abbr(x.text)));
                     }
 
             // Flaws
@@ -173,7 +178,7 @@ namespace Pathfinder2e.GameData
 
             foreach (var item in ancestryFreeDrops)
             {
-                string abl = AbilityToAbbr(item.captionText.text);
+                string abl = Abl_Full2Abbr(item.captionText.text);
                 if (abl != "")
                     currentData.Add(new RuleElement() { from = "ancestry free", selector = abl, level = "1", value = "1" });
             }
@@ -302,11 +307,11 @@ namespace Pathfinder2e.GameData
 
             string abl = "";
 
-            abl = AbilityToAbbr(backgroundChoiceDrop.captionText.text);
+            abl = Abl_Full2Abbr(backgroundChoiceDrop.captionText.text);
             if (abl != "")
                 currentData.Add(new RuleElement() { from = "background choice", selector = abl, level = "1", value = "1" });
 
-            abl = AbilityToAbbr(backgroundFreeDrop.captionText.text);
+            abl = Abl_Full2Abbr(backgroundFreeDrop.captionText.text);
             if (abl != "")
                 currentData.Add(new RuleElement() { from = "background free", selector = abl, level = "1", value = "1" });
 
@@ -365,7 +370,7 @@ namespace Pathfinder2e.GameData
         {
             currentData.RemoveAll(x => x.from == "class");
 
-            string abl = AbilityToAbbr(classDrop.captionText.text);
+            string abl = Abl_Full2Abbr(classDrop.captionText.text);
             if (abl != "")
                 currentData.Add(new RuleElement() { from = "class", selector = abl, level = "1", value = "1" });
 
@@ -431,7 +436,9 @@ namespace Pathfinder2e.GameData
             SaveClassOptions();
             SaveLvl1Boosts();
 
-            creation.currentPlayer.Abl_MapSet(new List<RuleElement>(currentData));
+            creation.currentPlayer.Abl_Remove(initialData);
+            creation.currentPlayer.Abl_Add(currentData);
+            creation.currentPlayer.Abl_UpdateValues();
             creation.RefreshPlayerIntoPanel();
             Close_InitialAblBoosts();
         }
@@ -444,10 +451,9 @@ namespace Pathfinder2e.GameData
 
             Close_InitialAblBoosts();
         }
-        #endregion
 
 
-        #region --------------------------------OTHER BOOSTS--------------------------------
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- OTHER BOOSTS
         private int currentLvl = 5;
 
         public void Open_OtherAblBoosts(int lvl)
@@ -455,9 +461,10 @@ namespace Pathfinder2e.GameData
             other_isOpen = true;
             other_window.OpenWindow();
 
-            currentData = new List<RuleElement>(creation.currentPlayer.Abl_MapGet());
+            List<RuleElement> elements = creation.currentPlayer.elements_abl.ToList() ?? new List<RuleElement>();
 
-            currentLvl = lvl;
+            initialData = new List<RuleElement>(elements);
+            currentData = new List<RuleElement>(elements);
 
             AssignOtherBoosts();
         }
@@ -467,6 +474,7 @@ namespace Pathfinder2e.GameData
             other_isOpen = false;
             other_window.CloseWindow();
 
+            initialData = null;
             currentData = null;
         }
 
@@ -515,7 +523,9 @@ namespace Pathfinder2e.GameData
         {
             SaveOtherBoosts();
 
-            creation.currentPlayer.Abl_MapSet(new List<RuleElement>(currentData));
+            creation.currentPlayer.Abl_Remove(initialData);
+            creation.currentPlayer.Abl_Add(currentData);
+            creation.currentPlayer.Abl_UpdateValues();
             creation.RefreshPlayerIntoPanel();
             Close_OtherAblBoosts();
         }
@@ -561,7 +571,7 @@ namespace Pathfinder2e.GameData
             return (list);
         }
 
-        private string AbilityToAbbr(string ablFullName)
+        private string Abl_Full2Abbr(string ablFullName)
         {
             if (ablFullName != "" && ablFullName != "None")
                 return DB.Abl_Full2Abbr(ablFullName);
