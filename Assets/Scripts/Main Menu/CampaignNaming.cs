@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class CampaignNaming : MonoBehaviour
 {
-    [SerializeField] private Window window = null;
+    [SerializeField] private WindowRIP window = null;
     [SerializeField] private TMP_InputField createCampaignInputField = null;
     [SerializeField] private TMP_Text createCampaignErrorText = null;
 

@@ -1,0 +1,19 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="/Assets/UI Toolkit/Styles/main.uss" />
+    <Style src="/Assets/UI Toolkit/Styles/campaingNameSelect.uss" />
+    <ui:VisualElement name="root" class="root">
+        <ui:VisualElement name="bg" class="bg">
+            <ui:VisualElement name="container" style="left: 25%; top: 30%; right: 25%; bottom: 30%; width: 50%; height: 40%;">
+                <ui:TextField picking-mode="Ignore" label="Campaign Name" value="filler text" name="input-field" text="..." style="align-items: stretch; justify-content: flex-end; flex-direction: column; height: 50%; flex-wrap: wrap; padding-top: 0; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
+                <ui:GroupBox name="buton-container" style="height: 50%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; flex-direction: row; justify-content: space-around; align-items: center;">
+                    <ui:Button display-tooltip-when-elided="true" enable-rich-text="false" name="button-accept">
+                        <ui:VisualElement name="image-tick" style="background-image: url(&apos;/Assets/Sprites/sheet_ui.png#spr_tick&apos;); width: 100%; height: 100%; -unity-background-image-tint-color: rgb(215, 194, 176); -unity-background-scale-mode: scale-to-fit;" />
+                    </ui:Button>
+                    <ui:Button display-tooltip-when-elided="true" enable-rich-text="false" name="button-cancel">
+                        <ui:VisualElement name="image-cross" style="background-image: url(&apos;/Assets/Sprites/sheet_ui.png#spr_cross&apos;); width: 100%; height: 100%; -unity-background-image-tint-color: rgb(215, 194, 176); -unity-background-scale-mode: scale-to-fit;" />
+                    </ui:Button>
+                </ui:GroupBox>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ConfirmationController : MonoBehaviour
 {
-    [SerializeField] Window window = null;
+    [SerializeField] WindowRIP window = null;
     [SerializeField] TMP_Text message = null;
 
     DBool callback;

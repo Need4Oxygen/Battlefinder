@@ -18,14 +18,14 @@ namespace Pathfinder2e.GameData
         [SerializeField] private Transform dropdownPrefab = null;
 
         [Header("Initial Abilities Boosts")]
-        [SerializeField] private Window initAbl_window = null;
+        [SerializeField] private WindowRIP initAbl_window = null;
         [SerializeField] private Transform ancestryContainer = null;
         [SerializeField] private Transform backgroundContainer = null;
         [SerializeField] private Transform classContainer = null;
         [SerializeField] private List<Toggle> level1Toggles = null;
 
         [Header("Every Other Abilities Boosts")]
-        [SerializeField] private Window other_window = null;
+        [SerializeField] private WindowRIP other_window = null;
         [SerializeField] private List<Toggle> otherToggles = null;
 
         private List<RuleElement> initialData = null;

@@ -10,7 +10,7 @@ public class SplashController : MonoBehaviour
     [SerializeField] private MainMenuCamera cameraController = null;
 
     [Space(15)]
-    [SerializeField] private Window window = null;
+    [SerializeField] private WindowRIP window = null;
     [SerializeField] private Button clickablePanel = null;
     [SerializeField] private CanvasGroup blackPanel = null;
     [SerializeField] private CanvasGroup disclaimerPanel = null;

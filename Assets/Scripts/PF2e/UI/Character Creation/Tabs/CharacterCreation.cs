@@ -18,7 +18,7 @@ namespace Pathfinder2e.Character
         [Serializable] private class StrSpritePair { public string label; public Sprite sprite; }
         public DVoid OnCharacterCreationClose = null;
 
-        [SerializeField] private Window window = null;
+        [SerializeField] private WindowRIP window = null;
         [SerializeField] private ABCSelector ABCSelector = null;
         [SerializeField] private AblBoostsSelector ablBoostsSelector = null;
         [SerializeField] private Searcher searcher = null;

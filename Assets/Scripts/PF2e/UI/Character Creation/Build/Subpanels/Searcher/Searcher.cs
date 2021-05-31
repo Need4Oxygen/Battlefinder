@@ -20,7 +20,7 @@ namespace Pathfinder2e.Character
         [SerializeField] private CharacterCreation creation = null;
 
         [Header("Searcher")]
-        [SerializeField] private Window window = null;
+        [SerializeField] private WindowRIP window = null;
         [SerializeField] private TMP_InputField searchField = null;
         [SerializeField] private TMP_Dropdown typeDropdown = null;
         [SerializeField] private TMP_Dropdown sortDropdown = null;
@@ -28,7 +28,7 @@ namespace Pathfinder2e.Character
         [SerializeField] private GameObject resultButtonPrefab = null;
 
         [Header("Feat Displayer")]
-        [SerializeField] private Window featDisplayerWindow = null;
+        [SerializeField] private WindowRIP featDisplayerWindow = null;
         [SerializeField] private VerticalLayoutGroup verticalContainer = null;
         [SerializeField] private TMP_Text featLvl = null;
         [SerializeField] private TMP_Text featName = null;

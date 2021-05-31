@@ -19,7 +19,7 @@ namespace Pathfinder2e.GameData
         [SerializeField] private ConfirmationController confirmation = null;
 
         [Header("Campaign Stuff")]
-        [SerializeField] private Window window = null;
+        [SerializeField] private WindowRIP window = null;
         [SerializeField] private TMP_Text campaignName = null;
 
         [Header("Boards")]

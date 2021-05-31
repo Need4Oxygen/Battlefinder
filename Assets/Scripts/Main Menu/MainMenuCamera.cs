@@ -29,8 +29,8 @@ public class MainMenuCamera : MonoBehaviour
         QualitySettings.vSyncCount = 1;  // VSync must be disabled
         Application.targetFrameRate = VideoSettings.fpsLimit;
 
-        WindowManager.OnWindowOpens += WindowOpensListener;
-        WindowManager.OnWindowCloses += WindowClosesListener;
+        WindowManagerRIP.OnWindowOpens += WindowOpensListener;
+        WindowManagerRIP.OnWindowCloses += WindowClosesListener;
     }
 
     void Start()
@@ -84,26 +84,26 @@ public class MainMenuCamera : MonoBehaviour
         }
     }
 
-    private void WindowOpensListener(Window window)
+    private void WindowOpensListener(WindowRIP window)
     {
-        if (!WindowManager.ShouldCameraRender())
+        if (!WindowManagerRIP.ShouldCameraRender())
             StartCoroutine(DisableCameraCorou(window));
     }
 
-    private void WindowClosesListener(Window window)
+    private void WindowClosesListener(WindowRIP window)
     {
-        if (WindowManager.ShouldCameraRender())
+        if (WindowManagerRIP.ShouldCameraRender())
             StartCoroutine(EnableCameraCorou(window));
     }
 
-    private IEnumerator DisableCameraCorou(Window window)
+    private IEnumerator DisableCameraCorou(WindowRIP window)
     {
         Application.targetFrameRate = VideoSettings.fpsLimitUI;
         yield return new WaitForSecondsRealtime(0.15f);
         mainCamera.enabled = false;
     }
 
-    private IEnumerator EnableCameraCorou(Window window)
+    private IEnumerator EnableCameraCorou(WindowRIP window)
     {
         Application.targetFrameRate = VideoSettings.fpsLimit;
         mainCamera.enabled = true;

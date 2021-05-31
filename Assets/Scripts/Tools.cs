@@ -41,12 +41,12 @@ namespace Tools
 
     public static class DicExtensions
     {
-        public static int RemoveAll<T, T2>(this Dictionary<T, T2> dicctionary, IEnumerable<T> keys)
+        public static int RemoveAll<T, T2>(this Dictionary<T, T2> dictionary, IEnumerable<T> keys)
         {
             int count = 0;
 
             foreach (var key in keys)
-                if (dicctionary.Remove(key))
+                if (dictionary.Remove(key))
                     count++;
 
             return count;

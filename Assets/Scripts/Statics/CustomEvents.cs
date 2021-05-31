@@ -8,7 +8,7 @@ public delegate void DVoid();
 public delegate void DBool(bool value);
 public delegate void DString(string str);
 public delegate void DTool(E_Tools tools);
-public delegate void DWindow(Window window);
+public delegate void DWindow(WindowRIP window);
 
 public static class CustomEvents
 {

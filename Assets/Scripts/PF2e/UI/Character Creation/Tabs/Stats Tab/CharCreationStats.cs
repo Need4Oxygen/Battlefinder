@@ -12,7 +12,7 @@ namespace Pathfinder2e.Character
     {
         [System.Serializable] private class ListWrapper { public List<Image> myList = null; }
 
-        [SerializeField] private Window statsWindow = null;
+        [SerializeField] private WindowRIP statsWindow = null;
         [SerializeField] private CharacterCreation creation = null;
 
         [Header("Health")]
@@ -170,6 +170,9 @@ namespace Pathfinder2e.Character
             string traits = "";
             List<string> traitList = (from a in creation.currentPlayer.data.elements where a.selector == "trait" select a.value).ToList() ?? new List<string>();
             if (traitList.Count > 0) traits = string.Join(", ", traitList);
+            traitsText.alpha = 1f;
+            traitsText.characterSpacing = 1f;
+            traitsText.characterWidthAdjustment = 1f;
             traitsText.text = traits;
 
             // Languages

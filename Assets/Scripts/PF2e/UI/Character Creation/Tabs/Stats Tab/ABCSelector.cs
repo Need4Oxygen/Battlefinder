@@ -17,7 +17,7 @@ namespace Pathfinder2e.GameData
         [SerializeField] private CharacterCreation characterCreation = null;
 
         [Header("ABC")]
-        [SerializeField] private Window window = null;
+        [SerializeField] private WindowRIP window = null;
         [SerializeField] private Transform buttonContainer = null;
         [SerializeField] private Transform button = null;
         [SerializeField] private Transform tabContainer = null;

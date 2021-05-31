@@ -1,0 +1,85 @@
+.root {
+    --background: rgb(30, 24, 24);
+    --button: rgb(106, 55, 55);
+    --button-hover: rgb(133, 74, 74);
+    --button-pressed: rgb(63, 39, 39);
+    --button-selected: rgb(133, 74, 74);
+    --caret: rgb(197, 157, 107);
+    --selection: rgb(197, 157, 107);
+    --t1: rgb(197, 157, 107);
+    --t2: rgb(215, 194, 176);
+    --t3: rgb(241, 228, 202);
+    width: 100%;
+    height: 100%;
+}
+
+.bg {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(30, 24, 24);
+}
+
+.unity-label {
+    color: rgb(215, 194, 176);
+    -unity-text-align: lower-left;
+    font-size: 38px;
+    -unity-font: resource('Fonts & Materials/LiberationSans');
+    -unity-font-style: bold;
+    white-space: normal;
+}
+
+.unity-base-text-field__input {
+    background-color: var(--button);
+    font-size: 30px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding-left: 20px;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    -unity-font-style: normal;
+    -unity-font: url('/Assets/UI Toolkit/Resources/Fonts & Materials/LiberationSans.ttf');
+    --unity-cursor-color: var(--caret);
+    --unity-selection-color: var(--caret);
+    color: rgb(215, 194, 176);
+    padding-top: 0;
+    max-height: 60px;
+    min-height: auto;
+}
+
+.unity-base-text-field__input:hover {
+    background-color: var(--button-hover);
+}
+
+.unity-base-text-field__input:focus {
+    background-color: var(--button-selected);
+}
+
+.unity-button {
+    width: 100px;
+    height: 60px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    background-color: var(--button);
+}
+
+.unity-button:hover {
+    background-color: var(--button-hover);
+}
+
+.unity-button:hover:active {
+    background-color: var(--button-pressed);
+}

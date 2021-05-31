@@ -11,7 +11,7 @@ namespace Pathfinder2e.GameData
 
     public class BoardHandler : MonoBehaviour
     {
-        [SerializeField] private Window window = null;
+        [SerializeField] private WindowRIP window = null;
         [SerializeField] private CampaignHandler campaignHandler = null;
         [SerializeField] private TMP_InputField boardNameInput = null;
 

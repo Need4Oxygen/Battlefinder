@@ -13,7 +13,7 @@ public class SkillPlanner : MonoBehaviour
     [SerializeField] private CharacterCreation creation = null;
 
     [Header("SkillPlanner")]
-    [SerializeField] private Window window = null;
+    [SerializeField] private WindowRIP window = null;
     [SerializeField] private List<Toggle> toggles = null;
 
     [HideInInspector] public bool isOpen = false;

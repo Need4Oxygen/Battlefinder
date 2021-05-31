@@ -130,23 +130,23 @@ public class PanelFader : MonoBehaviour
             panel.gameObject.SetActive(false);
     }
 
-    public static IEnumerator RescaleAndFadeWindow(Window window, float scaleTarget, float alphaTarget, float delay, float duration)
+    public static IEnumerator RescaleAndFadeWindow(WindowRIP window, float scaleTarget, float alphaTarget, float delay, float duration)
     {
         float scaleInit = window.transform.localScale.x;
         float alphaInit = window.group.alpha;
         yield return RescaleAndFadeWindow(window, scaleInit, scaleTarget, alphaInit, alphaTarget, delay, duration, null, null);
     }
-    public static IEnumerator RescaleAndFadeWindow(Window window, float scaleTarget, float alphaTarget, float delay, float duration, Action onFadeStart, Action onFadeEnd)
+    public static IEnumerator RescaleAndFadeWindow(WindowRIP window, float scaleTarget, float alphaTarget, float delay, float duration, Action onFadeStart, Action onFadeEnd)
     {
         float scaleInit = window.transform.localScale.x;
         float alphaInit = window.group.alpha;
         yield return RescaleAndFadeWindow(window, scaleInit, scaleTarget, alphaInit, alphaTarget, delay, duration, onFadeStart, onFadeEnd);
     }
-    public static IEnumerator RescaleAndFadeWindow(Window window, float scaleInit, float scaleFinal, float alphaInit, float alphaFinal, float delay, float duration)
+    public static IEnumerator RescaleAndFadeWindow(WindowRIP window, float scaleInit, float scaleFinal, float alphaInit, float alphaFinal, float delay, float duration)
     {
         yield return RescaleAndFadeWindow(window, scaleInit, scaleFinal, alphaInit, alphaFinal, delay, duration, null, null);
     }
-    public static IEnumerator RescaleAndFadeWindow(Window window, float scaleInit, float scaleFinal, float alphaInit, float alphaFinal, float delay, float duration, Action onFadeStart, Action onFadeEnd)
+    public static IEnumerator RescaleAndFadeWindow(WindowRIP window, float scaleInit, float scaleFinal, float alphaInit, float alphaFinal, float delay, float duration, Action onFadeStart, Action onFadeEnd)
     {
         if (delay > 0f)
             yield return new WaitForSecondsRealtime(delay);
